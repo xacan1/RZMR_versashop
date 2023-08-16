@@ -3,7 +3,7 @@ from shop.views import *
 
 
 urlpatterns = [
-    path('shop/', IndexView.as_view(), name='home-shop'), # Это начальная страница магазина, вместо нее будет начальная страница корпоративного сайта
+    path('shop/', IndexShopView.as_view(), name='home-shop'), # Это начальная страница магазина, вместо нее будет начальная страница корпоративного сайта
     path('about-us/', AboutAsView.as_view(), name='about-us'),
     path('cart/', CartView.as_view(), name='cart'),
     path('wishlist/', WishlistView.as_view(), name='wishlist'),

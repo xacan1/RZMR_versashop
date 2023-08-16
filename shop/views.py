@@ -10,7 +10,7 @@ from shop.mixins import DataMixin
 from django.http import HttpResponse
 
 
-class IndexView(DataMixin, FormView):
+class IndexShopView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'shop/index.html'
 

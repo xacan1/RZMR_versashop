@@ -22,6 +22,7 @@ from main.views import PageNotFound
 
 urlpatterns = [
     path('admin-rzmr/', admin.site.urls),
+    path('', include('rzmr.urls')),
     path('', include('main.urls')),
     path('', include('api.urls')),
     path('', include('shop.urls')),

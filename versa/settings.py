@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 VERSA_APPS = [
+    'rzmr.apps.RzmrConfig',
     'shop.apps.ShopConfig',
     'personal_account.apps.PersonalAccountConfig',
     'main.apps.MainConfig',
