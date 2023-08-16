@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from . import config
+
+try:
+    from versa.local_settings import *
+except ImportError:
+    from versa.prod_settings import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q0q7+#&i9n52q&*-g#8qwaqv8(y*v%bo5=sa6t&0g1c*m3calm'
+SECRET_KEY = config.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -39,6 +45,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+VERSA_APPS = [
+    'shop.apps.ShopConfig',
+    'personal_account.apps.PersonalAccountConfig',
+    'main.apps.MainConfig',
+    'api.apps.ApiConfig',
+    'rest_framework',
+    'rest_framework.authtoken',
+]
+
+# if DEBUG:
+#     DEBUG_APPS = ['debug_toolbar',]
+#     INSTALLED_APPS += DEBUG_APPS
+
+INSTALLED_APPS += VERSA_APPS
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -48,6 +69,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# if DEBUG:
+#     VERSA_MIDDLEWARE = ['debug_toolbar.middleware.DebugToolbarMiddleware',]
+#     MIDDLEWARE += VERSA_MIDDLEWARE
+#     INTERNAL_IPS = ['127.0.0.1',]
 
 ROOT_URLCONF = 'versa.urls'
 
@@ -103,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
@@ -111,13 +137,65 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'main.CustomUser'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+}
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
+DEFAULT_FROM_EMAIL = f'{ALLOWED_HOSTS[0]} <{config.EMAIL_USER}>'
+EMAIL_HOST = config.EMAIL_SMTP
+EMAIL_HOST_USER = config.EMAIL_USER
+EMAIL_HOST_PASSWORD = config.EMAIL_PASSWORD
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+MANAGERS = config.ADMINS
+
+APPEND_SLASH = True
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django.db.backends': {
+#             'level': 'DEBUG',
+#             'handlers': ['console'],
+#         }
+#     },
+# }
+
+# SESSION_COOKIE_AGE = 24 * 60 * 60
