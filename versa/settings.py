@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from . import config
+from versa import config
 
 try:
     from versa.local_settings import *
