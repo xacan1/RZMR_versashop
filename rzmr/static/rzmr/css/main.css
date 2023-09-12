@@ -325,4 +325,33 @@ main {
     border-color: green;
 }
 
+.text-uzm {
+    font-size: 1.1rem;
+}
+
+.text-title-uzm {
+    color: #223d59;
+}
+
+img {
+    max-width: 100%;
+}
+
+.pagination-list li {
+    color: #8d8d8d;
+    display: inline-block;
+    min-width: 1rem;
+    text-align: center;
+}
+.pagination-list>li>a {
+    color: inherit;
+}
+
+.pagination-list li.active {
+	border-radius: 3px;
+	background: #dbecf4;
+	box-shadow: inset 0 2px 2px 0 rgba(0,0,0,.1);
+}
+
+
 /* end main index */

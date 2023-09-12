@@ -11,11 +11,11 @@ User = get_user_model()
 
 
 def product_image_path(instance, filename):
-    return f'photos/{instance.slug}/{filename}'
+    return f'shop_photos/{instance.slug}/{filename}'
 
 
 def get_path_to_image(instance, filename):
-    return f'photos/{instance.product.slug}/{filename}'
+    return f'shop_photos/{instance.product.slug}/{filename}'
 
 
 # Категории - это корневые папки справочника Номенклатура в 1С

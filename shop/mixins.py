@@ -1,4 +1,5 @@
 from shop import services
+from versa import config
 
 
 user_menu = {'Войти': 'login',
@@ -12,6 +13,12 @@ class DataMixin:
         context = kwargs
         context_main_menu = main_menu.copy()
         context_user_menu = user_menu.copy()
+
+        context['company_name'] = config.COMPANY_NAME
+        context['company_name_short'] = config.COMPANY_NAME_SHORT
+
+        if 'title' not in context:
+            context['title'] = config.COMPANY_NAME
 
         if self.request.user.is_anonymous:
             self.request.session['sessionid'] = self.request.session.session_key

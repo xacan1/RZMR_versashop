@@ -1,5 +1,6 @@
 /venv/
 /.vscode/
+/media/
 **/__pycache__/
 **/photos/
 **/*.sqlite3

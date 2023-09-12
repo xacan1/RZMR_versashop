@@ -1,0 +1,58 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col text-uzm">
+            <h4>{{ title }}</h4>
+            <div class="horizontal-line-uzm"></div>
+            <p class="pt-4">
+                {{ company_name }} ежегодно сотрудничает с более чем 1200 предприятий России и ближнего
+                зарубежья, в том числе непосредственно с предприятиями следующих холдингов:
+            </p>
+            <div class="row">
+                <div class="row align-items-center">
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-novatek.png' %}" alt="logo-novatek">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-rti.png' %}" alt="logo-rti">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-ugmpk.png' %}" alt="logo-ugmpk">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-oak.png' %}" alt="logo-oak">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-odk.gif' %}" alt="logo-odk">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-rosatom.png' %}" alt="logo-rosatom">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-gazprom.png' %}" alt="logo-gazprom">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-rosneft.png' %}" alt="logo-rosneft">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-lukoil.png' %}" alt="logo-lukoil">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-transneft.png' %}" alt="logo-transneft">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-technodinamica.png' %}" alt="logo-technodinamica">
+                    </div>
+                    <div class="col-md-3 col-6 p-5">
+                        <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-progres.png' %}" alt="logo-progres">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

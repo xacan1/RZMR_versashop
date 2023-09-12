@@ -27,12 +27,13 @@ urlpatterns = [
     path('', include('api.urls')),
     path('', include('shop.urls')),
     path('', include('personal_account.urls')),
+    path('', include('blog.urls')),
 ]
 
-# if settings.DEBUG:
-#     import debug_toolbar
-#     urlpatterns += path('__debug__/', include('debug_toolbar.urls')),
-#     urlpatterns += static(settings.MEDIA_URL,
-#                           document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    # import debug_toolbar
+    # urlpatterns += path('__debug__/', include('debug_toolbar.urls')),
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
 
 handler404 = PageNotFound.as_view()

@@ -1,0 +1,40 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>{{ title }}</h4>
+        </div>
+    </div>
+    <div class="row text-uzm">
+        <div class="col-6">
+            <div class="horizontal-line-uzm"></div>
+            <h5 class="py-4">{{ company_name }}</h5>
+            <p>Адрес: 450015, Россия, г. Уфа, ул. К.Маркса 67</p>
+            <p>Тел/факс:</p>
+            <p><a href="tel:+73472929864">+7 (347) 292-98-64</a></p>
+            <p><a href="tel:88005555756">8-800-5555-756</a></p>
+            <p>Часовой пояс: GMT +05 (+2 МСК)</p>
+            <p>E-mail:</p>
+            <p><a href="mailto:info@uzmr.ru">info@uzmr.ru</a></p>
+            <p><a href="mailto:info@metalhoses.ru">info@metalhoses.ru</a></p>
+        </div>
+        <div class="col-6">
+            <div class="horizontal-line-uzm"></div>
+            <h5 class="py-4">Наши реквизиты</h5>
+            <p>Адрес: 450015, Россия, г. Уфа, ул. К.Маркса 67</p>
+            <p>ОГРН: 1140280035576</p>
+            <p>ИНН: 0274187960</p>
+            <p>КПП: 027401001</p>
+            <p>ОКТМО: 80701000001</p>
+            <p>БАНК: Отделение № 8598 Сбербанка России г. Уфа</p>
+            <p>р/с: 40702810606000008852</p>
+            <p>БИК: 048073601</p>
+            <p>К/С: 30101810300000000601</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

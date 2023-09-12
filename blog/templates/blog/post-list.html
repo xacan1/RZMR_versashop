@@ -1,0 +1,42 @@
+{% extends 'rzmr/base.html' %}
+
+{% block content %}
+<div class="container">
+    {% for post in posts %}
+    <div class="row py-2">
+        <div class="col-4">
+            <img src="{{ post.photo.url }}" alt="image post">
+        </div>
+        <div class="col-8">
+            <h6 class="text-title-uzm py-3">{{ post.title }}</h6>
+            <p class="fs-6">{{ post.text|truncatewords:'55' }}</p>
+            <p><a href="{% url 'post' post.slug %}">Читать далее...</a></p>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-12">
+            <!-- Pagination -->
+            <div class="pagination">
+                <span class="bx_pg_text">Страницы:</span>
+                <ul class="pagination-list">
+                    {% if page_obj.has_previous %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}{{ add_for_pagination }}">←</a></li>
+                    {% endif %}
+                    {% for p in page_obj.paginator.page_range %}
+                    {% if p == page_obj.number %}
+                    <li class="active"><a href="?page={{ p }}{{ add_for_pagination }}">{{ p }}</a></li>
+                    {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                    <li><a href="?page={{ p }}{{ add_for_pagination }}">{{ p }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                    <li><a href="?page={{ page_obj.next_page_number }}{{ add_for_pagination }}">→</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!--/ End Pagination -->
+        </div>
+    </div>
+</div>
+{% endblock content %}
