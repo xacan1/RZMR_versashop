@@ -35,7 +35,7 @@ class QualityView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class OurCustomer(DataMixin, FormView):
+class OurCustomerView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/our-customer.html'
 
@@ -45,7 +45,7 @@ class OurCustomer(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class ForSuppliers(DataMixin, FormView):
+class ForSuppliersView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/for-suppliers.html'
 
@@ -55,7 +55,7 @@ class ForSuppliers(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class Vacancies(DataMixin, FormView):
+class VacanciesView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/vacancies.html'
 
@@ -64,11 +64,32 @@ class Vacancies(DataMixin, FormView):
         c_def = self.get_user_context(title='Вакансии')
         return {**context, **c_def}
 
-class Contacts(DataMixin, FormView):
+
+class ContactsView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/contacts.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title='Контакты')
+        return {**context, **c_def}
+
+
+class MetalhosesView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/metalhoses.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Металлические рукава')
+        return {**context, **c_def}
+
+
+class FittingsView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/fittings.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Концевая арматура для металлорукавов')
         return {**context, **c_def}

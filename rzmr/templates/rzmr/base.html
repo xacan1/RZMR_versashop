@@ -22,12 +22,12 @@
                 <div class="row">
                     <div class="d-lg-block d-none col-3">
                         <div class="header-element">
-                            <span>г.Уфа, ул.Карла Маркса, д.67</span>
+                            <span>г.Санкт-Петербург, ул.Замшина, д.31 К.4, офис 3-Н/4</span>
                         </div>
                     </div>
                     <div class="col-2 col-lg-1">
                         <div class="header-element">
-                            <a href="mailto:info@uzmr.ru">info@uzmr.ru</a>
+                            <a href="mailto:info@uzmr.ru">info@rzmr.ru</a>
                         </div>
                     </div>
                     <div class="d-xl-block d-none col-2">
@@ -65,8 +65,8 @@
                 <div class="col-xl-5 col-4">
                     <div class="horizontal-line-uzm"></div>
                 </div>
-                <div class="logo-main text-center col-xl-2 col-4">
-                    <a href="{% url 'home' %}"><img src="{% static 'rzmr/img/logo.svg' %}" width="160" height="52" alt="logo"></a>
+                <div class="col-xl-2 col-4">
+                    <a href="{% url 'home' %}"><img src="{% static 'rzmr/img/logo.svg' %}" alt="logo"></a>
                 </div>
                 <div class="col-xl-3 col-1">
                     <div class="horizontal-line-uzm"></div>
@@ -106,8 +106,8 @@
                                 <a class="nav-link dropdown-toggle" id="navbarDropdown2" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Металлорукава</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                    <li><a class="dropdown-item" href="#">Металлорукава</a></li>
-                                    <li><a class="dropdown-item" href="#">Концевая арматура</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'metalhoses' %}">Металлорукава</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'metalhoses-fittings' %}">Концевая арматура</a></li>
                                     <li><a class="dropdown-item" href="#">Рекомендации по выбору</a></li>
                                     <li><a class="dropdown-item" href="#">Монтаж и безопасность</a></li>
                                     <li><a class="dropdown-item" href="#">Стандарты качества</a></li>
@@ -195,7 +195,7 @@
         <div class="container container-footer d-sm-block d-none">
             <div class="row">
                 <div class="d-md-block d-none col-md-3 col-6">
-                    <div><img src="{% static 'rzmr/img/logo2.svg' %}" width="180" height="60" alt="logo2"></div>
+                    <a href="{% url 'home' %}"><img src="{% static 'rzmr/img/logo2.svg' %}" width="180" height="60" alt="logo2"></a>
                     <p class="footer-title">О заводе</p>
                     <div><a href="#">Система качества и сертификации</a></div>
                     <div><a href="#">Наши клиенты</a></div>
