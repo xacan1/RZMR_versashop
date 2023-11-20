@@ -91,5 +91,39 @@ class FittingsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Концевая арматура для металлорукавов')
+        c_def = self.get_user_context(
+            title='Концевая арматура для металлорукавов')
+        return {**context, **c_def}
+
+
+class CorrugationView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/corrugation.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Гофрированные металлорукава РГМ')
+        return {**context, **c_def}
+
+
+class CorrugationStandartnayaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/corrugation_standartnaya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Гофрированные металлорукава РГМ средней гибкости')
+        return {**context, **c_def}
+
+
+class CorrugationPovyshennoyGibkostiView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/corrugation_povishennoy_gibkosti.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Гофрированные металлорукава РГМ повышенной гибкости')
         return {**context, **c_def}

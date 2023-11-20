@@ -474,8 +474,8 @@ img {
     box-sizing: border-box;
     color: rgb(3, 84, 145);
     cursor: pointer;
-    height: 198px;
-    inline-size: 196px;
+    /* height: 198px;
+    inline-size: 196px; */
     text-decoration: none solid rgb(3, 84, 145);
     text-emphasis-color: rgb(3, 84, 145);
     text-size-adjust: 100%;

@@ -1,0 +1,68 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Стандартная - выполнена из трубной заготовки толщиной от 0,3 до 0,4 мм, обладает средней гибкостью.
+                Металлорукава, изготовленные из данной гофры, рассчитаны на рабочее давление до 240 кгс/см<sup>2</sup> в
+                зависимости от внутреннего диаметра и количества оплеток. Подходит под большую часть требований
+                Заказчика
+            </p>
+            <p class="py-4">
+                <img src="{% static '/rzmr/img/marked_gofra_standart.png' %}" alt="gofra">
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+
+            <p class="wrapper-up-uzm-card fs-5">
+                Гофра
+            </p>
+            <p class="uzm-text-card">
+                герметичная оболочка с кольцевыми гофрами, расположенными параллельно. Изготавливается методом
+                гидроформовки
+                из трубных заготовок, сваренных аргонодуговой сваркой встык по длине трубы.
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation-corrugation-povishennoy_gibkosti' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Повышенной гибкости <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_povishennoi_gibkosti.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Тяжелая серия <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_tyagelaya.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Спиральная <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_spiralnaya.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Двухслойная <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_dvuhsloinaya.png' %}" alt="gofra">
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

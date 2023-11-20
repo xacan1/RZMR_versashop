@@ -13,7 +13,7 @@
                 строительство – там, где требуется высокая степень защиты и надежности конструкций. Кроме того, высокая
                 степень герметичности и соответствие санитарно-гигиеническим нормам позволяет использовать эти системы в
                 таких специфических отраслях как медицина и пищевая промышленность. Если вы хотите купить металлические
-                рукава в Уфе, {{ company_name_short }} готово вам помочь! Обратитесь к производителю, который
+                рукава, {{ company_name_short }} готово вам помочь! Обратитесь к производителю, который
                 специализируется на производстве качественных и надежных деталей для гибких трубопроводных систем.
             </p>
             <p>
@@ -26,7 +26,7 @@
     </div>
     <div class="row">
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#">
+            <a href="{% url 'metalhoses-corrugation' %}">
                 <p class="wrapper-up-uzm-card fs-5">
                     Гофра
                 </p>
@@ -38,11 +38,11 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="#">
+            <a href="{% url 'metalhoses-corrugation-standartnaya' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Стандартная <br> Ø6 - Ø400</div>
                 </div>
-                <img src="{% static '/rzmr/img/gofra1.jpg' %}" alt="">
+                <img src="{% static '/rzmr/img/marked_gofra_standart.png' %}" alt="gofra">
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
@@ -50,7 +50,7 @@
                 <div class="wrapper-up-uzm-card">
                     <div>Повышенной гибкости <br> Ø6 - Ø200</div>
                 </div>
-                <img src="{% static '/rzmr/img/gofra1.jpg' %}" alt="">
+                <img src="{% static '/rzmr/img/marked_gofra_povishennoi_gibkosti.png' %}" alt="gofra">
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
@@ -58,7 +58,7 @@
                 <div class="wrapper-up-uzm-card">
                     <div>Тяжелая серия <br> Ø6 - Ø200</div>
                 </div>
-                <img src="{% static '/rzmr/img/gofra1.jpg' %}" alt="">
+                <img src="{% static '/rzmr/img/marked_gofra_tyagelaya.png' %}" alt="gofra">
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
@@ -66,7 +66,7 @@
                 <div class="wrapper-up-uzm-card">
                     <div>Спиральная <br> Ø6 - Ø200</div>
                 </div>
-                <img src="{% static '/rzmr/img/gofra1.jpg' %}" alt="">
+                <img src="{% static '/rzmr/img/marked_gofra_spiralnaya.png' %}" alt="gofra">
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
@@ -74,7 +74,145 @@
                 <div class="wrapper-up-uzm-card">
                     <div>Двухслойная <br> Ø6 - Ø200</div>
                 </div>
-                <img src="{% static '/rzmr/img/gofra1.jpg' %}" alt="">
+                <img src="{% static '/rzmr/img/marked_gofra_dvuhsloinaya.png' %}" alt="gofra">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="#">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Оплетка
+                </p>
+                <p class="uzm-text-card">
+                    представляет собой защитную оболочку сетчатого типа и изготавливается из стальной нержавеющей
+                    проволоки 12Х18Н9Т. Позволяет обеспечить работоспособность рукава при воздействии различных
+                    нагрузок, а также пульсации давлений, возникающих при транспортировке по гибкому элементу рабочей
+                    среды. Оплетка должна плотно облегать рукав, не иметь оборванных частей.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Однослойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_odinarnaya.png' %}" alt="opletka">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Двухсойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_dvoinaya.png' %}" alt="opletka">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Трехслойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_troinaya.png' %}" alt="opletka">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="#">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Внутренний экран
+                </p>
+                <p class="uzm-text-card">
+                    защитный элемент рукава, помещенный внутрь гибкой части позволяющий исключить/сократить контакт
+                    рукава со средой, либо за счет своего наличия продлить срок службы изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Трубный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_trubnii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Вальцованный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_valcovanii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Оплеточный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_opletochnii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_PTFE.png' %}" alt="ekran">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="#">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Наружная оболочка
+                </p>
+                <p class="uzm-text-card">
+                    часть рукава в которую заключается гибкая часть для предотвращения различных воздействий
+                    (температурных, механических и т.д.). Выбирается исходя из предполагаемых условий эксплуатации
+                    изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Трубный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_termochehol.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Вальцованный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_termorukav.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>Оплеточный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_rezinovaya_obolochka.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_pruzhina.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="#">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE</div>
+                </div>
+                <img src="{% static '/rzmr/img/18.png' %}" alt="hoses">
             </a>
         </div>
     </div>
