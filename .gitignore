@@ -1,4 +1,5 @@
 /venv/
+/static/
 /.vscode/
 /media/
 **/__pycache__/
