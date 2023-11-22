@@ -17,10 +17,10 @@ h6 {
     text-transform: uppercase;
 }
 
-ul,
+/* ul,
 li {
     display: block;
-}
+} */
 
 a {
     text-decoration: none;
@@ -488,4 +488,5 @@ img {
     border: 1px solid grey;
     text-align: center;
 }
+
 /* end main index */
