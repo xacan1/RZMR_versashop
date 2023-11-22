@@ -484,5 +484,8 @@ img {
     outline: rgb(3, 84, 145) none 0px;
 }
 
-
+.uzm-table td{
+    border: 1px solid grey;
+    text-align: center;
+}
 /* end main index */

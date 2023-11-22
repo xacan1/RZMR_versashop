@@ -127,3 +127,80 @@ class CorrugationPovyshennoyGibkostiView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Гофрированные металлорукава РГМ повышенной гибкости')
         return {**context, **c_def}
+
+
+class CorrugationTyazhelayaSeriyaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/corrugation_tyazhelaya_seriya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Гофрированные металлорукава РГМ тяжелой серии до 400 кгс/см2')
+        return {**context, **c_def}
+
+
+class CorrugationSpiralnayaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/corrugation_spiralnaya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Спиральный гофрированный металлорукав РГМ')
+        return {**context, **c_def}
+
+
+class CorrugationDvuhsloinayaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/corrugation_dvukhsloynaya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Двухслойный гофрированный металлорукав РГМ')
+        return {**context, **c_def}
+
+
+class BraidView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/braid.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Металлорукава в металлической оплетке')
+        return {**context, **c_def}
+
+
+class BraidOdnosloynayaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/braid_odnosloynaya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Стальная однослойная нержавеющая оплетка')
+        return {**context, **c_def}
+
+
+class BraidDvukhsloynayaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/braid_dvukhsloynaya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Двухслойная оплётка для металлорукавов')
+        return {**context, **c_def}
+
+
+class BraidTrekhsloynayaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/braid_trekhsloynaya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Трёхслойная оплётка для металлорукавов')
+        return {**context, **c_def}

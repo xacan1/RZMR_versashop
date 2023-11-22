@@ -1,0 +1,50 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Однослойная - стандартный вариант, позволяющий обеспечить стабильную работу рукава при большинстве
+                нагрузок.
+            </p>
+            <p class="py-4">
+                <img src="{% static '/rzmr/img/marked_opletka_odinarnaya.png' %}" alt="opletka">
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <p class="wrapper-up-uzm-card fs-5">
+                Оплетка
+            </p>
+            <p class="uzm-text-card">
+                представляет собой защитную оболочку сетчатого типа и изготавливается из стальной нержавеющей проволоки
+                12Х18Н9Т. Позволяет обеспечить работоспособность рукава при воздействии различных нагрузок, а также
+                пульсации давлений, возникающих при транспортировке по гибкому элементу рабочей среды. Оплетка должна
+                плотно облегать рукав, не иметь оборванных частей.
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-braid-dvukhsloynaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Двухслойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_dvoinaya.png' %}" alt="opletka">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-braid-trekhsloynaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Трёхслойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_troinaya.png' %}" alt="opletka">
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
