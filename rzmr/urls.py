@@ -49,6 +49,8 @@ urlpatterns = [
          name='metalhoses-outside-rezinovaya_obolochka'),
     path('metalhoses/outside/pruzhina/', OutsidePruzhinaView.as_view(),
          name='metalhoses-outside-pruzhina'),
-    path('metalhoses/outside/pletenka-mednaya-luzhenaya-pml/', OutsidePletenkaMednayaLuzhenayaPml.as_view(),
+    path('metalhoses/outside/pletenka-mednaya-luzhenaya-pml/', OutsidePletenkaMednayaLuzhenayaPmlView.as_view(),
          name='metalhoses-outside-pletenka_mednaya_luzhenaya_pml'),
+    path('metalhoses/recommendations/', RecommendationsView.as_view(),
+         name='metalhoses-recommendations'),
 ]

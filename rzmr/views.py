@@ -91,6 +91,7 @@ class FittingsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),]
         c_def = self.get_user_context(
             title='Концевая арматура для металлорукавов')
         return {**context, **c_def}
@@ -350,7 +351,7 @@ class OutsidePruzhinaView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class OutsidePletenkaMednayaLuzhenayaPml(DataMixin, FormView):
+class OutsidePletenkaMednayaLuzhenayaPmlView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/outside_pletenka_mednaya_luzhenaya_pml.html'
 
@@ -360,4 +361,16 @@ class OutsidePletenkaMednayaLuzhenayaPml(DataMixin, FormView):
                       ('metalhoses-outside', 'Наружная оплетка')]
         c_def = self.get_user_context(
             title='Плетенка медная луженая (ПМЛ)', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class RecommendationsView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/recommendations.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),]
+        c_def = self.get_user_context(
+            title='Рекомендации по выбору металлорукава серии РГМ', breadcrumb=breadcrumb)
         return {**context, **c_def}
