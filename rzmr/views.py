@@ -221,3 +221,66 @@ class BraidTrekhsloynayaView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Трёхслойная оплётка для металлорукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}
+
+
+class InnerView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/inner.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),]
+        c_def = self.get_user_context(
+            title='Внутренний экран', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class InnerTrubnyyView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/inner_trubnyy.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-inner', 'Внутренний экран')]
+        c_def = self.get_user_context(
+            title='Трубный внутренний экран', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class InnerValtsovannyyView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/inner_valtsovannyy.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-inner', 'Внутренний экран')]
+        c_def = self.get_user_context(
+            title='Вальцованный внутренний экран', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class InnerOpletochnyyView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/inner_opletochnyy.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-inner', 'Внутренний экран')]
+        c_def = self.get_user_context(
+            title='Оплёточный внутренний экран', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class InnerPTFEView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/inner_PTFE.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-inner', 'Внутренний экран')]
+        c_def = self.get_user_context(title='PTFE', breadcrumb=breadcrumb)
+        return {**context, **c_def}

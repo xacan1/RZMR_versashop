@@ -1,0 +1,58 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                PTFE - фторопластовая трубка, применяется для исключения контакта высоко агрессивных сред с материалом
+                сильфона, концевой арматуры, как правило используется в химическом производстве, работе с кислотами,
+                химическими соединениями либо высокоадгезийными средами.
+            </p>
+            <p class="py-4">
+                <img src="{% static '/rzmr/img/marked_ekran_PTFE.png' %}" alt="ekran">
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-inner' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Внутренний экран
+                </p>
+                <p class="uzm-text-card">
+                    защитный элемент рукава, помещенный внутрь гибкой части позволяющий исключить/сократить контакт
+                    рукава
+                    со средой, либо за счет своего наличия продлить срок службы изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner-trubnyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Трубный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_trubnii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner-valtsovannyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Вальцованный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_valcovanii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner-opletochnyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Оплеточный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_PTFE.png' %}" alt="ekran">
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

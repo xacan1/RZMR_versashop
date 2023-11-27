@@ -31,4 +31,13 @@ urlpatterns = [
          name='metalhoses-braid-dvukhsloynaya'),
     path('metalhoses/braid/trekhsloynaya/', BraidTrekhsloynayaView.as_view(),
          name='metalhoses-braid-trekhsloynaya'),
+    path('metalhoses/inner/', InnerView.as_view(), name='metalhoses-inner'),
+    path('metalhoses/inner/trubnyy/', InnerTrubnyyView.as_view(),
+         name='metalhoses-inner-trubnyy'),
+    path('metalhoses/inner/valtsovannyy/', InnerValtsovannyyView.as_view(),
+         name='metalhoses-inner-valtsovannyy'),
+    path('metalhoses/inner/opletochnyy/', InnerOpletochnyyView.as_view(),
+         name='metalhoses-inner-opletochnyy'),
+    path('metalhoses/inner/ptfe/', InnerPTFEView.as_view(),
+         name='metalhoses-inner-ptfe'),
 ]

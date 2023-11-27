@@ -1,0 +1,59 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Трубный - труба, закреплённая с одного конца к внутреннему стакану металлорукава, применяется при
+                транспортировке среды с высокой температурой (например выхлопные газы), для предотвращения прогорания
+                сильфона. Применяется на изделиях небольшой длины, так как трубный внутренний экран не позволяет рукаву
+                работать на изгиб.
+            </p>
+            <p class="py-4">
+                <img src="{% static '/rzmr/img/marked_ekran_trubnii.png' %}" alt="opletka">
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-inner' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Внутренний экран
+                </p>
+                <p class="uzm-text-card">
+                    защитный элемент рукава, помещенный внутрь гибкой части позволяющий исключить/сократить контакт
+                    рукава
+                    со средой, либо за счет своего наличия продлить срок службы изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner-valtsovannyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Вальцованный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_valcovanii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner-opletochnyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Оплеточный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_opletochnii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner-ptfe' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_PTFE.png' %}" alt="ekran">
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
