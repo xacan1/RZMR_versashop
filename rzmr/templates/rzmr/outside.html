@@ -1,0 +1,83 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Термочехол - применяется для защиты металлорукава от воздействия высоких температур, до 1500 С°.
+            </p>
+            <p>
+                Терморукав - используется для защиты персонала, работающего в непосредственной близости с
+                металлорукавом, от ожогов или обморожения, при транспортировке сред с низкими либо высокими
+                температурами.
+            </p>
+            <p>
+                Резиновая оболочка - позволяет защитить оплетку металлорукава от механических повреждений.
+            </p>
+            <p>
+                Пружина - обеспечивает защиту гибкой части металлорукава от изломов. Как правило защищает место заделки
+                концевой арматуры от перегибов, иногда устанавливается по всей длине металлорукава.
+            </p>
+            <p>
+                Плетенка медная луженая (ПМЛ) – применяется для экранирования рукавов, что защищает и предотвращает от
+                электромагнитных наводок и излучений, также используется для заземления металлорукавов и токоведущих
+                частей оборудования.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <p class="wrapper-up-uzm-card fs-5">
+                Наружная оболочка
+            </p>
+            <p class="uzm-text-card">
+                часть рукава в которую заключается гибкая часть для предотвращения различных воздействий (температурных,
+                механических и т.д.). Выбирается исходя из предполагаемых условий эксплуатации изделия.
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside-termochekhol' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Термочехол</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_termochehol.png' %}" alt="outside">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside-termorukav' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Терморукав</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_termorukav.png' %}" alt="outside">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside-rezinovaya_obolochka' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Резиновая оболочка</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_rezinovaya_obolochka.png' %}" alt="outside">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside-pruzhina' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Пружина</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_pruzhina.png' %}" alt="outside">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside-pletenka_mednaya_luzhenaya_pml' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Плетенка медная луженая (ПМЛ)</div>
+                </div>
+                <img src="{% static '/rzmr/img/pletenka_mednaya_luzonaya.png' %}" alt="outside">
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

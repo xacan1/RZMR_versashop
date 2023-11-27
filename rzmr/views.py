@@ -284,3 +284,80 @@ class InnerPTFEView(DataMixin, FormView):
                       ('metalhoses-inner', 'Внутренний экран')]
         c_def = self.get_user_context(title='PTFE', breadcrumb=breadcrumb)
         return {**context, **c_def}
+
+
+class OutsideView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/outside.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),]
+        c_def = self.get_user_context(
+            title='Наружная оплетка', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class OutsideTermochekholView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/outside_termochekhol.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-outside', 'Наружная оплетка')]
+        c_def = self.get_user_context(
+            title='Термочехол для металлорукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class OutsideTermorukavView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/outside_termorukav.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-outside', 'Наружная оплетка')]
+        c_def = self.get_user_context(
+            title='Терморукав для металлорукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class OutsideRezinovayaObolochkaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/outside_rezinovaya_obolochka.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-outside', 'Наружная оплетка')]
+        c_def = self.get_user_context(
+            title='Резиновая оболочка для металлорукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class OutsidePruzhinaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/outside_pruzhina.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-outside', 'Наружная оплетка')]
+        c_def = self.get_user_context(
+            title='Пружина для металлорукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class OutsidePletenkaMednayaLuzhenayaPml(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/outside_pletenka_mednaya_luzhenaya_pml.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-outside', 'Наружная оплетка')]
+        c_def = self.get_user_context(
+            title='Плетенка медная луженая (ПМЛ)', breadcrumb=breadcrumb)
+        return {**context, **c_def}

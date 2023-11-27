@@ -1,0 +1,66 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Терморукав - используется для защиты персонала, работающего в непосредственной близости с
+                металлорукавом, от ожогов или обморожения, при транспортировке сред с низкими либо высокими
+                температурами.
+            </p>
+            <p class="py-4">
+                <img src="{% static '/rzmr/img/marked_termorukav.png' %}" alt="outside">
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-outside' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Наружная оболочка
+                </p>
+                <p class="uzm-text-card">
+                    часть рукава в которую заключается гибкая часть для предотвращения различных воздействий
+                    (температурных,
+                    механических и т.д.). Выбирается исходя из предполагаемых условий эксплуатации изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside-termochekhol' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Термочехол</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_termochehol.png' %}" alt="outside">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside-rezinovaya_obolochka' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Резиновая оболочка</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_rezinovaya_obolochka.png' %}" alt="outside">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside-pruzhina' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Пружина</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_pruzhina.png' %}" alt="outside">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside-pletenka_mednaya_luzhenaya_pml' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Плетенка медная луженая (ПМЛ)</div>
+                </div>
+                <img src="{% static '/rzmr/img/pletenka_mednaya_luzonaya.png' %}" alt="outside">
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
