@@ -81,7 +81,7 @@ class MetalhosesView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Металлические рукава')
+        c_def = self.get_user_context(title='Металлорукава')
         return {**context, **c_def}
 
 
@@ -102,8 +102,9 @@ class CorrugationView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),]
         c_def = self.get_user_context(
-            title='Гофрированные металлорукава РГМ')
+            title='Гофрированные металлорукава РГМ', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -113,8 +114,10 @@ class CorrugationStandartnayaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-corrugation', 'Гофра')]
         c_def = self.get_user_context(
-            title='Гофрированные металлорукава РГМ средней гибкости')
+            title='Гофрированные металлорукава РГМ средней гибкости', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -124,8 +127,10 @@ class CorrugationPovyshennoyGibkostiView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-corrugation', 'Гофра')]
         c_def = self.get_user_context(
-            title='Гофрированные металлорукава РГМ повышенной гибкости')
+            title='Гофрированные металлорукава РГМ повышенной гибкости', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -135,8 +140,10 @@ class CorrugationTyazhelayaSeriyaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-corrugation', 'Гофра')]
         c_def = self.get_user_context(
-            title='Гофрированные металлорукава РГМ тяжелой серии до 400 кгс/см2')
+            title='Гофрированные металлорукава РГМ тяжелой серии до 400 кгс/см2', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -146,8 +153,10 @@ class CorrugationSpiralnayaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-corrugation', 'Гофра')]
         c_def = self.get_user_context(
-            title='Спиральный гофрированный металлорукав РГМ')
+            title='Спиральный гофрированный металлорукав РГМ', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -157,8 +166,10 @@ class CorrugationDvuhsloinayaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-corrugation', 'Гофра')]
         c_def = self.get_user_context(
-            title='Двухслойный гофрированный металлорукав РГМ')
+            title='Двухслойный гофрированный металлорукав РГМ', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -168,8 +179,8 @@ class BraidView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(
-            title='Металлорукава в металлической оплетке')
+        breadcrumb = [('metalhoses', 'Металлорукава'),]
+        c_def = self.get_user_context(title='Оплётка', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -179,8 +190,10 @@ class BraidOdnosloynayaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-braid', 'Оплётка')]
         c_def = self.get_user_context(
-            title='Стальная однослойная нержавеющая оплетка')
+            title='Стальная однослойная нержавеющая оплетка', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -190,8 +203,10 @@ class BraidDvukhsloynayaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-braid', 'Оплётка')]
         c_def = self.get_user_context(
-            title='Двухслойная оплётка для металлорукавов')
+            title='Двухслойная оплётка для металлорукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -201,6 +216,8 @@ class BraidTrekhsloynayaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),
+                      ('metalhoses-braid', 'Оплётка')]
         c_def = self.get_user_context(
-            title='Трёхслойная оплётка для металлорукавов')
+            title='Трёхслойная оплётка для металлорукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}

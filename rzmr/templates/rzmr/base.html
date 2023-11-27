@@ -185,7 +185,10 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item small"><a href="{% url 'home' %}">Главная</a></li>
-                        <li class="breadcrumb-item active small" aria-current="page">{{ title }}</li>
+                        {% for url_name, url_title in breadcrumb %}
+                        <li class="breadcrumb-item small"><a href="{% url url_name %}">{{ url_title }}</a></li>
+                        {% endfor %}
+                        <li class="breadcrumb-item small active" aria-current="page">{{ title }}</li>
                     </ol>
                 </nav>
                 {% endif %}

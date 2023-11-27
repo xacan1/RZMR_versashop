@@ -17,6 +17,9 @@ class DataMixin:
         context['company_name'] = config.COMPANY_NAME
         context['company_name_short'] = config.COMPANY_NAME_SHORT
 
+        if 'breadcrumb' not in context:
+            context['breadcrumb'] = []
+
         if 'title' not in context:
             context['title'] = config.COMPANY_NAME
 
