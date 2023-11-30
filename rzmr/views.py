@@ -362,7 +362,7 @@ class OutsidePletenkaMednayaLuzhenayaPmlView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Плетенка медная луженая (ПМЛ)', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class RecommendationsView(DataMixin, FormView):
     form_class = SimpleForm
@@ -373,4 +373,16 @@ class RecommendationsView(DataMixin, FormView):
         breadcrumb = [('metalhoses', 'Металлорукава'),]
         c_def = self.get_user_context(
             title='Рекомендации по выбору металлорукава серии РГМ', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class InstallationSafetyView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/installation_safety.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', 'Металлорукава'),]
+        c_def = self.get_user_context(
+            title='Монтаж и безопасность металлорукавов серии РГМ', breadcrumb=breadcrumb)
         return {**context, **c_def}

@@ -53,4 +53,6 @@ urlpatterns = [
          name='metalhoses-outside-pletenka_mednaya_luzhenaya_pml'),
     path('metalhoses/recommendations/', RecommendationsView.as_view(),
          name='metalhoses-recommendations'),
+    path('metalhoses/installation/', InstallationSafetyView.as_view(),
+         name='installation'),
 ]

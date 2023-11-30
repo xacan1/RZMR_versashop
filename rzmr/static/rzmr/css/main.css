@@ -489,4 +489,28 @@ img {
     text-align: center;
 }
 
+.uzm-wrapper-install-imgs {
+    border-top: 1px solid #035491;
+    position: relative;
+}
+
+.uzm-wrapper-install-imgs::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 8px solid transparent;
+    border-left: 8px solid #035491;
+    border-top: 8px solid #035491;
+    z-index: 10;
+}
+
+.uzm-vertical-line {
+    height: 30vh;
+    border-left: 1px solid #dbdbdb;
+}
+
 /* end main index */
