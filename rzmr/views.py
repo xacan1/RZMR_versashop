@@ -444,3 +444,24 @@ class PTFEStandartsView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Стандарты качества на фторопластовых рукавов серии РФП, РФГ', breadcrumb=breadcrumb)
         return {**context, **c_def}
+    
+
+class EngineeringView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/engineering.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Производство изделий на заказ')
+        return {**context, **c_def}
+    
+
+class EngineeringAccessoriesView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/engineering_accessories.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('engineering', 'Производство изделий на заказ'),]
+        c_def = self.get_user_context(title='Технологическая оснастка', breadcrumb=breadcrumb)
+        return {**context, **c_def}

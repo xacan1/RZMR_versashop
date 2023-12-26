@@ -62,4 +62,7 @@ urlpatterns = [
          name='ptfe-recommendations'),
     path('ptfe/fittings/', PTFEFittingsView.as_view(), name='ptfe-fittings'),
     path('ptfe/standarts/', PTFEStandartsView.as_view(), name='ptfe-standarts'),
+    path('engineering/', EngineeringView.as_view(), name='engineering'),
+    path('engineering/accessories/', EngineeringAccessoriesView.as_view(),
+         name='engineering-accessories'),
 ]

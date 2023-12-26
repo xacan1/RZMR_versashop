@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-2 col-lg-1">
                         <div class="header-element">
-                            <a href="mailto:info@uzmr.ru">info@rzmr.ru</a>
+                            <a href="mailto:{{ company_email }}">{{ company_email }}</a>
                         </div>
                     </div>
                     <div class="d-xl-block d-none col-2">
@@ -134,14 +134,12 @@
                                     <li><a class="dropdown-item" href="{% url 'ptfe-fittings' %}">Концевая арматура</a></li>
                                     <li><a class="dropdown-item" href="{% url 'ptfe-standarts' %}">Стандарты качества</a></li>
                                     <!-- <li><a class="dropdown-item" href="#">Гофрированные</a></li> -->
-                                    <li><a class="dropdown-item" href="#">Серийная продукция</a></li>
-                                    <li><a class="dropdown-item" href="#">Фторопластовые рукава высокого
-                                            давления</a>
+                                    <!-- <li><a class="dropdown-item" href="#">Серийная продукция</a></li> -->
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown4" role="button"
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown4" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Фильтры и агрегаты</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
                                     <li><a class="dropdown-item" href="#">Топливные фильтры</a></li>
@@ -154,7 +152,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown5" role="button"
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown5" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Концевая арматура</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
                                     <li><a class="dropdown-item" href="#">Резьбовая арматура</a></li>
@@ -164,11 +162,12 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown6" role="button"
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown6" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Нестандартное
                                     оборудование</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
-                                    <li><a class="dropdown-item" href="#">Технологическая оснастка</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'engineering' %}">Изделия на заказ</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'engineering-accessories' %}">Технологическая оснастка</a></li>
                                     <li><a class="dropdown-item" href="#">По чертежам заказчика</a></li>
                                     <li><a class="dropdown-item" href="#">Испытания на герметичность и прочность</a>
                                     </li>
@@ -275,7 +274,7 @@
                     <div><a href="tel:+73472929864">+7 (347) 292-98-64</a></div>
                     <div><a href="tel:+73472747387">+7 (347) 274-73-87</a></div>
                     <div><a href="#">Заказать звонок</a></div>
-                    <div><a href="mailto:info@uzmr.ru">info@rzmr.ru</a></div>
+                    <div><a href="mailto:{{ company_email }}">{{ company_email }}</a></div>
                     <div><a href="#">г.Санкт-Петербург, ул.Замшина, д.31 К.4, офис 3-Н/4</a></div>
                 </div>
             </div>
