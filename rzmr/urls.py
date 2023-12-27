@@ -65,4 +65,7 @@ urlpatterns = [
     path('engineering/', EngineeringView.as_view(), name='engineering'),
     path('engineering/accessories/', EngineeringAccessoriesView.as_view(),
          name='engineering-accessories'),
+    path('engineering/test/', EngineeringTestView.as_view(),
+         name='engineering-test'),
+    path('privacy/', PrivacyView.as_view(), name='privacy'),
 ]

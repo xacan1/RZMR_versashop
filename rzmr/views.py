@@ -465,3 +465,24 @@ class EngineeringAccessoriesView(DataMixin, FormView):
         breadcrumb = [('engineering', 'Производство изделий на заказ'),]
         c_def = self.get_user_context(title='Технологическая оснастка', breadcrumb=breadcrumb)
         return {**context, **c_def}
+    
+
+class EngineeringTestView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/engineering_test.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('engineering', 'Производство изделий на заказ'),]
+        c_def = self.get_user_context(title='Испытания на герметичность и прочность', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PrivacyView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/privacy.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Политика конфиденциальности')
+        return {**context, **c_def}

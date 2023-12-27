@@ -105,7 +105,7 @@
                                     <li><a class="dropdown-item" href="{% url 'for-suppliers' %}">Поставщикам</a></li>
                                     <li><a class="dropdown-item" href="{% url 'vacancies' %}">Вакансии</a></li>
                                     <li><a class="dropdown-item" href="{% url 'posts' %}">Статьи</a></li>
-                                    <li><a class="dropdown-item" href="#">Новости</a></li>
+                                    <!-- <li><a class="dropdown-item" href="#">Новости</a></li> -->
                                     <li><a class="dropdown-item" href="{% url 'contacts' %}">Контакты</a></li>
                                 </ul>
                             </li>
@@ -168,8 +168,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
                                     <li><a class="dropdown-item" href="{% url 'engineering' %}">Изделия на заказ</a></li>
                                     <li><a class="dropdown-item" href="{% url 'engineering-accessories' %}">Технологическая оснастка</a></li>
-                                    <li><a class="dropdown-item" href="#">По чертежам заказчика</a></li>
-                                    <li><a class="dropdown-item" href="#">Испытания на герметичность и прочность</a>
+                                    <li><a class="dropdown-item" href="{% url 'engineering-test' %}">Испытания на герметичность и прочность</a>
                                     </li>
                                 </ul>
                             </li>
@@ -206,34 +205,34 @@
                     <a href="{% url 'home' %}"><img src="{% static 'rzmr/img/logo2.svg' %}" width="180" height="60"
                             alt="logo2"></a>
                     <p class="footer-title">О заводе</p>
-                    <div><a href="#">Система качества и сертификации</a></div>
-                    <div><a href="#">Наши клиенты</a></div>
-                    <div><a href="#">Поставщикам</a></div>
-                    <div><a href="#">Вакансии</a></div>
-                    <div><a href="#">Статьи</a></div>
-                    <div><a href="#">Новости</a></div>
+                    <div><a href="{% url 'quality' %}">Система качества и сертификации</a></div>
+                    <div><a href="{% url 'our-customer' %}">Наши клиенты</a></div>
+                    <div><a href="{% url 'for-suppliers' %}">Поставщикам</a></div>
+                    <div><a href="{% url 'vacancies' %}">Вакансии</a></div>
+                    <div><a href="{% url 'posts' %}">Статьи</a></div>
+                    <!-- <div><a href="#">Новости</a></div> -->
                 </div>
                 <div class="d-md-block d-none col-3">
                     <p class="footer-title">Металлорукава</p>
-                    <div><a href="#">Концевая арматура</a></div>
-                    <div><a href="#">Рекомендации по выбору</a></div>
-                    <div><a href="#">Монтаж и безопасность</a></div>
-                    <div><a href="#">Стандарты качества</a></div>
-                    <div><a href="#">Под приварку</a></div>
-                    <div><a href="#">Серийная продукция</a></div>
-                    <div><a href="#">Металлорукава РГМ</a></div>
-                    <div><a href="#">Металлорукава высокого давления</a></div>
+                    <div><a href="{% url 'metalhoses-fittings' %}">Концевая арматура</a></div>
+                    <div><a href="{% url 'metalhoses-recommendations' %}">Рекомендации по выбору</a></div>
+                    <div><a href="{% url 'metalhoses-installation' %}">Монтаж и безопасность</a></div>
+                    <div><a href="{% url 'metalhoses-standarts-grm' %}">Стандарты качества</a></div>
+                    <!-- <div><a href="#">Под приварку</a></div> -->
+                    <!-- <div><a href="#">Серийная продукция</a></div> -->
+                    <!-- <div><a href="#">Металлорукава РГМ</a></div> -->
+                    <!-- <div><a href="#">Металлорукава высокого давления</a></div> -->
                 </div>
                 <div class="d-md-block d-none col-3">
                     <p class="footer-title">Фторопластовые рукава</p>
-                    <div><a href="#">Фторопластовые рукава серии РФ</a></div>
-                    <div><a href="#">Концевая арматура</a></div>
-                    <div><a href="#">Рекомендации по выбору</a></div>
-                    <div><a href="#">Монтаж и безопасность</a></div>
-                    <div><a href="#">Стандарты качества</a></div>
-                    <div><a href="#">Гофрированные</a></div>
-                    <div><a href="#">Серийная продукция</a></div>
-                    <div><a href="#">Фторопластовые рукава высокого давления</a></div>
+                    <div><a href="{% url 'ptfe' %}">Фторопластовые рукава серии РФ</a></div>
+                    <div><a href="{% url 'ptfe-fittings' %}">Концевая арматура</a></div>
+                    <div><a href="{% url 'ptfe-recommendations' %}">Рекомендации по выбору</a></div>
+                    <!-- <div><a href="#">Монтаж и безопасность</a></div> -->
+                    <div><a href="{% url 'ptfe-standarts' %}">Стандарты качества</a></div>
+                    <!-- <div><a href="#">Гофрированные</a></div> -->
+                    <!-- <div><a href="#">Серийная продукция</a></div> -->
+                    <!-- <div><a href="#">Фторопластовые рукава высокого давления</a></div> -->
                 </div>
                 <div class="d-md-block d-none col-md-3 col-6">
                     <p class="footer-title">Фильтры и агрегаты</p>
@@ -256,9 +255,9 @@
                 </div>
                 <div class="d-md-block d-none col-3">
                     <p class="footer-title">Инжиниринг и нестандартное оборудование</p>
-                    <div><a href="#">Технологическая оснастка</a></div>
-                    <div><a href="#">По чертежам заказчика</a></div>
-                    <div><a href="#">Испытания на герметичность и прочность</a></div>
+                    <div><a href="{% url 'engineering-accessories' %}">Технологическая оснастка</a></div>
+                    <div><a href="{% url 'engineering' %}">Изделия на заказ</a></div>
+                    <div><a href="{% url 'engineering-test' %}">Испытания на герметичность и прочность</a></div>
                 </div>
                 <div class="col-md-3 col-6">
                     <p class="footer-title">Россия</p>
@@ -281,11 +280,10 @@
         </div>
         <div class="footer-end">
             <span>©{% now 'Y' %} {{ company_name }}. Все права защищены. </span>
-            <a href="#">Политика конфиденциальности</a>
+            <a href="{% url 'privacy' %}">Политика конфиденциальности</a>
         </div>
     </footer>
 
     <script src="{% static 'rzmr/js/bootstrap.bundle.min.js' %}"></script>
 </body>
-
 </html>
