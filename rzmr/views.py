@@ -444,7 +444,122 @@ class PTFEStandartsView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Стандарты качества на фторопластовых рукавов серии РФП, РФГ', breadcrumb=breadcrumb)
         return {**context, **c_def}
+
+
+class PTFEPipeView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_pipe.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', ' Фторопластовые рукава'),]
+        c_def = self.get_user_context(
+            title='Трубка для фторопластовых рукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class PTFEPloskayaStandartnoeIspolnenieView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_pipe_ploskaya_standartnoe_ispolnenie.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-pipe', 'Трубка')]
+        c_def = self.get_user_context(
+            title='Плоская стандартное исполнение', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class PTFEPloskayaTolstostennayaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_pipe_ploskaya_tolstostennaya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-pipe', 'Трубка')]
+        c_def = self.get_user_context(
+            title='Плоская толстостенная трубка для фторопластовых рукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
     
+
+class PTFEGofrirovannayaStandartnoeIspolnenieView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_pipe_gofrirovannaya_standartnoe_ispolnenie.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-pipe', 'Трубка')]
+        c_def = self.get_user_context(
+            title='Гофрированная стандартное исполнение', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFEGofrirovannayaTolstostennayaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_pipe_gofrirovannaya_tolstostennaya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-pipe', 'Трубка')]
+        c_def = self.get_user_context(
+            title='Гофрированная толстостенная трубка для фторопластовых рукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFELinerView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_liner.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),]
+        c_def = self.get_user_context(
+            title='Футеровка PTFE', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFEFuterovkaPloskoyTrubkiNaFlanetsView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_futerovka_ploskoy_trubki_na_flanets.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-liner', 'Футеровка PTFE')]
+        c_def = self.get_user_context(
+            title='PTFE футеровка плоской трубки на фланец', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFEFuterovkaGofrirovannoyTrubkiNaFlanetsView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_futerovka_gofrirovannoy_trubki_na_flanets.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-liner', 'Футеровка PTFE')]
+        c_def = self.get_user_context(
+            title='PTFE футеровка гофрированной трубки на фланец', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class PTFEFuterovkaPloskoyTrubkiNaNippelGaykiView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_futerovka_ploskoy_trubki_na_nippel_gayki.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-liner', 'Футеровка PTFE')]
+        c_def = self.get_user_context(
+            title='PTFE футеровка плоской трубки на ниппель гайки', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
 
 class EngineeringView(DataMixin, FormView):
     form_class = SimpleForm
@@ -454,7 +569,7 @@ class EngineeringView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title='Производство изделий на заказ')
         return {**context, **c_def}
-    
+
 
 class EngineeringAccessoriesView(DataMixin, FormView):
     form_class = SimpleForm
@@ -463,9 +578,10 @@ class EngineeringAccessoriesView(DataMixin, FormView):
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
         breadcrumb = [('engineering', 'Производство изделий на заказ'),]
-        c_def = self.get_user_context(title='Технологическая оснастка', breadcrumb=breadcrumb)
+        c_def = self.get_user_context(
+            title='Технологическая оснастка', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class EngineeringTestView(DataMixin, FormView):
     form_class = SimpleForm
@@ -474,9 +590,10 @@ class EngineeringTestView(DataMixin, FormView):
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
         breadcrumb = [('engineering', 'Производство изделий на заказ'),]
-        c_def = self.get_user_context(title='Испытания на герметичность и прочность', breadcrumb=breadcrumb)
+        c_def = self.get_user_context(
+            title='Испытания на герметичность и прочность', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PrivacyView(DataMixin, FormView):
     form_class = SimpleForm
