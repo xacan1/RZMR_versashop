@@ -1,0 +1,19 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Пружина - обеспечивает защиту гибкой части рукава от изломов. Как правило защищает место заделки
+                концевой арматуры от перегибов, иногда устанавливается по всей длине фторопластового рукава.
+            </p>
+            <p class="py-4">
+                <img src="{% static '/rzmr/img/marked_пружина_фторопласт.png' %}" alt="gofra">
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

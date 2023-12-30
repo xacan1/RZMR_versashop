@@ -97,9 +97,9 @@ class MetalhosesFittingsView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class CorrugationView(DataMixin, FormView):
+class MetalhosesCorrugationView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/corrugation.html'
+    template_name = 'rzmr/metalhoses_corrugation.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -109,9 +109,9 @@ class CorrugationView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class CorrugationStandartnayaView(DataMixin, FormView):
+class MetalhosesCorrugationStandartnayaView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/corrugation_standartnaya.html'
+    template_name = 'rzmr/metalhoses_corrugation_standartnaya.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -122,9 +122,9 @@ class CorrugationStandartnayaView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class CorrugationPovyshennoyGibkostiView(DataMixin, FormView):
+class MetalhosesCorrugationPovyshennoyGibkostiView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/corrugation_povishennoy_gibkosti.html'
+    template_name = 'rzmr/metalhoses_corrugation_povishennoy_gibkosti.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -135,9 +135,9 @@ class CorrugationPovyshennoyGibkostiView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class CorrugationTyazhelayaSeriyaView(DataMixin, FormView):
+class MetalhosesCorrugationTyazhelayaSeriyaView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/corrugation_tyazhelaya_seriya.html'
+    template_name = 'rzmr/metalhoses_corrugation_tyazhelaya_seriya.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -148,9 +148,9 @@ class CorrugationTyazhelayaSeriyaView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class CorrugationSpiralnayaView(DataMixin, FormView):
+class MetalhosesCorrugationSpiralnayaView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/corrugation_spiralnaya.html'
+    template_name = 'rzmr/metalhoses_corrugation_spiralnaya.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -161,9 +161,9 @@ class CorrugationSpiralnayaView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class CorrugationDvuhsloinayaView(DataMixin, FormView):
+class MetalhosesCorrugationDvuhsloinayaView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/corrugation_dvukhsloynaya.html'
+    template_name = 'rzmr/metalhoses_corrugation_dvukhsloynaya.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -174,9 +174,9 @@ class CorrugationDvuhsloinayaView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class BraidView(DataMixin, FormView):
+class MetalhosesBraidView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/braid.html'
+    template_name = 'rzmr/metalhoses_braid.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -185,9 +185,9 @@ class BraidView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class BraidOdnosloynayaView(DataMixin, FormView):
+class MetalhosesBraidOdnosloynayaView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/braid_odnosloynaya.html'
+    template_name = 'rzmr/metalhoses_braid_odnosloynaya.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -198,9 +198,9 @@ class BraidOdnosloynayaView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class BraidDvukhsloynayaView(DataMixin, FormView):
+class MetalhosesBraidDvukhsloynayaView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/braid_dvukhsloynaya.html'
+    template_name = 'rzmr/metalhoses_braid_dvukhsloynaya.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -211,9 +211,9 @@ class BraidDvukhsloynayaView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class BraidTrekhsloynayaView(DataMixin, FormView):
+class MetalhosesBraidTrekhsloynayaView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/braid_trekhsloynaya.html'
+    template_name = 'rzmr/metalhoses_braid_trekhsloynaya.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -224,9 +224,9 @@ class BraidTrekhsloynayaView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class InnerView(DataMixin, FormView):
+class MetalhosesInnerView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/inner.html'
+    template_name = 'rzmr/metalhoses_inner.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -236,9 +236,9 @@ class InnerView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class InnerTrubnyyView(DataMixin, FormView):
+class MetalhosesInnerTrubnyyView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/inner_trubnyy.html'
+    template_name = 'rzmr/metalhoses_inner_trubnyy.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -249,9 +249,9 @@ class InnerTrubnyyView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class InnerValtsovannyyView(DataMixin, FormView):
+class MetalhosesInnerValtsovannyyView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/inner_valtsovannyy.html'
+    template_name = 'rzmr/metalhoses_inner_valtsovannyy.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -262,9 +262,9 @@ class InnerValtsovannyyView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class InnerOpletochnyyView(DataMixin, FormView):
+class MetalhosesInnerOpletochnyyView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/inner_opletochnyy.html'
+    template_name = 'rzmr/metalhoses_inner_opletochnyy.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -275,9 +275,9 @@ class InnerOpletochnyyView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class InnerPTFEView(DataMixin, FormView):
+class MetalhosesInnerPTFEView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/inner_PTFE.html'
+    template_name = 'rzmr/metalhoses_inner_PTFE.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -287,9 +287,9 @@ class InnerPTFEView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class OutsideView(DataMixin, FormView):
+class MetalhosesOutsideView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/outside.html'
+    template_name = 'rzmr/metalhoses_outside.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -299,9 +299,9 @@ class OutsideView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class OutsideTermochekholView(DataMixin, FormView):
+class MetalhosesOutsideTermochekholView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/outside_termochekhol.html'
+    template_name = 'rzmr/metalhoses_outside_termochekhol.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -312,9 +312,9 @@ class OutsideTermochekholView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class OutsideTermorukavView(DataMixin, FormView):
+class MetalhosesOutsideTermorukavView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/outside_termorukav.html'
+    template_name = 'rzmr/metalhoses_outside_termorukav.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -325,9 +325,9 @@ class OutsideTermorukavView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class OutsideRezinovayaObolochkaView(DataMixin, FormView):
+class MetalhosesOutsideRezinovayaObolochkaView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/outside_rezinovaya_obolochka.html'
+    template_name = 'rzmr/metalhoses_outside_rezinovaya_obolochka.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -338,9 +338,9 @@ class OutsideRezinovayaObolochkaView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class OutsidePruzhinaView(DataMixin, FormView):
+class MetalhosesOutsidePruzhinaView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/outside_pruzhina.html'
+    template_name = 'rzmr/metalhoses_outside_pruzhina.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -351,9 +351,9 @@ class OutsidePruzhinaView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class OutsidePletenkaMednayaLuzhenayaPmlView(DataMixin, FormView):
+class MetalhosesOutsidePletenkaMednayaLuzhenayaPmlView(DataMixin, FormView):
     form_class = SimpleForm
-    template_name = 'rzmr/outside_pletenka_mednaya_luzhenaya_pml.html'
+    template_name = 'rzmr/metalhoses_outside_pletenka_mednaya_luzhenaya_pml.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
@@ -482,7 +482,7 @@ class PTFEPloskayaTolstostennayaView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Плоская толстостенная трубка для фторопластовых рукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEGofrirovannayaStandartnoeIspolnenieView(DataMixin, FormView):
     form_class = SimpleForm
@@ -495,7 +495,7 @@ class PTFEGofrirovannayaStandartnoeIspolnenieView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Гофрированная стандартное исполнение', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEGofrirovannayaTolstostennayaView(DataMixin, FormView):
     form_class = SimpleForm
@@ -508,7 +508,7 @@ class PTFEGofrirovannayaTolstostennayaView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Гофрированная толстостенная трубка для фторопластовых рукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFELinerView(DataMixin, FormView):
     form_class = SimpleForm
@@ -520,7 +520,7 @@ class PTFELinerView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Футеровка PTFE', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEFuterovkaPloskoyTrubkiNaFlanetsView(DataMixin, FormView):
     form_class = SimpleForm
@@ -533,7 +533,7 @@ class PTFEFuterovkaPloskoyTrubkiNaFlanetsView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='PTFE футеровка плоской трубки на фланец', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEFuterovkaGofrirovannoyTrubkiNaFlanetsView(DataMixin, FormView):
     form_class = SimpleForm
@@ -558,6 +558,121 @@ class PTFEFuterovkaPloskoyTrubkiNaNippelGaykiView(DataMixin, FormView):
                       ('ptfe-liner', 'Футеровка PTFE')]
         c_def = self.get_user_context(
             title='PTFE футеровка плоской трубки на ниппель гайки', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class PTFEInnerView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_inner.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),]
+        c_def = self.get_user_context(
+            title='Внутренний экран для фторопластовых рукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFEAntistaticheskayaPrisadkaPloskayaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_inner_antistaticheskaya_prisadka_ploskaya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-inner', 'Внутренний экран')]
+        c_def = self.get_user_context(
+            title='Антистатическая присадка плоская', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class PTFEAntistaticheskayaPrisadkaGofrirovannayaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_inner_antistaticheskaya_prisadka_gofrirovannaya.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-inner', 'Внутренний экран')]
+        c_def = self.get_user_context(
+            title='Антистатическая присадка гофрированная', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFEOutsideView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_outside.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),]
+        c_def = self.get_user_context(
+            title='Наружная оболочка для фторопластовых рукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class PTFEOutsideTermochekholView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_outside_termochekhol.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-outside', 'Наружная оболочка')]
+        c_def = self.get_user_context(
+            title='Термочехол для фторопластовых рукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFEOutsideRezinovayaObolochkaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_outside_rezinovaya_obolochka.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-outside', 'Наружная оболочка')]
+        c_def = self.get_user_context(
+            title='Резиновая оболочка для фторопластовых рукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFEOutsidePruzhinaView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_outside_pruzhina.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-outside', 'Наружная оболочка')]
+        c_def = self.get_user_context(
+            title='Пружина для фторопластовых рукавов', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class PTFEOutsidePloskayaTrubkaVMetallorukaveVOpletkeView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_outside_ploskaya_trubka_v_metallorukave_v_opletke.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-outside', 'Наружная оболочка')]
+        c_def = self.get_user_context(
+            title='Плоская трубка в металлорукаве в оплетке', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFEOutsideGofrirovannayaTrubkaVMetallorukaveVOpletkeView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_outside_gofrirovannaya_trubka_v_metallorukave_v_opletke.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+                      ('ptfe-outside', 'Наружная оболочка')]
+        c_def = self.get_user_context(
+            title='Гофрированная трубка в металлорукаве в оплетке', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
