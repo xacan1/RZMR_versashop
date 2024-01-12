@@ -11,7 +11,7 @@
                             <p class="fs-2">Металлорукава</p>
                             <p class="fs-5">На рынке более 12 лет</p>
                             <div class="button-uzm-slider">
-                                <button type="button" class="btn btn-danger btn-sm">Подробнее</button>
+                                <a href="{% url 'metalhoses' %}" class="btn btn-danger btn-sm">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                             <p class="fs-2">Фторопластовые рукава</p>
                             <p class="fs-5">Давление до 400 атм.</p>
                             <div class="button-uzm-slider">
-                                <button type="button" class="btn btn-danger btn-sm">Подробнее</button>
+                                <a href="{% url 'ptfe' %}" class="btn btn-danger btn-sm">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
             </div>
             <div class="row">
                 <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
-                    <a href="#">
+                    <a href="{% url 'metalhoses' %}">
                         <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
                             <img class="img-fluid" src="{% static 'rzmr/img/metallhoses.jpg' %}" alt="Металлорукава">
                             <div class="wrapper-img-uzm-up"></div>
@@ -141,7 +141,7 @@
                     </a>
                 </div>
                 <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
-                    <a href="#">
+                    <a href="{% url 'ptfe' %}">
                         <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
                             <img class="img-fluid" src="{% static 'rzmr/img/ftoroplast.jpg' %}" alt="Фторопластовые PTFE">
                             <div class="wrapper-img-uzm-up"></div>
