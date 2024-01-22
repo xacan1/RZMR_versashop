@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+
+{% load static %}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Hasan Valerievich Smirnov">
+    <meta name="publisher-email" content="h.smirnov.m@yandex.ru">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'main/images/favicon.ico' %}" />
+
+    <!-- ========================= CSS here ========================= -->
+    <link type="text/css" rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'main/css/LineIcons.3.0.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'main/css/tiny-slider.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'main/css/glightbox.min.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'main/css/main.css' %}" />
+    <title>{{ title }}</title>
+</head>
+
+<!-- <body class="d-flex flex-column h-100"> -->
+
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="top-left">
+                            <ul class="menu-top-link">
+                                <li>
+                                    <div class="select-position">
+                                        <select id="selectCurrency">
+                                            {% for currency in currencies %}
+                                            <option value="{{ currency.abbreviation }}">{{ currency.sign }} {{ currency.abbreviation }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="select-position">
+                                        <select id="selectLanuage">
+                                            <option value="0" selected>Русский</option>
+                                            <option value="1">Español</option>
+                                            <option value="2">English</option>
+                                            <option value="3">Français</option>
+                                            <option value="4">العربية</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="top-middle">
+                            <ul class="useful-links">
+                                {% for key, value in main_menu.items %}
+                                <li><a href="{% url value %}">{{ key }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="top-end">
+                            <div class="user">
+                                <i class="lni lni-user"></i>
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'personal-account' %}">Личный кабинет</a>
+                                {% endif %}
+                            </div>
+                            <ul class="user-login">
+                                {% if user.is_authenticated %}
+                                <li>
+                                    <a href="{% url 'personal-account' %}">{{ user.email }}</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'logout' %}">Выйти</a>
+                                </li>
+                                {% else %}
+                                <li>
+                                    <a href="{% url 'login' %}">Войти</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'registration' %}">Регистрация</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Topbar -->
+        <!-- Start Header Middle -->
+        <div class="header-middle">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-3 col-7">
+                        <!-- Start Header Logo -->
+                        <a class="navbar-brand py-0" href="{% url 'home' %}">
+                            <img src="{% static 'main/images/logo/logo-forsale.svg' %}" alt="Logo">
+                        </a>
+                        <!-- End Header Logo -->
+                    </div>
+                    <div class="col-lg-5 col-md-7 d-xs-none">
+                        <!-- Start Main Menu Search -->
+                        <div class="main-menu-search">
+                            <!-- navbar search start -->
+                            <form action="{% url 'search' %}" method="get">
+                                <div class="navbar-search search-style-5">
+                                    <div class="search-input">
+                                        <input type="text" name="q" value="{{ search_text }}" placeholder="Поиск" required>
+                                    </div>
+                                    <div class="search-btn">
+                                        <button class="submit"><i class="lni lni-search-alt"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- navbar search Ends -->
+                        </div>
+                        <!-- End Main Menu Search -->
+                    </div>
+                    <div class="col-lg-4 col-md-2 col-5">
+                        <div class="middle-right-area">
+                            <div class="nav-hotline">
+                                <i class="lni lni-phone"></i>
+                                <h3>Горячая линия:
+                                    <span>(+100) 123 456 7890</span>
+                                </h3>
+                            </div>
+                            <div class="navbar-cart">
+                                <div class="wishlist d-md-block d-none">
+                                    {%  if user.is_authenticated %}
+                                    <a href="{% url 'wishlist' %}">
+                                        <i class="lni lni-heart"></i>
+                                        <span class="total-items" id="shop-total-wishlist">0</span>
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'login' %}">
+                                        <i class="lni lni-heart"></i>
+                                        <span class="total-items">0</span>
+                                    </a>
+                                    {% endif %}
+                                </div>
+                                <div class="cart-items d-md-block d-none" id="shop-cart-header">
+                                    <a href="{% url 'cart' %}" class="main-btn">
+                                        <i class="lni lni-cart"></i>
+                                        <span id="shop-total-items" class="total-items"></span>
+                                    </a>
+                                    <!-- Корзина на главной странице -->
+                                    <div class="shopping-item">
+                                        <div class="dropdown-cart-header">
+                                            <span id="shop-total-quantity-cart"></span>
+                                            <a href="{% url 'cart' %}">Посмотреть корзину</a>
+                                        </div>
+                                        <ul class="shopping-list">
+                                            
+                                        </ul>
+                                        <div class="bottom">
+                                            
+                                        </div>
+                                    </div>
+                                    <!--/ End Shopping Item -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- тут дублируем поисковое поле отдельно для мобильных устройств -->
+                <div class="row align-items-center d-md-none">
+                    <div class="col-10">
+                        <!-- Start Main Menu Search -->
+                        <div class="main-menu-search">
+                            <!-- navbar search start -->
+                            <form action="{% url 'search' %}" method="GET">
+                                <div class="navbar-search search-style-5">
+                                    <div class="search-input">
+                                        <input type="text" name="q" value="{{ search_text }}" placeholder="Поиск">
+                                    </div>
+                                    <div class="search-btn">
+                                        <button class="submit"><i class="lni lni-search-alt"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- navbar search Ends -->
+                        </div>
+                        <!-- End Main Menu Search -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Header Middle -->
+        <!-- Start Header Bottom -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-lg-8 col-12">
+                    <div class="nav-inner">
+                        <!-- Start Mega Category Menu -->
+                        <div class="button mega-category-menu">
+                            <span class="btn cat-button" tabindex="1"><i class="lni lni-menu"></i>Каталог</span>
+                            <!-- <button class="btn cat-button"><i class="lni lni-menu"></i>Каталог</button> -->
+                            <ul class="sub-category">
+                                {% include 'shop/categories.html' %}
+                            </ul>
+                        </div>
+                        <!-- End Mega Category Menu -->
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="{% url 'home' %}" class="active1" aria-label="Toggle navigation">Главная</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+                                            data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">Покупателю</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-2">
+                                            <!-- <li class="nav-item"><a href="{% url 'about-us' %}">О нас</a></li>
+                                            <li class="nav-item"><a href="{% url 'faq' %}">Частые вопросы</a></li> -->
+                                            <li class="nav-item">
+                                                <a href="{% url 'user-agreement' %}" aria-label="Toggle navigation">Пользовательское соглашение</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{% url 'privacy-policy' %}" aria-label="Toggle navigation">Политика конфиденциальности</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{% url 'purchase-returns' %}" aria-label="Toggle navigation">Возврат товара</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Nav Social -->
+                    <div class="nav-social">
+                        <h5 class="title">Наш торговый бот: </h5>
+                        <!-- <h5 class="title">Подписывайтесь на нас: </h5> -->
+                        <ul>
+                            <li>
+                                <a href="https://t.me/forsale_bot" target="_blank"><i class="lni lni-telegram-plane"></i></a>
+                            </li>
+                            <!-- <li>
+                                <a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><i class="lni lni-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><i class="lni lni-skype"></i></a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <!-- End Nav Social -->
+                </div>
+            </div>
+        </div>
+        <!-- End Header Bottom -->
+    </header>
+    <!-- End Header Area -->
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <script src="{% static 'shop/js/shop_client.js' %}"></script>
+    
+    <!-- Start Footer Area -->
+    <footer class="footer">
+        <!-- Start Footer Top -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="inner-content">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-12">
+                            <div class="footer-logo">
+                                <a href="{% url 'home' %}">
+                                    <img src="{% static 'main/images/logo/white-logo-forsale.svg' %}" alt="#">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-8 col-12">
+                            <div class="footer-newsletter">
+                                <h4 class="title">
+                                    Подписывайтесь на нашу новостную рассылку
+                                    <span>Получить всю последнюю информацию, продажи и предложения. </span>
+                                </h4>
+                                <div class="newsletter-form-head">
+                                    <form action="#" method="get" target="_blank" class="newsletter-form">
+                                        <input name="EMAIL" placeholder="Email..." type="email">
+                                        <div class="button">
+                                            <button class="btn" style="z-index: 1;">Подписаться<span class="dir-part"></span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Top -->
+        <!-- Start Footer Middle -->
+        <div class="footer-middle d-none d-md-block">
+            <div class="container">
+                <div class="bottom-inner">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer f-contact">
+                                <h3>Свяжитесь с нами</h3>
+                                <p class="phone">Phone: +1 (900) 33 169 7720</p>
+                                <ul>
+                                    <li><span>Понедельник-Пятница: </span> 9.00 - 18.00</li>
+                                    <li><span>Суббота: </span> 10.00 - 18.00</li>
+                                </ul>
+                                <p class="mail">
+                                    <a href="mailto:support@forsale.store">support@forsale.store</a>
+                                </p>
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer our-app">
+                                <h3>Наше мобильное приложение</h3>
+                                <ul class="app-btn">
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-apple"></i>
+                                            <span class="small-title">Скачать в</span>
+                                            <span class="big-title">App Store</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-play-store"></i>
+                                            <span class="small-title">Скачать в</span>
+                                            <span class="big-title">Google Play</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer f-link">
+                                <h3>Информация</h3>
+                                <ul>
+                                    <li><a href="{% url 'about-us' %}">О нас</a></li>
+                                    <li><a href="javascript:void(0)">Свяжитесь с нами</a></li>
+                                    <li><a href="javascript:void(0)">Загрузки</a></li>
+                                    <li><a href="javascript:void(0)">Карта сайта</a></li>
+                                    <li><a href="{% url 'faq' %}">Частые вопросы</a></li>
+                                </ul>
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Widget -->
+                            <div class="single-footer f-link">
+                                <h3>Отделы магазина</h3>
+                                <ul>
+                                    <li><a href="javascript:void(0)">Компьютеры и аксессуары</a></li>
+                                    <li><a href="javascript:void(0)">Смартфоны и планшеты</a></li>
+                                    <li><a href="javascript:void(0)">ТВ, видео и аудио</a></li>
+                                    <li><a href="javascript:void(0)">Камеры, фото и видео</a></li>
+                                    <li><a href="javascript:void(0)">Наушники</a></li>
+                                </ul>
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Middle -->
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner-content">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-12">
+                            <div class="payment-gateway">
+                                <span>Мы принимаем:</span>
+                                <img src="{% static 'main/images/footer/credit-cards-footer.png' %}" alt="#">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="copyright">
+                                <p>Разработака сайта<a href="https://auto-norms.ru/" rel="nofollow"
+                                        target="_blank">Hasan Smirnov</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <ul class="socila">
+                                <li>
+                                    <span>Наш торговый бот:</span>
+                                </li>
+                                <li><a href="https://t.me/forsale_bot" target="_blank"><i class="lni lni-telegram-plane"></i></a></li>
+                                <!-- <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-google"></i></a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+
+        <!-- footer mobile -->
+        <section class="versa-footer-mobile d-md-none">
+            <div class="container">
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}">
+                            <svg width="21" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.397 2.481a2.25 2.25 0 012.206 0l5 2.812a2.25 2.25 0 011.147 1.962V16a2.25 2.25 0 01-2.25 2.25h-1.25V13a2.75 2.75 0 00-2.75-2.75h-2A2.75 2.75 0 005.75 13v5.25H4.5A2.25 2.25 0 012.25 16V7.255a2.25 2.25 0 011.147-1.962l5-2.812zM11.75 18.25h-4.5V13c0-.69.56-1.25 1.25-1.25h2c.69 0 1.25.56 1.25 1.25v5.25zm-6 1.5H4.5A3.75 3.75 0 01.75 16V7.255a3.75 3.75 0 011.912-3.269l5-2.812a3.75 3.75 0 013.676 0l5 2.812a3.75 3.75 0 011.912 3.269V16a3.75 3.75 0 01-3.75 3.75H5.75z" fill="#AFAFAF"></path>
+                            </svg>
+                            <div>Главная</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'product-list' 'root' %}">
+                            <svg width="21" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.5.25a.75.75 0 000 1.5h13a.75.75 0 000-1.5h-13zm9.75 8.77a4.27 4.27 0 117.299 3.01l-.01.01-.008.009a4.27 4.27 0 01-7.28-3.029zm10.04 0a5.745 5.745 0 01-1.194 3.515l2.934 2.935a.75.75 0 01-1.06 1.06l-2.934-2.934A5.77 5.77 0 1121.29 9.02zM.75 7a.75.75 0 01.75-.75h4a.75.75 0 010 1.5h-4A.75.75 0 01.75 7zm.75 5.25a.75.75 0 000 1.5h6a.75.75 0 000-1.5h-6z" fill="#AFAFAF"></path>
+                            </svg>
+                            <div>Каталог</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'cart' %}">
+                            <svg width="21" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M.75 1A.75.75 0 011.5.25h1.382a1.75 1.75 0 011.565.967l-.67.336.67-.336.517 1.033h13.674a1.25 1.25 0 011.086 1.87l-3.285 5.748a1.75 1.75 0 01-1.52.882H7.417l-1.324 2.117a.25.25 0 00.212.383H17.5a.75.75 0 010 1.5H6.304c-1.374 0-2.212-1.512-1.484-2.678L6.172 9.91 3.809 3.295l-.703-1.407a.25.25 0 00-.224-.138H1.5A.75.75 0 01.75 1zm4.814 2.75l1.965 5.5h7.39a.25.25 0 00.218-.126l3.07-5.374H5.565zM8.5 17.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM16 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="#AFAFAF"></path>
+                            </svg>
+                            <div>Корзина</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% if user.is_authenticated %} {% url 'cart' %} {% else %} {% url 'login' %} {% endif %}">
+                            <svg width="21" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.789 4c1.397 0 2.733.595 3.71 1.645C20.461 6.68 21 8.075 21 9.527c0 1.45-.538 2.846-1.554 3.933l-6.766 6.273a1 1 0 01-1.36 0L4.5 13.408c-2.001-2.151-2.001-5.612 0-7.763 2.04-2.193 5.38-2.193 7.42 0L12 5.73l.079-.085C13.056 4.595 14.39 4 15.789 4zm0 2c-.836 0-1.643.36-2.246 1.007l-.811.872a1 1 0 01-1.464 0l-.812-.872c-1.249-1.342-3.242-1.342-4.49 0-1.288 1.384-1.288 3.655-.053 4.987L12 17.637l6.034-5.591c.616-.662.966-1.57.966-2.52s-.35-1.857-.966-2.519C17.432 6.36 16.624 6 15.79 6z" fill="#AFAFAF"></path>
+                            </svg>
+                            <div>Избранное</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}">
+                            <svg width="21" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 1.75a8.25 8.25 0 00-6.35 13.517c1.447-1.48 3.392-2.701 6.35-2.701 2.957 0 4.902 1.21 6.351 2.7A8.25 8.25 0 0010.5 1.75zm5.293 14.579c-1.244-1.285-2.83-2.263-5.293-2.263-2.46 0-4.047.984-5.292 2.263A8.217 8.217 0 0010.5 18.25c2.014 0 3.86-.722 5.293-1.921zM.75 10C.75 4.615 5.115.25 10.5.25s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S.75 15.385.75 10zm9.75-4.46a2.566 2.566 0 100 5.131 2.566 2.566 0 000-5.132zM6.434 8.104a4.066 4.066 0 118.132 0 4.066 4.066 0 01-8.132 0z" fill="#AFAFAF"></path>
+                            </svg>
+                            <div>Войти</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <div class="d-none d-md-block">
+        <a href="#" class="scroll-top">
+            <i class="lni lni-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'main/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+</body>
+</html>

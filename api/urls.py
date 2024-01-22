@@ -27,16 +27,16 @@ router.register(r'orders', OrdersAPIViewSet, basename='Order')
 
 urlpatterns = [
     # REST API общий
-    path('api/v1/tokens', TokensAPIList.as_view()),
-    path('api/v1/users/<str:email>', UsersAPIRetrieve.as_view()),
+    path('api/v1/tokens/', TokensAPIList.as_view()),
+    path('api/v1/users/<str:email>/', UsersAPIRetrieve.as_view()),
     path('api/v1/', include(router.urls)),
     # API специализированный для магазина
-    path('api/v1/update_product_to_cart', APIUpdateProductToCart.as_view()),
-    path('api/v1/delete_product_from_cart', APIDeleteProductFromCart.as_view()),
-    path('api/v1/create_update_order', APICreateUpdateOrder.as_view()), # использует только телеграм бот
-    path('api/v1/check_stock_for_order', APICheckStockForOrder.as_view()),
-    path('api/v1/get_cart_info', APIGetCartInfo.as_view()),
-    path('api/v1/get_order_info', APIGetOrderInfo.as_view()),
-    path('api/v1/get_favorite_products_info', APIGetFavoriteProductsInfo.as_view()),
-    path('api/v1/add_favorite_product', APIAddFavoriteProduct.as_view()),
+    path('api/v1/update_product_to_cart/', APIUpdateProductToCart.as_view()),
+    path('api/v1/delete_product_from_cart/', APIDeleteProductFromCart.as_view()),
+    path('api/v1/create_update_order/', APICreateUpdateOrder.as_view()), # использует только телеграм бот
+    path('api/v1/check_stock_for_order/', APICheckStockForOrder.as_view()),
+    path('api/v1/get_cart_info/', APIGetCartInfo.as_view()),
+    path('api/v1/get_order_info/', APIGetOrderInfo.as_view()),
+    path('api/v1/get_favorite_products_info/', APIGetFavoriteProductsInfo.as_view()),
+    path('api/v1/add_favorite_product/', APIAddFavoriteProduct.as_view()),
 ]
