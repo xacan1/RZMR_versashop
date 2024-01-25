@@ -1,0 +1,17 @@
+{% for slug, name, subcategories in categories %}
+
+{% if subcategories|length %}
+<li class="nav-item dropdown">
+    <div class="dropend">
+        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false" data-bs-auto-close="outside" href="{% url 'product-list' slug %}">{{ name }}</a>
+        <ul class="dropdown-menu">
+            {% include 'shop/categories.html' with categories=subcategories %}
+        </ul>
+    </div>
+</li>
+{% else %}
+<li><a class="dropdown-item" href="{% url 'product-list' slug %}">{{ name }}</a></li>
+{% endif %}
+
+{% endfor %}

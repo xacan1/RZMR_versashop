@@ -1,0 +1,209 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Start Breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">Карточка товара</h1>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-nav">
+                    <li><a href="{% url 'home' %}"><i class="lni lni-home"></i> Главная</a></li>
+                    {% for parent in parent_categories %}
+                    <li><a href="{% url 'product-list' parent.slug %}">{{ parent.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
+
+<!-- Start Item Details -->
+<section class="item-details section">
+    <div class="container">
+        <div class="top-area">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="product-images">
+                        <main id="gallery">
+                            <div class="main-img">
+                                {% if product_data.photo %}
+                                <img src="{{ product_data.photo.url }}" id="current" alt="photo product">
+                                {% else %}
+                                <img src="https://via.placeholder.com/1000x670" id="current" alt="#">
+                                {% endif %}
+                            </div>
+                            <div class="images">
+                                {% for image in product_images %}
+                                <img src="{{ image.photo.url }}" class="img" alt="#">
+                                {% endfor %}
+                            </div>
+                        </main>
+                        <label>Код товара: {{ product_data.external_code }}</label>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="product-info">
+                        <h2 class="title">{{ product_data.name }}</h2>
+                        <p class="category"><i class="lni lni-tag"></i> {{ product_data.category.name }}</p>
+                        {% if product_prices %}
+                        {% for product_price in product_prices %}
+                        {% if product_price.price_type.default %}
+                        <h3 class="price">{{ product_price.currency.sign }}{{ product_price.price|floatformat:'2g' }}<span>{{ product_price.currency.sign }}{{ product_price.price|add:1000|floatformat:'2g' }}</span></h3>
+                        {% endif %}
+                        {% endfor %}
+                        {% else %}
+                        <h3 class="price">0.00<span>0.00</span></h3>
+                        {% endif %}
+                        <p class="info-text"></p>
+                        <div class="bottom-content">
+                            <div class="row align-items-end">
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <!-- Выбор склада нужно перенести в оформление заказа а в корзине оставить лишь скрытый контроль остатков по всем складам -->
+                                    <!-- <div class="warehouses py-3">
+                                        {% if product_stocks %}
+                                        <p class="py-1">Выберите склад:</p>
+                                        {% for stock in product_stocks %}
+                                        <input type="radio" name="warehouse" value="{{ stock.warehouse.pk }}" id="choice{{ stock.warehouse.pk }}">
+                                        <label for="choice{{ stock.warehouse.pk }}">{{ stock.warehouse.name }}</label>
+                                        {% endfor %}
+                                        {% else %}
+                                        <p class="py-1">Нет в наличии</p>
+                                        {% endif %}
+                                    </div> -->
+                                    <div class="button cart-button">
+                                        {% if product_stocks %}
+                                        <button class="btn" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;">Купить</button>
+                                        {% else %}
+                                        <button class="btn" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;" disabled>Купить</button>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-4 col-md-4 col-12">
+                                    <div class="wish-button">
+                                        <button class="btn"><i class="lni lni-reload"></i> Сравнить</button>
+                                    </div>
+                                </div> -->
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    {% if user.is_authenticated %}
+                                    <div class="wish-button">
+                                        <button class="btn" onclick="add_favorite_product(this);" data-shop-product-pk="{{ product_data.pk }}"><i class="lni lni-heart"></i> В избранное</button>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-details-info">
+            <div class="single-block">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <div class="info-body custom-responsive-margin">
+                            <h4>Описание</h4>
+                            <p>{{ product_data.description }}</p>
+                            <!-- <h4>Features</h4>
+                            <ul class="features">
+                                <li>Capture 4K30 Video and 12MP Photos</li>
+                                <li>Game-Style Controller with Touchscreen</li>
+                                <li>View Live Camera Feed</li>
+                                <li>Full Control of HERO6 Black</li>
+                                <li>Use App for Dedicated Camera Operation</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="info-body">
+                            <h4>Характеристики</h4>
+                            <ul class="normal-list">
+                                {% for product_attribute in product_attributes %}
+                                {% if value.numeric_value %}
+                                <li><span>{{ product_attribute.attribute.name }}:</span> {{ product_attribute.value.numeric_value }}</li>
+                                {% else %}
+                                <li><span>{{ product_attribute.attribute.name }}:</span> {{ product_attribute.value.string_value }}</li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <!-- <h4>Вырианты доставки:</h4>
+                            <ul class="normal-list">
+                                <li><span>Курьер:</span> 2 - 4 days, $22.50</li>
+                                <li><span>Local Shipping:</span> up to one week, $10.00</li>
+                                <li><span>UPS Ground Shipping:</span> 4 - 6 days, $18.00</li>
+                                <li><span>Unishop Global Export:</span> 3 - 4 days, $25.00</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Item Details -->
+
+<!-- Review Modal -->
+<div class="modal fade review-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Оставить отзыв</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="review-name">Ваше имя</label>
+                            <input class="form-control" type="text" id="review-name" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="review-email">Ваш Email</label>
+                            <input class="form-control" type="email" id="review-email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="review-subject">Тема</label>
+                            <input class="form-control" type="text" id="review-subject" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="review-rating">Оценка</label>
+                            <select class="form-control" id="review-rating">
+                                <option>5 Звезд</option>
+                                <option>4 Звезды</option>
+                                <option>3 Звезды</option>
+                                <option>2 Звезды</option>
+                                <option>1 Звезда</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="review-message">Отзыв</label>
+                    <textarea class="form-control" id="review-message" rows="8" required></textarea>
+                </div>
+            </div>
+            <div class="modal-footer button">
+                <button type="button" class="btn">Отправить отзыв</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Review Modal -->
+
+{% endblock content %}

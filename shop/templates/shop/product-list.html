@@ -1,0 +1,288 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Start Breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">{% if form %}Список товаров{% else %}Поиск: {{ search_text }}{% endif %}</h1>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-nav">
+                    <li><a href="{% url 'home' %}"><i class="lni lni-home"></i> Главная</a></li>
+                    {% for parent in parent_categories %}
+                    <li><a href="{% url 'product-list' parent.slug %}">{{ parent.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
+
+<!-- Start Product Grids -->
+<section class="product-grids section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12">
+                <!-- Start Product Sidebar -->
+                <div class="product-sidebar">
+                    <!-- Start Single Widget -->
+                    <!-- <div class="single-widget search">
+                        <h3><strong>Фильтры</strong></h3>
+                        <form action="#">
+                        <div class="search-input">
+                            <input class="form-control" type="text" placeholder="Поиск по фильтрам">
+                        </div>
+                            <button type="submit"><i class="lni lni-search-alt"></i></button>
+                        </form>
+                    </div> -->
+                    <!-- End Single Widget -->
+                    <!-- Start Single Widget -->
+                    <!-- <div class="single-widget">
+                        <h3>Все категории</h3>
+                        <ul class="list">
+                            <li>
+                                <a href="product-grids.html">Computers & Accessories </a><span>(1138)</span>
+                            </li>
+                            <li>
+                                <a href="product-grids.html">Smartphones & Tablets</a><span>(2356)</span>
+                            </li>
+                            <li>
+                                <a href="product-grids.html">TV, Video & Audio</a><span>(420)</span>
+                            </li>
+                            <li>
+                                <a href="product-grids.html">Cameras, Photo & Video</a><span>(874)</span>
+                            </li>
+                            <li>
+                                <a href="product-grids.html">Headphones</a><span>(1239)</span>
+                            </li>
+                            <li>
+                                <a href="product-grids.html">Wearable Electronics</a><span>(340)</span>
+                            </li>
+                            <li>
+                                <a href="product-grids.html">Printers & Ink</a><span>(512)</span>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <!-- End Single Widget -->
+                    <!-- Start Single Widget -->
+                    {% if form %}
+                    <form action="#" method="get" id="filtersAttributes">
+                        <div class="single-widget range">
+                            <h3>Максимальная цена</h3>
+                            {{ form.price_range_max }}
+                            <div class="range-inner">
+                                <label>{% if page_obj %}{{ page_obj.0.currency.sign }}{% endif %}</label>
+                                {{ form.current_price }}
+                            </div>
+                        </div>
+                        <!-- Start Single Widget -->
+                        <div class="single-widget condition">
+                            <h3><strong>Фильтрация по атрибутам</strong></h3>
+                            <div class="button py-2">
+                                <button class="btn">Отфильтровать</button>
+                            </div>
+                            {% for element in form %}
+                                {% if element.name != 'price_range_max' and element.name != 'current_price' and element.name != 'sorting' %}
+                                    {% if element.is_hidden %}
+                                    <h3>{{ element.label }}</h3>
+                                    {% else %}
+                                    <div class="form-check">
+                                        {{ element }}
+                                        <label class="form-check-label" for="flexCheck{{ element.name }}">{{ element.label }}</label>
+                                    </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </form>
+                    {% endif %}
+                    <!-- End Single Widget -->
+                </div>
+                <!-- End Product Sidebar -->
+            </div>
+            <div class="col-lg-9 col-12">
+                <div class="product-grids-head">
+                    <div class="product-grid-topbar">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 col-md-8 col-12">
+                                <div class="product-sorting">
+                                    {% if form %}
+                                    {{ form.sorting.label_tag }}
+                                    {{ form.sorting }}
+                                    {% endif %}
+                                    <h3 class="total-show-product">Показаны: <span>{{ amount_product_from }} - {{ amount_product_upto }} товаров из: {{ amount_product_total }}</span></h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-4 col-12">
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <button class="nav-link " id="nav-grid-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-grid" type="button" role="tab" aria-controls="nav-grid"
+                                            aria-selected="true"><i class="lni lni-grid-alt"></i></button>
+                                        <button class="nav-link active" id="nav-list-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-list" type="button" role="tab" aria-controls="nav-list"
+                                            aria-selected="false"><i class="lni lni-list"></i></button>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
+                            <!-- Область grids -->
+                            <div class="row">
+                                {% for product_info in page_obj %}
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <!-- Start Single Product -->
+                                    <div class="single-product">
+                                        <div class="product-image">
+                                            {% if product_info.product.photo %}
+                                            <img src="{{ product_info.product.photo.url }}" alt="#">
+                                            {% else %}
+                                            <img src="https://via.placeholder.com/335x335" alt="#">
+                                            {% endif %}
+                                            <div class="button">
+                                                <button class="btn" style="width: 100%;" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_info.product.pk }}"><i class="lni lni-cart"></i>В корзину</button>
+                                            </div>
+                                        </div>
+                                        <div class="product-info">
+                                            <span class="category">{{ product_info.product.category.name }}</span>
+                                            <h4 class="title">
+                                                <a href="{% url 'product-details' product_info.product.slug %}">{{ product_info.product.name }}</a>
+                                            </h4>
+                                            <!-- <ul class="review">
+                                                <li><i class="lni lni-star-filled"></i></li>
+                                                <li><i class="lni lni-star-filled"></i></li>
+                                                <li><i class="lni lni-star-filled"></i></li>
+                                                <li><i class="lni lni-star-filled"></i></li>
+                                                <li><i class="lni lni-star"></i></li>
+                                                <li><span>4.0 Review(s)</span></li>
+                                            </ul> -->
+                                            <div class="price">
+                                                <span>{{ product_info.currency.sign }}{{ product_info.price }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Product -->
+                                </div>
+                                {% empty %}
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="single-product">
+                                        <div class="row">
+                                            <p>НЕТ НИ ОДНОГО ТОВАРА СООТВЕТСТВУЮЩЕГО УСТАНОВЛЕННЫМ ФИЛЬТРАМ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- Pagination -->
+                                    <div class="pagination center">
+                                        <ul class="pagination-list">
+                                            {% if page_obj.has_previous %}
+                                            <li><a href="?page={{ page_obj.previous_page_number }}{{ add_for_pagination }}"><i class="lni lni-chevron-left"></i></a></li>
+                                            {% endif %}
+                                            {% for p in page_obj.paginator.page_range %}
+                                            {% if p == page_obj.number %}
+                                            <li class="active"><a href="?page={{ p }}{{ add_for_pagination }}">{{ p }}</a></li>
+                                            {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                                            <li><a href="?page={{ p }}{{ add_for_pagination }}">{{ p }}</a></li>
+                                            {% endif %}
+                                            {% endfor %}
+                                            {% if page_obj.has_next %}
+                                            <li><a href="?page={{ page_obj.next_page_number }}{{ add_for_pagination }}"><i class="lni lni-chevron-right"></i></a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                    <!--/ End Pagination -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane show active fade" id="nav-list" role="tabpanel"
+                            aria-labelledby="nav-list-tab">
+                            <!-- Область list -->
+                            <div class="row">
+                                {% for product_info in page_obj %}
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <!-- Start Single Product -->
+                                    <div class="single-product">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="product-image">
+                                                    {% if product_info.product.photo %}
+                                                    <img src="{{ product_info.product.photo.url }}" alt="#">
+                                                    {% else %}
+                                                    <img src="https://via.placeholder.com/335x335" alt="#">
+                                                    {% endif %}
+                                                    <div class="button">
+                                                        <button class="btn" style="width: 100%;" data-shop-product-pk="{{ product_info.product.pk }}" data-bs-toggle="modal" data-bs-target="#successAddProductToCartModal"><i class="lni lni-cart"></i>В корзину</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8 col-md-8 col-12">
+                                                <div class="product-info">
+                                                    <span class="category">{{ product_info.product.category.name }}</span>
+                                                    <h4 class="title">
+                                                        <a href="{% url 'product-details' product_info.product.slug %}">{{ product_info.product.name }}</a>
+                                                    </h4>
+                                                    <div class="price">
+                                                        <span>{{ product_info.currency.sign }}{{ product_info.price }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Product -->
+                                </div>     
+                                {% empty %}
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="single-product">
+                                        <div class="row">
+                                            <p>НЕТ НИ ОДНОГО ТОВАРА СООТВЕТСТВУЮЩЕГО УСТАНОВЛЕННЫМ ФИЛЬТРАМ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- Pagination -->
+                                    <div class="pagination center">
+                                        <ul class="pagination-list">
+                                            {% if page_obj.has_previous %}
+                                            <li><a href="?page={{ page_obj.previous_page_number }}{{ add_for_pagination }}"><i class="lni lni-chevron-left"></i></a></li>
+                                            {% endif %}
+                                            {% for p in page_obj.paginator.page_range %}
+                                            {% if p == page_obj.number %}
+                                            <li class="active"><a href="?page={{ p }}{{ add_for_pagination }}">{{ p }}</a></li>
+                                            {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                                            <li><a href="?page={{ p }}{{ add_for_pagination }}">{{ p }}</a></li>
+                                            {% endif %}
+                                            {% endfor %}
+                                            {% if page_obj.has_next %}
+                                            <li><a href="?page={{ page_obj.next_page_number }}{{ add_for_pagination }}"><i class="lni lni-chevron-right"></i></a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                    <!--/ End Pagination -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Product Grids -->
+
+{% include 'shop/add_product_to_cart_modal.html' %}
+
+{% endblock content %}

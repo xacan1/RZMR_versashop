@@ -18,7 +18,7 @@ class IndexShopView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         top_products = services.get_top_sales()
         context['top_products'] = top_products
-        c_def = self.get_user_context(title='Маркет скидок')
+        c_def = self.get_user_context(title='Магазин РЗМ')
         return {**context, **c_def}
 
 

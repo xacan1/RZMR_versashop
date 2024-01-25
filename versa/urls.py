@@ -19,13 +19,14 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from main.views import PageNotFound
+from versa import config
 
 urlpatterns = [
     path('admin-rzmr/', admin.site.urls),
     path('', include('rzmr.urls')),
     path('', include('main.urls')),
     path('', include('api.urls')),
-    path('', include('shop.urls')),
+    path('shop/', include('shop.urls')),
     path('', include('personal_account.urls')),
     path('', include('blog.urls')),
 ]
@@ -37,3 +38,6 @@ if settings.DEBUG:
                           document_root=settings.MEDIA_ROOT)
 
 handler404 = PageNotFound.as_view()
+admin.site.site_header = 'Панель администрирования VERSA'
+admin.site.site_title = 'Панель администрирования VERSA'
+admin.site.index_title = config.COMPANY_NAME

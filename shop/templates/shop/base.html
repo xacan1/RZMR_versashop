@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Смирнов Юрий Валерьевич">
+    <meta name="publisher-email" content="xacan-mail@mail.ru">
+    <meta name="copyright" Content="ООО Русский завод металлорукавов">
+    <meta name="keywords" Content="металлорукав, фильтр, фторопластовый рукав">
+    <meta name="description"
+        Content="Производство метталорукавов, фильтров, фторопластовых рукавов, онлайн конструктор и продажа изделий">
+    <meta name="Publisher-URL" Content="auto-norms.ru">
+    <meta http-equiv="pragma" Content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{% static 'rzmr/img/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'rzmr/fonts/ProximaNova/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'rzmr/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'rzmr/css/main.css' %}">
+    <title>{{ title }}</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        <div class="contacts fs-md-media-uzm sticky-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="d-lg-block d-none col-3">
+                        <div class="header-element">
+                            <span>г.Санкт-Петербург, ул.Замшина, д.31 К.4, офис 3-Н/4</span>
+                        </div>
+                    </div>
+                    <div class="col-2 col-lg-1">
+                        <div class="header-element">
+                            <a href="mailto:{{ company_email }}">{{ company_email }}</a>
+                        </div>
+                    </div>
+                    <div class="d-xl-block d-none col-2">
+                        <div class="header-element">
+                            <a href="#">Заказать звонок</a>
+                        </div>
+                    </div>
+                    <div class="d-xl-block d-none col-2">
+                        <div class="header-element">
+                            <a href="#">Пригласить на тендер</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xl-2">
+                        <div class="header-element">
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'rzmr/img/russian-flag.png' %}" alt="Русский язык">Рус</a>
+                            <a href="https://uzmr.ru/en/">
+                                <img src="{% static 'rzmr/img/english-flag.png' %}" alt="English">Eng</a>
+                            <a href="https://uzmr.kz/">
+                                <img src="{% static 'rzmr/img/kazakhstan-flag.png' %}" alt="Қазақша">Қаз</a>
+                            <a href="https://uzmr.by/">
+                                <img src="{% static 'rzmr/img/belarus-flag.png' %}" alt="Беларуская мова">Блр</a>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="header-element">
+                            <a href="tel:88005555756">8-800-5555-756</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container pt-3">
+            <div class="row">
+                <div class="col-xl-5 col-4">
+                    <div class="horizontal-line-uzm"></div>
+                </div>
+                <div class="col-xl-2 col-4">
+                    <a href="{% url 'home' %}"><img src="{% static 'rzmr/img/logo.svg' %}" alt="logo"></a>
+                </div>
+                <div class="col-xl-3 col-1">
+                    <div class="horizontal-line-uzm"></div>
+                </div>
+                <div class="col-xl-2 col-3 text-end">
+                    <div class="button-uzm">
+                        <a href="{% url 'home-shop' %}" type="button" class="btn btn-danger btn-sm">Онлайн магазин</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-expand-xl">
+                    <!-- <a href="#" class="navbar-brand">UZM</a> -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarContent">
+                        <ul class="navbar-nav mr-auto mb-2">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownShop" role="button"
+                                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Каталог</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownShop">
+                                    {% include 'shop/categories.html' %}
+                                </ul>
+                            </li>
+                            <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="MyAccountDDM" role="button"
+                                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Menu</a>
+
+                                <ul class="dropdown-menu" aria-labelledby="MyAccountDDM" id="AppDropDownId">
+                                    <li><a class="dropdown-item" href="#">BBB</a></li>
+
+                                    <li class="nav-item dropdown">
+                                        <div class="dropend">
+                                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                                aria-expanded="false" role="button">
+                                                CCC
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">DDD</a></li>
+                                                <li><a class="dropdown-item" href="#">EEE</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                            
+                                    <li><hr class="dropdown-divider"/></li>
+                                    <li><a class="dropdown-item" href="#">FFF</a></li>
+                                </ul>
+                            </li> -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown1" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">О заводе</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                    <li><a class="dropdown-item" href="{% url 'about' %}">Информация о заводе</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'quality' %}">Система качества и
+                                            сертификации</a>
+                                    </li>
+                                    <!-- <li><hr class="dropdown-divider"></li> -->
+                                    <li><a class="dropdown-item" href="{% url 'our-customer' %}">Наши клиенты</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'for-suppliers' %}">Поставщикам</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'vacancies' %}">Вакансии</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'posts' %}">Статьи</a></li>
+                                    <!-- <li><a class="dropdown-item" href="#">Новости</a></li> -->
+                                    <li><a class="dropdown-item" href="{% url 'contacts' %}">Контакты</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown2" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Металлорукава</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                    <li><a class="dropdown-item" href="{% url 'metalhoses' %}">Металлорукава</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'metalhoses-fittings' %}">Концевая
+                                            арматура</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'metalhoses-recommendations' %}">Рекомендации по выбору</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'metalhoses-installation' %}">Монтаж и безопасность</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'metalhoses-standarts-grm' %}">Стандарты качества</a></li>
+                                    <!-- <li><a class="dropdown-item" href="#">Под приварку</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="#">Серийная продукция</a></li> -->
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown3" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Фторопластовые рукава</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                    <li><a class="dropdown-item" href="{% url 'ptfe' %}">Фторопластовые рукава серии РФ</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{% url 'ptfe-recommendations' %}">Рекомендации по выбору</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'ptfe-fittings' %}">Концевая арматура</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'ptfe-standarts' %}">Стандарты качества</a></li>
+                                    <!-- <li><a class="dropdown-item" href="#">Гофрированные</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="#">Серийная продукция</a></li> -->
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown4" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Фильтры и агрегаты</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                                    <li><a class="dropdown-item" href="#">Топливные фильтры</a></li>
+                                    <li><a class="dropdown-item" href="#">Гидравлические фильтры</a></li>
+                                    <li><a class="dropdown-item" href="#">Воздушные фильтра</a></li>
+                                    <li><a class="dropdown-item" href="#">Фильтроэлементы</a></li>
+                                    <li><a class="dropdown-item" href="#">Агрегаты</a></li>
+                                    <li><a class="dropdown-item" href="#">Изделия разного назначения</a></li>
+                                    <li><a class="dropdown-item" href="#">Справочные материалы</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown5" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Концевая арматура</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
+                                    <li><a class="dropdown-item" href="#">Резьбовая арматура</a></li>
+                                    <li><a class="dropdown-item" href="#">Фланцевые соединения</a></li>
+                                    <li><a class="dropdown-item" href="#">Быстроразъемные соединения</a></li>
+                                    <li><a class="dropdown-item" href="#">Решения по чертежам заказчика</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown6" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Нестандартное
+                                    оборудование</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
+                                    <li><a class="dropdown-item" href="{% url 'engineering' %}">Изделия на заказ</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'engineering-accessories' %}">Технологическая оснастка</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'engineering-test' %}">Испытания на герметичность и прочность</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Онлайн-конструктор</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                {% if request.path != '/' %}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item small"><a href="{% url 'home' %}">Главная</a></li>
+                        {% for url_name, url_title in breadcrumb %}
+                        <li class="breadcrumb-item small"><a href="{% url url_name %}">{{ url_title }}</a></li>
+                        {% endfor %}
+                        <li class="breadcrumb-item small active" aria-current="page">{{ title }}</li>
+                    </ol>
+                </nav>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer class="mt-auto position-sticky top-100 fs-xl-media-uzm">
+        <div class="container container-footer d-sm-block d-none">
+            <div class="row">
+                <div class="d-md-block d-none col-md-3 col-6">
+                    <a href="{% url 'home' %}"><img src="{% static 'rzmr/img/logo2.svg' %}" width="180" height="60"
+                            alt="logo2"></a>
+                    <p class="footer-title">О заводе</p>
+                    <div><a href="{% url 'quality' %}">Система качества и сертификации</a></div>
+                    <div><a href="{% url 'our-customer' %}">Наши клиенты</a></div>
+                    <div><a href="{% url 'for-suppliers' %}">Поставщикам</a></div>
+                    <div><a href="{% url 'vacancies' %}">Вакансии</a></div>
+                    <div><a href="{% url 'posts' %}">Статьи</a></div>
+                    <!-- <div><a href="#">Новости</a></div> -->
+                </div>
+                <div class="d-md-block d-none col-3">
+                    <p class="footer-title">Металлорукава</p>
+                    <div><a href="{% url 'metalhoses-fittings' %}">Концевая арматура</a></div>
+                    <div><a href="{% url 'metalhoses-recommendations' %}">Рекомендации по выбору</a></div>
+                    <div><a href="{% url 'metalhoses-installation' %}">Монтаж и безопасность</a></div>
+                    <div><a href="{% url 'metalhoses-standarts-grm' %}">Стандарты качества</a></div>
+                    <!-- <div><a href="#">Под приварку</a></div> -->
+                    <!-- <div><a href="#">Серийная продукция</a></div> -->
+                    <!-- <div><a href="#">Металлорукава РГМ</a></div> -->
+                    <!-- <div><a href="#">Металлорукава высокого давления</a></div> -->
+                </div>
+                <div class="d-md-block d-none col-3">
+                    <p class="footer-title">Фторопластовые рукава</p>
+                    <div><a href="{% url 'ptfe' %}">Фторопластовые рукава серии РФ</a></div>
+                    <div><a href="{% url 'ptfe-fittings' %}">Концевая арматура</a></div>
+                    <div><a href="{% url 'ptfe-recommendations' %}">Рекомендации по выбору</a></div>
+                    <!-- <div><a href="#">Монтаж и безопасность</a></div> -->
+                    <div><a href="{% url 'ptfe-standarts' %}">Стандарты качества</a></div>
+                    <!-- <div><a href="#">Гофрированные</a></div> -->
+                    <!-- <div><a href="#">Серийная продукция</a></div> -->
+                    <!-- <div><a href="#">Фторопластовые рукава высокого давления</a></div> -->
+                </div>
+                <div class="d-md-block d-none col-md-3 col-6">
+                    <p class="footer-title">Фильтры и агрегаты</p>
+                    <div><a href="#">Топливные фильтры</a></div>
+                    <div><a href="#">Гидравлические фильтры</a></div>
+                    <div><a href="#">Воздушные фильтра</a></div>
+                    <div><a href="#">Фильтроэлементы</a></div>
+                    <div><a href="#">Агрегаты</a></div>
+                    <div><a href="#">Изделия разного назначения</a></div>
+                    <div><a href="#">Справочные материалы</a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="d-md-block d-none col-3">
+                    <p class="footer-title">Концевая арматура</p>
+                    <div><a href="#">Резьбовая арматура</a></div>
+                    <div><a href="#">Фланцевые соединения</a></div>
+                    <div><a href="#">Быстроразъемные соединения</a></div>
+                    <div><a href="#">Решения по чертежам заказчика</a></div>
+                </div>
+                <div class="d-md-block d-none col-3">
+                    <p class="footer-title">Инжиниринг и нестандартное оборудование</p>
+                    <div><a href="{% url 'engineering-accessories' %}">Технологическая оснастка</a></div>
+                    <div><a href="{% url 'engineering' %}">Изделия на заказ</a></div>
+                    <div><a href="{% url 'engineering-test' %}">Испытания на герметичность и прочность</a></div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <p class="footer-title">Россия</p>
+                    <div><a href="tel:+74996492949">+7 (499) 649-29-49</a></div>
+                    <div><a href="tel:+78122133121">+7 (812) 213-31-21</a></div>
+                    <div><a href="tel:+73433579710">+7 (343) 357-97-10</a></div>
+                    <p class="footer-title">Казахстан</p>
+                    <div><a href="tel:+77172727217">+7 (717) 272-72-17</a></div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <p class="footer-title">Контакты</p>
+                    <div><a href="tel:+78005555756">+7 (800) 5555-756</a></div>
+                    <div><a href="tel:+73472929864">+7 (347) 292-98-64</a></div>
+                    <div><a href="tel:+73472747387">+7 (347) 274-73-87</a></div>
+                    <div><a href="#">Заказать звонок</a></div>
+                    <div><a href="mailto:{{ company_email }}">{{ company_email }}</a></div>
+                    <div><a href="#">г.Санкт-Петербург, ул.Замшина, д.31 К.4, офис 3-Н/4</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-end">
+            <span>©{% now 'Y' %} {{ company_name }}. Все права защищены. </span>
+            <a href="{% url 'privacy' %}">Политика конфиденциальности</a>
+        </div>
+    </footer>
+
+    <script src="{% static 'rzmr/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
