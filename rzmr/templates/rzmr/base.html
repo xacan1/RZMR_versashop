@@ -185,12 +185,22 @@
                         </ul>
                     </div>
                 </nav>
-                {% if request.path != '/' or request.path != url 'home-shop' %}
+                {% if request.path != '/' and 'shop' not in request.path %}
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item small"><a href="{% url 'home' %}">Главная</a></li>
                         {% for url_name, url_title in breadcrumb %}
                         <li class="breadcrumb-item small"><a href="{% url url_name %}">{{ url_title }}</a></li>
+                        {% endfor %}
+                        <li class="breadcrumb-item small active" aria-current="page">{{ title }}</li>
+                    </ol>
+                </nav>
+                {% elif 'shop' in request.path %}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item small"><a href="{% url 'home' %}">Главная</a></li>
+                        {% for parent in parent_categories %}
+                        <li class="breadcrumb-item small"><a href="{% url 'product-list' parent.slug %}">{{ parent.name }}</a></li>
                         {% endfor %}
                         <li class="breadcrumb-item small active" aria-current="page">{{ title }}</li>
                     </ol>
