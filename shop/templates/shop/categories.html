@@ -1,5 +1,4 @@
 {% for slug, name, subcategories in categories %}
-
 {% if subcategories|length %}
 <li class="nav-item dropdown">
     <div class="dropend">
@@ -13,5 +12,4 @@
 {% else %}
 <li><a class="dropdown-item" href="{% url 'product-list' slug %}">{{ name }}</a></li>
 {% endif %}
-
 {% endfor %}
