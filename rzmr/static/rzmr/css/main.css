@@ -14,7 +14,7 @@ h5,
 h6 {
     padding: 0;
     margin: 0;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 /* ul,
@@ -511,6 +511,25 @@ img {
 .uzm-vertical-line {
     height: 30vh;
     border-left: 1px solid #dbdbdb;
+}
+
+.uzm-filter-parameters-box-title {
+    color: #039be5;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+}
+
+.search-input {
+    font-size: 1.2rem;
+    height: 3rem;
+    width: 35rem;
+    border: 1px solid rgb(226, 226, 226);
+    padding: 0 1rem 0 1rem;
+    transition: all 0.3s linear 0s;
+}
+
+.navbar-search {
+    display: flex;
 }
 
 /* end main index */

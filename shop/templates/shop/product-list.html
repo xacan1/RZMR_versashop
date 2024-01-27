@@ -6,53 +6,17 @@
 <section class="product-grids section">
     <div class="container">
         <div class="row">
+            
+        </div>
+        <div class="row">
             <div class="col-lg-3 col-12">
                 <!-- Start Product Sidebar -->
                 <div class="product-sidebar">
                     <!-- Start Single Widget -->
-                    <!-- <div class="single-widget search">
-                        <h3><strong>Фильтры</strong></h3>
-                        <form action="#">
-                        <div class="search-input">
-                            <input class="form-control" type="text" placeholder="Поиск по фильтрам">
-                        </div>
-                            <button type="submit"><i class="lni lni-search-alt"></i></button>
-                        </form>
-                    </div> -->
-                    <!-- End Single Widget -->
-                    <!-- Start Single Widget -->
-                    <!-- <div class="single-widget">
-                        <h3>Все категории</h3>
-                        <ul class="list">
-                            <li>
-                                <a href="product-grids.html">Computers & Accessories </a><span>(1138)</span>
-                            </li>
-                            <li>
-                                <a href="product-grids.html">Smartphones & Tablets</a><span>(2356)</span>
-                            </li>
-                            <li>
-                                <a href="product-grids.html">TV, Video & Audio</a><span>(420)</span>
-                            </li>
-                            <li>
-                                <a href="product-grids.html">Cameras, Photo & Video</a><span>(874)</span>
-                            </li>
-                            <li>
-                                <a href="product-grids.html">Headphones</a><span>(1239)</span>
-                            </li>
-                            <li>
-                                <a href="product-grids.html">Wearable Electronics</a><span>(340)</span>
-                            </li>
-                            <li>
-                                <a href="product-grids.html">Printers & Ink</a><span>(512)</span>
-                            </li>
-                        </ul>
-                    </div> -->
-                    <!-- End Single Widget -->
-                    <!-- Start Single Widget -->
                     {% if form %}
                     <form action="#" method="get" id="filtersAttributes">
                         <div class="single-widget range">
-                            <h3>Максимальная цена</h3>
+                            <h6 class="uzm-filter-parameters-box-title">Максимальная цена</h6>
                             {{ form.price_range_max }}
                             <div class="range-inner">
                                 <label>{% if page_obj %}{{ page_obj.0.currency.sign }}{% endif %}</label>
@@ -61,9 +25,9 @@
                         </div>
                         <!-- Start Single Widget -->
                         <div class="single-widget condition">
-                            <h3><strong>Фильтрация по атрибутам</strong></h3>
-                            <div class="button py-2">
-                                <button class="btn">Отфильтровать</button>
+                            <h5 class="py-3">Подбор параметров</h5>
+                            <div class="py-2">
+                                <button class="btn btn-secondary">Отфильтровать</button>
                             </div>
                             {% for element in form %}
                                 {% if element.name != 'price_range_max' and element.name != 'current_price' and element.name != 'sorting' %}
@@ -84,7 +48,25 @@
                 </div>
                 <!-- End Product Sidebar -->
             </div>
+            
             <div class="col-lg-9 col-12">
+                <!-- Start Main Menu Search -->
+                <div class="main-menu-search">
+                    <!-- navbar search start -->
+                    <form action="{% url 'search' %}" method="get">
+                        <div class="navbar-search">
+                            <input class="search-input" type="text" name="q" value="{{ search_text }}" placeholder="Поиск" required>
+                            
+                            <button class="submit btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    <!-- navbar search Ends -->
+                </div>
+                <!-- End Main Menu Search -->
                 <div class="product-grids-head">
                     <div class="product-grid-topbar">
                         <div class="row align-items-center">
