@@ -29,18 +29,29 @@
                             <div class="py-2">
                                 <button class="btn btn-secondary">Отфильтровать</button>
                             </div>
+                            <div class="accordion" id="accordionAttributes">
                             {% for element in form %}
                                 {% if element.name != 'price_range_max' and element.name != 'current_price' and element.name != 'sorting' %}
-                                    {% if element.is_hidden %}
-                                    <h3>{{ element.label }}</h3>
-                                    {% else %}
-                                    <div class="form-check">
-                                        {{ element }}
-                                        <label class="form-check-label" for="flexCheck{{ element.name }}">{{ element.label }}</label>
+                                {% if element.is_hidden %}
+                                <div class="accordion-item">
+                                    <h6 class="uzm-filter-parameters-box-title accordion-header" id="heading{{ element.help_text }}">
+                                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse{{ element.help_text }}"
+                                            aria-expanded="true" aria-controls="collapse{{ element.help_text }}">
+                                            {{ element.label }}
+                                        </div>
+                                    </h6>
+                                {% else %}
+                                    <div id="collapse{{ element.help_text }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ element.help_text }}">
+                                        <div class="form-check">
+                                            {{ element }}
+                                            <label class="form-check-label" for="flexCheck{{ element.name }}">{{ element.label }}</label>
+                                        </div>
                                     </div>
-                                    {% endif %}
+                                </div>
+                                {% endif %}
                                 {% endif %}
                             {% endfor %}
+                            </div>
                         </div>
                     </form>
                     {% endif %}
@@ -51,7 +62,7 @@
             
             <div class="col-lg-9 col-12">
                 <!-- Start Main Menu Search -->
-                <div class="main-menu-search">
+                <div class="main-menu-search pt-2">
                     <!-- navbar search start -->
                     <form action="{% url 'search' %}" method="get">
                         <div class="navbar-search">
@@ -71,51 +82,48 @@
                     <div class="product-grid-topbar">
                         <div class="row align-items-center">
                             <div class="col-lg-7 col-md-8 col-12">
-                                <div class="product-sorting">
+                                <div class="product-sorting py-4">
                                     {% if form %}
                                     {{ form.sorting.label_tag }}
                                     {{ form.sorting }}
                                     {% endif %}
-                                    <h3 class="total-show-product">Показаны: <span>{{ amount_product_from }} - {{ amount_product_upto }} товаров из: {{ amount_product_total }}</span></h3>
+                                    <div class="total-show-product">Показаны: <span>{{ amount_product_from }} - {{ amount_product_upto }} товаров из: {{ amount_product_total }}</span></div>
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-md-4 col-12">
+                            <!-- <div class="col-lg-5 col-md-4 col-12">
                                 <nav>
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <button class="nav-link " id="nav-grid-tab" data-bs-toggle="tab"
+                                        <button class="nav-link active" id="nav-grid-tab" data-bs-toggle="tab"
                                             data-bs-target="#nav-grid" type="button" role="tab" aria-controls="nav-grid"
                                             aria-selected="true"><i class="lni lni-grid-alt"></i></button>
-                                        <button class="nav-link active" id="nav-list-tab" data-bs-toggle="tab"
+                                        <button class="nav-link" id="nav-list-tab" data-bs-toggle="tab"
                                             data-bs-target="#nav-list" type="button" role="tab" aria-controls="nav-list"
                                             aria-selected="false"><i class="lni lni-list"></i></button>
                                     </div>
                                 </nav>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
+                        <div class="tab-pane active show fade" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
                             <!-- Область grids -->
                             <div class="row">
                                 {% for product_info in page_obj %}
-                                <div class="col-lg-4 col-md-6 col-12">
+                                <div class="col-lg-3 col-md-6 col-12">
                                     <!-- Start Single Product -->
-                                    <div class="single-product">
-                                        <div class="product-image">
+                                    <div class="single-product mb-4">
+                                        <div class="product-image text-center p-2">
                                             {% if product_info.product.photo %}
-                                            <img src="{{ product_info.product.photo.url }}" alt="#">
+                                            <img src="{{ product_info.product.photo.url }}" alt="product_photo">
                                             {% else %}
-                                            <img src="https://via.placeholder.com/335x335" alt="#">
+                                            <img src="https://via.placeholder.com/100x200" alt="product_photo">
                                             {% endif %}
-                                            <div class="button">
-                                                <button class="btn" style="width: 100%;" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_info.product.pk }}"><i class="lni lni-cart"></i>В корзину</button>
-                                            </div>
                                         </div>
-                                        <div class="product-info">
-                                            <span class="category">{{ product_info.product.category.name }}</span>
-                                            <h4 class="title">
+                                        <div class="product-info p-2 text-center">
+                                            <!-- <span class="category">{{ product_info.product.category.name }}</span> -->
+                                            <p class="title">
                                                 <a href="{% url 'product-details' product_info.product.slug %}">{{ product_info.product.name }}</a>
-                                            </h4>
+                                            </p>
                                             <!-- <ul class="review">
                                                 <li><i class="lni lni-star-filled"></i></li>
                                                 <li><i class="lni lni-star-filled"></i></li>
@@ -125,7 +133,14 @@
                                                 <li><span>4.0 Review(s)</span></li>
                                             </ul> -->
                                             <div class="price">
+                                                {% if product_info.price == 0 %}
+                                                <span>Цена по запросу</span>
+                                                {% else %}
                                                 <span>{{ product_info.currency.sign }}{{ product_info.price }}</span>
+                                                {% endif %}
+                                            </div>
+                                            <div class="button p-2">
+                                                <button class="btn btn-secondary" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_info.product.pk }}">Заказать</button>
                                             </div>
                                         </div>
                                     </div>
@@ -165,7 +180,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane show active fade" id="nav-list" role="tabpanel"
+                        <div class="tab-pane fade" id="nav-list" role="tabpanel"
                             aria-labelledby="nav-list-tab">
                             <!-- Область list -->
                             <div class="row">
@@ -241,6 +256,7 @@
     </div>
 </section>
 <!-- End Product Grids -->
+<script src="{% static 'shop/js/shop_client.js' %}"></script>
 
 {% include 'shop/add_product_to_cart_modal.html' %}
 

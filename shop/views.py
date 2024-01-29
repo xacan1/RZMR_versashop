@@ -133,8 +133,9 @@ class CategoryProductListView(DataMixin, FormView):
         min_max_price = services.get_min_max_price_category(slug)
         initial = {**initial, **min_max_price}
         initial['get_params'] = self.request.GET
-        initial['attribute_groups'] = services.get_attributes_category_with_values(
+        self.attribute_groups = services.get_attributes_category_with_values(
             slug)
+        initial['attribute_groups'] = self.attribute_groups
         return initial
 
     def get_template_names(self) -> list[str]:

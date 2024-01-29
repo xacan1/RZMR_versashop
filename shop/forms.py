@@ -32,12 +32,16 @@ class ProductListForm(forms.Form):
         if 'sorting' in get_params:
             self.fields['sorting'].initial = [
                 choice[0] for choice in self.SORT_CHOICES if choice[0] == get_params['sorting']]
-
+        
+        accordion_id = 0  # этот параметр-костыль нужен для нумерации групп атрибутов (слева на форме фильтрации) для аккордеона Bootstrap5, я его передаю в свойстве "help_text"
+        
         # Динамически создам поля атрибутов товаров, ведь сайт не знает что за товары
         for attribute, values in initial['attribute_groups'].items():
             # Создам скрытое поле только ради Label что бы отобразить имя атрибута в группировке и не создавать кастомное поле для этой формы
-            self.fields[attribute] = forms.CharField(
-                label=attribute, widget=forms.HiddenInput())
+            accordion_id += 1
+            self.fields[attribute] = forms.CharField(label=attribute,
+                                                     help_text=str(accordion_id),
+                                                     widget=forms.HiddenInput())
 
             for value in values:
                 name = str(value['pk'])
@@ -48,8 +52,9 @@ class ProductListForm(forms.Form):
                 if name in get_params:
                     attrs['checked'] = ''
 
-                self.fields[name] = forms.BooleanField(
-                    label=value['string_value'], widget=forms.CheckboxInput(attrs=attrs), required=False)
+                self.fields[name] = forms.BooleanField(label=value['string_value'],
+                                                       help_text=str(accordion_id),
+                                                       widget=forms.CheckboxInput(attrs=attrs), required=False)
 
     price_range_max = forms.IntegerField(widget=forms.NumberInput(
         attrs={'class': 'form-range', 'type': 'range', 'name': 'price_range_max', 'onchange': 'rangePrimary.value=value'})
