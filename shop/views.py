@@ -158,7 +158,7 @@ class CategoryProductListView(DataMixin, FormView):
             c_def = self.get_user_context(title='Каталог',
                                           nested_categories=root_categories)
         elif self.products_exist:
-            paginate_by = 10
+            paginate_by = 12
             paginator = Paginator(self.price_products, paginate_by)
             page_number = self.request.GET.get('page', 1)
             page_obj = paginator.get_page(page_number)
