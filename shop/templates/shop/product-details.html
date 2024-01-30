@@ -2,65 +2,46 @@
 {% load static %}
 
 {% block content %}
-
-<!-- Start Breadcrumbs -->
-<div class="breadcrumbs">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="breadcrumbs-content">
-                    <h1 class="page-title">Карточка товара</h1>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-12">
-                <ul class="breadcrumb-nav">
-                    <li><a href="{% url 'home' %}"><i class="lni lni-home"></i> Главная</a></li>
-                    {% for parent in parent_categories %}
-                    <li><a href="{% url 'product-list' parent.slug %}">{{ parent.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Breadcrumbs -->
-
 <!-- Start Item Details -->
 <section class="item-details section">
     <div class="container">
         <div class="top-area">
-            <div class="row align-items-center">
+            <div class="row align-items-center product-cart-border">
                 <div class="col-lg-6 col-md-12 col-12">
-                    <div class="product-images">
-                        <main id="gallery">
-                            <div class="main-img">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 m-4 product-cart-border justify-content-center">
                                 {% if product_data.photo %}
-                                <img src="{{ product_data.photo.url }}" id="current" alt="photo product">
+                                <img src="{{ product_data.photo.url }}" class="product-main-img p-1" id="current" alt="photo_product">
                                 {% else %}
-                                <img src="https://via.placeholder.com/1000x670" id="current" alt="#">
+                                <img src="https://via.placeholder.com/200x400" class="product-main-img p-1" id="current" alt="#">
                                 {% endif %}
                             </div>
-                            <div class="images">
-                                {% for image in product_images %}
-                                <img src="{{ image.photo.url }}" class="img" alt="#">
-                                {% endfor %}
+                        </div>
+                        <div class="row mx-2">
+                            {% for image in product_images %}
+                            <div class="col-1 mx-1 product-cart-border">
+                                <img src="{{ image.photo.url }}" alt="#">
                             </div>
-                        </main>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="p-4">
                         <label>Код товара: {{ product_data.external_code }}</label>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="product-info">
                         <h2 class="title">{{ product_data.name }}</h2>
-                        <p class="category"><i class="lni lni-tag"></i> {{ product_data.category.name }}</p>
+                        <p class="category"> {{ product_data.category.name }}</p>
                         {% if product_prices %}
                         {% for product_price in product_prices %}
                         {% if product_price.price_type.default %}
-                        <h3 class="price">{{ product_price.currency.sign }}{{ product_price.price|floatformat:'2g' }}<span>{{ product_price.currency.sign }}{{ product_price.price|add:1000|floatformat:'2g' }}</span></h3>
+                        <h3 class="price">{{ product_price.currency.sign }}{{ product_price.price|floatformat:'2g' }}</h3>
                         {% endif %}
                         {% endfor %}
                         {% else %}
-                        <h3 class="price">0.00<span>0.00</span></h3>
+                        <h3 class="price">Цена по запросу</h3>
                         {% endif %}
                         <p class="info-text"></p>
                         <div class="bottom-content">
@@ -80,9 +61,9 @@
                                     </div> -->
                                     <div class="button cart-button">
                                         {% if product_stocks %}
-                                        <button class="btn" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;">Купить</button>
+                                        <button class="btn btn-secondary" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;">В корзину</button>
                                         {% else %}
-                                        <button class="btn" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;" disabled>Купить</button>
+                                        <button class="btn btn-secondary" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;" disabled>В корзину</button>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -94,7 +75,7 @@
                                 <div class="col-lg-4 col-md-4 col-12">
                                     {% if user.is_authenticated %}
                                     <div class="wish-button">
-                                        <button class="btn" onclick="add_favorite_product(this);" data-shop-product-pk="{{ product_data.pk }}"><i class="lni lni-heart"></i> В избранное</button>
+                                        <button class="btn btn-secondary" onclick="add_favorite_product(this);" data-shop-product-pk="{{ product_data.pk }}">В избранное</button>
                                     </div>
                                     {% endif %}
                                 </div>
@@ -106,33 +87,44 @@
         </div>
         <div class="product-details-info">
             <div class="single-block">
-                <div class="row">
+                <div class="row product-cart-border my-4 p-4">
                     <div class="col-lg-6 col-12">
-                        <div class="info-body custom-responsive-margin">
-                            <h4>Описание</h4>
-                            <p>{{ product_data.description }}</p>
-                            <!-- <h4>Features</h4>
-                            <ul class="features">
-                                <li>Capture 4K30 Video and 12MP Photos</li>
-                                <li>Game-Style Controller with Touchscreen</li>
-                                <li>View Live Camera Feed</li>
-                                <li>Full Control of HERO6 Black</li>
-                                <li>Use App for Dedicated Camera Operation</li>
-                            </ul> -->
-                        </div>
+                        <h4>Описание</h4>
+                        <p>{{ product_data.description }}</p>
+                        <!-- <h4>Features</h4>
+                        <ul class="features">
+                            <li>Capture 4K30 Video and 12MP Photos</li>
+                            <li>Game-Style Controller with Touchscreen</li>
+                            <li>View Live Camera Feed</li>
+                            <li>Full Control of HERO6 Black</li>
+                            <li>Use App for Dedicated Camera Operation</li>
+                        </ul> -->
                     </div>
                     <div class="col-lg-6 col-12">
                         <div class="info-body">
-                            <h4>Характеристики</h4>
-                            <ul class="normal-list">
-                                {% for product_attribute in product_attributes %}
-                                {% if value.numeric_value %}
-                                <li><span>{{ product_attribute.attribute.name }}:</span> {{ product_attribute.value.numeric_value }}</li>
-                                {% else %}
-                                <li><span>{{ product_attribute.attribute.name }}:</span> {{ product_attribute.value.string_value }}</li>
-                                {% endif %}
-                                {% endfor %}
-                            </ul>
+                            <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Наименование параметра</th>
+                                    <th scope="col">Значение</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    {% for product_attribute in product_attributes %}
+                                    {% if value.numeric_value %}
+                                    <tr>
+                                        <td>{{ product_attribute.attribute.name }}</td>
+                                        <td>{{ product_attribute.value.numeric_value }}</td>
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td>{{ product_attribute.attribute.name }}</td>
+                                        <td>{{ product_attribute.value.string_value }}</td>
+                                    </tr>
+                                    {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
                             <!-- <h4>Вырианты доставки:</h4>
                             <ul class="normal-list">
                                 <li><span>Курьер:</span> 2 - 4 days, $22.50</li>
@@ -205,5 +197,4 @@
     </div>
 </div>
 <!-- End Review Modal -->
-
 {% endblock content %}

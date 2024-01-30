@@ -581,4 +581,15 @@ img {
     background-color: #223D59;
 }
 
+.product-main-img {
+    max-width: 100%; /* Максимальная ширина картинки */
+    min-height: 100%; /* Минимальная высота картинки */
+    object-fit: contain; /* Всю, выше указанную, облась заполнить картинкой */
+    width: 200px;
+    height: 400px;
+}
+
+.product-cart-border {
+    border: 1px solid #DBDBDB;
+}
 /* end main index */
