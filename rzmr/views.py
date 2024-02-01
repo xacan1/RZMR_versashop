@@ -3,6 +3,18 @@ from django.views.generic import FormView, ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from rzmr.forms import *
 from shop.mixins import DataMixin
+from django.http import HttpRequest, HttpResponse, FileResponse
+from pathlib import Path
+
+
+class RobotView(DataMixin, FormView):
+    def get(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+        filename = 'robot.txt'
+        path_file = Path(Path.cwd(), filename)
+        response = FileResponse(open(path_file, 'rb'), as_attachment=True,
+                                filename='robot.txt', content_type="text/plain")
+
+        return response
 
 
 class IndexView(DataMixin, FormView):
@@ -571,7 +583,7 @@ class PTFEInnerView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Внутренний экран для фторопластовых рукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEAntistaticheskayaPrisadkaPloskayaView(DataMixin, FormView):
     form_class = SimpleForm
@@ -597,7 +609,7 @@ class PTFEAntistaticheskayaPrisadkaGofrirovannayaView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Антистатическая присадка гофрированная', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEOutsideView(DataMixin, FormView):
     form_class = SimpleForm
@@ -622,7 +634,7 @@ class PTFEOutsideTermochekholView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Термочехол для фторопластовых рукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEOutsideRezinovayaObolochkaView(DataMixin, FormView):
     form_class = SimpleForm
@@ -635,7 +647,7 @@ class PTFEOutsideRezinovayaObolochkaView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Резиновая оболочка для фторопластовых рукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEOutsidePruzhinaView(DataMixin, FormView):
     form_class = SimpleForm
@@ -661,7 +673,7 @@ class PTFEOutsidePloskayaTrubkaVMetallorukaveVOpletkeView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Плоская трубка в металлорукаве в оплетке', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEOutsideGofrirovannayaTrubkaVMetallorukaveVOpletkeView(DataMixin, FormView):
     form_class = SimpleForm

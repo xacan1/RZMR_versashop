@@ -1,4 +1,5 @@
-from django.views.generic import FormView, ListView, DetailView, CreateView
+from typing import Any
+from django.views.generic import FormView, ListView, DetailView, CreateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.core.paginator import Paginator
