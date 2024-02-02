@@ -32,23 +32,25 @@
                             <div class="accordion" id="accordionAttributes">
                             {% for element in form %}
                                 {% if element.name != 'price_range_max' and element.name != 'current_price' and element.name != 'sorting' %}
-                                {% if element.is_hidden %}
-                                <div class="accordion-item">
-                                    <h6 class="uzm-filter-parameters-box-title accordion-header" id="heading{{ element.help_text }}">
-                                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse{{ element.help_text }}"
-                                            aria-expanded="true" aria-controls="collapse{{ element.help_text }}">
-                                            {{ element.label }}
-                                        </div>
-                                    </h6>
-                                {% else %}
-                                    <div id="collapse{{ element.help_text }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ element.help_text }}">
-                                        <div class="form-check mx-4">
-                                            {{ element }}
-                                            <label class="form-check-label" for="flexCheck{{ element.name }}">{{ element.label }}</label>
+                                    {% if element.is_hidden %}
+                                    <div class="accordion-item">
+                                        <h6 class="uzm-filter-parameters-box-title accordion-header" id="heading{{ element.help_text }}">
+                                            <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse{{ element.help_text }}"
+                                                aria-expanded="false" aria-controls="collapse{{ element.help_text }}">
+                                                {{ element.label }}
+                                            </div>
+                                        </h6>
+                                    </div>
+                                    {% else %}
+                                    <div class="accordion-item">
+                                        <div id="collapse{{ element.help_text }}" class="accordion-collapse collapse" aria-labelledby="heading{{ element.help_text }}">
+                                            <div class="form-check mx-4">
+                                                {{ element }}
+                                                <label class="form-check-label" for="flexCheck{{ element.name }}">{{ element.label }}</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                {% endif %}
+                                    {% endif %}
                                 {% endif %}
                             {% endfor %}
                             </div>
@@ -59,7 +61,6 @@
                 </div>
                 <!-- End Product Sidebar -->
             </div>
-            
             <div class="col-lg-9 col-12">
                 <!-- Start Main Menu Search -->
                 <div class="main-menu-search pt-2">
@@ -257,6 +258,7 @@
 </section>
 <!-- End Product Grids -->
 <script src="{% static 'shop/js/shop_client.js' %}"></script>
+<script src="{% static 'shop/js/accordion_handler.js' %}"></script>
 
 {% include 'shop/add_product_to_cart_modal.html' %}
 

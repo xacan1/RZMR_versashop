@@ -134,6 +134,7 @@ class CategoryProductListView(DataMixin, FormView):
         min_max_price = services.get_min_max_price_category(slug)
         initial = {**initial, **min_max_price}
         initial['get_params'] = self.request.GET
+        self.groups = [self.request.GET[key] for key in self.request.GET]
         self.attribute_groups = services.get_attributes_category_with_values(
             slug)
         initial['attribute_groups'] = self.attribute_groups
@@ -181,6 +182,7 @@ class CategoryProductListView(DataMixin, FormView):
                                           amount_product_total=amount_product_total,
                                           parent_categories=parent_categories,
                                           add_for_pagination=add_for_pagination,
+                                          groups=self.groups,
                                           page_obj=page_obj)
         else:
             category, nested_categories = services.get_nested_categories(slug)
