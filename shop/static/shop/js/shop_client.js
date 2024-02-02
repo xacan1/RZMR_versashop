@@ -24,6 +24,19 @@ async function elements_listener() {
             handlerAddProductToCart(event);
         });
     }
+
+    // let filter_checkboxes = document.getElementsByClassName('form-check-input');
+
+    // for (var checkbox of filter_checkboxes) {
+    //     checkbox.addEventListener('click', popup_button_show(checkbox), true);
+    // }
+
+    // let filter_buttons = document.getElementsByClassName('shop-popup-button');
+
+    // for (let btn of filter_buttons) {
+    //     btn.addEventListener('click', popup_button_hidden(btn));
+    // }
+    
 }
 
 // function load_saved_values() {
@@ -532,6 +545,21 @@ async function sort_products() {
     location.href = params_get;
 }
 
+// Всплывающая кнопка отбора при фильтрации товара по атрибутам
+function popup_button_show(checkbox) {
+    let attr_checkbox = checkbox.getAttribute('id');
+    let button = document.querySelector(`[data-shop-button-id="${attr_checkbox}"]`);
+    button.removeAttribute('hidden');
+}
+
+function popup_button_hidden(button) {
+    let filter_buttons = document.getElementsByClassName('shop-popup-button');
+
+    for (let btn of filter_buttons) {
+        btn.setAttribute('hidden', '');
+    }
+    
+}
 
 // function save_selectSorting(elem) {
 //     sessionStorage.setItem(elem.name, elem.value);

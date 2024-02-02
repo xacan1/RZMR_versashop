@@ -24,7 +24,7 @@
                         <div class="single-widget condition">
                             <h5 class="py-3">Подбор параметров</h5>
                             <div class="py-2">
-                                <button class="btn btn-secondary">Отфильтровать</button>
+                                <button class="btn btn-secondary btn-hop">Отфильтровать</button>
                             </div>
                             <div class="accordion" id="accordionAttributes">
                             {% for element in form %}
@@ -32,7 +32,7 @@
                                     {% if element.is_hidden %}
                                     <div class="accordion-item">
                                         <h6 class="uzm-filter-parameters-box-title accordion-header" id="heading{{ element.help_text }}">
-                                            <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse{{ element.help_text }}"
+                                            <div class="accordion-button collapsed text-blue-uzm" data-bs-toggle="collapse" data-bs-target="#collapse{{ element.help_text }}"
                                                 aria-expanded="false" aria-controls="collapse{{ element.help_text }}">
                                                 {{ element.label }}
                                             </div>
@@ -44,6 +44,9 @@
                                             <div class="form-check mx-4">
                                                 {{ element }}
                                                 <label class="form-check-label" for="flexCheck{{ element.name }}">{{ element.label }}</label>
+                                                <button class="btn btn-outline-secondary mx-3 shop-popup-button" 
+                                                    data-shop-button-id="flexCheck{{ element.name }}" onclick="popup_button_hidden(this);"
+                                                    style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .25rem; --bs-btn-font-size: .75rem;" hidden>Отобрать</button>
                                             </div>
                                         </div>
                                     </div>
