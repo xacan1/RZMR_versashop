@@ -593,4 +593,8 @@ img {
     border: 1px solid #DBDBDB;
 }
 
+input {
+    cursor: pointer;
+}
+
 /* end main index */

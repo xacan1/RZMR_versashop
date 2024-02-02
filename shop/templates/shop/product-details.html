@@ -35,13 +35,15 @@
                         <h2 class="title">{{ product_data.name }}</h2>
                         <p class="category"> {{ product_data.category.name }}</p>
                         {% if product_prices %}
-                        {% for product_price in product_prices %}
-                        {% if product_price.price_type.default %}
-                        <h3 class="price">{{ product_price.currency.sign }}{{ product_price.price|floatformat:'2g' }}</h3>
-                        {% endif %}
-                        {% endfor %}
+                            {% for product_price in product_prices %}
+                                {% if product_price.price == 0 %}
+                                <h3 class="price">Цена по запросу</h3>
+                                {% elif product_price.price_type.default %}
+                                    <h3 class="price">{{ product_price.currency.sign }}{{ product_price.price|floatformat:'2g' }}</h3>
+                                {% endif %}
+                            {% endfor %}
                         {% else %}
-                        <h3 class="price">Цена по запросу</h3>
+                            <h3 class="price">Цена по запросу</h3>
                         {% endif %}
                         <p class="info-text"></p>
                         <div class="bottom-content">
