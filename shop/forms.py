@@ -46,8 +46,7 @@ class ProductListForm(forms.Form):
             for value in values:
                 name = str(value['pk'])
                 attrs = {'class': 'form-check-input',
-                         'value': attribute, 'id': f'flexCheck{name}',
-                         'onclick': 'popup_button_show(this);'}
+                         'value': attribute, 'id': f'flexCheck{name}',}
 
                 # Если параметр содержится в GET запросе, то на нем стоит галочка, значит пометим его при повторном вызове формы
                 if name in get_params:

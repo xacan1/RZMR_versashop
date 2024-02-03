@@ -25,18 +25,17 @@ async function elements_listener() {
         });
     }
 
-    // let filter_checkboxes = document.getElementsByClassName('form-check-input');
+    let filter_checkboxes = document.getElementsByClassName('form-check-input');
 
-    // for (var checkbox of filter_checkboxes) {
-    //     checkbox.addEventListener('click', popup_button_show(checkbox), true);
-    // }
+    for (var checkbox of filter_checkboxes) {
+        checkbox.addEventListener('click', function(){ popup_button_show(this, checkbox); });
+    }
 
-    // let filter_buttons = document.getElementsByClassName('shop-popup-button');
+    let filter_buttons = document.getElementsByClassName('shop-popup-button');
 
-    // for (let btn of filter_buttons) {
-    //     btn.addEventListener('click', popup_button_hidden(btn));
-    // }
-    
+    for (let btn of filter_buttons) {
+        btn.addEventListener('click', function(){ popup_button_hidden(this, btn); });
+    }
 }
 
 // function load_saved_values() {
@@ -558,7 +557,6 @@ function popup_button_hidden(button) {
     for (let btn of filter_buttons) {
         btn.setAttribute('hidden', '');
     }
-    
 }
 
 // function save_selectSorting(elem) {
