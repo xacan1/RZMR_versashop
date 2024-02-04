@@ -26,12 +26,12 @@
         <div class="contacts fs-md-media-uzm sticky-top">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="d-lg-block d-none col-3">
+                    <div class="d-xl-block d-none col-3">
                         <div class="header-element">
                             <span>г.Санкт-Петербург, ул.Замшина, д.31 К.4, офис 3-Н/4</span>
                         </div>
                     </div>
-                    <div class="col-2 col-lg-1">
+                    <div class="d-none d-md-block col-2">
                         <div class="header-element">
                             <a href="mailto:{{ company_email }}">{{ company_email }}</a>
                         </div>
@@ -41,12 +41,12 @@
                             <a href="#">Заказать звонок</a>
                         </div>
                     </div>
-                    <div class="d-xl-block d-none col-2">
+                    <!-- <div class="d-xl-block d-none col-1">
                         <div class="header-element">
                             <a href="#">Пригласить на тендер</a>
                         </div>
-                    </div>
-                    <div class="col-6 col-xl-2">
+                    </div> -->
+                    <div class="col-xl-2 col-md-3 col-12">
                         <div class="header-element">
                             <a href="{% url 'home' %}">
                                 <img src="{% static 'rzmr/img/russian-flag.png' %}" alt="Русский язык">Рус</a>
@@ -56,6 +56,50 @@
                                 <img src="{% static 'rzmr/img/kazakhstan-flag.png' %}" alt="Қазақша">Қаз</a>
                             <a href="https://uzmr.by/">
                                 <img src="{% static 'rzmr/img/belarus-flag.png' %}" alt="Беларуская мова">Блр</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-7 col-12">
+                        <div class="header-element">
+                            <div class="top-end">
+                                <div class="user">
+                                    {% if user.is_authenticated %}
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                    </svg>
+                                    <a href="{% url 'personal-account' %}">Личный кабинет</a> -->
+                                    {% endif %}
+                                </div>
+                                <ul class="user-login">
+                                    {% if user.is_authenticated %}
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                        </svg>
+                                        <!-- <a href="{% url 'personal-account' %}">{{ user.email }}</a> -->
+                                        <a href="{% url 'personal-account' %}">Личный кабинет</a>
+                                    </li>
+                                    <li>
+                                        <form method="post" action="{% url 'logout' %}">
+                                            {% csrf_token %}
+                                            <button class="btn btn-shop-logout" type="submit" 
+                                                style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .85rem;">
+                                                Выйти
+                                            </button>
+                                        </form>
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                        </svg>
+                                        <a href="{% url 'login' %}">Войти</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'registration' %}">Регистрация</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="col-2">
@@ -77,9 +121,52 @@
                 <div class="col-xl-3 col-1">
                     <div class="horizontal-line-uzm"></div>
                 </div>
-                <div class="col-xl-2 col-3 text-end">
+                <!-- <div class="col-xl-2 col-3 text-end">
                     <div class="button-uzm">
                         <a href="{% url 'home-shop' %}" type="button" class="btn btn-danger btn-sm">Онлайн магазин</a>
+                    </div>
+                </div> -->
+                <div class="col-xl-2 col-3 text-end">
+                    <div class="navbar-cart">
+                        <div class="wishlist d-md-block d-none">
+                            {%  if user.is_authenticated %}
+                            <a href="{% url 'wishlist' %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                                <span class="total-items" id="shop-total-wishlist">0</span>
+                            </a>
+                            {% else %}
+                            <a href="{% url 'login' %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                                <span class="total-items">0</span>
+                            </a>
+                            {% endif %}
+                        </div>
+                        <div class="cart-items d-md-block d-none" id="shop-cart-header">
+                            <a href="{% url 'cart' %}" class="main-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                                <span id="shop-total-items" class="total-items"></span>
+                            </a>
+                            <!-- Корзина на главной странице -->
+                            <div class="shopping-item">
+                                <div class="dropdown-cart-header">
+                                    <span id="shop-total-quantity-cart"></span>
+                                    <a href="{% url 'cart' %}">Посмотреть корзину</a>
+                                </div>
+                                <ul class="shopping-list">
+                                    
+                                </ul>
+                                <div class="bottom">
+                                    
+                                </div>
+                            </div>
+                            <!--/ End Shopping Item -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -302,5 +389,6 @@
     </footer>
 
     <script src="{% static 'rzmr/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'shop/js/shop_client.js' %}"></script>
 </body>
 </html>

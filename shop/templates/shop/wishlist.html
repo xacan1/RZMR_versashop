@@ -1,0 +1,103 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Shopping Cart -->
+<div class="shopping-cart section">
+    <div class="container">
+        {% if wishlist %}
+        <div class="cart-list-head">
+            <!-- Cart List Title -->
+            <div class="cart-list-title">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-12">
+                        <!-- <p>Изображение</p> -->
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-12">
+                        <p>Товар</p>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-12">
+                        <p>Цена</p>
+                    </div>
+                    {% if wishlist.there_discounts %}
+                    <div class="col-lg-2 col-md-2 col-12">
+                        <p>% Скидки</p>
+                    </div>
+                    {% endif %}
+                    <div class="col-lg-1 col-md-2 col-12">
+                        <p>Удалить</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Cart List Title -->
+            {% for row_product in wishlist.products %}
+            <!-- Cart Single List list -->
+            <div class="cart-single-list">
+                <div class="row align-items-center shop-row-cart-order" data-shop-favorite_product-pk="{{ row_product.pk }}">
+                    <div class="col-lg-1 col-md-1 col-12">
+                        {% if row_product.photo %}
+                        <a href="{% url 'product-details' row_product.slug %}"><img src="{{ row_product.photo }}" alt="#"></a>
+                        {% else %}
+                        <a href="{% url 'product-details' row_product.slug %}"><img src="https://via.placeholder.com/220x200" alt="#"></a>
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-12">
+                        <h5 class="product-name">
+                            <a href="{% url 'product-details' row_product.slug %}">
+                            {{ row_product.name }}</a>
+                        </h5>
+                        <!-- <p class="product-des">
+                            <span><em>Тип:</em> Mirrorless</span>
+                            <span><em>Цвет:</em> Black</span>
+                        </p> -->
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-12">
+                        <p class="shop-price">{{ row_product.price|floatformat:'2g' }}</p>
+                    </div>
+                    {% if row_product.discount_percentage > 0 %}
+                    <div class="col-lg-2 col-md-2 col-12">
+                        <p class="shop-discount">{{ row_product.discount_percentage }}</p>
+                    </div>
+                    {% endif %}
+                    <div class="col-lg-1 col-md-2 col-12">
+                        <button class="btn delete-favorite-button" onclick="delete_favorite_product(this);" data-shop-favorite_product-pk="{{ row_product.pk }}"><i class="remove-item lni lni-close"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single List list -->
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Total Amount -->
+                <div class="total-amount">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6 col-12">
+                            <!-- <div class="left">
+                                <div class="coupon">
+                                    <form action="#" target="_blank">
+                                        <input name="Coupon" placeholder="Введите купон">
+                                        <div class="button">
+                                            <button class="btn">Применить купон</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            
+                        </div>
+                    </div>
+                </div>
+                <!--/ End Total Amount -->
+            </div>
+        </div>
+        {% else %}
+        <div>
+            <p>Ещё ничего не выбрали? Самое время ознакомиться с нашим каталогом!</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<!--/ End Shopping Cart -->
+{% endblock content %}

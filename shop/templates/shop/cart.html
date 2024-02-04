@@ -1,0 +1,41 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Shopping Cart -->
+<div class="shopping-cart section">
+    <div class="container" id="shop-cart">
+        <div class="cart-list-head">
+            <!-- Строки товаров -->
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Total Amount -->
+                <div class="total-amount">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6 col-12">
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="right">
+                                <div id="shop-total-amount-cart">
+                                    <!-- Итого -->
+                                </div>
+                                <div class="button shop-for-hidden">
+                                    <a href="{% url 'checkout' %}" class="btn">Оформить заказ</a>
+                                    <a href="{% url 'home' %}" class="btn btn-alt">Продолжить покупки</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/ End Total Amount -->
+            </div>
+        </div>
+        <div>
+            <p id="empty-cart"></p>
+        </div>
+    </div>
+</div>
+<!--/ End Shopping Cart -->
+
+{% endblock content %}

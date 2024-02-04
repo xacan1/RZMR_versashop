@@ -33,16 +33,16 @@ class RegisterUserForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('email', 'phone', 'first_name', 'last_name')
+        fields = ('email', 'phone', 'first_name', 'last_name', 'password1', 'password2')
         widgets = {'email': forms.EmailInput(attrs={'class': 'form-control'}),
                    'first_name': forms.TextInput(attrs={'class': 'form-control'}),
                    'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-                   'phone': forms.TextInput(attrs={'class': 'form-control'})}
+                   'phone': forms.TextInput(attrs={'class': 'form-control'}),}
 
 
 class LoginUserForm(AuthenticationForm):
     username = forms.EmailField(
-        label='Адрес электронной почты', widget=forms.EmailInput(attrs={'class': 'form-control'}))
+        label='Адрес электронной почты', widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
     password = forms.CharField(
         label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     # captcha = ReCaptchaField()

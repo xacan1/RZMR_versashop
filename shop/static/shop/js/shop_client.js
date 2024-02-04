@@ -27,14 +27,32 @@ async function elements_listener() {
 
     let filter_checkboxes = document.getElementsByClassName('form-check-input');
 
-    for (var checkbox of filter_checkboxes) {
+    for (let checkbox of filter_checkboxes) {
         checkbox.addEventListener('click', function(){ popup_button_show(this, checkbox); });
     }
 
     let filter_buttons = document.getElementsByClassName('shop-popup-button');
 
-    for (let btn of filter_buttons) {
-        btn.addEventListener('click', function(){ popup_button_hidden(this, btn); });
+    for (let button of filter_buttons) {
+        button.addEventListener('click', popup_button_hidden);
+    }
+
+    let add_cart_button = document.querySelector('.cart-button>.btn');
+
+    if (add_cart_button) {   
+        add_cart_button.addEventListener('click', function(){ add_product_to_cart(this, add_cart_button); });
+    }
+
+    let add_favorite_button = document.querySelector('.favorite-button>.btn');
+
+    if (add_favorite_button) {
+        add_favorite_button.addEventListener('click', function(){ add_favorite_product(this, add_favorite_button); });
+    }
+
+    let delete_favorite_button = document.querySelector('.delete-favorite-button');
+
+    if (delete_favorite_button) {
+        delete_favorite_button.addEventListener('click', function(){ delete_favorite_product(this, add_favorite_button); });
     }
 }
 
@@ -242,6 +260,8 @@ async function handlerAddProductToCart(event) {
 }
 
 async function add_product_to_cart(btn) {
+    alert('1111111111111111');
+    return;
     const product_pk = btn.getAttribute('data-shop-product-pk');
 
     let data_product = {
@@ -446,6 +466,8 @@ async function update_wishlist_header() {
 
 
 async function add_favorite_product(btn) {
+    alert('22222222222');
+    return;
     const product_pk = btn.getAttribute('data-shop-product-pk');
 
     let data_favorite_product = {
@@ -546,12 +568,13 @@ async function sort_products() {
 
 // Всплывающая кнопка отбора при фильтрации товара по атрибутам
 function popup_button_show(checkbox) {
+    popup_button_hidden();
     let attr_checkbox = checkbox.getAttribute('id');
     let button = document.querySelector(`[data-shop-button-id="${attr_checkbox}"]`);
     button.removeAttribute('hidden');
 }
 
-function popup_button_hidden(button) {
+function popup_button_hidden() {
     let filter_buttons = document.getElementsByClassName('shop-popup-button');
 
     for (let btn of filter_buttons) {

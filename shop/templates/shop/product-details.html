@@ -63,9 +63,10 @@
                                     </div> -->
                                     <div class="button cart-button">
                                         {% if product_stocks %}
-                                        <button class="btn btn-secondary" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;">В корзину</button>
+                                        <button class="btn btn-secondary" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;">В корзину</button>
                                         {% else %}
-                                        <button class="btn btn-secondary" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;" disabled>В корзину</button>
+                                        <!-- <button class="btn btn-secondary" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;" disabled>В корзину</button> -->
+                                        <button class="btn btn-secondary" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;">В корзину</button>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -76,8 +77,8 @@
                                 </div> -->
                                 <div class="col-lg-4 col-md-4 col-12">
                                     {% if user.is_authenticated %}
-                                    <div class="wish-button">
-                                        <button class="btn btn-secondary" onclick="add_favorite_product(this);" data-shop-product-pk="{{ product_data.pk }}">В избранное</button>
+                                    <div class="favorite-button">
+                                        <button class="btn btn-secondary" data-shop-product-pk="{{ product_data.pk }}">В избранное</button>
                                     </div>
                                     {% endif %}
                                 </div>
