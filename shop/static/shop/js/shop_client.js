@@ -39,7 +39,7 @@ async function elements_listener() {
 
     let add_cart_button = document.querySelector('.cart-button>.btn');
 
-    if (add_cart_button) {   
+    if (add_cart_button) {
         add_cart_button.addEventListener('click', function(){ add_product_to_cart(this, add_cart_button); });
     }
 
@@ -91,7 +91,7 @@ async function get_cart_info() {
         credentials: 'same-origin'
     }
 
-    let response = await fetch('/api/v1/get_cart_info', options);
+    let response = await fetch('/api/v1/get_cart_info/', options);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP: ' + response.status);
@@ -144,17 +144,20 @@ async function update_cart_header() {
         new_li.setAttribute('data-shop-product_cart-pk', row.id);
 
         // подправим путь к карточке товара
-        let path_product = '/product-details/' + row.product.slug;
+        let path_product = '/shop/product-details/' + row.product.slug;
 
         new_li.innerHTML = `<div>\
-            <a href="javascript:void(0)" onclick="delete_cart_product(this);" class="remove" title="Удалить товар"><i\
-                    class="lni lni-close"></i></a>\
+            <a href="javascript:void(0)" onclick="delete_cart_product(this);" class="remove" title="Удалить товар">\
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">\
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>\
+            </svg>\
+            </a>\
             <div class="cart-img-head">\
                 <a class="cart-img" href="${path_product}"><img src="${row.product.photo}" alt="#"></a>\
             </div>\
         </div>\
         <div class="content">\
-            <h4><a href="${path_product}">${row.product.name}</a></h4>\
+            <p><a href="${path_product}">${row.product.name}</a></p>\
             <p class="quantity">${formatter0.format(row.quantity)}x - <span class="amount">${formatter.format(row.amount)}</span></p>\
         </div>`;
         product_list.append(new_li);
@@ -260,8 +263,6 @@ async function handlerAddProductToCart(event) {
 }
 
 async function add_product_to_cart(btn) {
-    alert('1111111111111111');
-    return;
     const product_pk = btn.getAttribute('data-shop-product-pk');
 
     let data_product = {
@@ -276,7 +277,7 @@ async function add_product_to_cart(btn) {
         body: JSON.stringify(data_product)
     };
 
-    let response = await fetch('/api/v1/update_product_to_cart', options);
+    let response = await fetch('/api/v1/update_product_to_cart/', options);
 
     if (!response.ok) {
         console.log('Ошибка HTTP add_product_to_cart: ' + response.status);
@@ -325,7 +326,7 @@ async function after_change_quantity(input) {
         body: JSON.stringify(data_cart_product)
     }
 
-    let response = await fetch('/api/v1/update_product_to_cart', options);
+    let response = await fetch('/api/v1/update_product_to_cart/', options);
 
     if (!response.ok) {
         console.log('Ошибка HTTP after_change_quantity: ' + response.status);
@@ -373,7 +374,7 @@ function update_cart(cart_info) {
     }
 
     for (let row of cart_info.products) {
-        let path_product = '/product-details/' + row.product.slug;
+        let path_product = '/shop/product-details/' + row.product.slug;
         let row_cart_order = document.createElement('div');
         row_cart_order.className = 'cart-single-list shop-for-del';
         row_cart_order.innerHTML = `<div class="row align-items-center shop-row-cart-order" data-shop-product_cart-pk="${row.id}" data-shop-product-pk="${row.product.id}" data-shop-price="${row.price}">\
@@ -381,10 +382,10 @@ function update_cart(cart_info) {
                 <a href="${path_product}"><img src="${row.product.photo ? row.product.photo : 'https://via.placeholder.com/220x200'}" alt="#"></a>\
             </div>\
             <div class="col-lg-4 col-md-3 col-12">\
-                <h5 class="product-name">\
+                <p class="product-name fw-bold">\
                     <a href="${path_product}">\
                     ${row.product.name}</a>\
-                </h5>\
+                </p>\
             </div>\
             <div class="col-lg-2 col-md-2 col-12">\
                 <div class="count-input">\
@@ -392,13 +393,17 @@ function update_cart(cart_info) {
                 </div>\
             </div>\
             <div class="col-lg-2 col-md-2 col-12">\
-                <p class="shop-amount">${formatter.format(row.amount)}</p>\
+                <p class="shop-amount fs-6">${formatter.format(row.amount)}</p>\
             </div>\
             <div class="col-lg-2 col-md-2 col-12" ${cart_info.discount > 0 ? '' : 'hidden'}>\
                 <p class="shop-discount">${formatter.format(row.discount)}</p>\
             </div>\
             <div class="col-lg-1 col-md-2 col-12">
-                <button class="btn" onclick="delete_cart_product(this);"><i class="remove-item lni lni-close"></i></button>
+                <button class="btn" onclick="delete_cart_product(this);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                    </svg>
+                </button>
             </div>
         </div>`;
         product_list.append(row_cart_order);
@@ -440,7 +445,7 @@ async function get_wishlist_info() {
         credentials: 'same-origin'
     }
 
-    let response = await fetch('/api/v1/get_favorite_products_info', options);
+    let response = await fetch('/api/v1/get_favorite_products_info/', options);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP get_wishlist_info: ' + response.status);
@@ -466,8 +471,6 @@ async function update_wishlist_header() {
 
 
 async function add_favorite_product(btn) {
-    alert('22222222222');
-    return;
     const product_pk = btn.getAttribute('data-shop-product-pk');
 
     let data_favorite_product = {
@@ -481,7 +484,7 @@ async function add_favorite_product(btn) {
         body: JSON.stringify(data_favorite_product)
     };
 
-    let response = await fetch('/api/v1/add_favorite_product', options);
+    let response = await fetch('/api/v1/add_favorite_product/', options);
 
     if (!response.ok) {
         console.log('Ошибка HTTP add_favorite_product: ' + response.status);

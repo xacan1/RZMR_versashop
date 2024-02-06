@@ -1,4 +1,5 @@
 from decimal import Decimal
+from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib.auth.models import AbstractBaseUser
 from django.db.models import Q, Min, Max, Prefetch
@@ -519,11 +520,12 @@ def add_delete_update_product_to_cart(user: AbstractBaseUser, request_data: dict
         data_response = {'error': 'product_pk is undefined'}
         return data_response
 
-    all_stock = get_all_stock_product(product_pk)
+    if not settings.EXCESS_STOCK_OF_GOODS:
+        all_stock = get_all_stock_product(product_pk)
 
-    if not all_stock:
-        data_response = {'error': 'product is out of stock'}
-        return data_response
+        if not all_stock:
+            data_response = {'error': 'product is out of stock'}
+            return data_response
 
     if user.is_authenticated:
         user_pk = user.pk
@@ -567,7 +569,7 @@ def add_delete_update_product_to_cart(user: AbstractBaseUser, request_data: dict
         new_quantity = product_cart.quantity + new_cart_product['quantity']
 
     # проверим не превышает ли количество в корзине/заказе общий остаток
-    if new_quantity > all_stock:
+    if not settings.EXCESS_STOCK_OF_GOODS and new_quantity > all_stock:
         data_response = {'error': 'Excess balance of goods'}
         return data_response
 

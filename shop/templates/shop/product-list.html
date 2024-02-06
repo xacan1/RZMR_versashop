@@ -140,7 +140,8 @@
                                                 {% endif %}
                                             </div>
                                             <div class="button p-2">
-                                                <button class="btn btn-secondary" onclick="add_product_to_cart(this);" data-shop-product-pk="{{ product_info.product.pk }}">Заказать</button>
+                                                <button class="btn btn-secondary" style="width: 100%;" data-shop-product-pk="{{ product_info.product.pk }}"
+                                                    data-bs-toggle="modal" data-bs-target="#successAddProductToCartModal">Заказать</button>
                                             </div>
                                         </div>
                                     </div>
@@ -162,7 +163,7 @@
                                     <div class="pagination center">
                                         <ul class="pagination-list">
                                             {% if page_obj.has_previous %}
-                                            <li><a href="?page={{ page_obj.previous_page_number }}{{ add_for_pagination }}"><i class="lni lni-chevron-left"></i></a></li>
+                                            <li><a href="?page={{ page_obj.previous_page_number }}{{ add_for_pagination }}">←</i></a></li>
                                             {% endif %}
                                             {% for p in page_obj.paginator.page_range %}
                                             {% if p == page_obj.number %}
@@ -172,7 +173,7 @@
                                             {% endif %}
                                             {% endfor %}
                                             {% if page_obj.has_next %}
-                                            <li><a href="?page={{ page_obj.next_page_number }}{{ add_for_pagination }}"><i class="lni lni-chevron-right"></i></a></li>
+                                            <li><a href="?page={{ page_obj.next_page_number }}{{ add_for_pagination }}">→</a></li>
                                             {% endif %}
                                         </ul>
                                     </div>
@@ -231,7 +232,7 @@
                                     <div class="pagination center">
                                         <ul class="pagination-list">
                                             {% if page_obj.has_previous %}
-                                            <li><a href="?page={{ page_obj.previous_page_number }}{{ add_for_pagination }}"><i class="lni lni-chevron-left"></i></a></li>
+                                            <li><a href="?page={{ page_obj.previous_page_number }}{{ add_for_pagination }}">←</a></li>
                                             {% endif %}
                                             {% for p in page_obj.paginator.page_range %}
                                             {% if p == page_obj.number %}
@@ -241,7 +242,7 @@
                                             {% endif %}
                                             {% endfor %}
                                             {% if page_obj.has_next %}
-                                            <li><a href="?page={{ page_obj.next_page_number }}{{ add_for_pagination }}"><i class="lni lni-chevron-right"></i></a></li>
+                                            <li><a href="?page={{ page_obj.next_page_number }}{{ add_for_pagination }}">→</a></li>
                                             {% endif %}
                                         </ul>
                                     </div>
