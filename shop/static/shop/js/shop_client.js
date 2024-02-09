@@ -504,10 +504,10 @@ async function delete_favorite_product(btn) {
         credentials: 'same-origin'
     };
 
-    let response = await fetch(`/api/v1/products/favorites_delete/${favorite_product_pk}/`, options);
+    let response = await fetch(`/api/v1/products/favorites/${favorite_product_pk}/`, options);
 
     if (!response.ok) {
-        console.log('Ошибка HTTP /api/v1/products/favorites_delete/: ' + response.status);
+        console.log('Ошибка HTTP /api/v1/products/favorites/: ' + response.status);
         return;
     }
 

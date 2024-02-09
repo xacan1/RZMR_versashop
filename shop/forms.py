@@ -92,12 +92,12 @@ class AddOrderForm(forms.ModelForm):
         fields = ['first_name', 'last_name', 'phone', 'email', 'address',
                   'comment', 'delivery_type', 'payment_type', 'coupon',]
         widgets = {
-            'first_name': forms.TextInput(attrs={'placeholder': 'Имя'}),
-            'last_name': forms.TextInput(attrs={'placeholder': 'Фамилия'}),
-            'email': forms.TextInput(attrs={'placeholder': 'Электронная почта'}),
-            'phone': forms.TextInput(attrs={'placeholder': 'Пример: 79001234567'}),
-            'address': forms.TextInput(attrs={'placeholder': 'Пример: Уфа, ул. Ленина, дом 1'}),
+            'first_name': forms.TextInput(attrs={'placeholder': 'Имя', 'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Фамилия', 'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'placeholder': 'Электронная почта', 'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'placeholder': 'Пример: 79001234567', 'class': 'form-control'}),
+            'address': forms.TextInput(attrs={'placeholder': 'Пример: Уфа, ул. Ленина, дом 1', 'class': 'form-control'}),
             'payment_type': forms.Select(attrs={'class': 'form-control'}),
             'delivery_type': forms.Select(attrs={'class': 'form-control'}),
-            'comment': forms.Textarea(attrs={'cols': 60, 'rows': 3}),
+            'comment': forms.Textarea(attrs={'cols': 60, 'rows': 3, 'class': 'form-control'}),
         }

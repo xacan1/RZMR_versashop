@@ -1,0 +1,211 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="checkout-wrapper section p-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="checkout-steps-form-style-1">
+                    <section class="checkout-steps-form-content p-3">
+                        <form action="{% url 'checkout' %}" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="single-form form-default">
+                                        <label>Имя заказчика</label>
+                                        <div class="row">
+                                            <div class="col-md-6 form-input form">
+                                                <!-- <input type="text" placeholder="Имя"> -->
+                                                {{ form.first_name }}
+                                                <div class="text-danger">{{ form.first_name.errors }}</div>
+                                            </div>
+                                            <div class="col-md-6 form-input form">
+                                                <!-- <input type="text" placeholder="Фамилия"> -->
+                                                {{ form.last_name }}
+                                                <div class="text-danger">{{ form.last_name.errors }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form form-default has-validation">
+                                        <label>Email</label>
+                                        <div class="form-input form">
+                                            <!-- <input type="text" placeholder="Email"> -->
+                                            {{ form.email }}
+                                            <div class="text-danger">{{ form.email.errors }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form form-default">
+                                        <label>Телефон (начиная с 7)</label>
+                                        <div class="form-input form">
+                                            <!-- <input type="text" placeholder="Телефон"> -->
+                                            {{ form.phone }}
+                                            <div class="text-danger">{{ form.phone.errors }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single-form form-default">
+                                        <label>Адрес доставки (Населенный пункт, улица, номер дома)</label>
+                                        <div class="form-input form">
+                                            <!-- <input type="text" placeholder="Адрес доставки"> -->
+                                            {{ form.address }}
+                                            <div class="text-danger">{{ form.address.errors }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-6">
+                                    <div class="single-form form-default">
+                                        <label>Область/Провинция</label>
+                                        <div class="select-items">
+                                            <select class="form-control">
+                                                <option value="0">select</option>
+                                                <option value="1">Башкортостан</option>
+                                                <option value="2">Пермский край</option>
+                                                <option value="3">Запорожская область</option>
+                                                <option value="4">Херсонская область</option>
+                                                <option value="5">Удмуртия</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-6">
+                                    <div class="single-form form-default">
+                                        <label>Способ получения</label>
+                                        <div class="select-items">
+                                            {{ form.delivery_type }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form form-default">
+                                        <label>Способ оплаты</label>
+                                        <div class="select-items">
+                                            {{ form.payment_type }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single-form form-default">
+                                        <label>Комментарий к заказу</label>
+                                        <div class="form form-input">
+                                            {{ form.comment }}
+                                            <div class="text-danger">{{ form.comment.errors }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="steps-form-btn button py-2">
+                                        <button class="btn btn-secondary" type="submit">Подтвердить заказ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                        
+                        <!-- <li>
+                            <h6 class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapsefive"
+                                aria-expanded="false" aria-controls="collapsefive">Платежная информация</h6>
+                            <section class="checkout-steps-form-content collapse" id="collapsefive"
+                                aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="checkout-payment-form">
+                                            <div class="single-form form-default">
+                                                <label>Имя владельца карты</label>
+                                                <div class="form-input form">
+                                                    <input type="text" placeholder="Имя владельца карты ">
+                                                </div>
+                                            </div>
+                                            <div class="single-form form-default">
+                                                <label>Номер карты</label>
+                                                <div class="form-input form">
+                                                    <input id="credit-input" type="text"
+                                                        placeholder="0000 0000 0000 0000">
+                                                    <img src="{% static 'shop/images/payment/card.png' %}" alt="card">
+                                                </div>
+                                            </div>
+                                            <div class="payment-card-info">
+                                                <div class="single-form form-default mm-yy">
+                                                    <label>Срок действия</label>
+                                                    <div class="expiration d-flex">
+                                                        <div class="form-input form">
+                                                            <input type="text" placeholder="ММ">
+                                                        </div>
+                                                        <div class="form-input form">
+                                                            <input type="text" placeholder="ГГГГ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-form form-default">
+                                                    <label>CVC/CVV <span><i
+                                                                class="mdi mdi-alert-circle"></i></span></label>
+                                                    <div class="form-input form">
+                                                        <input type="text" placeholder="***">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="single-form form-default button">
+                                                <button class="btn">Оплатить</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </li> -->
+                </div>
+            </div>
+            <!-- <div class="col-lg-4">
+                <div class="checkout-sidebar p-3">
+                    <div class="checkout-sidebar-coupon">
+                        <p>Примените купон, чтобы получить скидку!</p>
+                        <form action="#">
+                            <div class="single-form form-default">
+                                <div class="form-input form">
+                                    <input class="form-control" type="text" placeholder="Код">
+                                </div>
+                                <div class="button py-2">
+                                    <button class="btn btn-secondary">Применить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="checkout-sidebar-price-table mt-30">
+                        <h5 class="title">Сумма заказа</h5>
+
+                        <div class="sub-total-price">
+                            <div class="total-price">
+                                <p class="value">Сумма:</p>
+                                {% if cart.amount > 0 %}
+                                <p class="price">{{ cart.currency.sign }}{{ cart.amount|floatformat:'2g' }}</p>
+                                {% else %}
+                                <p class="price fw-bold fs-4">Цена по запросу</p>
+                                {% endif %}
+                            </div>
+                            {% if cart.discount > 0 %}
+                            <div class="total-price discount">
+                                <p class="value">Скидка:</p>
+                                <p class="price">{{ cart.currency.sign }}{{ cart.discount|floatformat:'2g' }}</p>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="total-payable">
+                            <div class="payable-price">
+                                <p class="value">Итоговая сумма:</p>
+                                <p class="price">{{ cart.currency.sign }}{{ cart.amount|floatformat:'2g' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+<!--====== Checkout Form Steps Part Ends ======-->
+
+{% endblock content %}

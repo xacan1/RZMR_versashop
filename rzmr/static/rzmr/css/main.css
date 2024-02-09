@@ -845,7 +845,7 @@ img {
 }
 
 .navbar-cart .cart-items .shopping-item .shopping-list li .content p a {
-    font-size: 14px;
+    font-size: .75rem;
     font-weight: 600;
     color: #081828;
 }
@@ -1043,5 +1043,17 @@ input {
     color: #0167F3;
 }
 
-/* end main index */
+/*======================================
+   Checkout CSS
+========================================*/
+.checkout-wrapper {
+    background-color: #f9f9f9;
+}
 
+.checkout-steps-form-content, .checkout-sidebar {
+    background-color: #fff;
+    border: 1px solid #D3D3D3;
+}
+
+
+/* end main index */
