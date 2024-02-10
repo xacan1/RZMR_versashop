@@ -1,0 +1,43 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="p-5">
+    <div class="container">
+        <div class="success-content">
+            {% if user.is_authenticated %}
+            <div class="row justify-content-center">
+                <div class="col-2"></div>
+                <div class="col-8 py-5">
+                    <h5>Ваш заказ сейчас будет отменен. Продолжить?</h5>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 py-2">
+                    <div class="button">
+                        <a href="{% url 'order' order_pk %}" class="btn btn-secondary">Назад</a>
+                    </div>
+                </div>
+                <div class="col-6 py-2">
+                    <div class="button">
+                        <button class="btn btn-secondary"
+                            onclick="cancel_order(this);location.href=`{% url 'order-cancel-complete' order_pk %}`"
+                            data-shop-order-pk="{{ order_pk }}">Отменить заказ</button>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <h3>Для отмены заказа войдите на сайт.</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-3 py-2">
+                    <div class="button">
+                        <a href="{% url 'login' %}" class="btn">Войти</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

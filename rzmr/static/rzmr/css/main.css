@@ -1055,5 +1055,18 @@ input {
     border: 1px solid #D3D3D3;
 }
 
+/*======================================
+   Order CSS
+========================================*/
+
+.cart-list-title {
+    color: #fff;
+    background-color: #223D59;
+    /* border: 1px solid #D3D3D3; */
+}
+
+.cart-list-head {
+    background-color: #fff;
+}
 
 /* end main index */

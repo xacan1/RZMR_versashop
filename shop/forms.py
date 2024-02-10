@@ -83,6 +83,7 @@ class AddOrderForm(forms.ModelForm):
         phone = self.cleaned_data['phone']
 
         if len(phone) != 11 or not phone.isdigit() or phone[0] != '7':
+            print('ERROR!')
             raise ValidationError('Введите правильный мобильный номер')
 
         return phone

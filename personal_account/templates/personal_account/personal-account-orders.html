@@ -29,7 +29,11 @@
                 <a href="{% url 'order' order.pk %}">{{ order }}</a>
             </div>
             <div class="col-lg-2 col-md-2 col-12">
+                {% if order.amount > 0 %}
                 {{ order.amount }}{{ order.currency.sign }}
+                {% else %}
+                <span>Не указана</span>
+                {% endif %}
             </div>
             <div class="col-lg-2 col-md-2 col-12">
                 {{ order.status.name }}
