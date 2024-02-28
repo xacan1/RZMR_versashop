@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser, AbstractBaseUser
 from django.contrib.auth.base_user import BaseUserManager
 from django.utils.translation import gettext_lazy as _
+from main.validators import validate_phone
 
 
 class CustomUserManager(BaseUserManager):
@@ -36,7 +37,7 @@ class CustomUser(AbstractUser):
     username = None
     email = models.EmailField(_('email address'), unique=True)
     phone = models.CharField(max_length=15, unique=True,
-                             verbose_name='Телефон')
+                             verbose_name='Телефон', validators=[validate_phone,])
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

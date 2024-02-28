@@ -1,6 +1,8 @@
+from typing import Any
 from django import forms
-from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 from shop.models import *
+
 
 
 class SimpleForm(forms.Form):
@@ -79,14 +81,13 @@ class AddOrderForm(forms.ModelForm):
         self.fields['payment_type'].empty_label = 'Не выбран вид оплаты'
         self.fields['delivery_type'].empty_label = 'Не выбран способ получения'
 
-    def clean_phone(self):
-        phone = self.cleaned_data['phone']
+    # def clean_phone(self):
+    #     phone = self.cleaned_data['phone']
 
-        if len(phone) != 11 or not phone.isdigit() or phone[0] != '7':
-            print('ERROR!')
-            raise ValidationError('Введите правильный мобильный номер')
+    #     if len(phone) != 11 or not phone.isdigit() or phone[0] != '7':
+    #         raise forms.ValidationError('Введите правильный мобильный номер')
 
-        return phone
+    #     return phone
 
     class Meta:
         model = Order
