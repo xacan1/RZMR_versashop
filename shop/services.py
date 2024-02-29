@@ -64,9 +64,9 @@ def get_currencies() -> models.QuerySet[Currency]:
     return queryset
 
 
-# Возвращает рекурсивно все категории с подкатегориями в виде списка кортежей с slug, name и списокм подкатегорий если он есть
+# Возвращает рекурсивно все категории с подкатегориями в виде списка кортежей с slug, name и списком подкатегорий если он есть
 # categories = [(slug, name, []),]
-def get_categories(parent_id) -> list:
+def get_categories(parent_id: None | str = None) -> list[tuple[str, str, list]]:
     categories = []
     queryset = Category.objects.filter(parent=parent_id)
 

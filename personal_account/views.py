@@ -21,8 +21,9 @@ class UserSettingsView(LoginRequiredMixin, DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        breadcrumb = [('personal-account', 'Личный кабинет'),]
         c_def = self.get_user_context(
-            title='Настройки пользователя', is_settings=True)
+            title='Настройки пользователя', is_settings=True, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -32,7 +33,9 @@ class UserOrdersView(LoginRequiredMixin, DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Заказы', is_orders=True)
+        breadcrumb = [('personal-account', 'Личный кабинет'),]
+        c_def = self.get_user_context(
+            title='Заказы', is_orders=True, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -42,5 +45,7 @@ class UserCompaniesView(LoginRequiredMixin, DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Организации', is_companies=True)
+        breadcrumb = [('personal-account', 'Личный кабинет'),]
+        c_def = self.get_user_context(
+            title='Организации', is_companies=True, breadcrumb=breadcrumb)
         return {**context, **c_def}

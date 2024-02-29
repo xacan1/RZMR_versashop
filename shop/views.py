@@ -23,14 +23,14 @@ class IndexShopView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class AboutAsView(DataMixin, FormView):
-    form_class = SimpleForm
-    template_name = 'shop/about-us.html'
+# class AboutAsView(DataMixin, FormView):
+#     form_class = SimpleForm
+#     template_name = 'shop/about-us.html'
 
-    def get_context_data(self, **kwargs) -> dict:
-        context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='О нас')
-        return {**context, **c_def}
+#     def get_context_data(self, **kwargs) -> dict:
+#         context = super().get_context_data(**kwargs)
+#         c_def = self.get_user_context(title='О нас')
+#         return {**context, **c_def}
 
 
 class CartView(DataMixin, FormView):
@@ -56,54 +56,54 @@ class WishlistView(LoginRequiredMixin, DataMixin, FormView):
         return {**context, **c_def}
 
 
-class ContactView(DataMixin, FormView):
-    form_class = SimpleForm
-    template_name = 'shop/contact.html'
+# class ContactView(DataMixin, FormView):
+#     form_class = SimpleForm
+#     template_name = 'shop/contact.html'
 
-    def get_context_data(self, **kwargs) -> dict:
-        context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Обратная связь')
-        return {**context, **c_def}
-
-
-class FaqView(DataMixin, FormView):
-    form_class = SimpleForm
-    template_name = 'shop/faq.html'
-
-    def get_context_data(self, **kwargs) -> dict:
-        context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='FAQ')
-        return {**context, **c_def}
+#     def get_context_data(self, **kwargs) -> dict:
+#         context = super().get_context_data(**kwargs)
+#         c_def = self.get_user_context(title='Обратная связь')
+#         return {**context, **c_def}
 
 
-class PrivacyPolicyView(DataMixin, FormView):
-    form_class = SimpleForm
-    template_name = 'shop/privacy-policy.html'
+# class FaqView(DataMixin, FormView):
+#     form_class = SimpleForm
+#     template_name = 'shop/faq.html'
 
-    def get_context_data(self, **kwargs) -> dict:
-        context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Политика конфиденциальности')
-        return {**context, **c_def}
+#     def get_context_data(self, **kwargs) -> dict:
+#         context = super().get_context_data(**kwargs)
+#         c_def = self.get_user_context(title='FAQ')
+#         return {**context, **c_def}
 
 
-class UserAgreementView(DataMixin, FormView):
-    form_class = SimpleForm
-    template_name = 'shop/user-agreement.html'
+# class PrivacyPolicyView(DataMixin, FormView):
+#     form_class = SimpleForm
+#     template_name = 'shop/privacy-policy.html'
 
-    def get_context_data(self, **kwargs) -> dict:
-        context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Пользовательское соглашение')
-        return {**context, **c_def}
+#     def get_context_data(self, **kwargs) -> dict:
+#         context = super().get_context_data(**kwargs)
+#         c_def = self.get_user_context(title='Политика конфиденциальности')
+#         return {**context, **c_def}
+
+
+# class UserAgreementView(DataMixin, FormView):
+#     form_class = SimpleForm
+#     template_name = 'shop/user-agreement.html'
+
+#     def get_context_data(self, **kwargs) -> dict:
+#         context = super().get_context_data(**kwargs)
+#         c_def = self.get_user_context(title='Пользовательское соглашение')
+#         return {**context, **c_def}
     
 
-class PurchaseReturnsView(DataMixin, FormView):
-    form_class = SimpleForm
-    template_name = 'shop/purchase-returns.html'
+# class PurchaseReturnsView(DataMixin, FormView):
+#     form_class = SimpleForm
+#     template_name = 'shop/purchase-returns.html'
 
-    def get_context_data(self, **kwargs) -> dict:
-        context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Пользовательское соглашение')
-        return {**context, **c_def}
+#     def get_context_data(self, **kwargs) -> dict:
+#         context = super().get_context_data(**kwargs)
+#         c_def = self.get_user_context(title='Пользовательское соглашение')
+#         return {**context, **c_def}
 
 
 # выводит либо список категорий либо список номенклатуры если в категории больше нет подкатегорий

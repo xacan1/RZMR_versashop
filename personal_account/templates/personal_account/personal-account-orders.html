@@ -3,28 +3,26 @@
 
 {% block account_content %}
 <div class="col-lg-9 col-12">
-    <div class="table table-striped">
-        <div class="row">
-            <div class="col-lg-4 col-md-3 col-12">
-                <p>Заказ</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-12">
-                <p>Сумма</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-12">
-                <p>Статус</p>
-            </div>
-            <div class="col-lg-1 col-md-2 col-12">
-                <p>Оплачен</p>
-            </div>
-            <div class="col-lg-1 col-md-2 col-12">
-                <p>Отменен</p>
-            </div>
+    <div class="row order-list-head py-2 fw-bold">
+        <div class="col-lg-4 col-md-3 col-12 order-list-head align-self-center">
+            Заказ
+        </div>
+        <div class="col-lg-2 col-md-2 col-12 d-none d-md-block order-list-head align-self-center">
+            Сумма
+        </div>
+        <div class="col-lg-2 col-md-2 col-12 d-none d-md-block order-list-head align-self-center">
+            Статус
+        </div>
+        <div class="col-lg-1 col-md-2 col-12 d-none d-md-block order-list-head align-self-center">
+            Оплачен
+        </div>
+        <div class="col-lg-1 col-md-2 col-12 d-none d-md-block order-list-head align-self-center">
+            Отменен
         </div>
     </div>
     {% for order in user.get_orders.all %}
-    <div class="cart-single-list">
-        <div class="row align-items-center">
+    <div class="cart-single-list py-1">
+        <div class="row border-bottom">
             <div class="col-lg-4 col-md-3 col-12">
                 <a href="{% url 'order' order.pk %}">{{ order }}</a>
             </div>
