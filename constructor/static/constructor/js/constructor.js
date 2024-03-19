@@ -4,6 +4,11 @@
 window.addEventListener('load', elements_listener());
 
 
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
 async function elements_listener() {
     get_types();
     get_groups_and_fittings1();
@@ -58,10 +63,15 @@ async function get_types() {
 
     let optoins = {
         methos: 'GET',
-        headers: { 'Content-Type': 'text/plain' },
-    }
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': getCookie('csrftoken'),
+            'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListProductType',
+        },
+    };
 
-    let response = await fetch('http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListProductType', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP types: ' + response.status);
@@ -69,6 +79,11 @@ async function get_types() {
     }
 
     let types = await response.json();
+
+    if (Object.keys(types).length === 0) {
+        console.log('Пустой ответ');
+        return;
+    }
 
     for (let type of types.list) {
         let option = document.createElement('option');
@@ -88,10 +103,15 @@ async function get_groups_and_fittings1() {
 
     let optoins = {
         methos: 'GET',
-        headers: { 'Content-Type': 'text/plain' },
-    }
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': getCookie('csrftoken'),
+            'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListGroupsEndFittings',
+        },
+    };
 
-    let response = await fetch('http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListGroupsEndFittings', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP fitting1: ' + response.status);
@@ -99,6 +119,11 @@ async function get_groups_and_fittings1() {
     }
 
     let fittings = await response.json();
+
+    if (Object.keys(fittings).length === 0) {
+        console.log('Пустой ответ');
+        return;
+    }
 
     for (let fitting of fittings.list) {
         let option = document.createElement('option');
@@ -117,10 +142,15 @@ async function get_groups_and_fittings2() {
 
     let optoins = {
         methos: 'GET',
-        headers: { 'Content-Type': 'text/plain' },
-    }
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': getCookie('csrftoken'),
+            'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListGroupsEndFittings',
+        },
+    };
 
-    let response = await fetch('http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListGroupsEndFittings', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP fitting2: ' + response.status);
@@ -128,6 +158,11 @@ async function get_groups_and_fittings2() {
     }
 
     let fittings = await response.json();
+
+    if (Object.keys(fittings).length === 0) {
+        console.log('Пустой ответ');
+        return;
+    }
 
     for (let fitting of fittings.list) {
         let option = document.createElement('option');
@@ -146,10 +181,15 @@ async function get_diameters() {
 
     let optoins = {
         methos: 'GET',
-        headers: { 'Content-Type': 'text/plain' },
-    }
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': getCookie('csrftoken'),
+            'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListDiameters',
+        },
+    };
 
-    let response = await fetch('http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListDiameters', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP diameters: ' + response.status);
@@ -157,6 +197,11 @@ async function get_diameters() {
     }
 
     let diameters = await response.json();
+
+    if (Object.keys(diameters).length === 0) {
+        console.log('Пустой ответ');
+        return;
+    }
 
     for (let diameter of diameters.list) {
         let option = document.createElement('option');
@@ -175,10 +220,15 @@ async function get_pressures() {
 
     let optoins = {
         methos: 'GET',
-        headers: { 'Content-Type': 'text/plain' },
-    }
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': getCookie('csrftoken'),
+            'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListPressures',
+        },
+    };
 
-    let response = await fetch('http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListPressures', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP pressures: ' + response.status);
@@ -186,6 +236,11 @@ async function get_pressures() {
     }
 
     let pressures = await response.json();
+
+    if (Object.keys(pressures).length === 0) {
+        console.log('Пустой ответ');
+        return;
+    }
 
     for (let pressure of pressures.list) {
         let option = document.createElement('option');
@@ -204,17 +259,27 @@ async function get_lengths() {
 
     let optoins = {
         methos: 'GET',
-        headers: { 'Content-Type': 'text/plain' },
-    }
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': getCookie('csrftoken'),
+            'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListLengthsHoses',
+        },
+    };
 
-    let response = await fetch('http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListLengthsHoses', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP pressures: ' + response.status);
+        console.log('Ошибка HTTP lengths: ' + response.status);
         return;
     }
 
     let lengths = await response.json();
+
+    if (Object.keys(lengths).length === 0) {
+        console.log('Пустой ответ');
+        return;
+    }
 
     for (let length of lengths.list) {
         let option = document.createElement('option');

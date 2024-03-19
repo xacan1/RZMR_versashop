@@ -346,13 +346,3 @@ class OrderCancelCompleteView(LoginRequiredMixin, DataMixin, FormView):
         c_def = self.get_user_context(
             title='Заказ отменен', order_number=order_pk)
         return {**context, **c_def}
-
-
-class MetalhoseConstructorView(DataMixin, FormView):
-    form_class = SimpleForm
-    template_name = 'shop/metalhose-constructor.html'
-
-    def get_context_data(self, **kwargs) -> dict:
-        context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Конструктор металлорукава')
-        return {**context, **c_def}

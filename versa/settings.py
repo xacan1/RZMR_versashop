@@ -55,6 +55,7 @@ VERSA_APPS = [
     'main.apps.MainConfig',
     'blog.apps.BlogConfig',
     'api.apps.ApiConfig',
+    'constructor.apps.ConstructorConfig',
     'rest_framework',
     'rest_framework.authtoken',
 ]

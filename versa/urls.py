@@ -29,6 +29,7 @@ urlpatterns = [
     path('shop/', include('shop.urls')),
     path('', include('personal_account.urls')),
     path('', include('blog.urls')),
+    path('', include('constructor.urls')),
 ]
 
 if settings.DEBUG:
