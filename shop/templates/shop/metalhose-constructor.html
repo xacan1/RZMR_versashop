@@ -1,0 +1,239 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Вы находитесь в конфигураторе рукавов РГМ. Он позволяет создать металлорукав РГМ с требуемыми
+                параметрами, концевой арматурой и дополнительной оснасткой с последующим формированием коммерческого
+                предложения.
+            </p>
+            <p>
+                Для начала работы необходимо указать основные параметры металлорукава:
+            </p>
+            <ul>
+                <li>Ду - условный внутренний диаметр, мм</li>
+                <li>Ру - рабочее давление, кгс/см2</li>
+                <li>Длина - номинальная длина рукава, мм</li>
+            </ul>
+            <p>
+                Если Вам требуется рукав под приварку, то вышеуказанных параметров будет достаточно. В том, случае, если
+                к поставке требуется металлорукав со специальной концевой арматурой (накидные гайки, фланцы, камлоки и
+                т.д), то необходимо указать тип и материал концевой арматуры.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <select id="type" class="form-select form-select-sm">
+            </select>
+        </div>
+        <div class="col-sm-2 fs-6">
+            <a class="param" onclick="GotoInput('#Diameters')"> 1. Параметры изделия</a>
+        </div>
+        <div class="col-sm-2 fs-6">
+            <a class="param" onclick="GotoInput('#InnerScreen')">2. Дополнительные параметры</a>
+        </div>
+        <div class="col-sm-2 fs-6">
+            <a class="param" onclick="GotoInput('#WorkSpace')">3. Условия эксплуатации</a>
+        </div>
+        <div class="col-sm-2 fs-6">
+            <a class="param" onclick="">4. Заказ</a>
+        </div>
+        <div class="col-sm-2">
+            <div class="actions">
+                <a title="Сохранить на компьютере" onclick="getCustomerDocuments();">
+                    <img src="{% static 'rzmr/img/save.svg' %}" alt="save"></a>
+                <a title="Печать проекта" onclick="printJS({printable:'/start/ajax.handler.php?page=get_customer_documents', type:'pdf', showModal:true, modalMessage: 'Загрузка документа'});">
+                    <img src="{% static 'rzmr/img/print.svg' %}" alt="print"></a>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center" style="overflow: hidden;">
+        <div class="col-12" style="transform: scale(2);">
+            <img id="imgA1" src="" style="max-height: 250px;display: inline-block;">
+            <img id="img1" src="" style="max-height: 250px;display: inline-block;">
+            <img id="img0" src="{% static 'rzmr/img/рукав_40.png' %}" style="max-height: 250px; display: inline-block;">
+            <img id="img2" src="" style="max-height: 250px;display: inline-block;">
+            <img id="imgA2" src="" style="max-height: 250px;display: inline-block;">
+        </div>
+    </div>
+    <form id="params">
+        <div class="row">
+            <br>
+            <hr>
+            <div class="col-sm-4">
+                <div class="fs-6 fw-bold">
+                    Концевая арматура 1 (КА1)
+                </div>
+                <div class="mb-1">
+                    <select id="GroupsEndFittings1" class="form-select form-select-sm">
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <select id="Materials1" class="form-select form-select-sm" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <select id="TypeFitting1" class="form-select form-select-sm" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <hr>
+                <div class="fs-6 fw-bold">
+                    Ответные детали к арматуре 1
+                </div>
+                <div class="mb-1">
+                    <select id="GroupsEndFittingsA1" class="form-select form-select-sm" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <select id="MaterialsA1" class="form-select form-select-sm" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <select id="TypeFittingA1" class="form-select form-select-sm" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-4 base-param">
+                <div class="fs-6 fw-bold">
+                    Обязательные параметры:
+                </div>
+                <div class="mb-1 diameter">
+                    <img src="{% static 'rzmr/img/diameter.svg' %}" alt="diameter">
+                    <select id="Diameters" class="form-select form-select-sm d-inline-block border border-danger w-75">
+                    </select>
+                </div>
+                <div class="mb-1 pressures">
+                    <img src="{% static 'rzmr/img/pressures.svg' %}" alt="pressures">
+                    <select id="Pressures" class="form-select form-select-sm d-inline-block border border-danger w-75">
+                    </select>
+                </div>
+                <div class="mb-1 length">
+                    <img src="{% static 'rzmr/img/length.svg' %}" alt="length">
+                    <select id="LengthsHoses" class="form-select form-select-sm d-inline-block border border-danger w-75">
+                    </select>
+                </div>
+                <div class="fs-6 fw-bold">
+                    Дополнительные параметры:
+                </div>
+                <div class="mb-1 innerscrean">
+                    <img src="{% static 'rzmr/img/innerscrean.svg' %}" alt="innerscrean">
+                    <select id="InnerScreen" class="form-select form-select-sm d-inline-block w-75" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="mb-1 outershells">
+                    <img src="{% static 'rzmr/img/outershells.svg' %}" alt="outershells">
+                    <select id="OuterShells" class="form-select form-select-sm d-inline-block w-75" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="mb-1 corrugation" style="display:none;">
+                    <select id="Corrugation" class="form-select form-select-sm d-inline-block w-75" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="mb-1 braid">
+                    <img src="{% static 'rzmr/img/braid.svg' %}" alt="braid">
+                    <select id="Braid" class="form-select form-select-sm d-inline-block w-75" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="fs-6 fw-bold">
+                    Условия эксплуатации:
+                </div>
+                <div class="mb-1 workspace">
+                    <img src="{% static 'rzmr/img/workspace.svg' %}" alt="workspace">
+                    <input type="text" placeholder="Рабочая среда" id="WorkSpace" value="" class="form-control form-control-sm d-inline-block w-75"
+                        onchange="changeForm(this);">
+                </div>
+                <div class="mb-1 temperature">
+                    <img src="{% static 'rzmr/img/temperature.svg' %}" alt="temperature">
+                    <input type="text" placeholder="Т рабочей среды (С)" id="Temperature" value="" class="form-control form-control-sm d-inline-block w-75"
+                        onchange="changeForm(this);">
+                </div>
+                <div class="mb-1 radius">
+                    <img src="{% static 'rzmr/img/radius.svg' %}" alt="radius">
+                    <input type="text" placeholder="Радиус изгиба (мм)" id="Radius" value="" class="form-control form-control-sm d-inline-block w-75"
+                        onchange="changeForm(this);">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="fs-6 fw-bold">
+                    Концевая арматура 2 (КА2)
+                </div>
+                <div class="mb-1">
+                    <select id="GroupsEndFittings2" class="form-select form-select-sm">
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <select id="Materials2" class="form-select form-select-sm" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <select id="TypeFitting2" class="form-select form-select-sm" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-secondary" type="button" id="Copy1" onclick="changeForm(this);">Копировать
+                        КА1</button>
+                </div>
+                <hr>
+                <div class="fs-6 fw-bold">
+                    Ответные детали к арматуре 2
+                </div>
+                <div class="mb-1">
+                    <select id="GroupsEndFittingsA2" class="form-select form-select-sm"
+                        onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <select id="MaterialsA2" class="form-select form-select-sm" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <select id="TypeFittingA2" class="form-select form-select-sm" onchange="changeForm(this);">
+                        Код PHP
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-secondary" type="button" id="CopyA1" onclick="changeForm(this);">Копировать
+                        отв.
+                        КА1</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+                <div class="py-5">
+                    <span>Количество</span>
+                    <input type="text" placeholder="Количество" id="mrCount" value="" class="form-control form-control-sm d-inline-block w-50"
+                        onchange="changeForm(this);">
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <button class="btn btn-secondary" type="button" onclick="newProduct();">Очистить все поля</button>
+                <br>
+                <br>
+                <button class="btn btn-secondary" type="button" onclick="changeForm(this);">Заказать</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="{% static 'shop/js/constructor.js' %}"></script>
+{% endblock content %}

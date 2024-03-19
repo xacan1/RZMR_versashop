@@ -94,7 +94,7 @@ class WishlistView(LoginRequiredMixin, DataMixin, FormView):
 #         context = super().get_context_data(**kwargs)
 #         c_def = self.get_user_context(title='Пользовательское соглашение')
 #         return {**context, **c_def}
-    
+
 
 # class PurchaseReturnsView(DataMixin, FormView):
 #     form_class = SimpleForm
@@ -267,8 +267,9 @@ class AddOrderView(DataMixin, CreateView):
         cart_info = services.get_cart_full_info(user=self.request.user,
                                                 session_key=self.request.session.session_key)
         if not cart_info['products']:
-            return redirect('cart') # вдруг корзина пустая, что бы не создавать пустой заказ
-        
+            # вдруг корзина пустая, что бы не создавать пустой заказ
+            return redirect('cart')
+
         form.instance.user = self.request.user if self.request.user.is_authenticated else None
         response = super().form_valid(form)
         order = form.instance
@@ -342,5 +343,16 @@ class OrderCancelCompleteView(LoginRequiredMixin, DataMixin, FormView):
         order_pk = int(self.kwargs.get('order_pk', 0))
         services.cancel_order(self.request.user, order_pk)
         services.send_email_for_order_cancel(order_pk)
-        c_def = self.get_user_context(title='Заказ отменен', order_number=order_pk)
+        c_def = self.get_user_context(
+            title='Заказ отменен', order_number=order_pk)
+        return {**context, **c_def}
+
+
+class MetalhoseConstructorView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'shop/metalhose-constructor.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Конструктор металлорукава')
         return {**context, **c_def}
