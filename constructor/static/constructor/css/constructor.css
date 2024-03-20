@@ -1,0 +1,10 @@
+.actions>a,
+.constructor-icon-size {
+    height: 2rem;
+    width: 2.5rem;
+    display: inline-block;
+    border-bottom: unset;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 1px;
+}

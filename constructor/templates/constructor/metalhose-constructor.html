@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'constructor/css/constructor.css' %}">
 <div class="container">
     <div class="row">
         <div class="col-12 text-uzm">
@@ -27,10 +28,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-2">
+        <!-- <div class="col-sm-2">
             <select id="type" class="form-select form-select-sm">
             </select>
-        </div>
+        </div> -->
         <div class="col-sm-2 fs-6">
             <a class="param" onclick="GotoInput('#Diameters')"> 1. Параметры изделия</a>
         </div>
@@ -42,6 +43,9 @@
         </div>
         <div class="col-sm-2 fs-6">
             <a class="param" onclick="">4. Заказ</a>
+        </div>
+        <div class="col-sm-2">
+
         </div>
         <div class="col-sm-2">
             <div class="actions">
@@ -61,134 +65,109 @@
             <img id="imgA2" src="" style="max-height: 250px;display: inline-block;">
         </div>
     </div>
-    <form id="params">
+    <form action="{% url 'metalhose-constructor' %}" method="post" id="params">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
         <div class="row">
             <br>
             <hr>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <div class="fs-6 fw-bold">
                     Концевая арматура 1 (КА1)
                 </div>
-                <div class="mb-1">
-                    <select id="GroupsEndFittings1" class="form-select form-select-sm">
-                    </select>
-                </div>
-                <div class="mb-1">
-                    <select id="Materials1" class="form-select form-select-sm" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
-                </div>
-                <div class="mb-1">
-                    <select id="TypeFitting1" class="form-select form-select-sm" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
-                </div>
+                {{ form.fittings1.errors }}
+                {{ form.fittings1 }}
+                {{ form.materials1.errors }}
+                {{ form.materials1 }}
+                {{ form.typefitting1.errors }}
+                {{ form.typefitting1 }}
                 <hr>
                 <div class="fs-6 fw-bold">
                     Ответные детали к арматуре 1
                 </div>
-                <div class="mb-1">
-                    <select id="GroupsEndFittingsA1" class="form-select form-select-sm" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
-                </div>
-                <div class="mb-1">
-                    <select id="MaterialsA1" class="form-select form-select-sm" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
-                </div>
-                <div class="mb-1">
-                    <select id="TypeFittingA1" class="form-select form-select-sm" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
-                </div>
+                {{ form.fittingsA1.errors }}
+                {{ form.fittingsA1 }}
+                {{ form.materialsA1.errors }}
+                {{ form.materialsA1 }}
+                {{ form.typefittingA1.errors }}
+                {{ form.typefittingA1 }}
             </div>
-            <div class="col-sm-4 base-param">
+            <div class="col-md-4">
                 <div class="fs-6 fw-bold">
                     Обязательные параметры:
                 </div>
-                <div class="mb-1 diameter">
-                    <img src="{% static 'rzmr/img/diameter.svg' %}" alt="diameter">
-                    <select id="Diameters" class="form-select form-select-sm d-inline-block border border-danger w-75">
-                    </select>
+                {{ form.types.errors }}
+                {{ form.types.label_tag }}
+                {{ form.types }}
+                <div class="mb-1">
+                    <img class="constructor-icon-size" src="{% static 'rzmr/img/diameter.svg' %}" alt="diameter">
+                    {{ form.diameters.errors }}
+                    {{ form.diameters }}
                 </div>
-                <div class="mb-1 pressures">
-                    <img src="{% static 'rzmr/img/pressures.svg' %}" alt="pressures">
-                    <select id="Pressures" class="form-select form-select-sm d-inline-block border border-danger w-75">
-                    </select>
+                <div class="mb-1">
+                    <img class="constructor-icon-size" src="{% static 'rzmr/img/pressures.svg' %}" alt="pressures">
+                    {{ form.pressures.errors }}
+                    {{ form.pressures }}
                 </div>
-                <div class="mb-1 length">
-                    <img src="{% static 'rzmr/img/length.svg' %}" alt="length">
-                    <select id="LengthsHoses" class="form-select form-select-sm d-inline-block border border-danger w-75">
-                    </select>
+                <div class="mb-1">
+                    <img class="constructor-icon-size" src="{% static 'rzmr/img/length.svg' %}" alt="length">
+                    {{ form.lengths.errors }}
+                    {{ form.lengths }}
                 </div>
                 <div class="fs-6 fw-bold">
                     Дополнительные параметры:
                 </div>
-                <div class="mb-1 innerscrean">
-                    <img src="{% static 'rzmr/img/innerscrean.svg' %}" alt="innerscrean">
-                    <select id="InnerScreen" class="form-select form-select-sm d-inline-block w-75" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
+                <div class="mb-1">
+                    <img class="constructor-icon-size" src="{% static 'rzmr/img/innerscrean.svg' %}" alt="innerscreen">
+                    {{ form.innerscreen.errors }}
+                    {{ form.innerscreen }}
                 </div>
-                <div class="mb-1 outershells">
-                    <img src="{% static 'rzmr/img/outershells.svg' %}" alt="outershells">
-                    <select id="OuterShells" class="form-select form-select-sm d-inline-block w-75" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
+                <div class="mb-1">
+                    <img class="constructor-icon-size" src="{% static 'rzmr/img/outershells.svg' %}" alt="outershells">
+                    {{ form.outershells.errors }}
+                    {{ form.outershells }}
                 </div>
-                <div class="mb-1 corrugation" style="display:none;">
+                <div class="mb-1" style="display:none;">
                     <select id="Corrugation" class="form-select form-select-sm d-inline-block w-75" onchange="changeForm(this);">
-                        Код PHP
+
                     </select>
                 </div>
-                <div class="mb-1 braid">
-                    <img src="{% static 'rzmr/img/braid.svg' %}" alt="braid">
-                    <select id="Braid" class="form-select form-select-sm d-inline-block w-75" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
+                <div class="mb-1">
+                    <img class="constructor-icon-size" src="{% static 'rzmr/img/braid.svg' %}" alt="braid">
+                    {{ form.braids.errors }}
+                    {{ form.braids }}
                 </div>
                 <div class="fs-6 fw-bold">
                     Условия эксплуатации:
                 </div>
-                <div class="mb-1 workspace">
-                    <img src="{% static 'rzmr/img/workspace.svg' %}" alt="workspace">
-                    <input type="text" placeholder="Рабочая среда" id="WorkSpace" value="" class="form-control form-control-sm d-inline-block w-75"
-                        onchange="changeForm(this);">
+                <div class="mb-1">
+                    <img class="constructor-icon-size" src="{% static 'rzmr/img/workspace.svg' %}" alt="workspace">
+                    <!-- <input type="text" placeholder="Рабочая среда" id="WorkSpace" value="" class="form-control form-control-sm d-inline-block w-75"
+                        onchange="changeForm(this);"> -->
+                    {{ form.workspace.errors }}
+                    {{ form.workspace }}
                 </div>
-                <div class="mb-1 temperature">
-                    <img src="{% static 'rzmr/img/temperature.svg' %}" alt="temperature">
-                    <input type="text" placeholder="Т рабочей среды (С)" id="Temperature" value="" class="form-control form-control-sm d-inline-block w-75"
-                        onchange="changeForm(this);">
+                <div class="mb-1">
+                    <img class="constructor-icon-size" src="{% static 'rzmr/img/temperature.svg' %}" alt="temperature">
+                    {{ form.temperature.errors }}
+                    {{ form.temperature }}
                 </div>
-                <div class="mb-1 radius">
-                    <img src="{% static 'rzmr/img/radius.svg' %}" alt="radius">
-                    <input type="text" placeholder="Радиус изгиба (мм)" id="Radius" value="" class="form-control form-control-sm d-inline-block w-75"
-                        onchange="changeForm(this);">
+                <div class="mb-1">
+                    <img class="constructor-icon-size" src="{% static 'rzmr/img/radius.svg' %}" alt="radius">
+                    {{ form.radius.errors }}
+                    {{ form.radius }}
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <div class="fs-6 fw-bold">
                     Концевая арматура 2 (КА2)
                 </div>
-                <div class="mb-1">
-                    <select id="GroupsEndFittings2" class="form-select form-select-sm">
-                    </select>
-                </div>
-                <div class="mb-1">
-                    <select id="Materials2" class="form-select form-select-sm" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
-                </div>
-                <div class="mb-1">
-                    <select id="TypeFitting2" class="form-select form-select-sm" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
-                </div>
-                <div class="text-center">
-                    <button class="btn btn-secondary" type="button" id="Copy1" onclick="changeForm(this);">Копировать
-                        КА1</button>
-                </div>
+                {{ form.fittings2.errors }}
+                {{ form.fittings2 }}
+                {{ form.materials2.errors }}
+                {{ form.materials2 }}
+                {{ form.typefitting2.errors }}
+                {{ form.typefitting2 }}
                 <hr>
                 <div class="fs-6 fw-bold">
                     Ответные детали к арматуре 2
@@ -217,16 +196,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-md-4">
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <div class="py-5">
-                    <span>Количество</span>
-                    <input type="text" placeholder="Количество" id="mrCount" value="" class="form-control form-control-sm d-inline-block w-50"
-                        onchange="changeForm(this);">
+                    {{ form.mrсount.errors }}
+                    {{ form.mrсount.label_tag }}
+                    {{ form.mrсount }}
                 </div>
             </div>
-            <div class="col-sm-4 text-center">
+            <div class="col-md-4 text-center">
                 <button class="btn btn-secondary" type="button" onclick="newProduct();">Очистить все поля</button>
                 <br>
                 <br>

@@ -17,7 +17,7 @@ async function elements_listener() {
     get_pressures();
     get_lengths();
 
-    let select_type = document.querySelector('#type');
+    let select_type = document.querySelector('#Types');
 
     if (select_type) {
         select_type.addEventListener('click', get_types);
@@ -55,7 +55,7 @@ async function elements_listener() {
 }
 
 async function get_types() {
-    let select_type = document.querySelector('#type');
+    let select_type = document.querySelector('#Types');
 
     if (select_type.childNodes.length > 1) {
         return;
@@ -71,7 +71,7 @@ async function get_types() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP types: ' + response.status);
@@ -111,7 +111,7 @@ async function get_groups_and_fittings1() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP fitting1: ' + response.status);
@@ -150,7 +150,7 @@ async function get_groups_and_fittings2() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP fitting2: ' + response.status);
@@ -189,7 +189,7 @@ async function get_diameters() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP diameters: ' + response.status);
@@ -228,7 +228,7 @@ async function get_pressures() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP pressures: ' + response.status);
@@ -267,7 +267,7 @@ async function get_lengths() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP lengths: ' + response.status);
