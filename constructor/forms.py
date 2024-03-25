@@ -34,7 +34,12 @@ class ConstructorForm(forms.Form):
                                    widget=forms.Select(attrs={'class': 'form-select form-select-sm mb-1', 'id': 'Materials2', }))
     typefitting2 = forms.ChoiceField(required=False,
                                      widget=forms.Select(attrs={'class': 'form-select form-select-sm mb-1', 'id': 'TypeFitting2', }))
-
+    fittingsA2 = forms.ChoiceField(choices=tuple(), required=False,
+                                   widget=forms.Select(attrs={'class': 'form-select form-select-sm mb-1', 'id': 'GroupsEndFittingsA2', }))
+    materialsA2 = forms.ChoiceField(required=False,
+                                    widget=forms.Select(attrs={'class': 'form-select form-select-sm mb-1', 'id': 'MaterialsA2', }))
+    typefittingA2 = forms.ChoiceField(required=False,
+                                      widget=forms.Select(attrs={'class': 'form-select form-select-sm mb-1', 'id': 'TypeFittingA2', }))
     types = forms.ChoiceField(choices=tuple(), label='Тип изделия', required=True,
                               widget=forms.Select(attrs={'class': 'form-select form-select-sm mb-1 d-inline-block border border-danger w-50', 'id': 'Types', }))
     diameters = forms.ChoiceField(choices=tuple(), required=True,

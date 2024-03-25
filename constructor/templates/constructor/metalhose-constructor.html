@@ -172,26 +172,14 @@
                 <div class="fs-6 fw-bold">
                     Ответные детали к арматуре 2
                 </div>
-                <div class="mb-1">
-                    <select id="GroupsEndFittingsA2" class="form-select form-select-sm"
-                        onchange="changeForm(this);">
-                        Код PHP
-                    </select>
-                </div>
-                <div class="mb-1">
-                    <select id="MaterialsA2" class="form-select form-select-sm" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
-                </div>
-                <div class="mb-1">
-                    <select id="TypeFittingA2" class="form-select form-select-sm" onchange="changeForm(this);">
-                        Код PHP
-                    </select>
-                </div>
+                {{ form.fittingsA2.errors }}
+                {{ form.fittingsA2 }}
+                {{ form.materialsA2.errors }}
+                {{ form.materialsA2 }}
+                {{ form.typefittingA2.errors }}
+                {{ form.typefittingA2 }}
                 <div class="text-center">
-                    <button class="btn btn-secondary" type="button" id="CopyA1" onclick="changeForm(this);">Копировать
-                        отв.
-                        КА1</button>
+                    <button class="btn btn-secondary" type="button" id="CopyA1" onclick="changeForm(this);">Копировать ответные детали КА1</button>
                 </div>
             </div>
         </div>
