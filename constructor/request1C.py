@@ -8,10 +8,14 @@ def get_request_to_1C(url_request: str) -> str:
     if not url_request:
         return response
 
-    with request.urlopen(url_request) as resp:
-        response = resp.read().decode('utf-8')
+    try:
+        with request.urlopen(url_request) as resp:
+            response = resp.read().decode('utf-8')
 
-    return response
+    except error.URLError:
+        return response
+    finally:
+        return response
 
 
 def post_request_to_1C(url_request: str, data_request: dict) -> str:
@@ -27,7 +31,7 @@ def get_types() -> list[tuple[str, str]]:
 
     if types:
         types = [(elem.get('Code', ''), elem.get('Value', ''))
-                    for elem in types]
+                 for elem in types]
 
     return types
 
@@ -41,7 +45,7 @@ def get_diameters() -> list[tuple[str, str]]:
 
     if diameters:
         diameters = [(elem.get('Code', ''), elem.get('Value', ''))
-                    for elem in diameters]
+                     for elem in diameters]
 
     return diameters
 
@@ -55,7 +59,7 @@ def get_pressures() -> list[tuple[str, str]]:
 
     if pressures:
         pressures = [(elem.get('Code', ''), elem.get('Value', ''))
-                    for elem in pressures]
+                     for elem in pressures]
 
     return pressures
 
@@ -69,7 +73,7 @@ def get_lengths() -> list[tuple[str, str]]:
 
     if lengths:
         lengths = [(elem.get('Code', ''), elem.get('Value', ''))
-                    for elem in lengths]
+                   for elem in lengths]
 
     return lengths
 
@@ -87,3 +91,18 @@ def get_fittings() -> list[tuple[str, str]]:
                     for elem in fittings]
 
     return fittings
+
+
+def get_materials() -> list[tuple[str, str]]:
+    materials = []
+
+    url_request = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListMaterials'
+    response = get_request_to_1C(url_request)
+
+    materials = json.loads(response).get('list', [])
+
+    if materials:
+        materials = [(elem.get('Code', ''), elem.get('Value', ''))
+                     for elem in materials]
+
+    return materials

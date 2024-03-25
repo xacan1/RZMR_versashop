@@ -11,7 +11,6 @@ class ConstructorForm(forms.Form):
         initial = kwargs['initial']
         self.fields['types'].choices = initial['types_choices']
         self.fields['diameters'].choices = initial['diameters_choices']
-        self.fields['pressures'].choices = initial['pressures_choices']
         self.fields['lengths'].choices = initial['lengths_choices']
         self.fields['fittings1'].choices = initial['fittings_choices']
         self.fields['fittings2'].choices = initial['fittings_choices']

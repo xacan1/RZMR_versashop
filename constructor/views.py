@@ -14,7 +14,6 @@ class MetalhoseConstructorView(DataMixin, FormView):
         initial = super().get_initial()
         initial['types_choices'] = request1C.get_types()
         initial['diameters_choices'] = request1C.get_diameters()
-        initial['pressures_choices'] = request1C.get_pressures()
         initial['lengths_choices'] = request1C.get_lengths()
         initial['fittings_choices'] = request1C.get_fittings()
         return initial
