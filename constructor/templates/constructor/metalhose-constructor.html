@@ -56,16 +56,16 @@
             </div>
         </div>
     </div>
-    <div class="row text-center" style="overflow: hidden;">
-        <div class="col-12" style="transform: scale(2);">
-            <img id="imgA1" src="" style="max-height: 250px;display: inline-block;">
-            <img id="img1" src="" style="max-height: 250px;display: inline-block;">
-            <img id="img0" src="{% static 'rzmr/img/рукав_40.png' %}" style="max-height: 250px; display: inline-block;">
-            <img id="img2" src="" style="max-height: 250px;display: inline-block;">
-            <img id="imgA2" src="" style="max-height: 250px;display: inline-block;">
+    <div class="row overflow-hidden">
+        <div class="col-12 text-center" style="transform: scale(2);">
+            <img id="imgA1" class="d-inline-block" src="" style="max-height: 250px;">
+            <img id="img1" class="d-inline-block" src="" style="max-height: 250px;">
+            <img id="img0" class="d-inline-block" src="{% static 'rzmr/img/рукав_40.png' %}" style="max-height: 250px;">
+            <img id="img2" class="d-inline-block" src="" style="max-height: 250px;">
+            <img id="imgA2" class="d-inline-block" src="" style="max-height: 250px;">
         </div>
     </div>
-    <form action="{% url 'metalhose-constructor' %}" method="post" id="params">
+    <form action="{% url 'metalhose-constructor' %}" method="post">
         {% csrf_token %}
         {{ form.non_field_errors }}
         <div class="row">
@@ -127,9 +127,8 @@
                     {{ form.outershells.errors }}
                     {{ form.outershells }}
                 </div>
-                <div class="mb-1" style="display:none;">
-                    <select id="Corrugation" class="form-select form-select-sm d-inline-block w-75" onchange="changeForm(this);">
-
+                <div class="mb-1 d-none">
+                    <select id="Corrugation" class="form-select form-select-sm d-inline-block w-75">
                     </select>
                 </div>
                 <div class="mb-1">
@@ -179,7 +178,7 @@
                 {{ form.typefittingA2.errors }}
                 {{ form.typefittingA2 }}
                 <div class="text-center">
-                    <button class="btn btn-secondary" type="button" id="CopyA1" onclick="changeForm(this);">Копировать ответные детали КА1</button>
+                    <button class="btn btn-secondary" type="button" id="CopyA1">Копировать ответные детали КА1</button>
                 </div>
             </div>
         </div>
@@ -194,7 +193,7 @@
                 </div>
             </div>
             <div class="col-md-4 text-center">
-                <button class="btn btn-secondary" type="button" onclick="newProduct();">Очистить все поля</button>
+                <button class="btn btn-secondary" type="button" id="ClearForm">Очистить поля КА</button>
                 <br>
                 <br>
                 <button class="btn btn-secondary" type="button" onclick="changeForm(this);">Заказать</button>

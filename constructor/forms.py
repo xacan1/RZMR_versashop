@@ -14,6 +14,8 @@ class ConstructorForm(forms.Form):
         self.fields['lengths'].choices = initial['lengths_choices']
         self.fields['fittings1'].choices = initial['fittings_choices']
         self.fields['fittings2'].choices = initial['fittings_choices']
+        self.fields['fittingsA1'].choices = initial['fittings_choices']
+        self.fields['fittingsA2'].choices = initial['fittings_choices']
 
 
     fittings1 = forms.ChoiceField(required=False,

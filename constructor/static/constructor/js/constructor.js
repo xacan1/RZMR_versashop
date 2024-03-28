@@ -4,18 +4,12 @@
 window.addEventListener('load', elements_listener());
 
 
-function getCookie(name) {
+function get_cookie(name) {
     let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
 async function elements_listener() {
-    // get_types();
-    // get_groups_and_fittings();
-    // get_groups_and_fittings2();
-    // get_diameters();
-    // get_lengths();
-
     let select_type = document.querySelector('#Types');
 
     if (select_type) {
@@ -54,6 +48,17 @@ async function elements_listener() {
 
     if (select_diameters) {
         select_diameters.addEventListener('click', get_diameters);
+        select_diameters.addEventListener('change', () => {
+            document.querySelector('#TypeFitting1').innerHTML = '';
+            clear_image('#img1');
+            document.querySelector('#TypeFitting2').innerHTML = '';
+            clear_image('#img2');
+            document.querySelector('#Pressures').innerHTML = '';
+            document.querySelector('#InnerScreen').innerHTML = '';
+            document.querySelector('#Braids').innerHTML = '';
+            document.querySelector('#Corrugation').innerHTML = '';
+            get_corrugation();
+        });
     }
 
     let select_pressures = document.querySelector('#Pressures');
@@ -62,11 +67,21 @@ async function elements_listener() {
         select_pressures.addEventListener('click', get_pressures);
         select_pressures.addEventListener('change', () => {
             document.querySelector('#TypeFitting1').innerHTML = '';
+            clear_image('#img1');
             document.querySelector('#TypeFitting2').innerHTML = '';
+            clear_image('#img2');
             document.querySelector('#TypeFittingA1').innerHTML = '';
             document.querySelector('#TypeFittingA2').innerHTML = '';
             document.querySelector('#Braids').innerHTML = '';
+            document.querySelector('#Corrugation').innerHTML = '';
+            get_corrugation();
         });
+    }
+
+    let select_corrugation = document.querySelector('#Corrugation');
+
+    if (select_corrugation) {
+        select_corrugation.addEventListener('change', get_image_part_of_product);
     }
 
     let select_lengths = document.querySelector('#LengthsHoses');
@@ -125,12 +140,14 @@ async function elements_listener() {
 
     if (select_types_fittings1) {
         select_types_fittings1.addEventListener('click', get_types_fittings1);
+        select_types_fittings1.addEventListener('change', get_image_part_of_product);
     }
 
     let select_types_fittings2 = document.querySelector('#TypeFitting2');
 
     if (select_types_fittings2) {
         select_types_fittings2.addEventListener('click', get_types_fittings2);
+        select_types_fittings2.addEventListener('change', get_image_part_of_product);
     }
 
     let select_types_fittingsA1 = document.querySelector('#TypeFittingA1');
@@ -144,10 +161,23 @@ async function elements_listener() {
     if (select_types_fittingsA2) {
         select_types_fittingsA2.addEventListener('click', get_types_fittingsA2);
     }
+
+    let button_copy_K1 = document.querySelector('#CopyA1');
+
+    if (button_copy_K1) {
+        button_copy_K1.addEventListener('click', copy_from_K1);
+    }
+
+    let button_clear_form = document.querySelector('#ClearForm');
+
+    if (button_clear_form) {
+        button_clear_form.addEventListener('click', clear_form);
+    }
 }
 
 async function get_types() {
-    let select_type = document.querySelector('#Types');
+    const id = this.getAttribute('id');
+    let select_type = document.querySelector(`#${id}`);
 
     if (select_type.childNodes.length > 0) {
         return;
@@ -158,7 +188,7 @@ async function get_types() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListProductType',
         },
     };
@@ -166,14 +196,14 @@ async function get_types() {
     let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP types: ' + response.status);
+        console.log(`Ошибка HTTP types: ${response.status}`);
         return;
     }
 
     let types = await response.json();
 
     if (Object.keys(types).length === 0) {
-        console.log('Пустой ответ');
+        console.log(`Пустой ответ для ${id}`);
         return;
     }
 
@@ -185,9 +215,8 @@ async function get_types() {
     }
 }
 
-
 async function get_groups_and_fittings() {
-    let id = this.getAttribute('id');
+    const id = this.getAttribute('id');
     let select_groups_fittings = document.querySelector(`#${id}`);
 
     if (select_groups_fittings.childNodes.length > 1) {
@@ -199,7 +228,7 @@ async function get_groups_and_fittings() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListGroupsEndFittings',
         },
     };
@@ -229,13 +258,7 @@ async function get_groups_and_fittings() {
 async function get_diameters() {
     let select_diameters = document.querySelector('#Diameters');
 
-    // очистка всех зависимых полей при смене диаметра
     if (select_diameters.childNodes.length > 1) {
-        document.querySelector('#TypeFitting1').innerHTML = '';
-        document.querySelector('#TypeFitting2').innerHTML = '';
-        document.querySelector('#Pressures').innerHTML = '';
-        document.querySelector('#InnerScreen').innerHTML = '';
-        document.querySelector('#Braids').innerHTML = '';
         return;
     }
 
@@ -244,7 +267,7 @@ async function get_diameters() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListDiameters',
         },
     };
@@ -294,7 +317,7 @@ async function get_pressures() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': request1C,
         },
     };
@@ -302,7 +325,7 @@ async function get_pressures() {
     let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP pressures: ' + response.status);
+        console.log(`Ошибка HTTP pressures: ${response.status}`);
         return;
     }
 
@@ -319,14 +342,62 @@ async function get_pressures() {
         option.textContent = pressure.Value;
         select_pressures.appendChild(option);
     }
+}
 
-    // get_braid();
+async function get_corrugation() {
+    let select_corrugation = document.querySelector('#Corrugation');
+
+    if (select_corrugation.childNodes.length > 1) {
+        return;
+    }
+
+    let diameter = document.querySelector('#Diameters').value;
+    let pressure = document.querySelector('#Pressures').value;
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getCorrugation';
+
+    if (diameter && pressure) {
+        request1C += `&diameter=${diameter}&pressure=${pressure}`;
+    }
+
+    let optoins = {
+        methos: 'GET',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': get_cookie('csrftoken'),
+            'Request1C': encodeURI(request1C),
+        },
+    };
+
+    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+
+    if (!response.ok && response.status != 401) {
+        console.log(`Ошибка HTTP pressures: ${response.status}`);
+        return;
+    }
+
+    let corrugation = await response.json();
+
+    if (Object.keys(corrugation).length === 0) {
+        console.log('Пустой ответ в #Corrugation');
+        return;
+    }
+
+    if (corrugation.Code === '0') {
+        return;
+    }
+
+    let option = document.createElement('option');
+    option.value = corrugation.Code;
+    option.textContent = corrugation.Value;
+    select_corrugation.appendChild(option);
+    select_corrugation.dispatchEvent(new Event('change'));
 }
 
 async function get_innerscreen() {
     let select_innerscreens = document.querySelector('#InnerScreen');
 
-    if (select_innerscreens.childNodes.length > 0) {
+    if (select_innerscreens.childNodes.length > 1) {
         return;
     }
 
@@ -345,7 +416,7 @@ async function get_innerscreen() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': encodeURI(request1C),
         },
     };
@@ -373,10 +444,10 @@ async function get_innerscreen() {
 }
 
 async function get_outershells() {
-    let id = this.getAttribute('id');
+    const id = this.getAttribute('id');
     let select_outershells = document.querySelector(`#${id}`);
 
-    if (select_outershells.childNodes.length > 0) {
+    if (select_outershells.childNodes.length > 1) {
         return;
     }
 
@@ -395,7 +466,7 @@ async function get_outershells() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': encodeURI(request1C),
         },
     };
@@ -423,7 +494,7 @@ async function get_outershells() {
 }
 
 async function get_braid() {
-    let id = this.getAttribute('id');
+    const id = this.getAttribute('id');
     let select_braid = document.querySelector(`#${id}`);
 
     if (select_braid.childNodes.length > 0) {
@@ -446,7 +517,7 @@ async function get_braid() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': encodeURI(request1C),
         },
     };
@@ -472,7 +543,7 @@ async function get_braid() {
 }
 
 async function get_braids() {
-    let id = this.getAttribute('id');
+    const id = this.getAttribute('id');
     let select_braids = document.querySelector(`#${id}`);
 
     if (select_braids.childNodes.length > 0) {
@@ -495,7 +566,7 @@ async function get_braids() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': encodeURI(request1C),
         },
     };
@@ -534,7 +605,7 @@ async function get_lengths() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListLengthsHoses',
         },
     };
@@ -563,7 +634,7 @@ async function get_lengths() {
 
 
 async function get_materials() {
-    let id = this.getAttribute('id');
+    const id = this.getAttribute('id');
     let select_materials = document.querySelector(`#${id}`);
 
     if (select_materials.childNodes.length > 1) {
@@ -575,7 +646,7 @@ async function get_materials() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListMaterials',
         },
     };
@@ -603,7 +674,7 @@ async function get_materials() {
 }
 
 async function get_types_fittings1() {
-    let id = this.getAttribute('id');
+    const id = this.getAttribute('id');
     let select_type_fitting1 = document.querySelector(`#${id}`);
 
     if (select_type_fitting1.childNodes.length > 0) {
@@ -638,7 +709,7 @@ async function get_types_fittings1() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': encodeURI(request1C),
         },
     };
@@ -666,7 +737,7 @@ async function get_types_fittings1() {
 }
 
 async function get_types_fittingsA1() {
-    let id = this.getAttribute('id');
+    const id = this.getAttribute('id');
     let select_type_fittingA1 = document.querySelector(`#${id}`);
 
     if (select_type_fittingA1.childNodes.length > 0) {
@@ -701,7 +772,7 @@ async function get_types_fittingsA1() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': encodeURI(request1C),
         },
     };
@@ -729,7 +800,7 @@ async function get_types_fittingsA1() {
 }
 
 async function get_types_fittingsA2() {
-    let id = this.getAttribute('id');
+    const id = this.getAttribute('id');
     let select_type_fittingA1 = document.querySelector(`#${id}`);
 
     if (select_type_fittingA1.childNodes.length > 0) {
@@ -764,7 +835,7 @@ async function get_types_fittingsA2() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': encodeURI(request1C),
         },
     };
@@ -792,7 +863,7 @@ async function get_types_fittingsA2() {
 }
 
 async function get_types_fittings2() {
-    let id = this.getAttribute('id');
+    const id = this.getAttribute('id');
     let select_type_fitting2 = document.querySelector(`#${id}`);
 
     if (select_type_fitting2.childNodes.length > 0) {
@@ -827,7 +898,7 @@ async function get_types_fittings2() {
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': get_cookie('csrftoken'),
             'Request1C': encodeURI(request1C),
         },
     };
@@ -852,4 +923,130 @@ async function get_types_fittings2() {
         option.textContent = fitting.Value;
         select_type_fitting2.appendChild(option);
     }
+}
+
+async function get_image_part_of_product() {
+    const id = this.getAttribute('id');
+    let position_image_code = 0;
+    let get_image = 1;
+    let diameter = document.querySelector('#Diameters').value;
+    let typefitting_code = undefined;
+    let group_product_code = undefined;
+    let id_img = '';
+
+    if (id === 'Corrugation') {
+        position_image_code = 2;
+        id_img = '#img0';
+        typefitting_code = document.querySelector(`#${id}`).value;
+    }
+    else if (id === 'TypeFitting1') {
+        position_image_code = 0;
+        id_img = '#img1';
+        typefitting_code = document.querySelector(`#${id}`).value;
+        group_product_code = document.querySelector('#GroupsEndFittings1').value;
+    }
+    else if (id === 'TypeFitting2') {
+        position_image_code = 1;
+        id_img = '#img2';
+        typefitting_code = document.querySelector(`#${id}`).value;
+        group_product_code = document.querySelector('#GroupsEndFittings2').value;
+    }
+    else if (id === 'TypeFittingA1') {
+
+    }
+    else if (id === 'TypeFittingA2') {
+
+    }
+    else {
+        return;
+    }
+
+    let img = document.querySelector(id_img);
+
+    let request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getImagePartOfProduct&position_image_code=${position_image_code}`;
+
+    if (diameter) {
+        request1C += `&diameter=${diameter}`;
+    }
+    else {
+        return;
+    }
+
+    if (group_product_code) {
+        request1C += `&group_product_code=${group_product_code}`;
+    }
+
+    if (typefitting_code) {
+        request1C += `&typefitting_code=${typefitting_code}`;
+    }
+
+    if (get_image) {
+        request1C += `&get_image=${get_image}`;
+    }
+
+    let optoins = {
+        methos: 'GET',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': get_cookie('csrftoken'),
+            'Request1C': encodeURI(request1C),
+        },
+    };
+
+    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+
+    if (!response.ok && response.status != 401) {
+        console.log(`Ошибка HTTP get_image_part_of_product: ${response.status}`);
+        return;
+    }
+
+    if (response.headers.get('Content-Disposition') === null) {
+        let response_json = await response.json();
+
+        if (id !== 'Corrugation') {
+            img.setAttribute('src', '');
+        }
+
+        if (Object.keys(response_json).length === 0) {
+            console.log(`Пустой ответ для ${position_image_code}`);
+            return;
+        }
+    }
+    else {
+        let response_bytes = await response.blob();
+        let img_url = URL.createObjectURL(response_bytes);
+        img.setAttribute('src', img_url);
+        URL.revokeObjectURL(img_url);
+    }
+}
+
+function clear_image(id_img) {
+    let img = document.querySelector(id_img);
+    img.setAttribute('src', '');
+}
+
+function copy_from_K1() {
+    document.querySelector('#GroupsEndFittingsA2').innerHTML = document.querySelector('#GroupsEndFittingsA1').innerHTML;
+    document.querySelector('#GroupsEndFittingsA2').value = document.querySelector('#GroupsEndFittingsA1').value;
+    document.querySelector('#MaterialsA2').innerHTML = document.querySelector('#MaterialsA1').innerHTML;
+    document.querySelector('#MaterialsA2').value = document.querySelector('#MaterialsA1').value;
+    document.querySelector('#TypeFittingA2').innerHTML = document.querySelector('#TypeFittingA1').innerHTML;
+    document.querySelector('#TypeFittingA2').value = document.querySelector('#TypeFittingA1').value;
+}
+
+function clear_form() {
+    document.querySelector('#Materials1').innerHTML = '';
+    document.querySelector('#Materials2').innerHTML = '';
+    document.querySelector('#TypeFitting1').innerHTML = '';
+    clear_image('#img1');
+    document.querySelector('#TypeFitting2').innerHTML = '';
+    clear_image('#img2');
+    document.querySelector('#MaterialsA1').innerHTML = '';
+    document.querySelector('#MaterialsA2').innerHTML = '';
+    document.querySelector('#TypeFittingA1').innerHTML = '';
+    document.querySelector('#TypeFittingA2').innerHTML = '';
+    document.querySelector('#InnerScreen').innerHTML = '';
+    document.querySelector('#OuterShells').innerHTML = '';
+    document.querySelector('#Braids').innerHTML = '';
 }

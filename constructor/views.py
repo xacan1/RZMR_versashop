@@ -1,5 +1,6 @@
 from typing import Any
-from django.http import HttpRequest, HttpResponse
+import io
+from django.http import HttpRequest, HttpResponse, FileResponse
 from django.views.generic import FormView
 from shop.mixins import DataMixin
 from constructor.forms import *
@@ -26,11 +27,27 @@ class MetalhoseConstructorView(DataMixin, FormView):
 
 # Прокси запросы к серверу 1С
 class ProxyRequestView(FormView):
+    def __init__(self, **kwargs: Any) -> None:
+        super().__init__(**kwargs)
+        self.buffer = io.BytesIO()
+    
+    def __del__(self) -> None:
+        self.buffer.close()
+
     def get(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
         # return super().get(request, *args, **kwargs)
         url_request = request.headers.get('Request1C', '')
         response_data = request1C.get_request_to_1C(url_request)
-        return HttpResponse(response_data)
+
+        if type(response_data) is str:
+            response = HttpResponse(response_data)
+        else:
+            self.buffer.write(response_data)
+            self.buffer.seek(0)
+            response = FileResponse(self.buffer, as_attachment=False, filename='example.png')
+            # print(len(self.buffer.getvalue()))
+
+        return response
 
     def post(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
         return super().post(request, *args, **kwargs)
