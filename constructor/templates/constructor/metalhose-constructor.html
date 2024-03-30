@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="row overflow-hidden">
-        <div class="col-12 text-center" style="transform: scale(2);">
+        <div class="col-12 text-center" style="transform: scale(2); font-size: 0px;">
             <img id="imgA1" class="d-inline-block" src="" style="max-height: 250px;">
             <img id="img1" class="d-inline-block" src="" style="max-height: 250px;">
             <img id="img0" class="d-inline-block" src="{% static 'rzmr/img/рукав_40.png' %}" style="max-height: 250px;">
@@ -91,6 +91,9 @@
                 {{ form.materialsA1 }}
                 {{ form.typefittingA1.errors }}
                 {{ form.typefittingA1 }}
+                <div class="text-center">
+                    <button class="btn btn-secondary" type="button" id="ClearForm">Очистить поля КА</button>
+                </div>
             </div>
             <div class="col-md-4">
                 <div class="fs-6 fw-bold">
@@ -127,22 +130,20 @@
                     {{ form.outershells.errors }}
                     {{ form.outershells }}
                 </div>
-                <div class="mb-1 d-none">
-                    <select id="Corrugation" class="form-select form-select-sm d-inline-block w-75">
-                    </select>
-                </div>
                 <div class="mb-1">
                     <img class="constructor-icon-size" src="{% static 'rzmr/img/braid.svg' %}" alt="braid">
                     {{ form.braids.errors }}
                     {{ form.braids }}
+                </div>
+                <div class="mb-1 d-none">
+                    {{ form.corrugation.errors }}
+                    {{ form.corrugation }}
                 </div>
                 <div class="fs-6 fw-bold">
                     Условия эксплуатации:
                 </div>
                 <div class="mb-1">
                     <img class="constructor-icon-size" src="{% static 'rzmr/img/workspace.svg' %}" alt="workspace">
-                    <!-- <input type="text" placeholder="Рабочая среда" id="WorkSpace" value="" class="form-control form-control-sm d-inline-block w-75"
-                        onchange="changeForm(this);"> -->
                     {{ form.workspace.errors }}
                     {{ form.workspace }}
                 </div>
@@ -190,13 +191,8 @@
                     {{ form.mrсount.errors }}
                     {{ form.mrсount.label_tag }}
                     {{ form.mrсount }}
+                    <button class="btn btn-secondary" type="button" onclick="changeForm(this);">Заказать</button>
                 </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <button class="btn btn-secondary" type="button" id="ClearForm">Очистить поля КА</button>
-                <br>
-                <br>
-                <button class="btn btn-secondary" type="button" onclick="changeForm(this);">Заказать</button>
             </div>
         </div>
     </form>

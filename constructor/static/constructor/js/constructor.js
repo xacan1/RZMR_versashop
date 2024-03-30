@@ -20,28 +20,40 @@ async function elements_listener() {
 
     if (select_fittings1) {
         select_fittings1.addEventListener('click', get_groups_and_fittings);
-        select_fittings1.addEventListener('change', () => { document.querySelector('#TypeFitting1').innerHTML = ''; });
+        select_fittings1.addEventListener('change', () => {
+            document.querySelector('#TypeFitting1').innerHTML = '';
+            clear_image('#img1');
+        });
     }
 
     let select_fittings2 = document.querySelector('#GroupsEndFittings2');
 
     if (select_fittings2) {
         select_fittings2.addEventListener('click', get_groups_and_fittings);
-        select_fittings2.addEventListener('change', () => { document.querySelector('#TypeFitting2').innerHTML = ''; });
+        select_fittings2.addEventListener('change', () => {
+            document.querySelector('#TypeFitting2').innerHTML = '';
+            clear_image('#img2');
+        });
     }
 
     let select_fittingsA1 = document.querySelector('#GroupsEndFittingsA1');
 
     if (select_fittingsA1) {
         select_fittingsA1.addEventListener('click', get_groups_and_fittings);
-        select_fittingsA1.addEventListener('change', () => { document.querySelector('#TypeFittingA1').innerHTML = ''; });
+        select_fittingsA1.addEventListener('change', () => {
+            document.querySelector('#TypeFittingA1').innerHTML = '';
+            clear_image('#imgA1');
+        });
     }
 
     let select_fittingsA2 = document.querySelector('#GroupsEndFittingsA2');
 
     if (select_fittingsA2) {
         select_fittingsA2.addEventListener('click', get_groups_and_fittings);
-        select_fittingsA2.addEventListener('change', () => { document.querySelector('#TypeFittingA2').innerHTML = ''; });
+        select_fittingsA2.addEventListener('change', () => {
+            document.querySelector('#TypeFittingA2').innerHTML = '';
+            clear_image('#imgA2');
+        });
     }
 
     let select_diameters = document.querySelector('#Diameters');
@@ -112,28 +124,40 @@ async function elements_listener() {
 
     if (select_materials1) {
         select_materials1.addEventListener('click', get_materials);
-        select_materials1.addEventListener('change', () => { document.querySelector('#TypeFitting1').innerHTML = ''; });
+        select_materials1.addEventListener('change', () => {
+            document.querySelector('#TypeFitting1').innerHTML = '';
+            clear_image('#img1');
+        });
     }
 
     let select_materials2 = document.querySelector('#Materials2');
 
     if (select_materials2) {
         select_materials2.addEventListener('click', get_materials);
-        select_materials2.addEventListener('change', () => { document.querySelector('#TypeFitting2').innerHTML = ''; });
+        select_materials2.addEventListener('change', () => {
+            document.querySelector('#TypeFitting2').innerHTML = '';
+            clear_image('#img2');
+        });
     }
 
     let select_materialsA1 = document.querySelector('#MaterialsA1');
 
     if (select_materialsA1) {
         select_materialsA1.addEventListener('click', get_materials);
-        select_materialsA1.addEventListener('change', () => { document.querySelector('#TypeFittingA1').innerHTML = ''; });
+        select_materialsA1.addEventListener('change', () => {
+            document.querySelector('#TypeFittingA1').innerHTML = '';
+            clear_image('#imgA1');
+        });
     }
 
     let select_materialsA2 = document.querySelector('#MaterialsA2');
 
     if (select_materialsA2) {
         select_materialsA2.addEventListener('click', get_materials);
-        select_materialsA2.addEventListener('change', () => { document.querySelector('#TypeFittingA2').innerHTML = ''; });
+        select_materialsA2.addEventListener('change', () => {
+            document.querySelector('#TypeFittingA2').innerHTML = '';
+            clear_image('#imgA2');
+        });
     }
 
     let select_types_fittings1 = document.querySelector('#TypeFitting1');
@@ -154,12 +178,14 @@ async function elements_listener() {
 
     if (select_types_fittingsA1) {
         select_types_fittingsA1.addEventListener('click', get_types_fittingsA1);
+        select_types_fittingsA1.addEventListener('change', get_image_part_of_product);
     }
 
     let select_types_fittingsA2 = document.querySelector('#TypeFittingA2');
 
     if (select_types_fittingsA2) {
         select_types_fittingsA2.addEventListener('click', get_types_fittingsA2);
+        select_types_fittingsA2.addEventListener('change', get_image_part_of_product);
     }
 
     let button_copy_K1 = document.querySelector('#CopyA1');
@@ -677,7 +703,7 @@ async function get_types_fittings1() {
     const id = this.getAttribute('id');
     let select_type_fitting1 = document.querySelector(`#${id}`);
 
-    if (select_type_fitting1.childNodes.length > 0) {
+    if (select_type_fitting1.childNodes.length > 1) {
         return;
     }
 
@@ -740,7 +766,7 @@ async function get_types_fittingsA1() {
     const id = this.getAttribute('id');
     let select_type_fittingA1 = document.querySelector(`#${id}`);
 
-    if (select_type_fittingA1.childNodes.length > 0) {
+    if (select_type_fittingA1.childNodes.length > 1) {
         return;
     }
 
@@ -803,7 +829,7 @@ async function get_types_fittingsA2() {
     const id = this.getAttribute('id');
     let select_type_fittingA1 = document.querySelector(`#${id}`);
 
-    if (select_type_fittingA1.childNodes.length > 0) {
+    if (select_type_fittingA1.childNodes.length > 1) {
         return;
     }
 
@@ -866,7 +892,7 @@ async function get_types_fittings2() {
     const id = this.getAttribute('id');
     let select_type_fitting2 = document.querySelector(`#${id}`);
 
-    if (select_type_fitting2.childNodes.length > 0) {
+    if (select_type_fitting2.childNodes.length > 1) {
         return;
     }
 
@@ -952,10 +978,16 @@ async function get_image_part_of_product() {
         group_product_code = document.querySelector('#GroupsEndFittings2').value;
     }
     else if (id === 'TypeFittingA1') {
-
+        position_image_code = 1;
+        id_img = '#imgA1';
+        typefitting_code = document.querySelector(`#${id}`).value;
+        group_product_code = document.querySelector('#GroupsEndFittingsA1').value;
     }
     else if (id === 'TypeFittingA2') {
-
+        position_image_code = 0;
+        id_img = '#imgA2';
+        typefitting_code = document.querySelector(`#${id}`).value;
+        group_product_code = document.querySelector('#GroupsEndFittingsA2').value;
     }
     else {
         return;
