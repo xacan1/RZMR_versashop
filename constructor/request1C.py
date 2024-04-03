@@ -22,8 +22,25 @@ def get_request_to_1C(url_request: str) -> Union[str, bytes]:
         return response
 
 
-def post_request_to_1C(url_request: str, data_request: dict) -> str:
-    pass
+def post_request_to_1C(url_request: str, data_request: bytes) -> str:
+    response = '{}'
+
+    if not url_request:
+        return response
+    
+    return response
+
+    req = request.Request(url=url_request, data=data_request, method='POST')
+    req.add_header('Content-Type', 'application/json')
+
+    try:
+        with request.urlopen(req) as resp:
+            response = resp.read().decode('utf-8')
+
+    except error.URLError:
+        return response
+    finally:
+        return response
 
 
 def get_types() -> list[tuple[str, str]]:

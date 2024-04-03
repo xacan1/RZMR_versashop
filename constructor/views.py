@@ -45,9 +45,12 @@ class ProxyRequestView(FormView):
             self.buffer.write(response_data)
             self.buffer.seek(0)
             response = FileResponse(self.buffer, as_attachment=False, filename='example.png')
-            # print(len(self.buffer.getvalue()))
 
         return response
 
     def post(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
-        return super().post(request, *args, **kwargs)
+        # return super().post(request, *args, **kwargs)
+        url_request = request.headers.get('Request1C', '')
+        data_request = request.body
+        response_data = request1C.post_request_to_1C(url_request, data_request)
+        return HttpResponse(response_data)

@@ -199,6 +199,12 @@ async function elements_listener() {
     if (button_clear_form) {
         button_clear_form.addEventListener('click', clear_form);
     }
+
+    let button_order = document.querySelector('#Order');
+
+    if (button_order) {
+        button_order.addEventListener('click', create_product);
+    }
 }
 
 async function get_types() {
@@ -210,7 +216,7 @@ async function get_types() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -219,7 +225,7 @@ async function get_types() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log(`Ошибка HTTP types: ${response.status}`);
@@ -250,7 +256,7 @@ async function get_groups_and_fittings() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -259,7 +265,7 @@ async function get_groups_and_fittings() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log(`Ошибка HTTP groups_and_fittings ${id}: ` + response.status);
@@ -289,7 +295,7 @@ async function get_diameters() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -298,7 +304,7 @@ async function get_diameters() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP diameters: ' + response.status);
@@ -339,7 +345,7 @@ async function get_pressures() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -348,7 +354,7 @@ async function get_pressures() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log(`Ошибка HTTP pressures: ${response.status}`);
@@ -386,7 +392,7 @@ async function get_corrugation() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -395,7 +401,7 @@ async function get_corrugation() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log(`Ошибка HTTP pressures: ${response.status}`);
@@ -438,7 +444,7 @@ async function get_innerscreen() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -447,7 +453,7 @@ async function get_innerscreen() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP pressures: ' + response.status);
@@ -481,14 +487,14 @@ async function get_outershells() {
     let request1C = '';
 
     if (diameter && diameter.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListInnerScreenStartSelection&diameter=${diameter.value}`;
+        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListOuterShellStartSelection&diameter=${diameter.value}`;
     }
     else {
         return;
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -497,7 +503,7 @@ async function get_outershells() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP pressures: ' + response.status);
@@ -539,7 +545,7 @@ async function get_braid() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -548,7 +554,7 @@ async function get_braid() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP pressures: ' + response.status);
@@ -588,7 +594,7 @@ async function get_braids() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -597,7 +603,7 @@ async function get_braids() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP pressures: ' + response.status);
@@ -627,7 +633,7 @@ async function get_lengths() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -636,7 +642,7 @@ async function get_lengths() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP lengths: ' + response.status);
@@ -668,7 +674,7 @@ async function get_materials() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -677,7 +683,7 @@ async function get_materials() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP materials: ' + response.status);
@@ -731,7 +737,7 @@ async function get_types_fittings1() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -740,7 +746,7 @@ async function get_types_fittings1() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP select_type_fitting1: ' + response.status);
@@ -794,7 +800,7 @@ async function get_types_fittingsA1() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -803,7 +809,7 @@ async function get_types_fittingsA1() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP select_type_fittingA1: ' + response.status);
@@ -857,7 +863,7 @@ async function get_types_fittingsA2() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -866,7 +872,7 @@ async function get_types_fittingsA2() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP select_type_fittingA2: ' + response.status);
@@ -920,7 +926,7 @@ async function get_types_fittings2() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -929,7 +935,7 @@ async function get_types_fittings2() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log('Ошибка HTTP select_type_fitting2: ' + response.status);
@@ -1017,7 +1023,7 @@ async function get_image_part_of_product() {
     }
 
     let optoins = {
-        methos: 'GET',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
@@ -1026,7 +1032,7 @@ async function get_image_part_of_product() {
         },
     };
 
-    let response = await fetch('/constructor_api/v1/proxy_get_request/', optoins);
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
         console.log(`Ошибка HTTP get_image_part_of_product: ${response.status}`);
@@ -1081,4 +1087,65 @@ function clear_form() {
     document.querySelector('#InnerScreen').innerHTML = '';
     document.querySelector('#OuterShells').innerHTML = '';
     document.querySelector('#Braids').innerHTML = '';
+}
+
+async function create_product() {
+    let data = {};
+    let product_type_code = document.querySelector('#Types').value;
+    let pressure = document.querySelector('#Pressures').value;
+    let diameter = document.querySelector('#Diameters').value;
+    let length = document.querySelector('#LengthsHoses').value;
+    let corrugation_code = document.querySelector('#Corrugation').value;
+    let braid_code = document.querySelector('#Braids').value;
+
+    if (product_type_code && pressure && diameter && length && corrugation_code && braid_code) {
+        data.product_type_code = product_type_code;
+        data.pressure = pressure;
+        data.diameter = diameter;
+        data.length = length;
+        data.corrugation_code = corrugation_code;
+        data.braid_code = braid_code;
+    }
+    else {
+        alert('Не заполнены обязательные поля: Тип изделия, Диаметр, Давление, Длина, Оплетка');
+        return;
+    }
+
+    let innerscreen_code = document.querySelector('#InnerScreen').value;
+    let outershells_code = document.querySelector('#OuterShells').value;
+    let typefitting1_code = document.querySelector('#TypeFitting1').value;
+    let typefitting2_code = document.querySelector('#TypeFitting2').value;
+    let typefittingadd1_code = document.querySelector('#TypeFittingA1').value;
+    let typefittingadd2_code = document.querySelector('#TypeFittingA2').value;
+
+    data.innerscreen_code = innerscreen_code ? innerscreen_code : '0';
+    data.outershells_code = outershells_code ? outershells_code : '0';
+    data.typefitting1_code = typefitting1_code ? typefitting1_code : '0';
+    data.typefitting2_code = typefitting2_code ? typefitting2_code : '0';
+    data.typefittingadd1_code = typefittingadd1_code ? typefittingadd1_code : '0';
+    data.typefittingadd2_code = typefittingadd2_code ? typefittingadd2_code : '0';
+
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=createProduct';
+
+    let optoins = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': get_cookie('csrftoken'),
+            'Request1C': request1C,
+        },
+        body: JSON.stringify(data),
+    };
+
+    const response = await fetch('/constructor_api/v1/proxy_request/', optoins);
+
+    if (!response.ok && response.status != 401) {
+        console.log('Ошибка HTTP createProduct: ' + response.status);
+        return;
+    }
+
+    let response_json = await response.json();
+    // console.log(response_json);
+
 }

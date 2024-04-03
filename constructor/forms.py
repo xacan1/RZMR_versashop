@@ -54,9 +54,9 @@ class ConstructorForm(forms.Form):
     outershells = forms.ChoiceField(required=False,
                                     widget=forms.Select(attrs={'class': 'form-select form-select-sm d-inline-block w-75', 'id': 'OuterShells', }))
     braids = forms.ChoiceField(required=False,
-                               widget=forms.Select(attrs={'class': 'form-select form-select-sm d-inline-block w-75', 'id': 'Braids', }))
+                               widget=forms.Select(attrs={'class': 'form-select form-select-sm d-inline-block border border-danger w-75', 'id': 'Braids', }))
     corrugation = forms.CharField(required=True,
-                                  widget=forms.Select(attrs={'class': 'form-select form-select-sm d-inline-block w-75', 'id': 'Corrugation', }))
+                                  widget=forms.Select(attrs={'class': 'form-select form-select-sm d-inline-block border border-danger w-75', 'id': 'Corrugation', }))
     workspace = forms.CharField(max_length=100, required=False,
                                 widget=forms.TextInput(attrs={'class': 'form-control form-control-sm d-inline-block w-75', 'id': 'WorkSpace', 'placeholder': 'Рабочая среда', }))
     temperature = forms.CharField(max_length=100, required=False,
