@@ -29,6 +29,8 @@ class Category(models.Model):
     parent = models.ForeignKey('self', on_delete=models.PROTECT, default=None,
                                null=True, blank=True, related_name='nested_category',
                                verbose_name='Родитель')
+    is_published = models.BooleanField(default=True, blank=True,
+                                       verbose_name='Отображать в каталоге')
 
     def save(self, *args, **kwargs):
         if not self.slug:

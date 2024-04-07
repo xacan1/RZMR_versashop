@@ -68,7 +68,7 @@ def get_currencies() -> models.QuerySet[Currency]:
 # categories = [(slug, name, []),]
 def get_categories(parent_id: None | str = None) -> list[tuple[str, str, list]]:
     categories = []
-    queryset = Category.objects.filter(parent=parent_id)
+    queryset = Category.objects.filter(parent=parent_id, is_published=True)
 
     for cat in queryset:
         category = (cat.slug, cat.name, get_categories(cat.pk))
