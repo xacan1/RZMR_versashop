@@ -1,4 +1,4 @@
-from urllib import request, error
+from urllib import request, error, parse
 from typing import Union
 import json
 
@@ -27,8 +27,8 @@ def post_request_to_1C(url_request: str, data_request: bytes) -> str:
 
     if not url_request:
         return response
-    
-    return response
+
+    # return response
 
     req = request.Request(url=url_request, data=data_request, method='POST')
     req.add_header('Content-Type', 'application/json')
@@ -127,3 +127,15 @@ def get_materials() -> list[tuple[str, str]]:
                      for elem in materials]
 
     return materials
+
+
+def upload_product_from_1C(external_code: str) -> str:
+    url_request = encodeURI(
+        f'http://62.133.174.3:8081/UT_RZM/hs/api?metod=uploadProductOnSite&product_code={external_code}')
+    response = get_request_to_1C(url_request)
+
+    return response
+
+
+def encodeURI(s):
+    return parse.quote(s, safe="~@#$&()*!+=:;,.?/'")

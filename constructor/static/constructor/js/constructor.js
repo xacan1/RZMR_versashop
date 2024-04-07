@@ -1148,4 +1148,18 @@ async function create_product() {
     let response_json = await response.json();
     // console.log(response_json);
 
+    let product_name = document.querySelector('#nameProduct');
+
+    if (response_json.id === '0') {
+        product_name.textContent = '';
+        this.removeAttribute('data-shop-product-pk');
+        return;
+    }
+    
+    product_name.textContent = response_json.Value;
+    this.setAttribute('data-shop-product-pk', response_json.id);
+
+    if (this.getAttribute('data-shop-product-pk')) {
+        add_product_to_cart(this, add_cart_button);
+    }
 }

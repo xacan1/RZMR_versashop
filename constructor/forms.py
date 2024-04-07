@@ -63,5 +63,5 @@ class ConstructorForm(forms.Form):
                                   widget=forms.TextInput(attrs={'class': 'form-control form-control-sm d-inline-block w-75', 'id': 'Temperature', 'placeholder': 'Т рабочей среды (°C)', }))
     radius = forms.CharField(max_length=100, required=False,
                              widget=forms.TextInput(attrs={'class': 'form-control form-control-sm d-inline-block w-75', 'id': 'Radius', 'placeholder': 'Радиус изгиба (мм)', }))
-    mrсount = forms.CharField(max_length=4, label='Количество', required=False,
+    mrсount = forms.CharField(max_length=4, label='Количество', required=False, initial=1,
                               widget=forms.TextInput(attrs={'class': 'form-control form-control-sm d-inline-block w-50', 'id': 'mrCount', 'placeholder': 'Количество', }))

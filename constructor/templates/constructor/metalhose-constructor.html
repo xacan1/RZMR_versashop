@@ -92,7 +92,7 @@
                 {{ form.typefittingA1.errors }}
                 {{ form.typefittingA1 }}
                 <div class="text-center">
-                    <button class="btn btn-secondary" type="button" id="ClearForm">Очистить поля КА</button>
+                    <button class="btn btn-secondary w-100" type="button" id="ClearForm">Очистить поля КА</button>
                 </div>
             </div>
             <div class="col-md-4">
@@ -179,7 +179,7 @@
                 {{ form.typefittingA2.errors }}
                 {{ form.typefittingA2 }}
                 <div class="text-center">
-                    <button class="btn btn-secondary" type="button" id="CopyA1">Копировать ответные детали КА1</button>
+                    <button class="btn btn-secondary w-100" type="button" id="CopyA1">Копировать ответные детали КА1</button>
                 </div>
             </div>
         </div>
@@ -187,15 +187,25 @@
             <div class="col-md-4">
             </div>
             <div class="col-md-4">
-                <div class="py-5">
+                <div class="p-2 fw-bold bg-info rounded">
+                    <div>
+                        Созданное изделие:
+                    </div>
+                    <span id="nameProduct"></span>
+                </div>
+                <div class="py-2 d-none">
                     {{ form.mrсount.errors }}
                     {{ form.mrсount.label_tag }}
                     {{ form.mrсount }}
-                    <button class="btn btn-secondary" type="button" id="Order">Заказать</button>
+                </div>
+                <div class="py-2">
+                    <button class="btn btn-secondary w-75" type="button" id="Order" data-bs-toggle="modal" data-bs-target="#successAddProductToCartModal">Заказать</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
-<script src="{% static 'constructor/js/constructor.js' %}"></script>
+
+{% include 'shop/add_product_to_cart_modal.html' %}
+
 {% endblock content %}

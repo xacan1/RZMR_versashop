@@ -5,6 +5,7 @@ from django.views.generic import FormView
 from shop.mixins import DataMixin
 from constructor.forms import *
 from constructor import request1C
+from constructor import service
 
 
 class MetalhoseConstructorView(DataMixin, FormView):
@@ -30,9 +31,10 @@ class ProxyRequestView(FormView):
     def __init__(self, **kwargs: Any) -> None:
         super().__init__(**kwargs)
         self.buffer = io.BytesIO()
-    
+
     def __del__(self) -> None:
-        self.buffer.close()
+        if self.buffer:
+            self.buffer.close()
 
     def get(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
         # return super().get(request, *args, **kwargs)
@@ -44,7 +46,8 @@ class ProxyRequestView(FormView):
         else:
             self.buffer.write(response_data)
             self.buffer.seek(0)
-            response = FileResponse(self.buffer, as_attachment=False, filename='example.png')
+            response = FileResponse(
+                self.buffer, as_attachment=False, filename='example.png')
 
         return response
 
@@ -53,4 +56,8 @@ class ProxyRequestView(FormView):
         url_request = request.headers.get('Request1C', '')
         data_request = request.body
         response_data = request1C.post_request_to_1C(url_request, data_request)
+
+        if 'createProduct' in url_request:
+            response_data = service.load_new_product_from_1C(response_data)
+
         return HttpResponse(response_data)
