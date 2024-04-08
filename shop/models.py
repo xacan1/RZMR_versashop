@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.core.validators import MinValueValidator, MaxValueValidator
 from rest_framework.authtoken.models import Token
 from shop.utils import unique_slugify
+from decimal import Decimal
 
 
 User = get_user_model()
@@ -246,7 +247,7 @@ class Prices(models.Model):
     date_update = models.DateTimeField(auto_now_add=True,
                                        verbose_name='Дата установки цены')
     discount_percentage = models.DecimalField(max_digits=3, decimal_places=0, default=0,
-                                              validators=[MinValueValidator(0), MaxValueValidator(100)], verbose_name='Скидка %')
+                                              validators=[MinValueValidator(Decimal(0)), MaxValueValidator(Decimal(100))], verbose_name='Скидка %')
 
     def __str__(self) -> str:
         return f'Цена {self.product.name} = {self.price}'
@@ -338,7 +339,7 @@ class CartProduct(models.Model):
     discount = models.DecimalField(max_digits=15, decimal_places=2, default=0,
                                    blank=True, verbose_name='Скидка')
     discount_percentage = models.DecimalField(max_digits=3, decimal_places=0, default=0,
-                                              validators=[MinValueValidator(0), MaxValueValidator(100)], verbose_name='Скидка %')
+                                              validators=[MinValueValidator(Decimal(0)), MaxValueValidator(Decimal(100))], verbose_name='Скидка %')
     amount = models.DecimalField(max_digits=15, decimal_places=2,
                                  default=0, verbose_name='Сумма')
 
@@ -472,7 +473,7 @@ class Coupon(models.Model):
     valid_from = models.DateTimeField(verbose_name='Действует с')
     valid_to = models.DateTimeField(verbose_name='Действует до')
     discount_percentage = models.DecimalField(max_digits=3, decimal_places=0, default=0,
-                                              validators=[MinValueValidator(0), MaxValueValidator(100)], verbose_name='Скидка %')
+                                              validators=[MinValueValidator(Decimal(0)), MaxValueValidator(Decimal(100))], verbose_name='Скидка %')
     for_discount = models.BooleanField(verbose_name='Скидочный')
     amount = models.DecimalField(max_digits=15, decimal_places=2,
                                  default=0, verbose_name='Сумма')

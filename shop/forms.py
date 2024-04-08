@@ -61,8 +61,7 @@ class ProductListForm(forms.Form):
     price_range_max = forms.IntegerField(widget=forms.NumberInput(
         attrs={'class': 'form-range', 'type': 'range', 'name': 'price_range_max', 'onchange': 'rangePrimary.value=value'})
     )
-    current_price = forms.IntegerField(
-        widget=forms.TextInput(
+    current_price = forms.IntegerField(widget=forms.TextInput(
             attrs={'id': 'rangePrimary', 'readonly': '', 'form': ''}),
         required=False
     )

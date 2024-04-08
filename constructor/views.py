@@ -5,7 +5,7 @@ from django.views.generic import FormView
 from shop.mixins import DataMixin
 from constructor.forms import *
 from constructor import request1C
-from constructor import service
+from constructor import services
 
 
 class MetalhoseConstructorView(DataMixin, FormView):
@@ -58,6 +58,6 @@ class ProxyRequestView(FormView):
         response_data = request1C.post_request_to_1C(url_request, data_request)
 
         if 'createProduct' in url_request:
-            response_data = service.load_new_product_from_1C(response_data)
+            response_data = services.load_new_product_from_1C(response_data)
 
         return HttpResponse(response_data)

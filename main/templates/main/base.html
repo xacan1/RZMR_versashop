@@ -301,7 +301,11 @@
         {% endblock content %}
     </main>
 
+    {% if DEBUG %}
     <script src="{% static 'shop/js/shop_client.js' %}"></script>
+    {% else %}
+    <script src="{% static 'shop/js/shop_client_compile.js' %}"></script>
+    {% endif %}
     
     <!-- Start Footer Area -->
     <footer class="footer">

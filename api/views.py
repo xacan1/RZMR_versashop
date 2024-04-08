@@ -389,6 +389,7 @@ class APIGetCartInfo(APIView):
 
         cart_info = services.get_cart_full_info(
             request.user, get_params=get_params, session_key=session_key)
+
         return Response(cart_info)
 
 

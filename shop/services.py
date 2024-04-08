@@ -470,6 +470,17 @@ def get_last_price(product_pk: int, price_type_pk: int = 0) -> dict:
     return price_info
 
 
+# Проверю что товар принадлежит группе которая не участвует в каталоге
+def is_published_product(product_pk: int) -> bool:
+    product_published = True
+    productset = Product.objects.prefetch_related('category').filter(pk=product_pk)
+
+    if productset.exists():
+        product_published = productset[0].category.is_published
+
+    return product_published
+
+
 # создает новую Настройку пользователя
 def create_new_settings(new_settings_info: dict) -> UserSettings:
     settings = UserSettings(**new_settings_info)
@@ -544,7 +555,8 @@ def add_delete_update_product_to_cart(user: AbstractBaseUser, request_data: dict
     price_type_pk = price_type.pk if price_type is not None else 0
     price_info = get_last_price(product_pk, price_type_pk)
 
-    if not price_info:
+    # если товар в категории для каталога, то учтем наличие цены иначе не позволим добавить его в корзину
+    if not price_info and is_published_product(product_pk):
         data_response = {'error': 'Price not found'}
         return data_response
 
@@ -556,7 +568,7 @@ def add_delete_update_product_to_cart(user: AbstractBaseUser, request_data: dict
         'warehouse': warehouse_pk,
         'product': product_pk,
         'price': Decimal(price_info.get('price', 0.0)),
-        'discount_percentage': int(price_info.get('discount_percentage', 0)),
+        'discount_percentage': Decimal(price_info.get('discount_percentage', 0)),
     }
     # Строка товара для корзины готова, теперь попробуем найти строку с этим товаром в Корзине
     product_cart, product_cart_info = get_cart_order_product(cart_pk,

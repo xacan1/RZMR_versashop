@@ -1,3 +1,4 @@
+from django.conf import settings
 from shop import services
 from versa import config
 
@@ -17,6 +18,7 @@ class DataMixin:
         context['company_name'] = config.COMPANY_NAME
         context['company_name_short'] = config.COMPANY_NAME_SHORT
         context['company_email'] = config.COMPANY_EMAIL
+        context['DEBUG'] = settings.DEBUG
 
         if 'breadcrumb' not in context:
             context['breadcrumb'] = []

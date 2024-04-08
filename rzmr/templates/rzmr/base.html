@@ -389,7 +389,10 @@
     </footer>
 
     <script src="{% static 'rzmr/js/bootstrap.bundle.min.js' %}"></script>
+    {% if DEBUG %}
     <script src="{% static 'shop/js/shop_client.js' %}"></script>
-    <script src="{% static 'constructor/js/constructor.js' %}"></script>
+    {% else %}
+    <script src="{% static 'shop/js/shop_client_compile.js' %}"></script>
+    {% endif %}
 </body>
 </html>

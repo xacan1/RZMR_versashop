@@ -56,21 +56,6 @@ async function elements_listener() {
     }
 }
 
-// function load_saved_values() {
-//     let selectSorting = document.getElementById('selectSorting');
-
-//     if (selectSorting) {
-//         let value = get_selectSorting(selectSorting);
-
-//         if (value) {
-//             selectSorting.value = value;
-//         }
-//         else {
-//             selectSorting.value = 'price_asc';
-//         }
-//     }
-// }
-
 
 function getCookie(name) {
     let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
@@ -153,7 +138,7 @@ async function update_cart_header() {
             </svg>\
             </a>\
             <div class="cart-img-head">\
-                <a class="cart-img" href="${path_product}"><img src="${row.product.photo}" alt="#"></a>\
+                <a class="cart-img" href="${path_product}"><img src="${row.product.photo ? row.product.photo : 'https://via.placeholder.com/220x200'}" alt="#"></a>\
             </div>\
         </div>\
         <div class="content">\
@@ -172,7 +157,7 @@ async function update_cart_header() {
             <span class="total-amount">${formatter.format(cart_info.amount)}</span>\
         </div>\
         <div class="button" hidden=false>\
-            <a href="${document.domain}/checkout" class="btn animate">Оформить заказ</a>\
+            <a href="${location.hostname}/shop/checkout" class="btn animate">Оформить заказ</a>\
         </div>\
     </div>`;
 
@@ -214,7 +199,7 @@ async function delete_cart_product(btn) {
 
 // Возможно не пригодится функция , так как подобные вещи можно сделать через Django Forms и Messages
 function get_selected_warehouse() {
-    const selected_warehouse = 0;
+    let selected_warehouse = 0;
     const radiobutton_checked = document.querySelector('input[name="warehouse"]:checked');
 
     // Если ни одна радио кнопка не выбрана, то подсветим выбор всех складов красным цветом
@@ -593,3 +578,6 @@ function popup_button_hidden() {
 // function get_selectSorting(elem) {
 //     return sessionStorage.getItem(elem.name);
 // }
+
+// const _add_product_to_cart = add_product_to_cart;
+// export { _add_product_to_cart as add_product_to_cart };
