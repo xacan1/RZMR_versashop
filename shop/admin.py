@@ -142,18 +142,11 @@ class CartAdmin(admin.ModelAdmin):
 
 class ContractorAdmin(admin.ModelAdmin):
     model = Contractor
-    list_display = ('name', 'full_name', 'inn', 'kpp', 'registered_address',)
+    list_display = ('name', 'full_name', 'inn', 'kpp',
+                    'registered_address', 'actual_address', 'user',)
     list_display_links = ('name', 'full_name', 'inn',)
-    search_fields = ('name', 'full_name', 'inn', 'kpp', 'registered_address',)
-
-
-class ContractorUserAdmin(admin.ModelAdmin):
-    model = ContractorUser
-    list_display = ('user', 'contractor',)
-    list_display_links = ('user', 'contractor',)
-    search_fields = ('user__email', 'contractor__name',
-                     'contractor__full_name', 'contractor__inn',
-                     'contractor__kpp', 'contractor__registered_address',)
+    search_fields = ('name', 'full_name', 'inn', 'kpp',
+                     'registered_address', 'actual_address', 'user__email',)
 
 
 class StatusAdmin(admin.ModelAdmin):
@@ -216,7 +209,6 @@ admin.site.register(StockProducts, StockProductsAdmin)
 admin.site.register(CartProduct, CartProductAdmin)
 admin.site.register(Cart, CartAdmin)
 admin.site.register(Contractor, ContractorAdmin)
-admin.site.register(ContractorUser, ContractorUserAdmin)
 admin.site.register(Status, StatusAdmin)
 admin.site.register(PaymentType, PaymentTypeAdmin)
 admin.site.register(DeliveryType, DeliveryTypeAdmin)

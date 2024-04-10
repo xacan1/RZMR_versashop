@@ -1,6 +1,5 @@
 from django.views.generic import FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from personal_account.models import *
 from shop.mixins import DataMixin
 from personal_account.forms import *
 

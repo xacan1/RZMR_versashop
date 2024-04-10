@@ -20,4 +20,6 @@ urlpatterns = [
     path('order/<int:order_pk>/', OrderView.as_view(), name='order'),
     path('order-cancel-confirm/<int:order_pk>/', OrderCancelConfirmView.as_view(), name='order-cancel-confirm'),
     path('order-cancel-complete/<int:order_pk>/', OrderCancelCompleteView.as_view(), name='order-cancel-complete'),
+    path('contractor-update/<int:contractor_pk>', ContractorUpdateView.as_view(), name='contractor-update'),
+    path('contractor-create/', ContractorCreateView.as_view(), name='contractor-create'),
 ]

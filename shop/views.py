@@ -1,5 +1,5 @@
-from typing import Any
-from django.views.generic import FormView, ListView, DetailView, CreateView, View
+from django.forms import BaseModelForm
+from django.views.generic import FormView, ListView, DetailView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.core.paginator import Paginator
@@ -263,7 +263,7 @@ class AddOrderView(DataMixin, CreateView):
     template_name = 'shop/checkout.html'
     success_url = reverse_lazy('new-order-success')
 
-    def form_valid(self, form) -> HttpResponse:
+    def form_valid(self, form: BaseModelForm) -> HttpResponse:
         cart_info = services.get_cart_full_info(user=self.request.user,
                                                 session_key=self.request.session.session_key)
         if not cart_info['products']:
@@ -346,3 +346,43 @@ class OrderCancelCompleteView(LoginRequiredMixin, DataMixin, FormView):
         c_def = self.get_user_context(
             title='Заказ отменен', order_number=order_pk)
         return {**context, **c_def}
+
+
+class ContractorUpdateView(LoginRequiredMixin, DataMixin, UpdateView):
+    model = Contractor
+    form_class = AddContractorForm
+    template_name = 'shop/contractor-update.html'
+    context_object_name = 'contractor'
+    pk_url_kwarg = 'contractor_pk'
+    login_url = reverse_lazy('login')
+    success_url = reverse_lazy('user-companies')
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        kwargs = self.get_form_kwargs()
+        contractor = kwargs['instance']
+        breadcrumb = [('personal-account', 'Личный кабинет'),
+                      ('user-companies', 'Организации'),]
+        c_def = self.get_user_context(title=f'Редактирование организации: {contractor.name}',
+                                      breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class ContractorCreateView(LoginRequiredMixin, DataMixin, CreateView):
+    model = Contractor
+    form_class = AddContractorForm
+    template_name = 'shop/contractor-create.html'
+    login_url = reverse_lazy('login')
+    success_url = reverse_lazy('user-companies')
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('personal-account', 'Личный кабинет'),
+                      ('user-companies', 'Организации'),]
+        c_def = self.get_user_context(title='Добавление организации',
+                                      breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+    def form_valid(self, form: BaseModelForm) -> HttpResponse:
+        form.instance.user = self.request.user
+        return super().form_valid(form)

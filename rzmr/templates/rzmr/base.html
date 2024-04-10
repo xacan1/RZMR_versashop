@@ -272,7 +272,7 @@
                         </ul>
                     </div>
                 </nav>
-                {% if request.path != '/' and 'shop' not in request.path %}
+                {% if request.path != '/' and 'shop' not in request.path or breadcrumb %}
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item small"><a href="{% url 'home' %}">Главная</a></li>

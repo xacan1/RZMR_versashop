@@ -395,27 +395,18 @@ class Contractor(models.Model):
                                           blank=True, verbose_name='Юридический адрес')
     actual_address = models.CharField(max_length=1024, default='', blank=True,
                                       verbose_name='Фактический адрес')
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name='get_contractors', verbose_name='Покупатель')
 
     def __str__(self) -> str:
         return f'Контрагент: {self.name}'
 
+    def get_absolute_url(self):
+        return reverse('contractor-update', kwargs={'contractor_pk': self.pk})
+
     class Meta:
         verbose_name = 'Контрагент'
         verbose_name_plural = 'Контрагенты'
-
-
-class ContractorUser(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE,
-                             related_name='get_contractors', verbose_name='Покупатель')
-    contractor = models.ForeignKey(Contractor, on_delete=models.CASCADE,
-                                   verbose_name='Контрагент')
-
-    def __str__(self) -> str:
-        return f'Контрагент: {self.contractor.name} пользователя: {self.user.email}'
-
-    class Meta:
-        verbose_name = 'Контрагент пользователя'
-        verbose_name_plural = 'Контрагенты пользователей'
 
 
 # for_bot - что бы любой бот знал что ему надо выбирать в заказе
@@ -577,6 +568,9 @@ class Order(models.Model):
 
     def __str__(self) -> str:
         return f'Заказ №{self.pk} от {self.time_update.strftime("%d.%m.%Y")}'
+    
+    def get_absolute_url(self):
+        return reverse('order', kwargs={'order_pk': self.pk})
 
     class Meta:
         verbose_name = 'Заказ'

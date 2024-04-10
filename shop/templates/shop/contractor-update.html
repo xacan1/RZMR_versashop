@@ -1,0 +1,22 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="checkout-steps-form-style-1">
+                <section class="checkout-steps-form-content p-3">
+                    <form action="{% url 'contractor-update' contractor.pk %}" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-secondary">Сохранить</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
