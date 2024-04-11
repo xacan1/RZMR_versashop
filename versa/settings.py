@@ -171,7 +171,8 @@ REST_FRAMEWORK = {
 }
 
 if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
