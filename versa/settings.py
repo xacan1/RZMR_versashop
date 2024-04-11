@@ -173,8 +173,7 @@ REST_FRAMEWORK = {
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_FILE_PATH = BASE_DIR / 'send_emails'
 DEFAULT_FROM_EMAIL = f'{ALLOWED_HOSTS[0]} <{config.EMAIL_USER}>'
