@@ -13,6 +13,9 @@ async function elements_listener() {
 
     if (select_type) {
         select_type.addEventListener('click', get_types);
+        select_type.addEventListener('change', () => {
+            console.log(select_type.value);
+        })
     }
 
     let select_fittings1 = document.querySelector('#constructorGroupsEndFittings1');
@@ -1073,12 +1076,16 @@ function copy_from_K1() {
 }
 
 function clear_form() {
+    document.querySelector('#constructorGroupsEndFittings1').innerHTML = '';
+    document.querySelector('#constructorGroupsEndFittings2').innerHTML = '';
     document.querySelector('#constructorMaterials1').innerHTML = '';
     document.querySelector('#constructorMaterials2').innerHTML = '';
     document.querySelector('#constructorTypeFitting1').innerHTML = '';
     clear_image('#constructorImg1');
     document.querySelector('#constructorTypeFitting2').innerHTML = '';
     clear_image('#constructorImg2');
+    document.querySelector('#constructorGroupsEndFittingsA1').innerHTML = '';
+    document.querySelector('#constructorGroupsEndFittingsA2').innerHTML = '';
     document.querySelector('#constructorMaterialsA1').innerHTML = '';
     document.querySelector('#constructorMaterialsA2').innerHTML = '';
     document.querySelector('#constructorTypeFittingA1').innerHTML = '';
@@ -1097,16 +1104,51 @@ async function create_product() {
     let corrugation_code = document.querySelector('#constructorCorrugation').value;
     let braid_code = document.querySelector('#constructorBraids').value;
 
-    if (product_type_code && pressure && diameter && length && corrugation_code && braid_code) {
+    if (product_type_code) {
         data.product_type_code = product_type_code;
+    }
+    else {
+        alert('Не заполнено обязательное поле: Тип изделия');
+        return;
+    }
+
+    if (pressure) {
         data.pressure = pressure;
+    }
+    else {
+        alert('Не заполнено обязательное поле: Давление');
+        return;
+    }
+
+    if (diameter) {
         data.diameter = diameter;
+    }
+    else {
+        alert('Не заполнено обязательное поле: Диаметр');
+        return;
+    }
+
+    if (length) {
         data.length = length;
-        data.corrugation_code = corrugation_code;
+    }
+    else {
+        alert('Не заполнено обязательное поле: Длина');
+        return;
+    }
+
+    if (braid_code) {
         data.braid_code = braid_code;
     }
     else {
-        alert('Не заполнены обязательные поля: Тип изделия, Диаметр, Давление, Длина, Оплетка');
+        alert('Не заполнено обязательное поле: Оплетка');
+        return;
+    }
+
+    if (corrugation_code) {
+        data.corrugation_code = corrugation_code;
+    }
+    else {
+        alert('Не заполнено обязательное поле: Гофра');
         return;
     }
 

@@ -78,14 +78,16 @@ class ProductListForm(forms.Form):
 
 class AddOrderForm(forms.ModelForm):
     def __init__(self, *args, **kwargs) -> None:
-        self.user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
+        initial = kwargs['initial']
+        self.user = initial.get('user', None)
+
+        if self.user:
+            self.fields['company'].queryset = self.user.get_contractors.all()
+
         self.fields['payment_type'].empty_label = 'Не выбран вид оплаты'
         self.fields['delivery_type'].empty_label = 'Не выбран способ получения'
         self.fields['company'].empty_label = 'Не указывать компанию'
-
-        if self.user:
-            self.base_fields['company'].queryset = self.user.get_contractors.all()
 
     def clean_phone(self):
         phone = self.cleaned_data['phone']

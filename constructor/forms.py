@@ -12,10 +12,14 @@ class ConstructorForm(forms.Form):
         self.fields['types'].choices = initial['types_choices']
         self.fields['diameters'].choices = initial['diameters_choices']
         self.fields['lengths'].choices = initial['lengths_choices']
-        self.fields['fittings1'].choices = initial['fittings_choices']
-        self.fields['fittings2'].choices = initial['fittings_choices']
-        self.fields['fittingsA1'].choices = initial['fittings_choices']
-        self.fields['fittingsA2'].choices = initial['fittings_choices']
+        # self.fields['fittings1'].choices = initial['fittings_choices']
+        # self.fields['fittings1'].empty_label = '----------'
+        # self.fields['fittings2'].choices = initial['fittings_choices']
+        # self.fields['fittings2'].empty_label = '----------'
+        # self.fields['fittingsA1'].choices = initial['fittings_choices']
+        # self.fields['fittingsA1'].empty_label = '----------'
+        # self.fields['fittingsA2'].choices = initial['fittings_choices']
+        # self.fields['fittingsA2'].empty_label = '----------'
 
     fittings1 = forms.ChoiceField(required=False,
                                   widget=forms.Select(attrs={'class': 'form-select form-select-sm mb-1', 'id': 'constructorGroupsEndFittings1', }))

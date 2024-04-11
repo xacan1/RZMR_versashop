@@ -44,5 +44,6 @@ class DataMixin:
         context['user_menu'] = context_user_menu
         context['main_menu'] = context_main_menu
         context['categories'] = services.get_categories()
+        context['categories'] = context['categories'][0][2] # это костыль что бы исключить категорию самого верхнего уровня, хотя она нужна, это все фильтры, в будущем надо убрать
         context['currencies'] = services.get_currencies()
         return context

@@ -264,12 +264,6 @@ class AddOrderView(DataMixin, CreateView):
     template_name = 'shop/checkout.html'
     success_url = reverse_lazy('new-order-success')
 
-    def get_form_kwargs(self) -> dict[str, Any]:
-        kwargs = super().get_form_kwargs()
-        kwargs['user'] = self.request.user
-
-        return kwargs
-
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         cart_info = services.get_cart_full_info(user=self.request.user,
                                                 session_key=self.request.session.session_key)
@@ -299,7 +293,8 @@ class AddOrderView(DataMixin, CreateView):
             form = self.form_class(initial={'first_name': self.request.user.first_name,
                                             'last_name': self.request.user.last_name,
                                             'email': self.request.user.email,
-                                            'phone': self.request.user.phone})
+                                            'phone': self.request.user.phone,
+                                            'user': self.request.user})
             context['form'] = form
 
         c_def = self.get_user_context(title='Оформление заказа', cart=cart)
