@@ -4,11 +4,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.core.paginator import Paginator
 from django.urls import reverse_lazy
+from django.http import HttpResponse
 from shop.forms import *
 from shop import services
 from shop.models import *
 from shop.mixins import DataMixin
-from django.http import HttpResponse
+from shop import request1C
 
 
 class IndexShopView(DataMixin, FormView):
@@ -263,6 +264,12 @@ class AddOrderView(DataMixin, CreateView):
     template_name = 'shop/checkout.html'
     success_url = reverse_lazy('new-order-success')
 
+    def get_form_kwargs(self) -> dict[str, Any]:
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+
+        return kwargs
+
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         cart_info = services.get_cart_full_info(user=self.request.user,
                                                 session_key=self.request.session.session_key)
@@ -276,6 +283,10 @@ class AddOrderView(DataMixin, CreateView):
         services.changing_cart_rows_to_order_rows(self.request.user, order,
                                                   self.request.session.session_key)
         services.send_email_for_order_success(order.pk)
+
+        # тут надо вызвать функцию createOrder для формирования заказа в 1С
+        services.create_order_in_1C(order)
+
         return response
 
     def get_context_data(self, **kwargs) -> dict:

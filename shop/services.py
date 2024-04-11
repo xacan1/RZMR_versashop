@@ -3,8 +3,10 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib.auth.models import AbstractBaseUser
 from django.db.models import Q, Min, Max, Prefetch
+from datetime import datetime
 from api.serializers import *
 from shop.models import *
+from shop import request1C
 
 
 def get_default_status() -> Status:
@@ -473,7 +475,8 @@ def get_last_price(product_pk: int, price_type_pk: int = 0) -> dict:
 # Проверю что товар принадлежит группе которая не участвует в каталоге
 def is_published_product(product_pk: int) -> bool:
     product_published = True
-    productset = Product.objects.prefetch_related('category').filter(pk=product_pk)
+    productset = Product.objects.prefetch_related(
+        'category').filter(pk=product_pk)
 
     if productset.exists():
         product_published = productset[0].category.is_published
@@ -1028,7 +1031,7 @@ def send_email_for_order_success(order_pk: int) -> None:
               recipient_list=[order.email],
               fail_silently=False)
 
-    
+
 def send_email_for_order_cancel(order_pk: int) -> None:
     order = Order.objects.get(pk=order_pk)
     send_mail(subject=f'Заказ №{order_pk} отменен',
@@ -1036,3 +1039,23 @@ def send_email_for_order_cancel(order_pk: int) -> None:
               from_email='robot.uzm@mail.ru',
               recipient_list=[order.email],
               fail_silently=False)
+
+
+def create_order_in_1C(order: Order) -> None:
+    table_product = []
+
+    for cart_product in order.get_order_products.select_related('product').all():
+        product_info = {'product_code': cart_product.product.external_code, 'quantity': float(cart_product.quantity)}
+        table_product.append(product_info)
+
+    data_order = {
+        'inn': order.company.inn if order.company else '0000000000',
+        'event_content': f'{order.first_name} {order.last_name}, {order.phone}, {order.email}',
+        'number_document': '',
+        'date_document': '',
+        'date_deadline': datetime.strftime(order.delivery_date, '%Y%m%d'),
+        'comment': order.comment,
+        'table_product': table_product,
+    }
+
+    request1C.create_order_in_1C(data_order)

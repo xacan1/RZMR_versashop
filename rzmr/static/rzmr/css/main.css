@@ -1075,4 +1075,13 @@ input {
     background-color: #223D59;
 }
 
+.icons-order>a {
+    height: 2rem;
+    width: 2.5rem;
+    display: inline-block;
+    border-bottom: unset;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 1px;
+}
 /* end main index */

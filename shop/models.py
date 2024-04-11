@@ -562,6 +562,8 @@ class Order(models.Model):
     canceled = models.BooleanField(default=False, verbose_name='Отменен')
     coupon = models.ForeignKey(Coupon, null=True, blank=True,
                                on_delete=models.SET_NULL, verbose_name='Купон')
+    company = models.ForeignKey(Contractor, null=True, blank=True,
+                                on_delete=models.PROTECT, verbose_name='Организация покупателя')
     # номер уникален в пределах 1 года как в 1С, заполняется когда 1С загрузит заказ и вернет назад свой код документа
     external_code = models.CharField(max_length=11, default='', blank=True,
                                      verbose_name='Внешний номер')

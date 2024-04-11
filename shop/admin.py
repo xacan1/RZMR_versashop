@@ -185,12 +185,12 @@ class CouponAdmin(admin.ModelAdmin):
 class OrderAdmin(admin.ModelAdmin):
     model = Order
     list_display = ('pk', 'user', 'phone', 'email', 'status', 'delivery_date', 'delivery_type', 'paid', 'canceled',
-                    'quantity', 'amount', 'discount', 'coupon', 'external_code', 'warehouse', 'currency', 'time_create',)
+                    'quantity', 'amount', 'discount', 'coupon', 'external_code', 'warehouse', 'currency', 'company', 'time_create',)
     list_display_links = ('pk', 'user', 'phone', 'status',)
     list_filter = ('status', 'delivery_type', 'payment_type',
                    'paid', 'canceled', 'time_create',)
-    search_fields = ('user__email', 'phone',
-                     'external_code', 'warehouse__name',)
+    search_fields = ('user__email', 'phone', 'external_code',
+                     'warehouse__name', 'company__name', 'company__inn',)
 
 
 admin.site.register(Category, CategoryAdmin)

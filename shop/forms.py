@@ -78,9 +78,14 @@ class ProductListForm(forms.Form):
 
 class AddOrderForm(forms.ModelForm):
     def __init__(self, *args, **kwargs) -> None:
+        self.user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
         self.fields['payment_type'].empty_label = 'Не выбран вид оплаты'
         self.fields['delivery_type'].empty_label = 'Не выбран способ получения'
+        self.fields['company'].empty_label = 'Не указывать компанию'
+
+        if self.user:
+            self.base_fields['company'].queryset = self.user.get_contractors.all()
 
     def clean_phone(self):
         phone = self.cleaned_data['phone']
@@ -93,7 +98,7 @@ class AddOrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ['first_name', 'last_name', 'phone', 'email', 'address',
-                  'comment', 'delivery_type', 'payment_type', 'coupon',]
+                  'comment', 'delivery_type', 'payment_type', 'coupon', 'company',]
         widgets = {
             'first_name': forms.TextInput(attrs={'placeholder': 'Имя', 'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'placeholder': 'Фамилия', 'class': 'form-control'}),
@@ -102,6 +107,7 @@ class AddOrderForm(forms.ModelForm):
             'address': forms.TextInput(attrs={'placeholder': 'Пример: Уфа, ул. Ленина, дом 1', 'class': 'form-control'}),
             'payment_type': forms.Select(attrs={'class': 'form-control'}),
             'delivery_type': forms.Select(attrs={'class': 'form-control'}),
+            'company': forms.Select(attrs={'class': 'form-control'}),
             'comment': forms.Textarea(attrs={'cols': 60, 'rows': 3, 'class': 'form-control'}),
         }
 
