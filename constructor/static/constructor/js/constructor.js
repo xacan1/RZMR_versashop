@@ -67,15 +67,14 @@ async function elements_listener() {
     if (select_diameters) {
         select_diameters.addEventListener('click', get_diameters);
         select_diameters.addEventListener('change', () => {
-            document.querySelector('#constructorTypeFitting1').innerHTML = '';
+            set_empty_typefitting(document.querySelector('#constructorTypeFitting1'));
             clear_image('#constructorImg1');
-            document.querySelector('#constructorTypeFitting2').innerHTML = '';
+            set_empty_typefitting(document.querySelector('#constructorTypeFitting2'));
             clear_image('#constructorImg2');
-            document.querySelector('#constructorPressures').innerHTML = '';
-            document.querySelector('#constructorInnerScreen').innerHTML = '';
-            document.querySelector('#constructorBraids').innerHTML = '';
-            let corrugation = document.querySelector('#constructorCorrugation');
-            set_empty_corrugation(corrugation);
+            set_empty_pressures(document.querySelector('#constructorPressures'));
+            set_empty_innerscreen(document.querySelector('#constructorInnerScreen'));
+            set_empty_braids(document.querySelector('#constructorBraids'));
+            set_empty_corrugation(document.querySelector('#constructorCorrugation'));
             get_corrugation();
         });
     }
@@ -85,15 +84,14 @@ async function elements_listener() {
     if (select_pressures) {
         select_pressures.addEventListener('click', get_pressures);
         select_pressures.addEventListener('change', () => {
-            document.querySelector('#constructorTypeFitting1').innerHTML = '';
+            set_empty_typefitting(document.querySelector('#constructorTypeFitting1'));
             clear_image('#constructorImg1');
-            document.querySelector('#constructorTypeFitting2').innerHTML = '';
+            set_empty_typefitting(document.querySelector('#constructorTypeFitting2'));
             clear_image('#constructorImg2');
-            document.querySelector('#constructorTypeFittingA1').innerHTML = '';
-            document.querySelector('#constructorTypeFittingA2').innerHTML = '';
-            document.querySelector('#constructorBraids').innerHTML = '';
-            let corrugation = document.querySelector('#constructorCorrugation');
-            set_empty_corrugation(corrugation);
+            set_empty_typefitting(document.querySelector('#constructorTypeFittingA1'));
+            set_empty_typefitting(document.querySelector('#constructorTypeFittingA2'));
+            set_empty_braids(document.querySelector('#constructorBraids'));
+            set_empty_corrugation(document.querySelector('#constructorCorrugation'));
             get_corrugation();
         });
     }
@@ -443,11 +441,6 @@ async function get_pressures() {
         console.log('Пустой ответ');
         return;
     }
-
-    let option_empty = document.createElement('option');
-    option_empty.value = '';
-    option_empty.textContent = '- Рабочее давление, PN(Бар) -';
-    select_pressures.appendChild(option_empty);
 
     for (let pressure of pressures.list) {
         let option = document.createElement('option');
