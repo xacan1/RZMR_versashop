@@ -1088,6 +1088,10 @@ async function get_image_part_of_product() {
         return;
     }
 
+    if (!typefitting_code) {
+        return;
+    }
+
     let img = document.querySelector(id_img);
 
     let request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getImagePartOfProduct&position_image_code=${position_image_code}`;
