@@ -285,7 +285,7 @@ async function get_types() {
     const id = this.getAttribute('id');
     let select_type = document.querySelector(`#${id}`);
 
-    if (select_type.childNodes.length > 0) {
+    if (select_type.childElementCount > 1) {
         return;
     }
 
@@ -325,7 +325,7 @@ async function get_groups_and_fittings() {
     const id = this.getAttribute('id');
     let select_groups_fittings = document.querySelector(`#${id}`);
 
-    if (select_groups_fittings.childNodes.length > 1) {
+    if (select_groups_fittings.childElementCount > 1) {
         return;
     }
 
@@ -364,7 +364,7 @@ async function get_groups_and_fittings() {
 async function get_diameters() {
     let select_diameters = document.querySelector('#constructorDiameters');
 
-    if (select_diameters.childNodes.length > 1) {
+    if (select_diameters.childElementCount > 1) {
         return;
     }
 
@@ -404,7 +404,7 @@ async function get_pressures() {
     let select_pressures = document.querySelector('#constructorPressures');
 
     // очистка всех зависимых полей при смене давления
-    if (select_pressures.childNodes.length > 1) {
+    if (select_pressures.childElementCount > 1) {
         return;
     }
 
@@ -453,7 +453,7 @@ async function get_pressures() {
 async function get_corrugation() {
     let select_corrugation = document.querySelector('#constructorCorrugation');
 
-    if (select_corrugation.childNodes.length > 1) {
+    if (select_corrugation.childElementCount > 1) {
         return;
     }
 
@@ -503,7 +503,7 @@ async function get_corrugation() {
 async function get_innerscreen() {
     let select_innerscreens = document.querySelector('#constructorInnerScreen');
 
-    if (select_innerscreens.childNodes.length > 1) {
+    if (select_innerscreens.childElementCount > 1) {
         return;
     }
 
@@ -553,7 +553,7 @@ async function get_outershells() {
     const id = this.getAttribute('id');
     let select_outershells = document.querySelector(`#${id}`);
 
-    if (select_outershells.childNodes.length > 1) {
+    if (select_outershells.childElementCount > 1) {
         return;
     }
 
@@ -599,60 +599,11 @@ async function get_outershells() {
     }
 }
 
-async function get_braid() {
-    const id = this.getAttribute('id');
-    let select_braid = document.querySelector(`#${id}`);
-
-    if (select_braid.childNodes.length > 0) {
-        return;
-    }
-
-    let diameter = document.querySelector('#constructorDiameters');
-    let pressure = document.querySelector('#constructorPressures');
-    let request1C = '';
-
-    if (diameter && diameter.value && pressure && pressure.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListBraidStartSelection&pressure=${pressure.value}&diameter=${diameter.value}`;
-    }
-    else {
-        return;
-    }
-
-    let optoins = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': get_cookie('csrftoken'),
-            'Request1C': encodeURI(request1C),
-        },
-    };
-
-    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
-
-    if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP pressures: ' + response.status);
-        return;
-    }
-
-    let braid = await response.json();
-
-    if (Object.keys(braid).length === 0) {
-        console.log(`Пустой ответ для ${id}`);
-        return;
-    }
-
-    let option = document.createElement('option');
-    option.value = braid.Code;
-    option.textContent = braid.Value;
-    select_braid.appendChild(option);
-}
-
 async function get_braids() {
     const id = this.getAttribute('id');
     let select_braids = document.querySelector(`#${id}`);
 
-    if (select_braids.childNodes.length > 0) {
+    if (select_braids.childElementCount > 1) {
         return;
     }
 
@@ -702,7 +653,7 @@ async function get_braids() {
 async function get_lengths() {
     let select_lengths = document.querySelector('#constructorLengthsHoses');
 
-    if (select_lengths.childNodes.length > 0) {
+    if (select_lengths.childElementCount > 1) {
         return;
     }
 
@@ -743,7 +694,7 @@ async function get_materials() {
     const id = this.getAttribute('id');
     let select_materials = document.querySelector(`#${id}`);
 
-    if (select_materials.childNodes.length > 3) {
+    if (select_materials.childElementCount > 1) {
         return;
     }
 
@@ -783,7 +734,7 @@ async function get_types_fittings1() {
     const id = this.getAttribute('id');
     let select_type_fitting1 = document.querySelector(`#${id}`);
 
-    if (select_type_fitting1.childNodes.length > 1) {
+    if (select_type_fitting1.childElementCount > 1) {
         return;
     }
 
@@ -848,7 +799,7 @@ async function get_types_fittingsA1() {
     const id = this.getAttribute('id');
     let select_type_fittingA1 = document.querySelector(`#${id}`);
 
-    if (select_type_fittingA1.childNodes.length > 3) {
+    if (select_type_fittingA1.childElementCount > 1) {
         return;
     }
 
@@ -913,7 +864,7 @@ async function get_types_fittingsA2() {
     const id = this.getAttribute('id');
     let select_type_fittingA2 = document.querySelector(`#${id}`);
 
-    if (select_type_fittingA2.childNodes.length > 3) {
+    if (select_type_fittingA2.childElementCount > 1) {
         return;
     }
 
@@ -978,7 +929,7 @@ async function get_types_fittings2() {
     const id = this.getAttribute('id');
     let select_type_fitting2 = document.querySelector(`#${id}`);
 
-    if (select_type_fitting2.childNodes.length > 3) {
+    if (select_type_fitting2.childElementCount > 1) {
         return;
     }
 
