@@ -17,7 +17,7 @@ class MetalhoseConstructorView(DataMixin, FormView):
         initial['types_choices'] = request1C.get_types()
         initial['diameters_choices'] = request1C.get_diameters()
         initial['lengths_choices'] = request1C.get_lengths()
-        initial['fittings_choices'] = request1C.get_fittings()
+        # initial['fittings_choices'] = request1C.get_fittings()
         return initial
 
     def get_context_data(self, **kwargs) -> dict:

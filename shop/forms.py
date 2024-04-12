@@ -84,6 +84,11 @@ class AddOrderForm(forms.ModelForm):
 
         if self.user:
             self.fields['company'].queryset = self.user.get_contractors.all()
+            self.fields['company'].label = 'Выберите организацию для счета (если требуется выписать на юрлицо)'
+        else:
+            self.fields['company'].choices = []
+            self.fields['company'].widget = forms.Select(attrs={'class': 'form-control d-none'})
+            self.fields['company'].label = ''
 
         self.fields['payment_type'].empty_label = 'Не выбран вид оплаты'
         self.fields['delivery_type'].empty_label = 'Не выбран способ получения'
