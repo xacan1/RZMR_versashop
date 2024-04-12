@@ -730,3 +730,13 @@ class PrivacyView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title='Политика конфиденциальности')
         return {**context, **c_def}
+
+
+class WorkspaceFilters(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/workspace_filters.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Рабочие среды фильтров и агрегатов')
+        return {**context, **c_def}
