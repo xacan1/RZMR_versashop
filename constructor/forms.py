@@ -9,17 +9,26 @@ class ConstructorForm(forms.Form):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         initial = kwargs['initial']
-        self.fields['types'].choices = initial['types_choices']
-        self.fields['diameters'].choices = initial['diameters_choices']
-        self.fields['lengths'].choices = initial['lengths_choices']
-        # self.fields['fittings1'].choices = initial['fittings_choices']
-        # self.fields['fittings1'].empty_label = '----------'
-        # self.fields['fittings2'].choices = initial['fittings_choices']
-        # self.fields['fittings2'].empty_label = '----------'
-        # self.fields['fittingsA1'].choices = initial['fittings_choices']
-        # self.fields['fittingsA1'].empty_label = '----------'
-        # self.fields['fittingsA2'].choices = initial['fittings_choices']
-        # self.fields['fittingsA2'].empty_label = '----------'
+        self.fields['types'].choices = [('','- Тип изделия -')] + initial['types_choices']
+        self.fields['diameters'].choices = [('','- Условный диаметр, DN(мм) -')] + initial['diameters_choices']
+        self.fields['pressures'].choices = [('', '- Рабочее давление, PN(Бар) -')]
+        self.fields['lengths'].choices = [('','- Длина, L(мм) -')] + initial['lengths_choices']
+        self.fields['fittings1'].choices = [('','- Группа концевой арматуры -')] + initial['fittings_choices']
+        self.fields['fittings2'].choices = [('','- Группа концевой арматуры -')] + initial['fittings_choices']
+        self.fields['fittingsA1'].choices = [('','- Группа концевой арматуры -')] + initial['fittings_choices']
+        self.fields['fittingsA2'].choices = [('','- Группа концевой арматуры -')] + initial['fittings_choices']
+        self.fields['materials1'].choices = [('', '- Материал -')] + initial['materials']
+        self.fields['materials2'].choices = [('', '- Материал -')] + initial['materials']
+        self.fields['materialsA1'].choices = [('', '- Материал -')] + initial['materials']
+        self.fields['materialsA2'].choices = [('', '- Материал -')] + initial['materials']
+        self.fields['typefitting1'].choices = [('', '- Тип концевой арматуры -')]
+        self.fields['typefitting2'].choices = [('', '- Тип концевой арматуры -')]
+        self.fields['typefittingA1'].choices = [('', '- Тип концевой арматуры -')]
+        self.fields['typefittingA2'].choices = [('', '- Тип концевой арматуры -')]
+        self.fields['innerscreen'].choices = [('', '- Внутренний экран -')]
+        self.fields['outershells'].choices = [('', '- Наружная оболочка -')]
+        self.fields['braids'].choices = [('', '- Оплетка -')]
+        self.fields['corrugation'].choices = [('', '- Гофра -')]
 
     fittings1 = forms.ChoiceField(required=False,
                                   widget=forms.Select(attrs={'class': 'form-select form-select-sm mb-1', 'id': 'constructorGroupsEndFittings1', }))

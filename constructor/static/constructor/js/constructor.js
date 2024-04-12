@@ -9,13 +9,13 @@ function get_cookie(name) {
 }
 
 async function elements_listener() {
+    let corrugation = document.querySelector('#constructorCorrugation');
+    set_empty_corrugation(corrugation);
+
     let select_type = document.querySelector('#constructorTypes');
 
     if (select_type) {
         select_type.addEventListener('click', get_types);
-        select_type.addEventListener('change', () => {
-            console.log(select_type.value);
-        })
     }
 
     let select_fittings1 = document.querySelector('#constructorGroupsEndFittings1');
@@ -23,7 +23,8 @@ async function elements_listener() {
     if (select_fittings1) {
         select_fittings1.addEventListener('click', get_groups_and_fittings);
         select_fittings1.addEventListener('change', () => {
-            document.querySelector('#constructorTypeFitting1').innerHTML = '';
+            let type_fitting = document.querySelector('#constructorTypeFitting1');
+            set_empty_typefitting(type_fitting);
             clear_image('#constructorImg1');
         });
     }
@@ -33,7 +34,8 @@ async function elements_listener() {
     if (select_fittings2) {
         select_fittings2.addEventListener('click', get_groups_and_fittings);
         select_fittings2.addEventListener('change', () => {
-            document.querySelector('#constructorTypeFitting2').innerHTML = '';
+            let type_fitting = document.querySelector('#constructorTypeFitting2');
+            set_empty_typefitting(type_fitting);
             clear_image('#constructorImg2');
         });
     }
@@ -43,7 +45,8 @@ async function elements_listener() {
     if (select_fittingsA1) {
         select_fittingsA1.addEventListener('click', get_groups_and_fittings);
         select_fittingsA1.addEventListener('change', () => {
-            document.querySelector('#constructorTypeFittingA1').innerHTML = '';
+            let type_fitting = document.querySelector('#constructorTypeFittingA1');
+            set_empty_typefitting(type_fitting);
             clear_image('#constructorImgA1');
         });
     }
@@ -53,7 +56,8 @@ async function elements_listener() {
     if (select_fittingsA2) {
         select_fittingsA2.addEventListener('click', get_groups_and_fittings);
         select_fittingsA2.addEventListener('change', () => {
-            document.querySelector('#constructorTypeFittingA2').innerHTML = '';
+            let type_fitting = document.querySelector('#constructorTypeFittingA2');
+            set_empty_typefitting(type_fitting);
             clear_image('#constructorImgA2');
         });
     }
@@ -70,7 +74,8 @@ async function elements_listener() {
             document.querySelector('#constructorPressures').innerHTML = '';
             document.querySelector('#constructorInnerScreen').innerHTML = '';
             document.querySelector('#constructorBraids').innerHTML = '';
-            document.querySelector('#constructorCorrugation').innerHTML = '';
+            let corrugation = document.querySelector('#constructorCorrugation');
+            set_empty_corrugation(corrugation);
             get_corrugation();
         });
     }
@@ -87,7 +92,8 @@ async function elements_listener() {
             document.querySelector('#constructorTypeFittingA1').innerHTML = '';
             document.querySelector('#constructorTypeFittingA2').innerHTML = '';
             document.querySelector('#constructorBraids').innerHTML = '';
-            document.querySelector('#constructorCorrugation').innerHTML = '';
+            let corrugation = document.querySelector('#constructorCorrugation');
+            set_empty_corrugation(corrugation);
             get_corrugation();
         });
     }
@@ -127,7 +133,8 @@ async function elements_listener() {
     if (select_materials1) {
         select_materials1.addEventListener('click', get_materials);
         select_materials1.addEventListener('change', () => {
-            document.querySelector('#constructorTypeFitting1').innerHTML = '';
+            let type_fitting = document.querySelector('#constructorTypeFitting1');
+            set_empty_typefitting(type_fitting);
             clear_image('#constructorImg1');
         });
     }
@@ -137,7 +144,8 @@ async function elements_listener() {
     if (select_materials2) {
         select_materials2.addEventListener('click', get_materials);
         select_materials2.addEventListener('change', () => {
-            document.querySelector('#constructorTypeFitting2').innerHTML = '';
+            let type_fitting = document.querySelector('#constructorTypeFitting2');
+            set_empty_typefitting(type_fitting);
             clear_image('#constructorImg2');
         });
     }
@@ -147,7 +155,8 @@ async function elements_listener() {
     if (select_materialsA1) {
         select_materialsA1.addEventListener('click', get_materials);
         select_materialsA1.addEventListener('change', () => {
-            document.querySelector('#constructorTypeFittingA1').innerHTML = '';
+            let type_fitting = document.querySelector('#constructorTypeFittingA1');
+            set_empty_typefitting(type_fitting);
             clear_image('#constructorImgA1');
         });
     }
@@ -157,7 +166,8 @@ async function elements_listener() {
     if (select_materialsA2) {
         select_materialsA2.addEventListener('click', get_materials);
         select_materialsA2.addEventListener('change', () => {
-            document.querySelector('#constructorTypeFittingA2').innerHTML = '';
+            let type_fitting = document.querySelector('#constructorTypeFittingA2');
+            set_empty_typefitting(type_fitting);
             clear_image('#constructorImgA2');
         });
     }
@@ -207,6 +217,70 @@ async function elements_listener() {
     if (button_order) {
         button_order.addEventListener('click', create_product);
     }
+}
+
+function set_empty_pressures(pressures) {
+    pressures.innerHTML = '';
+    let option_empty = document.createElement('option');
+    option_empty.value = '';
+    option_empty.textContent = '- Рабочее давление, PN(Бар) -';
+    pressures.appendChild(option_empty);
+}
+
+function set_empty_braids(braids) {
+    braids.innerHTML = '';
+    let option_empty = document.createElement('option');
+    option_empty.value = '';
+    option_empty.textContent = '- Оплетка -';
+    braids.appendChild(option_empty);
+}
+
+function set_empty_outershells(outershells) {
+    outershells.innerHTML = '';
+    let option_empty = document.createElement('option');
+    option_empty.value = '';
+    option_empty.textContent = '- Наружная оболочка -';
+    outershells.appendChild(option_empty);
+}
+
+function set_empty_innerscreen(innerscreen) {
+    innerscreen.innerHTML = '';
+    let option_empty = document.createElement('option');
+    option_empty.value = '';
+    option_empty.textContent = '- Внутренний экран -';
+    innerscreen.appendChild(option_empty);
+}
+
+function set_empty_corrugation(corrugation) {
+    corrugation.innerHTML = '';
+    let option_empty = document.createElement('option');
+    option_empty.value = '';
+    option_empty.textContent = '- Гофра -';
+    corrugation.appendChild(option_empty);
+}
+
+function set_empty_typefitting(type_fitting) {
+    type_fitting.innerHTML = '';
+    let option_empty = document.createElement('option');
+    option_empty.value = '';
+    option_empty.textContent = '- Тип концевой арматуры -';
+    type_fitting.appendChild(option_empty);
+}
+
+function set_empty_fittings(group_fitting) {
+    group_fitting.innerHTML = '';
+    let option_empty = document.createElement('option');
+    option_empty.value = '';
+    option_empty.textContent = '- Группа концевой арматуры -';
+    group_fitting.appendChild(option_empty);
+}
+
+function set_empty_materials(materials) {
+    materials.innerHTML = '';
+    let option_empty = document.createElement('option');
+    option_empty.value = '';
+    option_empty.textContent = '- Материал -';
+    materials.appendChild(option_empty);
 }
 
 async function get_types() {
@@ -369,6 +443,11 @@ async function get_pressures() {
         console.log('Пустой ответ');
         return;
     }
+
+    let option_empty = document.createElement('option');
+    option_empty.value = '';
+    option_empty.textContent = '- Рабочее давление, PN(Бар) -';
+    select_pressures.appendChild(option_empty);
 
     for (let pressure of pressures.list) {
         let option = document.createElement('option');
@@ -671,7 +750,7 @@ async function get_materials() {
     const id = this.getAttribute('id');
     let select_materials = document.querySelector(`#${id}`);
 
-    if (select_materials.childNodes.length > 1) {
+    if (select_materials.childNodes.length > 3) {
         return;
     }
 
@@ -762,6 +841,8 @@ async function get_types_fittings1() {
         return;
     }
 
+    set_empty_typefitting(select_type_fitting1);
+
     for (let fitting of fittings.list) {
         let option = document.createElement('option');
         option.value = fitting.Code;
@@ -774,7 +855,7 @@ async function get_types_fittingsA1() {
     const id = this.getAttribute('id');
     let select_type_fittingA1 = document.querySelector(`#${id}`);
 
-    if (select_type_fittingA1.childNodes.length > 1) {
+    if (select_type_fittingA1.childNodes.length > 3) {
         return;
     }
 
@@ -825,6 +906,8 @@ async function get_types_fittingsA1() {
         return;
     }
 
+    set_empty_typefitting(select_type_fittingA1);
+
     for (let fitting of fittings.list) {
         let option = document.createElement('option');
         option.value = fitting.Code;
@@ -835,9 +918,9 @@ async function get_types_fittingsA1() {
 
 async function get_types_fittingsA2() {
     const id = this.getAttribute('id');
-    let select_type_fittingA1 = document.querySelector(`#${id}`);
+    let select_type_fittingA2 = document.querySelector(`#${id}`);
 
-    if (select_type_fittingA1.childNodes.length > 1) {
+    if (select_type_fittingA2.childNodes.length > 3) {
         return;
     }
 
@@ -888,11 +971,13 @@ async function get_types_fittingsA2() {
         return;
     }
 
+    set_empty_typefitting(select_type_fittingA2);
+
     for (let fitting of fittings.list) {
         let option = document.createElement('option');
         option.value = fitting.Code;
         option.textContent = fitting.Value;
-        select_type_fittingA1.appendChild(option);
+        select_type_fittingA2.appendChild(option);
     }
 }
 
@@ -900,7 +985,7 @@ async function get_types_fittings2() {
     const id = this.getAttribute('id');
     let select_type_fitting2 = document.querySelector(`#${id}`);
 
-    if (select_type_fitting2.childNodes.length > 1) {
+    if (select_type_fitting2.childNodes.length > 3) {
         return;
     }
 
@@ -950,6 +1035,8 @@ async function get_types_fittings2() {
         console.log(`Пустой ответ для ${id}`);
         return;
     }
+
+    set_empty_typefitting(select_type_fitting2);
 
     for (let fitting of fittings.list) {
         let option = document.createElement('option');
@@ -1076,23 +1163,25 @@ function copy_from_K1() {
 }
 
 function clear_form() {
-    document.querySelector('#constructorGroupsEndFittings1').innerHTML = '';
-    document.querySelector('#constructorGroupsEndFittings2').innerHTML = '';
-    document.querySelector('#constructorMaterials1').innerHTML = '';
-    document.querySelector('#constructorMaterials2').innerHTML = '';
-    document.querySelector('#constructorTypeFitting1').innerHTML = '';
     clear_image('#constructorImg1');
-    document.querySelector('#constructorTypeFitting2').innerHTML = '';
     clear_image('#constructorImg2');
-    document.querySelector('#constructorGroupsEndFittingsA1').innerHTML = '';
-    document.querySelector('#constructorGroupsEndFittingsA2').innerHTML = '';
-    document.querySelector('#constructorMaterialsA1').innerHTML = '';
-    document.querySelector('#constructorMaterialsA2').innerHTML = '';
-    document.querySelector('#constructorTypeFittingA1').innerHTML = '';
-    document.querySelector('#constructorTypeFittingA2').innerHTML = '';
-    document.querySelector('#constructorInnerScreen').innerHTML = '';
-    document.querySelector('#constructorOuterShells').innerHTML = '';
-    document.querySelector('#constructorBraids').innerHTML = '';
+    set_empty_innerscreen(document.querySelector('#constructorInnerScreen'));
+    set_empty_outershells(document.querySelector('#constructorOuterShells'));
+    set_empty_braids(document.querySelector('#constructorBraids'));
+    set_empty_typefitting(document.querySelector('#constructorTypeFitting1'));
+    set_empty_typefitting(document.querySelector('#constructorTypeFitting2'));
+    set_empty_typefitting(document.querySelector('#constructorTypeFittingA1'));
+    set_empty_typefitting(document.querySelector('#constructorTypeFittingA2'));
+    set_empty_fittings(document.querySelector('#constructorGroupsEndFittings1'));
+    set_empty_fittings(document.querySelector('#constructorGroupsEndFittings2'));
+    set_empty_fittings(document.querySelector('#constructorGroupsEndFittingsA1'));
+    set_empty_fittings(document.querySelector('#constructorGroupsEndFittingsA2'));
+    set_empty_materials(document.querySelector('#constructorMaterials1'));
+    set_empty_materials(document.querySelector('#constructorMaterials2'));
+    set_empty_materials(document.querySelector('#constructorMaterialsA1'));
+    set_empty_materials(document.querySelector('#constructorMaterialsA2'));
+    set_empty_corrugation(document.querySelector('#constructorCorrugation'));
+    set_empty_pressures(document.querySelector('#constructorPressures'));
 }
 
 async function create_product() {
