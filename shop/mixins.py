@@ -19,6 +19,7 @@ class DataMixin:
         context['company_name_short'] = config.COMPANY_NAME_SHORT
         context['company_email'] = config.COMPANY_EMAIL
         context['DEBUG'] = settings.DEBUG
+        context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
 
         if 'breadcrumb' not in context:
             context['breadcrumb'] = []

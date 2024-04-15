@@ -104,5 +104,7 @@ urlpatterns = [
     path('engineering/test/', EngineeringTestView.as_view(),
          name='engineering-test'),
     path('privacy/', PrivacyView.as_view(), name='privacy'),
-    path('filters/workspace-filters/', WorkspaceFilters.as_view(), name='workspace-filters'),
+    path('filters/workspace-filters/', WorkspaceFiltersView.as_view(), name='workspace-filters'),
+    path('fittings/', FittingsView.as_view(), name='fittings'),
+    path('fittings/<slug:fitting_slug>/', FittingView.as_view(), name='fitting'),
 ]

@@ -1,0 +1,80 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>{{ title }}</h4>
+        </div>
+    </div>
+    <div class="horizontal-line-uzm"></div>
+    <div class="pb-3">
+
+    </div>
+    <div class="row">
+        <div class="col-4 border-end" style="border-color: #D3D3D3;">
+            <p class="border-bottom">
+                <a href="{% url 'fitting' 'gayka-nakidnaya-pod-tortsevoe-uplotnenie' %}">Гайка накидная под торцевое уплотнение</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'fitting' 'mufta-amerikanka-bp-bp' %}">Муфта "американка" BP-BP</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'fitting' 'mufta-amerikanka-s-vnutrenney-rezboy-hp-bp' %}">Муфта "американка" с внутренней резьбой HP-BP</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'fitting' 'mufta-amerikanka-s-naruzhnoy-rezboy-hp-hp' %}">Муфта "американка" с наружной резьбой HP-HP</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Накидная гайка с ниппелем конус с углом 74°</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Накидная гайка с ниппелем конус с углом 24°</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Накидная гайка с ниппелем сфера под конус с углом 60°</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Переходник гайка-гайка</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Переходник гайка-штуцер</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Переходник штуцер-штуцер</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Фитинг DK</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Фитинг DK-штуцер</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Фитинг DKI</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Фитинг DKOL</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Штуцер с внутренней резьбой</a>
+            </p>
+            <p class="border-bottom">
+                <a href="#">Штуцер с наружной резьбой</a>
+            </p>
+        </div>
+        <div class="col-8 text-uzm">
+            {% block fittings-info %}
+            {% endblock fittings-info %}
+        </div>
+    </div>
+</div>
+
+{% if DEBUG %}
+<script src="{% static 'rzmr/js/fittings.js' %}"></script>
+{% else %}
+<script src="{% static 'rzmr/js/fittings_compile.js' %}"></script>
+{% endif %}
+
+{% endblock content %}

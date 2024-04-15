@@ -9,7 +9,6 @@ from shop.forms import *
 from shop import services
 from shop.models import *
 from shop.mixins import DataMixin
-from shop import request1C
 
 
 class IndexShopView(DataMixin, FormView):

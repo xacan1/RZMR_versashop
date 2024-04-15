@@ -6,11 +6,11 @@
 <section class="item-details section">
     <div class="container">
         <div class="top-area">
-            <div class="row align-items-center product-cart-border">
+            <div class="row align-items-center border">
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-6 col-12 m-4 product-cart-border justify-content-center">
+                            <div class="col-lg-6 col-12 m-4 border d-flex justify-content-center">
                                 {% if product_data.photo %}
                                 <img src="{{ product_data.photo.url }}" class="product-main-img p-1" id="current" alt="photo_product">
                                 {% else %}
@@ -20,8 +20,8 @@
                         </div>
                         <div class="row mx-2">
                             {% for image in product_images %}
-                            <div class="col-1 mx-1 product-cart-border">
-                                <img src="{{ image.photo.url }}" alt="#">
+                            <div class="col-2 mx-1 border">
+                                <img class="product-images" src="{{ image.photo.url }}" alt="#">
                             </div>
                             {% endfor %}
                         </div>
@@ -61,12 +61,11 @@
                                         <p class="py-1">Нет в наличии</p>
                                         {% endif %}
                                     </div> -->
-                                    <div class="button cart-button">
-                                        {% if product_stocks %}
-                                        <button class="btn btn-secondary" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;">В корзину</button>
+                                    <div class="button">
+                                        {% if EXCESS_STOCK_OF_GOODS or product_stocks %}
+                                        <button class="btn btn-secondary w-100" data-shop-product-pk="{{ product_data.pk }}">В корзину</button>
                                         {% else %}
-                                        <!-- <button class="btn btn-secondary" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;" disabled>В корзину</button> -->
-                                        <button class="btn btn-secondary" data-shop-product-pk="{{ product_data.pk }}" style="width: 100%;">В корзину</button>
+                                        <button class="btn btn-secondary w-100" data-shop-product-pk="{{ product_data.pk }}" disabled>В корзину</button>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -90,7 +89,7 @@
         </div>
         <div class="product-details-info">
             <div class="single-block">
-                <div class="row product-cart-border my-4 p-4">
+                <div class="row border my-4 p-4">
                     <div class="col-lg-6 col-12">
                         <h4>Описание</h4>
                         <p>{{ product_data.description }}</p>
@@ -143,6 +142,12 @@
     </div>
 </section>
 <!-- End Item Details -->
+
+{% if DEBUG %}
+<script src="{% static 'shop/js/product_images.js' %}"></script>
+{% else %}
+<script src="{% static 'shop/js/product_images_compile.js' %}"></script>
+{% endif %}
 
 <!-- Review Modal -->
 <div class="modal fade review-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"

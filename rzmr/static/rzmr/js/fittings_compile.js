@@ -1,0 +1,1 @@
+'use strict';window.addEventListener("load",elements_listener());function elements_listener(){let a=document.querySelectorAll(".resize-img");for(let b of a)b.addEventListener("click",change_big_image)}function change_big_image(){let a=this.getAttribute("src");document.querySelector("#bigImage").setAttribute("src",a)};

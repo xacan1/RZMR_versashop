@@ -50,11 +50,11 @@
                         <div class="header-element">
                             <a href="{% url 'home' %}">
                                 <img src="{% static 'rzmr/img/russian-flag.png' %}" alt="Русский язык">Рус</a>
-                            <a href="https://uzmr.ru/en/">
+                            <a href="#">
                                 <img src="{% static 'rzmr/img/english-flag.png' %}" alt="English">Eng</a>
-                            <a href="https://uzmr.kz/">
+                            <a href="#">
                                 <img src="{% static 'rzmr/img/kazakhstan-flag.png' %}" alt="Қазақша">Қаз</a>
-                            <a href="https://uzmr.by/">
+                            <a href="#">
                                 <img src="{% static 'rzmr/img/belarus-flag.png' %}" alt="Беларуская мова">Блр</a>
                         </div>
                     </div>
@@ -183,14 +183,6 @@
                     <div class="collapse navbar-collapse" id="navbarContent">
                         <ul class="navbar-nav mr-auto mb-2">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownShop" role="button"
-                                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Фильтры и агрегаты</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownShop">
-                                    {% include 'shop/categories.html' %}
-                                    <li><a class="dropdown-item" href="{% url 'workspace-filters' %}">Справочные материалы</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdown1" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">О заводе</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
@@ -218,7 +210,6 @@
                                     <li><a class="dropdown-item" href="{% url 'metalhoses-standarts-grm' %}">Стандарты качества</a></li>
                                     <!-- <li><a class="dropdown-item" href="#">Под приварку</a></li> -->
                                     <!-- <li><a class="dropdown-item" href="#">Серийная продукция</a></li> -->
-                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -232,30 +223,36 @@
                                     <li><a class="dropdown-item" href="{% url 'ptfe-standarts' %}">Стандарты качества</a></li>
                                     <!-- <li><a class="dropdown-item" href="#">Гофрированные</a></li> -->
                                     <!-- <li><a class="dropdown-item" href="#">Серийная продукция</a></li> -->
-                                    </li>
                                 </ul>
                             </li>
-                            <!-- <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown4" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">Фильтры и агрегаты</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
-                                    <li><a class="dropdown-item" href="/shop/product-list/filtri-toplivnie/">Топливные фильтры</a></li>
-                                    <li><a class="dropdown-item" href="/shop/product-list/gidravlicheskie-filtri/">Гидравлические фильтры</a></li>
-                                    <li><a class="dropdown-item" href="/shop/product-list/filtri-vozdushnie/">Воздушные фильтра</a></li>
-                                    <li><a class="dropdown-item" href="/shop/product-list/filtroelementi/">Фильтроэлементы</a></li>
-                                    <li><a class="dropdown-item" href="/shop/product-list/agregati/">Агрегаты</a></li>
-                                    <li><a class="dropdown-item" href="/shop/product-list/komlektuyushie-k-atomobilyam-i-skh-tekhniki/">Изделия разного назначения</a></li>
-                                    <li><a class="dropdown-item" href="#">Справочные материалы</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown3" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Композитные рукава</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                    <li><a class="dropdown-item" href="#">Рукава серии EGE</a></li>
+                                    <li><a class="dropdown-item" href="#">Рукава серии SSE</a></li>
+                                    <li><a class="dropdown-item" href="#">Рукава серии SST</a></li>
+                                    <li><a class="dropdown-item" href="#">Рукава серии SGT</a></li>
+                                    <li><a class="dropdown-item" href="#">Рукава серии SGE</a></li>
+                                    <li><a class="dropdown-item" href="#">Рукава серии GGE</a></li>
+                                    <li><a class="dropdown-item" href="#">Рукава серии AAE</a></li>
                                 </ul>
-                            </li> -->
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownShop" role="button"
+                                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Фильтры и агрегаты</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownShop">
+                                    {% include 'shop/categories.html' %}
+                                    <li><a class="dropdown-item" href="{% url 'workspace-filters' %}">Справочные материалы</a></li>
+                                </ul>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdown5" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Концевая арматура</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
-                                    <li><a class="dropdown-item" href="#">Резьбовая арматура</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'fittings' %}">Резьбовая арматура</a></li>
                                     <li><a class="dropdown-item" href="#">Фланцевые соединения</a></li>
                                     <li><a class="dropdown-item" href="#">Быстроразъемные соединения</a></li>
-                                    <li><a class="dropdown-item" href="#">Решения по чертежам заказчика</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">

@@ -732,11 +732,44 @@ class PrivacyView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class WorkspaceFilters(DataMixin, FormView):
+class WorkspaceFiltersView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/workspace_filters.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Рабочие среды фильтров и агрегатов')
+        c_def = self.get_user_context(
+            title='Рабочие среды фильтров и агрегатов')
+        return {**context, **c_def}
+
+
+class FittingsView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/fittings.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Резьбовая арматура')
+        return {**context, **c_def}
+
+
+class FittingView(DataMixin, FormView):
+    form_class = SimpleForm
+    slug_url_kwarg = 'fitting_slug'
+
+    def get_template_names(self) -> List[str]:
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+
+        if not slug:
+            return super().get_template_names()
+
+        template_names = []
+        template_names.append(f'rzmr/{slug}.html')
+
+        return template_names
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Гайка накидная под торцевое уплотнение')
         return {**context, **c_def}
