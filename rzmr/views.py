@@ -770,6 +770,5 @@ class FittingView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(
-            title='Гайка накидная под торцевое уплотнение')
+        c_def = self.get_user_context(title='Резьбовая арматура')
         return {**context, **c_def}
