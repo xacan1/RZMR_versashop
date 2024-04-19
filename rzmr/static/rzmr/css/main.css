@@ -944,7 +944,7 @@ input {
 
 .shopping-cart .total-amount .right ul li span {
     display: inline-block;
-    float: right;
+    /* float: right; */
 }
 
 .shopping-cart .total-amount .coupon {
