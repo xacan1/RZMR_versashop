@@ -770,5 +770,39 @@ class FittingView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Резьбовая арматура')
+        breadcrumb = [('fittings', 'Резьбовая арматура'),]
+        c_def = self.get_user_context(title='Резьбовая арматура', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class CompositesView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/composite.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Композитные рукава')
+        return {**context, **c_def}
+    
+
+class CompositeView(DataMixin, FormView):
+    form_class = SimpleForm
+    slug_url_kwarg = 'composite_slug'
+
+    def get_template_names(self) -> List[str]:
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+
+        if not slug:
+            return super().get_template_names()
+
+        template_names = []
+        template_names.append(f'rzmr/{slug}.html')
+
+        return template_names
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+        breadcrumb = [('composite', 'Композитные рукава'),]
+        c_def = self.get_user_context(title=f'Композитный рукав {slug}', breadcrumb=breadcrumb)
         return {**context, **c_def}

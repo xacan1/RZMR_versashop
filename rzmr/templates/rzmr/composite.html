@@ -1,0 +1,131 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>{{ title }}</h4>
+        </div>
+    </div>
+    <div class="py-3 border-bottom">
+
+    </div>
+    <div class="row">
+        <div class="col-4 border-end">
+            <img src="{% static 'rzmr/img/composite_head.jpg' %}" alt="composite">
+        </div>
+        <div class="col-8 text-uzm">
+            <p>
+                Композитные рукава — это тип гибкого шланга, который широко используется для перекачка различных
+                жидкостей и газов в различных отраслях промышленности. Рукава состоят из ряда слоев. Внутренний
+                термопластик или фторполимерный материал, армированный слоями синтетических тканей, таких как полиэстер
+                или нейлон, и внешний слой из термопластика или ПВХ.
+            </p>
+            <p>
+                Многослойная спиральная термопластическая ткань и пленка соединены металлической внутренней и внешней
+                проволокой в композитный рукав.
+            </p>
+            <p>
+                Композитные рукава являются важным компонентом перекачивающих операций. Выбор и применение должно быть
+                основано на оценке надлежащего использования, безопасности и операционной эффективности. Композитные
+                рукава имеют ряд преимуществ перед традиционными резиновыми, в том числе превосходная химическая
+                устойчивость, устойчивость к более высоким температурам и повышенная гибкость. Они обычно используются в
+                транспортировка химикатов, нефти и газа, погрузке и разгрузке в морском судоходстве, криогенное
+                применение и в пищевой промышленности.
+            </p>
+            <p>
+                Рукава изготавливаются с внутренней и внешней проволокой из нержавеющей стали, оцинкованной стали,
+                алюминия или стали со специальным покрытием. Рукава можно обшить полипропиленом или PTFE в зависимости
+                от химической среды.
+            </p>
+            <p>
+                Композитные рукава {{ company_name_short }} легкие и гибкие, что упрощает обращение с ними. Их несколько слоев
+                конструкция предотвращает сбои. При низких и даже криогенных температурах гибкость сохраняется. Прочные
+                внешние оболочки шлангов защищают их от коррозии и воздействия других жидкостей, ультрафиолета и озона.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="{% url 'composite' 'EGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/EGE1.jpg' %}" alt="Рукава серии EGE">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>Рукава серии EGE</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="{% url 'composite' 'SSE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SSE1.jpg' %}" alt="Рукава серии SSE">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>Рукава серии SSE</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="{% url 'composite' 'SST' %}" mb-checked="1" data-tooltip-content="">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SST1.jpg' %}" alt="Рукава серии SST">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>Рукава серии SST</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="{% url 'composite' 'SGT' %}" mb-checked="1" data-tooltip-content="">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGT1.jpg' %}" alt="Рукава серии SGT">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>Рукава серии SGT</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="{% url 'composite' 'SGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGE3.jpg' %}" alt="Рукава серии SGE">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>Рукава серии SGE</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="{% url 'composite' 'GGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/GGT1.jpg' %}" alt="Рукава серии GGE">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>Рукава серии GGE</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="{% url 'composite' 'AAE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/AAE1.jpg' %}" alt="Рукава серии AAE">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>Рукава серии AAE</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

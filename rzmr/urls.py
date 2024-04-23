@@ -107,4 +107,6 @@ urlpatterns = [
     path('filters/workspace-filters/', WorkspaceFiltersView.as_view(), name='workspace-filters'),
     path('fittings/', FittingsView.as_view(), name='fittings'),
     path('fittings/<slug:fitting_slug>/', FittingView.as_view(), name='fitting'),
+    path('composite/', CompositesView.as_view(), name='composite'),
+    path('composite/<slug:composite_slug>/', CompositeView.as_view(), name='composite'),
 ]
