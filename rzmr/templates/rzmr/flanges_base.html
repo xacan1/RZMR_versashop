@@ -1,0 +1,50 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>{{ title }}</h4>
+        </div>
+    </div>
+    <div class="pb-3 border-top">
+
+    </div>
+    <div class="row">
+        <div class="col-4 border-end">
+            <p class="border-bottom">
+                <a href="{% url 'flange' 'flantsevoe-soedinenie-gost-12821-80' %}">Фланцевое соединение ГОСТ 12821-80</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'flange' 'flantsevoe-soedinenie-gost-12822-80' %}">Фланцевое соединение ГОСТ 12822-80</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'flange' 'flantsevoe-soedinenie-s-otkidnymi-boltami' %}">Фланцевое соединение с откидными болтами</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'flange' 'flantsevoe-soedinenie-svobodnoe-na-otbortovke' %}">Фланцевое соединение свободное на отбортовке</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'flange' 'flantsevoe-soedinenie-tip-01-po-gost-33259-2015' %}">Фланцевое соединение тип 01 по ГОСТ 33259-2015</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'flange' 'flantsy-iz-nalichiya' %}">Фланцы из наличия</a>
+            </p>
+            
+        </div>
+        <div class="col-8 text-uzm">
+            {% block flanges-info %}
+            {% endblock flanges-info %}
+        </div>
+    </div>
+</div>
+
+{% if DEBUG %}
+<script src="{% static 'rzmr/js/image_change.js' %}"></script>
+{% else %}
+<script src="{% static 'rzmr/js/image_change_compile.js' %}"></script>
+{% endif %}
+
+{% endblock content %}

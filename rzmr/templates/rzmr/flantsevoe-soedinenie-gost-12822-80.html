@@ -1,0 +1,51 @@
+{% extends 'rzmr/flanges_base.html' %}
+{% load static %}
+
+{% block flanges-info %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 border text-center m-1">
+            <h3>Фланцевое соединение ГОСТ 12822-80</h3>
+            <img id="bigImage" class="resize-big-img" src="{% static 'rzmr/img/Фланец свободный на приварном кольце 2.jpg' %}"
+                alt="img-big">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2 border d-flex m-1">
+            <img class="resize-img" src="{% static 'rzmr/img/Фланец свободный на приварном кольце 2.jpg' %}" alt="img1">
+        </div>
+        <div class="col-2 border d-flex m-1">
+            <img class="resize-img" src="{% static 'rzmr/img/12822.png' %}" alt="img2">
+        </div>
+        <div class="col-2 border d-flex m-1">
+            <img class="resize-img" src="{% static 'rzmr/img/12822-80.png' %}" alt="img3">
+        </div>
+        <div class="col-2 border d-flex m-1">
+            <img class="resize-img" src="{% static 'rzmr/img/Фланцы поворотные.jpg' %}" alt="img4">
+        </div>
+        <div class="col-2 border d-flex m-1">
+            <img class="resize-img" src="{% static 'rzmr/img/Фланцы поворотные.png' %}" alt="img5">
+        </div>
+    </div>
+    <br>
+    <h3>Технические характеристики и особенности конструкции</h3>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            
+            <br>
+            <p>
+                Фланцы по ГОСТ — плоская деталь квадратной, круглой, или иной формы с отверстиями для болтов и шпилек, служащая
+                для прочного герметичного соединения металлорукавов между собой либо присоединения к машинам, аппаратам и
+                ёмкостям и т.д. {{ company_name_short }} предлагает к поставке фланцы по ГОСТ, DIN, ANSI изготовленные на
+                собственном токарном парке, что позволяет иметь в ассортименте редкие типы фланцев практически по любому
+                доступному стандарту, а также именно из того материала, которые требуется Заказчику.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock flanges-info %}

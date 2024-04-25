@@ -1,0 +1,41 @@
+{% extends 'rzmr/quick-release-coupling_base.html' %}
+{% load static %}
+
+{% block quick-release-couplings-info %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 border text-center m-1">
+            <h3>Струбцина с прижимным устройством (СУГ)</h3>
+            <img id="bigImage" class="resize-big-img" src="{% static 'rzmr/img/Струбцина.jpg' %}" alt="img-big">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2 border d-flex m-1">
+            <img class="resize-img" src="{% static 'rzmr/img/Струбцина.jpg' %}" alt="img1">
+        </div>
+        <div class="col-2 border d-flex m-1">
+            <img class="resize-img" src="{% static 'rzmr/img/Струбцина с прижимным устройством (СУГ).jpg' %}" alt="img2">
+        </div>
+    </div>
+    <br>
+    <h3>Технические характеристики и особенности конструкции</h3>
+    <br>
+    <div class="row">
+        <div class="col-12">
+
+            <br>
+            <p>
+                Струбцина железнодорожная для слива СУГ (сжиженный углевородный газ) - предназначена для слива из сосуда
+                и налива в сосуд сжиженных углеводородных газов для железнодорожных цистерн. Как правило изготавливается
+                из углеродистой стали, искробезопасность обеспечивается омеднением. Различают несколько вариантов
+                исполнения данной арматуры. Токарный парк {{ company_name_short }} позволяет изготовить именно тот
+                вариант, который подходит под нужды заказчика
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock quick-release-couplings-info %}

@@ -1,0 +1,79 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>{{ title }}</h4>
+        </div>
+    </div>
+    <div class="pb-3 border-top">
+
+    </div>
+    <div class="row">
+        <div class="col-4 border-end">
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'adaptor-bystrorazyemnogo-soedineniya-tipa-kamlok-mufta' %}">Адаптор быстроразъёмного соединения типа "Камлок" (муфта)</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'adaptor-bystrorazyemnogo-soedineniya-tipa-kamlok-shtutser' %}">Адаптор быстроразъёмного соединения типа "Камлок" (штуцер)</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'armatura-pmt' %}">Арматура "ПМТ"</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'gayka-rot-isp-1' %}">Гайка РОТ исп. 1</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'gayka-rot-isp-2' %}">Гайка РОТ исп. 2</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'gayka-rot-isp-3' %}">Гайка РОТ исп. 3</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'kamlok-tipa-b' %}">Камлок типа B</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'kamlok-tipa-d' %}">Камлок типа D</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'kamlok-tipa-dc' %}">Камлок типа DC</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'kamlok-tipa-dp' %}">Камлок типа DP</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'kamlok-tipa-e' %}">Камлок типа E</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'kamlok-tipa-f' %}">Камлок типа F</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'kamlok-tipa-a' %}">Камлок типа А</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'kamlok-tipa-c' %}">Камлок типа С</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'koltso-uplotnitelnoe-dlya-gayki-rot' %}">Кольцо уплотнительное для гайки РОТ</a>
+            </p>
+            <p class="border-bottom">
+                <a href="{% url 'quick-release-coupling' 'strubtsina-s-prizhimnym-ustroystvom-sug' %}">Струбцина с прижимным устройством (СУГ)</a>
+            </p>
+        </div>
+        <div class="col-8 text-uzm">
+            {% block quick-release-couplings-info %}
+            {% endblock quick-release-couplings-info %}
+        </div>
+    </div>
+</div>
+
+{% if DEBUG %}
+<script src="{% static 'rzmr/js/image_change.js' %}"></script>
+{% else %}
+<script src="{% static 'rzmr/js/image_change_compile.js' %}"></script>
+{% endif %}
+
+{% endblock content %}
