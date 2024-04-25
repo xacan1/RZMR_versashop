@@ -23,10 +23,13 @@ def post_request_to_1C(url_request: str, data_request: bytes) -> str:
         return response
 
 
-def create_order_in_1C(data_request: dict):
+def create_order_in_1C(data_request: dict) -> str:
     data = json.dumps(data_request).encode('utf-8')
     url_request = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=createOrder'
 
     response = post_request_to_1C(url_request, data)
 
-    return response
+    data_order = json.loads(response)
+    number_order = data_order.get('Code', '0')
+
+    return number_order

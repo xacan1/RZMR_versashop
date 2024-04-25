@@ -322,7 +322,11 @@ class OrderView(LoginRequiredMixin, DataMixin, DetailView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         order = kwargs['object']
-        c_def = self.get_user_context(title=f'{order}')
+        breadcrumb = [
+            ('personal-account', 'Личный кабинет'),
+            ('user-orders', 'Заказы'),
+        ]
+        c_def = self.get_user_context(title=f'{order}', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 

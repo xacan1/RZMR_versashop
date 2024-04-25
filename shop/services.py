@@ -1058,4 +1058,8 @@ def create_order_in_1C(order: Order) -> None:
         'table_product': table_product,
     }
 
-    request1C.create_order_in_1C(data_order)
+    number_order = request1C.create_order_in_1C(data_order)
+
+    if number_order != '0':
+        order.external_code = number_order
+        order.save()

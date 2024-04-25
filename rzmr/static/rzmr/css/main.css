@@ -1103,4 +1103,12 @@ input {
     background-position: center;
     margin: 1px;
 }
+
+.button-save:hover {
+    cursor: pointer;
+}
+
+.button-print:hover {
+    cursor: pointer;
+}
 /* end main index */
