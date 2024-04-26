@@ -11,7 +11,7 @@ def get_request_to_1C(url_request: str) -> Union[str, bytes]:
 
     try:
         with request.urlopen(url_request) as resp:
-            if resp.headers.get('IsImage', '0') == '0':
+            if resp.headers.get('IsFile', '0') == '0':
                 response = resp.read().decode('utf-8')
             else:
                 response = resp.read()

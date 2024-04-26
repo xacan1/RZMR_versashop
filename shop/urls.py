@@ -22,4 +22,5 @@ urlpatterns = [
     path('order-cancel-complete/<int:order_pk>/', OrderCancelCompleteView.as_view(), name='order-cancel-complete'),
     path('contractor-update/<int:contractor_pk>', ContractorUpdateView.as_view(), name='contractor-update'),
     path('contractor-create/', ContractorCreateView.as_view(), name='contractor-create'),
+    path('api/v1/proxy_request/', ProxyRequestView.as_view()),
 ]

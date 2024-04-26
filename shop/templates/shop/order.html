@@ -6,13 +6,20 @@
     <div class="container align-items-center">
         <div class="row py-2">
             <div class="col-10">
-                <h4 class="py-2">{{ title }} {{ order.external_code }}</h4>
+                <h4 class="py-2">{{ title }}</h4>
+                {% if order.external_code %}
+                <p id="ExternalCode" data-external-code="{{ order.external_code }}" data-date-create="{{ order.time_create|date:'YmdHis' }}">
+                    <strong>Код заказа в 1С: {{ order.external_code }}</strong>
+                </p>
+                {% else %}
+                <p><strong>Код заказа в 1С: не присвоен</strong></p>
+                {% endif %}
             </div>
-            <div class="col-2 icons-order">
-                <a class="button-save" id="Save" title="Сохранить на компьютере" onclick="getCustomerDocuments();">
+            <div class="col-2 icons-order text-end">
+                <a class="button-save" id="Save" title="Сохранить на компьютере">
                     <img src="{% static 'rzmr/img/save.svg' %}" alt="save"></a>
-                <a class="button-print" id="Print" title="Печать проекта" onclick="printJS({printable:'/start/ajax.handler.php?page=get_customer_documents', type:'pdf', showModal:true, modalMessage: 'Загрузка документа'});">
-                    <img src="{% static 'rzmr/img/print.svg' %}" alt="print"></a>
+                <!-- <a class="button-print" id="Print" title="Печать проекта" onclick="printJS({printable:'/start/ajax.handler.php?page=get_customer_documents', type:'pdf', showModal:true, modalMessage: 'Загрузка документа'});">
+                    <img src="{% static 'rzmr/img/print.svg' %}" alt="print"></a> -->
             </div>
         </div>
         <div class="cart-list-head">
@@ -115,4 +122,9 @@
         </div>
     </div>
 </div>
+{% if DEBUG %}
+<script src="{% static 'shop/js/shop_order.js' %}"></script>
+{% else %}
+<script src="{% static 'shop/js/shop_order_compile.js' %}"></script>
+{% endif %}
 {% endblock content %}

@@ -4,11 +4,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.core.paginator import Paginator
 from django.urls import reverse_lazy
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse, FileResponse
+import io
 from shop.forms import *
 from shop import services
 from shop.models import *
 from shop.mixins import DataMixin
+from shop import request1C
 
 
 class IndexShopView(DataMixin, FormView):
@@ -395,3 +397,29 @@ class ContractorCreateView(LoginRequiredMixin, DataMixin, CreateView):
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+
+# Прокси запросы к серверу 1С как в конструкторе, не везде есть конструктор в магазине, так что придется дублировать логику тут
+class ProxyRequestView(FormView):
+    def __init__(self, **kwargs: Any) -> None:
+        super().__init__(**kwargs)
+        self.buffer = io.BytesIO()
+
+    def __del__(self) -> None:
+        if self.buffer:
+            self.buffer.close()
+
+    def get(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+        # return super().get(request, *args, **kwargs)
+        url_request = request.headers.get('Request1C', '')
+        response_data = request1C.get_request_to_1C(url_request)
+
+        if type(response_data) is str:
+            response = HttpResponse(response_data)
+        else:
+            self.buffer.write(response_data)
+            self.buffer.seek(0)
+            response = FileResponse(
+                self.buffer, as_attachment=True, filename='order.pdf')
+
+        return response
