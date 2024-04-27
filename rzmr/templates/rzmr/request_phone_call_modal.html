@@ -1,0 +1,29 @@
+<div class="modal fade" id="requestPhoneCallModal" tabindex="-1" aria-labelledby="requestPhoneCallModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <h5 class="modal-title" id="requestPhoneCallModalLabel">Заказать звонок</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <form action="{% url 'request-phone-call' %}" method="post">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <p>
+                        <input class="form-control" type="text" name="name" placeholder="Ваше имя" required>
+                    </p>
+                    <p>
+                        <input class="form-control" type="number" name="phone" placeholder="Ваш телефон: 89012223344" required>
+                    </p>
+                    <p>
+                        <input type="checkbox" required>
+                        *я соглашаюсь на обработку
+                        <a href="{% url 'privacy' %}">Персональных данных</a>
+                    </p>
+                </div>
+                <div class="button py-3">
+                    <button type="submit" class="btn btn-secondary">Заказать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

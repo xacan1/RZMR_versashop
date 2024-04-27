@@ -38,7 +38,7 @@
                     </div>
                     <div class="d-xl-block d-none col-2">
                         <div class="header-element">
-                            <a href="#">Заказать звонок</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#requestPhoneCallModal">Заказать звонок</a>
                         </div>
                     </div>
                     <!-- <div class="d-xl-block d-none col-1">
@@ -301,6 +301,7 @@
     <main>
         {% block content %}
         {% endblock content %}
+        {% include 'rzmr/request_phone_call_modal.html' %}
     </main>
 
     <footer class="mt-auto position-sticky top-100 fs-xl-media-uzm">

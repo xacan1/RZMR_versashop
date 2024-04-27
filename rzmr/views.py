@@ -1,6 +1,5 @@
 from typing import Any, Dict, List
-from django.views.generic import FormView, ListView, DetailView, CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import FormView
 from rzmr.forms import *
 from shop.mixins import DataMixin
 from django.http import HttpRequest, HttpResponse, FileResponse
@@ -15,6 +14,20 @@ class RobotView(DataMixin, FormView):
                                 filename='robot.txt', content_type="text/plain")
 
         return response
+
+
+class RequestPhoneCall(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/index.html'
+
+    def get_success_url(self) -> str:
+        # возвращаем текущий URL при успешной отправке формы для того что бы покупатель остался на той странице откуда отправлял запрос на звонок
+        current_url = self.request.META.get('HTTP_REFERER', '#')
+        return current_url
+
+    def form_valid(self, form: Any) -> HttpResponse:
+        form.send_email()
+        return super().form_valid(form)
 
 
 class IndexView(DataMixin, FormView):
@@ -870,7 +883,8 @@ class QuickReleaseCouplingView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('quick-release-coupling', 'Быстроразъемные соединения'),]
+        breadcrumb = [('quick-release-coupling',
+                       'Быстроразъемные соединения'),]
         c_def = self.get_user_context(
             title='Быстроразъемное соединение', breadcrumb=breadcrumb)
         return {**context, **c_def}

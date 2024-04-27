@@ -56,10 +56,6 @@ async function get_pdf_document() {
     if (response.headers.get('Content-Disposition') === null) {
         let response_json = await response.json();
 
-        if (id !== 'constructorCorrugation') {
-            img.setAttribute('src', '');
-        }
-
         if (Object.keys(response_json).length === 0) {
             console.log(`Пустой ответ для ${position_image_code}`);
             return;

@@ -17,6 +17,7 @@ async function elements_listener() {
         selectSorting.addEventListener('change', sort_products);
     }
 
+    // назначим отслеживание события Bootstrap для модального окна, что бы запустить обработчик этого окна после клика по кнопке
     let modal = document.getElementById('successAddProductToCartModal');
 
     if (modal) {
@@ -578,6 +579,3 @@ function popup_button_hidden() {
 // function get_selectSorting(elem) {
 //     return sessionStorage.getItem(elem.name);
 // }
-
-// const _add_product_to_cart = add_product_to_cart;
-// export { _add_product_to_cart as add_product_to_cart };

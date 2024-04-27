@@ -4,6 +4,7 @@ from rzmr.views import *
 urlpatterns = [
     path('', IndexView.as_view(), name='home'),
     path('robot.txt/', RobotView.as_view()),
+    path('request-phone-call/', RequestPhoneCall.as_view(), name='request-phone-call'),
     path('about/', AboutView.as_view(), name='about'),
     path('about/quality/', QualityView.as_view(), name='quality'),
     path('about/our-customer/', OurCustomerView.as_view(), name='our-customer'),

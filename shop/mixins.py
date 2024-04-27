@@ -1,6 +1,5 @@
 from django.conf import settings
 from shop import services
-from versa import config
 
 
 user_menu = {'Войти': 'login',
@@ -15,9 +14,9 @@ class DataMixin:
         context_main_menu = main_menu.copy()
         context_user_menu = user_menu.copy()
 
-        context['company_name'] = config.COMPANY_NAME
-        context['company_name_short'] = config.COMPANY_NAME_SHORT
-        context['company_email'] = config.COMPANY_EMAIL
+        context['company_name'] = settings.COMPANY_NAME
+        context['company_name_short'] = settings.COMPANY_NAME_SHORT
+        context['company_email'] = settings.COMPANY_EMAIL
         context['DEBUG'] = settings.DEBUG
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
 
@@ -25,7 +24,7 @@ class DataMixin:
             context['breadcrumb'] = []
 
         if 'title' not in context:
-            context['title'] = config.COMPANY_NAME
+            context['title'] = settings.COMPANY_NAME
 
         if self.request.user.is_anonymous:
             self.request.session['sessionid'] = self.request.session.session_key

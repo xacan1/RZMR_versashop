@@ -31,6 +31,11 @@ SECRET_KEY = config.SECRET_KEY
 # Для онлайн магазина признак того, что можно превышать остатки на складах при заказе
 EXCESS_STOCK_OF_GOODS = config.EXCESS_STOCK_OF_GOODS
 
+COMPANY_NAME = config.COMPANY_NAME
+COMPANY_NAME_SHORT = config.COMPANY_NAME_SHORT
+COMPANY_EMAIL = config.COMPANY_EMAIL
+EMAIL_USER = config.EMAIL_USER
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
@@ -176,9 +181,9 @@ else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_FILE_PATH = BASE_DIR / 'send_emails'
-DEFAULT_FROM_EMAIL = f'{ALLOWED_HOSTS[0]} <{config.EMAIL_USER}>'
+DEFAULT_FROM_EMAIL = f'{ALLOWED_HOSTS[0]} <{EMAIL_USER}>'
 EMAIL_HOST = config.EMAIL_SMTP
-EMAIL_HOST_USER = config.EMAIL_USER
+EMAIL_HOST_USER = EMAIL_USER
 EMAIL_HOST_PASSWORD = config.EMAIL_PASSWORD
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
