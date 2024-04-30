@@ -26,6 +26,9 @@ async function elements_listener() {
             let type_fitting = document.querySelector('#constructorTypeFitting1');
             set_empty_typefitting(type_fitting);
             clear_image('#constructorImg1');
+            let type_fittingA = document.querySelector('#constructorTypeFittingA1');
+            set_empty_typefitting(type_fittingA);
+            clear_image('#constructorImgA1');
         });
     }
 
@@ -37,6 +40,9 @@ async function elements_listener() {
             let type_fitting = document.querySelector('#constructorTypeFitting2');
             set_empty_typefitting(type_fitting);
             clear_image('#constructorImg2');
+            let type_fittingA = document.querySelector('#constructorTypeFittingA2');
+            set_empty_typefitting(type_fittingA);
+            clear_image('#constructorImgA2');
         });
     }
 
@@ -740,19 +746,14 @@ async function get_types_fittings1() {
 
     let group_code = document.querySelector('#constructorGroupsEndFittings1');
     let diameter = document.querySelector('#constructorDiameters');
+    let pressure = document.querySelector('#constructorPressures');
     let request1C = '';
 
-    if (group_code && group_code.value && diameter && diameter.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection&group_code=${group_code.value}&diameter=${diameter.value}`;
+    if (group_code && group_code.value && diameter && diameter.value && pressure && pressure.value) {
+        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection&group_code=${group_code.value}&diameter=${diameter.value}&pressure=${pressure.value}`;
     }
     else {
         return;
-    }
-
-    let pressure = document.querySelector('#constructorPressures');
-
-    if (pressure && pressure.value) {
-        request1C += `&pressure=${pressure.value}`;
     }
 
     let material_code = document.querySelector('#constructorMaterials1');
@@ -805,7 +806,13 @@ async function get_types_fittingsA1() {
 
     let group_code = document.querySelector('#constructorGroupsEndFittingsA1');
     let diameter = document.querySelector('#constructorDiameters');
+    let type_fitting1 = document.querySelector('#constructorTypeFitting1');
     let request1C = '';
+
+    if (!type_fitting1.value) {
+        alert('Сначала нужно выбрать левую концевую арматуру');
+        return;
+    }
 
     if (group_code && group_code.value && diameter && diameter.value) {
         request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection&group_code=${group_code.value}&diameter=${diameter.value}`;
@@ -870,7 +877,13 @@ async function get_types_fittingsA2() {
 
     let group_code = document.querySelector('#constructorGroupsEndFittingsA2');
     let diameter = document.querySelector('#constructorDiameters');
+    let type_fitting2 = document.querySelector('#constructorTypeFitting1');
     let request1C = '';
+
+    if (!type_fitting2.value) {
+        alert('Сначала нужно выбрать правую концевую арматуру');
+        return;
+    }
 
     if (group_code && group_code.value && diameter && diameter.value) {
         request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection&group_code=${group_code.value}&diameter=${diameter.value}`;
@@ -1102,17 +1115,25 @@ function clear_image(id_img) {
 }
 
 function copy_from_K1() {
-    document.querySelector('#constructorGroupsEndFittingsA2').innerHTML = document.querySelector('#constructorGroupsEndFittingsA1').innerHTML;
-    document.querySelector('#constructorGroupsEndFittingsA2').value = document.querySelector('#constructorGroupsEndFittingsA1').value;
-    document.querySelector('#constructorMaterialsA2').innerHTML = document.querySelector('#constructorMaterialsA1').innerHTML;
-    document.querySelector('#constructorMaterialsA2').value = document.querySelector('#constructorMaterialsA1').value;
-    document.querySelector('#constructorTypeFittingA2').innerHTML = document.querySelector('#constructorTypeFittingA1').innerHTML;
-    document.querySelector('#constructorTypeFittingA2').value = document.querySelector('#constructorTypeFittingA1').value;
+    let select_fittingsA2 = document.querySelector('#constructorGroupsEndFittingsA2');
+    select_fittingsA2.innerHTML = document.querySelector('#constructorGroupsEndFittingsA1').innerHTML;
+    select_fittingsA2.value = document.querySelector('#constructorGroupsEndFittingsA1').value;
+
+    let select_materialsA2 = document.querySelector('#constructorMaterialsA2');
+    select_materialsA2.innerHTML = document.querySelector('#constructorMaterialsA1').innerHTML;
+    select_materialsA2.value = document.querySelector('#constructorMaterialsA1').value;
+
+    let type_fittingA2 = document.querySelector('#constructorTypeFittingA2');
+    type_fittingA2.innerHTML = document.querySelector('#constructorTypeFittingA1').innerHTML;
+    type_fittingA2.value = document.querySelector('#constructorTypeFittingA1').value;
+    type_fittingA2.dispatchEvent(new Event('change'));
 }
 
 function clear_form() {
     clear_image('#constructorImg1');
     clear_image('#constructorImg2');
+    clear_image('#constructorImgA1');
+    clear_image('#constructorImgA2');
     set_empty_innerscreen(document.querySelector('#constructorInnerScreen'));
     set_empty_outershells(document.querySelector('#constructorOuterShells'));
     set_empty_braids(document.querySelector('#constructorBraids'));
@@ -1236,7 +1257,7 @@ async function create_product() {
         button_order_modal.removeAttribute('data-shop-product-pk');
         return;
     }
-    
+
     product_name.textContent = response_json.Value;
     button_order_modal.setAttribute('data-shop-product-pk', response_json.id);
 
