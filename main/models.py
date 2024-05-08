@@ -37,7 +37,7 @@ class CustomUser(AbstractUser):
     username = None
     email = models.EmailField(_('email address'), unique=True)
     phone = models.CharField(max_length=15, unique=True,
-                             verbose_name='Телефон', validators=[validate_phone,])
+                             verbose_name=_('phone'), validators=[validate_phone,])
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

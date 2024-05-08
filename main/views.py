@@ -1,6 +1,7 @@
-from django.views.generic import FormView, ListView, DetailView, CreateView
+from django.views.generic import FormView, CreateView
 from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 from main.models import *
 from main.forms import *
 from shop.mixins import DataMixin

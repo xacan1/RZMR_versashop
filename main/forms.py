@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordChangeForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
 
 
 User = get_user_model()
@@ -25,9 +26,9 @@ class FeedbackForm(forms.Form):
 
 
 class RegisterUserForm(UserCreationForm):
-    password1 = forms.CharField(label='Пароль',
+    password1 = forms.CharField(label=_('Password'),
                                 widget=forms.PasswordInput(attrs={'class': 'form-control'}))
-    password2 = forms.CharField(label='Повторите пароль',
+    password2 = forms.CharField(label=_('Password confirmation'),
                                 widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     # captcha = ReCaptchaField()
 
@@ -42,9 +43,9 @@ class RegisterUserForm(UserCreationForm):
 
 class LoginUserForm(AuthenticationForm):
     username = forms.EmailField(
-        label='Адрес электронной почты', widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
+        label=_('Email address'), widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
     password = forms.CharField(
-        label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+        label=_('Password'), widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': _('Password')}))
     # captcha = ReCaptchaField()
     # fields = ('email', 'password')
     # widgets = {'email': forms.EmailInput(attrs={'class': 'form-input'}),
@@ -68,7 +69,7 @@ class VersaPasswordChangeForm(PasswordChangeForm):
 
 class VersaPasswordResetForm(PasswordResetForm):
     email = forms.CharField(
-        label='Адрес электронной почты',
+        label=_('email address'),
         widget=forms.EmailInput(attrs={'class': 'form-control'})
     )
 
@@ -79,6 +80,6 @@ class PasswordResetConfirmForm(SetPasswordForm):
         widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
     new_password2 = forms.CharField(
-        label='Подтверждение нового пароля',
+        label=_('New password confirmation'),
         widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )

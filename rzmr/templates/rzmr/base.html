@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 {% load static %}
+{% load i18n %}
 
 <head>
     <meta charset="utf-8">
@@ -46,19 +47,35 @@
                             <a href="#">Пригласить на тендер</a>
                         </div>
                     </div> -->
-                    <div class="col-xl-2 col-md-3 col-12">
+                    <div class="col-xl-2 col-md-4 col-8">
                         <div class="header-element">
-                            <a href="{% url 'home' %}">
+                            <!-- <a href="{% url 'home' %}">
                                 <img src="{% static 'rzmr/img/russian-flag.png' %}" alt="Русский язык">Рус</a>
                             <a href="#">
                                 <img src="{% static 'rzmr/img/english-flag.png' %}" alt="English">Eng</a>
                             <a href="#">
                                 <img src="{% static 'rzmr/img/kazakhstan-flag.png' %}" alt="Қазақша">Қаз</a>
                             <a href="#">
-                                <img src="{% static 'rzmr/img/belarus-flag.png' %}" alt="Беларуская мова">Блр</a>
+                                <img src="{% static 'rzmr/img/belarus-flag.png' %}" alt="Беларуская мова">Блр</a> -->
+                            
+                            <form class="d-flex" action="{% url 'set_language' %}" method="post">
+                                {% csrf_token %}
+                                <input name="next" type="hidden" value="{{ redirect_to }}">
+                                <select class="form-select form-select-sm w-50" name="language">
+                                    {% get_current_language as LANGUAGE_CODE %}
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+                                    {% for language in languages %}
+                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                            {{ language.name_local }} ({{ language.code }})
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                <input class="btn btn-secondary btn-sm w-50" type="submit" value="{% translate 'Change' %}">
+                            </form>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-7 col-12">
+                    <div class="col-xl-3 col-md-6 col-4">
                         <div class="header-element">
                             <div class="top-end">
                                 <div class="user">

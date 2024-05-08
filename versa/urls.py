@@ -17,12 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from main.views import PageNotFound
 from versa import config
 
 urlpatterns = [
     path('admin-rzmr/', admin.site.urls),
+]
+
+rzmr_patterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
     path('', include('rzmr.urls')),
     path('', include('main.urls')),
     path('', include('api.urls')),
@@ -31,6 +36,8 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('', include('constructor.urls')),
 ]
+
+urlpatterns += i18n_patterns(*rzmr_patterns, prefix_default_language=False)
 
 if settings.DEBUG:
     # import debug_toolbar
