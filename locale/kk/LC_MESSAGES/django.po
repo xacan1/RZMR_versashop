@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-08 17:30+0000\n"
+"POT-Creation-Date: 2024-05-12 21:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
 #: main/forms.py:29 main/forms.py:48
 msgid "Password"
 msgstr ""
@@ -27,11 +28,13 @@ msgstr ""
 
 #: main/forms.py:46
 msgid "Email address"
-msgstr ""
+msgstr "Email"
 
 #: main/forms.py:72 main/models.py:38
+#, fuzzy
+#| msgid "Email address"
 msgid "email address"
-msgstr ""
+msgstr "Email"
 
 #: main/forms.py:83
 msgid "New password confirmation"
@@ -55,20 +58,218 @@ msgstr ""
 
 #: main/templates/main/login.html:15
 msgid "Login to your account"
-msgstr ""
+msgstr "Тіркелгіңізге кіріңіз"
 
 #: main/templates/main/login.html:42
-msgid "Login"
+#: main/templates/main/registration-success.html:9
+#: rzmr/templates/rzmr/base.html:116
+msgid "Log in"
 msgstr ""
 
 #: main/templates/main/login.html:45
-msgid "Forgot your password?"
+msgid "Forgot password"
+msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
+
+#: main/templates/main/login.html:46 rzmr/templates/rzmr/base.html:119
+msgid "Register"
+msgstr "Тіркеу"
+
+#: main/templates/main/registration-success.html:7
+msgid "You are now registered. Activation email sent."
 msgstr ""
 
-#: main/templates/main/login.html:46
-msgid "Registration"
-msgstr ""
+#: rzmr/templates/rzmr/about.html:89
+msgid "Our partners"
+msgstr "Біздің серіктестер"
 
-#: rzmr/templates/rzmr/base.html:74
+#: rzmr/templates/rzmr/base.html:43 rzmr/templates/rzmr/base.html:396
+msgid "Request a call"
+msgstr "Қоңырауға тапсырыс беру"
+
+#: rzmr/templates/rzmr/base.html:75
 msgid "Change"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:97
+msgid "Personal account"
+msgstr "Жеке кабинет"
+
+#: rzmr/templates/rzmr/base.html:104
+msgid "Log out"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:180
+msgid "View cart"
+msgstr "Себет"
+
+#: rzmr/templates/rzmr/base.html:205 rzmr/templates/rzmr/base.html:335
+#: rzmr/views.py:50
+msgid "Company"
+msgstr "Зауыт туралы"
+
+#: rzmr/templates/rzmr/base.html:207
+msgid "About us"
+msgstr "Зауыт туралы ақпарат"
+
+#: rzmr/templates/rzmr/base.html:208 rzmr/templates/rzmr/base.html:336
+#: rzmr/views.py:61
+msgid "Quality and certification system"
+msgstr "Сапа және сертификаттау жүйесі"
+
+#: rzmr/templates/rzmr/base.html:211 rzmr/templates/rzmr/base.html:337
+#: rzmr/views.py:71
+msgid "Our clients"
+msgstr "Біздің клиенттеріміз"
+
+#: rzmr/templates/rzmr/base.html:212 rzmr/templates/rzmr/base.html:338
+#: rzmr/views.py:91
+msgid "Career"
+msgstr "Бос жұмыс орындары"
+
+#: rzmr/templates/rzmr/base.html:223 rzmr/templates/rzmr/base.html:225
+#: rzmr/templates/rzmr/base.html:341 rzmr/templates/rzmr/index.html:12
+#: rzmr/views.py:111 rzmr/views.py:121 rzmr/views.py:133 rzmr/views.py:145
+#: rzmr/views.py:158 rzmr/views.py:171 rzmr/views.py:184 rzmr/views.py:197
+#: rzmr/views.py:210 rzmr/views.py:221 rzmr/views.py:234 rzmr/views.py:247
+#: rzmr/views.py:260 rzmr/views.py:272 rzmr/views.py:285 rzmr/views.py:298
+#: rzmr/views.py:311 rzmr/views.py:323 rzmr/views.py:335 rzmr/views.py:348
+#: rzmr/views.py:361 rzmr/views.py:374 rzmr/views.py:387 rzmr/views.py:400
+#: rzmr/views.py:412 rzmr/views.py:424
+msgid "Metal hoses"
+msgstr "Металиілгіш түтіктер"
+
+#: rzmr/templates/rzmr/base.html:226 rzmr/templates/rzmr/base.html:239
+#: rzmr/templates/rzmr/base.html:342 rzmr/templates/rzmr/base.html:350
+msgid "Fittings"
+msgstr "Ұштық арматура"
+
+#: rzmr/templates/rzmr/base.html:227 rzmr/templates/rzmr/base.html:238
+#: rzmr/templates/rzmr/base.html:343 rzmr/templates/rzmr/base.html:351
+msgid "Guidance"
+msgstr "Таңдау бойынша ұсыныстар"
+
+#: rzmr/templates/rzmr/base.html:228 rzmr/templates/rzmr/base.html:344
+msgid "Installations"
+msgstr "Монтаж және қауіпсіздік"
+
+#: rzmr/templates/rzmr/base.html:229 rzmr/templates/rzmr/base.html:240
+#: rzmr/templates/rzmr/base.html:345 rzmr/templates/rzmr/base.html:352
+msgid "Quality standards"
+msgstr "Сапа стандарттары"
+
+#: rzmr/templates/rzmr/base.html:234 rzmr/templates/rzmr/base.html:348
+#: rzmr/templates/rzmr/index.html:32
+msgid "PTFE Metal hoses"
+msgstr "Фторопластық иілгіш түтіктер"
+
+#: rzmr/templates/rzmr/base.html:236 rzmr/templates/rzmr/base.html:349
+msgid "PH (fluoroplastic hose)  PTFE hoses"
+msgstr "РФ сериялы фторопласты иілгіш түтіктер"
+
+#: rzmr/templates/rzmr/base.html:248
+msgid "Composite hoses"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:250
+msgid "All composite hoses"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:251
+msgid "EGE construction"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:252
+msgid "SSE construction"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:253
+msgid "SST construction"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:254
+msgid "SGT construction"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:255
+msgid "SGE construction"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:256
+msgid "GGE construction"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:257
+msgid "AAE construction"
+msgstr ""
+
+#: rzmr/templates/rzmr/base.html:263 rzmr/templates/rzmr/index.html:22
+msgid "Filters and units"
+msgstr "Сүзгілер мен агрегаттар"
+
+#: rzmr/templates/rzmr/base.html:284 rzmr/templates/rzmr/base.html:378
+msgid "Engineering and non-standard equipment"
+msgstr "Cтандартты емес жабдықтар"
+
+#: rzmr/templates/rzmr/base.html:286 rzmr/templates/rzmr/base.html:380
+msgid "Сustom-made products"
+msgstr "Тапсырыс берушінің сызбалары бойынша"
+
+#: rzmr/templates/rzmr/base.html:287 rzmr/templates/rzmr/base.html:379
+msgid "Technological equipment"
+msgstr "Технологиялық жабдық"
+
+#: rzmr/templates/rzmr/base.html:288 rzmr/templates/rzmr/base.html:381
+msgid "Leak and strength tests"
+msgstr "Қымтаулылықты және беріктікті сынау"
+
+#: rzmr/templates/rzmr/base.html:293
+msgid "Online constructor"
+msgstr "Онлайн конструктор"
+
+#: rzmr/templates/rzmr/base.html:301 rzmr/templates/rzmr/base.html:311
+msgid "Home page"
+msgstr "Негізгі бет"
+
+#: rzmr/templates/rzmr/base.html:403
+msgid "«Russian factory of metal hoses» Co.Ltd"
+msgstr "«Ресей металл шланг зауыты» ЖШС"
+
+#: rzmr/templates/rzmr/base.html:403
+msgid "All rights reserved"
+msgstr "Барлық құқықтар сақталған"
+
+#: rzmr/templates/rzmr/base.html:404
+msgid "Privacy policy"
+msgstr "Құпиялылық саясаты"
+
+#: rzmr/templates/rzmr/index.html:13
+msgid "On the market for more than 12 years"
+msgstr "Нарықта 12 жылдан астам"
+
+#: rzmr/templates/rzmr/index.html:23
+msgid "Filters from the manufacturer, warranty up to 10 years"
+msgstr "Өндірушіден сүзгілер, 10 жылға дейін кепілдік"
+
+#: rzmr/templates/rzmr/index.html:33
+msgid "Pressure up to 400 atm"
+msgstr "400 атм дейін қысым"
+
+#: rzmr/templates/rzmr/index.html:93
+msgid "of the batch"
+msgstr "партиясының"
+
+#: rzmr/templates/rzmr/index.html:95
+msgid "passes final control tests"
+msgstr "соңғы бақылау сынақтарынан өтеді"
+
+#: versa/settings.py:148
+msgid "Russian"
+msgstr ""
+
+#: versa/settings.py:149
+msgid "Kazakh"
+msgstr ""
+
+#: versa/settings.py:150
+msgid "English"
 msgstr ""

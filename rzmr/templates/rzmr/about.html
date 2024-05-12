@@ -1,5 +1,7 @@
 {% extends 'rzmr/base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block content %}
 <div class="container">
@@ -7,6 +9,7 @@
         <div class="col text-uzm">
             <h4>{{ title }}</h4>
             <div class="horizontal-line-uzm"></div>
+            {% if LANGUAGE_CODE == 'ru' %}
             <p class="pt-4">
                 {{ company_name }} ({{ company_name_short }}) является одним из крупнейших поставщиков промышленного
                 оборудования на рынке России и стран ближнего зарубежья. Наш опыт, наличие производственных мощностей
@@ -37,6 +40,72 @@
                 стоимость. Специалисты {{ company_name_short }} будут всегда рады предложить наиболее гибкие условия
                 работы.
             </p>
+            {% elif LANGUAGE_CODE == 'en' %}
+            <p>
+                Russian Factory of Metal Hoses (RZM) is one of the largest suppliers of industrial equipment in the
+                market
+                of Russia and CIS countries. Our experience and availability of manufacturing facilities allow us to
+                develop and produce unique, highly reliable and durable products in a short period of time.
+            </p>
+            <p>
+                Our products are successfully used in various industries, such as nuclear, automobile, shipbuilding,
+                metallurgical, machine-building, petrolic, etc. Russian Factory of Metal Hoses has the ability to carry
+                out
+                development of technical documentation and to make production equipment and the non-standard equipment
+                of various functions: dies, molds, machine tools for machining, adaptations for performance of assembly
+                works, non-standardized equipment, etc.
+            </p>
+            <p>
+                We are sure that not only our own success, but also your manufacture's safety and reliability depend on
+                how responsible we deal. Therefore, for the implementation of any transaction, we attract the best
+                specialists from different industries.
+            </p>
+            <p>
+                All products of the company are certified and correspond to GOST and TU (technical specification).
+            </p>
+            <p>
+                Our advantages
+            </p>
+            <p>
+                One of our important tasks is to highlight your personal needs among which fulfillment of the order in a
+                short period of time, while choosing the best payment terms.
+            </p>
+            <p>
+                We offer the most favorable and flexible conditions of cooperation for our clients.
+            </p>
+            {% elif LANGUAGE_CODE == 'kk' %}
+            <p>
+                «Русский Завод Металлорукавов» ЖШҚ («УЗМ») Ресей және жақын шет елдердің нарығындағы өнеркәсіптік
+                жабдық жеткізушілерінің ең ірілерінің бірі болып есептеледі. Біздің тәжірибеміз, өндірістік
+                қуаттылығымыз қысқа мерзімде бірегей, жоғары сенімге ие және төзімді бұйымдарды әзірлеуге және өндіруге
+                мүмкіншілігі бар.
+            </p>
+            <p>
+                Шығарылатын өнім өнеркәсіптің түрлі салаларында: атом, автомобиль, кеме жасау, металлургия, білдек
+                жасау, мұнай және т.б. салада табысты қолданылады. «Русский Завод Металлорукавов» ЖШҚ техникалық
+                құжаттаманы әзірлеу және әртүрлі мақсаттағы технологиялық жабдық пен стандартты емес жабдықты дайындау
+                мүмкіндігіне ие сонымен бірге: мөртабандар, баспа қалыптар, механикалық өңдеуге арналған білдек
+                құралдары, құрастыру жұмыстарын орындауға арналған құралдар, стандартталмаған жабдықтар және т.б.
+            </p>
+            <p>
+                Сіз үшін бұйымдарды дайындауға қаншалықты жауапкершілікпен қарауымызға, тек біздің жетістігіміз ғана
+                емес, сонымен қатар Сіздің өніміңіздің қауіпсіздігі мен сенімділігі де байланысты екеніне сенімдіміз.
+                Сондықтан кез келген мәмілені жүзеге асыру үшін біз өнеркәсіптің түрлі салаларының үздік мамандарын
+                тартамыз.
+            </p>
+            <p>
+                Компанияның барлық өнімдері сертификатталған және ГОСТ-қа және ТУ-ға (техникалық талаптарға) сәйкес
+                келеді.
+            </p>
+            <h4>Біздің артықшылықтарымыз</h4>
+            <p>
+                Басқаларға қарағанда әрқашанда жақсы іспен ерекшеленеміз, сондықтан біздің маңызды мақсаттарымыздың бірі
+                Сіздің жеке қажеттіліктеріңізге аса маңыз беру болып табылады, бұл тапсырысты орындау қысқа мерзімімде
+                болуы мүмкін, Сіз тек алдын ала төлем бойынша жұмыс істейтін болсаңыз, төлем шарттарына сай болуы керек,
+                кейбіреулерге неғұрлым тартымды бағаны алу маңызды болуы мүмкін. «РЗМ» ЖШҚ мамандары әрқашан ең тиымды
+                жұмыс шарттарын қуана ұсынады.
+            </p>
+            {% endif %}
         </div>
     </div>
     <div class="row py-5">
@@ -44,14 +113,14 @@
 
         </div>
         <div class="col-8">
-            
+
         </div>
         <div class="col-2">
-            
+
         </div>
     </div>
     <div class="row">
-        <h4 class="text-center border-bottom">Партнеры</h4>
+        <h4 class="text-center border-bottom">{% trans 'Our partners' %}</h4>
     </div>
     <div class="row">
         <div class="row align-items-center">

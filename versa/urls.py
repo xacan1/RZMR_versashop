@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from main.views import PageNotFound
-from versa import config
+
 
 urlpatterns = [
     path('admin-rzmr/', admin.site.urls),
@@ -48,4 +48,4 @@ if settings.DEBUG:
 handler404 = PageNotFound.as_view()
 admin.site.site_header = 'Панель администрирования VERSA'
 admin.site.site_title = 'Панель администрирования VERSA'
-admin.site.index_title = config.COMPANY_NAME
+admin.site.index_title = settings.COMPANY_NAME

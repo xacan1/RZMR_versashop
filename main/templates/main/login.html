@@ -39,11 +39,11 @@
                             <a class="lost-pass" href="{% url 'password_reset' %}">Забыли пароль?</a>
                         </div> -->
                         <div class="button">
-                            <button class="btn btn-secondary btn-shop-login" type="submit">{% translate 'Login' %}</button>
+                            <button class="btn btn-secondary btn-shop-login" type="submit">{% trans 'Log in' %}</button>
                         </div>
                         <p class="outer-link py-3 d-flex flex-wrap justify-content-between bottom-content fs-6">
-                            <a class="lost-pass" href="{% url 'password_reset' %}">{% translate 'Forgot your password?' %}</a>
-                            <a href="{% url 'registration' %}">{% translate 'Registration' %}</a>
+                            <a class="lost-pass" href="{% url 'password_reset' %}">{% trans 'Forgot password' %}</a>
+                            <a href="{% url 'registration' %}">{% trans 'Register' %}</a>
                         </p>
                     </div>
                 </form>

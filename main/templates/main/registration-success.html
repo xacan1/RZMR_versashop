@@ -4,11 +4,9 @@
 {% block content %}
 <div class="container py-5">
     <div class="error-content">
-        <h3 class="py-3">Регистрация завершена!</h3>
-        <h5>Теперь можете войти на сайт.</h5>
-        <!-- <p>На указанный e-mail отправлена информация о регистрации.</p> -->
+        <h5>{% trans "You are now registered. Activation email sent." %}</h5>
         <div class="button py-3">
-            <a href="{% url 'login' %}" class="btn btn-secondary btn-shop-login">Войти</a>
+            <a href="{% url 'login' %}" class="btn btn-secondary btn-shop-login">{% translate 'Log in' %}</a>
         </div>
     </div>
 </div>

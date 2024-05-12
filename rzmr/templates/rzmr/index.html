@@ -1,5 +1,6 @@
 {% extends 'rzmr/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
         <div class="container d-md-block d-none">
@@ -8,30 +9,30 @@
                     <div class="carousel-item active">
                         <img src="{% static 'rzmr/img/corousel1.jpg' %}" class="d-block w-100" alt="corousel1">
                         <div class="carousel-caption d-none d-md-block">
-                            <p class="fs-2">Металлорукава</p>
-                            <p class="fs-5">На рынке более 12 лет</p>
+                            <p class="fs-2">{% trans 'Metal hoses' %}</p>
+                            <p class="fs-5">{% trans 'On the market for more than 12 years' %}</p>
                             <div class="button-uzm-slider">
-                                <a href="{% url 'metalhoses' %}" class="btn btn-danger btn-sm">Подробнее</a>
+                                <!-- <a href="{% url 'metalhoses' %}" class="btn btn-danger btn-sm">Подробнее</a> -->
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="{% static 'rzmr/img/corousel2.jpg' %}" class="d-block w-100" alt="corousel2">
                         <div class="carousel-caption d-none d-md-block">
-                            <p class="fs-2">Фильтры и агрегаты</p>
-                            <p class="fs-5">Фильтры от производителя, гарантия до 10 лет</p>
+                            <p class="fs-2">{% trans 'Filters and units' %}</p>
+                            <p class="fs-5">{% trans 'Filters from the manufacturer, warranty up to 10 years' %}</p>
                             <div class="button-uzm-slider">
-                                <button type="button" class="btn btn-danger btn-sm">Подробнее</button>
+                                <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="{% static 'rzmr/img/corousel3.jpg' %}" class="d-block w-100" alt="corousel3">
                         <div class="carousel-caption d-none d-md-block">
-                            <p class="fs-2">Фторопластовые рукава</p>
-                            <p class="fs-5">Давление до 400 атм.</p>
+                            <p class="fs-2">{% trans 'PTFE Metal hoses' %}</p>
+                            <p class="fs-5">{% trans 'Pressure up to 400 atm' %}</p>
                             <div class="button-uzm-slider">
-                                <a href="{% url 'ptfe' %}" class="btn btn-danger btn-sm">Подробнее</a>
+                                <!-- <a href="{% url 'ptfe' %}" class="btn btn-danger btn-sm">Подробнее</a> -->
                             </div>
                         </div>
                     </div>
@@ -41,7 +42,7 @@
                             <p class="fs-2">Концевая арматура любой сложности</p>
                             <p class="fs-5">Собственное производство</p>
                             <div class="button-uzm-slider">
-                                <button type="button" class="btn btn-danger btn-sm">Подробнее</button>
+                                <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
                             </div>
                         </div>
                     </div>
@@ -51,7 +52,7 @@
                             <p class="fs-2">Фланцевые соединения</p>
                             <p class="fs-5">Цены от производителя, стандарты ГОСТ, DIN, ANSI</p>
                             <div class="button-uzm-slider">
-                                <button type="button" class="btn btn-danger btn-sm">Подробнее</button>
+                                <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
                             </div>
                         </div>
                     </div>
@@ -61,7 +62,7 @@
                             <p class="fs-2">Гайки РОТ</p>
                             <p class="fs-5">Все исполнения по ценам от производителя</p>
                             <div class="button-uzm-slider">
-                                <button type="button" class="btn btn-danger btn-sm">Подробнее</button>
+                                <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
                             </div>
                         </div>
                     </div>
@@ -89,9 +90,9 @@
                 <div class="col-3">
                     <div class="text-blue-uzm">
                         <img class="pb-3 pe-2" src="{% static 'rzmr/img/icon1.png' %}" alt="icon1">
-                        <span class="fs-2">100% </span><span class="fs-5"> партии</span>
+                        <span class="fs-2">100% </span><span class="fs-5"> {% trans 'of the batch' %}</span>
                     </div>
-                    <p class="fs-md-media-uzm">проходит выходные контрольные испытания</p>
+                    <p class="fs-md-media-uzm">{% trans 'passes final control tests' %}</p>
                 </div>
                 <div class="col-3">
                     <div class="text-blue-uzm">
