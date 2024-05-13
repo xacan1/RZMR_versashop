@@ -1,4 +1,5 @@
 {% extends 'rzmr/base.html' %}
+{% load i18n %}
 
 {% block content %}
 <section class="product-grids section">
@@ -9,28 +10,28 @@
                 <div class="product-sidebar">
                     <!-- Start Single Widget -->
                     <div class="single-widget">
-                        <h6 class="py-2 d-flex justify-content-center">Разделы</h6>
+                        <h6 class="py-2 d-flex justify-content-center">{% trans 'Sections' %}</h6>
                         <!-- <p>{{ user.get_settings }}</p> -->
                         <ul class="list">
                             <li>
                                 {% if is_orders %}
-                                <a href="{% url 'user-orders' %}"><strong>Заказы</strong></a>
+                                <a href="{% url 'user-orders' %}"><strong>{% trans 'Orders' %}</strong></a>
                                 {% else %}
-                                <a href="{% url 'user-orders' %}">Заказы </a>
+                                <a href="{% url 'user-orders' %}">{% trans 'Orders' %} </a>
                                 {% endif %}
                             </li>
                             <li>
                                 {% if is_settings %}
-                                <a href="{% url 'user-settings' %}"><strong>Настройки профиля</strong></a>
+                                <a href="{% url 'user-settings' %}"><strong>{% trans 'Profile settings' %}</strong></a>
                                 {% else %}
-                                <a href="{% url 'user-settings' %}">Настройки профиля </a>
+                                <a href="{% url 'user-settings' %}">{% trans 'Profile settings' %}</a>
                                 {% endif %}
                             </li>
                             <li>
                                 {% if is_companies %}
-                                <a href="{% url 'user-companies' %}"><strong>Организации</strong></a>
+                                <a href="{% url 'user-companies' %}"><strong>{% trans 'Organizations' %}</strong></a>
                                 {% else %}
-                                <a href="{% url 'user-companies' %}">Организации</a>
+                                <a href="{% url 'user-companies' %}">{% trans 'Organizations' %}</a>
                                 {% endif %}
                             </li>
                         </ul>

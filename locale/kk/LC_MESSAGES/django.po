@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-12 21:24+0000\n"
+"POT-Creation-Date: 2024-05-13 12:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,7 @@ msgstr "Тіркелгіңізге кіріңіз"
 
 #: main/templates/main/login.html:42
 #: main/templates/main/registration-success.html:9
-#: rzmr/templates/rzmr/base.html:116
+#: rzmr/templates/rzmr/base.html:115
 msgid "Log in"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Forgot password"
 msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
 
-#: main/templates/main/login.html:46 rzmr/templates/rzmr/base.html:119
+#: main/templates/main/login.html:46 rzmr/templates/rzmr/base.html:118
 msgid "Register"
 msgstr "Тіркеу"
 
@@ -78,11 +78,104 @@ msgstr "Тіркеу"
 msgid "You are now registered. Activation email sent."
 msgstr ""
 
-#: rzmr/templates/rzmr/about.html:89
+#: personal_account/templates/personal_account/base.html:13
+msgid "Sections"
+msgstr "Бөлімдер"
+
+#: personal_account/templates/personal_account/base.html:18
+#: personal_account/templates/personal_account/base.html:20
+#: personal_account/templates/personal_account/personal-account-orders.html:10
+msgid "Orders"
+msgstr "Тапсырыстар"
+
+#: personal_account/templates/personal_account/base.html:25
+#: personal_account/templates/personal_account/base.html:27
+msgid "Profile settings"
+msgstr "Профиль параметрлері"
+
+#: personal_account/templates/personal_account/base.html:32
+#: personal_account/templates/personal_account/base.html:34
+msgid "Organizations"
+msgstr "Ұйымдар"
+
+#: personal_account/templates/personal_account/personal-account-companies.html:9
+msgid "Name"
+msgstr "Аты"
+
+#: personal_account/templates/personal_account/personal-account-companies.html:12
+msgid "Official name"
+msgstr "Ресми аты"
+
+#: personal_account/templates/personal_account/personal-account-companies.html:15
+msgid "TIN"
+msgstr "СТТН"
+
+#: personal_account/templates/personal_account/personal-account-companies.html:18
+msgid "TRRC"
+msgstr "КПП"
+
+#: personal_account/templates/personal_account/personal-account-companies.html:21
+msgid "Registered address"
+msgstr "Заңды мекен-жайы"
+
+#: personal_account/templates/personal_account/personal-account-companies.html:24
+msgid "Postal address"
+msgstr "Пошталық мекенжай"
+
+#: personal_account/templates/personal_account/personal-account-companies.html:52
+msgid "Add my organization"
+msgstr "Менің ұйымымды қосыңыз"
+
+#: personal_account/templates/personal_account/personal-account-orders.html:13
+msgid "Amount"
+msgstr "Сумма"
+
+#: personal_account/templates/personal_account/personal-account-orders.html:16
+msgid "Status"
+msgstr "Күй"
+
+#: personal_account/templates/personal_account/personal-account-orders.html:19
+msgid "Paid"
+msgstr "Ақылы"
+
+#: personal_account/templates/personal_account/personal-account-orders.html:22
+msgid "Canceled"
+msgstr "Бас тартылды"
+
+#: personal_account/templates/personal_account/personal-account-orders.html:35
+msgid "not specified"
+msgstr "белгілі емес"
+
+#: personal_account/templates/personal_account/personal-account-orders.html:43
+#: personal_account/templates/personal_account/personal-account-orders.html:50
+msgid "Yes"
+msgstr ""
+
+#: personal_account/templates/personal_account/personal-account-orders.html:45
+#: personal_account/templates/personal_account/personal-account-orders.html:52
+msgid "No"
+msgstr ""
+
+#: personal_account/templates/personal_account/personal-account-settings.html:7
+msgid "Currency"
+msgstr "Валюта"
+
+#: personal_account/templates/personal_account/personal-account-settings.html:8
+msgid "Price type"
+msgstr "Баға түрі"
+
+#: personal_account/templates/personal_account/personal-account-settings.html:13
+#: personal_account/templates/personal_account/personal-account-settings.html:18
+#, fuzzy
+#| msgid "Forgot password"
+msgid "Change password"
+msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
+
+#: rzmr/templates/rzmr/about.html:123 rzmr/templates/rzmr/index.html:291
 msgid "Our partners"
 msgstr "Біздің серіктестер"
 
-#: rzmr/templates/rzmr/base.html:43 rzmr/templates/rzmr/base.html:396
+#: rzmr/templates/rzmr/base.html:43 rzmr/templates/rzmr/base.html:395
 msgid "Request a call"
 msgstr "Қоңырауға тапсырыс беру"
 
@@ -90,155 +183,162 @@ msgstr "Қоңырауға тапсырыс беру"
 msgid "Change"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:97
+#: rzmr/templates/rzmr/base.html:96 rzmr/templates/rzmr/index.html:270
 msgid "Personal account"
 msgstr "Жеке кабинет"
 
-#: rzmr/templates/rzmr/base.html:104
+#: rzmr/templates/rzmr/base.html:103
 msgid "Log out"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:180
+#: rzmr/templates/rzmr/base.html:179
 msgid "View cart"
 msgstr "Себет"
 
-#: rzmr/templates/rzmr/base.html:205 rzmr/templates/rzmr/base.html:335
+#: rzmr/templates/rzmr/base.html:204 rzmr/templates/rzmr/base.html:334
 #: rzmr/views.py:50
 msgid "Company"
 msgstr "Зауыт туралы"
 
-#: rzmr/templates/rzmr/base.html:207
+#: rzmr/templates/rzmr/base.html:206
 msgid "About us"
 msgstr "Зауыт туралы ақпарат"
 
-#: rzmr/templates/rzmr/base.html:208 rzmr/templates/rzmr/base.html:336
+#: rzmr/templates/rzmr/base.html:207 rzmr/templates/rzmr/base.html:335
 #: rzmr/views.py:61
 msgid "Quality and certification system"
 msgstr "Сапа және сертификаттау жүйесі"
 
-#: rzmr/templates/rzmr/base.html:211 rzmr/templates/rzmr/base.html:337
+#: rzmr/templates/rzmr/base.html:210 rzmr/templates/rzmr/base.html:336
 #: rzmr/views.py:71
 msgid "Our clients"
 msgstr "Біздің клиенттеріміз"
 
-#: rzmr/templates/rzmr/base.html:212 rzmr/templates/rzmr/base.html:338
+#: rzmr/templates/rzmr/base.html:211 rzmr/templates/rzmr/base.html:337
 #: rzmr/views.py:91
 msgid "Career"
 msgstr "Бос жұмыс орындары"
 
-#: rzmr/templates/rzmr/base.html:223 rzmr/templates/rzmr/base.html:225
-#: rzmr/templates/rzmr/base.html:341 rzmr/templates/rzmr/index.html:12
-#: rzmr/views.py:111 rzmr/views.py:121 rzmr/views.py:133 rzmr/views.py:145
-#: rzmr/views.py:158 rzmr/views.py:171 rzmr/views.py:184 rzmr/views.py:197
-#: rzmr/views.py:210 rzmr/views.py:221 rzmr/views.py:234 rzmr/views.py:247
-#: rzmr/views.py:260 rzmr/views.py:272 rzmr/views.py:285 rzmr/views.py:298
-#: rzmr/views.py:311 rzmr/views.py:323 rzmr/views.py:335 rzmr/views.py:348
-#: rzmr/views.py:361 rzmr/views.py:374 rzmr/views.py:387 rzmr/views.py:400
-#: rzmr/views.py:412 rzmr/views.py:424
+#: rzmr/templates/rzmr/base.html:222 rzmr/templates/rzmr/base.html:224
+#: rzmr/templates/rzmr/base.html:340 rzmr/templates/rzmr/index.html:12
+#: rzmr/templates/rzmr/index.html:137 rzmr/views.py:111 rzmr/views.py:121
+#: rzmr/views.py:133 rzmr/views.py:145 rzmr/views.py:158 rzmr/views.py:171
+#: rzmr/views.py:184 rzmr/views.py:197 rzmr/views.py:210 rzmr/views.py:221
+#: rzmr/views.py:234 rzmr/views.py:247 rzmr/views.py:260 rzmr/views.py:272
+#: rzmr/views.py:285 rzmr/views.py:298 rzmr/views.py:311 rzmr/views.py:323
+#: rzmr/views.py:335 rzmr/views.py:348 rzmr/views.py:361 rzmr/views.py:374
+#: rzmr/views.py:387 rzmr/views.py:400 rzmr/views.py:412 rzmr/views.py:424
 msgid "Metal hoses"
 msgstr "Металиілгіш түтіктер"
 
-#: rzmr/templates/rzmr/base.html:226 rzmr/templates/rzmr/base.html:239
-#: rzmr/templates/rzmr/base.html:342 rzmr/templates/rzmr/base.html:350
+#: rzmr/templates/rzmr/base.html:225 rzmr/templates/rzmr/base.html:238
+#: rzmr/templates/rzmr/base.html:341 rzmr/templates/rzmr/base.html:349
 msgid "Fittings"
 msgstr "Ұштық арматура"
 
-#: rzmr/templates/rzmr/base.html:227 rzmr/templates/rzmr/base.html:238
-#: rzmr/templates/rzmr/base.html:343 rzmr/templates/rzmr/base.html:351
+#: rzmr/templates/rzmr/base.html:226 rzmr/templates/rzmr/base.html:237
+#: rzmr/templates/rzmr/base.html:342 rzmr/templates/rzmr/base.html:350
 msgid "Guidance"
 msgstr "Таңдау бойынша ұсыныстар"
 
-#: rzmr/templates/rzmr/base.html:228 rzmr/templates/rzmr/base.html:344
+#: rzmr/templates/rzmr/base.html:227 rzmr/templates/rzmr/base.html:343
 msgid "Installations"
 msgstr "Монтаж және қауіпсіздік"
 
-#: rzmr/templates/rzmr/base.html:229 rzmr/templates/rzmr/base.html:240
-#: rzmr/templates/rzmr/base.html:345 rzmr/templates/rzmr/base.html:352
+#: rzmr/templates/rzmr/base.html:228 rzmr/templates/rzmr/base.html:239
+#: rzmr/templates/rzmr/base.html:344 rzmr/templates/rzmr/base.html:351
 msgid "Quality standards"
 msgstr "Сапа стандарттары"
 
-#: rzmr/templates/rzmr/base.html:234 rzmr/templates/rzmr/base.html:348
-#: rzmr/templates/rzmr/index.html:32
+#: rzmr/templates/rzmr/base.html:233 rzmr/templates/rzmr/base.html:347
+#: rzmr/templates/rzmr/index.html:32 rzmr/templates/rzmr/index.html:151
 msgid "PTFE Metal hoses"
 msgstr "Фторопластық иілгіш түтіктер"
 
-#: rzmr/templates/rzmr/base.html:236 rzmr/templates/rzmr/base.html:349
+#: rzmr/templates/rzmr/base.html:235 rzmr/templates/rzmr/base.html:348
 msgid "PH (fluoroplastic hose)  PTFE hoses"
 msgstr "РФ сериялы фторопласты иілгіш түтіктер"
 
-#: rzmr/templates/rzmr/base.html:248
+#: rzmr/templates/rzmr/base.html:247
 msgid "Composite hoses"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:250
+#: rzmr/templates/rzmr/base.html:249
 msgid "All composite hoses"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:251
+#: rzmr/templates/rzmr/base.html:250
 msgid "EGE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:252
+#: rzmr/templates/rzmr/base.html:251
 msgid "SSE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:253
+#: rzmr/templates/rzmr/base.html:252
 msgid "SST construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:254
+#: rzmr/templates/rzmr/base.html:253
 msgid "SGT construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:255
+#: rzmr/templates/rzmr/base.html:254
 msgid "SGE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:256
+#: rzmr/templates/rzmr/base.html:255
 msgid "GGE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:257
+#: rzmr/templates/rzmr/base.html:256
 msgid "AAE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:263 rzmr/templates/rzmr/index.html:22
+#: rzmr/templates/rzmr/base.html:262 rzmr/templates/rzmr/index.html:22
+#: rzmr/templates/rzmr/index.html:187
 msgid "Filters and units"
 msgstr "Сүзгілер мен агрегаттар"
 
-#: rzmr/templates/rzmr/base.html:284 rzmr/templates/rzmr/base.html:378
+#: rzmr/templates/rzmr/base.html:283 rzmr/templates/rzmr/base.html:377
 msgid "Engineering and non-standard equipment"
 msgstr "Cтандартты емес жабдықтар"
 
-#: rzmr/templates/rzmr/base.html:286 rzmr/templates/rzmr/base.html:380
+#: rzmr/templates/rzmr/base.html:285 rzmr/templates/rzmr/base.html:379
 msgid "Сustom-made products"
 msgstr "Тапсырыс берушінің сызбалары бойынша"
 
-#: rzmr/templates/rzmr/base.html:287 rzmr/templates/rzmr/base.html:379
+#: rzmr/templates/rzmr/base.html:286 rzmr/templates/rzmr/base.html:378
 msgid "Technological equipment"
 msgstr "Технологиялық жабдық"
 
-#: rzmr/templates/rzmr/base.html:288 rzmr/templates/rzmr/base.html:381
+#: rzmr/templates/rzmr/base.html:287 rzmr/templates/rzmr/base.html:380
+#: rzmr/templates/rzmr/index.html:282
 msgid "Leak and strength tests"
 msgstr "Қымтаулылықты және беріктікті сынау"
 
-#: rzmr/templates/rzmr/base.html:293
+#: rzmr/templates/rzmr/base.html:292 rzmr/templates/rzmr/index.html:213
+#: rzmr/templates/rzmr/index.html:224
 msgid "Online constructor"
 msgstr "Онлайн конструктор"
 
-#: rzmr/templates/rzmr/base.html:301 rzmr/templates/rzmr/base.html:311
+#: rzmr/templates/rzmr/base.html:300 rzmr/templates/rzmr/base.html:310
 msgid "Home page"
 msgstr "Негізгі бет"
 
-#: rzmr/templates/rzmr/base.html:403
+#: rzmr/templates/rzmr/base.html:391
+msgid "Contacts"
+msgstr "Контактілер"
+
+#: rzmr/templates/rzmr/base.html:402
 msgid "«Russian factory of metal hoses» Co.Ltd"
 msgstr "«Ресей металл шланг зауыты» ЖШС"
 
-#: rzmr/templates/rzmr/base.html:403
+#: rzmr/templates/rzmr/base.html:402
 msgid "All rights reserved"
 msgstr "Барлық құқықтар сақталған"
 
-#: rzmr/templates/rzmr/base.html:404
+#: rzmr/templates/rzmr/base.html:403
 msgid "Privacy policy"
 msgstr "Құпиялылық саясаты"
 
@@ -254,6 +354,34 @@ msgstr "Өндірушіден сүзгілер, 10 жылға дейін кеп
 msgid "Pressure up to 400 atm"
 msgstr "400 атм дейін қысым"
 
+#: rzmr/templates/rzmr/index.html:42
+msgid "End fittings of any complexity"
+msgstr "Кез келген күрделіліктегі фитингтер"
+
+#: rzmr/templates/rzmr/index.html:43
+msgid "Own production"
+msgstr "Меншікті өндіріс"
+
+#: rzmr/templates/rzmr/index.html:52
+msgid "Flange connections"
+msgstr "Фланецті қосылыстар"
+
+#: rzmr/templates/rzmr/index.html:53
+msgid "Prices from the manufacturer, GOST, DIN, ANSI standards"
+msgstr "Бағалар өндірушіден, ГОСТ, DIN, ANSI стандарттары"
+
+#: rzmr/templates/rzmr/index.html:62
+msgid "ROT nuts"
+msgstr "Гайки РОТ"
+
+#: rzmr/templates/rzmr/index.html:63
+msgid "All versions at prices from the manufacturer"
+msgstr "Барлық нұсқалар өндірушінің бағасы бойынша"
+
+#: rzmr/templates/rzmr/index.html:85
+msgid "Metal hoses from the manufacturer according to high standards RZM ltd"
+msgstr "Өндіруші RZM ltd металл шлангілері жоғары стандарттарға"
+
 #: rzmr/templates/rzmr/index.html:93
 msgid "of the batch"
 msgstr "партиясының"
@@ -261,6 +389,91 @@ msgstr "партиясының"
 #: rzmr/templates/rzmr/index.html:95
 msgid "passes final control tests"
 msgstr "соңғы бақылау сынақтарынан өтеді"
+
+#: rzmr/templates/rzmr/index.html:100
+msgid "diameters of"
+msgstr "диаметрі"
+
+#: rzmr/templates/rzmr/index.html:102
+msgid "RGM metal hose to solve any production problems"
+msgstr "кез келген өндірістік мәселелерді шешу үшін RGM металл шлангінің"
+
+#: rzmr/templates/rzmr/index.html:107
+msgid "kgc/cm²"
+msgstr "кгc/см²"
+
+#: rzmr/templates/rzmr/index.html:109
+msgid "maximum operating pressure of metal hoses of the RGM series"
+msgstr "RGM сериясының металл шлангілерінің максималды жұмыс қысымы"
+
+#: rzmr/templates/rzmr/index.html:114
+msgid "types of"
+msgstr "түрі"
+
+#: rzmr/templates/rzmr/index.html:116
+msgid "product range produced by our company"
+msgstr "біздің компания шығаратын өнімдердің ассортименті"
+
+#: rzmr/templates/rzmr/index.html:124
+msgid "Products"
+msgstr "Өнімдер"
+
+#: rzmr/templates/rzmr/index.html:163
+msgid "Fabric"
+msgstr "Мата"
+
+#: rzmr/templates/rzmr/index.html:164 rzmr/templates/rzmr/index.html:176
+msgid "compensators"
+msgstr "кеңейту буындары"
+
+#: rzmr/templates/rzmr/index.html:175
+msgid "Bellows"
+msgstr "Сильфонды"
+
+#: rzmr/templates/rzmr/index.html:201
+msgid "Non-standard"
+msgstr "Стандартты емес"
+
+#: rzmr/templates/rzmr/index.html:202
+msgid "equipment"
+msgstr "жабдық"
+
+#: rzmr/templates/rzmr/index.html:224
+msgid "go to"
+msgstr "Перейти в"
+
+#: rzmr/templates/rzmr/index.html:234
+msgid "Why us"
+msgstr "Неге біз"
+
+#: rzmr/templates/rzmr/index.html:244
+msgid ""
+"Order fulfillment in a short time due to own capacities and established "
+"relations with material suppliers"
+msgstr ""
+"Өз қуаттарымыз және материалдарды жеткізушілермен ретке қойылған "
+"қатынастарымыздың есебінен қысқа мерзімдер"
+
+#: rzmr/templates/rzmr/index.html:249
+msgid "Profitable prices for our partners"
+msgstr ""
+"Тұрақты клиенттерге адалдықтың ойластырылған жүйесі есебінен ұтымды баға"
+
+#: rzmr/templates/rzmr/index.html:253
+msgid "Delivery throughout Russia and CIS countries"
+msgstr "Ресей және ТМД елдерінің барлық аумағына жеткізу"
+
+#: rzmr/templates/rzmr/index.html:257
+msgid "Individual approach"
+msgstr "Әр клиентке жеке көзқарас"
+
+#: rzmr/templates/rzmr/index.html:264
+msgid "End fittings map"
+msgstr "Ұштық арматура картасы"
+
+#: rzmr/templates/rzmr/index.html:276
+msgid "Production by customer drawings"
+msgstr "Бөлшектерді Тапсырыс берушінің сызбалары бойынша дайындау"
 
 #: versa/settings.py:148
 msgid "Russian"

@@ -119,8 +119,7 @@ class MetalhosesFittingsView(DataMixin, FormView):
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
         breadcrumb = [('metalhoses', _('Metal hoses')),]
-        c_def = self.get_user_context(
-            title='Концевая арматура для металлорукавов')
+        c_def = self.get_user_context(title=_('Fittings'))
         return {**context, **c_def}
 
 

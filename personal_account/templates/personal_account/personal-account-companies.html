@@ -1,26 +1,27 @@
 {% extends 'personal_account/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block account_content %}
 <div class="col-lg-9 col-12">
     <div class="row order-list-head py-2 fw-bold">
         <div class="col-lg-2 col-md-2 col-12 order-list-head align-self-center">
-            Наименование
+            {% trans 'Name' %}
         </div>
         <div class="col-lg-4 col-md-4 col-12 d-none d-md-block order-list-head align-self-center">
-            Официальное наименование
+            {% trans 'Official name' %}
         </div>
         <div class="col-lg-1 col-md-1 col-12 d-none d-md-block order-list-head align-self-center">
-            ИНН
+            {% trans 'TIN' %}
         </div>
         <div class="col-lg-1 col-md-1 col-12 d-none d-md-block order-list-head align-self-center">
-            КПП
+            {% trans 'TRRC' %}
         </div>
         <div class="col-lg-2 col-md-2 col-12 d-none d-md-block order-list-head align-self-center">
-            Юридический адрес
+            {% trans 'Registered address' %}
         </div>
         <div class="col-lg-2 col-md-2 col-12 d-none d-md-block order-list-head align-self-center">
-            Почтовый адрес
+            {% trans 'Postal address' %}
         </div>
     </div>
     {% for contractor in user.get_contractors.all %}
@@ -48,7 +49,7 @@
     </div>
     {% endfor %}
     <div class="py-5">
-        <a href="{% url 'contractor-create' %}" class="btn btn-secondary">Добавить организацию</a>
+        <a href="{% url 'contractor-create' %}" class="btn btn-secondary">{% trans 'Add my organization' %}</a>
     </div>
 </div>
 

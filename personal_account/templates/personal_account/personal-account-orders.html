@@ -1,23 +1,25 @@
 {% extends 'personal_account/base.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block account_content %}
 <div class="col-lg-9 col-12">
     <div class="row order-list-head py-2 fw-bold">
         <div class="col-lg-4 col-md-3 col-12 order-list-head align-self-center">
-            Заказ
+            {% trans 'Orders' %}
         </div>
         <div class="col-lg-2 col-md-2 col-12 d-none d-md-block order-list-head align-self-center">
-            Сумма
+            {% trans 'Amount' %}
         </div>
         <div class="col-lg-2 col-md-2 col-12 d-none d-md-block order-list-head align-self-center">
-            Статус
+            {% trans 'Status' %}
         </div>
         <div class="col-lg-1 col-md-2 col-12 d-none d-md-block order-list-head align-self-center">
-            Оплачен
+            {% trans 'Paid' %}
         </div>
-        <div class="col-lg-1 col-md-2 col-12 d-none d-md-block order-list-head align-self-center">
-            Отменен
+        <div class="col-lg-2 col-md-3 col-12 d-none d-md-block order-list-head align-self-center">
+            {% trans 'Canceled' %}
         </div>
     </div>
     {% for order in user.get_orders.all %}
@@ -30,7 +32,7 @@
                 {% if order.amount > 0 %}
                 {{ order.amount }}{{ order.currency.sign }}
                 {% else %}
-                <span>Не указана</span>
+                <span>{% trans 'not specified' %}</span>
                 {% endif %}
             </div>
             <div class="col-lg-2 col-md-2 col-12">
@@ -38,16 +40,16 @@
             </div>
             <div class="col-lg-1 col-md-2 col-12">
                 {% if order.paid %}
-                <span>Да</span>
+                <span>{% trans 'Yes' %}</span>
                 {% else %}
-                <span>Нет</span>
+                <span>{% trans 'No' %}</span>
                 {% endif %}
             </div>
             <div class="col-lg-1 col-md-2 col-12">
                 {% if order.canceled %}
-                <span>Да</span>
+                <span>{% trans 'Yes' %}</span>
                 {% else %}
-                <span>Нет</span>
+                <span>{% trans 'No' %}</span>
                 {% endif %}
             </div>
         </div>
