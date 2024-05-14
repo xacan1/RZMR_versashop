@@ -76,7 +76,7 @@ class VersaPasswordResetForm(PasswordResetForm):
 
 class PasswordResetConfirmForm(SetPasswordForm):
     new_password1 = forms.CharField(
-        label='Новый пароль',
+        label=_('New password'),
         widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
     new_password2 = forms.CharField(

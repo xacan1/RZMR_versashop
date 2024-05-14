@@ -1,5 +1,6 @@
 {% extends 'rzmr/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <!-- Start Account Register Area -->
@@ -9,8 +10,8 @@
             <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
                 <div class="register-form">
                     <div class="title">
-                        <h3>Нет аккаунта? Зарегистрируйтесь</h3>
-                        <p>Регистрация занимает меньше минуты и даёт вам возможность управлять заказами.</p>
+                        <h3>{% trans 'Do not have an account? Register!' %}</h3>
+                        <p>{% trans 'Registration takes less than a minute and gives you the ability to manage your orders' %}</p>
                     </div>
                     <form class="row" method="post" action="{% url 'registration' %}">
                         {% csrf_token %}
@@ -52,9 +53,9 @@
                         </div> -->
                         {{ form.as_p }}
                         <div class="button">
-                            <button class="btn btn-secondary btn-shop-login" type="submit">Зарегистрироваться</button>
+                            <button class="btn btn-secondary btn-shop-login" type="submit">{% trans 'Register' %}</button>
                         </div>
-                        <p class="outer-link py-3">Уже зарегистрированы? <a href="{% url 'login' %}">Войти</a>
+                        <p class="outer-link py-3">{% trans 'Already registered' %}? <a href="{% url 'login' %}">{% trans 'Log in' %}</a>
                         </p>
                     </form>
                 </div>

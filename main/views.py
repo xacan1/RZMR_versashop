@@ -41,7 +41,7 @@ class RegisterUserView(DataMixin, CreateView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Регистрация')
+        c_def = self.get_user_context(title=_('Register'))
         return {**context, **c_def}
 
 
@@ -56,8 +56,8 @@ class VersaPasswordChangeView(DataMixin, auth_views.PasswordChangeView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('personal-account', 'Личный кабинет'),
-                      ('user-settings', 'Настройки профиля'),]
+        breadcrumb = [('personal-account', _('Personal account')),
+                      ('user-settings', _('Profile settings')),]
         c_def = self.get_user_context(
             title='Изменение пароля', breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -68,8 +68,8 @@ class VersaPasswordChangeDoneView(DataMixin, auth_views.PasswordChangeDoneView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('personal-account', 'Личный кабинет'),
-                      ('user-settings', 'Настройки профиля'),]
+        breadcrumb = [('personal-account', _('Personal account')),
+                      ('user-settings', _('Profile settings')),]
         c_def = self.get_user_context(
             title='Пароль успешно изменен!', breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -81,8 +81,8 @@ class VersaPasswordResetView(DataMixin, auth_views.PasswordResetView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('personal-account', 'Личный кабинет'),
-                      ('user-settings', 'Настройки профиля'),]
+        breadcrumb = [('personal-account', _('Personal account')),
+                      ('user-settings', _('Profile settings')),]
         c_def = self.get_user_context(
             title='Сброс пароля', breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -94,8 +94,8 @@ class VersaPasswordResetConfirmView(DataMixin, auth_views.PasswordResetConfirmVi
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('personal-account', 'Личный кабинет'),
-                      ('user-settings', 'Настройки профиля'),]
+        breadcrumb = [('personal-account', _('Personal account')),
+                      ('user-settings', _('Profile settings')),]
         c_def = self.get_user_context(breadcrumb=breadcrumb)
         return {**context, **c_def}
 
@@ -105,8 +105,8 @@ class VersaPasswordResetDoneView(DataMixin, auth_views.PasswordResetDoneView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('personal-account', 'Личный кабинет'),
-                      ('user-settings', 'Настройки профиля'),]
+        breadcrumb = [('personal-account', _('Personal account')),
+                      ('user-settings', _('Profile settings')),]
         c_def = self.get_user_context(
             title='Письмо с инструкциями по восстановлению пароля отправлено',
             breadcrumb=breadcrumb
@@ -119,8 +119,8 @@ class VersaPasswordResetCompleteView(DataMixin, auth_views.PasswordResetComplete
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('personal-account', 'Личный кабинет'),
-                      ('user-settings', 'Настройки профиля'),]
+        breadcrumb = [('personal-account', _('Personal account')),
+                      ('user-settings', _('Profile settings')),]
         c_def = self.get_user_context(
             title='Восстановление пароля завершено',
             breadcrumb=breadcrumb

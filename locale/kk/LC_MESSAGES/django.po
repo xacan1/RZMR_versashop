@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-13 12:53+0000\n"
+"POT-Creation-Date: 2024-05-14 19:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,11 +30,11 @@ msgstr ""
 msgid "Email address"
 msgstr "Email"
 
-#: main/forms.py:72 main/models.py:38
+#: main/forms.py:79
 #, fuzzy
-#| msgid "Email address"
-msgid "email address"
-msgstr "Email"
+#| msgid "Forgot password"
+msgid "New password"
+msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
 
 #: main/forms.py:83
 msgid "New password confirmation"
@@ -60,8 +60,8 @@ msgstr ""
 msgid "Login to your account"
 msgstr "Тіркелгіңізге кіріңіз"
 
-#: main/templates/main/login.html:42
-#: main/templates/main/registration-success.html:9
+#: main/templates/main/login.html:42 main/templates/main/register.html:58
+#: main/templates/main/registration-success.html:10
 #: rzmr/templates/rzmr/base.html:115
 msgid "Log in"
 msgstr ""
@@ -70,13 +70,44 @@ msgstr ""
 msgid "Forgot password"
 msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
 
-#: main/templates/main/login.html:46 rzmr/templates/rzmr/base.html:118
+#: main/templates/main/login.html:46 main/templates/main/register.html:56
+#: main/views.py:44 rzmr/templates/rzmr/base.html:118
 msgid "Register"
 msgstr "Тіркеу"
 
-#: main/templates/main/registration-success.html:7
+#: main/templates/main/register.html:13
+msgid "Do not have an account? Register!"
+msgstr "Есептік жазбаңыз жоқ па? Тіркелу!"
+
+#: main/templates/main/register.html:14
+msgid ""
+"Registration takes less than a minute and gives you the ability to manage "
+"your orders"
+msgstr "Тіркелу бір минуттан аз уақытты алады және тапсырыстарды басқару мүмкіндігін береді"
+
+#: main/templates/main/register.html:58
+msgid "Already registered"
+msgstr "Тіркелгенсіз бе"
+
+#: main/templates/main/registration-success.html:8
 msgid "You have successfully registered on the site"
 msgstr "Сіз сайтқа сәтті тіркелдіңіз"
+
+#: main/views.py:59 main/views.py:71 main/views.py:84 main/views.py:97
+#: main/views.py:108 main/views.py:122 personal_account/views.py:14
+#: personal_account/views.py:24 personal_account/views.py:36
+#: personal_account/views.py:48 rzmr/templates/rzmr/base.html:96
+#: rzmr/templates/rzmr/index.html:270
+msgid "Personal account"
+msgstr "Жеке кабинет"
+
+#: main/views.py:60 main/views.py:72 main/views.py:85 main/views.py:98
+#: main/views.py:109 main/views.py:123
+#: personal_account/templates/personal_account/base.html:25
+#: personal_account/templates/personal_account/base.html:27
+#: personal_account/views.py:26
+msgid "Profile settings"
+msgstr "Профиль параметрлері"
 
 #: personal_account/templates/personal_account/base.html:13
 msgid "Sections"
@@ -88,12 +119,6 @@ msgstr "Бөлімдер"
 #: personal_account/views.py:38
 msgid "Orders"
 msgstr "Тапсырыстар"
-
-#: personal_account/templates/personal_account/base.html:25
-#: personal_account/templates/personal_account/base.html:27
-#: personal_account/views.py:26
-msgid "Profile settings"
-msgstr "Профиль параметрлері"
 
 #: personal_account/templates/personal_account/base.html:32
 #: personal_account/templates/personal_account/base.html:34
@@ -173,12 +198,6 @@ msgstr "Баға түрі"
 #| msgid "Forgot password"
 msgid "Change password"
 msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
-
-#: personal_account/views.py:14 personal_account/views.py:24
-#: personal_account/views.py:36 personal_account/views.py:48
-#: rzmr/templates/rzmr/base.html:96 rzmr/templates/rzmr/index.html:270
-msgid "Personal account"
-msgstr "Жеке кабинет"
 
 #: rzmr/templates/rzmr/about.html:123 rzmr/templates/rzmr/index.html:291
 msgid "Our partners"
