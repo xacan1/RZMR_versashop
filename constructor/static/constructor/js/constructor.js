@@ -9,6 +9,8 @@ function get_cookie(name) {
 }
 
 async function elements_listener() {
+    set_default_group_fittings();
+
     let corrugation = document.querySelector('#constructorCorrugation');
     set_empty_corrugation(corrugation);
 
@@ -29,6 +31,7 @@ async function elements_listener() {
             let type_fittingA = document.querySelector('#constructorTypeFittingA1');
             set_empty_typefitting(type_fittingA);
             clear_image('#constructorImgA1');
+            get_types_fittings1();
         });
     }
 
@@ -43,6 +46,7 @@ async function elements_listener() {
             let type_fittingA = document.querySelector('#constructorTypeFittingA2');
             set_empty_typefitting(type_fittingA);
             clear_image('#constructorImgA2');
+            get_types_fittings2();
         });
     }
 
@@ -54,6 +58,7 @@ async function elements_listener() {
             let type_fitting = document.querySelector('#constructorTypeFittingA1');
             set_empty_typefitting(type_fitting);
             clear_image('#constructorImgA1');
+            get_types_fittingsA1();
         });
     }
 
@@ -65,6 +70,7 @@ async function elements_listener() {
             let type_fitting = document.querySelector('#constructorTypeFittingA2');
             set_empty_typefitting(type_fitting);
             clear_image('#constructorImgA2');
+            get_types_fittingsA2();
         });
     }
 
@@ -81,8 +87,11 @@ async function elements_listener() {
             set_empty_innerscreen(document.querySelector('#constructorInnerScreen'));
             set_empty_braids(document.querySelector('#constructorBraid'));
             set_empty_corrugation(document.querySelector('#constructorCorrugation'));
+            get_pressures();
             get_corrugation();
             get_braid();
+            get_innerscreen();
+            get_outershells();
         });
     }
 
@@ -141,6 +150,7 @@ async function elements_listener() {
         select_materials1.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFitting1');
             set_empty_typefitting(type_fitting);
+            get_types_fittings1();
             clear_image('#constructorImg1');
         });
     }
@@ -152,6 +162,7 @@ async function elements_listener() {
         select_materials2.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFitting2');
             set_empty_typefitting(type_fitting);
+            get_types_fittings2();
             clear_image('#constructorImg2');
         });
     }
@@ -163,6 +174,7 @@ async function elements_listener() {
         select_materialsA1.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFittingA1');
             set_empty_typefitting(type_fitting);
+            get_types_fittingsA1();
             clear_image('#constructorImgA1');
         });
     }
@@ -174,6 +186,7 @@ async function elements_listener() {
         select_materialsA2.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFittingA2');
             set_empty_typefitting(type_fitting);
+            get_types_fittingsA2();
             clear_image('#constructorImgA2');
         });
     }
@@ -231,6 +244,28 @@ async function elements_listener() {
     }
 }
 
+// установлю "патрубки под приварку" как КА по умолчанию
+function set_default_group_fittings() {
+    let select_fittings1 = document.querySelector('#constructorGroupsEndFittings1');
+    let select_fittings2 = document.querySelector('#constructorGroupsEndFittings2');
+
+    for (let group_fittings of select_fittings1.children) {
+        if (group_fittings.value === 'УТ000006343') {
+            select_fittings1.value = group_fittings.value;
+            select_fittings1.dispatchEvent(new Event('change'));
+            break;
+        }
+    }
+
+    for (let group_fittings of select_fittings2.children) {
+        if (group_fittings.value === 'УТ000006343') {
+            select_fittings2.value = group_fittings.value;
+            select_fittings2.dispatchEvent(new Event('change'));
+            break;
+        }
+    }
+}
+
 function set_empty_pressures(pressures) {
     pressures.innerHTML = '';
     let option_empty = document.createElement('option');
@@ -265,10 +300,6 @@ function set_empty_innerscreen(innerscreen) {
 
 function set_empty_corrugation(corrugation) {
     corrugation.innerHTML = '';
-    // let option_empty = document.createElement('option');
-    // option_empty.value = '';
-    // option_empty.textContent = '- Гофра -';
-    // corrugation.appendChild(option_empty);
 }
 
 function set_empty_typefitting(type_fitting) {
@@ -356,7 +387,7 @@ async function get_groups_and_fittings() {
     let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log(`Ошибка HTTP groups_and_fittings ${id}: ` + response.status);
+        console.log(`Ошибка HTTP groups_and_fittings ${id}: ${response.status}`);
         return;
     }
 
@@ -423,14 +454,13 @@ async function get_pressures() {
     }
 
     let diameter = document.querySelector('#constructorDiameters');
-    let request1C = '';
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListPressureHoseStartSelection';
 
-    if (diameter && diameter.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListPressureHoseStartSelection&diameter=${diameter.value}`;
-    }
-    else {
+    if (!diameter || !diameter.value) {
         return;
     }
+
+    request1C += `&diameter=${diameter.value}`;
 
     let optoins = {
         method: 'GET',
@@ -456,10 +486,7 @@ async function get_pressures() {
         return;
     }
 
-    const new_set = new Set(pressures.list);
-    const unique_pressures_list = Array.from(new_set);
-
-    for (let pressure of unique_pressures_list) {
+    for (let pressure of pressures.list) {
         let option = document.createElement('option');
         option.value = pressure.Code;
         option.textContent = pressure.Value;
@@ -525,14 +552,13 @@ async function get_innerscreen() {
     }
 
     let diameter = document.querySelector('#constructorDiameters');
-    let request1C = '';
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListInnerScreenStartSelection';
 
-    if (diameter && diameter.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListInnerScreenStartSelection&diameter=${diameter.value}`;
-    }
-    else {
+    if (!diameter || !diameter.value) {
         return;
     }
+
+    request1C += `&diameter=${diameter.value}`;
 
     let optoins = {
         method: 'GET',
@@ -547,14 +573,14 @@ async function get_innerscreen() {
     let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP pressures: ' + response.status);
+        console.log(`Ошибка HTTP pressures: ${response.status}`);
         return;
     }
 
     let innerscreens = await response.json();
 
     if (Object.keys(innerscreens).length === 0) {
-        console.log('Пустой ответ');
+        console.log('Пустой ответ для constructorInnerScreen');
         return;
     }
 
@@ -567,22 +593,20 @@ async function get_innerscreen() {
 }
 
 async function get_outershells() {
-    const id = this.getAttribute('id');
-    let select_outershells = document.querySelector(`#${id}`);
+    let select_outershells = document.querySelector('#constructorOuterShells');
 
     if (select_outershells.childElementCount > 1) {
         return;
     }
 
     let diameter = document.querySelector('#constructorDiameters');
-    let request1C = '';
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListOuterShellStartSelection';
 
-    if (diameter && diameter.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListOuterShellStartSelection&diameter=${diameter.value}`;
-    }
-    else {
+    if (!diameter || !diameter.value) {
         return;
     }
+
+    request1C += `&diameter=${diameter.value}`;
 
     let optoins = {
         method: 'GET',
@@ -597,14 +621,14 @@ async function get_outershells() {
     let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP pressures: ' + response.status);
+        console.log(`Ошибка HTTP pressures: ${response.status}`);
         return;
     }
 
     let outershells = await response.json();
 
     if (Object.keys(outershells).length === 0) {
-        console.log(`Пустой ответ для ${id}`);
+        console.log('Пустой ответ для constructorOuterShells');
         return;
     }
 
@@ -627,12 +651,11 @@ async function get_braid() {
     let pressure = document.querySelector('#constructorPressures');
     let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getBraid';
 
-    if (diameter && diameter.value && pressure && pressure.value) {
-        request1C += `&diameter=${diameter.value}&pressure=${pressure.value}`;
-    }
-    else {
+    if (!diameter || !diameter.value || !pressure || !pressure.value) {
         return;
     }
+
+    request1C += `&diameter=${diameter.value}&pressure=${pressure.value}`;
 
     let optoins = {
         method: 'GET',
@@ -647,14 +670,14 @@ async function get_braid() {
     let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP pressures: ' + response.status);
+        console.log(`Ошибка HTTP pressures: ${response.status}`);
         return;
     }
 
     let braid = await response.json();
 
     if (Object.keys(braid).length === 0) {
-        console.log(`Пустой ответ для ${id}`);
+        console.log('Пустой ответ для constructorBraid');
         return;
     }
 
@@ -690,14 +713,14 @@ async function get_lengths() {
     let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP lengths: ' + response.status);
+        console.log(`Ошибка HTTP lengths: ${response.status}`);
         return;
     }
 
     let lengths = await response.json();
 
     if (Object.keys(lengths).length === 0) {
-        console.log('Пустой ответ');
+        console.log('Пустой ответ для constructorLengthsHoses');
         return;
     }
 
@@ -751,8 +774,7 @@ async function get_materials() {
 }
 
 async function get_types_fittings1() {
-    const id = this.getAttribute('id');
-    let select_type_fitting1 = document.querySelector(`#${id}`);
+    let select_type_fitting1 = document.querySelector('#constructorTypeFitting1');
 
     if (select_type_fitting1.childElementCount > 1) {
         return;
@@ -760,14 +782,24 @@ async function get_types_fittings1() {
 
     let group_code = document.querySelector('#constructorGroupsEndFittings1');
     let diameter = document.querySelector('#constructorDiameters');
-    let pressure = document.querySelector('#constructorPressures');
-    let request1C = '';
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection';
 
-    if (group_code && group_code.value && diameter && diameter.value && pressure && pressure.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection&group_code=${group_code.value}&diameter=${diameter.value}&pressure=${pressure.value}`;
-    }
-    else {
+    if (!group_code || !group_code.value) {
+        alert('Сначала нужно выбрать Группу концевой арматуры для КА1');
         return;
+    }
+
+    if (!diameter || !diameter.value) {
+        alert('Сначала нужно выбрать Условный диаметр, DN(мм)');
+        return;
+    }
+
+    request1C += `&group_code=${group_code.value}&diameter=${diameter.value}`;
+
+    let pressure = document.querySelector('#constructorPressures');
+
+    if (pressure && pressure.value) {
+        request1C += `&pressure=${pressure.value}`;
     }
 
     let material_code = document.querySelector('#constructorMaterials1');
@@ -789,14 +821,14 @@ async function get_types_fittings1() {
     let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP select_type_fitting1: ' + response.status);
+        console.log(`Ошибка HTTP select_type_fitting1: ${response.status}`);
         return;
     }
 
     let fittings = await response.json();
 
     if (Object.keys(fittings).length === 0) {
-        console.log(`Пустой ответ для ${id}`);
+        console.log('Пустой ответ для constructorTypeFitting1');
         return;
     }
 
@@ -810,151 +842,8 @@ async function get_types_fittings1() {
     }
 }
 
-async function get_types_fittingsA1() {
-    const id = this.getAttribute('id');
-    let select_type_fittingA1 = document.querySelector(`#${id}`);
-
-    if (select_type_fittingA1.childElementCount > 1) {
-        return;
-    }
-
-    let group_code = document.querySelector('#constructorGroupsEndFittingsA1');
-    let diameter = document.querySelector('#constructorDiameters');
-    let type_fitting1 = document.querySelector('#constructorTypeFitting1');
-    let request1C = '';
-
-    if (!type_fitting1.value) {
-        alert('Сначала нужно выбрать левую концевую арматуру');
-        return;
-    }
-
-    if (group_code && group_code.value && diameter && diameter.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection&group_code=${group_code.value}&diameter=${diameter.value}`;
-    }
-    else {
-        return;
-    }
-
-    let pressure = document.querySelector('#constructorPressures');
-
-    if (pressure && pressure.value) {
-        request1C += `&pressure=${pressure.value}`;
-    }
-
-    let material_code = document.querySelector('#constructorMaterialsA1');
-
-    if (material_code && material_code.value) {
-        request1C += `&material_code=${material_code.value}`;
-    }
-
-    let optoins = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': get_cookie('csrftoken'),
-            'Request1C': encodeURI(request1C),
-        },
-    };
-
-    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
-
-    if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP select_type_fittingA1: ' + response.status);
-        return;
-    }
-
-    let fittings = await response.json();
-
-    if (Object.keys(fittings).length === 0) {
-        console.log(`Пустой ответ для ${id}`);
-        return;
-    }
-
-    set_empty_typefitting(select_type_fittingA1);
-
-    for (let fitting of fittings.list) {
-        let option = document.createElement('option');
-        option.value = fitting.Code;
-        option.textContent = fitting.Value;
-        select_type_fittingA1.appendChild(option);
-    }
-}
-
-async function get_types_fittingsA2() {
-    const id = this.getAttribute('id');
-    let select_type_fittingA2 = document.querySelector(`#${id}`);
-
-    if (select_type_fittingA2.childElementCount > 1) {
-        return;
-    }
-
-    let group_code = document.querySelector('#constructorGroupsEndFittingsA2');
-    let diameter = document.querySelector('#constructorDiameters');
-    let type_fitting2 = document.querySelector('#constructorTypeFitting1');
-    let request1C = '';
-
-    if (!type_fitting2.value) {
-        alert('Сначала нужно выбрать правую концевую арматуру');
-        return;
-    }
-
-    if (group_code && group_code.value && diameter && diameter.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection&group_code=${group_code.value}&diameter=${diameter.value}`;
-    }
-    else {
-        return;
-    }
-
-    let pressure = document.querySelector('#constructorPressures');
-
-    if (pressure && pressure.value) {
-        request1C += `&pressure=${pressure.value}`;
-    }
-
-    let material_code = document.querySelector('#constructorMaterialsA2');
-
-    if (material_code && material_code.value) {
-        request1C += `&material_code=${material_code.value}`;
-    }
-
-    let optoins = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': get_cookie('csrftoken'),
-            'Request1C': encodeURI(request1C),
-        },
-    };
-
-    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
-
-    if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP select_type_fittingA2: ' + response.status);
-        return;
-    }
-
-    let fittings = await response.json();
-
-    if (Object.keys(fittings).length === 0) {
-        console.log(`Пустой ответ для ${id}`);
-        return;
-    }
-
-    set_empty_typefitting(select_type_fittingA2);
-
-    for (let fitting of fittings.list) {
-        let option = document.createElement('option');
-        option.value = fitting.Code;
-        option.textContent = fitting.Value;
-        select_type_fittingA2.appendChild(option);
-    }
-}
-
 async function get_types_fittings2() {
-    const id = this.getAttribute('id');
-    let select_type_fitting2 = document.querySelector(`#${id}`);
+    let select_type_fitting2 = document.querySelector('#constructorTypeFitting2');
 
     if (select_type_fitting2.childElementCount > 1) {
         return;
@@ -962,14 +851,19 @@ async function get_types_fittings2() {
 
     let group_code = document.querySelector('#constructorGroupsEndFittings2');
     let diameter = document.querySelector('#constructorDiameters');
-    let request1C = '';
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection';
 
-    if (group_code && group_code.value && diameter && diameter.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection&group_code=${group_code.value}&diameter=${diameter.value}`;
-    }
-    else {
+    if (!group_code || !group_code.value) {
+        alert('Сначала нужно выбрать Группу концевой арматуры для КА2');
         return;
     }
+
+    if (!diameter || !diameter.value) {
+        alert('Сначала нужно выбрать Условный диаметр, DN(мм)');
+        return;
+    }
+
+    request1C += `&group_code=${group_code.value}&diameter=${diameter.value}`;
 
     let pressure = document.querySelector('#constructorPressures');
 
@@ -996,14 +890,14 @@ async function get_types_fittings2() {
     let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP select_type_fitting2: ' + response.status);
+        console.log(`Ошибка HTTP select_type_fitting2: ${response.status}`);
         return;
     }
 
     let fittings = await response.json();
 
     if (Object.keys(fittings).length === 0) {
-        console.log(`Пустой ответ для ${id}`);
+        console.log('Пустой ответ для constructorTypeFitting2');
         return;
     }
 
@@ -1017,11 +911,160 @@ async function get_types_fittings2() {
     }
 }
 
+async function get_types_fittingsA1() {
+    let select_type_fittingA1 = document.querySelector('#constructorTypeFittingA1');
+
+    if (select_type_fittingA1.childElementCount > 1) {
+        return;
+    }
+
+    let group_code = document.querySelector('#constructorGroupsEndFittingsA1');
+    let diameter = document.querySelector('#constructorDiameters');
+    let type_fitting1 = document.querySelector('#constructorTypeFitting1');
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection';
+
+    if (!type_fitting1 || !type_fitting1.value) {
+        alert('Сначала нужно выбрать левую концевую арматуру (КА1)');
+        return;
+    }
+
+    if (!group_code || !group_code.value) {
+        alert('Сначала нужно выбрать группу Ответных деталей к арматуре 1');
+        return;
+    }
+
+    if (!diameter || !diameter.value) {
+        alert('Сначала нужно выбрать Условный диаметр, DN(мм)');
+        return;
+    }
+
+    request1C += `&group_code=${group_code.value}&diameter=${diameter.value}`;
+
+    let pressure = document.querySelector('#constructorPressures');
+
+    if (pressure && pressure.value) {
+        request1C += `&pressure=${pressure.value}`;
+    }
+
+    let material_code = document.querySelector('#constructorMaterialsA1');
+
+    if (material_code && material_code.value) {
+        request1C += `&material_code=${material_code.value}`;
+    }
+
+    let optoins = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': get_cookie('csrftoken'),
+            'Request1C': encodeURI(request1C),
+        },
+    };
+
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
+
+    if (!response.ok && response.status != 401) {
+        console.log(`Ошибка HTTP select_type_fittingA1: ${response.status}`);
+        return;
+    }
+
+    let fittings = await response.json();
+
+    if (Object.keys(fittings).length === 0) {
+        console.log('Пустой ответ для constructorTypeFittingA1');
+        return;
+    }
+
+    set_empty_typefitting(select_type_fittingA1);
+
+    for (let fitting of fittings.list) {
+        let option = document.createElement('option');
+        option.value = fitting.Code;
+        option.textContent = fitting.Value;
+        select_type_fittingA1.appendChild(option);
+    }
+}
+
+async function get_types_fittingsA2() {
+    let select_type_fittingA2 = document.querySelector('#constructorTypeFittingA2');
+
+    if (select_type_fittingA2.childElementCount > 1) {
+        return;
+    }
+
+    let group_code = document.querySelector('#constructorGroupsEndFittingsA2');
+    let diameter = document.querySelector('#constructorDiameters');
+    let type_fitting2 = document.querySelector('#constructorTypeFitting1');
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection';
+
+    if (!type_fitting2 || !type_fitting2.value) {
+        alert('Сначала нужно выбрать правую концевую арматуру (КА2)');
+        return;
+    }
+
+    if (!group_code || !group_code.value) {
+        alert('Сначала нужно выбрать группу Ответных деталей к арматуре 2');
+        return;
+    }
+
+    if (!diameter || !diameter.value) {
+        alert('Сначала нужно выбрать Условный диаметр, DN(мм)');
+        return;
+    }
+
+    request1C += `&group_code=${group_code.value}&diameter=${diameter.value}`;
+
+    let pressure = document.querySelector('#constructorPressures');
+
+    if (pressure && pressure.value) {
+        request1C += `&pressure=${pressure.value}`;
+    }
+
+    let material_code = document.querySelector('#constructorMaterialsA2');
+
+    if (material_code && material_code.value) {
+        request1C += `&material_code=${material_code.value}`;
+    }
+
+    let optoins = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': get_cookie('csrftoken'),
+            'Request1C': encodeURI(request1C),
+        },
+    };
+
+    let response = await fetch('/constructor_api/v1/proxy_request/', optoins);
+
+    if (!response.ok && response.status != 401) {
+        console.log(`Ошибка HTTP select_type_fittingA2: ${response.status}`);
+        return;
+    }
+
+    let fittings = await response.json();
+
+    if (Object.keys(fittings).length === 0) {
+        console.log('Пустой ответ для constructorTypeFittingA2');
+        return;
+    }
+
+    set_empty_typefitting(select_type_fittingA2);
+
+    for (let fitting of fittings.list) {
+        let option = document.createElement('option');
+        option.value = fitting.Code;
+        option.textContent = fitting.Value;
+        select_type_fittingA2.appendChild(option);
+    }
+}
+
 async function get_image_part_of_product() {
     const id = this.getAttribute('id');
     let position_image_code = 0;
     let get_image = 1;
-    let diameter = document.querySelector('#constructorDiameters').value;
     let typefitting_code = undefined;
     let group_product_code = undefined;
     let id_img = '';
@@ -1059,27 +1102,18 @@ async function get_image_part_of_product() {
         return;
     }
 
-    if (!typefitting_code) {
+    let diameter = document.querySelector('#constructorDiameters').value;
+
+    if (!typefitting_code || !diameter) {
         return;
     }
 
-    let img = document.querySelector(id_img);
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getImagePartOfProduct';
 
-    let request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getImagePartOfProduct&position_image_code=${position_image_code}`;
-
-    if (diameter) {
-        request1C += `&diameter=${diameter}`;
-    }
-    else {
-        return;
-    }
+    request1C += `&position_image_code=${position_image_code}&typefitting_code=${typefitting_code}&diameter=${diameter}`;
 
     if (group_product_code) {
         request1C += `&group_product_code=${group_product_code}`;
-    }
-
-    if (typefitting_code) {
-        request1C += `&typefitting_code=${typefitting_code}`;
     }
 
     if (get_image) {
@@ -1102,6 +1136,8 @@ async function get_image_part_of_product() {
         console.log(`Ошибка HTTP get_image_part_of_product: ${response.status}`);
         return;
     }
+
+    let img = document.querySelector(id_img);
 
     if (response.headers.get('Content-Disposition') === null) {
         let response_json = await response.json();
@@ -1170,8 +1206,8 @@ function clear_form() {
     set_empty_typefitting(document.querySelector('#constructorTypeFitting2'));
     set_empty_typefitting(document.querySelector('#constructorTypeFittingA1'));
     set_empty_typefitting(document.querySelector('#constructorTypeFittingA2'));
-    set_empty_fittings(document.querySelector('#constructorGroupsEndFittings1'));
-    set_empty_fittings(document.querySelector('#constructorGroupsEndFittings2'));
+    // set_empty_fittings(document.querySelector('#constructorGroupsEndFittings1'));
+    // set_empty_fittings(document.querySelector('#constructorGroupsEndFittings2'));
     set_empty_fittings(document.querySelector('#constructorGroupsEndFittingsA1'));
     set_empty_fittings(document.querySelector('#constructorGroupsEndFittingsA2'));
     set_empty_materials(document.querySelector('#constructorMaterials1'));
@@ -1253,15 +1289,13 @@ async function create_product() {
     data.typefittingadd1_code = typefittingadd1_code ? typefittingadd1_code : '0';
     data.typefittingadd2_code = typefittingadd2_code ? typefittingadd2_code : '0';
 
-    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=createProduct';
-
     let optoins = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'X-Requested-With': 'XMLHttpRequest',
             'X-CSRFToken': get_cookie('csrftoken'),
-            'Request1C': request1C,
+            'Request1C': 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=createProduct',
         },
         body: JSON.stringify(data),
     };
@@ -1269,7 +1303,7 @@ async function create_product() {
     const response = await fetch('/constructor_api/v1/proxy_request/', optoins);
 
     if (!response.ok && response.status != 401) {
-        console.log('Ошибка HTTP createProduct: ' + response.status);
+        console.log(`Ошибка HTTP createProduct: ${response.status}`);
         return;
     }
 
