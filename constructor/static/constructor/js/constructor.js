@@ -15,13 +15,13 @@ async function elements_listener() {
     let select_type = document.querySelector('#constructorTypes');
 
     if (select_type) {
-        select_type.addEventListener('click', get_types);
+        select_type.addEventListener('mousedown', get_types);
     }
 
     let select_fittings1 = document.querySelector('#constructorGroupsEndFittings1');
 
     if (select_fittings1) {
-        select_fittings1.addEventListener('click', get_groups_and_fittings);
+        select_fittings1.addEventListener('mousedown', get_groups_and_fittings);
         select_fittings1.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFitting1');
             set_empty_typefitting(type_fitting);
@@ -35,7 +35,7 @@ async function elements_listener() {
     let select_fittings2 = document.querySelector('#constructorGroupsEndFittings2');
 
     if (select_fittings2) {
-        select_fittings2.addEventListener('click', get_groups_and_fittings);
+        select_fittings2.addEventListener('mousedown', get_groups_and_fittings);
         select_fittings2.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFitting2');
             set_empty_typefitting(type_fitting);
@@ -49,7 +49,7 @@ async function elements_listener() {
     let select_fittingsA1 = document.querySelector('#constructorGroupsEndFittingsA1');
 
     if (select_fittingsA1) {
-        select_fittingsA1.addEventListener('click', get_groups_and_fittings);
+        select_fittingsA1.addEventListener('mousedown', get_groups_and_fittings);
         select_fittingsA1.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFittingA1');
             set_empty_typefitting(type_fitting);
@@ -60,7 +60,7 @@ async function elements_listener() {
     let select_fittingsA2 = document.querySelector('#constructorGroupsEndFittingsA2');
 
     if (select_fittingsA2) {
-        select_fittingsA2.addEventListener('click', get_groups_and_fittings);
+        select_fittingsA2.addEventListener('mousedown', get_groups_and_fittings);
         select_fittingsA2.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFittingA2');
             set_empty_typefitting(type_fitting);
@@ -71,7 +71,7 @@ async function elements_listener() {
     let select_diameters = document.querySelector('#constructorDiameters');
 
     if (select_diameters) {
-        select_diameters.addEventListener('click', get_diameters);
+        select_diameters.addEventListener('mousedown', get_diameters);
         select_diameters.addEventListener('change', () => {
             set_empty_typefitting(document.querySelector('#constructorTypeFitting1'));
             clear_image('#constructorImg1');
@@ -89,7 +89,7 @@ async function elements_listener() {
     let select_pressures = document.querySelector('#constructorPressures');
 
     if (select_pressures) {
-        select_pressures.addEventListener('click', get_pressures);
+        select_pressures.addEventListener('mousedown', get_pressures);
         select_pressures.addEventListener('change', () => {
             set_empty_typefitting(document.querySelector('#constructorTypeFitting1'));
             clear_image('#constructorImg1');
@@ -113,31 +113,31 @@ async function elements_listener() {
     let select_lengths = document.querySelector('#constructorLengthsHoses');
 
     if (select_lengths) {
-        select_lengths.addEventListener('click', get_lengths);
+        select_lengths.addEventListener('mousedown', get_lengths);
     }
 
     let select_innerscreen = document.querySelector('#constructorInnerScreen');
 
     if (select_innerscreen) {
-        select_innerscreen.addEventListener('click', get_innerscreen);
+        select_innerscreen.addEventListener('mousedown', get_innerscreen);
     }
 
     let select_outershells = document.querySelector('#constructorOuterShells');
 
     if (select_outershells) {
-        select_outershells.addEventListener('click', get_outershells);
+        select_outershells.addEventListener('mousedown', get_outershells);
     }
 
     let select_braids = document.querySelector('#constructorBraid');
 
     if (select_braids) {
-        select_braids.addEventListener('click', get_braid);
+        select_braids.addEventListener('mousedown', get_braid);
     }
 
     let select_materials1 = document.querySelector('#constructorMaterials1');
 
     if (select_materials1) {
-        select_materials1.addEventListener('click', get_materials);
+        select_materials1.addEventListener('mousedown', get_materials);
         select_materials1.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFitting1');
             set_empty_typefitting(type_fitting);
@@ -148,7 +148,7 @@ async function elements_listener() {
     let select_materials2 = document.querySelector('#constructorMaterials2');
 
     if (select_materials2) {
-        select_materials2.addEventListener('click', get_materials);
+        select_materials2.addEventListener('mousedown', get_materials);
         select_materials2.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFitting2');
             set_empty_typefitting(type_fitting);
@@ -159,7 +159,7 @@ async function elements_listener() {
     let select_materialsA1 = document.querySelector('#constructorMaterialsA1');
 
     if (select_materialsA1) {
-        select_materialsA1.addEventListener('click', get_materials);
+        select_materialsA1.addEventListener('mousedown', get_materials);
         select_materialsA1.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFittingA1');
             set_empty_typefitting(type_fitting);
@@ -170,7 +170,7 @@ async function elements_listener() {
     let select_materialsA2 = document.querySelector('#constructorMaterialsA2');
 
     if (select_materialsA2) {
-        select_materialsA2.addEventListener('click', get_materials);
+        select_materialsA2.addEventListener('mousedown', get_materials);
         select_materialsA2.addEventListener('change', () => {
             let type_fitting = document.querySelector('#constructorTypeFittingA2');
             set_empty_typefitting(type_fitting);
@@ -181,28 +181,28 @@ async function elements_listener() {
     let select_types_fittings1 = document.querySelector('#constructorTypeFitting1');
 
     if (select_types_fittings1) {
-        select_types_fittings1.addEventListener('click', get_types_fittings1);
+        select_types_fittings1.addEventListener('mousedown', get_types_fittings1);
         select_types_fittings1.addEventListener('change', get_image_part_of_product);
     }
 
     let select_types_fittings2 = document.querySelector('#constructorTypeFitting2');
 
     if (select_types_fittings2) {
-        select_types_fittings2.addEventListener('click', get_types_fittings2);
+        select_types_fittings2.addEventListener('mousedown', get_types_fittings2);
         select_types_fittings2.addEventListener('change', get_image_part_of_product);
     }
 
     let select_types_fittingsA1 = document.querySelector('#constructorTypeFittingA1');
 
     if (select_types_fittingsA1) {
-        select_types_fittingsA1.addEventListener('click', get_types_fittingsA1);
+        select_types_fittingsA1.addEventListener('mousedown', get_types_fittingsA1);
         select_types_fittingsA1.addEventListener('change', get_image_part_of_product);
     }
 
     let select_types_fittingsA2 = document.querySelector('#constructorTypeFittingA2');
 
     if (select_types_fittingsA2) {
-        select_types_fittingsA2.addEventListener('click', get_types_fittingsA2);
+        select_types_fittingsA2.addEventListener('mousedown', get_types_fittingsA2);
         select_types_fittingsA2.addEventListener('change', get_image_part_of_product);
     }
 
@@ -456,7 +456,10 @@ async function get_pressures() {
         return;
     }
 
-    for (let pressure of pressures.list) {
+    const new_set = new Set(pressures.list);
+    const unique_pressures_list = Array.from(new_set);
+
+    for (let pressure of unique_pressures_list) {
         let option = document.createElement('option');
         option.value = pressure.Code;
         option.textContent = pressure.Value;
