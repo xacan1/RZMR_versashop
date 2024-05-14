@@ -127,10 +127,10 @@
                 </div>
                 <div class="mb-1">
                     <img class="constructor-icon-size" src="{% static 'rzmr/img/braid.svg' %}" alt="braid">
-                    {{ form.braids.errors }}
-                    {{ form.braids }}
+                    {{ form.braid.errors }}
+                    {{ form.braid }}
                 </div>
-                <div class="mb-1">
+                <div class="mb-1 d-none">
                     <img class="constructor-icon-size" src="" alt="">
                     {{ form.corrugation.errors }}
                     {{ form.corrugation }}
@@ -174,8 +174,11 @@
                 {{ form.materialsA2 }}
                 {{ form.typefittingA2.errors }}
                 {{ form.typefittingA2 }}
-                <div class="button text-center">
-                    <button class="btn btn-secondary w-100" type="button" id="constructorCopyA1">Копировать ответные детали КА1</button>
+                <div class="button text-center py-2">
+                    <button class="btn btn-secondary w-100" type="button" id="constructorCopy1">Скопировать концевую арматуру (КА1)</button>
+                </div>
+                <div class="button text-center py-2">
+                    <button class="btn btn-secondary w-100" type="button" id="constructorCopyA1">Скопировать ответные детали к арматуре 1</button>
                 </div>
             </div>
         </div>

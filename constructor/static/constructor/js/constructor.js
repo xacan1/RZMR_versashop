@@ -79,9 +79,10 @@ async function elements_listener() {
             clear_image('#constructorImg2');
             set_empty_pressures(document.querySelector('#constructorPressures'));
             set_empty_innerscreen(document.querySelector('#constructorInnerScreen'));
-            set_empty_braids(document.querySelector('#constructorBraids'));
+            set_empty_braids(document.querySelector('#constructorBraid'));
             set_empty_corrugation(document.querySelector('#constructorCorrugation'));
             get_corrugation();
+            get_braid();
         });
     }
 
@@ -96,9 +97,10 @@ async function elements_listener() {
             clear_image('#constructorImg2');
             set_empty_typefitting(document.querySelector('#constructorTypeFittingA1'));
             set_empty_typefitting(document.querySelector('#constructorTypeFittingA2'));
-            set_empty_braids(document.querySelector('#constructorBraids'));
+            set_empty_braids(document.querySelector('#constructorBraid'));
             set_empty_corrugation(document.querySelector('#constructorCorrugation'));
             get_corrugation();
+            get_braid();
         });
     }
 
@@ -126,10 +128,10 @@ async function elements_listener() {
         select_outershells.addEventListener('click', get_outershells);
     }
 
-    let select_braids = document.querySelector('#constructorBraids');
+    let select_braids = document.querySelector('#constructorBraid');
 
     if (select_braids) {
-        select_braids.addEventListener('click', get_braids);
+        select_braids.addEventListener('click', get_braid);
     }
 
     let select_materials1 = document.querySelector('#constructorMaterials1');
@@ -204,10 +206,16 @@ async function elements_listener() {
         select_types_fittingsA2.addEventListener('change', get_image_part_of_product);
     }
 
-    let button_copy_K1 = document.querySelector('#constructorCopyA1');
+    let button_copy1 = document.querySelector('#constructorCopy1');
 
-    if (button_copy_K1) {
-        button_copy_K1.addEventListener('click', copy_from_K1);
+    if (button_copy1) {
+        button_copy1.addEventListener('click', copy_from1);
+    }
+
+    let button_copyA1 = document.querySelector('#constructorCopyA1');
+
+    if (button_copyA1) {
+        button_copyA1.addEventListener('click', copy_fromA1);
     }
 
     let button_clear_form = document.querySelector('#constructorClearForm');
@@ -257,10 +265,10 @@ function set_empty_innerscreen(innerscreen) {
 
 function set_empty_corrugation(corrugation) {
     corrugation.innerHTML = '';
-    let option_empty = document.createElement('option');
-    option_empty.value = '';
-    option_empty.textContent = '- Гофра -';
-    corrugation.appendChild(option_empty);
+    // let option_empty = document.createElement('option');
+    // option_empty.value = '';
+    // option_empty.textContent = '- Гофра -';
+    // corrugation.appendChild(option_empty);
 }
 
 function set_empty_typefitting(type_fitting) {
@@ -291,7 +299,7 @@ async function get_types() {
     const id = this.getAttribute('id');
     let select_type = document.querySelector(`#${id}`);
 
-    if (select_type.childElementCount > 1) {
+    if (select_type.childElementCount > 0) {
         return;
     }
 
@@ -459,7 +467,7 @@ async function get_pressures() {
 async function get_corrugation() {
     let select_corrugation = document.querySelector('#constructorCorrugation');
 
-    if (select_corrugation.childElementCount > 1) {
+    if (select_corrugation.childElementCount > 0) {
         return;
     }
 
@@ -605,9 +613,8 @@ async function get_outershells() {
     }
 }
 
-async function get_braids() {
-    const id = this.getAttribute('id');
-    let select_braids = document.querySelector(`#${id}`);
+async function get_braid() {
+    let select_braids = document.querySelector('#constructorBraid');
 
     if (select_braids.childElementCount > 1) {
         return;
@@ -615,10 +622,10 @@ async function get_braids() {
 
     let diameter = document.querySelector('#constructorDiameters');
     let pressure = document.querySelector('#constructorPressures');
-    let request1C = '';
+    let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getBraid';
 
     if (diameter && diameter.value && pressure && pressure.value) {
-        request1C = `http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListBraidStartSelection&pressure=${pressure.value}&diameter=${diameter.value}`;
+        request1C += `&diameter=${diameter.value}&pressure=${pressure.value}`;
     }
     else {
         return;
@@ -641,19 +648,23 @@ async function get_braids() {
         return;
     }
 
-    let braids = await response.json();
+    let braid = await response.json();
 
-    if (Object.keys(braids).length === 0) {
+    if (Object.keys(braid).length === 0) {
         console.log(`Пустой ответ для ${id}`);
         return;
     }
 
-    for (let braid of braids.list) {
-        let option = document.createElement('option');
-        option.value = braid.Code;
-        option.textContent = braid.Value;
-        select_braids.appendChild(option);
+    if (braid.Code === '0') {
+        return;
     }
+
+    let option = document.createElement('option');
+    option.value = braid.Code;
+    option.textContent = braid.Value;
+    select_braids.appendChild(option);
+    select_braids.value = option.value;
+    select_braids.dispatchEvent(new Event('change'));
 }
 
 async function get_lengths() {
@@ -1105,7 +1116,7 @@ async function get_image_part_of_product() {
         let response_bytes = await response.blob();
         let img_url = URL.createObjectURL(response_bytes);
         img.setAttribute('src', img_url);
-        URL.revokeObjectURL(img_url);
+        img.addEventListener('load', (event) => { URL.revokeObjectURL(img_url); }, { once: true, });
     }
 }
 
@@ -1114,7 +1125,22 @@ function clear_image(id_img) {
     img.setAttribute('src', '');
 }
 
-function copy_from_K1() {
+function copy_from1() {
+    let select_fittings2 = document.querySelector('#constructorGroupsEndFittings2');
+    select_fittings2.innerHTML = document.querySelector('#constructorGroupsEndFittings1').innerHTML;
+    select_fittings2.value = document.querySelector('#constructorGroupsEndFittings1').value;
+
+    let select_materials2 = document.querySelector('#constructorMaterials2');
+    select_materials2.innerHTML = document.querySelector('#constructorMaterials1').innerHTML;
+    select_materials2.value = document.querySelector('#constructorMaterials1').value;
+
+    let type_fitting2 = document.querySelector('#constructorTypeFitting2');
+    type_fitting2.innerHTML = document.querySelector('#constructorTypeFitting1').innerHTML;
+    type_fitting2.value = document.querySelector('#constructorTypeFitting1').value;
+    type_fitting2.dispatchEvent(new Event('change'));
+}
+
+function copy_fromA1() {
     let select_fittingsA2 = document.querySelector('#constructorGroupsEndFittingsA2');
     select_fittingsA2.innerHTML = document.querySelector('#constructorGroupsEndFittingsA1').innerHTML;
     select_fittingsA2.value = document.querySelector('#constructorGroupsEndFittingsA1').value;
@@ -1136,7 +1162,7 @@ function clear_form() {
     clear_image('#constructorImgA2');
     set_empty_innerscreen(document.querySelector('#constructorInnerScreen'));
     set_empty_outershells(document.querySelector('#constructorOuterShells'));
-    set_empty_braids(document.querySelector('#constructorBraids'));
+    set_empty_braids(document.querySelector('#constructorBraid'));
     set_empty_typefitting(document.querySelector('#constructorTypeFitting1'));
     set_empty_typefitting(document.querySelector('#constructorTypeFitting2'));
     set_empty_typefitting(document.querySelector('#constructorTypeFittingA1'));
@@ -1160,7 +1186,7 @@ async function create_product() {
     let diameter = document.querySelector('#constructorDiameters').value;
     let length = document.querySelector('#constructorLengthsHoses').value;
     let corrugation_code = document.querySelector('#constructorCorrugation').value;
-    let braid_code = document.querySelector('#constructorBraids').value;
+    let braid_code = document.querySelector('#constructorBraid').value;
 
     if (product_type_code) {
         data.product_type_code = product_type_code;

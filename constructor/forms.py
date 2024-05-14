@@ -9,7 +9,7 @@ class ConstructorForm(forms.Form):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         initial = kwargs['initial']
-        self.fields['types'].choices = [('','- Тип изделия -')] + initial['types_choices']
+        self.fields['types'].choices = initial['types_choices']
         self.fields['diameters'].choices = [('','- Условный диаметр, DN(мм) -')] + initial['diameters_choices']
         self.fields['pressures'].choices = [('', '- Рабочее давление, PN(Бар) -')]
         self.fields['lengths'].choices = [('','- Длина, L(мм) -')] + initial['lengths_choices']
@@ -27,8 +27,7 @@ class ConstructorForm(forms.Form):
         self.fields['typefittingA2'].choices = [('', '- Тип концевой арматуры -')]
         self.fields['innerscreen'].choices = [('', '- Внутренний экран -')]
         self.fields['outershells'].choices = [('', '- Наружная оболочка -')]
-        self.fields['braids'].choices = [('', '- Оплетка -')]
-        self.fields['corrugation'].choices = [('', '- Гофра -')]
+        self.fields['braid'].choices = [('', '- Оплетка -')]
 
     fittings1 = forms.ChoiceField(required=False,
                                   widget=forms.Select(attrs={'class': 'form-select form-select-sm mb-1', 'id': 'constructorGroupsEndFittings1', }))
@@ -66,8 +65,8 @@ class ConstructorForm(forms.Form):
                                     widget=forms.Select(attrs={'class': 'form-select form-select-sm d-inline-block w-75', 'id': 'constructorInnerScreen', }))
     outershells = forms.ChoiceField(required=False,
                                     widget=forms.Select(attrs={'class': 'form-select form-select-sm d-inline-block w-75', 'id': 'constructorOuterShells', }))
-    braids = forms.ChoiceField(required=False,
-                               widget=forms.Select(attrs={'class': 'form-select form-select-sm d-inline-block border border-danger w-75', 'id': 'constructorBraids', }))
+    braid = forms.ChoiceField(required=False,
+                               widget=forms.Select(attrs={'class': 'form-select form-select-sm d-inline-block border border-danger w-75', 'id': 'constructorBraid', }))
     corrugation = forms.CharField(required=True,
                                   widget=forms.Select(attrs={'class': 'form-select form-select-sm d-inline-block border border-danger w-75', 'id': 'constructorCorrugation', }))
     workspace = forms.CharField(max_length=100, required=False,

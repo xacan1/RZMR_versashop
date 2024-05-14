@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-13 12:26+0000\n"
+"POT-Creation-Date: 2024-05-13 12:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,8 +75,8 @@ msgid "Register"
 msgstr "Тіркеу"
 
 #: main/templates/main/registration-success.html:7
-msgid "You are now registered. Activation email sent."
-msgstr ""
+msgid "You have successfully registered on the site"
+msgstr "Сіз сайтқа сәтті тіркелдіңіз"
 
 #: personal_account/templates/personal_account/base.html:13
 msgid "Sections"
@@ -85,16 +85,19 @@ msgstr "Бөлімдер"
 #: personal_account/templates/personal_account/base.html:18
 #: personal_account/templates/personal_account/base.html:20
 #: personal_account/templates/personal_account/personal-account-orders.html:10
+#: personal_account/views.py:38
 msgid "Orders"
 msgstr "Тапсырыстар"
 
 #: personal_account/templates/personal_account/base.html:25
 #: personal_account/templates/personal_account/base.html:27
+#: personal_account/views.py:26
 msgid "Profile settings"
 msgstr "Профиль параметрлері"
 
 #: personal_account/templates/personal_account/base.html:32
 #: personal_account/templates/personal_account/base.html:34
+#: personal_account/views.py:50
 msgid "Organizations"
 msgstr "Ұйымдар"
 
@@ -171,6 +174,12 @@ msgstr "Баға түрі"
 msgid "Change password"
 msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
 
+#: personal_account/views.py:14 personal_account/views.py:24
+#: personal_account/views.py:36 personal_account/views.py:48
+#: rzmr/templates/rzmr/base.html:96 rzmr/templates/rzmr/index.html:270
+msgid "Personal account"
+msgstr "Жеке кабинет"
+
 #: rzmr/templates/rzmr/about.html:123 rzmr/templates/rzmr/index.html:291
 msgid "Our partners"
 msgstr "Біздің серіктестер"
@@ -182,10 +191,6 @@ msgstr "Қоңырауға тапсырыс беру"
 #: rzmr/templates/rzmr/base.html:75
 msgid "Change"
 msgstr ""
-
-#: rzmr/templates/rzmr/base.html:96 rzmr/templates/rzmr/index.html:270
-msgid "Personal account"
-msgstr "Жеке кабинет"
 
 #: rzmr/templates/rzmr/base.html:103
 msgid "Log out"
@@ -222,17 +227,18 @@ msgstr "Бос жұмыс орындары"
 #: rzmr/templates/rzmr/base.html:222 rzmr/templates/rzmr/base.html:224
 #: rzmr/templates/rzmr/base.html:340 rzmr/templates/rzmr/index.html:12
 #: rzmr/templates/rzmr/index.html:137 rzmr/views.py:111 rzmr/views.py:121
-#: rzmr/views.py:133 rzmr/views.py:145 rzmr/views.py:158 rzmr/views.py:171
-#: rzmr/views.py:184 rzmr/views.py:197 rzmr/views.py:210 rzmr/views.py:221
-#: rzmr/views.py:234 rzmr/views.py:247 rzmr/views.py:260 rzmr/views.py:272
-#: rzmr/views.py:285 rzmr/views.py:298 rzmr/views.py:311 rzmr/views.py:323
-#: rzmr/views.py:335 rzmr/views.py:348 rzmr/views.py:361 rzmr/views.py:374
-#: rzmr/views.py:387 rzmr/views.py:400 rzmr/views.py:412 rzmr/views.py:424
+#: rzmr/views.py:132 rzmr/views.py:144 rzmr/views.py:157 rzmr/views.py:170
+#: rzmr/views.py:183 rzmr/views.py:196 rzmr/views.py:209 rzmr/views.py:220
+#: rzmr/views.py:233 rzmr/views.py:246 rzmr/views.py:259 rzmr/views.py:271
+#: rzmr/views.py:284 rzmr/views.py:297 rzmr/views.py:310 rzmr/views.py:322
+#: rzmr/views.py:334 rzmr/views.py:347 rzmr/views.py:360 rzmr/views.py:373
+#: rzmr/views.py:386 rzmr/views.py:399 rzmr/views.py:411 rzmr/views.py:423
 msgid "Metal hoses"
 msgstr "Металиілгіш түтіктер"
 
 #: rzmr/templates/rzmr/base.html:225 rzmr/templates/rzmr/base.html:238
 #: rzmr/templates/rzmr/base.html:341 rzmr/templates/rzmr/base.html:349
+#: rzmr/views.py:122
 msgid "Fittings"
 msgstr "Ұштық арматура"
 
@@ -252,6 +258,12 @@ msgstr "Сапа стандарттары"
 
 #: rzmr/templates/rzmr/base.html:233 rzmr/templates/rzmr/base.html:347
 #: rzmr/templates/rzmr/index.html:32 rzmr/templates/rzmr/index.html:151
+#: rzmr/views.py:435 rzmr/views.py:445 rzmr/views.py:457 rzmr/views.py:469
+#: rzmr/views.py:493 rzmr/views.py:506 rzmr/views.py:519 rzmr/views.py:532
+#: rzmr/views.py:545 rzmr/views.py:557 rzmr/views.py:570 rzmr/views.py:583
+#: rzmr/views.py:596 rzmr/views.py:608 rzmr/views.py:621 rzmr/views.py:634
+#: rzmr/views.py:646 rzmr/views.py:659 rzmr/views.py:672 rzmr/views.py:685
+#: rzmr/views.py:698
 msgid "PTFE Metal hoses"
 msgstr "Фторопластық иілгіш түтіктер"
 

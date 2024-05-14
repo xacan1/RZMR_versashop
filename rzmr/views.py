@@ -432,7 +432,7 @@ class PTFEView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Фторопластовые рукава')
+        c_def = self.get_user_context(title=_('PTFE Metal hoses'))
         return {**context, **c_def}
 
 
@@ -442,7 +442,7 @@ class PTFERecommendationsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),]
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),]
         c_def = self.get_user_context(
             title='Рекомендации по измерениям и соответствиям стандартам', breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -454,7 +454,7 @@ class PTFEFittingsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),]
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),]
         c_def = self.get_user_context(
             title='Концевая арматура для фторопластовых рукавов серии РФ', breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -466,7 +466,7 @@ class PTFEStandartsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),]
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),]
         c_def = self.get_user_context(
             title='Стандарты качества на фторопластовых рукавов серии РФП, РФГ', breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -490,7 +490,7 @@ class PTFEPloskayaStandartnoeIspolnenieView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-pipe', 'Трубка')]
         c_def = self.get_user_context(
             title='Плоская стандартное исполнение', breadcrumb=breadcrumb)
@@ -503,7 +503,7 @@ class PTFEPloskayaTolstostennayaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-pipe', 'Трубка')]
         c_def = self.get_user_context(
             title='Плоская толстостенная трубка для фторопластовых рукавов', breadcrumb=breadcrumb)
@@ -516,7 +516,7 @@ class PTFEGofrirovannayaStandartnoeIspolnenieView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-pipe', 'Трубка')]
         c_def = self.get_user_context(
             title='Гофрированная стандартное исполнение', breadcrumb=breadcrumb)
@@ -529,7 +529,7 @@ class PTFEGofrirovannayaTolstostennayaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-pipe', 'Трубка')]
         c_def = self.get_user_context(
             title='Гофрированная толстостенная трубка для фторопластовых рукавов', breadcrumb=breadcrumb)
@@ -542,7 +542,7 @@ class PTFELinerView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),]
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),]
         c_def = self.get_user_context(
             title='Футеровка PTFE', breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -554,7 +554,7 @@ class PTFEFuterovkaPloskoyTrubkiNaFlanetsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-liner', 'Футеровка PTFE')]
         c_def = self.get_user_context(
             title='PTFE футеровка плоской трубки на фланец', breadcrumb=breadcrumb)
@@ -567,7 +567,7 @@ class PTFEFuterovkaGofrirovannoyTrubkiNaFlanetsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-liner', 'Футеровка PTFE')]
         c_def = self.get_user_context(
             title='PTFE футеровка гофрированной трубки на фланец', breadcrumb=breadcrumb)
@@ -580,7 +580,7 @@ class PTFEFuterovkaPloskoyTrubkiNaNippelGaykiView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-liner', 'Футеровка PTFE')]
         c_def = self.get_user_context(
             title='PTFE футеровка плоской трубки на ниппель гайки', breadcrumb=breadcrumb)
@@ -593,7 +593,7 @@ class PTFEInnerView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),]
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),]
         c_def = self.get_user_context(
             title='Внутренний экран для фторопластовых рукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -605,7 +605,7 @@ class PTFEAntistaticheskayaPrisadkaPloskayaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-inner', 'Внутренний экран')]
         c_def = self.get_user_context(
             title='Антистатическая присадка плоская', breadcrumb=breadcrumb)
@@ -618,7 +618,7 @@ class PTFEAntistaticheskayaPrisadkaGofrirovannayaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-inner', 'Внутренний экран')]
         c_def = self.get_user_context(
             title='Антистатическая присадка гофрированная', breadcrumb=breadcrumb)
@@ -631,7 +631,7 @@ class PTFEOutsideView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),]
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),]
         c_def = self.get_user_context(
             title='Наружная оболочка для фторопластовых рукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -643,7 +643,7 @@ class PTFEOutsideTermochekholView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-outside', 'Наружная оболочка')]
         c_def = self.get_user_context(
             title='Термочехол для фторопластовых рукавов', breadcrumb=breadcrumb)
@@ -656,7 +656,7 @@ class PTFEOutsideRezinovayaObolochkaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-outside', 'Наружная оболочка')]
         c_def = self.get_user_context(
             title='Резиновая оболочка для фторопластовых рукавов', breadcrumb=breadcrumb)
@@ -669,7 +669,7 @@ class PTFEOutsidePruzhinaView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-outside', 'Наружная оболочка')]
         c_def = self.get_user_context(
             title='Пружина для фторопластовых рукавов', breadcrumb=breadcrumb)
@@ -682,7 +682,7 @@ class PTFEOutsidePloskayaTrubkaVMetallorukaveVOpletkeView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-outside', 'Наружная оболочка')]
         c_def = self.get_user_context(
             title='Плоская трубка в металлорукаве в оплетке', breadcrumb=breadcrumb)
@@ -695,7 +695,7 @@ class PTFEOutsideGofrirovannayaTrubkaVMetallorukaveVOpletkeView(DataMixin, FormV
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('ptfe', 'Фторопластовые рукава'),
+        breadcrumb = [('ptfe', _('PTFE Metal hoses')),
                       ('ptfe-outside', 'Наружная оболочка')]
         c_def = self.get_user_context(
             title='Гофрированная трубка в металлорукаве в оплетке', breadcrumb=breadcrumb)
