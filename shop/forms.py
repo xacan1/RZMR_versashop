@@ -9,8 +9,8 @@ class SimpleForm(forms.Form):
 
 
 class ProductListForm(forms.Form):
-    SORT_CHOICES = (('price_asc', 'Сначала дешевле'), ('price_desc', 'Сначала дороже'),
-                    ('alphabet_asc', 'По алфавиту А - Я'), ('alphabet_desc', 'По алфавиту Я - А'),)
+    SORT_CHOICES = (('price_asc', _('low-priced first')), ('price_desc', _('high-priced first')),
+                    ('alphabet_asc', _('Sort alphabetically from A to Z')), ('alphabet_desc', _('Sort alphabetically from Z to A')),)
 
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
@@ -68,7 +68,7 @@ class ProductListForm(forms.Form):
         required=False
     )
     sorting = forms.ChoiceField(
-        label='Упорядочить:',
+        label=_('Sort by:'),
         choices=SORT_CHOICES,
         widget=forms.Select(attrs={
                             'class': 'form-control', 'id': 'selectSorting', 'form': 'filtersAttributes'}),

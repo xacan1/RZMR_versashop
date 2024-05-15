@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from django.core.paginator import Paginator
 from django.urls import reverse_lazy
 from django.http import HttpRequest, HttpResponse, FileResponse
+from django.utils.translation import gettext_lazy as _
 import io
 from shop.forms import *
 from shop import services
@@ -21,7 +22,7 @@ class IndexShopView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         top_products = services.get_top_sales()
         context['top_products'] = top_products
-        c_def = self.get_user_context(title='Магазин РЗМ')
+        c_def = self.get_user_context(title= _('Shop'))
         return {**context, **c_def}
 
 
@@ -41,7 +42,7 @@ class CartView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Корзина')
+        c_def = self.get_user_context(title=_('Cart'))
         return {**context, **c_def}
 
 
@@ -223,7 +224,7 @@ class SearchView(DataMixin, ListView):
         q = self.request.GET.get('q')
         add_for_pagination = f'&q={q}'
 
-        c_def = self.get_user_context(title=f'поиск: {q}',
+        c_def = self.get_user_context(title=f"{_('search')}: {q}",
                                       search_text=q,
                                       amount_product_from=self.amount_product_from,
                                       amount_product_upto=self.amount_product_upto,
@@ -325,8 +326,8 @@ class OrderView(LoginRequiredMixin, DataMixin, DetailView):
         context = super().get_context_data(**kwargs)
         order = kwargs['object']
         breadcrumb = [
-            ('personal-account', 'Личный кабинет'),
-            ('user-orders', 'Заказы'),
+            ('personal-account', _('Personal account')),
+            ('user-orders', _('Orders')),
         ]
         c_def = self.get_user_context(title=f'{order}', breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -372,7 +373,7 @@ class ContractorUpdateView(LoginRequiredMixin, DataMixin, UpdateView):
         context = super().get_context_data(**kwargs)
         kwargs = self.get_form_kwargs()
         contractor = kwargs['instance']
-        breadcrumb = [('personal-account', 'Личный кабинет'),
+        breadcrumb = [('personal-account', _('Personal account')),
                       ('user-companies', 'Организации'),]
         c_def = self.get_user_context(title=f'Редактирование организации: {contractor.name}',
                                       breadcrumb=breadcrumb)
@@ -388,7 +389,7 @@ class ContractorCreateView(LoginRequiredMixin, DataMixin, CreateView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('personal-account', 'Личный кабинет'),
+        breadcrumb = [('personal-account', _('Personal account')),
                       ('user-companies', 'Организации'),]
         c_def = self.get_user_context(title='Добавление организации',
                                       breadcrumb=breadcrumb)

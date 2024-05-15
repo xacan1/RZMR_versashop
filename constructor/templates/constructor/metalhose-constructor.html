@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'constructor/css/constructor.css' %}">
 <div class="container">
     <div class="row">
-        <div class="col-12 text-uzm">
+        <div class="col-12">
             <h4 class="py-2">{{ title }}</h4>
             <p>
                 Вы находитесь в конфигураторе рукавов РГМ. Он позволяет создать металлорукав РГМ с требуемыми
@@ -28,11 +28,7 @@
         </div>
     </div>
     <div class="row">
-        <!-- <div class="col-sm-2">
-            <select id="type" class="form-select form-select-sm">
-            </select>
-        </div> -->
-        <div class="col-sm-2 fs-6">
+        <!-- <div class="col-sm-2 fs-6">
             <a class="param" onclick="GotoInput('#constructorDiameters')"> 1. Параметры изделия</a>
         </div>
         <div class="col-sm-2 fs-6">
@@ -49,7 +45,7 @@
         </div>
         <div class="col-sm-2">
 
-        </div>
+        </div> -->
     </div>
     <div class="row overflow-hidden">
         <div class="col-12 text-center" style="transform: scale(2); font-size: 0px;">
@@ -77,7 +73,7 @@
                 {{ form.typefitting1.errors }}
                 {{ form.typefitting1 }}
                 <hr>
-                <div class="fs-6 fw-bold">
+                <div class="fs-6 fw-bold pt-5">
                     Ответные детали к арматуре 1
                 </div>
                 {{ form.fittingsA1.errors }}
@@ -165,6 +161,9 @@
                 {{ form.typefitting2.errors }}
                 {{ form.typefitting2 }}
                 <hr>
+                <div class="button text-center pb-2">
+                    <button class="btn btn-secondary w-100" type="button" id="constructorCopy1">Скопировать концевую арматуру (КА1)</button>
+                </div>
                 <div class="fs-6 fw-bold">
                     Ответные детали к арматуре 2
                 </div>
@@ -174,9 +173,6 @@
                 {{ form.materialsA2 }}
                 {{ form.typefittingA2.errors }}
                 {{ form.typefittingA2 }}
-                <div class="button text-center py-2">
-                    <button class="btn btn-secondary w-100" type="button" id="constructorCopy1">Скопировать концевую арматуру (КА1)</button>
-                </div>
                 <div class="button text-center py-2">
                     <button class="btn btn-secondary w-100" type="button" id="constructorCopyA1">Скопировать ответные детали к арматуре 1</button>
                 </div>

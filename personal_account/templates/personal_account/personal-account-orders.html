@@ -23,35 +23,33 @@
         </div>
     </div>
     {% for order in page_obj %}
-    <div class="cart-single-list py-1">
-        <div class="row border-bottom">
-            <div class="col-lg-4 col-md-3 col-12">
-                <a href="{% url 'order' order.pk %}">{{ order }}</a>
-            </div>
-            <div class="col-lg-2 col-md-2 col-12">
-                {% if order.amount > 0 %}
-                {{ order.amount }}{{ order.currency.sign }}
-                {% else %}
-                <span>{% trans 'not specified' %}</span>
-                {% endif %}
-            </div>
-            <div class="col-lg-2 col-md-2 col-12">
-                {{ order.status.name }}
-            </div>
-            <div class="col-lg-1 col-md-2 col-12">
-                {% if order.paid %}
-                <span>{% trans 'Yes' %}</span>
-                {% else %}
-                <span>{% trans 'No' %}</span>
-                {% endif %}
-            </div>
-            <div class="col-lg-1 col-md-2 col-12">
-                {% if order.canceled %}
-                <span>{% trans 'Yes' %}</span>
-                {% else %}
-                <span>{% trans 'No' %}</span>
-                {% endif %}
-            </div>
+    <div class="row border-bottom py-1 cart-single-list">
+        <div class="col-lg-4 col-md-3 col-12">
+            <a href="{% url 'order' order.pk %}">{{ order }}</a>
+        </div>
+        <div class="col-lg-2 col-md-2 col-12">
+            {% if order.amount > 0 %}
+            {{ order.amount }}{{ order.currency.sign }}
+            {% else %}
+            <span>{% trans 'not specified' %}</span>
+            {% endif %}
+        </div>
+        <div class="col-lg-2 col-md-2 col-12">
+            {{ order.status.name }}
+        </div>
+        <div class="col-lg-1 col-md-2 col-12">
+            {% if order.paid %}
+            <span>{% trans 'Yes' %}</span>
+            {% else %}
+            <span>{% trans 'No' %}</span>
+            {% endif %}
+        </div>
+        <div class="col-lg-1 col-md-2 col-12">
+            {% if order.canceled %}
+            <span>{% trans 'Yes' %}</span>
+            {% else %}
+            <span>{% trans 'No' %}</span>
+            {% endif %}
         </div>
     </div>
     {% endfor %}

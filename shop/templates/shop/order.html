@@ -1,5 +1,6 @@
 {% extends 'rzmr/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <div class="shopping-cart section">
@@ -16,7 +17,7 @@
                 {% endif %}
             </div>
             <div class="col-2 icons-order text-end">
-                <a class="button-save" id="Save" title="Сохранить на компьютере">
+                <a class="button-save" id="Save" title="{% trans 'Save' %}">
                     <img src="{% static 'rzmr/img/save.svg' %}" alt="save"></a>
                 <!-- <a class="button-print" id="Print" title="Печать проекта" onclick="printJS({printable:'/start/ajax.handler.php?page=get_customer_documents', type:'pdf', showModal:true, modalMessage: 'Загрузка документа'});">
                     <img src="{% static 'rzmr/img/print.svg' %}" alt="print"></a> -->
@@ -29,16 +30,16 @@
                         <!-- <span>Изображение</span> -->
                     </div>
                     <div class="col-lg-4 col-md-3 col-12">
-                        <span>Товар</span>
+                        <span>{% trans 'Product' %}</span>
                     </div>
                     <div class="col-lg-2 col-md-2 col-12">
-                        <span>Количество</span>
+                        <span>{% trans 'Quantity' %}</span>
                     </div>
                     <div class="col-lg-2 col-md-2 col-12">
-                        <span>Цена</span>
+                        <span>{% trans 'Price' %}</span>
                     </div>
                     <div class="col-lg-2 col-md-2 col-12">
-                        <span>Сумма</span>
+                        <span>{% trans 'Amount' %}</span>
                     </div>
                 </div>
             </div>
@@ -71,7 +72,7 @@
                         {% if row_product.price > 0 %}
                         <p class="shop-price">{{ row_product.price|floatformat:'2g' }}</p>
                         {% else %}
-                        <p>По запросу</p>
+                        <p>{% trans 'on request' %}</p>
                         {% endif %}
                     </div>
                     <div class="col-lg-1 col-md-2 col-12">
@@ -93,16 +94,16 @@
                                 <!-- Итого -->
                                 <div class="shop-for-del">
                                     <ul>
-                                        <li>
-                                            Сумма товаров в заказе<span>{{ order.amount }}</span>
+                                        <li class="fw-bold fs-6">
+                                            {% trans 'Order amount' %}: <span>{{ order.amount }}</span>
                                         </li>
-                                        <li>
-                                            Доставка<span>Бесплатно</span>
-                                        </li>        
+                                        <!-- <li class="fw-bold fs-6">
+                                            {% trans 'Delivery' %}: <span>Бесплатно</span>
+                                        </li>         -->
                                         <!-- <li hidden="">Скидка<span>0,00</span>
                                         </li>         -->
-                                        <li class="last">
-                                            К оплате<span>{{ order.amount }}</span>
+                                        <li class="last fw-bold fs-6">
+                                            {% trans 'Payment amount' %}: <span>{{ order.amount }}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -110,10 +111,9 @@
                         <div class="button">
                             {% if not order.canceled %}
                             <!-- <a href="#" class="btn btn-secondary">Оплатить заказ</a> -->
-                            <a href="{% url 'order-cancel-confirm' order.pk %}" class="btn btn-secondary">Отменить заказ</a>
-                            {% else %}
-                            <a href="{% url 'user-orders' %}" class="btn btn-secondary">К списку заказов</a>
+                            <a href="{% url 'order-cancel-confirm' order.pk %}" class="btn btn-secondary">{% trans 'Cancel the order' %}</a>
                             {% endif %}
+                            <a href="{% url 'user-orders' %}" class="btn btn-secondary">{% trans 'To the list of orders' %}</a>
                         </div>
                     </div>
                 </div>

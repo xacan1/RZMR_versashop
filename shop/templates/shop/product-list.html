@@ -1,5 +1,6 @@
 {% extends 'rzmr/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <!-- Start Product Grids -->
@@ -13,7 +14,7 @@
                     {% if form %}
                     <form action="#" method="get" id="filtersAttributes">
                         <div class="single-widget range">
-                            <h6 class="uzm-filter-parameters-box-title">Максимальная цена</h6>
+                            <h6 class="uzm-filter-parameters-box-title">{% trans 'Maximum price' %}</h6>
                             {{ form.price_range_max }}
                             <div class="range-inner">
                                 <label>{% if page_obj %}{{ page_obj.0.currency.sign }}{% endif %}</label>
@@ -22,9 +23,9 @@
                         </div>
                         <!-- Start Single Widget -->
                         <div class="single-widget condition">
-                            <h5 class="py-3">Подбор параметров</h5>
-                            <div class="py-2">
-                                <button class="btn btn-secondary btn-hop">Отфильтровать</button>
+                            <h5 class="py-3">{% trans 'Selection of parameters' %}</h5>
+                            <div class="button py-2">
+                                <button class="btn btn-secondary">{% trans 'Filter' %}</button>
                             </div>
                             <div class="accordion" id="accordionAttributes">
                             {% for element in form %}
@@ -66,7 +67,7 @@
                     <!-- navbar search start -->
                     <form action="{% url 'search' %}" method="get">
                         <div class="navbar-search">
-                            <input class="search-input" type="text" name="q" value="{{ search_text }}" placeholder="Поиск" required>
+                            <input class="search-input" type="text" name="q" value="{{ search_text }}" placeholder="{% trans 'Search' %}" required>
                             
                             <button class="submit btn btn-secondary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -134,7 +135,7 @@
                                             </ul> -->
                                             <div class="price">
                                                 {% if product_info.price == 0 %}
-                                                <span>Цена по запросу</span>
+                                                <span>{% trans 'Price on request' %}</span>
                                                 {% else %}
                                                 <span>{{ product_info.currency.sign }}{{ product_info.price }}</span>
                                                 {% endif %}
@@ -142,7 +143,7 @@
                                             <div class="button p-2">
                                                 <!-- тут вызываю модальное окно, которое в свою очередь вызывает JS функцию добавления товара в корзину -->
                                                 <button class="btn btn-secondary w-100" data-shop-product-pk="{{ product_info.product.pk }}"
-                                                    data-bs-toggle="modal" data-bs-target="#successAddProductToCartModal">Заказать</button>
+                                                    data-bs-toggle="modal" data-bs-target="#successAddProductToCartModal">{% trans 'Add to cart' %}</button>
                                             </div>
                                         </div>
                                     </div>
@@ -152,7 +153,7 @@
                                 <div class="col-lg-12 col-md-12 col-12">
                                     <div class="single-product">
                                         <div class="row">
-                                            <p>НЕТ НИ ОДНОГО ТОВАРА СООТВЕТСТВУЮЩЕГО УСТАНОВЛЕННЫМ ФИЛЬТРАМ</p>
+                                            <p class="text-uppercase">{% trans 'nothing found' %}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -201,7 +202,7 @@
                                                     <div class="button">
                                                         <!-- тут вызываю модальное окно, которое в свою очередь вызывает JS функцию добавления товара в корзину -->
                                                         <button class="btn w-100" data-shop-product-pk="{{ product_info.product.pk }}" data-bs-toggle="modal" data-bs-target="#successAddProductToCartModal">
-                                                            <i class="lni lni-cart"></i>Заказать</button>
+                                                            <i class="lni lni-cart"></i>{% trans 'Add to cart' %}</button>
                                                     </div>
                                                 </div>
                                             </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-14 19:28+0000\n"
+"POT-Creation-Date: 2024-05-15 19:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,7 +89,9 @@ msgstr "Нет аккаунта? Зарегистрируйтесь!"
 msgid ""
 "Registration takes less than a minute and gives you the ability to manage "
 "your orders"
-msgstr "Регистрация занимает меньше минуты и даёт вам возможность управлять своими заказами"
+msgstr ""
+"Регистрация занимает меньше минуты и даёт вам возможность управлять своими "
+"заказами"
 
 #: main/templates/main/register.html:58
 msgid "Already registered"
@@ -100,10 +102,11 @@ msgid "You have successfully registered on the site"
 msgstr "Вы успешно зарегистрированы на сайте"
 
 #: main/views.py:59 main/views.py:71 main/views.py:84 main/views.py:97
-#: main/views.py:108 main/views.py:122 personal_account/views.py:14
-#: personal_account/views.py:24 personal_account/views.py:36
-#: personal_account/views.py:48 rzmr/templates/rzmr/base.html:96
-#: rzmr/templates/rzmr/index.html:270
+#: main/views.py:108 main/views.py:122 personal_account/views.py:15
+#: personal_account/views.py:25 personal_account/views.py:37
+#: personal_account/views.py:60 rzmr/templates/rzmr/base.html:96
+#: rzmr/templates/rzmr/index.html:270 shop/views.py:329 shop/views.py:376
+#: shop/views.py:392
 msgid "Personal account"
 msgstr "Личный кабинет"
 
@@ -111,7 +114,7 @@ msgstr "Личный кабинет"
 #: main/views.py:109 main/views.py:123
 #: personal_account/templates/personal_account/base.html:25
 #: personal_account/templates/personal_account/base.html:27
-#: personal_account/views.py:26
+#: personal_account/views.py:27
 msgid "Profile settings"
 msgstr "Настройки профиля"
 
@@ -122,13 +125,13 @@ msgstr "Разделы"
 #: personal_account/templates/personal_account/base.html:18
 #: personal_account/templates/personal_account/base.html:20
 #: personal_account/templates/personal_account/personal-account-orders.html:10
-#: personal_account/views.py:38
+#: personal_account/views.py:45 shop/views.py:330
 msgid "Orders"
 msgstr "Заказы"
 
 #: personal_account/templates/personal_account/base.html:32
 #: personal_account/templates/personal_account/base.html:34
-#: personal_account/views.py:50
+#: personal_account/views.py:62
 msgid "Organizations"
 msgstr "Организации"
 
@@ -161,6 +164,7 @@ msgid "Add my organization"
 msgstr "Добавить мою организацию"
 
 #: personal_account/templates/personal_account/personal-account-orders.html:13
+#: shop/templates/shop/order.html:42
 msgid "Amount"
 msgstr "Сумма"
 
@@ -176,17 +180,17 @@ msgstr "Оплачен"
 msgid "Canceled"
 msgstr "Отменен"
 
-#: personal_account/templates/personal_account/personal-account-orders.html:35
+#: personal_account/templates/personal_account/personal-account-orders.html:34
 msgid "not specified"
 msgstr "не указана"
 
-#: personal_account/templates/personal_account/personal-account-orders.html:43
-#: personal_account/templates/personal_account/personal-account-orders.html:50
+#: personal_account/templates/personal_account/personal-account-orders.html:42
+#: personal_account/templates/personal_account/personal-account-orders.html:49
 msgid "Yes"
 msgstr ""
 
-#: personal_account/templates/personal_account/personal-account-orders.html:45
-#: personal_account/templates/personal_account/personal-account-orders.html:52
+#: personal_account/templates/personal_account/personal-account-orders.html:44
+#: personal_account/templates/personal_account/personal-account-orders.html:51
 msgid "No"
 msgstr ""
 
@@ -511,6 +515,103 @@ msgstr "Карта концевой арматуры"
 #: rzmr/templates/rzmr/index.html:276
 msgid "Production by customer drawings"
 msgstr "Изготовление деталей по чертежам заказчика"
+
+#: shop/forms.py:12
+msgid "low-priced first"
+msgstr "Сначала дешевле"
+
+#: shop/forms.py:12
+msgid "high-priced first"
+msgstr "Сначала дороже"
+
+#: shop/forms.py:13
+msgid "Sort alphabetically from A to Z"
+msgstr "По алфавиту от А до Я"
+
+#: shop/forms.py:13
+msgid "Sort alphabetically from Z to A"
+msgstr "По алфавиту от Я до А"
+
+#: shop/forms.py:71
+msgid "Sort by:"
+msgstr "Упорядочить:"
+
+#: shop/templates/shop/order.html:20
+msgid "Save"
+msgstr ""
+
+#: shop/templates/shop/order.html:33
+msgid "Product"
+msgstr "Товар"
+
+#: shop/templates/shop/order.html:36
+msgid "Quantity"
+msgstr "Количество"
+
+#: shop/templates/shop/order.html:39
+msgid "Price"
+msgstr "Цена"
+
+#: shop/templates/shop/order.html:75
+msgid "on request"
+msgstr "по запросу"
+
+#: shop/templates/shop/order.html:98
+msgid "Order amount"
+msgstr "Сумма заказа"
+
+#: shop/templates/shop/order.html:101
+msgid "Delivery"
+msgstr "Доставка"
+
+#: shop/templates/shop/order.html:106
+msgid "Payment amount"
+msgstr "К оплате"
+
+#: shop/templates/shop/order.html:114
+msgid "Cancel the order"
+msgstr "Отменить заказ"
+
+#: shop/templates/shop/order.html:116
+msgid "To the list of orders"
+msgstr "К списку заказов"
+
+#: shop/templates/shop/product-list.html:17
+msgid "Maximum price"
+msgstr "Максимальная цена"
+
+#: shop/templates/shop/product-list.html:26
+msgid "Selection of parameters"
+msgstr "Выбор параметров"
+
+#: shop/templates/shop/product-list.html:28
+msgid "Filter"
+msgstr "Отфильтровать"
+
+#: shop/templates/shop/product-list.html:70
+msgid "Search"
+msgstr ""
+
+#: shop/templates/shop/product-list.html:138
+msgid "Price on request"
+msgstr "Цена по запросу"
+
+#: shop/templates/shop/product-list.html:146
+#: shop/templates/shop/product-list.html:205
+msgid "Add to cart"
+msgstr "В корзину"
+
+#: shop/templates/shop/product-list.html:156
+msgid "nothing found"
+msgstr "ничего не найдено"
+
+#: shop/views.py:25
+msgid "Shop"
+msgstr "Магазин"
+
+#: shop/views.py:45
+msgid "Cart"
+msgstr "Корзина"
 
 #: versa/settings.py:148
 msgid "Russian"

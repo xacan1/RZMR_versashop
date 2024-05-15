@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-14 19:27+0000\n"
+"POT-Creation-Date: 2024-05-15 19:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,6 +28,12 @@ msgstr ""
 
 #: main/forms.py:46
 msgid "Email address"
+msgstr "Email"
+
+#: main/forms.py:72 main/models.py:38
+#, fuzzy
+#| msgid "Email address"
+msgid "email address"
 msgstr "Email"
 
 #: main/forms.py:79
@@ -83,7 +89,9 @@ msgstr "Есептік жазбаңыз жоқ па? Тіркелу!"
 msgid ""
 "Registration takes less than a minute and gives you the ability to manage "
 "your orders"
-msgstr "Тіркелу бір минуттан аз уақытты алады және тапсырыстарды басқару мүмкіндігін береді"
+msgstr ""
+"Тіркелу бір минуттан аз уақытты алады және тапсырыстарды басқару мүмкіндігін "
+"береді"
 
 #: main/templates/main/register.html:58
 msgid "Already registered"
@@ -94,10 +102,11 @@ msgid "You have successfully registered on the site"
 msgstr "Сіз сайтқа сәтті тіркелдіңіз"
 
 #: main/views.py:59 main/views.py:71 main/views.py:84 main/views.py:97
-#: main/views.py:108 main/views.py:122 personal_account/views.py:14
-#: personal_account/views.py:24 personal_account/views.py:36
-#: personal_account/views.py:48 rzmr/templates/rzmr/base.html:96
-#: rzmr/templates/rzmr/index.html:270
+#: main/views.py:108 main/views.py:122 personal_account/views.py:15
+#: personal_account/views.py:25 personal_account/views.py:37
+#: personal_account/views.py:60 rzmr/templates/rzmr/base.html:96
+#: rzmr/templates/rzmr/index.html:270 shop/views.py:329 shop/views.py:376
+#: shop/views.py:392
 msgid "Personal account"
 msgstr "Жеке кабинет"
 
@@ -105,7 +114,7 @@ msgstr "Жеке кабинет"
 #: main/views.py:109 main/views.py:123
 #: personal_account/templates/personal_account/base.html:25
 #: personal_account/templates/personal_account/base.html:27
-#: personal_account/views.py:26
+#: personal_account/views.py:27
 msgid "Profile settings"
 msgstr "Профиль параметрлері"
 
@@ -116,13 +125,13 @@ msgstr "Бөлімдер"
 #: personal_account/templates/personal_account/base.html:18
 #: personal_account/templates/personal_account/base.html:20
 #: personal_account/templates/personal_account/personal-account-orders.html:10
-#: personal_account/views.py:38
+#: personal_account/views.py:45 shop/views.py:330
 msgid "Orders"
 msgstr "Тапсырыстар"
 
 #: personal_account/templates/personal_account/base.html:32
 #: personal_account/templates/personal_account/base.html:34
-#: personal_account/views.py:50
+#: personal_account/views.py:62
 msgid "Organizations"
 msgstr "Ұйымдар"
 
@@ -155,6 +164,7 @@ msgid "Add my organization"
 msgstr "Менің ұйымымды қосыңыз"
 
 #: personal_account/templates/personal_account/personal-account-orders.html:13
+#: shop/templates/shop/order.html:42
 msgid "Amount"
 msgstr "Сумма"
 
@@ -170,17 +180,17 @@ msgstr "Ақылы"
 msgid "Canceled"
 msgstr "Бас тартылды"
 
-#: personal_account/templates/personal_account/personal-account-orders.html:35
+#: personal_account/templates/personal_account/personal-account-orders.html:34
 msgid "not specified"
 msgstr "белгілі емес"
 
-#: personal_account/templates/personal_account/personal-account-orders.html:43
-#: personal_account/templates/personal_account/personal-account-orders.html:50
+#: personal_account/templates/personal_account/personal-account-orders.html:42
+#: personal_account/templates/personal_account/personal-account-orders.html:49
 msgid "Yes"
 msgstr ""
 
-#: personal_account/templates/personal_account/personal-account-orders.html:45
-#: personal_account/templates/personal_account/personal-account-orders.html:52
+#: personal_account/templates/personal_account/personal-account-orders.html:44
+#: personal_account/templates/personal_account/personal-account-orders.html:51
 msgid "No"
 msgstr ""
 
@@ -505,6 +515,103 @@ msgstr "Ұштық арматура картасы"
 #: rzmr/templates/rzmr/index.html:276
 msgid "Production by customer drawings"
 msgstr "Бөлшектерді Тапсырыс берушінің сызбалары бойынша дайындау"
+
+#: shop/forms.py:12
+msgid "low-priced first"
+msgstr "Алдымен арзанырақ"
+
+#: shop/forms.py:12
+msgid "high-priced first"
+msgstr "Басында қымбатырақ"
+
+#: shop/forms.py:13
+msgid "Sort alphabetically from A to Z"
+msgstr "A-Z бойынша сұрыптау"
+
+#: shop/forms.py:13
+msgid "Sort alphabetically from Z to A"
+msgstr "Z-A бойынша сұрыптау"
+
+#: shop/forms.py:71
+msgid "Sort by:"
+msgstr "Сұрыптау"
+
+#: shop/templates/shop/order.html:20
+msgid "Save"
+msgstr ""
+
+#: shop/templates/shop/order.html:33
+msgid "Product"
+msgstr "Өнім"
+
+#: shop/templates/shop/order.html:36
+msgid "Quantity"
+msgstr "Саны"
+
+#: shop/templates/shop/order.html:39
+msgid "Price"
+msgstr "Бағасы"
+
+#: shop/templates/shop/order.html:75
+msgid "on request"
+msgstr "сұраныс бойынша"
+
+#: shop/templates/shop/order.html:98
+msgid "Order amount"
+msgstr "Тапсырыс сомасы"
+
+#: shop/templates/shop/order.html:101
+msgid "Delivery"
+msgstr "Жеткізу"
+
+#: shop/templates/shop/order.html:106
+msgid "Payment amount"
+msgstr "Төлем сомасы"
+
+#: shop/templates/shop/order.html:114
+msgid "Cancel the order"
+msgstr "Тапсырысты тоқтату"
+
+#: shop/templates/shop/order.html:116
+msgid "To the list of orders"
+msgstr "Тапсырыстар тізіміне"
+
+#: shop/templates/shop/product-list.html:17
+msgid "Maximum price"
+msgstr "Максималды баға"
+
+#: shop/templates/shop/product-list.html:26
+msgid "Selection of parameters"
+msgstr "Параметрлерді таңдау"
+
+#: shop/templates/shop/product-list.html:28
+msgid "Filter"
+msgstr "Сүзгі"
+
+#: shop/templates/shop/product-list.html:70
+msgid "Search"
+msgstr ""
+
+#: shop/templates/shop/product-list.html:138
+msgid "Price on request"
+msgstr "Бағасы сұраныс бойынша"
+
+#: shop/templates/shop/product-list.html:146
+#: shop/templates/shop/product-list.html:205
+msgid "Add to cart"
+msgstr "Себетке қосу"
+
+#: shop/templates/shop/product-list.html:156
+msgid "nothing found"
+msgstr "ештеңе табылмады"
+
+#: shop/views.py:25
+msgid "Shop"
+msgstr "Дүкен"
+
+#: shop/views.py:45
+msgid "Cart"
+msgstr "Себет"
 
 #: versa/settings.py:148
 msgid "Russian"
