@@ -25,10 +25,51 @@
                 сложности при предоставления полного пакета технической документации.
             </p>
         </div>
+    </div>
+    <div class="row">
         <div class="col-12">
-            <img src="{% static 'rzmr/img/Koncevaya_armatur_metalhoses.png' %}" alt="fittings metalhoses">
+            <div class="image text-center">
+                <div class="image__wrap"
+                    style="background-image: url({% static 'rzmr/img/Koncevaya_armatur_metalhoses.png' %})"
+                    onmousemove='zoom(event)'>
+                    <img src="{% static 'rzmr/img/Koncevaya_armatur_metalhoses.png' %}" alt="fittings_map">
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
+
+<style>
+    .image {
+        width: 70%;
+        overflow: hidden;
+    }
+
+    .image img {
+        transition: opacity .5s;
+    }
+
+    .image img:hover {
+        opacity: 0;
+    }
+
+    .image__wrap {
+        /* background-position: 50% 50%; */
+        /* position: relative; */
+        /* width: 100%; */
+        overflow: visible;
+        cursor: zoom-in;
+    }
+</style>
+
+<script>
+    function zoom(event) {
+        let zoomer = event.currentTarget;
+        event.offsetX ? offsetX = event.offsetX : offsetX = event.touches[0].pageX
+        event.offsetY ? offsetY = event.offsetY : offsetX = event.touches[0].pageX
+        x = offsetX / zoomer.offsetWidth * 100
+        y = offsetY / zoomer.offsetHeight * 100
+        zoomer.style.backgroundPosition = x + '% ' + y + '%';
+    }
+</script>
 {% endblock content %}

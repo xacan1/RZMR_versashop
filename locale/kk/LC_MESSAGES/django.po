@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 19:03+0000\n"
+"POT-Creation-Date: 2024-05-19 09:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -536,11 +536,19 @@ msgstr "Z-A бойынша сұрыптау"
 msgid "Sort by:"
 msgstr "Сұрыптау"
 
+#: shop/templates/shop/cart.html:25
+msgid "Place an order"
+msgstr "Тапсырыс беріңіз"
+
+#: shop/templates/shop/cart.html:26
+msgid "Continue shopping"
+msgstr "Сатып алуды жалғастырыңыз"
+
 #: shop/templates/shop/order.html:20
 msgid "Save"
 msgstr ""
 
-#: shop/templates/shop/order.html:33
+#: shop/templates/shop/order.html:33 shop/templates/shop/wishlist.html:18
 msgid "Product"
 msgstr "Өнім"
 
@@ -548,7 +556,7 @@ msgstr "Өнім"
 msgid "Quantity"
 msgstr "Саны"
 
-#: shop/templates/shop/order.html:39
+#: shop/templates/shop/order.html:39 shop/templates/shop/wishlist.html:21
 msgid "Price"
 msgstr "Бағасы"
 
@@ -604,6 +612,18 @@ msgstr "Себетке қосу"
 #: shop/templates/shop/product-list.html:156
 msgid "nothing found"
 msgstr "ештеңе табылмады"
+
+#: shop/templates/shop/wishlist.html:25
+msgid "Discount"
+msgstr "Жеңілдік"
+
+#: shop/templates/shop/wishlist.html:29
+msgid "Delete"
+msgstr ""
+
+#: shop/templates/shop/wishlist.html:102
+msgid "Do not choose anything yet? Time to check out our catalog!"
+msgstr "Әлі ештеңе таңдамайсыз ба? Біздің каталогты тексеретін уақыт!"
 
 #: shop/views.py:25
 msgid "Shop"

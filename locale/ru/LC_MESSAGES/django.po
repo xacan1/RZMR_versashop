@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-15 19:03+0000\n"
+"POT-Creation-Date: 2024-05-19 09:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -536,11 +536,19 @@ msgstr "По алфавиту от Я до А"
 msgid "Sort by:"
 msgstr "Упорядочить:"
 
+#: shop/templates/shop/cart.html:25
+msgid "Place an order"
+msgstr "Оформить заказ"
+
+#: shop/templates/shop/cart.html:26
+msgid "Continue shopping"
+msgstr "Продолжить покупки"
+
 #: shop/templates/shop/order.html:20
 msgid "Save"
 msgstr ""
 
-#: shop/templates/shop/order.html:33
+#: shop/templates/shop/order.html:33 shop/templates/shop/wishlist.html:18
 msgid "Product"
 msgstr "Товар"
 
@@ -548,7 +556,7 @@ msgstr "Товар"
 msgid "Quantity"
 msgstr "Количество"
 
-#: shop/templates/shop/order.html:39
+#: shop/templates/shop/order.html:39 shop/templates/shop/wishlist.html:21
 msgid "Price"
 msgstr "Цена"
 
@@ -604,6 +612,18 @@ msgstr "В корзину"
 #: shop/templates/shop/product-list.html:156
 msgid "nothing found"
 msgstr "ничего не найдено"
+
+#: shop/templates/shop/wishlist.html:25
+msgid "Discount"
+msgstr "Скидка"
+
+#: shop/templates/shop/wishlist.html:29
+msgid "Delete"
+msgstr ""
+
+#: shop/templates/shop/wishlist.html:102
+msgid "Do not choose anything yet? Time to check out our catalog!"
+msgstr "Ещё ничего не выбрали? Самое время ознакомиться с нашим каталогом!"
 
 #: shop/views.py:25
 msgid "Shop"

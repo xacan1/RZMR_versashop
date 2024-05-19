@@ -34,23 +34,23 @@ async function handlerAddProductToCart(a){a=await add_product_to_cart(a.relatedT
 async function add_product_to_cart(a){a={product_pk:a.getAttribute("data-shop-product-pk"),quantity:1};a={method:"POST",headers:{"Content-Type":"application/json;charset=utf-8","X-Requested-With":"XMLHttpRequest","X-CSRFToken":getCookie("csrftoken")},credentials:"same-origin",body:JSON.stringify(a)};a=await fetch("/api/v1/update_product_to_cart/",a);if(a.ok)return a=await a.json(),clear_cart_header(),await update_cart_header(),a;console.log("\u041e\u0448\u0438\u0431\u043a\u0430 HTTP add_product_to_cart: "+
 a.status)}function clear_cart(){let a=document.getElementById("shop-cart").querySelectorAll(".shop-for-del");for(let b of a)b.remove()}
 async function after_change_quantity(a){a={product_pk:a.parentElement.parentElement.parentElement.getAttribute("data-shop-product-pk"),quantity:parseFloat(a.value),set_new_quantity:!0};a={method:"POST",headers:{"Content-Type":"application/json;charset=utf-8","X-Requested-With":"XMLHttpRequest","X-CSRFToken":getCookie("csrftoken")},credentials:"same-origin",body:JSON.stringify(a)};a=await fetch("/api/v1/update_product_to_cart/",a);a.ok?(clear_cart_header(),await update_cart_header()):console.log("\u041e\u0448\u0438\u0431\u043a\u0430 HTTP after_change_quantity: "+
-a.status)}function update_cart(a){var b=document.querySelector("#shop-cart");clear_cart();b=b.querySelector("#shop-cart>.cart-list-head");if(0<a.quantity){document.querySelector("#empty-cart").textContent="";var d=document.createElement("div");d.className="cart-list-title shop-for-del";d.innerHTML=`<div class="row">\
+a.status)}function update_cart(a){var b=document.querySelector("#shop-cart");clear_cart();b=b.querySelector("#shop-cart>.cart-list-head");if(0<a.quantity){document.querySelector("#empty-cart").textContent="";var d=document.createElement("div");d.className="cart-list-title shop-for-del";d.innerHTML=`<div class="row py-2">\
             <div class="col-lg-1 col-md-1 col-12">\
             </div>\
             <div class="col-lg-4 col-md-3 col-12">\
-                <p>\u0422\u043e\u0432\u0430\u0440</p>\
+                <span>\u0422\u043e\u0432\u0430\u0440</span>\
             </div>\
             <div class="col-lg-2 col-md-2 col-12">\
-                <p>\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e</p>\
+                <span>\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e</span>\
             </div>\
             <div class="col-lg-2 col-md-2 col-12">\
-                <p>\u0421\u0443\u043c\u043c\u0430</p>\
+                <span>\u0421\u0443\u043c\u043c\u0430</span>\
             </div>\
             <div class="col-lg-2 col-md-2 col-12" ${0<a.discount?"":"hidden"}>\
-                <p>\u0421\u043a\u0438\u0434\u043a\u0430</p>\
+                <span>\u0421\u043a\u0438\u0434\u043a\u0430</span>\
             </div>\
             <div class="col-lg-1 col-md-2 col-12">\
-                <p>\u0423\u0434\u0430\u043b\u0438\u0442\u044c</p>\
+                <span>\u0423\u0434\u0430\u043b\u0438\u0442\u044c</span>\
             </div>\
         </div>`;b.append(d)}else document.querySelector("#empty-cart").textContent="\u041a\u043e\u0440\u0437\u0438\u043d\u0430 \u043f\u0443\u0441\u0442\u0430, \u043d\u043e \u044d\u0442\u043e \u043b\u0435\u0433\u043a\u043e \u0438\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c ;)";for(var c of a.products){d="/shop/product-details/"+c.product.slug;let e=document.createElement("div");e.className="cart-single-list shop-for-del";e.innerHTML=`<div class="row align-items-center shop-row-cart-order" data-shop-product_cart-pk="${c.id}" data-shop-product-pk="${c.product.id}" data-shop-price="${c.price}">\
             <div class="col-lg-1 col-md-1 col-12">\

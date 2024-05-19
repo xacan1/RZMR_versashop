@@ -28,8 +28,6 @@ def post_request_to_1C(url_request: str, data_request: bytes) -> str:
     if not url_request:
         return response
 
-    # return response
-
     req = request.Request(url=url_request, data=data_request, method='POST')
     req.add_header('Content-Type', 'application/json')
 

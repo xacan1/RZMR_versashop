@@ -1,5 +1,6 @@
 {% extends 'rzmr/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <!-- Shopping Cart -->
@@ -9,23 +10,23 @@
         <div class="cart-list-head">
             <!-- Cart List Title -->
             <div class="cart-list-title">
-                <div class="row">
+                <div class="row py-2">
                     <div class="col-lg-1 col-md-1 col-12">
                         <!-- <p>Изображение</p> -->
                     </div>
                     <div class="col-lg-4 col-md-3 col-12">
-                        <p>Товар</p>
+                        <span>{% trans 'Product' %}</span>
                     </div>
                     <div class="col-lg-2 col-md-2 col-12">
-                        <p>Цена</p>
+                        <span>{% trans 'Price' %}</span>
                     </div>
                     {% if wishlist.there_discounts %}
                     <div class="col-lg-2 col-md-2 col-12">
-                        <p>% Скидки</p>
+                        <span>{% trans 'Discount' %}</span>
                     </div>
                     {% endif %}
                     <div class="col-lg-1 col-md-2 col-12">
-                        <p>Удалить</p>
+                        <span>{% trans 'Delete' %}</span>
                     </div>
                 </div>
             </div>
@@ -98,7 +99,7 @@
         </div>
         {% else %}
         <div>
-            <p>Ещё ничего не выбрали? Самое время ознакомиться с нашим каталогом!</p>
+            <p>{% trans 'Do not choose anything yet? Time to check out our catalog!' %}</p>
         </div>
         {% endif %}
     </div>

@@ -334,23 +334,23 @@ function update_cart(cart_info) {
 
         let cart_list_title = document.createElement('div');
         cart_list_title.className = 'cart-list-title shop-for-del';
-        cart_list_title.innerHTML = `<div class="row">\
+        cart_list_title.innerHTML = `<div class="row py-2">\
             <div class="col-lg-1 col-md-1 col-12">\
             </div>\
             <div class="col-lg-4 col-md-3 col-12">\
-                <p>Товар</p>\
+                <span>Товар</span>\
             </div>\
             <div class="col-lg-2 col-md-2 col-12">\
-                <p>Количество</p>\
+                <span>Количество</span>\
             </div>\
             <div class="col-lg-2 col-md-2 col-12">\
-                <p>Сумма</p>\
+                <span>Сумма</span>\
             </div>\
             <div class="col-lg-2 col-md-2 col-12" ${cart_info.discount > 0 ? '' : 'hidden'}>\
-                <p>Скидка</p>\
+                <span>Скидка</span>\
             </div>\
             <div class="col-lg-1 col-md-2 col-12">\
-                <p>Удалить</p>\
+                <span>Удалить</span>\
             </div>\
         </div>`;
         product_list.append(cart_list_title);
