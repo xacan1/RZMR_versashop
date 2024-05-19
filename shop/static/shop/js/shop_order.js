@@ -57,7 +57,7 @@ async function get_pdf_document() {
         let response_json = await response.json();
 
         if (Object.keys(response_json).length === 0) {
-            console.log(`Пустой ответ для ${position_image_code}`);
+            console.log('Пустой ответ при получении PDF документов');
             return;
         }
     }
