@@ -1,5 +1,6 @@
 {% extends 'rzmr/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <section class="checkout-wrapper section p-5">
@@ -40,7 +41,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single-form form-default">
-                                        <label>Телефон (начиная с 7)</label>
+                                        <label>Телефон (начиная с "7")</label>
                                         <div class="form-input form">
                                             <!-- <input type="text" placeholder="Телефон"> -->
                                             {{ form.phone }}
@@ -91,7 +92,6 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single-form form-default">
-                                        <!-- <label>Выберите организацию для счета (если требуется выписать на юрлицо)</label> -->
                                         <div class="select-items">
                                             {{ form.company.label_tag }}
                                             {{ form.company }}

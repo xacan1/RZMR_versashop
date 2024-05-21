@@ -309,8 +309,6 @@ class AddOrderSuccessView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        # order_pk = int(self.kwargs.get('order_pk', 0))
-        # services.send_email_for_order_success(order_pk)
         c_def = self.get_user_context(title='Заказ оформлен')
         return {**context, **c_def}
 

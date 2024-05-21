@@ -91,6 +91,7 @@ class AddOrderForm(forms.ModelForm):
             self.fields['company'].label = ''
 
         self.fields['payment_type'].empty_label = 'Не выбран вид оплаты'
+        self.fields['payment_type'].queryset = PaymentType.objects.filter(use=True)
         self.fields['delivery_type'].empty_label = 'Не выбран способ получения'
         self.fields['company'].empty_label = 'Не указывать компанию'
 

@@ -128,6 +128,17 @@ async function update_cart_header() {
         let new_li = document.createElement('li');
         new_li.className = 'shop-for-del';
         new_li.setAttribute('data-shop-product_cart-pk', row.id);
+        let url_photo = '';
+
+        if (row.product.name.includes('РГМ ')) {
+            url_photo = 'https://rzmr.ru/static/rzmr/img/metallhoses.jpg';
+        }
+        else if (row.product.photo) {
+            url_photo = row.product.photo;
+        }
+        else {
+            url_photo = 'https://via.placeholder.com/220x200';
+        }
 
         // подправим путь к карточке товара
         let path_product = '/shop/product-details/' + row.product.slug;
@@ -139,12 +150,12 @@ async function update_cart_header() {
             </svg>\
             </a>\
             <div class="cart-img-head">\
-                <a class="cart-img" href="${path_product}"><img src="${row.product.photo ? row.product.photo : 'https://via.placeholder.com/220x200'}" alt="#"></a>\
+                <a class="cart-img" href="${path_product}"><img class="img-header-cart" src="${url_photo}" alt="#"></a>\
             </div>\
         </div>\
         <div class="content">\
-            <p><a href="${path_product}">${row.product.name}</a></p>\
-            <p class="quantity">${formatter0.format(row.quantity)}x - <span class="amount">${formatter.format(row.amount)}</span></p>\
+            <div><a href="${path_product}">${row.product.name}</a></div>\
+            <div class="quantity">${formatter0.format(row.quantity)}x - <span class="amount">${formatter.format(row.amount)}</span></div>\
         </div>`;
         product_list.append(new_li);
     }
@@ -362,10 +373,24 @@ function update_cart(cart_info) {
     for (let row of cart_info.products) {
         let path_product = '/shop/product-details/' + row.product.slug;
         let row_cart_order = document.createElement('div');
+        let url_photo = '';
+
+        if (row.product.name.includes('РГМ ')) {
+            url_photo = 'https://rzmr.ru/static/rzmr/img/metallhoses.jpg';
+        }
+        else if (row.product.photo) {
+            url_photo = row.product.photo;
+        }
+        else {
+            url_photo = 'https://via.placeholder.com/220x200';
+        }
+
         row_cart_order.className = 'cart-single-list shop-for-del';
         row_cart_order.innerHTML = `<div class="row align-items-center shop-row-cart-order" data-shop-product_cart-pk="${row.id}" data-shop-product-pk="${row.product.id}" data-shop-price="${row.price}">\
             <div class="col-lg-1 col-md-1 col-12">\
-                <a href="${path_product}"><img src="${row.product.photo ? row.product.photo : 'https://via.placeholder.com/220x200'}" alt="#"></a>\
+                <div class="p-1">\
+                    <a href="${path_product}"><img class="img-cart-order" src="${url_photo}" alt="#"></a>\
+                </div>\
             </div>\
             <div class="col-lg-4 col-md-3 col-12">\
                 <p class="product-name fw-bold">\

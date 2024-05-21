@@ -46,19 +46,24 @@
             {% for row_product in order.get_order_products.all %}
             <div class="cart-single-list">
                 <div class="row align-items-center">
-                    <div class="col-lg-1 col-md-1 col-4">
-                        <div class="p-4">
+                    <div class="col-lg-1 col-md-1 col-12">
+                        <div class="p-1">
                             {% if row_product.product.photo %}
-                            <a href="{% url 'product-details' row_product.product.slug %}"><img src="{{ row_product.product.photo.url }}" alt="#"></a>
+                            <a href="{% url 'product-details' row_product.product.slug %}"><img class="img-cart-order" src="{{ row_product.product.photo.url }}" alt="img_prod"></a>
+                            {% elif 'РГМ ' in row_product.product.name %}
+                            <img class="img-cart-order" src="{% static 'rzmr/img/metallhoses.jpg' %}" alt="img_metal">
                             {% else %}
-                            <a href="{% url 'product-details' row_product.product.slug %}"><img src="https://via.placeholder.com/220x200" alt="#"></a>
+                            <a href="{% url 'product-details' row_product.product.slug %}"><img class="img-cart-order" src="https://via.placeholder.com/220x200" alt="img_prod"></a>
                             {% endif %}
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-3 col-12">
                         <p class="product-name fs-6">
-                            <a href="{% url 'product-details' row_product.product.slug %}">
-                            {{ row_product.product.name }}</a>
+                            {% if 'РГМ ' in row_product.product.name %}
+                            <span>{{ row_product.product.name }}</span>
+                            {% else %}
+                            <a href="{% url 'product-details' row_product.product.slug %}">{{ row_product.product.name }}</a>
+                            {% endif %}
                         </p>
                         <!-- <p class="product-des">
                             <span><em>Тип:</em> Mirrorless</span>

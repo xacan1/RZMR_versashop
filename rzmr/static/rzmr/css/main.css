@@ -1111,4 +1111,29 @@ input {
 .button-print:hover {
     cursor: pointer;
 }
+
+@media (min-width: 768px) {
+    .img-cart-order {
+        width: 5vw;
+        height: 5vw;
+        object-fit: scale-down;
+
+    }
+}
+
+@media (max-width: 767px) {
+    .img-cart-order {
+        width: 20vw;
+        height: 20vw;
+        object-fit: scale-down;
+
+    }
+}
+
+.img-header-cart {
+    width: 3vw;
+    height: 3vw;
+    object-fit: scale-down;
+}
+
 /* end main index */

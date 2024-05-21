@@ -25,11 +25,9 @@ async function elements_listener() {
     if (select_fittings1) {
         select_fittings1.addEventListener('mousedown', get_groups_and_fittings);
         select_fittings1.addEventListener('change', () => {
-            let type_fitting = document.querySelector('#constructorTypeFitting1');
-            set_empty_typefitting(type_fitting);
+            set_empty_typefitting(document.querySelector('#constructorTypeFitting1'));
             clear_image('#constructorImg1');
-            let type_fittingA = document.querySelector('#constructorTypeFittingA1');
-            set_empty_typefitting(type_fittingA);
+            set_empty_typefitting(document.querySelector('#constructorTypeFittingA1'));
             clear_image('#constructorImgA1');
             get_types_fittings1();
         });
@@ -40,11 +38,9 @@ async function elements_listener() {
     if (select_fittings2) {
         select_fittings2.addEventListener('mousedown', get_groups_and_fittings);
         select_fittings2.addEventListener('change', () => {
-            let type_fitting = document.querySelector('#constructorTypeFitting2');
-            set_empty_typefitting(type_fitting);
+            set_empty_typefitting(document.querySelector('#constructorTypeFitting2'));
             clear_image('#constructorImg2');
-            let type_fittingA = document.querySelector('#constructorTypeFittingA2');
-            set_empty_typefitting(type_fittingA);
+            set_empty_typefitting(document.querySelector('#constructorTypeFittingA2'));
             clear_image('#constructorImgA2');
             get_types_fittings2();
         });
@@ -55,8 +51,7 @@ async function elements_listener() {
     if (select_fittingsA1) {
         select_fittingsA1.addEventListener('mousedown', get_groups_and_fittings);
         select_fittingsA1.addEventListener('change', () => {
-            let type_fitting = document.querySelector('#constructorTypeFittingA1');
-            set_empty_typefitting(type_fitting);
+            set_empty_typefitting(document.querySelector('#constructorTypeFittingA1'));
             clear_image('#constructorImgA1');
             get_types_fittingsA1();
         });
@@ -67,8 +62,7 @@ async function elements_listener() {
     if (select_fittingsA2) {
         select_fittingsA2.addEventListener('mousedown', get_groups_and_fittings);
         select_fittingsA2.addEventListener('change', () => {
-            let type_fitting = document.querySelector('#constructorTypeFittingA2');
-            set_empty_typefitting(type_fitting);
+            set_empty_typefitting(document.querySelector('#constructorTypeFittingA2'));
             clear_image('#constructorImgA2');
             get_types_fittingsA2();
         });
@@ -79,15 +73,9 @@ async function elements_listener() {
     if (select_diameters) {
         select_diameters.addEventListener('mousedown', get_diameters);
         select_diameters.addEventListener('change', () => {
-            set_empty_typefitting(document.querySelector('#constructorTypeFitting1'));
-            clear_image('#constructorImg1');
-            set_empty_typefitting(document.querySelector('#constructorTypeFitting2'));
-            clear_image('#constructorImg2');
-            set_empty_pressures(document.querySelector('#constructorPressures'));
-            set_empty_innerscreen(document.querySelector('#constructorInnerScreen'));
-            set_empty_braids(document.querySelector('#constructorBraid'));
-            set_empty_corrugation(document.querySelector('#constructorCorrugation'));
+            clear_form(false);
             get_pressures();
+            get_lengths();
             get_corrugation();
             get_braid();
             get_innerscreen();
@@ -105,7 +93,9 @@ async function elements_listener() {
             set_empty_typefitting(document.querySelector('#constructorTypeFitting2'));
             clear_image('#constructorImg2');
             set_empty_typefitting(document.querySelector('#constructorTypeFittingA1'));
+            clear_image('#constructorImgA1');
             set_empty_typefitting(document.querySelector('#constructorTypeFittingA2'));
+            clear_image('#constructorImgA2');
             set_empty_braids(document.querySelector('#constructorBraid'));
             set_empty_corrugation(document.querySelector('#constructorCorrugation'));
             get_corrugation();
@@ -148,8 +138,7 @@ async function elements_listener() {
     if (select_materials1) {
         select_materials1.addEventListener('mousedown', get_materials);
         select_materials1.addEventListener('change', () => {
-            let type_fitting = document.querySelector('#constructorTypeFitting1');
-            set_empty_typefitting(type_fitting);
+            set_empty_typefitting(document.querySelector('#constructorTypeFitting1'));
             get_types_fittings1();
             clear_image('#constructorImg1');
         });
@@ -160,8 +149,7 @@ async function elements_listener() {
     if (select_materials2) {
         select_materials2.addEventListener('mousedown', get_materials);
         select_materials2.addEventListener('change', () => {
-            let type_fitting = document.querySelector('#constructorTypeFitting2');
-            set_empty_typefitting(type_fitting);
+            set_empty_typefitting(document.querySelector('#constructorTypeFitting2'));
             get_types_fittings2();
             clear_image('#constructorImg2');
         });
@@ -172,8 +160,7 @@ async function elements_listener() {
     if (select_materialsA1) {
         select_materialsA1.addEventListener('mousedown', get_materials);
         select_materialsA1.addEventListener('change', () => {
-            let type_fitting = document.querySelector('#constructorTypeFittingA1');
-            set_empty_typefitting(type_fitting);
+            set_empty_typefitting(document.querySelector('#constructorTypeFittingA1'));
             get_types_fittingsA1();
             clear_image('#constructorImgA1');
         });
@@ -184,8 +171,7 @@ async function elements_listener() {
     if (select_materialsA2) {
         select_materialsA2.addEventListener('mousedown', get_materials);
         select_materialsA2.addEventListener('change', () => {
-            let type_fitting = document.querySelector('#constructorTypeFittingA2');
-            set_empty_typefitting(type_fitting);
+            set_empty_typefitting(document.querySelector('#constructorTypeFittingA2'));
             get_types_fittingsA2();
             clear_image('#constructorImgA2');
         });
@@ -252,7 +238,6 @@ function set_default_group_fittings() {
     for (let group_fittings of select_fittings1.children) {
         if (group_fittings.value === 'УТ000006343') {
             select_fittings1.value = group_fittings.value;
-            select_fittings1.dispatchEvent(new Event('change'));
             break;
         }
     }
@@ -260,7 +245,16 @@ function set_default_group_fittings() {
     for (let group_fittings of select_fittings2.children) {
         if (group_fittings.value === 'УТ000006343') {
             select_fittings2.value = group_fittings.value;
-            select_fittings2.dispatchEvent(new Event('change'));
+            break;
+        }
+    }
+}
+
+// устанавливает значение по умолчанию для любого выборочного элемента
+function set_default_select_value(select) {
+    for (let option of select.children) {
+        if (option.value === '') {
+            select.value = option.value;
             break;
         }
     }
@@ -308,22 +302,6 @@ function set_empty_typefitting(type_fitting) {
     option_empty.value = '';
     option_empty.textContent = '- Тип концевой арматуры -';
     type_fitting.appendChild(option_empty);
-}
-
-function set_empty_fittings(group_fitting) {
-    group_fitting.innerHTML = '';
-    let option_empty = document.createElement('option');
-    option_empty.value = '';
-    option_empty.textContent = '- Группа концевой арматуры -';
-    group_fitting.appendChild(option_empty);
-}
-
-function set_empty_materials(materials) {
-    materials.innerHTML = '';
-    let option_empty = document.createElement('option');
-    option_empty.value = '';
-    option_empty.textContent = '- Материал -';
-    materials.appendChild(option_empty);
 }
 
 async function get_types() {
@@ -995,7 +973,7 @@ async function get_types_fittingsA2() {
 
     let group_code = document.querySelector('#constructorGroupsEndFittingsA2');
     let diameter = document.querySelector('#constructorDiameters');
-    let type_fitting2 = document.querySelector('#constructorTypeFitting1');
+    let type_fitting2 = document.querySelector('#constructorTypeFitting2');
     let request1C = 'http://62.133.174.3:8081/UT_RZM/hs/api?metod=getListTypeFittingStartSelection';
 
     if (!type_fitting2 || !type_fitting2.value) {
@@ -1194,7 +1172,7 @@ function copy_fromA1() {
     type_fittingA2.dispatchEvent(new Event('change'));
 }
 
-function clear_form() {
+function clear_form(full_clear = true) {
     clear_image('#constructorImg1');
     clear_image('#constructorImg2');
     clear_image('#constructorImgA1');
@@ -1206,16 +1184,20 @@ function clear_form() {
     set_empty_typefitting(document.querySelector('#constructorTypeFitting2'));
     set_empty_typefitting(document.querySelector('#constructorTypeFittingA1'));
     set_empty_typefitting(document.querySelector('#constructorTypeFittingA2'));
-    // set_empty_fittings(document.querySelector('#constructorGroupsEndFittings1'));
-    // set_empty_fittings(document.querySelector('#constructorGroupsEndFittings2'));
-    set_empty_fittings(document.querySelector('#constructorGroupsEndFittingsA1'));
-    set_empty_fittings(document.querySelector('#constructorGroupsEndFittingsA2'));
-    set_empty_materials(document.querySelector('#constructorMaterials1'));
-    set_empty_materials(document.querySelector('#constructorMaterials2'));
-    set_empty_materials(document.querySelector('#constructorMaterialsA1'));
-    set_empty_materials(document.querySelector('#constructorMaterialsA2'));
+    set_default_select_value(document.querySelector('#constructorGroupsEndFittingsA1'));
+    set_default_select_value(document.querySelector('#constructorGroupsEndFittingsA2'));
+    set_default_select_value(document.querySelector('#constructorMaterials1'));
+    set_default_select_value(document.querySelector('#constructorMaterials2'));
+    set_default_select_value(document.querySelector('#constructorMaterialsA1'));
+    set_default_select_value(document.querySelector('#constructorMaterialsA2'));
     set_empty_corrugation(document.querySelector('#constructorCorrugation'));
     set_empty_pressures(document.querySelector('#constructorPressures'));
+    set_default_group_fittings();
+
+    if (full_clear) {
+        set_default_select_value(document.querySelector('#constructorLengthsHoses'));
+        set_default_select_value(document.querySelector('#constructorDiameters'));
+    }
 }
 
 async function create_product() {

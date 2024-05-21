@@ -4,20 +4,20 @@ let d=document.querySelector(".cart-button>.btn");d&&d.addEventListener("click",
 function getCookie(a){return(a=document.cookie.match(new RegExp("(?:^|; )"+a.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g,"\\$1")+"=([^;]*)")))?decodeURIComponent(a[1]):void 0}
 async function get_cart_info(){let a={quantity:0,amount:0,products:[]};var b={method:"GET",headers:{"Content-Type":"application/json;charset=utf-8","X-Requested-With":"XMLHttpRequest","X-CSRFToken":getCookie("csrftoken")},credentials:"same-origin"};b=await fetch("/api/v1/get_cart_info/",b);return b.ok||401==b.status?401==b.status?a:a=await b.json():(console.log("\u041e\u0448\u0438\u0431\u043a\u0430 HTTP: "+b.status),a)}
 function clear_cart_header(){var a=document.getElementById("shop-cart-header").querySelectorAll(".shop-for-del");for(let b of a)b.remove();if(a=document.querySelector(".cart-items>.shopping-item>.bottom"))a.textContent=""}
-async function update_cart_header(){let a=document.querySelector("#shop-cart-header"),b=await get_cart_info();clear_cart_header();let d=a.querySelector(".shopping-item>ul.shopping-list");a.querySelector("#shop-total-quantity-cart").textContent="\u0422\u043e\u0432\u0430\u0440\u043e\u0432: "+formatter0.format(b.quantity);for(let c of b.products){let e=document.createElement("li");e.className="shop-for-del";e.setAttribute("data-shop-product_cart-pk",c.id);let f="/shop/product-details/"+c.product.slug;
-e.innerHTML=`<div>\
+async function update_cart_header(){let a=document.querySelector("#shop-cart-header"),b=await get_cart_info();clear_cart_header();let d=a.querySelector(".shopping-item>ul.shopping-list");a.querySelector("#shop-total-quantity-cart").textContent="\u0422\u043e\u0432\u0430\u0440\u043e\u0432: "+formatter0.format(b.quantity);for(let c of b.products){let e=document.createElement("li");e.className="shop-for-del";e.setAttribute("data-shop-product_cart-pk",c.id);let f;f=c.product.name.includes("\u0420\u0413\u041c ")?
+"https://rzmr.ru/static/rzmr/img/metallhoses.jpg":c.product.photo?c.product.photo:"https://via.placeholder.com/220x200";let g="/shop/product-details/"+c.product.slug;e.innerHTML=`<div>\
             <a href="javascript:void(0)" onclick="delete_cart_product(this);" class="remove" title="\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0442\u043e\u0432\u0430\u0440">\
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">\
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>\
             </svg>\
             </a>\
             <div class="cart-img-head">\
-                <a class="cart-img" href="${f}"><img src="${c.product.photo?c.product.photo:"https://via.placeholder.com/220x200"}" alt="#"></a>\
+                <a class="cart-img" href="${g}"><img class="img-header-cart" src="${f}" alt="#"></a>\
             </div>\
         </div>\
         <div class="content">\
-            <p><a href="${f}">${c.product.name}</a></p>\
-            <p class="quantity">${formatter0.format(c.quantity)}x - <span class="amount">${formatter.format(c.amount)}</span></p>\
+            <div><a href="${g}">${c.product.name}</a></div>\
+            <div class="quantity">${formatter0.format(c.quantity)}x - <span class="amount">${formatter.format(c.amount)}</span></div>\
         </div>`;d.append(e)}a.querySelector(".shopping-item>.bottom").innerHTML=`<div class="bottom">\
         <div class="total">\
             <span>\u0418\u0442\u043e\u0433\u043e</span>\
@@ -52,9 +52,12 @@ a.status)}function update_cart(a){var b=document.querySelector("#shop-cart");cle
             <div class="col-lg-1 col-md-2 col-12">\
                 <span>\u0423\u0434\u0430\u043b\u0438\u0442\u044c</span>\
             </div>\
-        </div>`;b.append(d)}else document.querySelector("#empty-cart").textContent="\u041a\u043e\u0440\u0437\u0438\u043d\u0430 \u043f\u0443\u0441\u0442\u0430, \u043d\u043e \u044d\u0442\u043e \u043b\u0435\u0433\u043a\u043e \u0438\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c ;)";for(var c of a.products){d="/shop/product-details/"+c.product.slug;let e=document.createElement("div");e.className="cart-single-list shop-for-del";e.innerHTML=`<div class="row align-items-center shop-row-cart-order" data-shop-product_cart-pk="${c.id}" data-shop-product-pk="${c.product.id}" data-shop-price="${c.price}">\
+        </div>`;b.append(d)}else document.querySelector("#empty-cart").textContent="\u041a\u043e\u0440\u0437\u0438\u043d\u0430 \u043f\u0443\u0441\u0442\u0430, \u043d\u043e \u044d\u0442\u043e \u043b\u0435\u0433\u043a\u043e \u0438\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c ;)";for(var c of a.products){d="/shop/product-details/"+c.product.slug;let e=document.createElement("div"),f;f=c.product.name.includes("\u0420\u0413\u041c ")?"https://rzmr.ru/static/rzmr/img/metallhoses.jpg":c.product.photo?
+c.product.photo:"https://via.placeholder.com/220x200";e.className="cart-single-list shop-for-del";e.innerHTML=`<div class="row align-items-center shop-row-cart-order" data-shop-product_cart-pk="${c.id}" data-shop-product-pk="${c.product.id}" data-shop-price="${c.price}">\
             <div class="col-lg-1 col-md-1 col-12">\
-                <a href="${d}"><img src="${c.product.photo?c.product.photo:"https://via.placeholder.com/220x200"}" alt="#"></a>\
+                <div class="p-1">\
+                    <a href="${d}"><img class="img-cart-order" src="${f}" alt="#"></a>\
+                </div>\
             </div>\
             <div class="col-lg-4 col-md-3 col-12">\
                 <p class="product-name fw-bold">\

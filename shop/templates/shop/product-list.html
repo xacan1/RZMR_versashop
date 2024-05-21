@@ -115,9 +115,9 @@
                                     <div class="single-product mb-4">
                                         <div class="product-image text-center p-2">
                                             {% if product_info.product.photo %}
-                                            <img src="{{ product_info.product.photo.url }}" alt="product_photo">
+                                            <img class="img-cart-order" src="{{ product_info.product.photo.url }}" alt="product_photo">
                                             {% else %}
-                                            <img src="https://via.placeholder.com/100x200" alt="product_photo">
+                                            <img class="img-cart-order" src="https://via.placeholder.com/100x200" alt="product_photo">
                                             {% endif %}
                                         </div>
                                         <div class="product-info p-2 text-center">
@@ -195,9 +195,9 @@
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="product-image">
                                                     {% if product_info.product.photo %}
-                                                    <img src="{{ product_info.product.photo.url }}" alt="#">
+                                                    <img class="img-cart-order" src="{{ product_info.product.photo.url }}" alt="#">
                                                     {% else %}
-                                                    <img src="https://via.placeholder.com/335x335" alt="#">
+                                                    <img class="img-cart-order" src="https://via.placeholder.com/335x335" alt="#">
                                                     {% endif %}
                                                     <div class="button">
                                                         <!-- тут вызываю модальное окно, которое в свою очередь вызывает JS функцию добавления товара в корзину -->
