@@ -9,10 +9,10 @@ from pathlib import Path
 
 class RobotView(DataMixin, FormView):
     def get(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
-        filename = 'robot.txt'
+        filename = 'robots.txt'
         path_file = Path(Path.cwd(), filename)
         response = FileResponse(open(path_file, 'rb'), as_attachment=True,
-                                filename='robot.txt', content_type="text/plain")
+                                filename='robots.txt', content_type="text/plain")
 
         return response
 
