@@ -3,7 +3,6 @@
 {% load static %}
 {% load i18n %}
 
-
 <head>
     <meta charset="utf-8">
     <meta name="author" content="Смирнов Юрий Валерьевич">
@@ -232,7 +231,7 @@
                                 <a class="nav-link dropdown-toggle" id="navbarDropdown3" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">{% trans 'PTFE Metal hoses' %}</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                                    <li><a class="dropdown-item" href="{% url 'ptfe' %}">{% trans 'PH (fluoroplastic hose)  PTFE hoses' %}</a>
+                                    <li><a class="dropdown-item" href="{% url 'ptfe-hoses' %}">{% trans 'PH (fluoroplastic hose)  PTFE hoses' %}</a>
                                     </li>
                                     <li><a class="dropdown-item" href="{% url 'ptfe-recommendations' %}">{% trans 'Guidance' %}</a></li>
                                     <li><a class="dropdown-item" href="{% url 'ptfe-fittings' %}">{% trans 'Fittings' %}</a></li>
@@ -345,7 +344,7 @@
                 </div>
                 <div class="d-md-block d-none col-3">
                     <p class="footer-title">{% trans 'PTFE Metal hoses' %}</p>
-                    <div><a href="{% url 'ptfe' %}">{% trans 'PH (fluoroplastic hose)  PTFE hoses' %}</a></div>
+                    <div><a href="{% url 'ptfe-hoses' %}">{% trans 'PH (fluoroplastic hose)  PTFE hoses' %}</a></div>
                     <div><a href="{% url 'ptfe-fittings' %}">{% trans 'Fittings' %}</a></div>
                     <div><a href="{% url 'ptfe-recommendations' %}">{% trans 'Guidance' %}</a></div>
                     <div><a href="{% url 'ptfe-standarts' %}">{% trans 'Quality standards' %}</a></div>
