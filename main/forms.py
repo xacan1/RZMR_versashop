@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordChangeForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
+from django_recaptcha.fields import ReCaptchaField
 
 
 User = get_user_model()
@@ -22,7 +23,7 @@ class FeedbackForm(forms.Form):
             (5, 'Отлично! Куда деньги закинуть?')
         ),
         label='Оценка сайта', widget=forms.Select(attrs={'class': 'form-select'}))
-    # captcha = ReCaptchaField()
+    captcha = ReCaptchaField()
 
 
 class RegisterUserForm(UserCreationForm):
@@ -30,7 +31,7 @@ class RegisterUserForm(UserCreationForm):
                                 widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     password2 = forms.CharField(label=_('Password confirmation'),
                                 widget=forms.PasswordInput(attrs={'class': 'form-control'}))
-    # captcha = ReCaptchaField()
+    captcha = ReCaptchaField()
 
     class Meta:
         model = User
@@ -46,7 +47,7 @@ class LoginUserForm(AuthenticationForm):
         label=_('Email address'), widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
     password = forms.CharField(
         label=_('Password'), widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': _('Password')}))
-    # captcha = ReCaptchaField()
+    captcha = ReCaptchaField()
     # fields = ('email', 'password')
     # widgets = {'email': forms.EmailInput(attrs={'class': 'form-input'}),
     #            'password': forms.PasswordInput(attrs={'class': 'form-input'})}

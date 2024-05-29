@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_recaptcha',
 ]
 
 VERSA_APPS = [
@@ -116,6 +117,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'OPTIONS': {
+            'timeout': 60,
+            # 'check_same_thread': False, 
+            # 'uri': True,
+        }
     }
 }
 
@@ -222,4 +228,4 @@ APPEND_SLASH = True
 # }
 
 # SESSION_COOKIE_AGE = 24 * 60 * 60
-DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880
+# DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880
