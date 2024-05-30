@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-19 09:57+0000\n"
+"POT-Creation-Date: 2024-05-30 09:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,29 +20,29 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: main/forms.py:29 main/forms.py:48
+#: main/forms.py:30 main/forms.py:49
 msgid "Password"
 msgstr ""
 
-#: main/forms.py:31
+#: main/forms.py:32
 msgid "Password confirmation"
 msgstr ""
 
-#: main/forms.py:46
+#: main/forms.py:47
 msgid "Email address"
 msgstr ""
 
-#: main/forms.py:72 main/models.py:38
+#: main/forms.py:73 main/models.py:38
 msgid "email address"
 msgstr ""
 
-#: main/forms.py:79
+#: main/forms.py:80
 #, fuzzy
 #| msgid "Forgot password"
 msgid "New password"
 msgstr "Забыли пароль?"
 
-#: main/forms.py:83
+#: main/forms.py:84
 msgid "New password confirmation"
 msgstr ""
 
@@ -68,7 +68,7 @@ msgstr "Вход в учётную запись"
 
 #: main/templates/main/login.html:42 main/templates/main/register.html:58
 #: main/templates/main/registration-success.html:10
-#: rzmr/templates/rzmr/base.html:115
+#: rzmr/templates/rzmr/base.html:114
 msgid "Log in"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgid "Forgot password"
 msgstr "Забыли пароль?"
 
 #: main/templates/main/login.html:46 main/templates/main/register.html:56
-#: main/views.py:44 rzmr/templates/rzmr/base.html:118
+#: main/views.py:44 rzmr/templates/rzmr/base.html:117
 msgid "Register"
 msgstr "Регистрация"
 
@@ -104,9 +104,9 @@ msgstr "Вы успешно зарегистрированы на сайте"
 #: main/views.py:59 main/views.py:71 main/views.py:84 main/views.py:97
 #: main/views.py:108 main/views.py:122 personal_account/views.py:15
 #: personal_account/views.py:25 personal_account/views.py:37
-#: personal_account/views.py:60 rzmr/templates/rzmr/base.html:96
-#: rzmr/templates/rzmr/index.html:270 shop/views.py:329 shop/views.py:376
-#: shop/views.py:392
+#: personal_account/views.py:60 rzmr/templates/rzmr/base.html:95
+#: rzmr/templates/rzmr/index.html:270 shop/views.py:327 shop/views.py:374
+#: shop/views.py:390
 msgid "Personal account"
 msgstr "Личный кабинет"
 
@@ -125,7 +125,7 @@ msgstr "Разделы"
 #: personal_account/templates/personal_account/base.html:18
 #: personal_account/templates/personal_account/base.html:20
 #: personal_account/templates/personal_account/personal-account-orders.html:10
-#: personal_account/views.py:45 shop/views.py:330
+#: personal_account/views.py:45 shop/views.py:328
 msgid "Orders"
 msgstr "Заказы"
 
@@ -213,48 +213,48 @@ msgstr "Забыли пароль?"
 msgid "Our partners"
 msgstr "Наши партнёры"
 
-#: rzmr/templates/rzmr/base.html:43 rzmr/templates/rzmr/base.html:395
+#: rzmr/templates/rzmr/base.html:42 rzmr/templates/rzmr/base.html:393
 msgid "Request a call"
 msgstr "Заказать звонок"
 
-#: rzmr/templates/rzmr/base.html:75
+#: rzmr/templates/rzmr/base.html:74
 msgid "Change"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:103
+#: rzmr/templates/rzmr/base.html:102
 msgid "Log out"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:179
+#: rzmr/templates/rzmr/base.html:178
 msgid "View cart"
 msgstr "Посмотреть корзину"
 
-#: rzmr/templates/rzmr/base.html:204 rzmr/templates/rzmr/base.html:334
+#: rzmr/templates/rzmr/base.html:203 rzmr/templates/rzmr/base.html:333
 #: rzmr/views.py:50
 msgid "Company"
 msgstr "О заводе"
 
-#: rzmr/templates/rzmr/base.html:206
+#: rzmr/templates/rzmr/base.html:205
 msgid "About us"
 msgstr "Информация о заводе"
 
-#: rzmr/templates/rzmr/base.html:207 rzmr/templates/rzmr/base.html:335
+#: rzmr/templates/rzmr/base.html:206 rzmr/templates/rzmr/base.html:334
 #: rzmr/views.py:61
 msgid "Quality and certification system"
 msgstr "Система качества и сертификации"
 
-#: rzmr/templates/rzmr/base.html:210 rzmr/templates/rzmr/base.html:336
+#: rzmr/templates/rzmr/base.html:209 rzmr/templates/rzmr/base.html:335
 #: rzmr/views.py:71
 msgid "Our clients"
 msgstr "Наши клиенты"
 
-#: rzmr/templates/rzmr/base.html:211 rzmr/templates/rzmr/base.html:337
+#: rzmr/templates/rzmr/base.html:210 rzmr/templates/rzmr/base.html:336
 #: rzmr/views.py:91
 msgid "Career"
 msgstr "Карьера"
 
-#: rzmr/templates/rzmr/base.html:222 rzmr/templates/rzmr/base.html:224
-#: rzmr/templates/rzmr/base.html:340 rzmr/templates/rzmr/index.html:12
+#: rzmr/templates/rzmr/base.html:221 rzmr/templates/rzmr/base.html:223
+#: rzmr/templates/rzmr/base.html:339 rzmr/templates/rzmr/index.html:12
 #: rzmr/templates/rzmr/index.html:137 rzmr/views.py:111 rzmr/views.py:121
 #: rzmr/views.py:132 rzmr/views.py:144 rzmr/views.py:157 rzmr/views.py:170
 #: rzmr/views.py:183 rzmr/views.py:196 rzmr/views.py:209 rzmr/views.py:220
@@ -265,121 +265,118 @@ msgstr "Карьера"
 msgid "Metal hoses"
 msgstr "Металлорукава"
 
-#: rzmr/templates/rzmr/base.html:225 rzmr/templates/rzmr/base.html:238
-#: rzmr/templates/rzmr/base.html:341 rzmr/templates/rzmr/base.html:349
+#: rzmr/templates/rzmr/base.html:224 rzmr/templates/rzmr/base.html:237
+#: rzmr/templates/rzmr/base.html:340 rzmr/templates/rzmr/base.html:348
 #: rzmr/views.py:122
 msgid "Fittings"
 msgstr "Концевая арматура"
 
-#: rzmr/templates/rzmr/base.html:226 rzmr/templates/rzmr/base.html:237
-#: rzmr/templates/rzmr/base.html:342 rzmr/templates/rzmr/base.html:350
+#: rzmr/templates/rzmr/base.html:225 rzmr/templates/rzmr/base.html:236
+#: rzmr/templates/rzmr/base.html:341 rzmr/templates/rzmr/base.html:349
 msgid "Guidance"
 msgstr "Рекомендации по выбору"
 
-#: rzmr/templates/rzmr/base.html:227 rzmr/templates/rzmr/base.html:343
+#: rzmr/templates/rzmr/base.html:226 rzmr/templates/rzmr/base.html:342
 msgid "Installations"
 msgstr "Монтаж и безопасность"
 
-#: rzmr/templates/rzmr/base.html:228 rzmr/templates/rzmr/base.html:239
-#: rzmr/templates/rzmr/base.html:344 rzmr/templates/rzmr/base.html:351
+#: rzmr/templates/rzmr/base.html:227 rzmr/templates/rzmr/base.html:238
+#: rzmr/templates/rzmr/base.html:343 rzmr/templates/rzmr/base.html:350
 msgid "Quality standards"
 msgstr "Стандарты качества"
 
-#: rzmr/templates/rzmr/base.html:233 rzmr/templates/rzmr/base.html:347
+#: rzmr/templates/rzmr/base.html:232 rzmr/templates/rzmr/base.html:346
 #: rzmr/templates/rzmr/index.html:32 rzmr/templates/rzmr/index.html:151
 #: rzmr/views.py:435 rzmr/views.py:445 rzmr/views.py:457 rzmr/views.py:469
-#: rzmr/views.py:493 rzmr/views.py:506 rzmr/views.py:519 rzmr/views.py:532
-#: rzmr/views.py:545 rzmr/views.py:557 rzmr/views.py:570 rzmr/views.py:583
-#: rzmr/views.py:596 rzmr/views.py:608 rzmr/views.py:621 rzmr/views.py:634
-#: rzmr/views.py:646 rzmr/views.py:659 rzmr/views.py:672 rzmr/views.py:685
-#: rzmr/views.py:698
+#: rzmr/views.py:481 rzmr/views.py:504 rzmr/views.py:517 rzmr/views.py:540
+#: rzmr/views.py:553 rzmr/views.py:576 rzmr/views.py:589 rzmr/views.py:612
 msgid "PTFE Metal hoses"
 msgstr "Фторопластовые рукава"
 
-#: rzmr/templates/rzmr/base.html:235 rzmr/templates/rzmr/base.html:348
+#: rzmr/templates/rzmr/base.html:234 rzmr/templates/rzmr/base.html:347
 msgid "PH (fluoroplastic hose)  PTFE hoses"
 msgstr "Фторопластовые рукава серии РФ"
 
-#: rzmr/templates/rzmr/base.html:247
+#: rzmr/templates/rzmr/base.html:246
 msgid "Composite hoses"
 msgstr "Композитные рукава"
 
-#: rzmr/templates/rzmr/base.html:249
+#: rzmr/templates/rzmr/base.html:248
 msgid "All composite hoses"
 msgstr "Все композитные рукава"
 
-#: rzmr/templates/rzmr/base.html:250
+#: rzmr/templates/rzmr/base.html:249
 msgid "EGE construction"
 msgstr "Рукава серии EGE"
 
-#: rzmr/templates/rzmr/base.html:251
+#: rzmr/templates/rzmr/base.html:250
 msgid "SSE construction"
 msgstr "Рукава серии SSE"
 
-#: rzmr/templates/rzmr/base.html:252
+#: rzmr/templates/rzmr/base.html:251
 msgid "SST construction"
 msgstr "Рукава серии SST"
 
-#: rzmr/templates/rzmr/base.html:253
+#: rzmr/templates/rzmr/base.html:252
 msgid "SGT construction"
 msgstr "Рукава серии SGT"
 
-#: rzmr/templates/rzmr/base.html:254
+#: rzmr/templates/rzmr/base.html:253
 msgid "SGE construction"
 msgstr "Рукава серии SGE"
 
-#: rzmr/templates/rzmr/base.html:255
+#: rzmr/templates/rzmr/base.html:254
 msgid "GGE construction"
 msgstr "Рукава серии GGE"
 
-#: rzmr/templates/rzmr/base.html:256
+#: rzmr/templates/rzmr/base.html:255
 msgid "AAE construction"
 msgstr "Рукава серии AAE"
 
-#: rzmr/templates/rzmr/base.html:262 rzmr/templates/rzmr/index.html:22
+#: rzmr/templates/rzmr/base.html:261 rzmr/templates/rzmr/index.html:22
 #: rzmr/templates/rzmr/index.html:187
 msgid "Filters and units"
 msgstr "Фильтры и агрегаты"
 
-#: rzmr/templates/rzmr/base.html:283 rzmr/templates/rzmr/base.html:377
+#: rzmr/templates/rzmr/base.html:282 rzmr/templates/rzmr/base.html:375
 msgid "Engineering and non-standard equipment"
 msgstr "Нестандартное оборудование"
 
-#: rzmr/templates/rzmr/base.html:285 rzmr/templates/rzmr/base.html:379
+#: rzmr/templates/rzmr/base.html:284 rzmr/templates/rzmr/base.html:377
 msgid "Сustom-made products"
 msgstr "Изделия на заказ"
 
-#: rzmr/templates/rzmr/base.html:286 rzmr/templates/rzmr/base.html:378
+#: rzmr/templates/rzmr/base.html:285 rzmr/templates/rzmr/base.html:376
 msgid "Technological equipment"
 msgstr "Технологическая оснастка"
 
-#: rzmr/templates/rzmr/base.html:287 rzmr/templates/rzmr/base.html:380
+#: rzmr/templates/rzmr/base.html:286 rzmr/templates/rzmr/base.html:378
 #: rzmr/templates/rzmr/index.html:282
 msgid "Leak and strength tests"
 msgstr "Испытания на герметичность и прочность"
 
-#: rzmr/templates/rzmr/base.html:292 rzmr/templates/rzmr/index.html:213
+#: rzmr/templates/rzmr/base.html:291 rzmr/templates/rzmr/index.html:213
 #: rzmr/templates/rzmr/index.html:224
 msgid "Online constructor"
 msgstr "Онлайн-конструктор"
 
-#: rzmr/templates/rzmr/base.html:300 rzmr/templates/rzmr/base.html:310
+#: rzmr/templates/rzmr/base.html:299 rzmr/templates/rzmr/base.html:309
 msgid "Home page"
 msgstr "Главная"
 
-#: rzmr/templates/rzmr/base.html:391
+#: rzmr/templates/rzmr/base.html:389
 msgid "Contacts"
 msgstr "Контакты"
 
-#: rzmr/templates/rzmr/base.html:402
+#: rzmr/templates/rzmr/base.html:400
 msgid "«Russian factory of metal hoses» Co.Ltd"
 msgstr "ООО «Русский Завод Металлорукавов»"
 
-#: rzmr/templates/rzmr/base.html:402
+#: rzmr/templates/rzmr/base.html:400
 msgid "All rights reserved"
 msgstr "Все права защищены"
 
-#: rzmr/templates/rzmr/base.html:403
+#: rzmr/templates/rzmr/base.html:401
 msgid "Privacy policy"
 msgstr "Политика конфиденциальности"
 
@@ -560,29 +557,40 @@ msgstr "Количество"
 msgid "Price"
 msgstr "Цена"
 
-#: shop/templates/shop/order.html:75
+#: shop/templates/shop/order.html:80
 msgid "on request"
 msgstr "по запросу"
 
-#: shop/templates/shop/order.html:98
+#: shop/templates/shop/order.html:103
 msgid "Order amount"
 msgstr "Сумма заказа"
 
-#: shop/templates/shop/order.html:101
+#: shop/templates/shop/order.html:106
 msgid "Delivery"
 msgstr "Доставка"
 
-#: shop/templates/shop/order.html:106
+#: shop/templates/shop/order.html:111
 msgid "Payment amount"
 msgstr "К оплате"
 
-#: shop/templates/shop/order.html:114
+#: shop/templates/shop/order.html:119
 msgid "Cancel the order"
 msgstr "Отменить заказ"
 
-#: shop/templates/shop/order.html:116
+#: shop/templates/shop/order.html:121
 msgid "To the list of orders"
 msgstr "К списку заказов"
+
+#: shop/templates/shop/product-details.html:67
+#: shop/templates/shop/product-details.html:69
+#: shop/templates/shop/product-list.html:146
+#: shop/templates/shop/product-list.html:205
+msgid "Add to cart"
+msgstr "В корзину"
+
+#: shop/templates/shop/product-details.html:81
+msgid "To favorites"
+msgstr "В избранное"
 
 #: shop/templates/shop/product-list.html:17
 msgid "Maximum price"
@@ -603,11 +611,6 @@ msgstr ""
 #: shop/templates/shop/product-list.html:138
 msgid "Price on request"
 msgstr "Цена по запросу"
-
-#: shop/templates/shop/product-list.html:146
-#: shop/templates/shop/product-list.html:205
-msgid "Add to cart"
-msgstr "В корзину"
 
 #: shop/templates/shop/product-list.html:156
 msgid "nothing found"
@@ -633,14 +636,14 @@ msgstr "Магазин"
 msgid "Cart"
 msgstr "Корзина"
 
-#: versa/settings.py:148
+#: versa/settings.py:154
 msgid "Russian"
 msgstr ""
 
-#: versa/settings.py:149
+#: versa/settings.py:155
 msgid "Kazakh"
 msgstr ""
 
-#: versa/settings.py:150
+#: versa/settings.py:156
 msgid "English"
 msgstr ""

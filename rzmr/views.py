@@ -574,7 +574,7 @@ class PTFEInnerView(DataMixin, FormView):
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
-                      ('ptfe-inner', 'Внутренний экран'),]
+                      ('ptfe-inners', 'Внутренний экран'),]
         c_def = self.get_user_context(
             title='Внутренний экран:', breadcrumb=breadcrumb)
         return {**context, **c_def}
