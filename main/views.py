@@ -126,3 +126,12 @@ class VersaPasswordResetCompleteView(DataMixin, auth_views.PasswordResetComplete
             breadcrumb=breadcrumb
         )
         return {**context, **c_def}
+
+
+# форма регистрации через админку с капчей
+class VersaAdminLoginView(auth_views.LoginView):
+    # шаблон находится вовсе не в этом приложении, до его поиска просто не доходит очередь
+    # так как в settings указано, что сначала ищем все шаблоны в корне приложения: 'DIRS': [BASE_DIR / 'templates'],
+    # по этому admin/login.html - это путь от корня проекта
+    template_name = 'admin/login.html'
+    form_class = LoginUserForm

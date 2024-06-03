@@ -1,4 +1,5 @@
 from django.urls import path, re_path
+from django.conf import settings
 from main.views import *
 
 
@@ -13,4 +14,5 @@ urlpatterns = [
     re_path(r'^passwords/reset/done/$', VersaPasswordResetDoneView.as_view(),  name='password_reset_done'),
     re_path(r'^passwords/reset/confirm/(?P<uidb64>[-\w]+)/(?P<token>[-\w]+)/$', VersaPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     re_path(r'^passwords/reset/complete/$', VersaPasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    path(f'{settings.ADMIN_PANEL_URL}/login/', VersaAdminLoginView.as_view()),
 ]

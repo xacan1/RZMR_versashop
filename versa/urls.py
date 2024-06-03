@@ -22,14 +22,13 @@ from django.conf import settings
 from main.views import PageNotFound
 
 
-urlpatterns = [
-    path('admin-rzmr/', admin.site.urls),
-]
+urlpatterns = []
 
 rzmr_patterns = [
     path('i18n/', include('django.conf.urls.i18n')),
-    path('', include('rzmr.urls')),
     path('', include('main.urls')),
+    path(f'{settings.ADMIN_PANEL_URL}/', admin.site.urls, name='admin-panel'),
+    path('', include('rzmr.urls')),
     path('', include('api.urls')),
     path('shop/', include('shop.urls')),
     path('', include('personal_account.urls')),

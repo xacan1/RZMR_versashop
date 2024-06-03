@@ -28,6 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config.SECRET_KEY
+ADMIN_PANEL_URL = config.ADMIN_PANEL_URL
 
 # Для онлайн магазина признак того, что можно превышать остатки на складах при заказе
 EXCESS_STOCK_OF_GOODS = config.EXCESS_STOCK_OF_GOODS
@@ -94,7 +95,7 @@ ROOT_URLCONF = 'versa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
