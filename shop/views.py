@@ -261,7 +261,6 @@ class ProductDetailView(DataMixin, DetailView):
 
 
 class AddOrderView(DataMixin, CreateView):
-    model = Order
     form_class = AddOrderForm
     template_name = 'shop/checkout.html'
     success_url = reverse_lazy('new-order-success')
@@ -379,7 +378,6 @@ class ContractorUpdateView(LoginRequiredMixin, DataMixin, UpdateView):
 
 
 class ContractorCreateView(LoginRequiredMixin, DataMixin, CreateView):
-    model = Contractor
     form_class = AddContractorForm
     template_name = 'shop/contractor-create.html'
     login_url = reverse_lazy('login')

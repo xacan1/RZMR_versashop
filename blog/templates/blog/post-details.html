@@ -12,5 +12,14 @@
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
     </div>
+    {% if user.is_staff %}
+    <div class="row">
+        <div class="col-11">
+        </div>
+        <div class="col-1 button">
+            <a class="btn btn-secondary" href="{% url 'update-post' post.slug %}">Редактировать</a>
+        </div>
+    </div>
+    {% endif %}
 </div>
 {% endblock content %}

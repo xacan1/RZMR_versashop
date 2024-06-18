@@ -210,6 +210,9 @@
                                     <li><a class="dropdown-item" href="{% url 'vacancies' %}">{% trans 'Career' %}</a></li>
                                     {% if LANGUAGE_CODE == 'ru' %}
                                     <li><a class="dropdown-item" href="{% url 'for-suppliers' %}">Поставщикам</a></li>
+                                    {% if user.is_staff %}
+                                    <li><a class="dropdown-item" href="{% url 'create-post'  %}">Добавить статью</a></li>
+                                    {% endif %}
                                     <li><a class="dropdown-item" href="{% url 'posts' %}">Статьи</a></li>
                                     <!-- <li><a class="dropdown-item" href="#">Новости</a></li> -->
                                     <li><a class="dropdown-item" href="{% url 'contacts' %}">Контакты</a></li>

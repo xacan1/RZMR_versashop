@@ -1,7 +1,10 @@
 from typing import Any
 from django.db.models.query import QuerySet
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from blog.permissions import StaffRequiredMixin
+from django.urls import reverse_lazy
 from blog.models import *
+from blog.forms import *
 from shop.mixins import DataMixin
 
 
@@ -33,4 +36,31 @@ class PostDetailView(DataMixin, DetailView):
         breadcrumb = [('posts', 'Статьи'),]
         c_def = self.get_user_context(
             title=context['post'].title, breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class PostCreateView(StaffRequiredMixin, DataMixin, CreateView):
+    form_class = AddPostForm
+    template_name = 'blog/post-create.html'
+    success_url = reverse_lazy('posts')
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('posts', 'Статьи'),]
+        c_def = self.get_user_context(
+            title='Добавление новой статьи', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class PostUpdateView(StaffRequiredMixin, DataMixin, UpdateView):
+    model = Post
+    form_class = AddPostForm
+    template_name = 'blog/post-update.html'
+    slug_url_kwarg = 'post_slug'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('posts', 'Статьи'),]
+        c_def = self.get_user_context(
+            title='Изменение статьи', breadcrumb=breadcrumb)
         return {**context, **c_def}
