@@ -1,0 +1,285 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Грамотный монтаж фторопластового рукава обеспечивает надёжную и длительную эксплуатацию, а несоблюдения
+                нижеуказанных правил может привести к выходу изделия из строя уже на этапе установки
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Центрировать расположение рукава для поглощения вибрации_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Центрировать расположение рукава для поглощения вибрации.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Центрируй расположение рукава для поглощения вибраций
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Избегать скручивания с угловыми смещениями_неправмльно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Избегать скручивания с угловыми смещениями.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Избегай скручивания рукава при угловых перемещениях
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/разматывать не тянуть_неправильно.png' %}" alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/разматывать не тянуть_правильно.png' %}" alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                При разборе рукава из бухты, аккуратно разматывай ее, не тяни
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Правильно подбирать рукав по длине_не_правильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Правильно подбирать рукав по длине_правильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Правильно подбирай длину рукава, учитывай, что при работе под давлением длина рукава может увеличиваться
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Для поглощения разнонаправленных вибраций устанавливать несколько рукавов под углом 90_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Для поглощения разнонаправленных вибраций устанавливать несколько рукавов под углом 90.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Для поглощения перпендикулярной вибрации используй несколько рукавов с отводами 90°
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Устанавливать рукав перпендикулярно вибрации_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Устанавливать рукав перпендикулярно вибрации.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Устанавливай рукав только перпендикулярно вибрации
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Перемещать рукав только в одной плоскости_не_правильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Перемещать рукав только в одной плоскости_правильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Не допускай скручивание по оси
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Охлаждать сварочный шов между рукавом и фитингом_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Охлаждать сварочный шов между рукавом и фитингом.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Не забывай, при приварке рукава по месту, необходимо охлаждать сварочный шов
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Не допускать скручивания по оси_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Не допускать скручивания по оси.png' %}" alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                При монтаже перемещай рукав только в одной плоскости
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Установить рукав перпендикулярно направлению смещения_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Установить рукав перпендикулярно направлению смещения.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Устанавливай рукав перпендикулярно направлению перемещения
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Использовать опорный ролик, не допускать_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Использовать опорный ролик, не допускать.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                При монтаже рукава в подвешенном состоянии используй опорный ролик
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Использовать подставку, не допускать_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Использовать подставку, не допускать.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Не забывай использовать подставку для соблюдения минимального радиуса изгиба рукава
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/монтаж не_правильно_1.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/монтаж правильно_1.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Не допускай излишнего изгибания рукава, помни, у каждого рукава есть минимальный радиус изгиба, не
+                превышай его. Даже разовый резкий перегиб может вывести рукав из строя.
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Изгиб рукава и направление движения должны быть в одной плоскости_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Изгиб рукава и направление движения должны быть в одной плоскости.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Не допускай излишнего изгибания рукава, помни, у каждого рукава есть минимальный радиус изгиба, не
+                превышай его. Даже разовый резкий перегиб может вывести рукав из строя.
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Избегать повреждений, использовать защитную оболочку_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Избегать повреждений, использовать защитную оболочку.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Избегай повреждений гибкой части, используй защитную оболочку
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Для погашения больших осевых колебаний_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Для погашения больших осевых колебаний.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Используй отводы для погашения больших осевых колебаний
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Избегать больших боковых смещений_неправильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/Избегать больших боковых смещений.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Избегай сильных боковых смещений
+            </p>
+        </div>
+    </div>
+    <div class="row uzm-wrapper-install-imgs">
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/без скручивания_не_правильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="{% static 'rzmr/img/InstallationSafety/без скручивания_правильно.png' %}"
+                alt="install">
+        </div>
+        <div class="col-12 col-md-4 uzm-vertical-line">
+            <p class="text-uzm pt-3">
+                Знай, что рукав не работает на скручивание
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

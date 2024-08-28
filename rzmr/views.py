@@ -402,7 +402,7 @@ class MetalhosesRecommendationsView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class InstallationSafetyView(DataMixin, FormView):
+class MetalhosesInstallationSafetyView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/metalhoses_installation_safety.html'
 
@@ -445,6 +445,18 @@ class PTFERecommendationsView(DataMixin, FormView):
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),]
         c_def = self.get_user_context(
             title='Рекомендации по измерениям и соответствиям стандартам', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFEInstallationSafetyView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_installation_safety.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),]
+        c_def = self.get_user_context(
+            title='Монтаж и безопасность фторопластовых рукавов', breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
