@@ -26,7 +26,7 @@
     </div>
     <div class="row">
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="{% url 'metalhoses-corrugation' %}">
+            <a href="{% url 'metalhoses-corrugations' %}">
                 <p class="wrapper-up-uzm-card fs-5">
                     Гофра
                 </p>
@@ -38,7 +38,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-corrugation-standartnaya' %}">
+            <a href="{% url 'metalhoses-corrugation' 'standartnaya' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Стандартная <br> Ø6 - Ø400</div>
                 </div>
@@ -46,7 +46,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-corrugation-povishennoy_gibkosti' %}">
+            <a href="{% url 'metalhoses-corrugation' 'povishennoy_gibkosti' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Повышенной гибкости <br> Ø6 - Ø200</div>
                 </div>
@@ -54,15 +54,15 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-corrugation-tyazhelaya_seriya' %}">
+            <a href="{% url 'metalhoses-corrugation' 'tyazhelaya_seriya' %}">
                 <div class="wrapper-up-uzm-card">
-                    <div>Тяжелая серия <br> Ø6 - Ø200</div>
+                    <div>Тяжёлая серия <br> Ø6 - Ø200</div>
                 </div>
                 <img src="{% static '/rzmr/img/marked_gofra_tyagelaya.png' %}" alt="gofra">
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-corrugation-spiralnaya' %}">
+            <a href="{% url 'metalhoses-corrugation' 'spiralnaya' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Спиральная <br> Ø6 - Ø200</div>
                 </div>
@@ -70,7 +70,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-corrugation-dvukhsloynaya' %}">
+            <a href="{% url 'metalhoses-corrugation' 'dvukhsloynaya' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Двухслойная <br> Ø6 - Ø200</div>
                 </div>
@@ -80,7 +80,7 @@
     </div>
     <div class="row">
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="{% url 'metalhoses-braid' %}">
+            <a href="{% url 'metalhoses-braids' %}">
                 <p class="wrapper-up-uzm-card fs-5">
                     Оплетка
                 </p>
@@ -93,7 +93,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-braid-odnosloynaya' %}">
+            <a href="{% url 'metalhoses-braid' 'odnosloynaya' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Однослойная</div>
                 </div>
@@ -101,7 +101,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-braid-dvukhsloynaya' %}">
+            <a href="{% url 'metalhoses-braid' 'dvukhsloynaya'  %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Двухслойная</div>
                 </div>
@@ -109,7 +109,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-braid-trekhsloynaya' %}">
+            <a href="{% url 'metalhoses-braid' 'trekhsloynaya' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Трехслойная</div>
                 </div>
@@ -119,7 +119,7 @@
     </div>
     <div class="row">
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="{% url 'metalhoses-inner' %}">
+            <a href="{% url 'metalhoses-inners' %}">
                 <p class="wrapper-up-uzm-card fs-5">
                     Внутренний экран
                 </p>
@@ -130,7 +130,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-inner-trubnyy' %}">
+            <a href="{% url 'metalhoses-inner' 'trubnyy' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Трубный</div>
                 </div>
@@ -138,7 +138,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-inner-valtsovannyy' %}">
+            <a href="{% url 'metalhoses-inner' 'valtsovannyy' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Вальцованный</div>
                 </div>
@@ -146,15 +146,15 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-inner-opletochnyy' %}">
+            <a href="{% url 'metalhoses-inner' 'opletochnyy' %}">
                 <div class="wrapper-up-uzm-card">
-                    <div>Оплеточный</div>
+                    <div>Оплёточный</div>
                 </div>
                 <img src="{% static '/rzmr/img/marked_ekran_opletochnii.png' %}" alt="ekran">
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-inner-ptfe' %}">
+            <a href="{% url 'metalhoses-inner' 'ptfe' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>PTFE</div>
                 </div>
@@ -164,7 +164,7 @@
     </div>
     <div class="row">
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="{% url 'metalhoses-outside' %}">
+            <a href="{% url 'metalhoses-outsides' %}">
                 <p class="wrapper-up-uzm-card fs-5">
                     Наружная оболочка
                 </p>
@@ -176,7 +176,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-outside-termochekhol' %}">
+            <a href="{% url 'metalhoses-outside' 'termochekhol' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Термочехол</div>
                 </div>
@@ -184,7 +184,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-outside-termorukav' %}">
+            <a href="{% url 'metalhoses-outside' 'termorukav' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Терморукав</div>
                 </div>
@@ -192,7 +192,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-outside-rezinovaya_obolochka' %}">
+            <a href="{% url 'metalhoses-outside' 'rezinovaya_obolochka' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Резиновая оболочка</div>
                 </div>
@@ -200,7 +200,7 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-outside-pruzhina' %}">
+            <a href="{% url 'metalhoses-outside' 'pruzhina' %}">
                 <div class="wrapper-up-uzm-card">
                     <div>Пружина</div>
                 </div>
@@ -208,13 +208,34 @@
             </a>
         </div>
         <div class="col-lg-2 col-md-4 col-6">
-            <a href="{% url 'metalhoses-outside-pletenka_mednaya_luzhenaya_pml' %}">
+            <a href="{% url 'metalhoses-outside' 'pletenka_mednaya_luzhenaya_pml' %}">
                 <div class="wrapper-up-uzm-card">
-                    <div>Плетенка медная луженая (ПМЛ)</div>
+                    <div>Плетёнка медная лужёная (ПМЛ)</div>
                 </div>
                 <img src="{% static '/rzmr/img/pletenka_mednaya_luzonaya.png' %}" alt="hoses">
             </a>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-special' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Специальные разработки
+                </p>
+                <p class="uzm-text-card pt-4">
+                    Для решения нетривиальных задач нашим конструкторским отделом разрабатываются различные модификации на основе металлорукавов РГМ.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-special' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Специальные разработки</div>
+                </div>
+                <img src="{% static '/rzmr/img/spec_razrabotki.png' %}" alt="hoses">
+            </a>
+        </div>
+
     </div>
     <div class="row">
         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
@@ -237,7 +258,7 @@
                 Расшифровка: <br>
                 РГМ — серия изделия (рукав герметичный металлический); <br>
                 50 – номинальный внутренний диаметр рукава, мм; <br>
-                40 - наибольшее рабочее давление рукава в кгс/см2 (атм) при нормальных условиях эксплуатации; <br>
+                40 - наибольшее рабочее давление рукава в кгс/см<sup>2</sup> (атм) при нормальных условиях эксплуатации; <br>
                 1,0 — номинальная длина рукава в сборе, м; <br>
                 с/а – наличие специальной концевой арматуры в соответствии с требованиями Заказчика. Полное описание
                 концевой арматуры представлено в паспорте Заказчика. Маркировка рукава с отсутствием аббревиатуры<br>

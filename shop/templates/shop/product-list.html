@@ -117,7 +117,7 @@
                                             {% if product_info.product.photo %}
                                             <img class="img-cart-order" src="{{ product_info.product.photo.url }}" alt="product_photo">
                                             {% else %}
-                                            <img class="img-cart-order" src="https://via.placeholder.com/100x200" alt="product_photo">
+                                            <img class="img-cart-order" src="{% static 'shop\img\no_image.png' %}" alt="product_photo">
                                             {% endif %}
                                         </div>
                                         <div class="product-info p-2 text-center">
@@ -197,7 +197,7 @@
                                                     {% if product_info.product.photo %}
                                                     <img class="img-cart-order" src="{{ product_info.product.photo.url }}" alt="#">
                                                     {% else %}
-                                                    <img class="img-cart-order" src="https://via.placeholder.com/335x335" alt="#">
+                                                    <img class="img-cart-order" src="{% static 'shop\img\no_image.png' %}" alt="#">
                                                     {% endif %}
                                                     <div class="button">
                                                         <!-- тут вызываю модальное окно, которое в свою очередь вызывает JS функцию добавления товара в корзину -->

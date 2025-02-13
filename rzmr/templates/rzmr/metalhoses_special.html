@@ -1,0 +1,19 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Рукав в рукаве - позволяет предотвращать теплопотери среды при прохождении через гибкую часть.
+                Во внешнюю камеру подается жидкость сохраняющая заданный температурный режим в основном рукаве. 
+            </p>
+            <p class="py-4">
+                <img src="{% static '/rzmr/img/spec_razrabotki.png' %}" alt="ekran">
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

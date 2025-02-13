@@ -53,7 +53,7 @@
                             {% elif 'РГМ ' in row_product.product.name %}
                             <img class="img-cart-order" src="{% static 'rzmr/img/metallhoses.jpg' %}" alt="img_metal">
                             {% else %}
-                            <a href="{% url 'product-details' row_product.product.slug %}"><img class="img-cart-order" src="https://via.placeholder.com/220x200" alt="img_prod"></a>
+                            <a href="{% url 'product-details' row_product.product.slug %}"><img class="img-cart-order" src="{% static 'shop\img\no_image.png' %}" alt="img_prod"></a>
                             {% endif %}
                         </div>
                     </div>

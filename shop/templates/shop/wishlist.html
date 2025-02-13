@@ -39,7 +39,7 @@
                         {% if row_product.photo %}
                         <a href="{% url 'product-details' row_product.slug %}"><img src="{{ row_product.photo }}" alt="#"></a>
                         {% else %}
-                        <a href="{% url 'product-details' row_product.slug %}"><img src="https://via.placeholder.com/220x200" alt="#"></a>
+                        <a href="{% url 'product-details' row_product.slug %}"><img src="{% static 'shop\img\no_image.png' %}" alt="#"></a>
                         {% endif %}
                     </div>
                     <div class="col-lg-4 col-md-3 col-12">
