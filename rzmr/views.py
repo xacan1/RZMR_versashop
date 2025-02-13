@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 class RobotView(DataMixin, FormView):
-    def get(self, request: HttpRequest, *args: str, **kwargs) -> HttpResponse:
+    def get(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
         filename = 'robots.txt'
         path_file = Path(Path.cwd(), filename)
         response = FileResponse(open(path_file, 'rb'), as_attachment=True,
