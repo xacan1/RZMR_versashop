@@ -1,4 +1,3 @@
-from typing import Any
 from django.db.models.query import QuerySet
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from blog.permissions import StaffRequiredMixin
@@ -14,12 +13,12 @@ class PostListView(DataMixin, ListView):
     context_object_name = 'posts'
     paginate_by = 8
 
-    def get_queryset(self) -> QuerySet[Any]:
+    def get_queryset(self) -> QuerySet:
         queryset = Post.objects.filter(
             is_published=True).order_by('-time_create')
         return queryset
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title='Статьи')
         return {**context, **c_def}
@@ -31,7 +30,7 @@ class PostDetailView(DataMixin, DetailView):
     context_object_name = 'post'
     slug_url_kwarg = 'post_slug'
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         breadcrumb = [('posts', 'Статьи'),]
         c_def = self.get_user_context(
@@ -44,7 +43,7 @@ class PostCreateView(StaffRequiredMixin, DataMixin, CreateView):
     template_name = 'blog/post-create.html'
     success_url = reverse_lazy('posts')
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         breadcrumb = [('posts', 'Статьи'),]
         c_def = self.get_user_context(
@@ -58,7 +57,7 @@ class PostUpdateView(StaffRequiredMixin, DataMixin, UpdateView):
     template_name = 'blog/post-update.html'
     slug_url_kwarg = 'post_slug'
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         breadcrumb = [('posts', 'Статьи'),]
         c_def = self.get_user_context(

@@ -1,4 +1,3 @@
-from typing import Any
 import io
 from django.http import HttpRequest, HttpResponse, FileResponse
 from django.views.generic import FormView
@@ -12,7 +11,7 @@ class MetalhoseConstructorView(DataMixin, FormView):
     form_class = ConstructorForm
     template_name = 'constructor/metalhose-constructor.html'
 
-    def get_initial(self) -> dict[str, Any]:
+    def get_initial(self) -> dict[str]:
         initial = super().get_initial()
         initial['types_choices'] = request1C.get_types()
         initial['diameters_choices'] = request1C.get_diameters()
@@ -29,7 +28,7 @@ class MetalhoseConstructorView(DataMixin, FormView):
 
 # Прокси запросы к серверу 1С
 class ProxyRequestView(FormView):
-    def __init__(self, **kwargs: Any) -> None:
+    def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
         self.buffer = io.BytesIO()
 
@@ -37,7 +36,7 @@ class ProxyRequestView(FormView):
         if self.buffer:
             self.buffer.close()
 
-    def get(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+    def get(self, request: HttpRequest, *args: str, **kwargs) -> HttpResponse:
         # return super().get(request, *args, **kwargs)
         url_request = request.headers.get('Request1C', '')
         response_data = request1C.get_request_to_1C(url_request)
@@ -52,7 +51,7 @@ class ProxyRequestView(FormView):
 
         return response
 
-    def post(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+    def post(self, request: HttpRequest, *args: str, **kwargs) -> HttpResponse:
         # return super().post(request, *args, **kwargs)
         url_request = request.headers.get('Request1C', '')
         data_request = request.body

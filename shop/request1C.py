@@ -1,9 +1,8 @@
 from urllib import request, error
-from typing import Union
 import json
 
 
-def get_request_to_1C(url_request: str) -> Union[str, bytes]:
+def get_request_to_1C(url_request: str) -> str | bytes:
     response = '{}'
 
     if not url_request:

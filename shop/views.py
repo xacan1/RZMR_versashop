@@ -398,7 +398,7 @@ class ContractorCreateView(LoginRequiredMixin, DataMixin, CreateView):
 
 # Прокси запросы к серверу 1С как в конструкторе, не везде есть конструктор в магазине, так что придется дублировать логику тут
 class ProxyRequestView(FormView):
-    def __init__(self, **kwargs: Any) -> None:
+    def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
         self.buffer = io.BytesIO()
 
@@ -406,7 +406,7 @@ class ProxyRequestView(FormView):
         if self.buffer:
             self.buffer.close()
 
-    def get(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+    def get(self, request: HttpRequest, *args: str, **kwargs) -> HttpResponse:
         # return super().get(request, *args, **kwargs)
         url_request = request.headers.get('Request1C', '')
         response_data = request1C.get_request_to_1C(url_request)
