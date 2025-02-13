@@ -137,7 +137,7 @@ async function update_cart_header() {
             url_photo = row.product.photo;
         }
         else {
-            url_photo = 'https://rzmr.ru/static/shop/img/no_image.jpg';
+            url_photo = 'https://rzmr.ru/static/shop/img/no_image.png';
         }
 
         // подправим путь к карточке товара
@@ -382,7 +382,7 @@ function update_cart(cart_info) {
             url_photo = row.product.photo;
         }
         else {
-            url_photo = 'https://rzmr.ru/static/shop/img/no_image.jpg';
+            url_photo = 'https://rzmr.ru/static/shop/img/no_image.png';
         }
 
         row_cart_order.className = 'cart-single-list shop-for-del';
