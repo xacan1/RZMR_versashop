@@ -25,6 +25,7 @@ urlpatterns = [
     path('metalhoses/recommendations/', MetalhosesRecommendationsView.as_view(), name='metalhoses-recommendations'),
     path('metalhoses/installation/', MetalhosesInstallationSafetyView.as_view(), name='metalhoses-installation'),
     path('metalhoses/standarts/', StandartsRGMView.as_view(), name='metalhoses-standarts-grm'),
+    path('metalhoses/hpress/', HpressRGMView.as_view(), name='metalhoses-hpress-grm'),
     path('ptfe/', PTFEhosesView.as_view(), name='ptfe-hoses'),
     path('ptfe/recommendations/', PTFERecommendationsView.as_view(), name='ptfe-recommendations'),
     path('ptfe/installation/', PTFEInstallationSafetyView.as_view(), name='ptfe-installation'),

@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="d-xl-block d-none col-3">
                         <div class="header-element">
-                            <span>г.Санкт-Петербург, ул.Замшина, д.31 К.4, офис 3-Н/4</span>
+                            <span>{{ company_address }}</span>
                         </div>
                     </div>
                     <div class="d-none d-md-block col-2">
@@ -363,6 +363,7 @@
                     <div><a href="{% url 'metalhoses-recommendations' %}">{% trans 'Guidance' %}</a></div>
                     <div><a href="{% url 'metalhoses-installation' %}">{% trans 'Installations' %}</a></div>
                     <div><a href="{% url 'metalhoses-standarts-grm' %}">{% trans 'Quality standards' %}</a></div>
+                    <div><a href="{% url 'metalhoses-hpress-grm' %}">{% trans 'High pressure metal hoses' %}</a></div>
                 </div>
                 <div class="d-md-block d-none col-3">
                     <p class="footer-title">{% trans 'PTFE Metal hoses' %}</p>
@@ -415,7 +416,7 @@
                     <div><a href="tel:+73472747387">+7 (347) 274-73-87</a></div>
                     <div><a href="#" data-bs-toggle="modal" data-bs-target="#requestPhoneCallModal">{% trans 'Request a call' %}</a></div>
                     <div><a href="mailto:{{ company_email }}">{{ company_email }}</a></div>
-                    <div><a href="#">197341, Санкт-Петербург г, Афонская ул, дом № 1, корпус 2</a></div>
+                    <div><a href="#">{{ company_address }}</a></div>
                 </div>
             </div>
         </div>

@@ -14,5 +14,41 @@
             </p>
         </div>
     </div>
+    <div class="row pb-5">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'ptfe-liners' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Футеровка PTFE
+                </p>
+                <p class="uzm-text-card">
+                    развальцовка гибкой части фторопластового рукава на концевую арматуру.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-liner' 'ploskoy_trubki_na_flanets' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE футеровка плоской трубки на фланец </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_PTFE футеровка плоская.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-liner' 'gofrirovannoy_trubki_na_flanets' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE футеровка гофрированной трубки на фланец </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_PTFE футеровка гофрированная.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-liner' 'ploskoy_trubki_na_nippel_gayki' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE футеровка плоской трубки на ниппель гайки </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_PTFE футеровка с гайкой.png' %}" alt="gofra">
+            </a>
+        </div>
+    </div>
 </div>
 {% endblock content %}

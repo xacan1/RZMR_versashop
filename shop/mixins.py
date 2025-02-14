@@ -17,6 +17,7 @@ class DataMixin:
         context['company_name'] = settings.COMPANY_NAME
         context['company_name_short'] = settings.COMPANY_NAME_SHORT
         context['company_email'] = settings.COMPANY_EMAIL
+        context['company_address'] = settings.COMPANY_ADDRESS
         context['DEBUG'] = settings.DEBUG
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
 

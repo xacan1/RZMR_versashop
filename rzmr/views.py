@@ -342,6 +342,17 @@ class StandartsRGMView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Стандарты качества на металлорукава серии РГМ', breadcrumb=breadcrumb)
         return {**context, **c_def}
+    
+
+class HpressRGMView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/metalhoses_hpress_rgm.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        title=_('High pressure metal hoses')
+        c_def = self.get_user_context(title=title)
+        return {**context, **c_def}
 
 
 class PTFEhosesView(DataMixin, FormView):
@@ -425,16 +436,23 @@ class PTFEPipeView(DataMixin, FormView):
             return super().get_template_names()
 
         template_names = []
-        template_names.append(f'rzmr/{slug}.html')
+        template_names.append(f'rzmr/ptfe_pipe_{slug}.html')
 
         return template_names
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
-                      ('ptfe-pipes', 'Трубка'),]
-        c_def = self.get_user_context(
-            title='Трубка для фторопластовых рукавов', breadcrumb=breadcrumb)
+                      ('ptfe-pipes', 'Трубки'),]
+        suffix_title = {
+            'ploskaya_standartnoe_ispolnenie': 'плоская в стандартном исполнении',
+            'ploskaya_tolstostennaya': 'плоская толстостенная',
+            'gofrirovannaya_standartnoe_ispolnenie': 'гофрированная в стандартном исполнении',
+            'gofrirovannaya_tolstostennaya': 'гофрированная толстостенная',
+        }
+        title = f'Трубка для фторопластовых рукавов {suffix_title.get(slug, "")}'
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -461,16 +479,22 @@ class PTFELinerView(DataMixin, FormView):
             return super().get_template_names()
 
         template_names = []
-        template_names.append(f'rzmr/{slug}.html')
+        template_names.append(f'rzmr/ptfe_futerovka_{slug}.html')
 
         return template_names
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
-                      ('ptfe-liners', 'Футеровка PTFE'),]
-        c_def = self.get_user_context(
-            title='Футеровка PTFE', breadcrumb=breadcrumb)
+                      ('ptfe-liners', 'Футеровки PTFE'),]
+        suffix_title = {
+            'gofrirovannoy_trubki_na_flanets': 'гофрированной трубки на фланец',
+            'ploskoy_trubki_na_flanets': 'плоской трубки на фланец',
+            'ploskoy_trubki_na_nippel_gayki': 'плоской трубки на ниппель гайки',
+        }
+        title = f'Футеровка PTFE {suffix_title.get(slug, "")}'
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -497,16 +521,21 @@ class PTFEInnerView(DataMixin, FormView):
             return super().get_template_names()
 
         template_names = []
-        template_names.append(f'rzmr/{slug}.html')
+        template_names.append(f'rzmr/ptfe_inner_{slug}.html')
 
         return template_names
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
-                      ('ptfe-inners', 'Внутренний экран'),]
-        c_def = self.get_user_context(
-            title='Внутренний экран:', breadcrumb=breadcrumb)
+                      ('ptfe-inners', 'Внутренние экраны'),]
+        suffix_title = {
+            'antistaticheskaya_prisadka_ploskaya': 'антистатическая присадка плоская',
+            'antistaticheskaya_prisadka_gofrirovannaya': 'антистатическая присадка гофрированная',
+        }
+        title = f'Внутренний экран: {suffix_title.get(slug, "")}'
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -533,16 +562,24 @@ class PTFEOutsideView(DataMixin, FormView):
             return super().get_template_names()
 
         template_names = []
-        template_names.append(f'rzmr/{slug}.html')
+        template_names.append(f'rzmr/ptfe_outside_{slug}.html')
 
         return template_names
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-outsides', 'Наружная оболочка'),]
-        c_def = self.get_user_context(
-            title='Наружная оболочка:', breadcrumb=breadcrumb)
+        suffix_title = {
+            'termochekhol': 'термочехол',
+            'rezinovaya_obolochka': 'резиновая оболочка',
+            'pruzhina': 'пружина',
+            'ploskaya_trubka_v_metallorukave_v_opletke': 'плоская трубка в металлорукаве в оплетке',
+            'gofrirovannaya_trubka_v_metallorukave_v_opletke': 'гофрированная трубка в металлорукаве в оплетке',
+        }
+        title = f'Наружная оболочка: {suffix_title.get(slug, "")}'
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 

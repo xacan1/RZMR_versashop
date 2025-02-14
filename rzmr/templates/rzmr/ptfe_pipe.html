@@ -26,5 +26,50 @@
             </p>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'ptfe-pipes' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Трубка
+                </p>
+                <p class="uzm-text-card">
+                    герметичная оболочка с кольцевыми гофрами, расположенными параллельно. Изготавливается методом
+                    гидроформовки из трубных заготовок, сваренных аргонодуговой сваркой встык по длине трубы.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-pipe' 'ploskaya_standartnoe_ispolnenie' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Плоская тонкостенная <br>Cтандартное исполнение <br>Ø6 - Ø100 </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_плоская тонкостенная стандарт.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-pipe' 'ploskaya_tolstostennaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Плоская толстостенная <br>Повышенное рабочее давление <br>Ø6 - Ø100</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_плоская толстостенная.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-pipe' 'gofrirovannaya_standartnoe_ispolnenie' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Гофрированная тонкостенная <br>Повышенная гибкость <br>Ø8 - Ø150 </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_гофрированная тонкостенная.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-pipe' 'gofrirovannaya_tolstostennaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Гофрированная толстостенная <br>Повышенная гибкость и рабочее давление <br>Ø8 - Ø150 </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_гофрированная толстостенная.png' %}" alt="gofra">
+            </a>
+        </div>
+    </div>
 </div>
 {% endblock content %}
