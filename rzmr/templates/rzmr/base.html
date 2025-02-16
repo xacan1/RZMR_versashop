@@ -245,7 +245,7 @@
                                     <li><a class="dropdown-item" href="{% url 'metalhoses-fittings' %}">{% trans 'Fittings' %}</a></li>
                                     <li><a class="dropdown-item" href="{% url 'metalhoses-recommendations' %}">{% trans 'Guidance' %}</a></li>
                                     <li><a class="dropdown-item" href="{% url 'metalhoses-installation' %}">{% trans 'Installations' %}</a></li>
-                                    <li><a class="dropdown-item" href="{% url 'metalhoses-standarts-grm' %}">{% trans 'Quality standards' %}</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'metalhoses-standarts-rgm' %}">{% trans 'Quality standards' %}</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -362,8 +362,13 @@
                     <div><a href="{% url 'metalhoses-fittings' %}">{% trans 'Fittings' %}</a></div>
                     <div><a href="{% url 'metalhoses-recommendations' %}">{% trans 'Guidance' %}</a></div>
                     <div><a href="{% url 'metalhoses-installation' %}">{% trans 'Installations' %}</a></div>
-                    <div><a href="{% url 'metalhoses-standarts-grm' %}">{% trans 'Quality standards' %}</a></div>
-                    <div><a href="{% url 'metalhoses-hpress-grm' %}">{% trans 'High pressure metal hoses' %}</a></div>
+                    <div><a href="{% url 'metalhoses-standarts-rgm' %}">{% trans 'Quality standards' %}</a></div>
+                    <div><a href="{% url 'metalhoses-for-welding' %}">{% trans 'For welding' %}</a></div>
+                    <div><a href="{% url 'metalhoses-hpress-rgm' %}">{% trans 'High pressure metal hoses' %}</a></div>
+                    {% if LANGUAGE_CODE == 'ru' %}
+                    <div><a href="{% url 'metalhoses-rgm' %}">Металлорукава РГМ</a></div>
+                    <div><a href="{% url 'metalhoses-gibkie-truboprovody' %}">Гибкие трубопроводы</a></div>
+                    {% endif %}
                 </div>
                 <div class="d-md-block d-none col-3">
                     <p class="footer-title">{% trans 'PTFE Metal hoses' %}</p>
@@ -371,6 +376,7 @@
                     <div><a href="{% url 'ptfe-fittings' %}">{% trans 'Fittings' %}</a></div>
                     <div><a href="{% url 'ptfe-recommendations' %}">{% trans 'Guidance' %}</a></div>
                     <div><a href="{% url 'ptfe-standarts' %}">{% trans 'Quality standards' %}</a></div>
+                    <div><a href="{% url 'ptfe-gofrirovanniy' %}">{% trans 'Corrugated' %}</a></div>
                 </div>
                 <div class="d-md-block d-none col-md-3 col-6">
                     {% if LANGUAGE_CODE == 'ru' %}

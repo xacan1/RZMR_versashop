@@ -111,6 +111,42 @@ class MetalhosesView(DataMixin, FormView):
         return {**context, **c_def}
 
 
+class MetalhosesForWeldingView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/metalhoses_pod_privarku.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', _('Metal hoses')),]
+        c_def = self.get_user_context(
+            title=f"{_('Metal hoses')} {_('For welding')}", breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class MetalhosesRGMView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/metalhoses_rgm.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', _('Metal hoses')),]
+        c_def = self.get_user_context(
+            title=f"{_('Metal hoses')} РГМ", breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class MetalhosesGibkieTruboprovodyView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/metalhoses_gibkie_truboprovody.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', _('Metal hoses')),]
+        c_def = self.get_user_context(
+            title='Гибкие трубопроводы', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
 class MetalhosesFittingsView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/metalhoses_fittings.html'
@@ -342,7 +378,7 @@ class StandartsRGMView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Стандарты качества на металлорукава серии РГМ', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class HpressRGMView(DataMixin, FormView):
     form_class = SimpleForm
@@ -350,7 +386,7 @@ class HpressRGMView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title=_('High pressure metal hoses')
+        title = _('High pressure metal hoses')
         c_def = self.get_user_context(title=title)
         return {**context, **c_def}
 
@@ -361,7 +397,19 @@ class PTFEhosesView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title=_('PTFE Metal hoses'))
+        c_def = self.get_user_context(
+            title=f"{_('PTFE Metal hoses')} серии РФ")
+        return {**context, **c_def}
+
+
+class PTFEhosesGofrirovanniyView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_gofrirovanniy.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title=f"{_('Corrugated')} {_('PTFE Metal hoses')}")
         return {**context, **c_def}
 
 

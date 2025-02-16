@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-14 11:51+0000\n"
+"POT-Creation-Date: 2025-02-16 22:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -216,7 +216,7 @@ msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
 msgid "Our partners"
 msgstr "Біздің серіктестер"
 
-#: rzmr/templates/rzmr/base.html:60 rzmr/templates/rzmr/base.html:417
+#: rzmr/templates/rzmr/base.html:60 rzmr/templates/rzmr/base.html:419
 msgid "Request a call"
 msgstr "Қоңырауға тапсырыс беру"
 
@@ -260,20 +260,21 @@ msgstr "Бос жұмыс орындары"
 #: rzmr/templates/rzmr/base.html:242 rzmr/templates/rzmr/base.html:244
 #: rzmr/templates/rzmr/base.html:361 rzmr/templates/rzmr/index.html:12
 #: rzmr/templates/rzmr/index.html:137 rzmr/views.py:110 rzmr/views.py:120
-#: rzmr/views.py:132 rzmr/views.py:156 rzmr/views.py:176 rzmr/views.py:199
-#: rzmr/views.py:217 rzmr/views.py:241 rzmr/views.py:260 rzmr/views.py:284
-#: rzmr/views.py:304 rzmr/views.py:317 rzmr/views.py:329 rzmr/views.py:341
+#: rzmr/views.py:132 rzmr/views.py:144 rzmr/views.py:168 rzmr/views.py:188
+#: rzmr/views.py:211 rzmr/views.py:229 rzmr/views.py:253 rzmr/views.py:272
+#: rzmr/views.py:296 rzmr/views.py:316 rzmr/views.py:329 rzmr/views.py:341
+#: rzmr/views.py:353
 msgid "Metal hoses"
 msgstr "Металиілгіш түтіктер"
 
 #: rzmr/templates/rzmr/base.html:245 rzmr/templates/rzmr/base.html:259
-#: rzmr/templates/rzmr/base.html:362 rzmr/templates/rzmr/base.html:371
-#: rzmr/views.py:122
+#: rzmr/templates/rzmr/base.html:362 rzmr/templates/rzmr/base.html:372
+#: rzmr/views.py:134
 msgid "Fittings"
 msgstr "Ұштық арматура"
 
 #: rzmr/templates/rzmr/base.html:246 rzmr/templates/rzmr/base.html:257
-#: rzmr/templates/rzmr/base.html:363 rzmr/templates/rzmr/base.html:372
+#: rzmr/templates/rzmr/base.html:363 rzmr/templates/rzmr/base.html:373
 msgid "Guidance"
 msgstr "Таңдау бойынша ұсыныстар"
 
@@ -283,20 +284,19 @@ msgid "Installations"
 msgstr "Монтаж және қауіпсіздік"
 
 #: rzmr/templates/rzmr/base.html:248 rzmr/templates/rzmr/base.html:260
-#: rzmr/templates/rzmr/base.html:365 rzmr/templates/rzmr/base.html:373
+#: rzmr/templates/rzmr/base.html:365 rzmr/templates/rzmr/base.html:374
 msgid "Quality standards"
 msgstr "Сапа стандарттары"
 
-#: rzmr/templates/rzmr/base.html:253 rzmr/templates/rzmr/base.html:369
+#: rzmr/templates/rzmr/base.html:253 rzmr/templates/rzmr/base.html:370
 #: rzmr/templates/rzmr/index.html:32 rzmr/templates/rzmr/index.html:151
-#: rzmr/views.py:353 rzmr/views.py:363 rzmr/views.py:375 rzmr/views.py:387
-#: rzmr/views.py:399 rzmr/views.py:411 rzmr/views.py:435 rzmr/views.py:454
-#: rzmr/views.py:478 rzmr/views.py:496 rzmr/views.py:520 rzmr/views.py:537
-#: rzmr/views.py:561
+#: rzmr/views.py:398 rzmr/views.py:410 rzmr/views.py:422 rzmr/views.py:434
+#: rzmr/views.py:446 rzmr/views.py:470 rzmr/views.py:489 rzmr/views.py:513
+#: rzmr/views.py:531 rzmr/views.py:555 rzmr/views.py:572 rzmr/views.py:596
 msgid "PTFE Metal hoses"
 msgstr "Фторопластық иілгіш түтіктер"
 
-#: rzmr/templates/rzmr/base.html:255 rzmr/templates/rzmr/base.html:370
+#: rzmr/templates/rzmr/base.html:255 rzmr/templates/rzmr/base.html:371
 msgid "PH (fluoroplastic hose)  PTFE hoses"
 msgstr "РФ сериялы фторопласты иілгіш түтіктер"
 
@@ -341,19 +341,19 @@ msgstr ""
 msgid "Filters and units"
 msgstr "Сүзгілер мен агрегаттар"
 
-#: rzmr/templates/rzmr/base.html:304 rzmr/templates/rzmr/base.html:397
+#: rzmr/templates/rzmr/base.html:304 rzmr/templates/rzmr/base.html:399
 msgid "Engineering and non-standard equipment"
 msgstr "Cтандартты емес жабдықтар"
 
-#: rzmr/templates/rzmr/base.html:306 rzmr/templates/rzmr/base.html:399
+#: rzmr/templates/rzmr/base.html:306 rzmr/templates/rzmr/base.html:401
 msgid "Сustom-made products"
 msgstr "Тапсырыс берушінің сызбалары бойынша"
 
-#: rzmr/templates/rzmr/base.html:307 rzmr/templates/rzmr/base.html:398
+#: rzmr/templates/rzmr/base.html:307 rzmr/templates/rzmr/base.html:400
 msgid "Technological equipment"
 msgstr "Технологиялық жабдық"
 
-#: rzmr/templates/rzmr/base.html:308 rzmr/templates/rzmr/base.html:400
+#: rzmr/templates/rzmr/base.html:308 rzmr/templates/rzmr/base.html:402
 #: rzmr/templates/rzmr/index.html:282
 msgid "Leak and strength tests"
 msgstr "Қымтаулылықты және беріктікті сынау"
@@ -368,22 +368,31 @@ msgid "Home page"
 msgstr "Негізгі бет"
 
 #: rzmr/templates/rzmr/base.html:366
+msgid "For welding"
+msgstr "Дәнекерлеу үшін"
+
+#: rzmr/templates/rzmr/base.html:367 rzmr/views.py:365
 msgid "High pressure metal hoses"
 msgstr "жоғары қысымды металл шлангілер"
 
-#: rzmr/templates/rzmr/base.html:413
+#: rzmr/templates/rzmr/base.html:375
+#: rzmr/templates/rzmr/ptfe_gofrirovanniy.html:11
+msgid "Corrugated"
+msgstr "Гофрленген"
+
+#: rzmr/templates/rzmr/base.html:415
 msgid "Contacts"
 msgstr "Контактілер"
 
-#: rzmr/templates/rzmr/base.html:424
+#: rzmr/templates/rzmr/base.html:426
 msgid "«Russian factory of metal hoses» Co.Ltd"
 msgstr "«Ресей металл шланг зауыты» ЖШС"
 
-#: rzmr/templates/rzmr/base.html:424
+#: rzmr/templates/rzmr/base.html:426
 msgid "All rights reserved"
 msgstr "Барлық құқықтар сақталған"
 
-#: rzmr/templates/rzmr/base.html:425
+#: rzmr/templates/rzmr/base.html:427
 msgid "Privacy policy"
 msgstr "Құпиялылық саясаты"
 

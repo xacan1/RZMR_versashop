@@ -1,0 +1,347 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Металлические рукава РГМ представляют собой прочные и гибкие трубчатые конструкции, изготовленные из
+                высококачественной нержавеющей стали, алюминия или других металлических материалов. Купить металлорукава
+                РГМ – лучший способ обеспечить надежную защиту и эффективную передачу веществ в широком спектре
+                промышленных отраслей, включая нефтегазовую, химическую, пищевую, фармацевтическую и многие другие.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-corrugations' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Гофра
+                </p>
+                <p class="uzm-text-card">
+                    герметичная оболочка с кольцевыми гофрами, расположенными параллельно. Изготавливается методом
+                    гидроформовки
+                    из трубных заготовок, сваренных аргонодуговой сваркой встык по длине трубы.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation' 'standartnaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Стандартная <br> Ø6 - Ø400</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_standart.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation' 'povishennoy_gibkosti' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Повышенной гибкости <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_povishennoi_gibkosti.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation' 'tyazhelaya_seriya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Тяжёлая серия <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_tyagelaya.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation' 'spiralnaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Спиральная <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_spiralnaya.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation' 'dvukhsloynaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Двухслойная <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_dvuhsloinaya.png' %}" alt="gofra">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-braids' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Оплетка
+                </p>
+                <p class="uzm-text-card">
+                    представляет собой защитную оболочку сетчатого типа и изготавливается из стальной нержавеющей
+                    проволоки 12Х18Н9Т. Позволяет обеспечить работоспособность рукава при воздействии различных
+                    нагрузок, а также пульсации давлений, возникающих при транспортировке по гибкому элементу рабочей
+                    среды. Оплетка должна плотно облегать рукав, не иметь оборванных частей.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-braid' 'odnosloynaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Однослойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_odinarnaya.png' %}" alt="opletka">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-braid' 'dvukhsloynaya'  %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Двухслойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_dvoinaya.png' %}" alt="opletka">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-braid' 'trekhsloynaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Трехслойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_troinaya.png' %}" alt="opletka">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-inners' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Внутренний экран
+                </p>
+                <p class="uzm-text-card">
+                    защитный элемент рукава, помещенный внутрь гибкой части позволяющий исключить/сократить контакт
+                    рукава со средой, либо за счет своего наличия продлить срок службы изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner' 'trubnyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Трубный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_trubnii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner' 'valtsovannyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Вальцованный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_valcovanii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner' 'opletochnyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Оплёточный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_opletochnii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner' 'ptfe' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_PTFE.png' %}" alt="ekran">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-outsides' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Наружная оболочка
+                </p>
+                <p class="uzm-text-card">
+                    часть рукава в которую заключается гибкая часть для предотвращения различных воздействий
+                    (температурных, механических и т.д.). Выбирается исходя из предполагаемых условий эксплуатации
+                    изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside' 'termochekhol' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Термочехол</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_termochehol.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside' 'termorukav' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Терморукав</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_termorukav.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside' 'rezinovaya_obolochka' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Резиновая оболочка</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_rezinovaya_obolochka.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside' 'pruzhina' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Пружина</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_pruzhina.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside' 'pletenka_mednaya_luzhenaya_pml' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Плетёнка медная лужёная (ПМЛ)</div>
+                </div>
+                <img src="{% static '/rzmr/img/pletenka_mednaya_luzonaya.png' %}" alt="hoses">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-special' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Специальные разработки
+                </p>
+                <p class="uzm-text-card pt-4">
+                    Для решения нетривиальных задач нашим конструкторским отделом разрабатываются различные модификации
+                    на основе металлорукавов РГМ.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-special' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Специальные разработки</div>
+                </div>
+                <img src="{% static '/rzmr/img/spec_razrabotki.png' %}" alt="hoses">
+            </a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <p class="wrapper-up-uzm-card fs-5">
+                Маркировка
+            </p>
+            <p class="uzm-text-card">
+                металлорукав серии РГМ имеет маркировку, нанесенную непосредственно на концевую арматуру
+                металлорукава, либо располагающуюся на ярлыках, этикетках, металлических бирках, закрепленных на
+                металлическом рукаве
+            </p>
+        </div>
+        <div class="col-lg-10 col-md-6 col-12">
+            <div class="wrapper-up-uzm-card">
+                <div>Трубный</div>
+            </div>
+            <p>
+                Пример маркировки металлорукава РГМ: <br>
+                РГМ 50-40-1,0 с/а <br>
+                Расшифровка: <br>
+                РГМ — серия изделия (рукав герметичный металлический); <br>
+                50 – номинальный внутренний диаметр рукава, мм; <br>
+                40 - наибольшее рабочее давление рукава в кгс/см<sup>2</sup> (атм) при нормальных условиях эксплуатации;
+                <br>
+                1,0 — номинальная длина рукава в сборе, м; <br>
+                с/а – наличие специальной концевой арматуры в соответствии с требованиями Заказчика. Полное описание
+                концевой арматуры представлено в паспорте Заказчика. Маркировка рукава с отсутствием аббревиатуры<br>
+                с/а – рукав без арматуры, под приварку.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-12 text-uzm">
+                <h5 class="py-5">Основные рабочие характеристики металлорукавов:</h5>
+                <table class="uzm-table">
+                    <tbody>
+                        <tr>
+                            <td><img src="{% static '/rzmr/img/Icon5.jpg' %}"></td>
+                            <td>Условный внутренний диаметр Dy</td>
+                            <td>6-350 мм</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{% static '/rzmr/img/Icon6.jpg' %}"></td>
+                            <td>Рабочее давление Рраб</td>
+                            <td>0,1-350 бар</td>
+                        </tr>
+
+                        <tr>
+                            <td><img src="{% static '/rzmr/img/Icon7.jpg' %}"></td>
+                            <td>Рабочая среда</td>
+                            <td>Воздух, азот, гелий, кислород, водород, нефтепродукты, кислоты, техническая вода, пар,
+                                бензин,керосин и т.д.</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{% static '/rzmr/img/Icon8.jpg' %}"></td>
+                            <td>Температура рабочей среды</td>
+                            <td>от -220 до +440 °C</td>
+                        </tr>
+                        <tr>
+                            <td><img src="{% static '/rzmr/img/Union.jpg' %}">
+                            </td>
+                            <td>Радиус изгиба</td>
+                            <td>В среднем 5 Ду</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="pt-5 fw-bold">
+                    Для чего нужны металлорукава РГМ?
+                </h4>
+                <p>
+                    Гибкие трубопроводы применяются для перекачки разнообразной технической среды из одной емкости в
+                    другую. Агрегатное состояние, температура, давление, агрессивность среды могут быть настолько
+                    разнообразны, что это представляет серьезный технологический вызов. Сейчас металлорукава РГМ
+                    являются оптимальным решением: они способны выдерживать агрессивное химическое воздействие среды,
+                    избыточное давление, вибронагрузки. Кроме того, они являются легкими в монтаже и транспортировке, а
+                    одним из главных преимуществ гибких трубопроводов является экономичность.
+                </p>
+                <p>
+                    Агрессивность среды в настоящее время может быть отражена либо внутренней гофрой из легированной
+                    нержавеющей стали, либо участием в конструкции рукава материала фторопласт 4 (PTFE). Высокому
+                    давлению успешно противостоит стальная оплетка, препятствующая увеличению диаметрального размера
+                    рукава под действие избыточного давления. Температурные колебания в широком диапазоне также
+                    компенсируются участием в конструкции рукава нержавеющей стали 12Х18Н10Т, сохраняющим
+                    физико-химические свойства в большом диапазоне температур.
+                </p>
+                <p>
+                    Металлорукава снабжаются любыми деталями концевой арматуры, в том числе, изготавливаемыми по заявкам
+                    заказчика. Это позволяет адаптировать трубопровод под любые нужды.
+                </p>
+                <h4 class="pt-5 fw-bold">
+                    Преимущества гибких трубопроводов
+                </h4>
+                <p>
+                    Основная особенность металлических рукавов РГМ — их непревзойденная прочность и долговечность.
+                </p>
+                <ul type="circle">
+                    <li class="py-1">Они способны выдерживать высокое давление, экстремальные температуры и агрессивные
+                        среды, сохраняя при этом свою работоспособность на протяжении длительного времени. Это особенно
+                        важно для оборудования, работающего в условиях с повышенными требованиями к безопасности и
+                        надежности.</li>
+                    <li class="py-1">Помимо прочности, металлические рукава РГМ обладают высокой гибкостью, что делает
+                        их легкими в установке и монтаже на различных типах оборудования. Они способны принимать
+                        различные формы и легко подстраиваться под требуемые параметры, что позволяет сократить время и
+                        затраты на проектные работы.</li>
+                    <li class="py-1">Они обладают высокой устойчивостью к коррозии, а также могут компенсировать и
+                        вибрацию, обеспечивая стабильную и безопасную работу системы.</li>
+                    <li class="py-1">Благодаря передовым технологиям и строгому контролю качества, мы гарантируем
+                        высокую надежность и производительность наших рукавов.</li>
+                </ul>
+                <p>
+                    Вы можете купить металлорукава у нас. Мы предлагаем официальные гарантии и удобные
+                    условия доставки. Позвоните по номеру +7 (347) 292-98-64 или оставить заявку на нашем сайте.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
