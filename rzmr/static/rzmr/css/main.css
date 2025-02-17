@@ -1136,4 +1136,18 @@ input {
     object-fit: scale-down;
 }
 
+.uzm-button-link {
+    border: 2px solid #035491;
+    transition: background-color 1s ease;
+}
+
+.uzm-button-link a {
+    color: #000;
+}
+
+.uzm-button-link:hover {
+    background-color: #035491;
+    color: #fff;
+}
+
 /* end main index */

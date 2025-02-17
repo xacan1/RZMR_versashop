@@ -145,6 +145,18 @@ class MetalhosesGibkieTruboprovodyView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Гибкие трубопроводы', breadcrumb=breadcrumb)
         return {**context, **c_def}
+    
+
+class MetalhosesVOpletkeView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/metalhoses_v_opletke.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('metalhoses', _('Metal hoses')),]
+        c_def = self.get_user_context(
+            title=f"{_('Metal hoses')} в оплетке", breadcrumb=breadcrumb)
+        return {**context, **c_def}
 
 
 class MetalhosesFittingsView(DataMixin, FormView):

@@ -1,5 +1,6 @@
 {% extends 'rzmr/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <div class="container">
@@ -267,7 +268,7 @@
         </div>
         <div class="row">
             <div class="col-12 text-uzm">
-                <h5 class="py-5">Основные рабочие характеристики металлорукавов:</h5>
+                <h5 class="py-5">Основные рабочие характеристики металлорукавов в металлической оплетке:</h5>
                 <table class="uzm-table">
                     <tbody>
                         <tr>
@@ -425,6 +426,34 @@
                     выборочно, а проводим тщательную оценку всех изделий, что позволяет обеспечить 100% гарантию
                     качества. Выбирая нашу продукцию, вы выбираете надежные товары по цене от производителя.
                 </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-3 py-5">
+                <div class="horizontal-line-uzm my-4"></div>
+            </div>
+            <div class="text-center col-xl-4 col-6 py-5">
+                <p class="fs-3 fw-bold">Смотрите также</p>
+            </div>
+            <div class="col-xl-4 col-3 py-5">
+                <div class="horizontal-line-uzm my-4"></div>
+            </div>
+        </div>
+        <div class="row text-center justify-content-center">
+            <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+                <a class="fw-bold" href="{% url 'metalhoses-for-welding' %}">{% trans 'For welding' %}</a>
+            </div>
+            <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+                <a class="fw-bold" href="{% url 'metalhoses-hpress-rgm' %}">{% trans 'High pressure metal hoses' %}</a>
+            </div>
+            <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+                <a class="fw-bold" href="{% url 'metalhoses-rgm' %}">{% trans 'Metal hoses' %} РГМ</a>
+            </div>
+            <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+                <a class="fw-bold" href="{% url 'metalhoses-gibkie-truboprovody' %}">Гибкие трубопроводы</a>
+            </div>
+            <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+                <a class="fw-bold" href="{% url 'metalhoses-v-opletke' %}">{% trans 'Metal hoses' %} в оплетке</a>
             </div>
         </div>
     </div>
