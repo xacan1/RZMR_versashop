@@ -514,6 +514,48 @@ class PTFEPipeView(DataMixin, FormView):
         title = f'Трубка для фторопластовых рукавов {suffix_title.get(slug, "")}'
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
+    
+
+class PTFEBraidsView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_braid.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),]
+        c_def = self.get_user_context(
+            title='Фторопластовые рукава в металлической оплетке серии РФ', breadcrumb=breadcrumb)
+        return {**context, **c_def}
+    
+
+class PTFEBraidView(DataMixin, FormView):
+    form_class = SimpleForm
+    slug_url_kwarg = 'ptfe_braid_slug'
+
+    def get_template_names(self) -> list[str]:
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+
+        if not slug:
+            return super().get_template_names()
+
+        template_names = []
+        template_names.append(f'rzmr/ptfe_braid_{slug}.html')
+
+        return template_names
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+        breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
+                      ('ptfe-braids', 'Оплётка'),]
+        suffix_title = {
+            'odnosloynaya': 'Однослойная оплётка для фторопластовых рукавов',
+            'dvukhsloynaya': 'Двухслойная оплётка для фторопластовых рукавов',
+            'trekhsloynaya': 'Трёхслойная оплётка для фторопластовых рукавов',
+        }
+        title = f'{suffix_title.get(slug, "")}'
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        return {**context, **c_def}
 
 
 class PTFELinersView(DataMixin, FormView):
