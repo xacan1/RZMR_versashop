@@ -155,7 +155,7 @@ class MetalhosesVOpletkeView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         breadcrumb = [('metalhoses', _('Metal hoses')),]
         c_def = self.get_user_context(
-            title=f"{_('Metal hoses')} в оплетке", breadcrumb=breadcrumb)
+            title=f"{_('Metal hoses')} в оплётке", breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -535,7 +535,7 @@ class PTFEBraidsView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),]
         c_def = self.get_user_context(
-            title='Фторопластовые рукава в металлической оплетке серии РФ', breadcrumb=breadcrumb)
+            title='Фторопластовые рукава в металлической оплётке серии РФ', breadcrumb=breadcrumb)
         return {**context, **c_def}
     
 
@@ -688,8 +688,8 @@ class PTFEOutsideView(DataMixin, FormView):
             'termochekhol': 'термочехол',
             'rezinovaya_obolochka': 'резиновая оболочка',
             'pruzhina': 'пружина',
-            'ploskaya_trubka_v_metallorukave_v_opletke': 'плоская трубка в металлорукаве в оплетке',
-            'gofrirovannaya_trubka_v_metallorukave_v_opletke': 'гофрированная трубка в металлорукаве в оплетке',
+            'ploskaya_trubka_v_metallorukave_v_opletke': 'плоская трубка в металлорукаве в оплётке',
+            'gofrirovannaya_trubka_v_metallorukave_v_opletke': 'гофрированная трубка в металлорукаве в оплётке',
         }
         title = f'Наружная оболочка: {suffix_title.get(slug, "")}'
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)

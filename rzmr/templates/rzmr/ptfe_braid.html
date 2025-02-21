@@ -1,5 +1,6 @@
 {% extends 'rzmr/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <div class="container">
@@ -149,6 +150,28 @@
                 различной величины. Поэтому конструкция оплётки может быть многослойной, способной воспринимать большое
                 или малое внутреннее давление среды.
             </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-4 col-6 py-5">
+            <p class="fs-3 fw-bold">Смотрите также</p>
+        </div>
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row text-center justify-content-center">
+        <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+            <a class="fw-bold" href="{% url 'ptfe-hoses' %}">{% trans 'PTFE Metal hoses' %}</a>
+        </div>
+        <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+            <a class="fw-bold" href="{% url 'ptfe-gofrirovanniy' %}">Гофрированные {% trans 'PTFE Metal hoses' %}</a>
+        </div>
+        <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+            <a class="fw-bold" href="{% url 'gibkie-truboprovody' %}">Гибкие трубопроводы</a>
         </div>
     </div>
 </div>
