@@ -401,6 +401,17 @@ class HpressRGMView(DataMixin, FormView):
         title = _('High pressure metal hoses')
         c_def = self.get_user_context(title=title)
         return {**context, **c_def}
+    
+
+class FlexiblePipelinesView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/gibkie-truboprovody.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        title = 'Гибкие трубопроводы'
+        c_def = self.get_user_context(title=title)
+        return {**context, **c_def}
 
 
 class PTFEhosesView(DataMixin, FormView):

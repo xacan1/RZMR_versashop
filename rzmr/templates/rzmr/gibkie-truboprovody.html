@@ -1,0 +1,523 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+                Гибкие трубопроводы от компании {{ company_name }} обеспечивают надежную и безопасную
+                транспортировку различных сред. Этот вид транспортировочных систем создан специально для работы в
+                условиях повышенных эксплуатационных нагрузок: это касается и внешних факторов агрессивного воздействия
+                среды, и характеристик перекачиваемых веществ. Мы гарантируем надежность и долговечность каждого
+                изделия, так как вся продукция проходит строгий осмотр нашей службы контроля качества.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-4">Гибкие металлические трубопроводы</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-corrugations' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Гофра
+                </p>
+                <p class="uzm-text-card">
+                    герметичная оболочка с кольцевыми гофрами, расположенными параллельно. Изготавливается методом
+                    гидроформовки
+                    из трубных заготовок, сваренных аргонодуговой сваркой встык по длине трубы.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation' 'standartnaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Стандартная <br> Ø6 - Ø400</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_standart.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation' 'povishennoy_gibkosti' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Повышенной гибкости <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_povishennoi_gibkosti.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation' 'tyazhelaya_seriya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Тяжёлая серия <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_tyagelaya.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation' 'spiralnaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Спиральная <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_spiralnaya.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-corrugation' 'dvukhsloynaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Двухслойная <br> Ø6 - Ø200</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_gofra_dvuhsloinaya.png' %}" alt="gofra">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-braids' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Оплетка
+                </p>
+                <p class="uzm-text-card">
+                    представляет собой защитную оболочку сетчатого типа и изготавливается из стальной нержавеющей
+                    проволоки 12Х18Н9Т. Позволяет обеспечить работоспособность рукава при воздействии различных
+                    нагрузок, а также пульсации давлений, возникающих при транспортировке по гибкому элементу рабочей
+                    среды. Оплетка должна плотно облегать рукав, не иметь оборванных частей.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-braid' 'odnosloynaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Однослойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_odinarnaya.png' %}" alt="opletka">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-braid' 'dvukhsloynaya'  %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Двухслойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_dvoinaya.png' %}" alt="opletka">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-braid' 'trekhsloynaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Трехслойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_troinaya.png' %}" alt="opletka">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-inners' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Внутренний экран
+                </p>
+                <p class="uzm-text-card">
+                    защитный элемент рукава, помещенный внутрь гибкой части позволяющий исключить/сократить контакт
+                    рукава со средой, либо за счет своего наличия продлить срок службы изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner' 'trubnyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Трубный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_trubnii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner' 'valtsovannyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Вальцованный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_valcovanii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner' 'opletochnyy' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Оплёточный</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_opletochnii.png' %}" alt="ekran">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-inner' 'ptfe' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_ekran_PTFE.png' %}" alt="ekran">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-outsides' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Наружная оболочка
+                </p>
+                <p class="uzm-text-card">
+                    часть рукава в которую заключается гибкая часть для предотвращения различных воздействий
+                    (температурных, механических и т.д.). Выбирается исходя из предполагаемых условий эксплуатации
+                    изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside' 'termochekhol' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Термочехол</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_termochehol.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside' 'termorukav' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Терморукав</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_termorukav.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside' 'rezinovaya_obolochka' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Резиновая оболочка</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_rezinovaya_obolochka.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside' 'pruzhina' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Пружина</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_pruzhina.png' %}" alt="hoses">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-outside' 'pletenka_mednaya_luzhenaya_pml' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Плетёнка медная лужёная (ПМЛ)</div>
+                </div>
+                <img src="{% static '/rzmr/img/pletenka_mednaya_luzonaya.png' %}" alt="hoses">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'metalhoses-special' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Специальные разработки
+                </p>
+                <p class="uzm-text-card pt-4">
+                    Для решения нетривиальных задач нашим конструкторским отделом разрабатываются различные модификации
+                    на основе металлорукавов РГМ.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'metalhoses-special' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Специальные разработки</div>
+                </div>
+                <img src="{% static '/rzmr/img/spec_razrabotki.png' %}" alt="hoses">
+            </a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <p class="wrapper-up-uzm-card fs-5">
+                Маркировка
+            </p>
+            <p class="uzm-text-card">
+                металлорукав серии РГМ имеет маркировку, нанесенную непосредственно на концевую арматуру
+                металлорукава, либо располагающуюся на ярлыках, этикетках, металлических бирках, закрепленных на
+                металлическом рукаве
+            </p>
+        </div>
+        <div class="col-lg-10 col-md-6 col-12">
+            <div class="wrapper-up-uzm-card">
+                <div>Трубный</div>
+            </div>
+            <p>
+                Пример маркировки металлорукава РГМ: <br>
+                РГМ 50-40-1,0 с/а <br>
+                Расшифровка: <br>
+                РГМ — серия изделия (рукав герметичный металлический); <br>
+                50 – номинальный внутренний диаметр рукава, мм; <br>
+                40 - наибольшее рабочее давление рукава в кгс/см<sup>2</sup> (атм) при нормальных условиях эксплуатации;
+                <br>
+                1,0 — номинальная длина рукава в сборе, м; <br>
+                с/а – наличие специальной концевой арматуры в соответствии с требованиями Заказчика. Полное описание
+                концевой арматуры представлено в паспорте Заказчика. Маркировка рукава с отсутствием аббревиатуры<br>
+                с/а – рукав без арматуры, под приварку.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-12 text-uzm">
+                <h4 class="py-4">Гибкие фторопластовые трубопроводы</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                <a href="{% url 'ptfe-pipes' %}">
+                    <p class="wrapper-up-uzm-card fs-5">
+                        Трубка
+                    </p>
+                    <p class="uzm-text-card">
+                        герметичная оболочка с кольцевыми гофрами, расположенными параллельно. Изготавливается методом
+                        гидроформовки из трубных заготовок, сваренных аргонодуговой сваркой встык по длине трубы.
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-pipe' 'ploskaya_standartnoe_ispolnenie' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Плоская тонкостенная <br>Cтандартное исполнение <br>Ø6 - Ø100 </div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_плоская тонкостенная стандарт.png' %}" alt="gofra">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-pipe' 'ploskaya_tolstostennaya' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Плоская толстостенная <br>Повышенное рабочее давление <br>Ø6 - Ø100</div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_плоская толстостенная.png' %}" alt="gofra">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-pipe' 'gofrirovannaya_standartnoe_ispolnenie' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Гофрированная тонкостенная <br>Повышенная гибкость <br>Ø8 - Ø150 </div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_гофрированная тонкостенная.png' %}" alt="gofra">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-pipe' 'gofrirovannaya_tolstostennaya' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Гофрированная толстостенная <br>Повышенная гибкость и рабочее давление <br>Ø8 - Ø150 </div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_гофрированная толстостенная.png' %}" alt="gofra">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                <a href="{% url 'ptfe-braids' %}">
+                    <p class="wrapper-up-uzm-card fs-5">
+                        Оплетка
+                    </p>
+                    <p class="uzm-text-card">
+                        представляет собой защитную оболочку сетчатого типа и изготавливается из стальной нержавеющей
+                        проволоки 12Х18Н9Т. Позволяет обеспечить работоспособность рукава при воздействии различных
+                        нагрузок, а также пульсации давлений, возникающих при транспортировке по гибкому элементу
+                        рабочей
+                        среды. Оплетка должна плотно облегать рукав, не иметь оборванных частей.
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-braid' 'odnosloynaya' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Однослойная</div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_opletka_odinarnaya.png' %}" alt="opletka">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-braid' 'dvukhsloynaya'  %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Двухслойная</div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_opletka_dvoinaya.png' %}" alt="opletka">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-braid' 'trekhsloynaya' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Трехслойная</div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_opletka_troinaya.png' %}" alt="opletka">
+                </a>
+            </div>
+        </div>
+        <div class="row pb-5">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                <a href="{% url 'ptfe-liners' %}">
+                    <p class="wrapper-up-uzm-card fs-5">
+                        Футеровка PTFE
+                    </p>
+                    <p class="uzm-text-card">
+                        развальцовка гибкой части фторопластового рукава на концевую арматуру.
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-liner' 'ploskoy_trubki_na_flanets' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>PTFE футеровка плоской трубки на фланец </div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_PTFE футеровка плоская.png' %}" alt="gofra">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-liner' 'gofrirovannoy_trubki_na_flanets' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>PTFE футеровка гофрированной трубки на фланец </div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_PTFE футеровка гофрированная.png' %}" alt="gofra">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-liner' 'ploskoy_trubki_na_nippel_gayki' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>PTFE футеровка плоской трубки на ниппель гайки </div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_PTFE футеровка с гайкой.png' %}" alt="gofra">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                <a href="{% url 'ptfe-inners' %}">
+                    <p class="wrapper-up-uzm-card fs-5">
+                        Внутренний экран
+                    </p>
+                    <p class="uzm-text-card">
+                        защитный элемент рукава, помещенный внутрь гибкой части позволяющий исключить/сократить контакт
+                        фторопласта со средой, либо за счет своего наличия продлить срок службы изделия.
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-inner' 'antistaticheskaya_prisadka_ploskaya' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Антистатическая присадка плоская </div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_внутренний экран антистатический_плоский.png' %}" alt="gofra">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-inner' 'antistaticheskaya_prisadka_gofrirovannaya' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Антистатическая присадка гофрированная</div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_внутренний экран антистатический_гофрированный.png' %}"
+                        alt="gofra">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                <a href="{% url 'ptfe-outsides' %}">
+                    <p class="wrapper-up-uzm-card fs-5">
+                        Наружная оболочка
+                    </p>
+                    <p class="uzm-text-card">
+                        часть рукава в которую заключается гибкая часть для предотвращения различных воздействий
+                        (температурных, механических и т.д.). Выбирается исходя из предполагаемых условий эксплуатации
+                        изделия.
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-outside' 'termochekhol' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Термочехол</div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_пироэкран_фторопласт.png' %}" alt="gofra">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-outside' 'rezinovaya_obolochka' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Резиновая оболочка</div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_резиновая оболочка_фторопласт.png' %}" alt="gofra">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-outside' 'pruzhina' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Пружина</div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_пружина_фторопласт.png' %}" alt="gofra">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-outside' 'ploskaya_trubka_v_metallorukave_v_opletke' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Плоская трубка в металлорукаве в оплетке</div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_плоская трубка в металлорукаве.png' %}" alt="gofra">
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-4 col-6">
+                <a href="{% url 'ptfe-outside' 'gofrirovannaya_trubka_v_metallorukave_v_opletke' %}">
+                    <div class="wrapper-up-uzm-card">
+                        <div>Гофрированная трубка в металлорукаве в оплетке</div>
+                    </div>
+                    <img src="{% static '/rzmr/img/marked_гофрированная трубка в металлорукаве.png' %}" alt="gofra">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-uzm">
+                {{ company_name }} предлагает широкий выбор гибких трубопроводов высокого давления для использования в
+                различных промышленных сферах. Наша компания занимается разработкой и производством качественных систем,
+                которые отвечают самым высоким стандартам.
+                <h4 class="py-4">Преимущества</h4>
+                <ul type="circle">
+                    <li>
+                        Надежность: для изготовления используются высокопрочные материалы, обеспечивающие долговечность
+                        и стабильное функционирование в самых экстремальных условиях.
+                    </li>
+                    <li>
+                        Широкий диапазон работоспособности: гибкие металлические трубопроводы могут использоваться в
+                        широком диапазоне температур, давлений и для перекачки как нейтральных, так и агрессивных сред.
+                    </li>
+                    <li>
+                        Гибкость: мы используем особый материал – фторопласт, который обеспечивает гибкость
+                        транспортировочной системы. При этом сохраняется ее способность выдерживать повышенное давление
+                        и другие эксплуатационные нагрузки внешней и внутренней среды.
+                    </li>
+                    <li>
+                        Дополнительное усиление конструкции: наши изделия оснащены металлической оплеткой из
+                        высоколегированной проволоки. Это обеспечивает дополнительную защиту от растяжения и повышает
+                        прочность транспортировочной системы. Дополнительно можно снабдить металлорукава усиленной
+                        оболочкой и специальными опциями, например, термочехлами.
+                    </li>
+                    <li>
+                        Оптимальная конструкция: мы предлагаем разные варианты конструктивных решений, позволяющие
+                        оптимально подобрать вариант под условия эксплуатации. Одно-, двух- или трехслойная конструкция
+                        оплетки – все варианты доступны для вас.
+                    </li>
+                    <li>
+                        Индивидуальный подход: наша компания готова предложить транспортировочное решение, учитывая
+                        требования и параметры вашего производства. Мы строим партнерские отношения с клиентами и всегда
+                        нацелены на удовлетворение их потребностей.
+                    </li>
+                    <p>
+                        Наша продукция прошла строгие испытания и соответствуют всем необходимым сертификатам и
+                        стандартам качества. Мы гарантируем надежность и долговечность каждого изделия в партии.
+                    </p>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

@@ -30,6 +30,7 @@ urlpatterns = [
     path('metalhoses/rgm/', MetalhosesRGMView.as_view(), name='metalhoses-rgm'),
     path('metalhoses/gibkie-truboprovody/', MetalhosesGibkieTruboprovodyView.as_view(), name='metalhoses-gibkie-truboprovody'),
     path('metalhoses/v-opletke/', MetalhosesVOpletkeView.as_view(), name='metalhoses-v-opletke'),
+    path('gibkie-truboprovody/', FlexiblePipelinesView.as_view(), name='gibkie-truboprovody'),
     path('ptfe/', PTFEhosesView.as_view(), name='ptfe-hoses'),
     path('ptfe/gofrirovanniy/', PTFEhosesGofrirovanniyView.as_view(), name='ptfe-gofrirovanniy'),
     path('ptfe/recommendations/', PTFERecommendationsView.as_view(), name='ptfe-recommendations'),
