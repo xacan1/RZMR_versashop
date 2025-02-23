@@ -5,6 +5,7 @@ urlpatterns = [
     path('', IndexView.as_view(), name='home'),
     path('robots.txt/', RobotView.as_view()),
     path('request-phone-call/', RequestPhoneCall.as_view(), name='request-phone-call'),
+    path('feedback/', FeedbackView.as_view(), name='feedback'),
     path('about/', AboutView.as_view(), name='about'),
     path('about/quality/', QualityView.as_view(), name='quality'),
     path('about/our-customer/', OurCustomerView.as_view(), name='our-customer'),

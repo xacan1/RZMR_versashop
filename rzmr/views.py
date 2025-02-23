@@ -26,7 +26,21 @@ class RequestPhoneCall(DataMixin, FormView):
         return current_url
 
     def form_valid(self, form) -> HttpResponse:
-        form.send_email()
+        form.send_email_for_call()
+        return super().form_valid(form)
+
+
+class FeedbackView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/index.html'
+
+    def get_success_url(self) -> str:
+        # возвращаем текущий URL при успешной отправке формы для того что бы покупатель остался на той странице откуда отправлял запрос на звонок
+        current_url = self.request.META.get('HTTP_REFERER', '#')
+        return current_url
+
+    def form_valid(self, form) -> HttpResponse:
+        form.send_email_for_feedback()
         return super().form_valid(form)
 
 
@@ -121,7 +135,7 @@ class MetalhosesForWeldingView(DataMixin, FormView):
         c_def = self.get_user_context(
             title=f"{_('Metal hoses')} {_('For welding')}", breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class MetalhosesRGMView(DataMixin, FormView):
     form_class = SimpleForm
@@ -133,7 +147,7 @@ class MetalhosesRGMView(DataMixin, FormView):
         c_def = self.get_user_context(
             title=f"{_('Metal hoses')} РГМ", breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class MetalhosesGibkieTruboprovodyView(DataMixin, FormView):
     form_class = SimpleForm
@@ -145,7 +159,7 @@ class MetalhosesGibkieTruboprovodyView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Гибкие трубопроводы', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class MetalhosesVOpletkeView(DataMixin, FormView):
     form_class = SimpleForm
@@ -401,7 +415,7 @@ class HpressRGMView(DataMixin, FormView):
         title = _('High pressure metal hoses')
         c_def = self.get_user_context(title=title)
         return {**context, **c_def}
-    
+
 
 class FlexiblePipelinesView(DataMixin, FormView):
     form_class = SimpleForm
@@ -525,7 +539,7 @@ class PTFEPipeView(DataMixin, FormView):
         title = f'Трубка для фторопластовых рукавов {suffix_title.get(slug, "")}'
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEBraidsView(DataMixin, FormView):
     form_class = SimpleForm
@@ -537,7 +551,7 @@ class PTFEBraidsView(DataMixin, FormView):
         c_def = self.get_user_context(
             title='Фторопластовые рукава в металлической оплётке серии РФ', breadcrumb=breadcrumb)
         return {**context, **c_def}
-    
+
 
 class PTFEBraidView(DataMixin, FormView):
     form_class = SimpleForm

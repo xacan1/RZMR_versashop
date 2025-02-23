@@ -1,0 +1,43 @@
+<div class="container border my-5">
+    <form action="{% url 'feedback' %}" method="post">
+        <div class="row justify-content-center py-2">
+            <div class="col-12 col-md-6 fs-4">
+                Мы всегда готовы Вам помочь!
+            </div>
+        </div>
+        <div class="row justify-content-center py-2 text-uzm">
+            <div class="col-12 col-md-8">
+                Заполните форму и наши специалисты свяжутся с Вами для консультации
+            </div>
+        </div>
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-12 col-md-4 py-2">
+                <input class="form-control" type="text" name="name" placeholder="Ваше имя" required>
+            </div>
+            <div class="col-12 col-md-4 py-2">
+                <input class="form-control" type="text" name="phone" id="phone" placeholder="Ваш телефон" required>
+            </div>
+            <div class="col-12 col-md-4 py-2">
+                <input class="form-control" type="text" name="email" id="email" placeholder="E-Mail">
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-12">
+                <textarea class="form-control" name="question" id="question" rows="3" cols="33" placeholder="Вопрос" required></textarea>
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-12">
+                <input type="checkbox" required>
+                *я соглашаюсь на обработку
+                <a href="{% url 'privacy' %}">Персональных данных</a>
+            </div>
+        </div>
+        <div class="row justify-content-center py-2">
+            <div class="col-12 col-md-2">
+                <button type="submit" class="btn btn-danger">Отправить</button>
+            </div>
+        </div>
+    </form>
+</div>

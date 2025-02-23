@@ -1,0 +1,3 @@
+'use strict';window.addEventListener("load",mask_listener());
+function mask_listener(){var a=document.getElementById("phoneHeader"),b={mask:"+7(000)000-00-00",lazy:!1};a&&new IMask(a,b);(a=document.getElementById("phone"))&&new IMask(a,b);b=document.getElementById("email");a={mask:function(c){return/^[a-z0-9_\.-]+$/.test(c)||/^[a-z0-9_\.-]+@$/.test(c)||/^[a-z0-9_\.-]+@[a-z0-9-]+$/.test(c)||/^[a-z0-9_\.-]+@[a-z0-9-]+\.$/.test(c)||/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}$/.test(c)||/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}\.$/.test(c)||/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}\.[a-z]{1,4}$/.test(c)?
+!0:!1},lazy:!1};b&&new IMask(b,a);b=document.getElementById("card");a={mask:"0000 0000 0000 0000",lazy:!1};b&&new IMask(b,a)};

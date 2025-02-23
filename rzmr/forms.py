@@ -5,12 +5,24 @@ from shop.models import *
 
 
 class SimpleForm(forms.Form):
-    def send_email(self):
+    def send_email_for_call(self):
         name = self.data.get('name', '')
         phone = self.data.get('phone', '')
 
         send_mail(subject=f'Запрос на обратный звонок',
                   message=f'{name} просит перезвонить на номер: {phone}',
+                  from_email=settings.EMAIL_USER,
+                  recipient_list=[settings.COMPANY_EMAIL],
+                  fail_silently=False)
+
+    def send_email_for_feedback(self):
+        name = self.data.get('name', '')
+        phone = self.data.get('phone', '')
+        email = self.data.get('email', '')
+        question = self.data.get('question', '')
+
+        send_mail(subject=f'Вопрос от посетителя сайта',
+                  message=f'{name} спрашивает:\n{question}\nТелефон для связи: {phone}\nПочта для связи: {email}',
                   from_email=settings.EMAIL_USER,
                   recipient_list=[settings.COMPANY_EMAIL],
                   fail_silently=False)

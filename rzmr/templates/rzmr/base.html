@@ -52,12 +52,12 @@
                     </div>
                     <div class="d-none d-md-block col-2">
                         <div class="header-element">
-                            <a href="mailto:{{ company_email }}">{{ company_email }}</a>
+                            <a href="mailto:{{ company_email }}"><span class="fw-bold"><u>{{ company_email }}</u></span></a>
                         </div>
                     </div>
                     <div class="d-xl-block d-none col-2">
                         <div class="header-element">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#requestPhoneCallModal">{% trans 'Request a call' %}</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#requestPhoneCallModal"><span class="fw-bold"><u>{% trans 'Request a call' %}</u></span></a>
                         </div>
                     </div>
                     <!-- <div class="d-xl-block d-none col-1">
@@ -104,7 +104,7 @@
                                     <a href="{% url 'personal-account' %}">Личный кабинет</a> -->
                                     {% endif %}
                                 </div>
-                                <ul class="user-login">
+                                <ul class="user-login fw-bold">
                                     {% if user.is_authenticated %}
                                     <li>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -344,6 +344,9 @@
         {% block content %}
         {% endblock content %}
         {% include 'rzmr/request_phone_call_modal.html' %}
+        {% if request.path != '/' and 'shop' not in request.path and 'posts' not in request.path %}
+            {% include 'rzmr/feedback-form.html' %}
+        {% endif %}
     </main>
 
     <footer class="mt-auto position-sticky top-100 fs-xl-media-uzm">
@@ -433,10 +436,14 @@
     </footer>
 
     <script src="{% static 'rzmr/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://unpkg.com/imask"></script>
     {% if DEBUG %}
     <script src="{% static 'shop/js/shop_client.js' %}"></script>
+    <script src="{% static 'rzmr/js/input_mask.js' %}"></script>
     {% else %}
     <script src="{% static 'shop/js/shop_client_compile.js' %}"></script>
+    <script src="{% static 'rzmr/js/input_mask_compile.js' %}"></script>
     {% endif %}
+    
 </body>
 </html>
