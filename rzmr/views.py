@@ -121,7 +121,42 @@ class SpheresView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Сферы применения')
+        title = 'Сферы применения'
+        breadcrumb = [('spheres', title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class SphereView(DataMixin, FormView):
+    form_class = SimpleForm
+    slug_url_kwarg = 'spheres_slug'
+
+    def get_template_names(self) -> list[str]:
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+
+        if not slug:
+            return super().get_template_names()
+
+        template_names = []
+        template_names.append(f'rzmr/sphere_{slug}.html')
+
+        return template_names
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+        breadcrumb = [('spheres', 'Сферы применения'),]
+        suffix_title = {
+            'mechanical_engineering': 'Применение металлорукавов в машиностроении',
+            'aviation_industry': 'Металлорукава и авиационная промышленность',
+            'gas_industry': 'Газовая отрасль: применение металлорукавов',
+            'chemical_industry': 'Металлорукава: эффективное решение для химической промышленности',
+            'oil_refining': 'Использование металлорукавов в нефтепереработке',
+            'food_industry': 'Металлорукава: гигиеничность и функциональность для пищевой промышленности',
+        }
+        title = suffix_title.get(slug, "")
+        breadcrumb.append((slug, title))
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -131,8 +166,23 @@ class SphereMechanicalEngineeringView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(
-            title='Применение металлорукавов в машиностроении')
+        title = 'Применение металлорукавов в машиностроении'
+        breadcrumb = [('spheres', 'Сферы применения'),
+                      ('spheres-mechanical-engineering', title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class SphereAviationIndustryView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/sphere_mechanical_engineering.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        title = 'Применение металлорукавов в машиностроении'
+        breadcrumb = [('spheres', 'Сферы применения'),
+                      ('spheres-mechanical-engineering', title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -825,7 +875,9 @@ class CompositesView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Композитные рукава')
+        title = 'Композитные рукава'
+        breadcrumb = [('composite', title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -840,16 +892,17 @@ class CompositeView(DataMixin, FormView):
             return super().get_template_names()
 
         template_names = []
-        template_names.append(f'rzmr/{slug}.html')
+        template_names.append(f'rzmr/composite_{slug}.html')
 
         return template_names
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         slug = self.kwargs.get(self.slug_url_kwarg, '')
-        breadcrumb = [('composite', 'Композитные рукава'),]
-        c_def = self.get_user_context(
-            title=f'Композитный рукав {slug}', breadcrumb=breadcrumb)
+        title = f'Композитный рукав {slug}'
+        breadcrumb = [('composite', 'Композитные рукава'),
+                      (slug, title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 

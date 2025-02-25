@@ -5,10 +5,10 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-4">
+        <div class="col-12 col-md-4 py-2">
             <img src="{% static 'rzmr/img/mashinostroenie-2.jpg' %}" width="380" alt="image">
         </div>
-        <div class="col-8 text-uzm">
+        <div class="col-12 col-md-8 text-uzm py-2">
             <h4 class="text-title-uzm fw-bold pb-4">{{ title }}</h4>
             <p>Применение металлорукавов в машиностроении обусловлено уникальными свойствами материала и конструктивными
                 особенностями, которые позволяют решать широкий спектр задач.
@@ -50,15 +50,5 @@
             </p>
         </div>
     </div>
-    {% if user.is_staff %}
-    <div class="row">
-        <div class="col-11">
-        </div>
-        <div class="col-1 button">
-            <a class="btn btn-secondary" href="{% url 'update-post' post.slug %}">Редактировать</a>
-        </div>
-    </div>
-    {% endif %}
 </div>
-
 {% endblock content %}

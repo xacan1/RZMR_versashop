@@ -14,31 +14,26 @@
     </div>
     <div class="row">
         <div class="col-4 border-end">
-            <img src="{% static 'rzmr/img/AAE1.jpg' %}" alt="AAE1">
+            <img src="{% static 'rzmr/img/EGE1.jpg' %}" alt="EGE1">
         </div>
         <div class="col-8 text-uzm">
             <p>Состав рукава:</p>
             <ul>
-                <li>Внутренняя проволока: алюминий (А).</li>
-                <li>Внешняя проволока: алюминий (А).</li>
-                <li>Внутренний слой: полипропилен(E).</li>
-                <li>Внешний слой: ПВХ.</li>
+                <li>Внутренняя проволока: сталь с полипропиленовым покрытием (E).</li>
+                <li>Внешняя проволока: оцинкованная сталь (G).</li>
+                <li>Внутренний слой: полипропилен (E).</li>
+                <li>Внешний слой: полиэфирная ткань с ПВХ-покрытием.</li>
             </ul>
             <p>
-                Рекомендуется для использования при подаче и/или всасывании топлива, масел и смазочных материалов в
-                цистернах, железнодорожных вагонах или стационарных хранилищах.
+                EGE типа рукава рекомендуется для доставки и/или аспирации химических продуктов с хорошими
+                эксплуатационными свойствами, таких как кислоты, щелочи и растворители, встречающиеся в неагрессивной
+                среде. Используется при погрузке и разгрузке автоцистерн, вагонов, на заводах и на судах.
             </p>
             <p>
                 Диапазон температур: от -30˚C до +100 ˚C.
             </p>
             <p>
                 Вакуум: 0,9 бар
-            </p>
-            <p>
-                Макс. Удлинение: 10% при испытательном давлении
-            </p>
-            <p>
-                Максимальное скручивание: 10°/метр
             </p>
         </div>
     </div>
@@ -100,26 +95,31 @@
                             Радиус изгиба
                         </td>
                         <td rowspan="1" id="TD_23">
+                            68
                         </td>
                         <td rowspan="1" id="TD_24">
+                            105
                         </td>
                         <td rowspan="1" id="TD_25">
-                            150
-                        </td>
-                        <td rowspan="1" id="TD_26">
                             190
                         </td>
+                        <td rowspan="1" id="TD_26">
+                            225
+                        </td>
                         <td rowspan="1" id="TD_27">
-                            240
+                            290
                         </td>
                         <td rowspan="1" id="TD_28">
                             320
                         </td>
                         <td rowspan="1" id="TD_29">
+                            497
                         </td>
                         <td rowspan="1" id="TD_30">
+                            740
                         </td>
                         <td rowspan="1" id="TD_31">
+                            920
                         </td>
                     </tr>
                     <tr id="TR_32">
@@ -127,30 +127,96 @@
                             Вес, кг/м
                         </td>
                         <td id="TD_34">
+                            1,16
                         </td>
                         <td id="TD_35">
+                            1,8
                         </td>
                         <td id="TD_36">
-                            0,8
+                            2,06
                         </td>
                         <td id="TD_37">
-                            1,1
+                            2,7
                         </td>
                         <td id="TD_38">
-                            1,6
+                            3,5
                         </td>
                         <td id="TD_39">
-                            2,5
+                            5,44
                         </td>
                         <td id="TD_40">
+                            11,9
                         </td>
                         <td id="TD_41">
+                            21,5
                         </td>
                         <td id="TD_42">
+                            25
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-4 col-6 py-5">
+            <p class="fs-3 fw-bold">Другие серии композитных рукавов</p>
+        </div>
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SSE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SSE1.jpg' %}" alt="Рукава серии SSE">
+                    <p>Рукава серии SSE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SST' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SST1.jpg' %}" alt="Рукава серии SST">
+                    <p>Рукава серии SST</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SGT' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGT1.jpg' %}" alt="Рукава серии SGT">
+                    <p>Рукава серии SGT</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGE3.jpg' %}" alt="Рукава серии SGE">
+                    <p>Рукава серии SGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'GGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/GGT1.jpg' %}" alt="Рукава серии GGE">
+                    <p>Рукава серии GGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'AAE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/AAE1.jpg' %}" alt="Рукава серии AAE">
+                    <p>Рукава серии AAE</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
@@ -467,17 +533,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 461.484px;
+        inline-size: 484.312px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 230.734px 13.6875px;
+        perspective-origin: 242.156px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 230.742px 13.6953px;
+        transform-origin: 242.156px 13.6953px;
         vertical-align: middle;
-        width: 461.484px;
+        width: 484.312px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -523,17 +589,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 302.672px;
+        inline-size: 279.844px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 151.328px 13.6875px;
+        perspective-origin: 139.922px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 151.336px 13.6953px;
+        transform-origin: 139.922px 13.6953px;
         vertical-align: middle;
-        width: 302.672px;
+        width: 279.844px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -630,17 +696,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 63.8906px;
+        inline-size: 68.4219px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 31.9375px 13.6875px;
+        perspective-origin: 34.2031px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 31.9453px 13.6953px;
+        transform-origin: 34.2109px 13.6953px;
         vertical-align: middle;
-        width: 63.8906px;
+        width: 68.4219px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -692,17 +758,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 63.5625px;
+        inline-size: 73.0156px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 31.7812px 13.6875px;
+        perspective-origin: 36.5px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 31.7812px 13.6953px;
+        transform-origin: 36.5078px 13.6953px;
         vertical-align: middle;
-        width: 63.5625px;
+        width: 73.0156px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -754,17 +820,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 78.9844px;
+        inline-size: 90.3281px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 39.4844px 13.6875px;
+        perspective-origin: 45.1562px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 39.4922px 13.6953px;
+        transform-origin: 45.1641px 13.6953px;
         vertical-align: middle;
-        width: 78.9844px;
+        width: 90.3281px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -816,17 +882,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 79.0312px;
+        inline-size: 81.6875px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 39.5156px 13.6875px;
+        perspective-origin: 40.8438px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 39.5156px 13.6953px;
+        transform-origin: 40.8438px 13.6953px;
         vertical-align: middle;
-        width: 79.0312px;
+        width: 81.6875px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -878,17 +944,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 88.0312px;
+        inline-size: 82.6406px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 44.0156px 13.6875px;
+        perspective-origin: 41.3125px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 44.0156px 13.6953px;
+        transform-origin: 41.3203px 13.6953px;
         vertical-align: middle;
-        width: 88.0312px;
+        width: 82.6406px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -940,17 +1006,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 87.9844px;
+        inline-size: 88.2188px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 43.9844px 13.6875px;
+        perspective-origin: 44.1094px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 43.9922px 13.6953px;
+        transform-origin: 44.1094px 13.6953px;
         vertical-align: middle;
-        width: 87.9844px;
+        width: 88.2188px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -1002,17 +1068,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 92.4062px;
+        inline-size: 89.1562px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 46.2031px 13.6875px;
+        perspective-origin: 44.5781px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 46.2031px 13.6953px;
+        transform-origin: 44.5781px 13.6953px;
         vertical-align: middle;
-        width: 92.4062px;
+        width: 89.1562px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -1064,17 +1130,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 105.594px;
+        inline-size: 95.7344px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 52.7969px 13.6875px;
+        perspective-origin: 47.8594px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 52.7969px 13.6953px;
+        transform-origin: 47.8672px 13.6953px;
         vertical-align: middle;
-        width: 105.594px;
+        width: 95.7344px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -1125,17 +1191,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 104.672px;
+        inline-size: 94.9531px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 52.3281px 13.6875px;
+        perspective-origin: 47.4688px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 52.3359px 13.6953px;
+        transform-origin: 47.4766px 13.6953px;
         vertical-align: middle;
-        width: 104.672px;
+        width: 94.9531px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -1183,17 +1249,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 104.672px;
+        inline-size: 94.9531px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 52.3281px 13.6875px;
+        perspective-origin: 47.4688px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 52.3359px 13.6953px;
+        transform-origin: 47.4766px 13.6953px;
         vertical-align: middle;
-        width: 104.672px;
+        width: 94.9531px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;

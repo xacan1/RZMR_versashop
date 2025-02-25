@@ -14,21 +14,19 @@
     </div>
     <div class="row">
         <div class="col-4 border-end">
-            <img src="{% static 'rzmr/img/SSE1.jpg' %}" alt="SSE1">
+            <img src="{% static 'rzmr/img/AAE1.jpg' %}" alt="AAE1">
         </div>
         <div class="col-8 text-uzm">
             <p>Состав рукава:</p>
             <ul>
-                <li>Внутренняя проволока: нержавеющая сталь 316L (S).</li>
-                <li>Внешняя проволока: Нержавеющая сталь 316L (S).</li>
-                <li>Внутренний слой: полипропилен (E).</li>
-                <li>Внешний слой: ткань с ПВХ-покрытием.</li>
+                <li>Внутренняя проволока: алюминий (А).</li>
+                <li>Внешняя проволока: алюминий (А).</li>
+                <li>Внутренний слой: полипропилен(E).</li>
+                <li>Внешний слой: ПВХ.</li>
             </ul>
             <p>
-                Рукава SSE рекомендуется для доставки и/или аспирации широкого спектра химических продуктов, хорошо
-                взаимодействующих с полипропиленом, например, жирными кислотами, щелочами и растворителями,
-                встречающимися в неагрессивных средах. Используются при погрузке/разгрузке автоцистерн, вагонов, на
-                заводах и суднах.
+                Рекомендуется для использования при подаче и/или всасывании топлива, масел и смазочных материалов в
+                цистернах, железнодорожных вагонах или стационарных хранилищах.
             </p>
             <p>
                 Диапазон температур: от -30˚C до +100 ˚C.
@@ -61,7 +59,7 @@
                         <td colspan="6" id="TD_8">
                             Стандартная серия
                         </td>
-                        <td colspan="4" id="TD_9">
+                        <td colspan="3" id="TD_9">
                             Тяжелая серия
                         </td>
                     </tr>
@@ -96,82 +94,124 @@
                         <td id="TD_20">
                             250
                         </td>
-                        <td id="TD_21">
-                            300
-                        </td>
                     </tr>
-                    <tr id="TR_22">
-                        <td rowspan="1" id="TD_23">
+                    <tr id="TR_21">
+                        <td rowspan="1" id="TD_22">
                             Радиус изгиба
                         </td>
+                        <td rowspan="1" id="TD_23">
+                        </td>
                         <td rowspan="1" id="TD_24">
-                            68
                         </td>
                         <td rowspan="1" id="TD_25">
-                            100
-                        </td>
-                        <td rowspan="1" id="TD_26">
                             150
                         </td>
-                        <td rowspan="1" id="TD_27">
+                        <td rowspan="1" id="TD_26">
                             190
                         </td>
-                        <td rowspan="1" id="TD_28">
-                            250
+                        <td rowspan="1" id="TD_27">
+                            240
                         </td>
-                        <td rowspan="1" id="TD_29">
+                        <td rowspan="1" id="TD_28">
                             320
                         </td>
+                        <td rowspan="1" id="TD_29">
+                        </td>
                         <td rowspan="1" id="TD_30">
-                            497
                         </td>
                         <td rowspan="1" id="TD_31">
-                            740
-                        </td>
-                        <td rowspan="1" id="TD_32">
-                            920
-                        </td>
-                        <td rowspan="1" id="TD_33">
-                            1150
                         </td>
                     </tr>
-                    <tr id="TR_34">
-                        <td id="TD_35">
+                    <tr id="TR_32">
+                        <td id="TD_33">
                             Вес, кг/м
                         </td>
+                        <td id="TD_34">
+                        </td>
+                        <td id="TD_35">
+                        </td>
                         <td id="TD_36">
-                            0,7
+                            0,8
                         </td>
                         <td id="TD_37">
-                            1,25
+                            1,1
                         </td>
                         <td id="TD_38">
-                            1,7
+                            1,6
                         </td>
                         <td id="TD_39">
-                            2,3
+                            2,5
                         </td>
                         <td id="TD_40">
-                            3,1
                         </td>
                         <td id="TD_41">
-                            5,71
                         </td>
                         <td id="TD_42">
-                            12,49
-                        </td>
-                        <td id="TD_43">
-                            22,3
-                        </td>
-                        <td id="TD_44">
-                            25,9
-                        </td>
-                        <td id="TD_45">
-                            28
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-4 col-6 py-5">
+            <p class="fs-3 fw-bold">Другие серии композитных рукавов</p>
+        </div>
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'EGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/EGE1.jpg' %}" alt="Рукава серии EGE">
+                    <p>Рукава серии EGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SSE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SSE1.jpg' %}" alt="Рукава серии SSE">
+                    <p>Рукава серии SSE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SST' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SST1.jpg' %}" alt="Рукава серии SST">
+                    <p>Рукава серии SST</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SGT' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGT1.jpg' %}" alt="Рукава серии SGT">
+                    <p>Рукава серии SGT</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGE3.jpg' %}" alt="Рукава серии SGE">
+                    <p>Рукава серии SGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'GGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/GGT1.jpg' %}" alt="Рукава серии GGE">
+                    <p>Рукава серии GGE</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
@@ -408,8 +448,8 @@
 
     #TD_7,
     #TD_11,
-    #TD_23,
-    #TD_35 {
+    #TD_22,
+    #TD_33 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
         border-block-end-style: solid;
@@ -443,12 +483,12 @@
         padding: 2px;
     }
 
-    /*#TD_7, #TD_11, #TD_23, #TD_35*/
+    /*#TD_7, #TD_11, #TD_22, #TD_33*/
 
     #TD_7:after,
     #TD_11:after,
-    #TD_23:after,
-    #TD_35:after {
+    #TD_22:after,
+    #TD_33:after {
         border-collapse: collapse;
         text-align: center;
         text-size-adjust: 100%;
@@ -456,12 +496,12 @@
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_7:after, #TD_11:after, #TD_23:after, #TD_35:after*/
+    /*#TD_7:after, #TD_11:after, #TD_22:after, #TD_33:after*/
 
     #TD_7:before,
     #TD_11:before,
-    #TD_23:before,
-    #TD_35:before {
+    #TD_22:before,
+    #TD_33:before {
         border-collapse: collapse;
         text-align: center;
         text-size-adjust: 100%;
@@ -469,7 +509,7 @@
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_7:before, #TD_11:before, #TD_23:before, #TD_35:before*/
+    /*#TD_7:before, #TD_11:before, #TD_22:before, #TD_33:before*/
 
     #TD_8 {
         block-size: 27.3906px;
@@ -488,17 +528,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 421.453px;
+        inline-size: 461.484px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 210.719px 13.6875px;
+        perspective-origin: 230.734px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 210.727px 13.6953px;
+        transform-origin: 230.742px 13.6953px;
         vertical-align: middle;
-        width: 421.453px;
+        width: 461.484px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -544,17 +584,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 342.703px;
+        inline-size: 302.672px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 171.344px 13.6875px;
+        perspective-origin: 151.328px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 171.352px 13.6953px;
+        transform-origin: 151.336px 13.6953px;
         vertical-align: middle;
-        width: 342.703px;
+        width: 302.672px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -584,8 +624,8 @@
     /*#TD_9:before*/
 
     #TR_10,
-    #TR_22,
-    #TR_34 {
+    #TR_21,
+    #TR_32 {
         block-size: 27.3906px;
         border-block-end-color: rgb(128, 128, 128);
         border-block-start-color: rgb(128, 128, 128);
@@ -606,11 +646,11 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TR_10, #TR_22, #TR_34*/
+    /*#TR_10, #TR_21, #TR_32*/
 
     #TR_10:after,
-    #TR_22:after,
-    #TR_34:after {
+    #TR_21:after,
+    #TR_32:after {
         border-collapse: collapse;
         text-align: center;
         text-size-adjust: 100%;
@@ -618,11 +658,11 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TR_10:after, #TR_22:after, #TR_34:after*/
+    /*#TR_10:after, #TR_21:after, #TR_32:after*/
 
     #TR_10:before,
-    #TR_22:before,
-    #TR_34:before {
+    #TR_21:before,
+    #TR_32:before {
         border-collapse: collapse;
         text-align: center;
         text-size-adjust: 100%;
@@ -630,10 +670,134 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TR_10:before, #TR_22:before, #TR_34:before*/
+    /*#TR_10:before, #TR_21:before, #TR_32:before*/
 
     #TD_12,
+    #TD_23,
+    #TD_34 {
+        block-size: 27.3906px;
+        border-block-end-color: rgb(33, 58, 85);
+        border-block-end-style: solid;
+        border-block-end-width: 1px;
+        border-block-start-color: rgb(33, 58, 85);
+        border-block-start-style: solid;
+        border-block-start-width: 1px;
+        border-collapse: collapse;
+        border-inline-end-color: rgb(33, 58, 85);
+        border-inline-end-style: solid;
+        border-inline-end-width: 1px;
+        border-inline-start-color: rgb(33, 58, 85);
+        border-inline-start-style: solid;
+        border-inline-start-width: 1px;
+        box-sizing: border-box;
+        height: 27.3906px;
+        inline-size: 63.8906px;
+        padding-block-end: 2px;
+        padding-block-start: 2px;
+        padding-inline-end: 2px;
+        padding-inline-start: 2px;
+        perspective-origin: 31.9375px 13.6875px;
+        text-align: center;
+        text-size-adjust: 100%;
+        transform-origin: 31.9453px 13.6953px;
+        vertical-align: middle;
+        width: 63.8906px;
+        border: 1px solid rgb(33, 58, 85);
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+        padding: 2px;
+    }
+
+    /*#TD_12, #TD_23, #TD_34*/
+
+    #TD_12:after,
+    #TD_23:after,
+    #TD_34:after {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_12:after, #TD_23:after, #TD_34:after*/
+
+    #TD_12:before,
+    #TD_23:before,
+    #TD_34:before {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_12:before, #TD_23:before, #TD_34:before*/
+
+    #TD_13,
     #TD_24,
+    #TD_35 {
+        block-size: 27.3906px;
+        border-block-end-color: rgb(33, 58, 85);
+        border-block-end-style: solid;
+        border-block-end-width: 1px;
+        border-block-start-color: rgb(33, 58, 85);
+        border-block-start-style: solid;
+        border-block-start-width: 1px;
+        border-collapse: collapse;
+        border-inline-end-color: rgb(33, 58, 85);
+        border-inline-end-style: solid;
+        border-inline-end-width: 1px;
+        border-inline-start-color: rgb(33, 58, 85);
+        border-inline-start-style: solid;
+        border-inline-start-width: 1px;
+        box-sizing: border-box;
+        height: 27.3906px;
+        inline-size: 63.5625px;
+        padding-block-end: 2px;
+        padding-block-start: 2px;
+        padding-inline-end: 2px;
+        padding-inline-start: 2px;
+        perspective-origin: 31.7812px 13.6875px;
+        text-align: center;
+        text-size-adjust: 100%;
+        transform-origin: 31.7812px 13.6953px;
+        vertical-align: middle;
+        width: 63.5625px;
+        border: 1px solid rgb(33, 58, 85);
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+        padding: 2px;
+    }
+
+    /*#TD_13, #TD_24, #TD_35*/
+
+    #TD_13:after,
+    #TD_24:after,
+    #TD_35:after {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_13:after, #TD_24:after, #TD_35:after*/
+
+    #TD_13:before,
+    #TD_24:before,
+    #TD_35:before {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_13:before, #TD_24:before, #TD_35:before*/
+
+    #TD_14,
+    #TD_25,
     #TD_36 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -651,27 +815,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 57.8438px;
+        inline-size: 78.9844px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 28.9219px 13.6875px;
+        perspective-origin: 39.4844px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 28.9219px 13.6953px;
+        transform-origin: 39.4922px 13.6953px;
         vertical-align: middle;
-        width: 57.8438px;
+        width: 78.9844px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_12, #TD_24, #TD_36*/
+    /*#TD_14, #TD_25, #TD_36*/
 
-    #TD_12:after,
-    #TD_24:after,
+    #TD_14:after,
+    #TD_25:after,
     #TD_36:after {
         border-collapse: collapse;
         text-align: center;
@@ -680,10 +844,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_12:after, #TD_24:after, #TD_36:after*/
+    /*#TD_14:after, #TD_25:after, #TD_36:after*/
 
-    #TD_12:before,
-    #TD_24:before,
+    #TD_14:before,
+    #TD_25:before,
     #TD_36:before {
         border-collapse: collapse;
         text-align: center;
@@ -692,10 +856,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_12:before, #TD_24:before, #TD_36:before*/
+    /*#TD_14:before, #TD_25:before, #TD_36:before*/
 
-    #TD_13,
-    #TD_25,
+    #TD_15,
+    #TD_26,
     #TD_37 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -713,27 +877,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 75.2969px;
+        inline-size: 79.0312px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 37.6406px 13.6875px;
+        perspective-origin: 39.5156px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 37.6484px 13.6953px;
+        transform-origin: 39.5156px 13.6953px;
         vertical-align: middle;
-        width: 75.2969px;
+        width: 79.0312px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_13, #TD_25, #TD_37*/
+    /*#TD_15, #TD_26, #TD_37*/
 
-    #TD_13:after,
-    #TD_25:after,
+    #TD_15:after,
+    #TD_26:after,
     #TD_37:after {
         border-collapse: collapse;
         text-align: center;
@@ -742,10 +906,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_13:after, #TD_25:after, #TD_37:after*/
+    /*#TD_15:after, #TD_26:after, #TD_37:after*/
 
-    #TD_13:before,
-    #TD_25:before,
+    #TD_15:before,
+    #TD_26:before,
     #TD_37:before {
         border-collapse: collapse;
         text-align: center;
@@ -754,10 +918,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_13:before, #TD_25:before, #TD_37:before*/
+    /*#TD_15:before, #TD_26:before, #TD_37:before*/
 
-    #TD_14,
-    #TD_26,
+    #TD_16,
+    #TD_27,
     #TD_38 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -775,27 +939,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 67.9062px;
+        inline-size: 88.0312px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 33.9531px 13.6875px;
+        perspective-origin: 44.0156px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 33.9531px 13.6953px;
+        transform-origin: 44.0156px 13.6953px;
         vertical-align: middle;
-        width: 67.9062px;
+        width: 88.0312px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_14, #TD_26, #TD_38*/
+    /*#TD_16, #TD_27, #TD_38*/
 
-    #TD_14:after,
-    #TD_26:after,
+    #TD_16:after,
+    #TD_27:after,
     #TD_38:after {
         border-collapse: collapse;
         text-align: center;
@@ -804,10 +968,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_14:after, #TD_26:after, #TD_38:after*/
+    /*#TD_16:after, #TD_27:after, #TD_38:after*/
 
-    #TD_14:before,
-    #TD_26:before,
+    #TD_16:before,
+    #TD_27:before,
     #TD_38:before {
         border-collapse: collapse;
         text-align: center;
@@ -816,10 +980,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_14:before, #TD_26:before, #TD_38:before*/
+    /*#TD_16:before, #TD_27:before, #TD_38:before*/
 
-    #TD_15,
-    #TD_27,
+    #TD_17,
+    #TD_28,
     #TD_39 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -837,27 +1001,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 67.9375px;
+        inline-size: 87.9844px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 33.9688px 13.6875px;
+        perspective-origin: 43.9844px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 33.9688px 13.6953px;
+        transform-origin: 43.9922px 13.6953px;
         vertical-align: middle;
-        width: 67.9375px;
+        width: 87.9844px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_15, #TD_27, #TD_39*/
+    /*#TD_17, #TD_28, #TD_39*/
 
-    #TD_15:after,
-    #TD_27:after,
+    #TD_17:after,
+    #TD_28:after,
     #TD_39:after {
         border-collapse: collapse;
         text-align: center;
@@ -866,10 +1030,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_15:after, #TD_27:after, #TD_39:after*/
+    /*#TD_17:after, #TD_28:after, #TD_39:after*/
 
-    #TD_15:before,
-    #TD_27:before,
+    #TD_17:before,
+    #TD_28:before,
     #TD_39:before {
         border-collapse: collapse;
         text-align: center;
@@ -878,10 +1042,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_15:before, #TD_27:before, #TD_39:before*/
+    /*#TD_17:before, #TD_28:before, #TD_39:before*/
 
-    #TD_16,
-    #TD_28,
+    #TD_18,
+    #TD_29,
     #TD_40 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -899,27 +1063,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 76.8125px;
+        inline-size: 92.4062px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 38.4062px 13.6875px;
+        perspective-origin: 46.2031px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 38.4062px 13.6953px;
+        transform-origin: 46.2031px 13.6953px;
         vertical-align: middle;
-        width: 76.8125px;
+        width: 92.4062px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_16, #TD_28, #TD_40*/
+    /*#TD_18, #TD_29, #TD_40*/
 
-    #TD_16:after,
-    #TD_28:after,
+    #TD_18:after,
+    #TD_29:after,
     #TD_40:after {
         border-collapse: collapse;
         text-align: center;
@@ -928,10 +1092,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_16:after, #TD_28:after, #TD_40:after*/
+    /*#TD_18:after, #TD_29:after, #TD_40:after*/
 
-    #TD_16:before,
-    #TD_28:before,
+    #TD_18:before,
+    #TD_29:before,
     #TD_40:before {
         border-collapse: collapse;
         text-align: center;
@@ -940,10 +1104,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_16:before, #TD_28:before, #TD_40:before*/
+    /*#TD_18:before, #TD_29:before, #TD_40:before*/
 
-    #TD_17,
-    #TD_29,
+    #TD_19,
+    #TD_30,
     #TD_41 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -961,27 +1125,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 75.6562px;
+        inline-size: 105.594px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 37.8281px 13.6875px;
+        perspective-origin: 52.7969px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 37.8281px 13.6953px;
+        transform-origin: 52.7969px 13.6953px;
         vertical-align: middle;
-        width: 75.6562px;
+        width: 105.594px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_17, #TD_29, #TD_41*/
+    /*#TD_19, #TD_30, #TD_41*/
 
-    #TD_17:after,
-    #TD_29:after,
+    #TD_19:after,
+    #TD_30:after,
     #TD_41:after {
         border-collapse: collapse;
         text-align: center;
@@ -990,10 +1154,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_17:after, #TD_29:after, #TD_41:after*/
+    /*#TD_19:after, #TD_30:after, #TD_41:after*/
 
-    #TD_17:before,
-    #TD_29:before,
+    #TD_19:before,
+    #TD_30:before,
     #TD_41:before {
         border-collapse: collapse;
         text-align: center;
@@ -1002,10 +1166,67 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_17:before, #TD_29:before, #TD_41:before*/
+    /*#TD_19:before, #TD_30:before, #TD_41:before*/
 
-    #TD_18,
-    #TD_30,
+    #TD_20,
+    #TD_31 {
+        block-size: 27.3906px;
+        border-block-end-color: rgb(33, 58, 85);
+        border-block-end-style: solid;
+        border-block-end-width: 1px;
+        border-block-start-color: rgb(33, 58, 85);
+        border-block-start-style: solid;
+        border-block-start-width: 1px;
+        border-collapse: collapse;
+        border-inline-end-color: rgb(33, 58, 85);
+        border-inline-end-style: solid;
+        border-inline-end-width: 1px;
+        border-inline-start-color: rgb(33, 58, 85);
+        border-inline-start-style: solid;
+        border-inline-start-width: 1px;
+        box-sizing: border-box;
+        height: 27.3906px;
+        inline-size: 104.672px;
+        padding-block-end: 2px;
+        padding-block-start: 2px;
+        padding-inline-end: 2px;
+        padding-inline-start: 2px;
+        perspective-origin: 52.3281px 13.6875px;
+        text-align: center;
+        text-size-adjust: 100%;
+        transform-origin: 52.3359px 13.6953px;
+        vertical-align: middle;
+        width: 104.672px;
+        border: 1px solid rgb(33, 58, 85);
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+        padding: 2px;
+    }
+
+    /*#TD_20, #TD_31*/
+
+    #TD_20:after,
+    #TD_31:after {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_20:after, #TD_31:after*/
+
+    #TD_20:before,
+    #TD_31:before {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_20:before, #TD_31:before*/
+
     #TD_42 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -1023,27 +1244,25 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 95.2969px;
+        inline-size: 104.672px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 47.6406px 13.6875px;
+        perspective-origin: 52.3281px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 47.6484px 13.6953px;
+        transform-origin: 52.3359px 13.6953px;
         vertical-align: middle;
-        width: 95.2969px;
+        width: 104.672px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_18, #TD_30, #TD_42*/
+    /*#TD_42*/
 
-    #TD_18:after,
-    #TD_30:after,
     #TD_42:after {
         border-collapse: collapse;
         text-align: center;
@@ -1052,10 +1271,8 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_18:after, #TD_30:after, #TD_42:after*/
+    /*#TD_42:after*/
 
-    #TD_18:before,
-    #TD_30:before,
     #TD_42:before {
         border-collapse: collapse;
         text-align: center;
@@ -1064,246 +1281,7 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_18:before, #TD_30:before, #TD_42:before*/
-
-    #TD_19,
-    #TD_31,
-    #TD_43 {
-        block-size: 27.3906px;
-        border-block-end-color: rgb(33, 58, 85);
-        border-block-end-style: solid;
-        border-block-end-width: 1px;
-        border-block-start-color: rgb(33, 58, 85);
-        border-block-start-style: solid;
-        border-block-start-width: 1px;
-        border-collapse: collapse;
-        border-inline-end-color: rgb(33, 58, 85);
-        border-inline-end-style: solid;
-        border-inline-end-width: 1px;
-        border-inline-start-color: rgb(33, 58, 85);
-        border-inline-start-style: solid;
-        border-inline-start-width: 1px;
-        box-sizing: border-box;
-        height: 27.3906px;
-        inline-size: 83px;
-        padding-block-end: 2px;
-        padding-block-start: 2px;
-        padding-inline-end: 2px;
-        padding-inline-start: 2px;
-        perspective-origin: 41.5px 13.6875px;
-        text-align: center;
-        text-size-adjust: 100%;
-        transform-origin: 41.5px 13.6953px;
-        vertical-align: middle;
-        width: 83px;
-        border: 1px solid rgb(33, 58, 85);
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-        padding: 2px;
-    }
-
-    /*#TD_19, #TD_31, #TD_43*/
-
-    #TD_19:after,
-    #TD_31:after,
-    #TD_43:after {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_19:after, #TD_31:after, #TD_43:after*/
-
-    #TD_19:before,
-    #TD_31:before,
-    #TD_43:before {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_19:before, #TD_31:before, #TD_43:before*/
-
-    #TD_20,
-    #TD_32,
-    #TD_44 {
-        block-size: 27.3906px;
-        border-block-end-color: rgb(33, 58, 85);
-        border-block-end-style: solid;
-        border-block-end-width: 1px;
-        border-block-start-color: rgb(33, 58, 85);
-        border-block-start-style: solid;
-        border-block-start-width: 1px;
-        border-collapse: collapse;
-        border-inline-end-color: rgb(33, 58, 85);
-        border-inline-end-style: solid;
-        border-inline-end-width: 1px;
-        border-inline-start-color: rgb(33, 58, 85);
-        border-inline-start-style: solid;
-        border-inline-start-width: 1px;
-        box-sizing: border-box;
-        height: 27.3906px;
-        inline-size: 84.3125px;
-        padding-block-end: 2px;
-        padding-block-start: 2px;
-        padding-inline-end: 2px;
-        padding-inline-start: 2px;
-        perspective-origin: 42.1562px 13.6875px;
-        text-align: center;
-        text-size-adjust: 100%;
-        transform-origin: 42.1562px 13.6953px;
-        vertical-align: middle;
-        width: 84.3125px;
-        border: 1px solid rgb(33, 58, 85);
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-        padding: 2px;
-    }
-
-    /*#TD_20, #TD_32, #TD_44*/
-
-    #TD_20:after,
-    #TD_32:after,
-    #TD_44:after {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_20:after, #TD_32:after, #TD_44:after*/
-
-    #TD_20:before,
-    #TD_32:before,
-    #TD_44:before {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_20:before, #TD_32:before, #TD_44:before*/
-
-    #TD_21,
-    #TD_33 {
-        block-size: 27.3906px;
-        border-block-end-color: rgb(33, 58, 85);
-        border-block-end-style: solid;
-        border-block-end-width: 1px;
-        border-block-start-color: rgb(33, 58, 85);
-        border-block-start-style: solid;
-        border-block-start-width: 1px;
-        border-collapse: collapse;
-        border-inline-end-color: rgb(33, 58, 85);
-        border-inline-end-style: solid;
-        border-inline-end-width: 1px;
-        border-inline-start-color: rgb(33, 58, 85);
-        border-inline-start-style: solid;
-        border-inline-start-width: 1px;
-        box-sizing: border-box;
-        height: 27.3906px;
-        inline-size: 80.0938px;
-        padding-block-end: 2px;
-        padding-block-start: 2px;
-        padding-inline-end: 2px;
-        padding-inline-start: 2px;
-        perspective-origin: 40.0469px 13.6875px;
-        text-align: center;
-        text-size-adjust: 100%;
-        transform-origin: 40.0469px 13.6953px;
-        vertical-align: middle;
-        width: 80.0938px;
-        border: 1px solid rgb(33, 58, 85);
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-        padding: 2px;
-    }
-
-    /*#TD_21, #TD_33*/
-
-    #TD_21:after,
-    #TD_33:after {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_21:after, #TD_33:after*/
-
-    #TD_21:before,
-    #TD_33:before {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_21:before, #TD_33:before*/
-
-    #TD_45 {
-        block-size: 27.3906px;
-        border-block-end-color: rgb(33, 58, 85);
-        border-block-end-style: solid;
-        border-block-end-width: 1px;
-        border-block-start-color: rgb(33, 58, 85);
-        border-block-start-style: solid;
-        border-block-start-width: 1px;
-        border-collapse: collapse;
-        border-inline-end-color: rgb(33, 58, 85);
-        border-inline-end-style: solid;
-        border-inline-end-width: 1px;
-        border-inline-start-color: rgb(33, 58, 85);
-        border-inline-start-style: solid;
-        border-inline-start-width: 1px;
-        box-sizing: border-box;
-        height: 27.3906px;
-        inline-size: 80.0938px;
-        padding-block-end: 2px;
-        padding-block-start: 2px;
-        padding-inline-end: 2px;
-        padding-inline-start: 2px;
-        perspective-origin: 40.0469px 13.6875px;
-        text-align: center;
-        text-size-adjust: 100%;
-        transform-origin: 40.0469px 13.6953px;
-        vertical-align: middle;
-        width: 80.0938px;
-        border: 1px solid rgb(33, 58, 85);
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-        padding: 2px;
-    }
-
-    /*#TD_45*/
-
-    #TD_45:after {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_45:after*/
-
-    #TD_45:before {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_45:before*/
+    /*#TD_42:before*/
 </style>
 
 {% endblock content %}

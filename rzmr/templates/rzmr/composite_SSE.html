@@ -14,20 +14,20 @@
     </div>
     <div class="row">
         <div class="col-4 border-end">
-            <img src="{% static 'rzmr/img/SGT1.jpg' %}" alt="SGT1">
+            <img src="{% static 'rzmr/img/SSE1.jpg' %}" alt="SSE1">
         </div>
         <div class="col-8 text-uzm">
             <p>Состав рукава:</p>
             <ul>
-                <li>Внутренняя проволока: нержавеющая сталь (S).</li>
-                <li>Внешняя проволока: оцинкованная сталь (G).</li>
-                <li>Внутренний слой: PTFE (Т).</li>
-                <li>Внешний слой: полиэфирная ткань с ПВХ-покрытием.</li>
+                <li>Внутренняя проволока: нержавеющая сталь 316L (S).</li>
+                <li>Внешняя проволока: Нержавеющая сталь 316L (S).</li>
+                <li>Внутренний слой: полипропилен (E).</li>
+                <li>Внешний слой: ткань с ПВХ-покрытием.</li>
             </ul>
             <p>
-                Рукава SGT рекомендуется для доставки и/или аспирации широкого спектра химических продуктов, которые не
-                подходят для полипропиленовых труб, таких как некоторые типы кислот и растворителей, например толуол,
-                которые встречаются в неагрессивных средах. Используются при погрузке/разгрузке автоцистерн, вагонов, на
+                Рукава SSE рекомендуется для доставки и/или аспирации широкого спектра химических продуктов, хорошо
+                взаимодействующих с полипропиленом, например, жирными кислотами, щелочами и растворителями,
+                встречающимися в неагрессивных средах. Используются при погрузке/разгрузке автоцистерн, вагонов, на
                 заводах и суднах.
             </p>
             <p>
@@ -35,6 +35,12 @@
             </p>
             <p>
                 Вакуум: 0,9 бар
+            </p>
+            <p>
+                Макс. Удлинение: 10% при испытательном давлении
+            </p>
+            <p>
+                Максимальное скручивание: 10°/метр
             </p>
         </div>
     </div>
@@ -55,7 +61,7 @@
                         <td colspan="6" id="TD_8">
                             Стандартная серия
                         </td>
-                        <td colspan="3" id="TD_9">
+                        <td colspan="4" id="TD_9">
                             Тяжелая серия
                         </td>
                     </tr>
@@ -90,73 +96,143 @@
                         <td id="TD_20">
                             250
                         </td>
+                        <td id="TD_21">
+                            300
+                        </td>
                     </tr>
-                    <tr id="TR_21">
-                        <td rowspan="1" id="TD_22">
+                    <tr id="TR_22">
+                        <td rowspan="1" id="TD_23">
                             Радиус изгиба
                         </td>
-                        <td rowspan="1" id="TD_23">
+                        <td rowspan="1" id="TD_24">
                             68
                         </td>
-                        <td rowspan="1" id="TD_24">
-                            105
-                        </td>
                         <td rowspan="1" id="TD_25">
-                            190
+                            100
                         </td>
                         <td rowspan="1" id="TD_26">
-                            225
+                            150
                         </td>
                         <td rowspan="1" id="TD_27">
-                            290
+                            190
                         </td>
                         <td rowspan="1" id="TD_28">
-                            320
+                            250
                         </td>
                         <td rowspan="1" id="TD_29">
-                            497
+                            320
                         </td>
                         <td rowspan="1" id="TD_30">
-                            740
+                            497
                         </td>
                         <td rowspan="1" id="TD_31">
+                            740
+                        </td>
+                        <td rowspan="1" id="TD_32">
                             920
                         </td>
+                        <td rowspan="1" id="TD_33">
+                            1150
+                        </td>
                     </tr>
-                    <tr id="TR_32">
-                        <td id="TD_33">
+                    <tr id="TR_34">
+                        <td id="TD_35">
                             Вес, кг/м
                         </td>
-                        <td id="TD_34">
-                            1,17
-                        </td>
-                        <td id="TD_35">
-                            1,7
-                        </td>
                         <td id="TD_36">
-                            2,01
+                            0,7
                         </td>
                         <td id="TD_37">
-                            2,62
+                            1,25
                         </td>
                         <td id="TD_38">
-                            3,4
+                            1,7
                         </td>
                         <td id="TD_39">
-                            5,42
+                            2,3
                         </td>
                         <td id="TD_40">
-                            12,03
+                            3,1
                         </td>
                         <td id="TD_41">
-                            22,1
+                            5,71
                         </td>
                         <td id="TD_42">
-                            25,7
+                            12,49
+                        </td>
+                        <td id="TD_43">
+                            22,3
+                        </td>
+                        <td id="TD_44">
+                            25,9
+                        </td>
+                        <td id="TD_45">
+                            28
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-4 col-6 py-5">
+            <p class="fs-3 fw-bold">Другие серии композитных рукавов</p>
+        </div>
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'EGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/EGE1.jpg' %}" alt="Рукава серии EGE">
+                    <p>Рукава серии EGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SST' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SST1.jpg' %}" alt="Рукава серии SST">
+                    <p>Рукава серии SST</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SGT' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGT1.jpg' %}" alt="Рукава серии SGT">
+                    <p>Рукава серии SGT</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGE3.jpg' %}" alt="Рукава серии SGE">
+                    <p>Рукава серии SGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'GGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/GGT1.jpg' %}" alt="Рукава серии GGE">
+                    <p>Рукава серии GGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'AAE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/AAE1.jpg' %}" alt="Рукава серии AAE">
+                    <p>Рукава серии AAE</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
@@ -393,8 +469,8 @@
 
     #TD_7,
     #TD_11,
-    #TD_22,
-    #TD_33 {
+    #TD_23,
+    #TD_35 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
         border-block-end-style: solid;
@@ -428,12 +504,12 @@
         padding: 2px;
     }
 
-    /*#TD_7, #TD_11, #TD_22, #TD_33*/
+    /*#TD_7, #TD_11, #TD_23, #TD_35*/
 
     #TD_7:after,
     #TD_11:after,
-    #TD_22:after,
-    #TD_33:after {
+    #TD_23:after,
+    #TD_35:after {
         border-collapse: collapse;
         text-align: center;
         text-size-adjust: 100%;
@@ -441,12 +517,12 @@
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_7:after, #TD_11:after, #TD_22:after, #TD_33:after*/
+    /*#TD_7:after, #TD_11:after, #TD_23:after, #TD_35:after*/
 
     #TD_7:before,
     #TD_11:before,
-    #TD_22:before,
-    #TD_33:before {
+    #TD_23:before,
+    #TD_35:before {
         border-collapse: collapse;
         text-align: center;
         text-size-adjust: 100%;
@@ -454,7 +530,7 @@
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_7:before, #TD_11:before, #TD_22:before, #TD_33:before*/
+    /*#TD_7:before, #TD_11:before, #TD_23:before, #TD_35:before*/
 
     #TD_8 {
         block-size: 27.3906px;
@@ -473,17 +549,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 482.938px;
+        inline-size: 421.453px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 241.469px 13.6875px;
+        perspective-origin: 210.719px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 241.469px 13.6953px;
+        transform-origin: 210.727px 13.6953px;
         vertical-align: middle;
-        width: 482.938px;
+        width: 421.453px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -529,17 +605,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 281.219px;
+        inline-size: 342.703px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 140.609px 13.6875px;
+        perspective-origin: 171.344px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 140.609px 13.6953px;
+        transform-origin: 171.352px 13.6953px;
         vertical-align: middle;
-        width: 281.219px;
+        width: 342.703px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -569,8 +645,8 @@
     /*#TD_9:before*/
 
     #TR_10,
-    #TR_21,
-    #TR_32 {
+    #TR_22,
+    #TR_34 {
         block-size: 27.3906px;
         border-block-end-color: rgb(128, 128, 128);
         border-block-start-color: rgb(128, 128, 128);
@@ -591,11 +667,11 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TR_10, #TR_21, #TR_32*/
+    /*#TR_10, #TR_22, #TR_34*/
 
     #TR_10:after,
-    #TR_21:after,
-    #TR_32:after {
+    #TR_22:after,
+    #TR_34:after {
         border-collapse: collapse;
         text-align: center;
         text-size-adjust: 100%;
@@ -603,11 +679,11 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TR_10:after, #TR_21:after, #TR_32:after*/
+    /*#TR_10:after, #TR_22:after, #TR_34:after*/
 
     #TR_10:before,
-    #TR_21:before,
-    #TR_32:before {
+    #TR_22:before,
+    #TR_34:before {
         border-collapse: collapse;
         text-align: center;
         text-size-adjust: 100%;
@@ -615,134 +691,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TR_10:before, #TR_21:before, #TR_32:before*/
+    /*#TR_10:before, #TR_22:before, #TR_34:before*/
 
     #TD_12,
-    #TD_23,
-    #TD_34 {
-        block-size: 27.3906px;
-        border-block-end-color: rgb(33, 58, 85);
-        border-block-end-style: solid;
-        border-block-end-width: 1px;
-        border-block-start-color: rgb(33, 58, 85);
-        border-block-start-style: solid;
-        border-block-start-width: 1px;
-        border-collapse: collapse;
-        border-inline-end-color: rgb(33, 58, 85);
-        border-inline-end-style: solid;
-        border-inline-end-width: 1px;
-        border-inline-start-color: rgb(33, 58, 85);
-        border-inline-start-style: solid;
-        border-inline-start-width: 1px;
-        box-sizing: border-box;
-        height: 27.3906px;
-        inline-size: 65.8281px;
-        padding-block-end: 2px;
-        padding-block-start: 2px;
-        padding-inline-end: 2px;
-        padding-inline-start: 2px;
-        perspective-origin: 32.9062px 13.6875px;
-        text-align: center;
-        text-size-adjust: 100%;
-        transform-origin: 32.9141px 13.6953px;
-        vertical-align: middle;
-        width: 65.8281px;
-        border: 1px solid rgb(33, 58, 85);
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-        padding: 2px;
-    }
-
-    /*#TD_12, #TD_23, #TD_34*/
-
-    #TD_12:after,
-    #TD_23:after,
-    #TD_34:after {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_12:after, #TD_23:after, #TD_34:after*/
-
-    #TD_12:before,
-    #TD_23:before,
-    #TD_34:before {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_12:before, #TD_23:before, #TD_34:before*/
-
-    #TD_13,
     #TD_24,
-    #TD_35 {
-        block-size: 27.3906px;
-        border-block-end-color: rgb(33, 58, 85);
-        border-block-end-style: solid;
-        border-block-end-width: 1px;
-        border-block-start-color: rgb(33, 58, 85);
-        border-block-start-style: solid;
-        border-block-start-width: 1px;
-        border-collapse: collapse;
-        border-inline-end-color: rgb(33, 58, 85);
-        border-inline-end-style: solid;
-        border-inline-end-width: 1px;
-        border-inline-start-color: rgb(33, 58, 85);
-        border-inline-start-style: solid;
-        border-inline-start-width: 1px;
-        box-sizing: border-box;
-        height: 27.3906px;
-        inline-size: 73.3906px;
-        padding-block-end: 2px;
-        padding-block-start: 2px;
-        padding-inline-end: 2px;
-        padding-inline-start: 2px;
-        perspective-origin: 36.6875px 13.6875px;
-        text-align: center;
-        text-size-adjust: 100%;
-        transform-origin: 36.6953px 13.6953px;
-        vertical-align: middle;
-        width: 73.3906px;
-        border: 1px solid rgb(33, 58, 85);
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-        padding: 2px;
-    }
-
-    /*#TD_13, #TD_24, #TD_35*/
-
-    #TD_13:after,
-    #TD_24:after,
-    #TD_35:after {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_13:after, #TD_24:after, #TD_35:after*/
-
-    #TD_13:before,
-    #TD_24:before,
-    #TD_35:before {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_13:before, #TD_24:before, #TD_35:before*/
-
-    #TD_14,
-    #TD_25,
     #TD_36 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -760,27 +712,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 81.0156px;
+        inline-size: 57.8438px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 40.5px 13.6875px;
+        perspective-origin: 28.9219px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 40.5078px 13.6953px;
+        transform-origin: 28.9219px 13.6953px;
         vertical-align: middle;
-        width: 81.0156px;
+        width: 57.8438px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_14, #TD_25, #TD_36*/
+    /*#TD_12, #TD_24, #TD_36*/
 
-    #TD_14:after,
-    #TD_25:after,
+    #TD_12:after,
+    #TD_24:after,
     #TD_36:after {
         border-collapse: collapse;
         text-align: center;
@@ -789,10 +741,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_14:after, #TD_25:after, #TD_36:after*/
+    /*#TD_12:after, #TD_24:after, #TD_36:after*/
 
-    #TD_14:before,
-    #TD_25:before,
+    #TD_12:before,
+    #TD_24:before,
     #TD_36:before {
         border-collapse: collapse;
         text-align: center;
@@ -801,14 +753,11 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_14:before, #TD_25:before, #TD_36:before*/
+    /*#TD_12:before, #TD_24:before, #TD_36:before*/
 
-    #TD_15,
-    #TD_17,
-    #TD_26,
-    #TD_28,
-    #TD_37,
-    #TD_39 {
+    #TD_13,
+    #TD_25,
+    #TD_37 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
         border-block-end-style: solid;
@@ -825,31 +774,28 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 89.8281px;
+        inline-size: 75.2969px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 44.9062px 13.6875px;
+        perspective-origin: 37.6406px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 44.9141px 13.6953px;
+        transform-origin: 37.6484px 13.6953px;
         vertical-align: middle;
-        width: 89.8281px;
+        width: 75.2969px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_15, #TD_17, #TD_26, #TD_28, #TD_37, #TD_39*/
+    /*#TD_13, #TD_25, #TD_37*/
 
-    #TD_15:after,
-    #TD_17:after,
-    #TD_26:after,
-    #TD_28:after,
-    #TD_37:after,
-    #TD_39:after {
+    #TD_13:after,
+    #TD_25:after,
+    #TD_37:after {
         border-collapse: collapse;
         text-align: center;
         text-size-adjust: 100%;
@@ -857,14 +803,11 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_15:after, #TD_17:after, #TD_26:after, #TD_28:after, #TD_37:after, #TD_39:after*/
+    /*#TD_13:after, #TD_25:after, #TD_37:after*/
 
-    #TD_15:before,
-    #TD_17:before,
-    #TD_26:before,
-    #TD_28:before,
-    #TD_37:before,
-    #TD_39:before {
+    #TD_13:before,
+    #TD_25:before,
+    #TD_37:before {
         border-collapse: collapse;
         text-align: center;
         text-size-adjust: 100%;
@@ -872,10 +815,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_15:before, #TD_17:before, #TD_26:before, #TD_28:before, #TD_37:before, #TD_39:before*/
+    /*#TD_13:before, #TD_25:before, #TD_37:before*/
 
-    #TD_16,
-    #TD_27,
+    #TD_14,
+    #TD_26,
     #TD_38 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -893,27 +836,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 83.0469px;
+        inline-size: 67.9062px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 41.5156px 13.6875px;
+        perspective-origin: 33.9531px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 41.5234px 13.6953px;
+        transform-origin: 33.9531px 13.6953px;
         vertical-align: middle;
-        width: 83.0469px;
+        width: 67.9062px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_16, #TD_27, #TD_38*/
+    /*#TD_14, #TD_26, #TD_38*/
 
-    #TD_16:after,
-    #TD_27:after,
+    #TD_14:after,
+    #TD_26:after,
     #TD_38:after {
         border-collapse: collapse;
         text-align: center;
@@ -922,10 +865,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_16:after, #TD_27:after, #TD_38:after*/
+    /*#TD_14:after, #TD_26:after, #TD_38:after*/
 
-    #TD_16:before,
-    #TD_27:before,
+    #TD_14:before,
+    #TD_26:before,
     #TD_38:before {
         border-collapse: collapse;
         text-align: center;
@@ -934,10 +877,72 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_16:before, #TD_27:before, #TD_38:before*/
+    /*#TD_14:before, #TD_26:before, #TD_38:before*/
 
-    #TD_18,
-    #TD_29,
+    #TD_15,
+    #TD_27,
+    #TD_39 {
+        block-size: 27.3906px;
+        border-block-end-color: rgb(33, 58, 85);
+        border-block-end-style: solid;
+        border-block-end-width: 1px;
+        border-block-start-color: rgb(33, 58, 85);
+        border-block-start-style: solid;
+        border-block-start-width: 1px;
+        border-collapse: collapse;
+        border-inline-end-color: rgb(33, 58, 85);
+        border-inline-end-style: solid;
+        border-inline-end-width: 1px;
+        border-inline-start-color: rgb(33, 58, 85);
+        border-inline-start-style: solid;
+        border-inline-start-width: 1px;
+        box-sizing: border-box;
+        height: 27.3906px;
+        inline-size: 67.9375px;
+        padding-block-end: 2px;
+        padding-block-start: 2px;
+        padding-inline-end: 2px;
+        padding-inline-start: 2px;
+        perspective-origin: 33.9688px 13.6875px;
+        text-align: center;
+        text-size-adjust: 100%;
+        transform-origin: 33.9688px 13.6953px;
+        vertical-align: middle;
+        width: 67.9375px;
+        border: 1px solid rgb(33, 58, 85);
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+        padding: 2px;
+    }
+
+    /*#TD_15, #TD_27, #TD_39*/
+
+    #TD_15:after,
+    #TD_27:after,
+    #TD_39:after {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_15:after, #TD_27:after, #TD_39:after*/
+
+    #TD_15:before,
+    #TD_27:before,
+    #TD_39:before {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_15:before, #TD_27:before, #TD_39:before*/
+
+    #TD_16,
+    #TD_28,
     #TD_40 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -955,27 +960,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 105.953px;
+        inline-size: 76.8125px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 52.9688px 13.6875px;
+        perspective-origin: 38.4062px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 52.9766px 13.6953px;
+        transform-origin: 38.4062px 13.6953px;
         vertical-align: middle;
-        width: 105.953px;
+        width: 76.8125px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_18, #TD_29, #TD_40*/
+    /*#TD_16, #TD_28, #TD_40*/
 
-    #TD_18:after,
-    #TD_29:after,
+    #TD_16:after,
+    #TD_28:after,
     #TD_40:after {
         border-collapse: collapse;
         text-align: center;
@@ -984,10 +989,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_18:after, #TD_29:after, #TD_40:after*/
+    /*#TD_16:after, #TD_28:after, #TD_40:after*/
 
-    #TD_18:before,
-    #TD_29:before,
+    #TD_16:before,
+    #TD_28:before,
     #TD_40:before {
         border-collapse: collapse;
         text-align: center;
@@ -996,10 +1001,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_18:before, #TD_29:before, #TD_40:before*/
+    /*#TD_16:before, #TD_28:before, #TD_40:before*/
 
-    #TD_19,
-    #TD_30,
+    #TD_17,
+    #TD_29,
     #TD_41 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -1017,27 +1022,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 86.6719px;
+        inline-size: 75.6562px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 43.3281px 13.6875px;
+        perspective-origin: 37.8281px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 43.3359px 13.6953px;
+        transform-origin: 37.8281px 13.6953px;
         vertical-align: middle;
-        width: 86.6719px;
+        width: 75.6562px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_19, #TD_30, #TD_41*/
+    /*#TD_17, #TD_29, #TD_41*/
 
-    #TD_19:after,
-    #TD_30:after,
+    #TD_17:after,
+    #TD_29:after,
     #TD_41:after {
         border-collapse: collapse;
         text-align: center;
@@ -1046,10 +1051,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_19:after, #TD_30:after, #TD_41:after*/
+    /*#TD_17:after, #TD_29:after, #TD_41:after*/
 
-    #TD_19:before,
-    #TD_30:before,
+    #TD_17:before,
+    #TD_29:before,
     #TD_41:before {
         border-collapse: collapse;
         text-align: center;
@@ -1058,67 +1063,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_19:before, #TD_30:before, #TD_41:before*/
+    /*#TD_17:before, #TD_29:before, #TD_41:before*/
 
-    #TD_20,
-    #TD_31 {
-        block-size: 27.3906px;
-        border-block-end-color: rgb(33, 58, 85);
-        border-block-end-style: solid;
-        border-block-end-width: 1px;
-        border-block-start-color: rgb(33, 58, 85);
-        border-block-start-style: solid;
-        border-block-start-width: 1px;
-        border-collapse: collapse;
-        border-inline-end-color: rgb(33, 58, 85);
-        border-inline-end-style: solid;
-        border-inline-end-width: 1px;
-        border-inline-start-color: rgb(33, 58, 85);
-        border-inline-start-style: solid;
-        border-inline-start-width: 1px;
-        box-sizing: border-box;
-        height: 27.3906px;
-        inline-size: 88.5938px;
-        padding-block-end: 2px;
-        padding-block-start: 2px;
-        padding-inline-end: 2px;
-        padding-inline-start: 2px;
-        perspective-origin: 44.2969px 13.6875px;
-        text-align: center;
-        text-size-adjust: 100%;
-        transform-origin: 44.2969px 13.6953px;
-        vertical-align: middle;
-        width: 88.5938px;
-        border: 1px solid rgb(33, 58, 85);
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-        padding: 2px;
-    }
-
-    /*#TD_20, #TD_31*/
-
-    #TD_20:after,
-    #TD_31:after {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_20:after, #TD_31:after*/
-
-    #TD_20:before,
-    #TD_31:before {
-        border-collapse: collapse;
-        text-align: center;
-        text-size-adjust: 100%;
-        border-spacing: 2px 2px;
-        font: 14px / 22.4px ProximaNova, Helvetica, normal;
-    }
-
-    /*#TD_20:before, #TD_31:before*/
-
+    #TD_18,
+    #TD_30,
     #TD_42 {
         block-size: 27.3906px;
         border-block-end-color: rgb(33, 58, 85);
@@ -1136,25 +1084,27 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 88.5938px;
+        inline-size: 95.2969px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 44.2969px 13.6875px;
+        perspective-origin: 47.6406px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 44.2969px 13.6953px;
+        transform-origin: 47.6484px 13.6953px;
         vertical-align: middle;
-        width: 88.5938px;
+        width: 95.2969px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
         padding: 2px;
     }
 
-    /*#TD_42*/
+    /*#TD_18, #TD_30, #TD_42*/
 
+    #TD_18:after,
+    #TD_30:after,
     #TD_42:after {
         border-collapse: collapse;
         text-align: center;
@@ -1163,8 +1113,10 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_42:after*/
+    /*#TD_18:after, #TD_30:after, #TD_42:after*/
 
+    #TD_18:before,
+    #TD_30:before,
     #TD_42:before {
         border-collapse: collapse;
         text-align: center;
@@ -1173,7 +1125,246 @@
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
     }
 
-    /*#TD_42:before*/
+    /*#TD_18:before, #TD_30:before, #TD_42:before*/
+
+    #TD_19,
+    #TD_31,
+    #TD_43 {
+        block-size: 27.3906px;
+        border-block-end-color: rgb(33, 58, 85);
+        border-block-end-style: solid;
+        border-block-end-width: 1px;
+        border-block-start-color: rgb(33, 58, 85);
+        border-block-start-style: solid;
+        border-block-start-width: 1px;
+        border-collapse: collapse;
+        border-inline-end-color: rgb(33, 58, 85);
+        border-inline-end-style: solid;
+        border-inline-end-width: 1px;
+        border-inline-start-color: rgb(33, 58, 85);
+        border-inline-start-style: solid;
+        border-inline-start-width: 1px;
+        box-sizing: border-box;
+        height: 27.3906px;
+        inline-size: 83px;
+        padding-block-end: 2px;
+        padding-block-start: 2px;
+        padding-inline-end: 2px;
+        padding-inline-start: 2px;
+        perspective-origin: 41.5px 13.6875px;
+        text-align: center;
+        text-size-adjust: 100%;
+        transform-origin: 41.5px 13.6953px;
+        vertical-align: middle;
+        width: 83px;
+        border: 1px solid rgb(33, 58, 85);
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+        padding: 2px;
+    }
+
+    /*#TD_19, #TD_31, #TD_43*/
+
+    #TD_19:after,
+    #TD_31:after,
+    #TD_43:after {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_19:after, #TD_31:after, #TD_43:after*/
+
+    #TD_19:before,
+    #TD_31:before,
+    #TD_43:before {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_19:before, #TD_31:before, #TD_43:before*/
+
+    #TD_20,
+    #TD_32,
+    #TD_44 {
+        block-size: 27.3906px;
+        border-block-end-color: rgb(33, 58, 85);
+        border-block-end-style: solid;
+        border-block-end-width: 1px;
+        border-block-start-color: rgb(33, 58, 85);
+        border-block-start-style: solid;
+        border-block-start-width: 1px;
+        border-collapse: collapse;
+        border-inline-end-color: rgb(33, 58, 85);
+        border-inline-end-style: solid;
+        border-inline-end-width: 1px;
+        border-inline-start-color: rgb(33, 58, 85);
+        border-inline-start-style: solid;
+        border-inline-start-width: 1px;
+        box-sizing: border-box;
+        height: 27.3906px;
+        inline-size: 84.3125px;
+        padding-block-end: 2px;
+        padding-block-start: 2px;
+        padding-inline-end: 2px;
+        padding-inline-start: 2px;
+        perspective-origin: 42.1562px 13.6875px;
+        text-align: center;
+        text-size-adjust: 100%;
+        transform-origin: 42.1562px 13.6953px;
+        vertical-align: middle;
+        width: 84.3125px;
+        border: 1px solid rgb(33, 58, 85);
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+        padding: 2px;
+    }
+
+    /*#TD_20, #TD_32, #TD_44*/
+
+    #TD_20:after,
+    #TD_32:after,
+    #TD_44:after {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_20:after, #TD_32:after, #TD_44:after*/
+
+    #TD_20:before,
+    #TD_32:before,
+    #TD_44:before {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_20:before, #TD_32:before, #TD_44:before*/
+
+    #TD_21,
+    #TD_33 {
+        block-size: 27.3906px;
+        border-block-end-color: rgb(33, 58, 85);
+        border-block-end-style: solid;
+        border-block-end-width: 1px;
+        border-block-start-color: rgb(33, 58, 85);
+        border-block-start-style: solid;
+        border-block-start-width: 1px;
+        border-collapse: collapse;
+        border-inline-end-color: rgb(33, 58, 85);
+        border-inline-end-style: solid;
+        border-inline-end-width: 1px;
+        border-inline-start-color: rgb(33, 58, 85);
+        border-inline-start-style: solid;
+        border-inline-start-width: 1px;
+        box-sizing: border-box;
+        height: 27.3906px;
+        inline-size: 80.0938px;
+        padding-block-end: 2px;
+        padding-block-start: 2px;
+        padding-inline-end: 2px;
+        padding-inline-start: 2px;
+        perspective-origin: 40.0469px 13.6875px;
+        text-align: center;
+        text-size-adjust: 100%;
+        transform-origin: 40.0469px 13.6953px;
+        vertical-align: middle;
+        width: 80.0938px;
+        border: 1px solid rgb(33, 58, 85);
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+        padding: 2px;
+    }
+
+    /*#TD_21, #TD_33*/
+
+    #TD_21:after,
+    #TD_33:after {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_21:after, #TD_33:after*/
+
+    #TD_21:before,
+    #TD_33:before {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_21:before, #TD_33:before*/
+
+    #TD_45 {
+        block-size: 27.3906px;
+        border-block-end-color: rgb(33, 58, 85);
+        border-block-end-style: solid;
+        border-block-end-width: 1px;
+        border-block-start-color: rgb(33, 58, 85);
+        border-block-start-style: solid;
+        border-block-start-width: 1px;
+        border-collapse: collapse;
+        border-inline-end-color: rgb(33, 58, 85);
+        border-inline-end-style: solid;
+        border-inline-end-width: 1px;
+        border-inline-start-color: rgb(33, 58, 85);
+        border-inline-start-style: solid;
+        border-inline-start-width: 1px;
+        box-sizing: border-box;
+        height: 27.3906px;
+        inline-size: 80.0938px;
+        padding-block-end: 2px;
+        padding-block-start: 2px;
+        padding-inline-end: 2px;
+        padding-inline-start: 2px;
+        perspective-origin: 40.0469px 13.6875px;
+        text-align: center;
+        text-size-adjust: 100%;
+        transform-origin: 40.0469px 13.6953px;
+        vertical-align: middle;
+        width: 80.0938px;
+        border: 1px solid rgb(33, 58, 85);
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+        padding: 2px;
+    }
+
+    /*#TD_45*/
+
+    #TD_45:after {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_45:after*/
+
+    #TD_45:before {
+        border-collapse: collapse;
+        text-align: center;
+        text-size-adjust: 100%;
+        border-spacing: 2px 2px;
+        font: 14px / 22.4px ProximaNova, Helvetica, normal;
+    }
+
+    /*#TD_45:before*/
 </style>
 
 {% endblock content %}

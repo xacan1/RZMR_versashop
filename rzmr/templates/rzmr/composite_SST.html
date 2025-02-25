@@ -14,19 +14,21 @@
     </div>
     <div class="row">
         <div class="col-4 border-end">
-            <img src="{% static 'rzmr/img/GGT1.jpg' %}" alt="GGT1">
+            <img src="{% static 'rzmr/img/SST1.jpg' %}" alt="SST1">
         </div>
         <div class="col-8 text-uzm">
             <p>Состав рукава:</p>
             <ul>
-                <li>Внутренняя проволока: Оцинкованная сталь (G).</li>
-                <li>Внешняя проволока: оцинкованная сталь (G).</li>
-                <li>Внутренний слой: полипропилен(E).</li>
-                <li>Внешний слой: ПВХ.</li>
+                <li>Внутренняя проволока: нержавеющая сталь (S).</li>
+                <li>Внешняя проволока: нержавеющая сталь (S)</li>
+                <li>Внутренний слой: PTFE (Т).</li>
+                <li>Внешний слой: полиэфирная ткань с ПВХ-покрытием.</li>
             </ul>
             <p>
-                Рекомендуется для использования при подаче и/или всасывании топлива, масел и смазочных материалов в
-                цистернах, железнодорожных вагонах или стационарных хранилищах.
+                Рукава SST рекомендуется для доставки и/или аспирации высококоррозионных веществ (где применяются PTFE
+                рукава и рукава из нержавеющей стали), таких как фосфорная кислота, нафта, азотная кислота в низкой
+                концентрации и других. Используется при погрузке и разгрузке автоцистерн, вагонов, на заводах и на
+                судах.
             </p>
             <p>
                 Диапазон температур: от -30˚C до +100 ˚C.
@@ -94,6 +96,7 @@
                             Радиус изгиба
                         </td>
                         <td rowspan="1" id="TD_23">
+                            68
                         </td>
                         <td rowspan="1" id="TD_24">
                             105
@@ -125,34 +128,96 @@
                             Вес, кг/м
                         </td>
                         <td id="TD_34">
+                            1,22
                         </td>
                         <td id="TD_35">
-                            1,8
+                            1,89
                         </td>
                         <td id="TD_36">
-                            2,06
+                            2,16
                         </td>
                         <td id="TD_37">
-                            2,7
+                            2,83
                         </td>
                         <td id="TD_38">
-                            3,5
+                            3,67
                         </td>
                         <td id="TD_39">
-                            5,44
+                            5,71
                         </td>
                         <td id="TD_40">
-                            11,9
+                            12,49
                         </td>
                         <td id="TD_41">
-                            21,5
+                            22,3
                         </td>
                         <td id="TD_42">
-                            25
+                            25,9
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-4 col-6 py-5">
+            <p class="fs-3 fw-bold">Другие серии композитных рукавов</p>
+        </div>
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'EGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/EGE1.jpg' %}" alt="Рукава серии EGE">
+                    <p>Рукава серии EGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SSE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SSE1.jpg' %}" alt="Рукава серии SSE">
+                    <p>Рукава серии SSE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SGT' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGT1.jpg' %}" alt="Рукава серии SGT">
+                    <p>Рукава серии SGT</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGE3.jpg' %}" alt="Рукава серии SGE">
+                    <p>Рукава серии SGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'GGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/GGT1.jpg' %}" alt="Рукава серии GGE">
+                    <p>Рукава серии GGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'AAE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/AAE1.jpg' %}" alt="Рукава серии AAE">
+                    <p>Рукава серии AAE</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
@@ -469,17 +534,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 480.828px;
+        inline-size: 486.656px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 240.406px 13.6875px;
+        perspective-origin: 243.328px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 240.414px 13.6953px;
+        transform-origin: 243.328px 13.6953px;
         vertical-align: middle;
-        width: 480.828px;
+        width: 486.656px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -525,17 +590,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 283.328px;
+        inline-size: 277.5px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 141.656px 13.6875px;
+        perspective-origin: 138.75px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 141.664px 13.6953px;
+        transform-origin: 138.75px 13.6953px;
         vertical-align: middle;
-        width: 283.328px;
+        width: 277.5px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 700 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -632,17 +697,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 59.7969px;
+        inline-size: 79.4688px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 29.8906px 13.6875px;
+        perspective-origin: 39.7344px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 29.8984px 13.6953px;
+        transform-origin: 39.7344px 13.6953px;
         vertical-align: middle;
-        width: 59.7969px;
+        width: 79.4688px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -694,17 +759,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 73.9219px;
+        inline-size: 79.2969px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 36.9531px 13.6875px;
+        perspective-origin: 39.6406px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 36.9609px 13.6953px;
+        transform-origin: 39.6484px 13.6953px;
         vertical-align: middle;
-        width: 73.9219px;
+        width: 79.2969px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -756,17 +821,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 91.4375px;
+        inline-size: 76.6406px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 45.7188px 13.6875px;
+        perspective-origin: 38.3125px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 45.7188px 13.6953px;
+        transform-origin: 38.3203px 13.6953px;
         vertical-align: middle;
-        width: 91.4375px;
+        width: 76.6406px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -818,17 +883,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 82.7031px;
+        inline-size: 87.4375px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 41.3438px 13.6875px;
+        perspective-origin: 43.7188px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 41.3516px 13.6953px;
+        transform-origin: 43.7188px 13.6953px;
         vertical-align: middle;
-        width: 82.7031px;
+        width: 87.4375px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -880,17 +945,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 83.6562px;
+        inline-size: 83.8906px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 41.8281px 13.6875px;
+        perspective-origin: 41.9375px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 41.8281px 13.6953px;
+        transform-origin: 41.9453px 13.6953px;
         vertical-align: middle;
-        width: 83.6562px;
+        width: 83.8906px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -942,17 +1007,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 89.3125px;
+        inline-size: 79.9219px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 44.6562px 13.6875px;
+        perspective-origin: 39.9531px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 44.6562px 13.6953px;
+        transform-origin: 39.9609px 13.6953px;
         vertical-align: middle;
-        width: 89.3125px;
+        width: 79.9219px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -1004,17 +1069,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 90.2656px;
+        inline-size: 100.672px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 45.125px 13.6875px;
+        perspective-origin: 50.3281px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 45.1328px 13.6953px;
+        transform-origin: 50.3359px 13.6953px;
         vertical-align: middle;
-        width: 90.2656px;
+        width: 100.672px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -1066,17 +1131,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 96.9219px;
+        inline-size: 87.6875px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 48.4531px 13.6875px;
+        perspective-origin: 43.8438px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 48.4609px 13.6953px;
+        transform-origin: 43.8438px 13.6953px;
         vertical-align: middle;
-        width: 96.9219px;
+        width: 87.6875px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -1127,17 +1192,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 96.1406px;
+        inline-size: 89.1406px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 48.0625px 13.6875px;
+        perspective-origin: 44.5625px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 48.0703px 13.6953px;
+        transform-origin: 44.5703px 13.6953px;
         vertical-align: middle;
-        width: 96.1406px;
+        width: 89.1406px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;
@@ -1185,17 +1250,17 @@
         border-inline-start-width: 1px;
         box-sizing: border-box;
         height: 27.3906px;
-        inline-size: 96.1406px;
+        inline-size: 89.1406px;
         padding-block-end: 2px;
         padding-block-start: 2px;
         padding-inline-end: 2px;
         padding-inline-start: 2px;
-        perspective-origin: 48.0625px 13.6875px;
+        perspective-origin: 44.5625px 13.6875px;
         text-align: center;
         text-size-adjust: 100%;
-        transform-origin: 48.0703px 13.6953px;
+        transform-origin: 44.5703px 13.6953px;
         vertical-align: middle;
-        width: 96.1406px;
+        width: 89.1406px;
         border: 1px solid rgb(33, 58, 85);
         border-spacing: 2px 2px;
         font: 14px / 22.4px ProximaNova, Helvetica, normal;

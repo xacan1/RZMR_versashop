@@ -14,20 +14,20 @@
     </div>
     <div class="row">
         <div class="col-4 border-end">
-            <img src="{% static 'rzmr/img/SGE3.jpg' %}" alt="SGE3">
+            <img src="{% static 'rzmr/img/SGT1.jpg' %}" alt="SGT1">
         </div>
         <div class="col-8 text-uzm">
             <p>Состав рукава:</p>
             <ul>
                 <li>Внутренняя проволока: нержавеющая сталь (S).</li>
                 <li>Внешняя проволока: оцинкованная сталь (G).</li>
-                <li>Внутренний слой: полипропилен(E).</li>
-                <li>Внешний слой: ткань с ПВХ-покрытием.</li>
+                <li>Внутренний слой: PTFE (Т).</li>
+                <li>Внешний слой: полиэфирная ткань с ПВХ-покрытием.</li>
             </ul>
             <p>
-                Рукава SGE рекомендуется для доставки и/или аспирации широкого спектра химических продуктов, хорошо
-                взаимодействующих с полипропиленом, например, жирными кислотами, щелочами и растворителями,
-                встречающимися в неагрессивных средах. Используются при погрузке/разгрузке автоцистерн, вагонов, на
+                Рукава SGT рекомендуется для доставки и/или аспирации широкого спектра химических продуктов, которые не
+                подходят для полипропиленовых труб, таких как некоторые типы кислот и растворителей, например толуол,
+                которые встречаются в неагрессивных средах. Используются при погрузке/разгрузке автоцистерн, вагонов, на
                 заводах и суднах.
             </p>
             <p>
@@ -35,12 +35,6 @@
             </p>
             <p>
                 Вакуум: 0,9 бар
-            </p>
-            <p>
-                Макс. Удлинение: 10% при испытательном давлении
-            </p>
-            <p>
-                Максимальное скручивание: 10°/метр
             </p>
         </div>
     </div>
@@ -163,6 +157,67 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-4 col-6 py-5">
+            <p class="fs-3 fw-bold">Другие серии композитных рукавов</p>
+        </div>
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'EGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/EGE1.jpg' %}" alt="Рукава серии EGE">
+                    <p>Рукава серии EGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SSE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SSE1.jpg' %}" alt="Рукава серии SSE">
+                    <p>Рукава серии SSE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SST' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SST1.jpg' %}" alt="Рукава серии SST">
+                    <p>Рукава серии SST</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'SGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/SGE3.jpg' %}" alt="Рукава серии SGE">
+                    <p>Рукава серии SGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'GGE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/GGT1.jpg' %}" alt="Рукава серии GGE">
+                    <p>Рукава серии GGE</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-2 col-6 d-flex justify-content-center">
+            <a href="{% url 'composite' 'AAE' %}" mb-checked="1" data-tooltip-content="">
+                <div class="px-2 box-shadow-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/AAE1.jpg' %}" alt="Рукава серии AAE">
+                    <p>Рукава серии AAE</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
