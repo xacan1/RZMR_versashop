@@ -234,6 +234,7 @@
                                     <li><a class="dropdown-item" href="{% url 'posts' %}">Статьи</a></li>
                                     <!-- <li><a class="dropdown-item" href="#">Новости</a></li> -->
                                     <li><a class="dropdown-item" href="{% url 'contacts' %}">Контакты</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'spheres' %}">Сферы применения</a></li>
                                     {% endif %}
                                 </ul>
                             </li>
@@ -380,6 +381,8 @@
                     <div><a href="{% url 'ptfe-recommendations' %}">{% trans 'Guidance' %}</a></div>
                     <div><a href="{% url 'ptfe-standarts' %}">{% trans 'Quality standards' %}</a></div>
                     <div><a href="{% url 'ptfe-gofrirovanniy' %}">{% trans 'Corrugated' %}</a></div>
+                    <div><a href="{% url 'ptfe-braids' %}">{% trans 'PTFE Metal hoses' %} в оплётке</a></div>
+                    <div><a href="{% url 'gibkie-truboprovody' %}">Гибкие трубопроводы</a></div>
                 </div>
                 <div class="d-md-block d-none col-md-3 col-6">
                     {% if LANGUAGE_CODE == 'ru' %}

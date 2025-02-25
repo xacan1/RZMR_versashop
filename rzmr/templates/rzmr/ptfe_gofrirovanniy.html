@@ -188,31 +188,30 @@
             <table class="uzm-table">
                 <tbody>
                     <tr>
-                        <td><img src="{% static '/rzmr/img/Icon5.jpg' %}"></td>
+                        <td class="p-1"><img src="{% static '/rzmr/img/Icon5.jpg' %}"></td>
                         <td>Условный внутренний диаметр Dy</td>
-                        <td>4-150 мм</td>
+                        <td>6-100 мм</td>
                     </tr>
                     <tr>
-                        <td><img src="{% static '/rzmr/img/Icon6.jpg' %}"></td>
+                        <td class="p-1"><img src="{% static '/rzmr/img/Icon6.jpg' %}"></td>
                         <td>Рабочее давление Рраб</td>
-                        <td>10-350 бар</td>
+                        <td>6-150 бар</td>
                     </tr>
 
                     <tr>
-                        <td><img src="{% static '/rzmr/img/Icon7.jpg' %}"></td>
+                        <td class="p-1"><img src="{% static '/rzmr/img/Icon7.jpg' %}"></td>
                         <td>Рабочая среда</td>
                         <td>Кислоты, щелочные среды, воздух, азот, гелий, кислород, водород</td>
                     </tr>
                     <tr>
-                        <td><img src="{% static '/rzmr/img/Icon8.jpg' %}"></td>
+                        <td class="p-1"><img src="{% static '/rzmr/img/Icon8.jpg' %}"></td>
                         <td>Температура рабочей среды</td>
                         <td>от -40 до +165°C</td>
                     </tr>
                     <tr>
-                        <td><img src="{% static '/rzmr/img/Union.jpg' %}">
-                        </td>
-                        <td>Количество изгибов без рабочего давления с радиусом изгиба 5Ду</td>
-                        <td>до 500 циклов</td>
+                        <td class="p-1"><img src="{% static '/rzmr/img/Union.jpg' %}"></td>
+                        <td>Радиус изгиба</td>
+                        <td>в среднем 3 Ду</td>
                     </tr>
                 </tbody>
             </table>
@@ -275,7 +274,7 @@
             <a class="fw-bold" href="{% url 'ptfe-hoses' %}">{% trans 'PTFE Metal hoses' %}</a>
         </div>
         <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
-            <a class="fw-bold" href="{% url 'ptfe-gofrirovanniy' %}">Гофрированные {% trans 'PTFE Metal hoses' %}</a>
+            <a class="fw-bold" href="{% url 'ptfe-braids' %}">{% trans 'PTFE Metal hoses' %} в оплётке</a>
         </div>
         <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
             <a class="fw-bold" href="{% url 'gibkie-truboprovody' %}">Гибкие трубопроводы</a>

@@ -1,0 +1,69 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-4 col-6 py-5">
+            <p class="fs-3 fw-bold">Сферы применения</p>
+        </div>
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-sm-6 col-12 py-3 d-flex justify-content-center box-shadow-uzm">
+            <a href="{% url 'spheres-mechanical-engineering' %}">
+                <div class="wrapper-img-uzm-down1 wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/mashinostroenie-2.jpg' %}" width="380" alt="Машиностроение">
+                </div>
+                <p class="fs-5">Машиностроение</p>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-3 d-flex justify-content-center box-shadow-uzm">
+            <a href="#">
+                <div class="wrapper-img-uzm-down1 wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/aviacionnaya-2.jpg' %}" width="380" alt="Авиационная промышленность">
+                </div>
+                <p class="fs-5">Авиационная промышленность</p>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-3 d-flex justify-content-center box-shadow-uzm">
+            <a href="#">
+                <div class="wrapper-img-uzm-down1 wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/gaz-2.jpg' %}" width="380" alt="Газовая отрасль">
+                </div>
+                <p class="fs-5">Газовая отрасль</p>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-3 d-flex justify-content-center box-shadow-uzm">
+            <a href="#">
+                <div class="wrapper-img-uzm-down1 wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/himiya-2.jpg' %}" width="380" alt="Химическая промышленность">
+                </div>
+                <p class="fs-5">Химическая промышленность</p>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-3 d-flex justify-content-center box-shadow-uzm">
+            <a href="#">
+                <div class="wrapper-img-uzm-down1 wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/neft-2.jpg' %}" width="380" alt="Нефтепереработка">
+                </div>
+                <p class="fs-5">Нефтепереработка</p>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-3 d-flex justify-content-center box-shadow-uzm">
+            <a href="#">
+                <div class="wrapper-img-uzm-down1 wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/pischevaya-2.jpg' %}" width="380" alt="Пищевая промышленность">
+                </div>
+                <p class="fs-5">Пищевая промышленность</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

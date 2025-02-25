@@ -115,6 +115,27 @@ class ContactsView(DataMixin, FormView):
         return {**context, **c_def}
 
 
+class SpheresView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/spheres.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Сферы применения')
+        return {**context, **c_def}
+
+
+class SphereMechanicalEngineeringView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/sphere_mechanical_engineering.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(
+            title='Применение металлорукавов в машиностроении')
+        return {**context, **c_def}
+
+
 class MetalhosesView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/metalhoses.html'
