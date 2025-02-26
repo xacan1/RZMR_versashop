@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+# python manage.py makemessages -l ru
+# python manage.py compilemessages -l ru
 
 from django.utils.translation import gettext_lazy as _
 from pathlib import Path

@@ -4,7 +4,7 @@ from rzmr.views import *
 urlpatterns = [
     path('', IndexView.as_view(), name='home'),
     path('robots.txt/', RobotView.as_view()),
-    path('request-phone-call/', RequestPhoneCall.as_view(), name='request-phone-call'),
+    path('request-phone-call/', RequestPhoneCallView.as_view(), name='request-phone-call'),
     path('feedback/', FeedbackView.as_view(), name='feedback'),
     path('about/', AboutView.as_view(), name='about'),
     path('about/quality/', QualityView.as_view(), name='quality'),
@@ -27,7 +27,7 @@ urlpatterns = [
     path('metalhoses/special/', MetalhosesSpecialView.as_view(), name='metalhoses-special'),
     path('metalhoses/recommendations/', MetalhosesRecommendationsView.as_view(), name='metalhoses-recommendations'),
     path('metalhoses/installation/', MetalhosesInstallationSafetyView.as_view(), name='metalhoses-installation'),
-    path('metalhoses/standarts/', StandartsRGMView.as_view(), name='metalhoses-standarts-rgm'),
+    path('metalhoses/standarts/', MetalhosesStandartsRGMView.as_view(), name='metalhoses-standarts-rgm'),
     path('metalhoses/hpress/', HpressRGMView.as_view(), name='metalhoses-hpress-rgm'),
     path('metalhoses/for-welding/', MetalhosesForWeldingView.as_view(), name='metalhoses-for-welding'),
     path('metalhoses/rgm/', MetalhosesRGMView.as_view(), name='metalhoses-rgm'),

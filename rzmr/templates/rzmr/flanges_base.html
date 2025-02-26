@@ -14,22 +14,22 @@
     </div>
     <div class="row">
         <div class="col-4 border-end">
-            <p class="border-bottom">
+            <p class="border-bottom {% if 'flantsevoe-soedinenie-gost-12821-80' in request.path %} fw-bold {% endif %}">
                 <a href="{% url 'flange' 'flantsevoe-soedinenie-gost-12821-80' %}">Фланцевое соединение ГОСТ 12821-80</a>
             </p>
-            <p class="border-bottom">
+            <p class="border-bottom {% if 'flantsevoe-soedinenie-gost-12822-80' in request.path %} fw-bold {% endif %}">
                 <a href="{% url 'flange' 'flantsevoe-soedinenie-gost-12822-80' %}">Фланцевое соединение ГОСТ 12822-80</a>
             </p>
-            <p class="border-bottom">
+            <p class="border-bottom {% if 'flantsevoe-soedinenie-s-otkidnymi-boltami' in request.path %} fw-bold {% endif %}">
                 <a href="{% url 'flange' 'flantsevoe-soedinenie-s-otkidnymi-boltami' %}">Фланцевое соединение с откидными болтами</a>
             </p>
-            <p class="border-bottom">
+            <p class="border-bottom {% if 'flantsevoe-soedinenie-svobodnoe-na-otbortovke' in request.path %} fw-bold {% endif %}">
                 <a href="{% url 'flange' 'flantsevoe-soedinenie-svobodnoe-na-otbortovke' %}">Фланцевое соединение свободное на отбортовке</a>
             </p>
-            <p class="border-bottom">
+            <p class="border-bottom {% if 'flantsevoe-soedinenie-tip-01-po-gost-33259-2015' in request.path %} fw-bold {% endif %}">
                 <a href="{% url 'flange' 'flantsevoe-soedinenie-tip-01-po-gost-33259-2015' %}">Фланцевое соединение тип 01 по ГОСТ 33259-2015</a>
             </p>
-            <p class="border-bottom">
+            <p class="border-bottom {% if 'flantsy-iz-nalichiya' in request.path %} fw-bold {% endif %}">
                 <a href="{% url 'flange' 'flantsy-iz-nalichiya' %}">Фланцы из наличия</a>
             </p>
             

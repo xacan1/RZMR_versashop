@@ -20,7 +20,9 @@ class PostListView(DataMixin, ListView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title='Статьи')
+        title = 'Статьи'
+        breadcrumb = [('posts', title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -32,9 +34,10 @@ class PostDetailView(DataMixin, DetailView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('posts', 'Статьи'),]
-        c_def = self.get_user_context(
-            title=context['post'].title, breadcrumb=breadcrumb)
+        title = context['post'].title
+        breadcrumb = [('posts', 'Статьи'),
+                      ('', title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -45,9 +48,10 @@ class PostCreateView(StaffRequiredMixin, DataMixin, CreateView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('posts', 'Статьи'),]
-        c_def = self.get_user_context(
-            title='Добавление новой статьи', breadcrumb=breadcrumb)
+        title='Добавление новой статьи'
+        breadcrumb = [('posts', 'Статьи'),
+                      ('', title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -59,7 +63,8 @@ class PostUpdateView(StaffRequiredMixin, DataMixin, UpdateView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        breadcrumb = [('posts', 'Статьи'),]
-        c_def = self.get_user_context(
-            title='Изменение статьи', breadcrumb=breadcrumb)
+        title='Изменение статьи'
+        breadcrumb = [('posts', 'Статьи'),
+                      ('', title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
