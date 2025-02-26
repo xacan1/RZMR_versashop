@@ -20,6 +20,26 @@
     <link rel="stylesheet" href="{% static 'rzmr/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'rzmr/css/main.css' %}">
     <title>{{ title }}</title>
+    <script type='application/ld+json'>
+        {
+          "@context": "http://www.schema.org",
+          "@type": "Organization",
+          "name": "Русский Завод Металлорукавов",
+          "url": "https://rzmr.ru",
+          "logo": "https://rzmr.ru/static/rzmr/img/logo.svg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Афонская, 1к2",
+            "addressLocality": "Санкт-Петербург",
+            "postalCode": "197341",
+            "addressCountry": "RU"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "88005555756"
+          }
+        }
+    </script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
