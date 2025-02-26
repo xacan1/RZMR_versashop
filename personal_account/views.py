@@ -9,10 +9,13 @@ from personal_account.forms import *
 class PersonalAccountView(LoginRequiredMixin, DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'personal_account/personal-account.html'
+    login_url = 'login'
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title=_('Personal account'))
+        title = _('Personal account')
+        breadcrumb = [('personal-account', title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -22,9 +25,11 @@ class UserSettingsView(LoginRequiredMixin, DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        title = _('Profile settings')
         breadcrumb = [('personal-account', _('Personal account')),]
-        c_def = self.get_user_context(
-            title=_('Profile settings'), is_settings=True, breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title,
+                                      is_settings=True,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -34,6 +39,7 @@ class UserOrdersView(LoginRequiredMixin, DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        title = _('Orders')
         breadcrumb = [('personal-account', _('Personal account')),]
 
         orders = self.request.user.get_orders.all()
@@ -42,7 +48,7 @@ class UserOrdersView(LoginRequiredMixin, DataMixin, FormView):
         page_number = self.request.GET.get('page', 1)
         page_obj = paginator.get_page(page_number)
 
-        c_def = self.get_user_context(title=_('Orders'),
+        c_def = self.get_user_context(title=title,
                                       is_orders=True,
                                       breadcrumb=breadcrumb,
                                       page_obj=page_obj,
@@ -57,7 +63,9 @@ class UserCompaniesView(LoginRequiredMixin, DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        title = _('Organizations')
         breadcrumb = [('personal-account', _('Personal account')),]
-        c_def = self.get_user_context(
-            title=_('Organizations'), is_companies=True, breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title,
+                                      is_companies=True,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
