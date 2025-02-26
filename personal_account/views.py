@@ -1,5 +1,6 @@
 from django.views.generic import FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 from django.core.paginator import Paginator
 from django.utils.translation import gettext_lazy as _
 from shop.mixins import DataMixin
@@ -9,7 +10,8 @@ from personal_account.forms import *
 class PersonalAccountView(LoginRequiredMixin, DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'personal_account/personal-account.html'
-    login_url = 'login'
+    login_url = reverse_lazy('login')
+    success_url = reverse_lazy('personal-account')
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
@@ -22,6 +24,7 @@ class PersonalAccountView(LoginRequiredMixin, DataMixin, FormView):
 class UserSettingsView(LoginRequiredMixin, DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'personal_account/personal-account-settings.html'
+    login_url = reverse_lazy('login')
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
@@ -36,6 +39,7 @@ class UserSettingsView(LoginRequiredMixin, DataMixin, FormView):
 class UserOrdersView(LoginRequiredMixin, DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'personal_account/personal-account-orders.html'
+    login_url = reverse_lazy('login')
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
@@ -60,6 +64,7 @@ class UserOrdersView(LoginRequiredMixin, DataMixin, FormView):
 class UserCompaniesView(LoginRequiredMixin, DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'personal_account/personal-account-companies.html'
+    login_url = reverse_lazy('login')
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
