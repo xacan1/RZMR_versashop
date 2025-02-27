@@ -610,6 +610,19 @@ class PTFEStandartsView(DataMixin, FormView):
         return {**context, **c_def}
 
 
+class HpressPTFEView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/ptfe_hpress.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        title = 'Фторопластовые рукава высокого давления'
+        breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
+                      ('ptfe-standarts', title),]
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
 class PTFEPipesView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/ptfe_pipe.html'
@@ -888,7 +901,7 @@ class WorkspaceFiltersView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title='Рабочие среды фильтров и агрегатов'
+        title = 'Рабочие среды фильтров и агрегатов'
         breadcrumb = [('workspace-filters', title),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}

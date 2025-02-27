@@ -40,6 +40,7 @@ urlpatterns = [
     path('ptfe/installation/', PTFEInstallationSafetyView.as_view(), name='ptfe-installation'),
     path('ptfe/fittings/', PTFEFittingsView.as_view(), name='ptfe-fittings'),
     path('ptfe/standarts/', PTFEStandartsView.as_view(), name='ptfe-standarts'),
+    path('ptfe/hpress/', HpressPTFEView.as_view(), name='ptfe-hpress'),
     path('ptfe/pipe/', PTFEPipesView.as_view(), name='ptfe-pipes'),
     path('ptfe/pipe/<slug:ptfe_pipe_slug>/', PTFEPipeView.as_view(), name='ptfe-pipe'),
     path('ptfe/braid/', PTFEBraidsView.as_view(), name='ptfe-braids'),

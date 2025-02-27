@@ -1,0 +1,243 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-uzm">
+            <h4 class="py-2">{{ title }}</h4>
+            <p>
+
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'ptfe-pipes' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Трубка
+                </p>
+                <p class="uzm-text-card">
+                    герметичная оболочка с кольцевыми гофрами, расположенными параллельно. Изготавливается методом
+                    гидроформовки из трубных заготовок, сваренных аргонодуговой сваркой встык по длине трубы.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-pipe' 'ploskaya_standartnoe_ispolnenie' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Плоская тонкостенная <br>Cтандартное исполнение <br>Ø6 - Ø100 </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_плоская тонкостенная стандарт.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-pipe' 'ploskaya_tolstostennaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Плоская толстостенная <br>Повышенное рабочее давление <br>Ø6 - Ø100</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_плоская толстостенная.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-pipe' 'gofrirovannaya_standartnoe_ispolnenie' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Гофрированная тонкостенная <br>Повышенная гибкость <br>Ø8 - Ø150 </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_гофрированная тонкостенная.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-pipe' 'gofrirovannaya_tolstostennaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Гофрированная толстостенная <br>Повышенная гибкость и рабочее давление <br>Ø8 - Ø150 </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_гофрированная толстостенная.png' %}" alt="gofra">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'ptfe-braids' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Оплетка
+                </p>
+                <p class="uzm-text-card">
+                    представляет собой защитную оболочку сетчатого типа и изготавливается из стальной нержавеющей
+                    проволоки 12Х18Н9Т. Позволяет обеспечить работоспособность рукава при воздействии различных
+                    нагрузок, а также пульсации давлений, возникающих при транспортировке по гибкому элементу рабочей
+                    среды. Оплетка должна плотно облегать рукав, не иметь оборванных частей.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-braid' 'odnosloynaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Однослойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_odinarnaya.png' %}" alt="opletka">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-braid' 'dvukhsloynaya'  %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Двухслойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_dvoinaya.png' %}" alt="opletka">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-braid' 'trekhsloynaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Трехслойная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_opletka_troinaya.png' %}" alt="opletka">
+            </a>
+        </div>
+    </div>
+    <div class="row pb-5">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'ptfe-liners' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Футеровка PTFE
+                </p>
+                <p class="uzm-text-card">
+                    развальцовка гибкой части фторопластового рукава на концевую арматуру.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-liner' 'ploskoy_trubki_na_flanets' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE футеровка плоской трубки на фланец </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_PTFE футеровка плоская.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-liner' 'gofrirovannoy_trubki_na_flanets' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE футеровка гофрированной трубки на фланец </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_PTFE футеровка гофрированная.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-liner' 'ploskoy_trubki_na_nippel_gayki' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>PTFE футеровка плоской трубки на ниппель гайки </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_PTFE футеровка с гайкой.png' %}" alt="gofra">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'ptfe-inners' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Внутренний экран
+                </p>
+                <p class="uzm-text-card">
+                    защитный элемент рукава, помещенный внутрь гибкой части позволяющий исключить/сократить контакт
+                    фторопласта со средой, либо за счет своего наличия продлить срок службы изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-inner' 'antistaticheskaya_prisadka_ploskaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Антистатическая присадка плоская </div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_внутренний экран антистатический_плоский.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-inner' 'antistaticheskaya_prisadka_gofrirovannaya' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Антистатическая присадка гофрированная</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_внутренний экран антистатический_гофрированный.png' %}"
+                    alt="gofra">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="{% url 'ptfe-outsides' %}">
+                <p class="wrapper-up-uzm-card fs-5">
+                    Наружная оболочка
+                </p>
+                <p class="uzm-text-card">
+                    часть рукава в которую заключается гибкая часть для предотвращения различных воздействий
+                    (температурных, механических и т.д.). Выбирается исходя из предполагаемых условий эксплуатации
+                    изделия.
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-outside' 'termochekhol' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Термочехол</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_пироэкран_фторопласт.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-outside' 'rezinovaya_obolochka' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Резиновая оболочка</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_резиновая оболочка_фторопласт.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-outside' 'pruzhina' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Пружина</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_пружина_фторопласт.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-outside' 'ploskaya_trubka_v_metallorukave_v_opletke' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Плоская трубка в металлорукаве в оплетке</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_плоская трубка в металлорукаве.png' %}" alt="gofra">
+            </a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6">
+            <a href="{% url 'ptfe-outside' 'gofrirovannaya_trubka_v_metallorukave_v_opletke' %}">
+                <div class="wrapper-up-uzm-card">
+                    <div>Гофрированная трубка в металлорукаве в оплетке</div>
+                </div>
+                <img src="{% static '/rzmr/img/marked_гофрированная трубка в металлорукаве.png' %}" alt="gofra">
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-4 col-6 py-5">
+            <p class="fs-3 fw-bold">Смотрите также</p>
+        </div>
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row text-center justify-content-center">
+        <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+            <a class="fw-bold" href="{% url 'ptfe-braids' %}">{% trans 'PTFE Metal hoses' %} в оплётке</a>
+        </div>
+        <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+            <a class="fw-bold" href="{% url 'ptfe-gofrirovanniy' %}">Гофрированные {% trans 'PTFE Metal hoses' %}</a>
+        </div>
+        <div class="col-xl-3 col-md-4 p-2 m-1 uzm-button-link">
+            <a class="fw-bold" href="{% url 'gibkie-truboprovody' %}">Гибкие трубопроводы</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
