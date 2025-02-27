@@ -116,7 +116,7 @@ class CategoryProductListView(DataMixin, FormView):
     price_products = Product.objects.none()
     products_exist = False
 
-    # проверяет если товары есть, то выберает класс формы для списка товаров иначе класс пустой формы
+    # проверяет если товары есть, то выбирает класс формы для списка товаров иначе класс пустой формы
     def get_form_class(self):
         form_class = super().get_form_class()
         slug = self.kwargs.get('category_slug', '')

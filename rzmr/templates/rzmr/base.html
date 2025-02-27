@@ -338,26 +338,38 @@
                 </nav>
                 {% if request.path.lenght < 5 and 'shop' not in request.path or breadcrumb %}
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item small"><a href="{% url 'home' %}">{% trans 'Home page' %}</a></li>
+                    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                        <li class="breadcrumb-item small" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a href="{% url 'home' %}" itemprop="item"><span itemprop="name">{% trans 'Home page' %}</span></a>
+                            <meta itemprop="position" content="0"></li>
                         {% for url_name, url_title in breadcrumb %}
                             {% if forloop.last %}
-                            <li class="breadcrumb-item small active" aria-current="page">{{ url_title }}</li>
+                            <li class="breadcrumb-item small active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <span itemprop="name">{{ url_title }}</span>
+                                <meta itemprop="position" content="{{ forloop.counter }}"></li>
                             {% else %}
-                            <li class="breadcrumb-item small"><a href="{% url url_name %}">{{ url_title }}</a></li>
+                            <li class="breadcrumb-item small" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <a href="{% url url_name %}" itemprop="item"><span itemprop="name">{{ url_title }}</span></a>
+                                <meta itemprop="position" content="{{ forloop.counter }}"></li>
                             {% endif %}
                         {% endfor %}
                     </ol>
                 </nav>
                 {% elif 'shop' in request.path %}
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item small"><a href="{% url 'home' %}">{% trans 'Home page' %}</a></li>
+                    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                        <li class="breadcrumb-item small" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a href="{% url 'home' %}" itemprop="item"><span itemprop="name">{% trans 'Home page' %}</span></a>
+                            <meta itemprop="position" content="0"></li>
                         {% for parent in parent_categories %}
                             {% if forloop.last %}
-                            <li class="breadcrumb-item small active" aria-current="page">{{ parent.name }}</li>
+                            <li class="breadcrumb-item small active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <span itemprop="name">{{ parent.name }}</span>
+                                <meta itemprop="position" content="{{ forloop.counter }}"></li>
                             {% else %}
-                            <li class="breadcrumb-item small"><a href="{% url 'product-list' parent.slug %}">{{ parent.name }}</a></li>
+                            <li class="breadcrumb-item small" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <a href="{% url 'product-list' parent.slug %}" itemprop="item"><span itemprop="name">{{ parent.name }}</span></a>
+                                <meta itemprop="position" content="{{ forloop.counter }}"></li>
                             {% endif %}
                         {% endfor %}
                     </ol>
@@ -371,7 +383,7 @@
         {% block content %}
         {% endblock content %}
         {% include 'rzmr/request_phone_call_modal.html' %}
-        {% if request.path != '/' and 'shop' not in request.path and 'posts' not in request.path %}
+        {% if request.path != '/' and 'shop' not in request.path and 'posts' and 'login' not in request.path and 'constructor' not in request.path %}
             {% include 'rzmr/feedback-form.html' %}
         {% endif %}
     </main>
