@@ -383,7 +383,7 @@
         {% block content %}
         {% endblock content %}
         {% include 'rzmr/request_phone_call_modal.html' %}
-        {% if request.path != '/' and 'shop' not in request.path and 'posts' and 'login' not in request.path and 'constructor' not in request.path %}
+        {% if show_feedback %}
             {% include 'rzmr/feedback-form.html' %}
         {% endif %}
     </main>

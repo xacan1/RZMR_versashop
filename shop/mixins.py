@@ -20,6 +20,7 @@ class DataMixin:
         context['company_address'] = settings.COMPANY_ADDRESS
         context['DEBUG'] = settings.DEBUG
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
+        context['show_feedback'] = self.show_feedback_form()
 
         if 'breadcrumb' not in context:
             context['breadcrumb'] = []
@@ -48,3 +49,15 @@ class DataMixin:
         context['categories'] = context['categories'][0][2] # это костыль что бы исключить категорию самого верхнего уровня, хотя она нужна, это все фильтры, в будущем надо убрать
         context['currencies'] = services.get_currencies()
         return context
+    
+    def show_feedback_form(self) -> bool:
+        show_feedback = True
+        elements = ('shop', 'constructor', 'login', 'registration',)
+        current_path = self.request.path
+
+        if current_path == '/':
+            show_feedback = False
+        elif any(e for e in elements if e in current_path):
+            show_feedback = False
+        
+        return show_feedback
