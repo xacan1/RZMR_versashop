@@ -1,10 +1,13 @@
 from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
+from django_recaptcha.fields import ReCaptchaField
 from shop.models import *
 
 
 class SimpleForm(forms.Form):
+    captcha = ReCaptchaField()
+
     def send_email_for_call(self):
         name = self.data.get('name', '')
         phone = self.data.get('phone', '')

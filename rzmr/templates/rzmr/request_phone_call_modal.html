@@ -20,6 +20,9 @@
                         *я соглашаюсь на обработку
                         <a href="{% url 'privacy' %}">Персональных данных</a>
                     </p>
+                    <p>
+                        {{ form.captcha }}
+                    </p>
                 </div>
                 <div class="button py-3">
                     <button type="submit" class="btn btn-secondary">Заказать</button>

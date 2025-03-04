@@ -20,6 +20,23 @@
     <link rel="stylesheet" href="{% static 'rzmr/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'rzmr/css/main.css' %}">
     <title>{{ title }}</title>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+        ym(99520915, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/99520915" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <script type='application/ld+json'>
         {
           "@context": "http://www.schema.org",
@@ -44,24 +61,6 @@
 
 <body class="d-flex flex-column min-vh-100">
     <header>
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript" >
-            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-        
-            ym(99520915, "init", {
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true,
-                webvisor:true
-            });
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/99520915" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->
-
         <div class="contacts fs-md-media-uzm sticky-top">
             <div class="container-fluid">
                 <div class="row">
@@ -87,15 +86,6 @@
                     </div> -->
                     <div class="col-xl-2 col-md-4 col-8">
                         <div class="header-element">
-                            <!-- <a href="{% url 'home' %}">
-                                <img src="{% static 'rzmr/img/russian-flag.png' %}" alt="Русский язык">Рус</a>
-                            <a href="#">
-                                <img src="{% static 'rzmr/img/english-flag.png' %}" alt="English">Eng</a>
-                            <a href="#">
-                                <img src="{% static 'rzmr/img/kazakhstan-flag.png' %}" alt="Қазақша">Қаз</a>
-                            <a href="#">
-                                <img src="{% static 'rzmr/img/belarus-flag.png' %}" alt="Беларуская мова">Блр</a> -->
-                            
                             <form class="d-flex" action="{% url 'set_language' %}" method="post">
                                 {% csrf_token %}
                                 <input name="next" type="hidden" value="{{ redirect_to }}">

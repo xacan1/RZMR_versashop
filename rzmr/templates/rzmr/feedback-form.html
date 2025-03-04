@@ -34,6 +34,11 @@
                 <a href="{% url 'privacy' %}">Персональных данных</a>
             </div>
         </div>
+        <div class="row py-2">
+            <div class="col-12">
+                {{ form.captcha }}
+            </div>
+        </div>
         <div class="row justify-content-center py-2">
             <div class="col-12 col-md-2">
                 <button type="submit" class="btn btn-danger">Отправить</button>
