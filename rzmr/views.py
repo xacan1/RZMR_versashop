@@ -49,6 +49,7 @@ class IndexView(DataMixin, FormView):
     template_name = 'rzmr/index.html'
 
     def get_context_data(self, **kwargs) -> dict:
+        # self.request.get_host()
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context()
         return {**context, **c_def}
