@@ -17,8 +17,8 @@ class DataMixin:
         context['company_name'] = settings.COMPANY_NAME
         context['company_name_short'] = settings.COMPANY_NAME_SHORT
         context['company_email'] = settings.COMPANY_EMAIL
-        context['company_address'] = settings.COMPANY_ADDRESS
-        context['DEBUG'] = settings.DEBUG
+        context['company_address'] = self.get_address()
+        context['city'] = self.get_city()
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
         context['show_feedback'] = self.show_feedback_form()
 
@@ -46,10 +46,11 @@ class DataMixin:
         context['user_menu'] = context_user_menu
         context['main_menu'] = context_main_menu
         context['categories'] = services.get_categories()
-        context['categories'] = context['categories'][0][2] # это костыль что бы исключить категорию самого верхнего уровня, хотя она нужна, это все фильтры, в будущем надо убрать
+        # это костыль что бы исключить категорию самого верхнего уровня, хотя она нужна, это все фильтры, в будущем надо убрать
+        context['categories'] = context['categories'][0][2]
         context['currencies'] = services.get_currencies()
         return context
-    
+
     def show_feedback_form(self) -> bool:
         show_feedback = True
         elements = ('shop', 'constructor', 'login', 'registration',)
@@ -59,5 +60,29 @@ class DataMixin:
             show_feedback = False
         elif any(e for e in elements if e in current_path):
             show_feedback = False
-        
+
         return show_feedback
+
+    def get_city(self) -> str:
+        city = ''
+        current_path = self.request.path
+        company_cityes = settings.COMPANY_CITYES
+
+        for url in company_cityes:
+            if url in current_path:
+                city = company_cityes[url]
+                break
+
+        return city
+
+    def get_address(self) -> str:
+        address = settings.COMPANY_ADDRESS
+        current_path = self.request.path
+        company_addresses = settings.COMPANY_ADDRESSES
+
+        for url in company_addresses:
+            if url in current_path:
+                address = company_addresses[url]
+                break
+
+        return address
