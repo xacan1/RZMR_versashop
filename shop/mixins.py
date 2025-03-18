@@ -79,8 +79,8 @@ class DataMixin:
         address = settings.COMPANY_ADDRESS
         current_uri = self.request.build_absolute_uri()
         company_addresses = settings.COMPANY_ADDRESSES
-        print(current_uri)
-        print(company_addresses)
+        # print(current_uri)
+        # print(company_addresses)
 
         for url in company_addresses:
             if url in current_uri:
