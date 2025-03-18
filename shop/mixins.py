@@ -65,7 +65,7 @@ class DataMixin:
 
     def get_city(self) -> str:
         city = ''
-        current_host = self.request.get_host()
+        current_host = self.request.build_absolute_uri()
         company_cityes = settings.COMPANY_CITYES
 
         for url in company_cityes:
@@ -77,7 +77,7 @@ class DataMixin:
 
     def get_address(self) -> str:
         address = settings.COMPANY_ADDRESS
-        current_host = self.request.get_host()
+        current_host = self.request.build_absolute_uri()
         company_addresses = settings.COMPANY_ADDRESSES
 
         for url in company_addresses:
