@@ -80,7 +80,6 @@ VERSA_APPS = [
 INSTALLED_APPS += VERSA_APPS
 
 MIDDLEWARE = [
-    'middleware.rzmr_middleware.SubdomainMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -88,13 +87,8 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',   
 ]
-
-# MIDDLEWARE_CLASSES = [
-#     'middleware.rzmr_middleware.SubdomainMiddleware',
-# ]
 
 # if DEBUG:
 #     VERSA_MIDDLEWARE = ['debug_toolbar.middleware.DebugToolbarMiddleware',]
