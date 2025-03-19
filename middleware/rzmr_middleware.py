@@ -7,4 +7,5 @@ class SubdomainMiddleware(MiddlewareMixin):
 
     def process_request(self, request):
         host = request.META.get('HTTP_HOST', '')
+        print(host)
         request.subdomain = host if len(host) > 1 else None
