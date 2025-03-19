@@ -50,6 +50,7 @@ class IndexView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        print(self.request.META)
         c_def = self.get_user_context()
         return {**context, **c_def}
 
