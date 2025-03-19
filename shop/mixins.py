@@ -1,5 +1,6 @@
 from django.conf import settings
 from shop import services
+from rzmr import utils
 
 
 user_menu = {'Войти': 'login',
@@ -71,6 +72,7 @@ class DataMixin:
         for subdomain in company_cityes:
             if subdomain in current_host:
                 city = company_cityes[subdomain]
+                city = utils.get_loct(city).title()
                 break
 
         return city
