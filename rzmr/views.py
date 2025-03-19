@@ -49,8 +49,8 @@ class IndexView(DataMixin, FormView):
     template_name = 'rzmr/index.html'
 
     def get_context_data(self, **kwargs) -> dict:
+        print(self.request.subdomain)
         context = super().get_context_data(**kwargs)
-        print(self.request.META)
         c_def = self.get_user_context()
         return {**context, **c_def}
 

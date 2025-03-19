@@ -88,6 +88,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middleware.rzmr_middleware.SubdomainMiddleware',
+]
+
+MIDDLEWARE_CLASSES = [
+    'middleware.rzmr_middleware.SubdomainMiddleware',
 ]
 
 # if DEBUG:
@@ -125,7 +130,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
         'OPTIONS': {
             'timeout': 60,
-            # 'check_same_thread': False, 
+            # 'check_same_thread': False,
             # 'uri': True,
         }
     }
