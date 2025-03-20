@@ -19,7 +19,7 @@ class DataMixin:
         context['company_name_short'] = settings.COMPANY_NAME_SHORT
         context['company_email'] = settings.COMPANY_EMAIL
         context['company_address'] = self.get_address()
-        context['city'] = self.get_city()
+        context['city'], context['city_normal'] = self.get_city()
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
         context['show_feedback'] = self.show_feedback_form()
 
@@ -64,18 +64,19 @@ class DataMixin:
 
         return show_feedback
 
-    def get_city(self) -> str:
+    def get_city(self) -> tuple[str, str]:
         city = ''
+        city_normal = ''
         current_host = self.request.get_host()
         company_cityes = settings.COMPANY_CITYES
 
         for subdomain in company_cityes:
             if subdomain in current_host:
-                city = company_cityes[subdomain]
-                city = utils.get_loct(city).title()
+                city_normal = company_cityes[subdomain]
+                city = utils.get_loct(city_normal).title()
                 break
 
-        return city
+        return city, city_normal
 
     def get_address(self) -> str:
         address = settings.COMPANY_ADDRESS
