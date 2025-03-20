@@ -18,16 +18,11 @@ class DataMixin:
         context['company_name'] = settings.COMPANY_NAME
         context['company_name_short'] = settings.COMPANY_NAME_SHORT
         context['company_email'] = settings.COMPANY_EMAIL
-        context['company_address'] = self.get_address()
-        context['city'], context['city_normal'] = self.get_city()
-        ip = self.get_client_ip()
-        print(ip)
-        print(utils.get_geo_country(ip))
-        print(utils.get_geo_city(ip))
-        context['city_normal'] = utils.get_geo_city_name(ip)
-        print(context['city_normal'])
+
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
         context['show_feedback'] = self.show_feedback_form()
+        context['company_address'] = self.get_address()
+        context['city'], context['city_location'] = self.get_city()
 
         if 'breadcrumb' not in context:
             context['breadcrumb'] = []
@@ -72,17 +67,21 @@ class DataMixin:
 
     def get_city(self) -> tuple[str, str]:
         city = ''
-        city_normal = ''
+        city_location = ''
         current_host = self.request.get_host()
         company_cityes = settings.COMPANY_CITYES
 
         for subdomain in company_cityes:
             if subdomain in current_host:
-                city_normal = company_cityes[subdomain]
-                city = utils.get_word_loct(city_normal).title()
+                city_location = company_cityes[subdomain]
+                city = utils.get_word_loct(city_location).title()
                 break
 
-        return city, city_normal
+        if not city_location:
+            ip = self.get_client_ip()
+            city_location = utils.get_geo_city_name(ip)
+
+        return city, city_location
 
     def get_address(self) -> str:
         address = settings.COMPANY_ADDRESS

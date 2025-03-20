@@ -45,4 +45,8 @@ def get_geo_country_name(ip: str) -> str:
 def get_geo_city_name(ip: str) -> str:
     city_info = get_geo_city(ip)
     city_name = city_info.get('city', '')
+
+    if city_name is None:
+        city_name = ''
+
     return city_name
