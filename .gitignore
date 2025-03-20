@@ -6,6 +6,7 @@
 **/photos/
 **/*.sqlite3
 **/*.db
+**/*.mmdb
 **/config.py
 **/prod_settings.py
 **/local_settings.py
