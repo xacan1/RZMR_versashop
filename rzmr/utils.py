@@ -15,7 +15,13 @@ def get_word_loct(word: str) -> str:
 
 
 def get_geo_country(ip: str) -> dict:
-    country_info = GEO_INFO.country(ip)
+    country_info = {}
+
+    try:
+        country_info = GEO_INFO.country(ip)
+    except AddressNotFoundError:
+        pass
+
     return country_info
 
 
