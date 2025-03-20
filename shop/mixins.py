@@ -22,8 +22,8 @@ class DataMixin:
         context['city'], context['city_normal'] = self.get_city()
         ip = self.get_client_ip()
         print(ip)
-        print(utils.get_geo_country())
-        print(utils.get_geo_city())
+        print(utils.get_geo_country(ip))
+        print(utils.get_geo_city(ip))
         context['city_normal'] = utils.get_geo_city_name(ip)
         print(context['city_normal'])
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
