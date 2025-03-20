@@ -20,6 +20,10 @@ class DataMixin:
         context['company_email'] = settings.COMPANY_EMAIL
         context['company_address'] = self.get_address()
         context['city'], context['city_normal'] = self.get_city()
+        ip = self.get_client_ip()
+        print(ip)
+        context['city_normal'] = utils.get_geo_city_name(ip)
+        print(context['city_normal'])
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
         context['show_feedback'] = self.show_feedback_form()
 
@@ -73,7 +77,7 @@ class DataMixin:
         for subdomain in company_cityes:
             if subdomain in current_host:
                 city_normal = company_cityes[subdomain]
-                city = utils.get_loct(city_normal).title()
+                city = utils.get_word_loct(city_normal).title()
                 break
 
         return city, city_normal
@@ -89,3 +93,12 @@ class DataMixin:
                 break
 
         return address
+
+    def get_client_ip(self) -> str:
+        x_forwarded_for = self.request.META.get('HTTP_X_FORWARDED_FOR')
+
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = self.request.META.get('REMOTE_ADDR')
+        return ip
