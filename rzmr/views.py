@@ -1,8 +1,9 @@
-from django.views.generic import FormView
+from django.views.generic import FormView, RedirectView
 from rzmr.forms import *
 from shop.mixins import DataMixin
 from django.http import HttpRequest, HttpResponse, FileResponse
 from django.utils.translation import gettext_lazy as _
+# from django.conf import settings
 from pathlib import Path
 
 
@@ -21,13 +22,31 @@ class RequestPhoneCallView(DataMixin, FormView):
     template_name = 'rzmr/index.html'
 
     def get_success_url(self) -> str:
-        # возвращаем текущий URL при успешной отправке формы для того что бы покупатель остался на той странице откуда отправлял запрос на звонок
+        # возвращаем текущий URL при успешной отправке формы для того что бы покупатель остался на той странице откуда отправлял запрос
         current_url = self.request.META.get('HTTP_REFERER', '#')
         return current_url
 
     def form_valid(self, form) -> HttpResponse:
-        form.send_email_for_call()
+
         return super().form_valid(form)
+
+
+# class RedirectToCityView(RedirectView):
+#     permanent = True
+#     query_string = False
+#     pattern_name = 'redirect-to-city'
+
+#     def get_redirect_url(self, *args, **kwargs):
+#         url = super().get_redirect_url(*args, **kwargs)
+#         company_cities = settings.COMPANY_CITIES
+#         current_city = self.request.GET.get('city', '')
+
+#         for prefix, city in company_cities.items():
+#             if current_city == city:
+#                 url = f'https://{prefix}.rzmr.ru{self.request.get_full_path()}'
+#                 break
+
+#         return url
 
 
 class FeedbackView(DataMixin, FormView):
@@ -35,7 +54,7 @@ class FeedbackView(DataMixin, FormView):
     template_name = 'rzmr/index.html'
 
     def get_success_url(self) -> str:
-        # возвращаем текущий URL при успешной отправке формы для того что бы покупатель остался на той странице откуда отправлял запрос на звонок
+        # возвращаем текущий URL при успешной отправке формы для того что бы покупатель остался на той странице откуда отправлял запрос
         current_url = self.request.META.get('HTTP_REFERER', '#')
         return current_url
 

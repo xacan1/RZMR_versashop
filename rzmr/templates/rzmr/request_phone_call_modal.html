@@ -1,9 +1,10 @@
+{% load i18n %}
 <div class="modal fade" id="requestPhoneCallModal" tabindex="-1" aria-labelledby="requestPhoneCallModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content text-center">
             <div class="modal-header">
-                <h5 class="modal-title" id="requestPhoneCallModalLabel">Заказать звонок</h5>
+                <h5 class="modal-title" id="requestPhoneCallModalLabel">{% trans 'Request a call' %}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <form action="{% url 'request-phone-call' %}" method="post">

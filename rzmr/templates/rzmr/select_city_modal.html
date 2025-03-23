@@ -1,0 +1,29 @@
+{% load i18n %}
+<div class="modal fade" id="requestSelectCityModal" tabindex="-1" aria-labelledby="requestSelectCityModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <h5 class="modal-title" id="requestPhoneCallModalLabel">{% trans 'Select a city' %}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <form action="">
+                <div class="modal-body container">
+                    <div class="row text-start">
+                        <div class="col">
+                            {% for city, url in hosts_and_cities.items %}
+                            <!-- {% if forloop.counter|divisibleby:4 %}
+                                <br>
+                            {% endif %} -->
+                            <p><a href="{{ url }}">&emsp;&emsp;{{ city }}&emsp;&emsp;</a></p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="button py-3">
+                    <button type="submit" class="btn btn-secondary">Выбрать</button>
+                </div> -->
+            </form>
+        </div>
+    </div>
+</div>

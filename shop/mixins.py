@@ -18,11 +18,12 @@ class DataMixin:
         context['company_name'] = settings.COMPANY_NAME
         context['company_name_short'] = settings.COMPANY_NAME_SHORT
         context['company_email'] = settings.COMPANY_EMAIL
+        context['hosts_and_cities'] = self.get_hosts_and_cities()
 
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
         context['show_feedback'] = self.show_feedback_form()
-        context['company_address'] = self.get_address()
-        context['city'], context['city_location'] = self.get_city()
+        context['company_address'] = self.get_company_address()
+        context['city'], context['city_location'] = self.get_client_city()
 
         if 'breadcrumb' not in context:
             context['breadcrumb'] = []
@@ -65,15 +66,15 @@ class DataMixin:
 
         return show_feedback
 
-    def get_city(self) -> tuple[str, str]:
+    def get_client_city(self) -> tuple[str, str]:
         city = ''
         city_location = ''
         current_host = self.request.get_host()
-        company_cityes = settings.COMPANY_CITYES
+        company_cities = settings.COMPANY_CITIES
 
-        for subdomain in company_cityes:
+        for subdomain in company_cities:
             if subdomain in current_host:
-                city_location = company_cityes[subdomain]
+                city_location = company_cities[subdomain]
                 city = utils.get_word_loct(city_location).title()
                 break
 
@@ -83,7 +84,17 @@ class DataMixin:
 
         return city, city_location
 
-    def get_address(self) -> str:
+    def get_hosts_and_cities(self) -> dict:
+        company_cities = settings.COMPANY_CITIES
+        hosts_and_cities = {}
+
+        for prefix, city in company_cities.items():
+            url = f'https://{prefix}.rzmr.ru{self.request.get_full_path()}'
+            hosts_and_cities[city] = url
+
+        return hosts_and_cities
+
+    def get_company_address(self) -> str:
         address = settings.COMPANY_ADDRESS
         current_host = self.request.get_host()
         company_addresses = settings.COMPANY_ADDRESSES
@@ -101,5 +112,6 @@ class DataMixin:
         if x_forwarded_for:
             ip = x_forwarded_for.split(',')[0]
         else:
-            ip = self.request.META.get('REMOTE_ADDR')
+            ip = self.request.META.get('REMOTE_ADDR', '0.0.0.0')
+
         return ip
