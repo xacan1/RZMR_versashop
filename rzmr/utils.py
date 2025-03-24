@@ -78,7 +78,7 @@ def get_geo_city_name(ip: str) -> str:
         city_name = ''
 
     if country_name == 'Russian Federation':
-        city_name_ru = settings.CITIES_RU.get(country_name, '')
+        city_name_ru = settings.CITIES_RU.get(city_name, '')
 
         if city_name_ru:
             city_name = city_name_ru
