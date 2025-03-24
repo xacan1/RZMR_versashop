@@ -42,6 +42,8 @@ COMPANY_ADDRESS = config.COMPANY_ADDRESS
 EMAIL_USER = config.EMAIL_USER
 COMPANY_CITIES = config.COMPANY_CITIES
 COMPANY_ADDRESSES = config.COMPANY_ADDRESSES
+CITIES_RU = {}
+CURRENT_CITY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -87,7 +89,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',   
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 # if DEBUG:

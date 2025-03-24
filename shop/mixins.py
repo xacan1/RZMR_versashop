@@ -82,6 +82,8 @@ class DataMixin:
             ip = self.get_client_ip()
             city_location = utils.get_geo_city_name(ip)
 
+        settings.CURRENT_CITY = city_location
+
         return city, city_location
 
     def get_hosts_and_cities(self) -> dict:

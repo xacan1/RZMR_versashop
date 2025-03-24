@@ -73,7 +73,7 @@
                         <div class="header-element">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#requestSelectCityModal">
                                 <img src="{% static 'rzmr/img/address.svg' %}" alt="loc">
-                                {% if city_location %} {{ city_location }} {% else %} {% trans 'Select a city' %} {% endif %}
+                                <span class="fw-bold"><u>{% if city_location %} {{ city_location }} {% else %} {% trans 'Select a city' %} {% endif %}</u></span>
                             </a>
                         </div>
                     </div>
