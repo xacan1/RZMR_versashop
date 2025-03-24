@@ -73,7 +73,7 @@ def get_geo_city_name(ip: str) -> str:
     city_info = get_geo_city(ip)
     city_name = city_info.get('city', '')
     country_name = city_info.get('country_name', '')
-    print(country_name)
+    print(city_info)
 
     if city_name is None:
         city_name = ''
