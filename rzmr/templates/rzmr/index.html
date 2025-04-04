@@ -3,334 +3,745 @@
 {% load i18n %}
 
 {% block content %}
-    <div class="container d-md-block d-none">
-        <div id="carouselUzm" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'rzmr/img/corousel1.jpg' %}" class="d-block w-100" alt="corousel1">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="fs-2">{% trans 'Metal hoses' %}</p>
-                        <p class="fs-5">{% trans 'On the market for more than 12 years' %}</p>
-                        <div class="button-uzm-slider">
-                            <!-- <a href="{% url 'metalhoses' %}" class="btn btn-danger btn-sm">Подробнее</a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'rzmr/img/corousel2.jpg' %}" class="d-block w-100" alt="corousel2">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="fs-2">{% trans 'Filters and units' %}</p>
-                        <p class="fs-5">{% trans 'Filters from the manufacturer, warranty up to 10 years' %}</p>
-                        <div class="button-uzm-slider">
-                            <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'rzmr/img/corousel3.jpg' %}" class="d-block w-100" alt="corousel3">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="fs-2">{% trans 'PTFE Metal hoses' %}</p>
-                        <p class="fs-5">{% trans 'Pressure up to 400 atm' %}</p>
-                        <div class="button-uzm-slider">
-                            <!-- <a href="{% url 'ptfe-hoses' %}" class="btn btn-danger btn-sm">Подробнее</a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'rzmr/img/corousel4.jpg' %}" class="d-block w-100" alt="corousel4">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="fs-2">{% trans 'End fittings of any complexity' %}</p>
-                        <p class="fs-5">{% trans 'Own production' %}</p>
-                        <div class="button-uzm-slider">
-                            <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'rzmr/img/corousel5.jpg' %}" class="d-block w-100" alt="corousel5">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="fs-2">{% trans 'Flange connections' %}</p>
-                        <p class="fs-5">{% trans 'Prices from the manufacturer, GOST, DIN, ANSI standards' %}</p>
-                        <div class="button-uzm-slider">
-                            <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'rzmr/img/corousel6.jpg' %}" class="d-block w-100" alt="corousel6">
-                    <div class="carousel-caption d-none d-md-block">
-                        <p class="fs-2">{% trans 'ROT nuts' %}</p>
-                        <p class="fs-5">{% trans 'All versions at prices from the manufacturer' %}</p>
-                        <div class="button-uzm-slider">
-                            <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
-                        </div>
+<div class="container d-md-block d-none">
+    <div id="carouselUzm" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'rzmr/img/corousel1.jpg' %}" class="d-block w-100" alt="corousel1">
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="fs-2">{% trans 'Metal hoses' %}</p>
+                    <p class="fs-5">{% trans 'On the market for more than 12 years' %}</p>
+                    <div class="button-uzm-slider">
+                        <!-- <a href="{% url 'metalhoses' %}" class="btn btn-danger btn-sm">Подробнее</a> -->
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselUzm" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Предыдущий</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselUzm" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Следующий</span>
-            </button>
+            <div class="carousel-item">
+                <img src="{% static 'rzmr/img/corousel2.jpg' %}" class="d-block w-100" alt="corousel2">
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="fs-2">{% trans 'Filters and units' %}</p>
+                    <p class="fs-5">{% trans 'Filters from the manufacturer, warranty up to 10 years' %}</p>
+                    <div class="button-uzm-slider">
+                        <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'rzmr/img/corousel3.jpg' %}" class="d-block w-100" alt="corousel3">
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="fs-2">{% trans 'PTFE Metal hoses' %}</p>
+                    <p class="fs-5">{% trans 'Pressure up to 400 atm' %}</p>
+                    <div class="button-uzm-slider">
+                        <!-- <a href="{% url 'ptfe-hoses' %}" class="btn btn-danger btn-sm">Подробнее</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'rzmr/img/corousel4.jpg' %}" class="d-block w-100" alt="corousel4">
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="fs-2">{% trans 'End fittings of any complexity' %}</p>
+                    <p class="fs-5">{% trans 'Own production' %}</p>
+                    <div class="button-uzm-slider">
+                        <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'rzmr/img/corousel5.jpg' %}" class="d-block w-100" alt="corousel5">
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="fs-2">{% trans 'Flange connections' %}</p>
+                    <p class="fs-5">{% trans 'Prices from the manufacturer, GOST, DIN, ANSI standards' %}</p>
+                    <div class="button-uzm-slider">
+                        <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'rzmr/img/corousel6.jpg' %}" class="d-block w-100" alt="corousel6">
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="fs-2">{% trans 'ROT nuts' %}</p>
+                    <p class="fs-5">{% trans 'All versions at prices from the manufacturer' %}</p>
+                    <div class="button-uzm-slider">
+                        <!-- <button type="button" class="btn btn-danger btn-sm">Подробнее</button> -->
+                    </div>
+                </div>
+            </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselUzm" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselUzm" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
     </div>
+</div>
 
-    <div class="container">
-        <div class="row text-center py-5">
-            <div class="col-12">
-                <p class="fs-3 fw-bold">
-                    {% trans 'Metal hoses from the manufacturer according to high standards RZM ltd' %}
-                </p>
-            </div>
+<div class="container">
+    <div class="row text-center py-5">
+        <div class="col-12">
+            <p class="fs-3 fw-bold">
+                {% trans 'Metal hoses from the manufacturer according to high standards RZM ltd' %}
+            </p>
         </div>
-        <div class="row text-left">
-            <div class="col-3">
-                <div class="text-blue-uzm">
-                    <img class="pb-3 pe-2" src="{% static 'rzmr/img/icon1.png' %}" alt="icon1">
-                    <span class="fs-2">100% </span><span class="fs-5"> {% trans 'of the batch' %}</span>
+    </div>
+    <div class="row text-left">
+        <div class="col-3">
+            <div class="text-blue-uzm">
+                <img class="pb-3 pe-2" src="{% static 'rzmr/img/icon1.png' %}" alt="icon1">
+                <span class="fs-2">100% </span><span class="fs-5"> {% trans 'of the batch' %}</span>
+            </div>
+            <p class="fs-md-media-uzm">{% trans 'passes final control tests' %}</p>
+        </div>
+        <div class="col-3">
+            <div class="text-blue-uzm">
+                <img class="pb-3 pe-2" src="{% static 'rzmr/img/icon2.png' %}" alt="icon2">
+                <span class="fs-2">17 </span><span class="fs-5"> {% trans 'diameters of' %}</span>
+            </div>
+            <p class="fs-md-media-uzm">{% trans 'RGM metal hose to solve any production problems' %}</p>
+        </div>
+        <div class="col-3">
+            <div class="text-blue-uzm">
+                <img class="pb-3 pe-2" src="{% static 'rzmr/img/icon3.png' %}" alt="icon3">
+                <span class="fs-2">600 </span><span class="fs-5">{% trans 'kgc/cm²' %}</span>
+            </div>
+            <p class="fs-md-media-uzm">{% trans 'maximum operating pressure of metal hoses of the RGM series' %}</p>
+        </div>
+        <div class="col-3">
+            <div class="text-blue-uzm">
+                <img class="pb-3 pe-2" src="{% static 'rzmr/img/icon4.png' %}" alt="icon4">
+                <span class="fs-2">1200 </span><span class="fs-5">{% trans 'types of' %}</span>
+            </div>
+            <p class="fs-md-media-uzm">{% trans 'product range produced by our company' %}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-5 col-4 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-2 col-4 py-5">
+            <p class="fs-3 fw-bold">{% trans 'Products' %}</p>
+        </div>
+        <div class="col-xl-5 col-4 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="{% url 'metalhoses' %}">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/metallhoses.jpg' %}" alt="Металлорукава">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>{% trans 'Metal hoses' %}</p>
+                        <p>
+                        <pre></pre>
+                        </p>
+                    </div>
                 </div>
-                <p class="fs-md-media-uzm">{% trans 'passes final control tests' %}</p>
-            </div>
-            <div class="col-3">
-                <div class="text-blue-uzm">
-                    <img class="pb-3 pe-2" src="{% static 'rzmr/img/icon2.png' %}" alt="icon2">
-                    <span class="fs-2">17 </span><span class="fs-5"> {% trans 'diameters of' %}</span>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="{% url 'ptfe-hoses' %}">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/ftoroplast.jpg' %}" alt="Фторопластовые PTFE">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>{% trans 'PTFE Metal hoses' %}</p>
+                        <!-- <p>рукава</p> -->
+                    </div>
                 </div>
-                <p class="fs-md-media-uzm">{% trans 'RGM metal hose to solve any production problems' %}</p>
-            </div>
-            <div class="col-3">
-                <div class="text-blue-uzm">
-                    <img class="pb-3 pe-2" src="{% static 'rzmr/img/icon3.png' %}" alt="icon3">
-                    <span class="fs-2">600 </span><span class="fs-5">{% trans 'kgc/cm²' %}</span>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="#">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/kompensator.jpg' %}" alt="Тканевые компенсаторы">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>{% trans 'Fabric' %}</p>
+                        <p>{% trans 'compensators' %}</p>
+                    </div>
                 </div>
-                <p class="fs-md-media-uzm">{% trans 'maximum operating pressure of metal hoses of the RGM series' %}</p>
-            </div>
-            <div class="col-3">
-                <div class="text-blue-uzm">
-                    <img class="pb-3 pe-2" src="{% static 'rzmr/img/icon4.png' %}" alt="icon4">
-                    <span class="fs-2">1200 </span><span class="fs-5">{% trans 'types of' %}</span>
+            </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="#">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/silfon_kompensator.jpg' %}"
+                        alt="Сильфонные компенсаторы">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>{% trans 'Bellows' %}</p>
+                        <p>{% trans 'compensators' %}</p>
+                    </div>
                 </div>
-                <p class="fs-md-media-uzm">{% trans 'product range produced by our company' %}</p>
-            </div>
+            </a>
         </div>
-        <div class="row">
-            <div class="col-xl-5 col-4 py-5">
-                <div class="horizontal-line-uzm my-4"></div>
-            </div>
-            <div class="text-center col-xl-2 col-4 py-5">
-                <p class="fs-3 fw-bold">{% trans 'Products' %}</p>
-            </div>
-            <div class="col-xl-5 col-4 py-5">
-                <div class="horizontal-line-uzm my-4"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
-                <a href="{% url 'metalhoses' %}">
-                    <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
-                        <img class="img-fluid" src="{% static 'rzmr/img/metallhoses.jpg' %}" alt="Металлорукава">
-                        <div class="wrapper-img-uzm-up"></div>
-                        <div class="text-above-img-uzm text-blue-uzm">
-                            <p>{% trans 'Metal hoses' %}</p>
-                            <p>
-                            <pre></pre>
-                            </p>
-                        </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="#">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/filters_agregate.jpg' %}" alt="Фильтры и агрегаты">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>{% trans 'Filters and units' %}</p>
+                        <p>
+                        <pre></pre>
+                        </p>
                     </div>
-                </a>
-            </div>
-            <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
-                <a href="{% url 'ptfe-hoses' %}">
-                    <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
-                        <img class="img-fluid" src="{% static 'rzmr/img/ftoroplast.jpg' %}" alt="Фторопластовые PTFE">
-                        <div class="wrapper-img-uzm-up"></div>
-                        <div class="text-above-img-uzm text-blue-uzm">
-                            <p>{% trans 'PTFE Metal hoses' %}</p>
-                            <!-- <p>рукава</p> -->
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
-                <a href="#">
-                    <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
-                        <img class="img-fluid" src="{% static 'rzmr/img/kompensator.jpg' %}" alt="Тканевые компенсаторы">
-                        <div class="wrapper-img-uzm-up"></div>
-                        <div class="text-above-img-uzm text-blue-uzm">
-                            <p>{% trans 'Fabric' %}</p>
-                            <p>{% trans 'compensators' %}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
-                <a href="#">
-                    <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
-                        <img class="img-fluid" src="{% static 'rzmr/img/silfon_kompensator.jpg' %}" alt="Сильфонные компенсаторы">
-                        <div class="wrapper-img-uzm-up"></div>
-                        <div class="text-above-img-uzm text-blue-uzm">
-                            <p>{% trans 'Bellows' %}</p>
-                            <p>{% trans 'compensators' %}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
-                <a href="#">
-                    <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
-                        <img class="img-fluid" src="{% static 'rzmr/img/filters_agregate.jpg' %}" alt="Фильтры и агрегаты">
-                        <div class="wrapper-img-uzm-up"></div>
-                        <div class="text-above-img-uzm text-blue-uzm">
-                            <p>{% trans 'Filters and units' %}</p>
-                            <p>
-                            <pre></pre>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
-                <a href="#">
-                    <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
-                        <img class="img-fluid" src="{% static 'rzmr/img/nestandart.jpg' %}" alt="Нестандартное оборудование">
-                        <div class="wrapper-img-uzm-up"></div>
-                        <div class="text-above-img-uzm text-blue-uzm">
-                            <p>{% trans 'Non-standard' %}</p>
-                            <p>{% trans 'equipment' %}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-3 py-5">
-                <div class="horizontal-line-uzm my-4"></div>
-            </div>
-            <div class="text-center col-xl-4 col-6 py-5">
-                <p class="fs-3 fw-bold">{% trans 'Online constructor' %}</p>
-            </div>
-            <div class="col-xl-4 col-3 py-5">
-                <div class="horizontal-line-uzm my-4"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="text-center">
-                    <a href="{% url 'metalhose-constructor' %}">
-                        <img class="img-fluid" src="{% static 'rzmr/img/online-constructor.png' %}" alt="Online constructor">
-                        <p class="fs-5 text-blue-uzm">{% trans 'go to' %} {% trans 'Online constructor' %}</p>
-                    </a>
                 </div>
-            </div>
+            </a>
         </div>
-        <div class="row">
-            <div class="col-xl-5 col-4 py-5">
-                <div class="horizontal-line-uzm my-4"></div>
-            </div>
-            <div class="text-center col-xl-2 col-4 py-5">
-                <p class="fs-3 fw-bold">{% trans 'Why us' %}</p>
-            </div>
-            <div class="col-xl-5 col-4 py-5">
-                <div class="horizontal-line-uzm my-4"></div>
-            </div>
+        <div class="col-xl-4 col-sm-6 col-12 py-5 d-flex justify-content-center box-shadow-uzm">
+            <a href="#">
+                <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                    <img class="img-fluid" src="{% static 'rzmr/img/nestandart.jpg' %}"
+                        alt="Нестандартное оборудование">
+                    <div class="wrapper-img-uzm-up"></div>
+                    <div class="text-above-img-uzm text-blue-uzm">
+                        <p>{% trans 'Non-standard' %}</p>
+                        <p>{% trans 'equipment' %}</p>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="row">
-            <div class="col-3">
-                <img class="pb-3 pe-2" src="{% static 'rzmr/img/sroki.png' %}" alt="time">
-                <p class="fs-md-media-uzm">
-                    {% trans 'Order fulfillment in a short time due to own capacities and established relations with material suppliers' %}
-                </p>
-            </div>
-            <div class="col-3">
-                <img class="pb-3 pe-2" src="{% static 'rzmr/img/good_price.png' %}" alt="price">
-                <p class="fs-md-media-uzm">{% trans 'Profitable prices for our partners' %}</p>
-            </div>
-            <div class="col-3">
-                <img class="pb-3 pe-2" src="{% static 'rzmr/img/delivery.png' %}" alt="delivery">
-                <p class="fs-md-media-uzm">{% trans 'Delivery throughout Russia and CIS countries' %}</p>
-            </div>
-            <div class="col-3">
-                <img class="pb-3 pe-2" src="{% static 'rzmr/img/individual_approach.png' %}" alt="approach">
-                <p class="fs-md-media-uzm">{% trans 'Individual approach' %}</p>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
         </div>
-        <div class="row pt-3">
-            <div class="col-md-3 col-6">
-                <a href="{% url 'metalhoses-fittings' %}">
-                    <img class="img-fluid pb-3 pe-2 border box-shadow-uzm" src="{% static 'rzmr/img/map_ka.png' %}" alt="map_ka">
-                    <p class="fs-5 fs-md-media-uzm text-blue-uzm">{% trans 'End fittings map' %}</p>
+        <div class="text-center col-xl-4 col-6 py-5">
+            <p class="fs-3 fw-bold">{% trans 'Online constructor' %}</p>
+        </div>
+        <div class="col-xl-4 col-3 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+                <a href="{% url 'metalhose-constructor' %}">
+                    <img class="img-fluid" src="{% static 'rzmr/img/online-constructor.png' %}"
+                        alt="Online constructor">
+                    <p class="fs-5 text-blue-uzm">{% trans 'go to' %} {% trans 'Online constructor' %}</p>
                 </a>
-            </div>
-            <div class="col-md-3 col-6">
-                <a href="{% url 'personal-account' %}">
-                    <img class="img-fluid pb-3 pe-2 border box-shadow-uzm" src="{% static 'rzmr/img/personal_account.png' %}" alt="personal_account">
-                    <p class="fs-5 fs-md-media-uzm text-blue-uzm">{% trans 'Personal account' %}</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-6">
-                <a href="{% url 'engineering' %}">
-                    <img class="img-fluid pb-3 pe-2 border box-shadow-uzm" src="{% static 'rzmr/img/blueprints.png' %}" alt="blueprints">
-                    <p class="fs-5 fs-md-media-uzm text-blue-uzm">{% trans 'Production by customer drawings' %}</p>
-                </a>
-            </div>
-            <div class="col-md-3 col-6">
-                <a href="{% url 'engineering-test' %}">
-                    <img class="img-fluid pb-3 pe-2 border box-shadow-uzm" src="{% static 'rzmr/img/strength_tests.png' %}" alt="strength_tests">
-                    <p class="fs-5 text-blue-uzm">{% trans 'Leak and strength tests' %}</p>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-5 col-4 py-5">
-                <div class="horizontal-line-uzm my-4"></div>
-            </div>
-            <div class="text-center col-xl-2 col-4 py-5">
-                <p class="fs-3 fw-bold">{% trans 'Our partners' %}</p>
-            </div>
-            <div class="col-xl-5 col-4 py-5">
-                <div class="horizontal-line-uzm my-4"></div>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-novatek.png' %}" alt="logo-novatek">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-rti.png' %}" alt="logo-rti">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-ugmpk.png' %}" alt="logo-ugmpk">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-oak.png' %}" alt="logo-oak">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-odk.gif' %}" alt="logo-odk">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-rosatom.png' %}" alt="logo-rosatom">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-gazprom.png' %}" alt="logo-gazprom">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-rosneft.png' %}" alt="logo-rosneft">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-lukoil.png' %}" alt="logo-lukoil">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-transneft.png' %}" alt="logo-transneft">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-technodinamica.png' %}" alt="logo-technodinamica">
-            </div>
-            <div class="col-md-3 col-6 p-5">
-                <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-progres.png' %}" alt="logo-progres">
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-xl-5 col-4 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-2 col-4 py-5">
+            <p class="fs-3 fw-bold">{% trans 'Why us' %}</p>
+        </div>
+        <div class="col-xl-5 col-4 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <img class="pb-3 pe-2" src="{% static 'rzmr/img/sroki.png' %}" alt="time">
+            <p class="fs-md-media-uzm">
+                {% trans 'Order fulfillment in a short time due to own capacities and established relations with
+                material suppliers' %}
+            </p>
+        </div>
+        <div class="col-3">
+            <img class="pb-3 pe-2" src="{% static 'rzmr/img/good_price.png' %}" alt="price">
+            <p class="fs-md-media-uzm">{% trans 'Profitable prices for our partners' %}</p>
+        </div>
+        <div class="col-3">
+            <img class="pb-3 pe-2" src="{% static 'rzmr/img/delivery.png' %}" alt="delivery">
+            <p class="fs-md-media-uzm">{% trans 'Delivery throughout Russia and CIS countries' %}</p>
+        </div>
+        <div class="col-3">
+            <img class="pb-3 pe-2" src="{% static 'rzmr/img/individual_approach.png' %}" alt="approach">
+            <p class="fs-md-media-uzm">{% trans 'Individual approach' %}</p>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-3 col-6">
+            <a href="{% url 'metalhoses-fittings' %}">
+                <img class="img-fluid pb-3 pe-2 border box-shadow-uzm" src="{% static 'rzmr/img/map_ka.png' %}"
+                    alt="map_ka">
+                <p class="fs-5 fs-md-media-uzm text-blue-uzm">{% trans 'End fittings map' %}</p>
+            </a>
+        </div>
+        <div class="col-md-3 col-6">
+            <a href="{% url 'personal-account' %}">
+                <img class="img-fluid pb-3 pe-2 border box-shadow-uzm"
+                    src="{% static 'rzmr/img/personal_account.png' %}" alt="personal_account">
+                <p class="fs-5 fs-md-media-uzm text-blue-uzm">{% trans 'Personal account' %}</p>
+            </a>
+        </div>
+        <div class="col-md-3 col-6">
+            <a href="{% url 'engineering' %}">
+                <img class="img-fluid pb-3 pe-2 border box-shadow-uzm" src="{% static 'rzmr/img/blueprints.png' %}"
+                    alt="blueprints">
+                <p class="fs-5 fs-md-media-uzm text-blue-uzm">{% trans 'Production by customer drawings' %}</p>
+            </a>
+        </div>
+        <div class="col-md-3 col-6">
+            <a href="{% url 'engineering-test' %}">
+                <img class="img-fluid pb-3 pe-2 border box-shadow-uzm" src="{% static 'rzmr/img/strength_tests.png' %}"
+                    alt="strength_tests">
+                <p class="fs-5 text-blue-uzm">{% trans 'Leak and strength tests' %}</p>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-5 col-4 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+        <div class="text-center col-xl-2 col-4 py-5">
+            <p class="fs-3 fw-bold">{% trans 'Our partners' %}</p>
+        </div>
+        <div class="col-xl-5 col-4 py-5">
+            <div class="horizontal-line-uzm my-4"></div>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-novatek.png' %}"
+                alt="logo-novatek">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-rti.png' %}" alt="logo-rti">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-ugmpk.png' %}"
+                alt="logo-ugmpk">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-oak.png' %}" alt="logo-oak">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-odk.gif' %}" alt="logo-odk">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-rosatom.png' %}"
+                alt="logo-rosatom">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-gazprom.png' %}"
+                alt="logo-gazprom">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-rosneft.png' %}"
+                alt="logo-rosneft">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-lukoil.png' %}"
+                alt="logo-lukoil">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-transneft.png' %}"
+                alt="logo-transneft">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-technodinamica.png' %}"
+                alt="logo-technodinamica">
+        </div>
+        <div class="col-md-3 col-6 p-5">
+            <img class="img-fluid rounded mx-auto d-block" src="{% static 'rzmr/img/logo-progres.png' %}"
+                alt="logo-progres">
+        </div>
+    </div>
+    <div class="row text-uzm">
+        {% if city_location == 'Москва' %}
+
+        <h2>Металлорукава &ndash; гибкие трубопроводы с высокими эксплуатационными качествами</h2>
+        <p>Металлорукава изготавливаются из различных материалов. Среди них легированные металлы, углеродистые металлы,
+            неметаллические материалы.</p>
+        <h2>Преимущества металлических рукавов</h2>
+        <p>Наличие металлов и неметаллических материалов, участвующих в конструировании металлорукавов, придают им
+            уникальные эксплуатационные характеристики. Гибкость и герметичность обеспечиваются участием фторопластовых
+            материалов и их технологическим формообразованием до образования гофров. Наличие гофровых элементов придает
+            дополнительную жесткость фторопластовым трубкам. Фактически металлорукава &ndash; это гибкие шланги,
+            заключенные в прочную металлическую оболочку.</p>
+        <p>Они устойчивы к внешним повреждениям и хорошо справляются с нестандартными условиями рабочей среды:</p>
+        <ul class="mx-3">
+            <li>высоким давлением;</li>
+            <li>колебаниями температуры эксплуатации;</li>
+            <li>гидроударами;</li>
+            <li>вибронапряжениями;</li>
+            <li>физическими повреждениями;</li>
+            <li>агрессивными химическими факторами (нейтральные материалы в конструкции не вступают в реакции).</li>
+        </ul>
+        <p>Для соединения элементов трубопровода чаще всего применяются сварные конструкции. Металлические детали
+            обеспечивают прочность и герметичность стыковок, составляющих конструкцию металлорукавов. Распространенными
+            элементами конструкций являются разнообразные резьбовые соединения.</p>
+        <h2>Особенности конструкции</h2>
+        <p>Гибкие трубопроводы обычно стыкуются из множества сегментов. Несмотря на наличие достаточной жесткости,
+            металлорукав обладает гибкими свойствами, возникающими из применения пружинных конструкций, неметаллических
+            элементов.</p>
+        <p>Фторопластовые трубки, способные защитить живые ткани от вредного воздействия кислот и щелочей, могут быть
+            оформлены жесткой оплёткой с внешней стороны фторопластовой трубки, выдерживающей высокие внутренние
+            давления транспортируемой среды. Оплётка может быть выполнена в однослойном, двухслойном, трехслойном
+            исполнении, по желанию заказчика. Оплётка выполняется из нержавеющей проволоки, способной на достаточное
+            растяжение.</p>
+        <p>Гибкие трубопроводы активно используются на машиностроительных предприятиях атомной, космической,
+            авиационной, нефтеперерабатывающей и других отраслей. Также, благодаря герметичности и соответствию
+            гигиеническим стандартам, они могут применяться в пищевой и медицинской промышленности.</p>
+        <p>Высокое качество всех изделий, которые поставляет {{ company_name }} обеспечивается
+            собственным производством и коллективом высококвалифицированных специалистов. Мы предлагаем доставку в
+            Москву и в другие города России. Обратитесь к нам, если вам нужны качественные товары для вашего
+            производства по выгодной стоимости от производителя!</p>
+
+        {% elif city_location == 'Санкт-Петербург' %}
+
+        <h2>Металлорукава: преимущества жестких трубопроводов и гибких транспортных систем</h2>
+        <p>{{ company_name }} предлагает технологичные и высококачественные изделия для
+            промышленных городов России, в том числе для заводов Санкт-Петербурга.</p>
+        <p>Гибкие трубопроводы из металлорукавов используются в машиностроении, приборостроении, металлургии и других
+            отраслях промышленности. Герметичность и соответствие гигиеническим требованиям позволяет применять это
+            решение также в пищевой и медицинской отраслях.</p>
+        <h2>Конструкция гибкого трубопровода</h2>
+        <p>Металлорукава имеют внешнюю жесткую оболочку при одновременном сохранении способности обеспечивать
+            достаточную гибкость. Умеренное перемещение рукава под действием внешнего воздействия происходит с
+            сохранением заметной его гибкости. Они сочетают в себе достоинства жестких труб и транспортных систем из
+            гибких шлангов. Рукава прочны, устойчивы к негативному воздействию рабочей среды, при этом их легко
+            прокладывать даже в труднодоступных местах. Благодаря конструкции, они хорошо сопротивляются вибрационным
+            нагрузкам и гидроударам.</p>
+        <h2>Сопротивление агрессивному воздействию</h2>
+        <p>Транспортируемые среды имеют разнообразные свойства: высокие и низкие температуры, различное давление,
+            химическую агрессивность, могут быть сыпучими. Даже при транспортировке таких веществ металлорукава
+            сохраняют герметичность, безопасность использования и высокие эксплуатационные характеристики.</p>
+        <p>Скорость перекачки имеет ограничение: для жидкостей &ndash; до 8 метров в секунду, для газов &ndash; 50
+            метров в секунду. За пределами обозначенных величин происходит срыв внутренней поверхности. При наличии
+            гофрированной поверхности возникает пульсирующее колебание гофров.</p>
+        <p>Фторопластовая трубка, по которой перекачивается среда, подвержена внутреннему высокому давлению,
+            стремящемуся ее разрушить. Поэтому она дополнительно защищена сетчатой оплёткой, изготовленной из
+            легированной нержавеющей проволоки. Она устойчиво воспринимает разрывающую нагрузку со стороны внутреннего
+            давления трубки.</p>
+        <p>Жесткие части гибкого трубопровода сделаны из термостойких материалов и снабжены гофрой, помогающей сегментам
+            системы сохранять форму.</p>
+        <p>{{ company_name }} &ndash; это большие масштабы производства, квалифицированный
+            состав инженерно-технических специалистов и собственная система контроля качества. Мы гарантируем надежность
+            наших товаров, а развитая система поставок позволяет нам предлагать очень выгодные условия заказчикам в
+            Санкт-Петербурге и других городах.</p>
+
+        {% elif city_location == 'Екатеринбург' %}
+
+        <h2>Изделия которые производит {{ company_name }}: качество и отличные условия доставки!</h2>
+        <p>Герметичный металлорукав &ndash; это изделие для транспортировки жидкой, газообразной или сыпучей
+            транспортной среды в тяжелых условиях. Допускается высокое давление внутри металлорукава &ndash; до 40
+            атмосфер. При этом эксплуатировать такие системы можно при очень низких и очень высоких температурах &ndash;
+            от абсолютного нуля до 250 градусов Цельсия. В промышленности металлорукав используется для
+            транспортирования агрессивной среды: кислотной, щелочной, находящейся под давлением или при высокой/низкой
+            температуре. Кроме того, гибкие трубопроводы подходят для работы с сыпучими и жидкими веществами в пищевой,
+            химической и медицинской промышленности.</p>
+        <p>Это технологическое решение очень востребовано в Екатеринбурге. Рукава часто используются в городской
+            промышленности. Почему стоит обратить внимание на предложение &laquo;Русского Завода Металлорукавов&raquo;?
+            Ответ &ndash; собственное производство, исключительный контроль качества нашей продукции и выгодные условия
+            доставки (особенно для крупных партий)!</p>
+        <h2>Свойства гибких трубопроводных систем</h2>
+        <p>Динамические условия прокачки рабочей среды требуют не допускать скорости перекачки более 8 м/с для жидкостей
+            и 50 м/с для газов, так как в этом случае происходит срыв внутренней поверхности и пульсирующее колебание
+            гофры.</p>
+        <p>Рукав серии РГМ относится к взрывозащищенным герметичным металлорукавам. Такие изделия обладают высокими
+            антивандальными свойствами и достаточной пожарной безопасностью. Рукав должен иметь конструктивные элементы,
+            обеспечивающие возможность соединения с концевой арматурой.</p>
+        <h2>Как соединяются гибкие трубопроводы?</h2>
+        <p>Если необходимо, можно заказать длинные сегменты металлических рукавов, которые собираются из нескольких
+            стандартных изделий. Обычно при этом используется сварное соединение, но в отдельных случаях возможны и
+            другие варианты.</p>
+        <p>Концевая арматура используется для присоединения его к ответным частям при встраивании в систему трубопровода
+            и может быть различной в зависимости от выполняемых задач.</p>
+        <p>Тип концевой арматуры подбирается заказчиком, исходя из производственных задач. Широкое распространение
+            получило окончание под приварку. Также широко распространено резьбовое соединение: под штуцер, накидную
+            гайку, фланцевые соединения, быстросъемные соединения и другие конструкционные варианты.</p>
+        <p>В нашем каталоге вы найдете также и быстроразъемные соединения, подходящие для прокладки временных
+            транспортных систем.</p>
+        <p>Металлорукава &ndash; это высокотехнологичное и многофункциональное решение для современной промышленности.
+            Не упустите выгодную возможность и сделайте заказ!</p>: качество и отличные условия доставки!</h2>
+        <p>Герметичный металлорукав &ndash; это изделие для транспортировки жидкой, газообразной или сыпучей
+            транспортной среды в тяжелых условиях. Допускается высокое давление внутри металлорукава &ndash; до 40
+            атмосфер. При этом эксплуатировать такие системы можно при очень низких и очень высоких температурах &ndash;
+            от абсолютного нуля до 250 градусов Цельсия. В промышленности металлорукав используется для
+            транспортирования агрессивной среды: кислотной, щелочной, находящейся под давлением или при высокой/низкой
+            температуре. Кроме того, гибкие трубопроводы подходят для работы с сыпучими и жидкими веществами в пищевой,
+            химической и медицинской промышленности.</p>
+        <p>Это технологическое решение очень востребовано в Екатеринбурге. Рукава часто используются в городской
+            промышленности. Почему стоит обратить внимание на {{ company_name }}?
+            Ответ &ndash; собственное производство, исключительный контроль качества нашей продукции и выгодные условия
+            доставки (особенно для крупных партий)!</p>
+        <h2>Свойства гибких трубопроводных систем</h2>
+        <p>Динамические условия прокачки рабочей среды требуют не допускать скорости перекачки более 8 м/с для жидкостей
+            и 50 м/с для газов, так как в этом случае происходит срыв внутренней поверхности и пульсирующее колебание
+            гофры.</p>
+        <p>Рукав серии РГМ относится к взрывозащищенным герметичным металлорукавам. Такие изделия обладают высокими
+            антивандальными свойствами и достаточной пожарной безопасностью. Рукав должен иметь конструктивные элементы,
+            обеспечивающие возможность соединения с концевой арматурой.</p>
+        <h2>Как соединяются гибкие трубопроводы?</h2>
+        <p>Если необходимо, можно заказать длинные сегменты металлических рукавов, которые собираются из нескольких
+            стандартных изделий. Обычно при этом используется сварное соединение, но в отдельных случаях возможны и
+            другие варианты.</p>
+        <p>Концевая арматура используется для присоединения его к ответным частям при встраивании в систему трубопровода
+            и может быть различной в зависимости от выполняемых задач.</p>
+        <p>Тип концевой арматуры подбирается заказчиком, исходя из производственных задач. Широкое распространение
+            получило окончание под приварку. Также широко распространено резьбовое соединение: под штуцер, накидную
+            гайку, фланцевые соединения, быстросъемные соединения и другие конструкционные варианты.</p>
+        <p>В нашем каталоге вы найдете также и быстроразъемные соединения, подходящие для прокладки временных
+            транспортных систем.</p>
+        <p>Металлорукава &ndash; это высокотехнологичное и многофункциональное решение для современной промышленности.
+            Не упустите выгодную возможность и сделайте заказ!</p>
+
+        {% elif city_location == 'Челябинск' %}
+
+        <p>Металлорукава предназначаются для транспортирования газообразной, сыпучей или жидкой технологической среды
+            между сообщающимися емкостями. Как правило, среда находится под большим давлением и является агрессивной.
+            Для сохранения от повреждений на разрыв рукав защищается металлической проволочной оплёткой. Проволока имеет
+            хорошие прочностные свойства, надежно препятствующие разрыву.</p>
+        <h2>Конструкция гибкого трубопровода</h2>
+        <p>Изделие изготавливается из фторопласта, надежно сопротивляющегося агрессивной среде. Фторопласт легко
+            контактирует с подобной средой, защищает оператора от вредного воздействия транспортируемых веществ,
+            предотвращает нежелательного влияние на другое используемое оборудование и окружающую среду. Для большей
+            защиты фторопластовая трубка подвергается гофрированию. Такое видоизменение формы способствует увеличению
+            жесткости конструкции, усилению прочности гибкого трубопровода.</p>
+        <p>Стандартная гофра имеет достаточно высокую жесткость при диаметре от 6 до 400 мм. При необходимости
+            увеличения гибкости гофра имеет тонкие стенки при диаметре от 6 до 200 мм. Таким образом, в металлорукавах
+            представлены гофры различных прочностных свойств и различной гибкости.</p>
+        <p>Металлорукава применяются при температуре от минус 250 до 650 градусов Цельсия при давлении до 600 атмосфер.
+            Оплётка рукава изготавливается автоматически, предохраняет оболочку рукава от случайного увеличения
+            геометрических размеров рукава и сохраняет конструктивные диаметральные размеры изделия.</p>
+        <p>Конструкция изделия предусматривает варианты разъемного присоединения к элементам металлорукавов. Герметичная
+            оболочка с кольцевыми гофрами изготавливается методом гидроформовки. Соединяемые участки выполняются встык
+            по длине заготовки. При изготовлении металлических участков применяется встык аргонодуговая сварка. Кроме
+            сварочных соединений используются и другие: резьбовые, фланцевые, быстроразъемные. Выбор зависит от ваших
+            производственных задач.</p>
+        <h2>{{ company_name }}: контроль качества и доставка по всей России</h2>
+        <p>Вам нужны металлические рукава для промышленных целей в Челябинске? Отлично, вы можете заказать у нас
+            доставку по лучшей стоимости! {{ company_name }} &ndash; это развитая система
+            логистики, высокие производственные мощности и гарантия качества! Все это позволяет нам предлагать клиентам
+            выгодную цену от производителя и привлекательные условия для долговременного сотрудничества.</p>
+
+        {% elif city_location == 'Магнитогорск' %}
+
+        <h2>Металлорукава для промышленных транспортных систем</h2>
+        <p>Магнитогорск &ndash; крупный промышленный город, для развития которого необходимы эффективные и современные
+            технологии. Магнитогорские предприятия стремятся к оптимальным решениям во всем, в том числе и в системах
+            транспортировки рабочей среды. Продуманные технологические решения &ndash; залог успешной конкуренции на
+            местном рынке.</p>
+        <p>Одним из таких решений являются металлорукава &ndash; гибкие трубопроводы, которые находят широкое применение
+            в технологических операциях, в частности, при транспортировании жидкостей, газов и сыпучих сред между
+            емкостями при их хранении и транспортировке.</p>
+        <h2>Особенности изделий</h2>
+        <p>Высокие химико-технологические свойства материалов, используемых для сборки рукавов, достигаются благодаря
+            применению фторопластовых материалов, обеспечивающих высокий уровень защиты от агрессивного химического
+            воздействия.</p>
+        <p>Сегменты гибкого трубопровода конструктивно могут быть в длинномерном исполнении. Применяемые материалы могут
+            быть различного происхождения, состыкованные из участков различной длины, называемых концевой арматурой. Она
+            представляет собой конструктивные элементы, служащие для подсоединения соединения сегментов рукава между
+            собой.</p>
+        <p>Тип присоединяемого участка назначается заказчиком, исходя из требуемых свойств концевого участка
+            металлорукава. Типы концевой арматуры представлены на соответствующей странице сайта и выбираются
+            заказчиком: среди них сварные, фланцевые, резьбовые, быстроразъемные и т.д. Предпочтительный выбор зависит
+            от задач: транспортируемой среды, места размещения трубопровода, планируемого срока эксплуатации и т.д.</p>
+        <h2>Собственное производство {{ company_name_short }}</h2>
+        <p>Для изготовления концевой арматуры применяется нержавеющая сталь и углеродистая сталь. Все изделия
+            изготавливаются в соответствии со стандартами на металлическое конструкторское изделие. Испытание на
+            герметичность концевой арматуры осуществляется силами отдела технического контроля.</p>
+        <p>{{ company_name }} это высокие производственные мощности и передовые средства
+            автоматизации технологических процессов. Мы ведем строгий контроль качества выпускаемой продукции. Для
+            изготовления мы используем современные материалы с высокими химико-технологическими свойствами.</p>
+        <p>Крупные масштабы производства и развитая система логистики позволяют предлагать нам выгодные условия доставки
+            металлорукавов в Магнитогорск и другие города. Позвоните нам, чтобы узнать больше!</p>
+
+        {% elif city_location == 'Пермь' %}
+
+        <h2>Металлорукава: технологичное решение для современной промышленности</h2>
+        <p>В машиностроении и других отраслях промышленности часто возникает задача транспортирования технологической
+            среды разной природы: газообразной, жидкой, сыпучей. При этом перекачиваемые среды могут иметь температуру
+            критического состояния &ndash; близкую к температуре абсолютного нуля, либо очень высокую &ndash; до
+            нескольких сотен градусов. Вещества могут находиться под давлением. Также нередко используются достаточно
+            агрессивные среды с кислотными или щелочными свойствами. Все эти обстоятельства предъявляют особые
+            требования к системам, которые используются для транспортировки.</p>
+        <h2>Металлорукава: решение промышленных задач</h2>
+        <p>Для защиты от непосредственного контакта агрессивного вещества с телом человека и окружающей средой,
+            конструкция металлорукава включает в себя фторопластовый материал, который обеспечивает надежную изоляцию
+            газа, жидкости или сыпучего материала.</p>
+        <p>Также в конструкцию входит оплетка, которая позволяет гибкому трубопроводы сохранять целостность даже при
+            высоких нагрузках: повышенном давлении, температуре, гидроударах и вибронапряжениях. Сопротивление такому
+            мощному воздействию оказывает легированная проволока, а форма рукава сохраняется благодаря гофре. При этом
+            используются термоупорные материалы.</p>
+        <p>Металлорукава &ndash; это универсальное решение: вы можете подобрать рукава различной длины, состоящие из
+            участков, имеющих различные конструкции соединения. Различные конструкции соединения, вошедшие в состав
+            соединительных деталей, именуются элементами стыковочных узлов. Среди них есть пружинные детали, резьбовые
+            детали и другие конструктивные элементы, также используется соединение под сварку и быстроразъемные замки.
+        </p>
+        <h2>Товары от {{ company_name }}: качество и надежность</h2>
+        <p>{{ company_name }} располагает собственным производством, квалифицированным кадровым
+            составом инженерно-технических специалистов и развитой системой логистики. Это позволяет нам предлагать
+            заказчикам очень выгодные условия сотрудничества даже компаниям из других городов, например, из Перми. Наш
+            отдел технического контроля обеспечивает исключительное качество и надежность продукции. Обратитесь к нам,
+            если вам нужны действительно качественные материалы для вашего предприятия!</p>
+
+        {% elif city_location == 'Самара' %}
+
+        <h2>Металлорукава: лучшее решение для транспортировки агрессивных сред</h2>
+        <p>Самара &ndash; развитый промышленный город, предприятия которого используют самые актуальные технологические
+            решения, позволяющие им эффективно участвовать в конкурентной борьбе. При этом одной из самых актуальных
+            производственных задач для предприятий машиностроительного комплекса является транспортировка агрессивных
+            сред: химических реактивов, газов под давлением, твердых сыпучих веществ и т.д. Гибкий трубопровод является
+            оптимальным решением.</p>
+        <h2>Конструкция металлорукавов</h2>
+        <p>При транспортировке рабочей среды через металлорукав, вещество перегоняется через гибкий трубопровод,
+            состоящий из отдельных участков, надежно соединенных с помощью резьбовых элементов, пружин, деталей под
+            приварку. Детали концевой арматуры подбираются заказчиком в зависимости от задач. Разные виды соединений
+            обеспечивают герметичность, устойчивость к высокой температуре, гидроударам, повышенному давлению,
+            агрессивному химическому воздействию. Существуют также быстроразъемные соединения, подходящие для
+            прокладывания временных коммуникаций.</p>
+        <p>Состыкованные в комплексы, состоящие из нескольких последовательных гибких участков рукавов, металлорукава
+            образуют сквозную цепь транспортирующих каналов. Они состоят из разнородных материалов. Металлическая
+            оплетка составляют жесткую часть рукава, поддерживающую геометрию транспортного канала в экстремальных
+            технических условиях. Для внутренней части рукава используется фторопласт &ndash; этот материал обеспечивает
+            герметичность в том числе в окружении агрессивной среды.</p>
+        <h2>Использование металлорукавов</h2>
+        <p>Сам по себе гибкий трубопровод является достаточно многофункциональным решением. Но разнообразие вариантов
+            исполнения делает его действительно универсальным! {{ company_name }} дает заказчику
+            возможность выбрать материалы, вид оплетки и соединения транспортной системы. Наши консультанты всегда
+            помогут вам сделать правильное решение с учетом ваших производственных задач. Мы осуществляем доставку в
+            Самару и другие города. Масштабы производства и развитая транспортная система позволяют нам предлагать
+            действительно выгодные цены. {{ company_name }} &ndash; гарантия качества для вашего
+            предприятия!</p>
+
+        {% elif city_location == 'Уфа' %}
+
+        <h2>{{ company_name }}: лучшая цена и исключительное качество от местного производителя!
+        </h2>
+        <p>В машиностроительном производстве находят широкое применение металлорукава высокого давления. Они
+            используются для транспортирования технологических сред между различными емкостями, имеющими сообщение в
+            производственном процессе. Технологические среды могут быть сыпучими, жидкими, газообразными.</p>
+        <h2>Свойства гибких трубопроводов</h2>
+        <p>Изделия, которые производит {{ company_name }} имеют возможность контактировать с
+            агрессивными средами: кислотами, щелочами. Изделия сохраняют работоспособность в широком диапазоне
+            температур: при высоких температурах и низких температурах. Дополнительное эксплуатационное преимущество
+            &ndash; рукава работают при высоком давлении. Рукава сохраняют необходимую герметичность при
+            транспортировании рабочей среды.</p>
+        <p>Фактически такие транспортные системы сочетают преимущества гибких коммуникаций (устойчивость к гидроударам,
+            герметичность, удобство прокладку, химическую нейтральность) с плюсами жестких трубопроводов (механической
+            прочностью, устойчивостью к повреждениям и негативному воздействию окружающей среды).</p>
+        <h2>Лучший выбор для вашего предприятия</h2>
+        <p>Рукава, произведенные на нашем предприятии {{ company_name }} надежно выполняют
+            заявленные свойства конструкции за счет применения специальных материалов, технологий и многослойной
+            конструкции. Отдельные элементы всегда могут быть изменены под нужды заказчика: вы можете выбрать внутренний
+            материал, гофру и внешнюю оплетку!</p>
+        <p>Конструктивные решения позволяют решать отдельные задачи, препятствующие разрушающему воздействию агрессивной
+            среды на элементы конструкции. Для прочностной защиты фторопластовой трубки ее опоясывают нержавеющей
+            проволокой с достаточно пластическими прочностными характеристиками. Сформированная металлическая оплётка
+            создает устойчивый каркас, препятствующий внутреннему давлению транспортного канала.</p>
+        <p>Металлорукава в Уфе активно используются в машиностроении, приборостроении, энергетической, химической,
+            медицинской и пищевой промышленности. Эти изделия соответствуют высоким гигиеническим требованиям и
+            обеспечивают полную герметичность при транспортировке, поэтому пользуются таким успехом в самых разных
+            сферах деятельности.</p>
+        <p>Мы предлагаем цены от производителя, гарантию качества и выгодные условия сотрудничества для долговременных
+            партнеров. Позвоните нам, и мы расскажем больше. {{ company_name }} &ndash; надежный
+            партнер для вашего предприятия!</p>
+
+        {% elif city_location == 'Казань' %}
+
+        <h2>Металлорукава: эффективная транспортировка агрессивных средств</h2>
+        <p>Металлорукава применяются для транспортирования технологических сред сыпучего, жидкого или газообразного
+            состояния, находящихся под большим давлением, до 500 атмосфер. При этом допустим довольно широкий
+            температурный диапазон эксплуатации: от отрицательных до довольно высоких температур.</p>
+        <h2>Конструкция гибких трубопроводов</h2>
+        <p>Гибкие рукава характеризуются повышенной герметичностью, что достигается применением особого материала
+            &ndash; фторопласта, работающего в агрессивных условиях. В основу закладывается гофрированная фторопластовая
+            пленка с применением наружной оплётки &ndash; однослойной или многослойной, по желанию заказчика. Оплётка
+            изготавливается из нержавеющей проволоки, способной выдерживать значительные усилия на растяжение.</p>
+        <p>Рукав может состоять из нескольких сочлененных участков, герметично состыкованных с помощью концевой арматуры
+            под сварку, либо в виде резьбового соединения. Могут быть применены фланцевые соединения либо
+            быстроразъемные соединения, а также другие стыковочные конструкции.</p>
+        <p>Разнообразие вариантов концевой арматуры обеспечивает универсальность самого рукава: его можно адаптировать
+            под самые разные условия эксплуатации. Можно проложить транспортную линию на вашем предприятии, разместить
+            коммуникации в вашем здании или установить временный трубопровод на строительной площадке.</p>
+        <p>По согласованию с заказчиком длинномерные рукава могут быть состыкованы из нескольких более коротких участков
+            путем стыковки через сварное соединение. При этом, используется концевая арматура, предназначенная для
+            соединения ответных частей при встраивании изделия в систему трубопровода. Тип арматуры концевых участков
+            назначается заказчиком по условиям эксплуатации. Чаще всего используется соединение под приварку.</p>
+        <p>Условный внутренний диаметр рукава рассчитывается под обеспечение требуемой пропускной способности
+            транспортной системы.</p>
+        <h2>Рукава от {{ company_name_short }} для казанской промышленности</h2>
+        <p>В Казани популярны современные машиностроительные технологии, в которых широко используются гибкие
+            трубопроводы для транспортирования различных газообразных и жидких сред. Это крупный промышленный город,
+            предприятия которого нуждаются в качественном оборудовании. И {{ company_name }}
+            готов его предложить! Мы располагаем собственным мощным производством, проводим постоянный контроль качества
+            продукции и предлагаем выгодные условия доставки, особенно для крупных партий. Сотрудничать с нами &ndash;
+            значит выбирать лучшие для промышленного роста вашей компании!</p>
+
+        {% elif city_location == 'Омск' %}
+
+        <h2>Металлорукава: лучший выбор для промышленных нужд</h2>
+        <p>Функциональное назначение металлорукавов &ndash; транспортировка жидкой, газообразной, сыпучей
+            технологической среды между связанными между собой емкостями.</p>
+        <h2>Конструкция изделий</h2>
+        <p>Конструктивные особенности &ndash; жесткая и прочная внешняя металлическая оплетка и гибкие, эластичные
+            свойства внутренней оболочки. Гибкость обеспечивается особыми материалами:</p>
+        <ul>
+            <li>фторопластовыми изделиями,</li>
+            <li>наличием металлических спиральных пружин,</li>
+            <li>проволочными высокопрочными оплётками.</li>
+        </ul>
+        <p>Сетчатые оплётки выполнены с применением легированных материалов, выдерживающих внутреннее давление с
+            необходимым запасом прочности.</p>
+        <p>Возможность прокладывать гибкие трубопроводы даже на труднодоступных территориях обеспечивается за счет
+            стыковки раздельных участков рукавов, последовательно соединенных герметично друг с другом. Комплект
+            соединительных элементов называется стыковочной арматурой. В него входят резьбовые детали, детали под
+            приварку, соединение штуцером, соединение с помощью накидной гайки, фланцевые соединения, быстросъемные
+            соединения и другие известные конструкции.</p>
+        <p>Соединительные элементы выбирает заказчик в соответствии с условиями эксплуатации трубопровода.</p>
+        <h2>Где используются металлорукава?</h2>
+        <p>Гибкий трубопровод рассчитан на применение агрессивных транспортируемых технологических материалов с
+            использованием защитных средств, предохраняющих живые ткани тела человека и окружающую среду (оборудование,
+            природный ландшафт) от вредного воздействия на них кислот, щелочей.</p>
+        <p>Транспортируемые среды могут находиться в условиях высокой и низкой температуры, высокого и низкого давления,
+            испытывать вибрационные нагрузки. Конструктивные особенности металлорукавов предусматривают условия
+            эксплуатации, нейтрализующие вредное воздействие транспортируемой агрессивной среды.</p>
+        <p>Хотите заказать качественные металлические рукава в Омске по выгодной стоимости от производителя? Обратитесь
+            к нам! {{ company_name }} это высочайший уровень качества и надежности
+            выпускаемых изделий, развитая система логистики и выгодные условия долговременного сотрудничества.
+            Расстояние для нас &ndash; не проблема!</p>
+
+        {% elif city_location == 'Нижний Новгород' %}
+
+        <h2>Металлорукава: надежное и технологичное решение для транспортировки</h2>
+        <p>Металлорукава &ndash; это технология для транспортировки рабочей среды в неблагоприятных условиях. Они
+            представляют собой гибкий трубопровод, заключенный в прочную металлическую оболочку. Использование этого
+            способа транспортировки очень актуально для машиностроительного, вагоностроительного, металлургического,
+            пищевого, химического и других видов производства, в которых используются сыпучие и агрессивные жидкие
+            вещества.</p>
+        <h2>В каких случаях используются металлорукава?</h2>
+        <ul>
+            <li>При повышенных гигиенических требованиях.</li>
+            <li>В случаях, если транспортировка должна быть герметичной.</li>
+            <li>При повышенной/пониженной температуре или давлении рабочей среды.</li>
+            <li>Для транспортировки агрессивных химических веществ.</li>
+        </ul>
+        <p>Для защиты от их вредного влияния применяются средства объемной изоляции, состоящие из нейтральных химических
+            веществ: фторопласта и других материалов, которые защищают оператора и окружающую среду от вредного
+            воздействия.</p>
+        <p>Этот вид гибкого трубопровода позволяет выполнять задачи транспортировки даже в экстремальных условиях:
+            высоко- и низкотемпературных, агрессивных, при повышенном и пониженном давлении.</p>
+        <h2>Особенности конструкции</h2>
+        <p>Условия внутреннего высокого давления нейтрализуются защитными средствами, ограничивающими возможность
+            диаметрального увеличения размеров фторопластовой трубки. Проволочная сетчатая оплётка создает препятствие
+            возможному увеличению диаметральных и продольных размеров канала.</p>
+        <p>Гибкий металлорукав сохраняет эластичные свойства за счет составной конструкции изделия, имеющей возможность
+            гибкой трансформации. В конструкции рукава используются неметаллические элементы, обеспечивающие уникальные
+            свойства этого изделия: сопротивление гидроударам и вибронагрузкам, возможность прокладки в труднодоступных
+            местах.</p>
+        <p>Совокупность конструктивных элементов, обеспечивающих гибкую последовательную стыковку участков трубопровода,
+            называются элементами стыковочной арматуры.</p>
+        <p>Хотите приобрести металлорукава в {{ city }}? Обязательно рассмотрите наше предложение! Благодаря
+            развитой системе логистики и сотрудничеству с лидерами рынка, мы предлагаем выгодную стоимость изделий с
+            минимальной наценкой! Товары, поставляемые компанией {{ company_name }},
+            соответствуют высоким, предусмотренным машиностроительными стандартами. Вся продукция проходит строгий
+            контроль качества!</p>
+
+        {% endif %}
+    </div>
+</div>
 {% endblock content %}

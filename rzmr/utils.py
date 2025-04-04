@@ -10,7 +10,7 @@ GEO_INFO = GeoIP2()
 
 
 def load_ru_cities() -> None:
-    if settings.CITIES_RU:
+    if settings.CITIES_ENG_RU:
         return
 
     ru_cities = {}
@@ -31,7 +31,7 @@ def load_ru_cities() -> None:
         ru_cities[eng_name] = ru_name
 
     if ru_cities:
-        settings.CITIES_RU = ru_cities
+        settings.CITIES_ENG_RU = ru_cities
 
 
 # преобразует слово из именительного падежа в предложный падеж. Москва -> Москве
@@ -78,7 +78,7 @@ def get_geo_city_name(ip: str) -> str:
         city_name = ''
 
     if country_name == 'Russia':
-        city_name_ru = settings.CITIES_RU.get(city_name, '')
+        city_name_ru = settings.CITIES_ENG_RU.get(city_name, '')
 
         if city_name_ru:
             city_name = city_name_ru
