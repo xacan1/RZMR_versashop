@@ -70,6 +70,7 @@ class DataMixin:
         city = ''
         city_location = ''
         current_host = self.request.get_host()
+        print(current_host)
         company_cities = settings.COMPANY_CITIES
 
         for subdomain in company_cities:

@@ -41,6 +41,13 @@ def get_word_loct(word: str) -> str:
     return word_loct
 
 
+# преобразует город из именительного падежа в предложный падеж. Москва -> Москве
+def get_city_prepositional_case(word: str) -> str:
+    word_pre = ''
+
+    return word_pre
+
+
 def get_geo_country(ip: str) -> dict:
     country_info = {}
 
