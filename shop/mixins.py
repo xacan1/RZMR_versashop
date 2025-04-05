@@ -90,10 +90,11 @@ class DataMixin:
 
     def get_hosts_and_cities(self) -> dict:
         company_cities = settings.COMPANY_CITIES
+        company_host = settings.COMPANY_HOST
         hosts_and_cities = {}
 
         for prefix, city in company_cities.items():
-            url = f'https://{prefix}.rzmr.ru{self.request.get_full_path()}'
+            url = f'https://{prefix}.{company_host}{self.request.get_full_path()}'
             hosts_and_cities[city] = url
 
         return hosts_and_cities
