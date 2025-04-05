@@ -100,14 +100,10 @@ class DataMixin:
         return hosts_and_cities
 
     def get_company_address(self) -> str:
-        address = settings.COMPANY_ADDRESS
         current_host = self.request.get_host()
+        subdomain = utils.get_subdomain(current_host)
         company_addresses = settings.COMPANY_ADDRESSES
-
-        for subdomain in company_addresses:
-            if subdomain in current_host:
-                address = company_addresses[subdomain]
-                break
+        address = company_addresses.get(subdomain, settings.COMPANY_ADDRESS)
 
         return address
 
