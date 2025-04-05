@@ -43,7 +43,7 @@ class RequestPhoneCallView(DataMixin, FormView):
 
 #         for prefix, city in company_cities.items():
 #             if current_city == city:
-#                 url = f'https://{prefix}.rzmr.ru{self.request.get_full_path()}'
+#                 url = f'https://{prefix}.{settings.COMPANY_HOST}{self.request.get_full_path()}'
 #                 break
 
 #         return url

@@ -23,7 +23,7 @@ class DataMixin:
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
         context['show_feedback'] = self.show_feedback_form()
         context['company_address'] = self.get_company_address()
-        context['city'], context['city_location'] = self.get_client_city()
+        context['city_pre'], context['city_location'] = self.get_client_city()
 
         if 'breadcrumb' not in context:
             context['breadcrumb'] = []
@@ -66,24 +66,27 @@ class DataMixin:
 
         return show_feedback
 
+    # Возвращает город пользователя выбранный им вручную или определенный по базе GeoIP в предложном и именительном падеже
     def get_client_city(self) -> tuple[str, str]:
-        city = ''
+        city_pre = ''
         city_location = ''
         current_host = self.request.get_host()
-        print(current_host)
-        company_cities = settings.COMPANY_CITIES
+        subdomain = utils.get_subdomain(current_host)
 
-        for subdomain in company_cities:
-            if subdomain in current_host:
-                city_location = company_cities[subdomain]
-                city = utils.get_word_loct(city_location).title()
-                break
+        if subdomain:
+            company_cities = settings.COMPANY_CITIES
+            company_cities_pre = settings.COMPANY_CITIES_PRE
+            city_location = company_cities.get(subdomain, '')
+            city_pre = company_cities_pre.get(subdomain, '')
+
+            # if city_location:
+            #     city_pre = utils.get_word_loct(city_location).title()
 
         if not city_location:
             ip = self.get_client_ip()
             city_location = utils.get_geo_city_name(ip)
 
-        return city, city_location
+        return city_pre, city_location
 
     def get_hosts_and_cities(self) -> dict:
         company_cities = settings.COMPANY_CITIES

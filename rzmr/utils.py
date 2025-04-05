@@ -1,11 +1,11 @@
 from django.conf import settings
 from django.contrib.gis.geoip2 import GeoIP2
 from geoip2.errors import AddressNotFoundError
-import pymorphy3
+# import pymorphy3
 import json
 
 
-MORPH = pymorphy3.MorphAnalyzer()
+# MORPH = pymorphy3.MorphAnalyzer()
 GEO_INFO = GeoIP2()
 
 
@@ -35,17 +35,16 @@ def load_ru_cities() -> None:
 
 
 # преобразует слово из именительного падежа в предложный падеж. Москва -> Москве
-def get_word_loct(word: str) -> str:
-    word_parse = MORPH.parse(word)[0]
-    word_loct = word_parse.inflect({'loct'}).word
-    return word_loct
+# def get_word_loct(word: str) -> str:
+#     word_parse = MORPH.parse(word)[0]
+#     word_loct = word_parse.inflect({'loct'}).word
+#     return word_loct
 
 
-# преобразует город из именительного падежа в предложный падеж. Москва -> Москве
-def get_city_prepositional_case(word: str) -> str:
-    word_pre = ''
-
-    return word_pre
+def get_subdomain(host: str) -> str:
+    subdomain = host.replace('www.', '').replace(
+        settings.COMPANY_HOST, '').replace('.', '')
+    return subdomain
 
 
 def get_geo_country(ip: str) -> dict:
