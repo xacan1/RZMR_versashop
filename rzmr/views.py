@@ -527,7 +527,7 @@ class MetalhosesStandartsRGMView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class HpressRGMView(DataMixin, FormView):
+class MetalhosesHpressRGMView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/metalhoses_hpress_rgm.html'
 
