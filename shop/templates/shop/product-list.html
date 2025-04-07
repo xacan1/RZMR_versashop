@@ -179,9 +179,18 @@
                                             {% endif %}
                                         </ul>
                                     </div>
-                                    <!--/ End Pagination -->
+                                    <!--/ End Pagination -->                                    
                                 </div>
                             </div>
+                            {% if 'gidravlicheskie-filtri' in request.path %}
+                                {% include 'shop/info_for_gidravlicheskie-filtri.html' %}
+                            {% elif 'filtri-toplivnie' in request.path %}
+                                {% include 'shop/info_for_filtri-toplivnie.html' %}
+                            {% elif 'filtri-vozdushnie' in request.path %}
+                                {% include 'shop/info_for_filtri-vozdushnie.html' %}
+                            {% elif 'filtroelementi' in request.path %}
+                                {% include 'shop/info_for_filtroelementi.html' %}
+                            {% endif %}
                         </div>
                         <div class="tab-pane fade" id="nav-list" role="tabpanel"
                             aria-labelledby="nav-list-tab">
