@@ -7,14 +7,14 @@ from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 
 
-class RobotView(DataMixin, FormView):
-    def get(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
-        filename = 'robots.txt'
-        path_file = Path(Path.cwd(), filename)
-        response = FileResponse(open(path_file, 'rb'), as_attachment=True,
-                                filename='robots.txt', content_type="text/plain")
+# class RobotView(DataMixin, FormView):
+#     def get(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
+#         filename = 'robots.txt'
+#         path_file = Path(Path.cwd(), filename)
+#         response = FileResponse(open(path_file, 'rb'), as_attachment=True,
+#                                 filename='robots.txt', content_type="text/plain")
 
-        return response
+#         return response
 
 
 class RequestPhoneCallView(DataMixin, FormView):
