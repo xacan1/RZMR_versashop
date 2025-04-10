@@ -7,7 +7,7 @@
     <div class="container align-items-center">
         <div class="row py-2">
             <div class="col-10">
-                <h4 class="py-2">{{ title }}</h4>
+                <h1 class="h3 fw-bold py-2">{{ title }}</h1>
                 {% if order.external_code %}
                 <p id="ExternalCode" data-external-code="{{ order.external_code }}" data-date-create="{{ order.time_create|date:'YmdHis' }}">
                     <strong>Код заказа в 1С: {{ order.external_code }}</strong>
