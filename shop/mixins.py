@@ -72,15 +72,14 @@ class DataMixin:
         city_location = ''
         current_host = self.request.get_host()
         subdomain = utils.get_subdomain(current_host)
+       
+        company_cities = settings.COMPANY_CITIES
+        company_cities_pre = settings.COMPANY_CITIES_PRE
+        city_location = company_cities.get(subdomain, '')
+        city_pre = company_cities_pre.get(subdomain, '')
 
-        if subdomain:
-            company_cities = settings.COMPANY_CITIES
-            company_cities_pre = settings.COMPANY_CITIES_PRE
-            city_location = company_cities.get(subdomain, '')
-            city_pre = company_cities_pre.get(subdomain, '')
-
-            # if city_location:
-            #     city_pre = utils.get_word_loct(city_location).title()
+        # if city_location:
+        #     city_pre = utils.get_word_loct(city_location).title()
 
         if not city_location:
             ip = self.get_client_ip()

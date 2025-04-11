@@ -247,11 +247,13 @@ class ProductDetailView(DataMixin, DetailView):
         slug = kwargs['object'].category.slug
         images = kwargs['object'].get_images.all()
         stocks = kwargs['object'].get_stock_product.all()
+        city_pre, city_location = self.get_client_city()
+        title = f"{kwargs['object'].name}, купить в городе {city_pre}"
 
         prices = kwargs['object'].get_prices.all()  # пока нет выбора типов цен
         attributes = services.get_attributes_product(product_pk)
         parent_categories = services.get_parents_category(slug, [])
-        c_def = self.get_user_context(title='Карточка товара',
+        c_def = self.get_user_context(title=title,
                                       parent_categories=parent_categories,
                                       product_images=images,
                                       product_stocks=stocks,
