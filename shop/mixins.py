@@ -15,6 +15,8 @@ class DataMixin:
         context_main_menu = main_menu.copy()
         context_user_menu = user_menu.copy()
 
+        subdomain = self.get_subdomain()
+
         context['company_name'] = settings.COMPANY_NAME
         context['company_name_short'] = settings.COMPANY_NAME_SHORT
         context['company_email'] = settings.COMPANY_EMAIL
@@ -22,14 +24,19 @@ class DataMixin:
 
         context['EXCESS_STOCK_OF_GOODS'] = settings.EXCESS_STOCK_OF_GOODS
         context['show_feedback'] = self.show_feedback_form()
-        context['company_address'] = self.get_company_address()
-        context['city_pre'], context['city_location'] = self.get_client_city()
+        context['company_address'] = self.get_company_address(subdomain)
+        context['city_pre'], context['city_location'] = self.get_client_city(
+            subdomain)
+        context['company_phone'] = self.get_company_phone(subdomain)
 
         if 'breadcrumb' not in context:
             context['breadcrumb'] = []
 
         if 'title' not in context:
             context['title'] = settings.COMPANY_NAME
+
+        if 'description' not in context:
+            context['description'] = 'Производство метталорукавов, фильтров, фторопластовых рукавов, онлайн конструктор и продажа изделий'
 
         if self.request.user.is_anonymous:
             self.request.session['sessionid'] = self.request.session.session_key
@@ -67,12 +74,10 @@ class DataMixin:
         return show_feedback
 
     # Возвращает город пользователя выбранный им вручную или определенный по базе GeoIP в предложном и именительном падеже
-    def get_client_city(self) -> tuple[str, str]:
+    def get_client_city(self, subdomain: str) -> tuple[str, str]:
         city_pre = ''
         city_location = ''
-        current_host = self.request.get_host()
-        subdomain = utils.get_subdomain(current_host)
-       
+
         company_cities = settings.COMPANY_CITIES
         company_cities_pre = settings.COMPANY_CITIES_PRE
         city_location = company_cities.get(subdomain, '')
@@ -103,13 +108,24 @@ class DataMixin:
 
         return hosts_and_cities
 
-    def get_company_address(self) -> str:
-        current_host = self.request.get_host()
-        subdomain = utils.get_subdomain(current_host)
+    def get_company_address(self, subdomain: str) -> str:
         company_addresses = settings.COMPANY_ADDRESSES
         address = company_addresses.get(subdomain, settings.COMPANY_ADDRESS)
 
         return address
+
+    def get_company_phone(self, subdomain: str) -> str:
+        company_phones = settings.COMPANY_PHONES
+        phone = company_phones.get(subdomain, settings.COMPANY_PHONE)
+
+        return phone
+
+    def get_subdomain(self) -> str:
+        host = self.request.get_host()
+        subdomain = host.replace('www.', '').replace(
+            settings.COMPANY_HOST, '').replace('.', '')
+
+        return subdomain
 
     def get_client_ip(self) -> str:
         x_forwarded_for = self.request.META.get('HTTP_X_FORWARDED_FOR')

@@ -6,6 +6,7 @@ from django.core.paginator import Paginator
 from django.urls import reverse_lazy
 from django.http import HttpRequest, HttpResponse, FileResponse
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
 import io
 from shop.forms import *
 from shop import services
@@ -22,7 +23,7 @@ class IndexShopView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         top_products = services.get_top_sales()
         context['top_products'] = top_products
-        c_def = self.get_user_context(title= _('Shop'))
+        c_def = self.get_user_context(title=_('Shop'))
         return {**context, **c_def}
 
 
@@ -247,13 +248,19 @@ class ProductDetailView(DataMixin, DetailView):
         slug = kwargs['object'].category.slug
         images = kwargs['object'].get_images.all()
         stocks = kwargs['object'].get_stock_product.all()
-        city_pre, city_location = self.get_client_city()
+        subdomain = self.get_subdomain()
+        city_pre, city_location = self.get_client_city(subdomain)
         title = f"{kwargs['object'].name}, купить в городе {city_pre}"
+        phone = self.get_company_phone(subdomain)
+        description = f"""{kwargs['object'].name} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}.
+          Гибкая ценовая политика. 100% гарантия качества. Вся продукция сертифицирована. 
+          Узнать подробности оформить заказ можно на нашем сайте или по тел.:{ phone }"""
 
         prices = kwargs['object'].get_prices.all()  # пока нет выбора типов цен
         attributes = services.get_attributes_product(product_pk)
         parent_categories = services.get_parents_category(slug, [])
         c_def = self.get_user_context(title=title,
+                                      description=description,
                                       parent_categories=parent_categories,
                                       product_images=images,
                                       product_stocks=stocks,

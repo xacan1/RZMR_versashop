@@ -41,12 +41,6 @@ def load_ru_cities() -> None:
 #     return word_loct
 
 
-def get_subdomain(host: str) -> str:
-    subdomain = host.replace('www.', '').replace(
-        settings.COMPANY_HOST, '').replace('.', '')
-    return subdomain
-
-
 def get_geo_country(ip: str) -> dict:
     country_info = {}
 
