@@ -7,7 +7,7 @@ class PostSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return Post.objects.filter(is_published=True)
+        return Post.objects.filter(is_published=True).order_by('time_create')
 
     def lastmod(self, obj):
         return obj.time_update
