@@ -1,13 +1,13 @@
 from django.contrib.sitemaps import Sitemap
-from blog.models import Post
+from shop.models import Product
 
 
-class PostSitemap(Sitemap):
+class ProductSitemap(Sitemap):
     changefreq = 'yearly'
-    priority = 0.5
+    priority = 0.9
 
     def items(self):
-        return Post.objects.filter(is_published=True)
+        return Product.objects.filter(is_published=True)
 
     def lastmod(self, obj):
         return obj.time_update
