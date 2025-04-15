@@ -15,6 +15,7 @@ class Post(models.Model):
     text = models.TextField(default='', blank=True, verbose_name='Текст поста')
     time_create = models.DateTimeField(auto_now_add=True,
                                        verbose_name='Создан')
+    time_update = models.DateTimeField(auto_now=True, verbose_name='Изменен')
     is_published = models.BooleanField(default=True, blank=True,
                                        verbose_name='Опубликован')
 

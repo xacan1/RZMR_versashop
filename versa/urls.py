@@ -18,11 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
+from django.contrib.sitemaps.views import sitemap
 from django.conf import settings
 from main.views import PageNotFound
+from blog.sitemap import PostSitemap
 
 
 urlpatterns = []
+sitemaps = {
+    'posts': PostSitemap,
+}
 
 rzmr_patterns = [
     path('i18n/', include('django.conf.urls.i18n')),
@@ -34,6 +39,8 @@ rzmr_patterns = [
     path('', include('personal_account.urls')),
     path('', include('blog.urls')),
     path('', include('constructor.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 urlpatterns += i18n_patterns(*rzmr_patterns, prefix_default_language=False)
