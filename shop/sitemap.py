@@ -10,7 +10,7 @@ class ProductSitemap(Sitemap):
     def get_urls(self, page=..., site=..., protocol=...):
         current_domain = site.domain
         company_cities = settings.COMPANY_CITIES
-        # print(current_domain)
+        print(current_domain)
 
         for subdomain in company_cities:
             if subdomain and subdomain in current_domain:
