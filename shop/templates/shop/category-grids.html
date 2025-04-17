@@ -18,7 +18,7 @@
                                 {% if category.photo %}
                                 <img src="{{ category.photo.url }}" alt="#">
                                 {% else %}
-                                <img src="https://via.placeholder.com/150x150" alt="#">
+                                <img class="img-cart-order" src="{% static 'shop\img\no_image.png' %}" alt="product_photo">
                                 {% endif %}
                             </picture>
                         </div>
