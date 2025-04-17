@@ -22,13 +22,14 @@ from django.contrib.sitemaps.views import sitemap
 from django.conf import settings
 from main.views import PageNotFound
 from blog.sitemap import PostSitemap
-from shop.sitemap import ProductSitemap
+from shop.sitemap import CategorySitemap, ProductSitemap
 from rzmr.sitemap import RzmrSitemap
 
 
 urlpatterns = []
 sitemaps = {
     'posts': PostSitemap,
+    'category': CategorySitemap,
     'products': ProductSitemap,
     'rzmr': RzmrSitemap,
 }

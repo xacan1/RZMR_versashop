@@ -3,8 +3,9 @@ from blog.models import Post
 
 
 class PostSitemap(Sitemap):
-    changefreq = 'yearly'
+    # changefreq = 'yearly'
     priority = 0.5
+    protocol = 'https'
 
     def items(self):
         return Post.objects.filter(is_published=True).order_by('time_create')

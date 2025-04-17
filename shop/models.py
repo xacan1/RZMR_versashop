@@ -30,6 +30,9 @@ class Category(models.Model):
     parent = models.ForeignKey('self', on_delete=models.PROTECT, default=None,
                                null=True, blank=True, related_name='nested_category',
                                verbose_name='Родитель')
+    time_create = models.DateTimeField(auto_now_add=True,
+                                       verbose_name='Создан')
+    time_update = models.DateTimeField(auto_now=True, verbose_name='Изменен')
     is_published = models.BooleanField(default=True, blank=True,
                                        verbose_name='Отображать в каталоге')
 
@@ -42,6 +45,9 @@ class Category(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('product-list', kwargs={'category_slug': self.slug})
 
     class Meta:
         verbose_name = 'Категория'
@@ -570,7 +576,7 @@ class Order(models.Model):
 
     def __str__(self) -> str:
         return f'Заказ №{self.pk} от {self.time_update.strftime("%d.%m.%Y")}'
-    
+
     def get_absolute_url(self):
         return reverse('order', kwargs={'order_pk': self.pk})
 

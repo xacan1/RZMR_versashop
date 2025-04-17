@@ -3,14 +3,16 @@ from django.urls import reverse
 
 
 class RzmrSitemap(Sitemap):
-    changefreq = 'never'
+    # changefreq = 'never'
     priority = 1.0
+    protocol = 'https'
 
     def items(self):
         items = [
             ('home', {}),
             ('about', {}),
             ('quality', {}),
+            ('posts', {}),
             ('our-customer', {}),
             ('for-suppliers', {}),
             ('vacancies', {}),
@@ -87,7 +89,6 @@ class RzmrSitemap(Sitemap):
             ('engineering', {}),
             ('engineering-accessories', {}),
             ('engineering-test', {}),
-            ('privacy', {}),
             ('workspace-filters', {}),
             ('composite', {}),
             ('composite', {'composite_slug': 'EGE'}),
@@ -128,12 +129,14 @@ class RzmrSitemap(Sitemap):
             ('quick-release-coupling', {'coupling_slug': 'gayka-rot-isp-1'}),
             ('quick-release-coupling', {'coupling_slug': 'gayka-rot-isp-2'}),
             ('quick-release-coupling', {'coupling_slug': 'gayka-rot-isp-3'}),
+            ('quick-release-coupling', {'coupling_slug': 'kamlok-tipa-a'}),
             ('quick-release-coupling', {'coupling_slug': 'kamlok-tipa-b'}),
             ('quick-release-coupling', {'coupling_slug': 'kamlok-tipa-d0'}),
             ('quick-release-coupling', {'coupling_slug': 'kamlok-tipa-dc'}),
             ('quick-release-coupling', {'coupling_slug': 'kamlok-tipa-dp'}),
             ('quick-release-coupling', {'coupling_slug': 'kamlok-tipa-e'}),
             ('quick-release-coupling', {'coupling_slug': 'kamlok-tipa-c'}),
+            ('quick-release-coupling', {'coupling_slug': 'kamlok-tipa-f'}),
             ('quick-release-coupling', {'coupling_slug': 'koltso-uplotnitelnoe-dlya-gayki-rot'}),
             ('quick-release-coupling', {'coupling_slug': 'strubtsina-s-prizhimnym-ustroystvom-sug'}),
         ]
