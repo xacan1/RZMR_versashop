@@ -168,16 +168,22 @@ class CategoryProductListView(DataMixin, FormView):
             page_number = self.request.GET.get('page', 1)
             page_obj = paginator.get_page(page_number)
             amount_product_total = paginator.count
-            amount_product_from, amount_product_upto = services.count_product_from_to(
-                paginate_by, int(page_number), len(page_obj.object_list))
+            amount_product_from, amount_product_upto = services.count_product_from_to(paginate_by,
+                                                                                      int(page_number),
+                                                                                      len(page_obj.object_list))
 
             # добавляю к адресам пагинации параметры запроса, что бы при переходе на другую страницу
             # GET запрос не только содержал номер страницы, но и в точности повторялся по всем параметрам
             add_for_pagination = ''
 
             for get_param, value in self.request.GET.items():
-                if get_param != 'page':
+                if get_param == 'page':
+                    continue
+                
+                if add_for_pagination:
                     add_for_pagination += f'&{get_param}={value}'
+                else:
+                    add_for_pagination = f'{get_param}={value}'
 
             c_def = self.get_user_context(title='Список товаров',
                                           amount_product_from=amount_product_from,
