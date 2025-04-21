@@ -7,12 +7,49 @@ from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 
 
-class RobotsView(DataMixin, FormView):
+# class FileView(FormView):
+#     def get(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
+#         filename = 'robots.txt'
+#         path_file = Path(Path.cwd(), filename)
+#         response = FileResponse(open(path_file, 'rb'), as_attachment=True,
+#                                 filename='robots.txt', content_type='text/plain')
+
+#         return response
+
+
+class RobotsView(FormView):
     def get(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
-        filename = 'robots.txt'
-        path_file = Path(Path.cwd(), filename)
-        response = FileResponse(open(path_file, 'rb'), as_attachment=False,
-                                filename='robots.txt', content_type="text/plain")
+        lines = [
+            'User-Agent: Yandex',
+            'Disallow: /metalhose-constructor/',
+            'Disallow: /admin-rzmr/',
+            'Disallow: /privacy/',
+            'Disallow: /login/',
+            'Disallow: /registration/',
+            'Disallow: /passwords/reset/',
+            'Disallow: /shop/cart/',
+            'Disallow: /shop/checkout/',
+            'Disallow: /*page=1',
+            '',
+            'Clean-param: price_range_max&sorting',
+            '',
+            'User-Agent: *',
+            'Disallow: /metalhose-constructor/',
+            'Disallow: /admin-rzmr/',
+            'Disallow: /privacy/',
+            'Disallow: /login/',
+            'Disallow: /registration/',
+            'Disallow: /passwords/reset/',
+            'Disallow: /shop/cart/',
+            'Disallow: /shop/checkout/',
+            'Disallow: /*page=1',
+            'Disallow: /*price_range_max=',
+            'Disallow: /*sorting=',
+            '',
+            f'https://{request.get_host()}/sitemap.xml',
+            '',
+        ]
+        response = HttpResponse('\n'.join(lines), content_type='text/plain')
 
         return response
 
@@ -254,17 +291,17 @@ class MetalhosesRGMView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class MetalhosesGibkieTruboprovodyView(DataMixin, FormView):
-    form_class = SimpleForm
-    template_name = 'rzmr/metalhoses_gibkie_truboprovody.html'
+# class MetalhosesGibkieTruboprovodyView(DataMixin, FormView):
+#     form_class = SimpleForm
+#     template_name = 'rzmr/metalhoses_gibkie_truboprovody.html'
 
-    def get_context_data(self, **kwargs) -> dict:
-        context = super().get_context_data(**kwargs)
-        title = 'Гибкие трубопроводы'
-        breadcrumb = [('metalhoses', _('Metal hoses')),
-                      ('', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
-        return {**context, **c_def}
+#     def get_context_data(self, **kwargs) -> dict:
+#         context = super().get_context_data(**kwargs)
+#         title = 'Гибкие трубопроводы'
+#         breadcrumb = [('metalhoses', _('Metal hoses')),
+#                       ('', title),]
+#         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+#         return {**context, **c_def}
 
 
 class MetalhosesVOpletkeView(DataMixin, FormView):

@@ -54,7 +54,6 @@ class RzmrSitemap(Sitemap):
             ('metalhoses-hpress-rgm', {}),
             ('metalhoses-for-welding', {}),
             ('metalhoses-rgm', {}),
-            ('metalhoses-gibkie-truboprovody', {}),
             ('metalhoses-v-opletke', {}),
             ('gibkie-truboprovody', {}),
             ('ptfe-hoses', {}),
