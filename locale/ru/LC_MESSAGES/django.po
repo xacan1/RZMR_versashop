@@ -246,7 +246,7 @@ msgstr "Компания"
 #: rzmr/templates/rzmr/base.html:238 rzmr/templates/rzmr/base.html:392
 #: rzmr/views.py:63
 msgid "About us"
-msgstr "Информация о заводе"
+msgstr "О заводе"
 
 #: rzmr/templates/rzmr/base.html:239 rzmr/templates/rzmr/base.html:393
 #: rzmr/views.py:75

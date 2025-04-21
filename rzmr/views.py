@@ -3,8 +3,8 @@ from rzmr.forms import *
 from shop.mixins import DataMixin
 from django.http import HttpRequest, HttpResponse, FileResponse
 from django.utils.translation import gettext_lazy as _
-# from django.conf import settings
-from pathlib import Path
+from django.conf import settings
+# from pathlib import Path
 
 
 # class FileView(FormView):
@@ -63,10 +63,6 @@ class RequestPhoneCallView(DataMixin, FormView):
         current_url = self.request.META.get('HTTP_REFERER', '#')
         return current_url
 
-    def form_valid(self, form) -> HttpResponse:
-
-        return super().form_valid(form)
-
 
 # class RedirectToCityView(RedirectView):
 #     permanent = True
@@ -106,7 +102,9 @@ class IndexView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context()
+        title = f'Металлорукава от производителя по высоким стандартам 🥇 {settings.COMPANY_NAME}'
+        description = f'{settings.COMPANY_NAME} является одним из крупнейших поставщиков металлорукавов(гибких трубопроводов), рукавов высокого давления, компенсаторов сильфонных и фланцевых и др. высокотехнологичной продукции. Наша продукция востребована на рынке России и стран ближнего зарубежья.'
+        c_def = self.get_user_context(title=title, description=description)
         return {**context, **c_def}
 
 
@@ -117,8 +115,11 @@ class AboutView(DataMixin, FormView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         title = _('About us')
+        description = f'{settings.COMPANY_NAME} ({settings.COMPANY_NAME_SHORT}) является одним из крупнейших поставщиков промышленного оборудования на рынке России и стран ближнего зарубежья. Наш опыт, наличие производственных мощностей позволяет в короткие сроки разрабатывать и производить уникальные, высоконадежные и долговечные изделия.'
         breadcrumb = [('about', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -129,8 +130,11 @@ class QualityView(DataMixin, FormView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         title = _('Quality and certification system')
+        description = f'Продукция {settings.COMPANY_NAME} отвечает самым высоким стандартам в отрасли. Ключевым элементом поддержания надежности и долговечности производимых изделий является принятая система менеджмента качества ISO 9001-2015.'
         breadcrumb = [('quality', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -141,8 +145,11 @@ class OurCustomerView(DataMixin, FormView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         title = _('Our clients')
+        description = f'В данном разделе вы можете ознакомиться с клиентами компании {settings.COMPANY_NAME}.'
         breadcrumb = [('our-customer', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -153,8 +160,11 @@ class ForSuppliersView(DataMixin, FormView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         title = 'Поставщикам'
+        description = f'В данном разделе вы можете ознакомиться с информацией для поставщиков компании {settings.COMPANY_NAME}.'
         breadcrumb = [('for-suppliers', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -165,8 +175,11 @@ class VacanciesView(DataMixin, FormView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         title = _('Career')
+        description = f'В данном разделе вы можете ознакомиться с актуальными вакансиями компании {settings.COMPANY_NAME}.'
         breadcrumb = [('vacancies', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 

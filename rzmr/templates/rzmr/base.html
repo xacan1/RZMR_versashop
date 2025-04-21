@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{% static 'rzmr/fonts/ProximaNova/stylesheet.css' %}">
     <link rel="stylesheet" href="{% static 'rzmr/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'rzmr/css/main.css' %}">
-    <title>{{ title }} — {{ company_name_short }}</title>
+    <title>{{ title }} - {{ company_name_short }}</title>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -37,24 +37,7 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/99520915" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <script type='application/ld+json'>
-        {
-          "@context": "http://www.schema.org",
-          "@type": "Organization",
-          "name": "Русский Завод Металлорукавов",
-          "url": "https://rzmr.ru",
-          "logo": "https://rzmr.ru/static/rzmr/img/logo.svg",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "ул. Афонская, 1к2",
-            "addressLocality": "Санкт-Петербург",
-            "postalCode": "197341",
-            "addressCountry": "RU"
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "88005555756"
-          }
-        }
+        {{ company_micromarkup|safe }}
     </script>
 </head>
 

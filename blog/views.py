@@ -2,6 +2,7 @@ from django.db.models.query import QuerySet
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from blog.permissions import StaffRequiredMixin
 from django.urls import reverse_lazy
+from django.conf import settings
 from blog.models import *
 from blog.forms import *
 from shop.mixins import DataMixin
@@ -21,8 +22,11 @@ class PostListView(DataMixin, ListView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         title = 'Статьи'
+        description = f'В данном разделе вы можете ознакомиться со статьями компании {settings.COMPANY_NAME}'
         breadcrumb = [('posts', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -48,7 +52,7 @@ class PostCreateView(StaffRequiredMixin, DataMixin, CreateView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title='Добавление новой статьи'
+        title = 'Добавление новой статьи'
         breadcrumb = [('posts', 'Статьи'),
                       ('', title),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
@@ -63,7 +67,7 @@ class PostUpdateView(StaffRequiredMixin, DataMixin, UpdateView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title='Изменение статьи'
+        title = 'Изменение статьи'
         breadcrumb = [('posts', 'Статьи'),
                       ('', title),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)

@@ -35,6 +35,7 @@ ADMIN_PANEL_URL = config.ADMIN_PANEL_URL
 # Для онлайн магазина признак того, что можно превышать остатки на складах при заказе
 EXCESS_STOCK_OF_GOODS = config.EXCESS_STOCK_OF_GOODS
 
+COMPANY_MICROMARKUP = config.COMPANY_MICROMARKUP
 COMPANY_HOST = config.COMPANY_HOST
 COMPANY_NAME = config.COMPANY_NAME
 COMPANY_NAME_SHORT = config.COMPANY_NAME_SHORT
