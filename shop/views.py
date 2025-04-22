@@ -158,6 +158,11 @@ class CategoryProductListView(DataMixin, FormView):
         slug = self.kwargs.get('category_slug', '')
         parent_categories = services.get_parents_category(slug, [])
 
+        subdomain = self.get_subdomain()
+        city_pre, _ = self.get_client_city(subdomain)
+        phone = self.get_company_phone(subdomain)
+        description, title, h1 = services.get_info_about_category_for_seo(slug, city_pre, phone)
+
         if slug == 'root':
             root_categories = services.get_root_categories()
             c_def = self.get_user_context(title='Каталог',
@@ -185,7 +190,9 @@ class CategoryProductListView(DataMixin, FormView):
                 else:
                     add_for_pagination = f'{get_param}={value}'
 
-            c_def = self.get_user_context(title='Список товаров',
+            c_def = self.get_user_context(title=title,
+                                          description=description,
+                                          h1=h1,
                                           amount_product_from=amount_product_from,
                                           amount_product_upto=amount_product_upto,
                                           amount_product_total=amount_product_total,
@@ -194,8 +201,10 @@ class CategoryProductListView(DataMixin, FormView):
                                           page_obj=page_obj)
         else:
             category, nested_categories = services.get_nested_categories(slug)
-            c_def = self.get_user_context(title='Список категорий',
+            c_def = self.get_user_context(title=title,
                                           current_category=category,
+                                          description=description,
+                                          h1=h1,
                                           nested_categories=nested_categories,
                                           parent_categories=parent_categories)
 

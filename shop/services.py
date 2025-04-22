@@ -1045,7 +1045,8 @@ def create_order_in_1C(order: Order) -> None:
     table_product = []
 
     for cart_product in order.get_order_products.select_related('product').all():
-        product_info = {'product_code': cart_product.product.external_code, 'quantity': float(cart_product.quantity)}
+        product_info = {'product_code': cart_product.product.external_code,
+                        'quantity': float(cart_product.quantity)}
         table_product.append(product_info)
 
     data_order = {
@@ -1063,3 +1064,42 @@ def create_order_in_1C(order: Order) -> None:
     if number_order != '0':
         order.external_code = number_order
         order.save()
+
+
+# получает данные description, title, h1 для SEO страниц с категориями или списками товаров
+# тут данные статичны для тонкой ручной настройки meta тегов
+def get_info_about_category_for_seo(category_slug: str, city_pre: str, phone: str) -> tuple[str, str, str]:
+    description = ''
+    title = ''
+    h1 = ''
+
+    if category_slug == 'filtra-i-agregati-ooo-rzm':
+        description = f'Заказать фильтры 8Д2 и агрегаты в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить фильтры 8Д2 и агрегаты можно на сайте или по тел.: {phone}.'
+        title = f'Фильтры 8Д2 и агрегаты, купить в {city_pre} по выгодной цене'
+        h1 = f'Фильтры 8Д2 и агрегаты в {city_pre} от производителя {settings.COMPANY_NAME_SHORT}'
+    elif category_slug == 'agregati':
+        description = 'Агрегаты - купить по выгодной цене от производителя! ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
+        title = f'Агрегаты, купить в городе {city_pre} по выгодной цене'
+        h1 = 'Агрегаты'
+    elif category_slug == 'izdeliya-raznogo-naznacheniya':
+        description = f'Изделия разного назначения — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        title = f'Изделия разного назначения, купить в городе {city_pre} по выгодной цене'
+        h1 = 'Изделия разного назначения'
+    elif category_slug == 'filtroelementi':
+        description = f'Заказать фильтроэлементы 8Д2 и агрегаты в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить фильтры 8Д2 и агрегаты можно на сайте или по тел.: {phone}.'
+        title = f'Фильтроэлементы 8Д2, купить в {city_pre} по выгодной цене'
+        h1 = f'Фильтроэлементы 8Д2 от производителя {settings.COMPANY_NAME_SHORT} в {city_pre}'
+    elif category_slug == 'gidravlicheskie-filtri':
+        description = f'Заказать гидравлические фильтры 8Д2.966, 11ГФ, 12ГФ, 13ГФ, 14ГФ, 15ГФ, ФГ11, ЕАЛР, ЖКДЕ в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить гидравлические фильтры можно на сайте или по тел.: {phone}.'
+        title = f'Гидравлические фильтры 8Д2, купить в {city_pre} по выгодной цене'
+        h1 = f'Гидравлические фильтры 8Д2 от производителя {settings.COMPANY_NAME_SHORT} в {city_pre}'
+    elif category_slug == 'filtri-toplivnie':
+        description = f'Заказать топливные фильтры 8Д2.966, 11ТФ, 12ТФ, 28ТФ, 32ТФ, ЕАЛР в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить топливные фильтры можно на сайте или по тел.: {phone}.'
+        title = f'Топливные фильтры 8Д2 купить в {city_pre} по выгодной цене'
+        h1 = f'Топливные фильтры 8Д2 в {city_pre} от производителя {settings.COMPANY_NAME_SHORT}'
+    elif category_slug == 'filtri-vozdushnie':
+        description = f'Заказать воздушные фильтры 8Д2.966, 11ВФ, 21ВФ, 31ВФ в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить воздушные фильтры можно на сайте или по тел.: {phone}.'
+        title = f'Воздушные фильтры 8Д2, купить в {city_pre} по выгодной цене'
+        h1 = f'Воздушные фильтры 8Д2 в {city_pre} от производителя {settings.COMPANY_NAME_SHORT}'
+
+    return description, title, h1

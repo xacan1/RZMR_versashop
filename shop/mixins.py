@@ -82,7 +82,7 @@ class DataMixin:
         company_cities = settings.COMPANY_CITIES
         company_cities_pre = settings.COMPANY_CITIES_PRE
         city_location = company_cities.get(subdomain, '')
-        city_pre = company_cities_pre.get(subdomain, '')
+        city_pre = company_cities_pre.get(subdomain, 'вашем городе')
 
         # if city_location:
         #     city_pre = utils.get_word_loct(city_location).title()
@@ -90,6 +90,9 @@ class DataMixin:
         if not city_location:
             ip = self.get_client_ip()
             city_location = utils.get_geo_city_name(ip)
+
+        if not city_location:
+            city_location = 'ваш город'
 
         return city_pre, city_location
 

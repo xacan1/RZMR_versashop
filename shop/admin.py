@@ -9,7 +9,7 @@ TokenAdmin.raw_id_fields = ['user']
 class CategoryAdmin(admin.ModelAdmin):
     model = Category
     list_display = ('parent', 'name', 'photo',
-                    'external_code', 'is_published',)
+                    'external_code', 'description', 'is_published',)
     list_display_links = ('name',)
     list_filter = ('is_published',)
     search_fields = ('name', 'external_code',)

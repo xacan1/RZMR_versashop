@@ -25,6 +25,8 @@ class Category(models.Model):
     slug = models.SlugField(max_length=255, unique=True)
     external_code = models.CharField(max_length=11, unique=True,
                                      verbose_name='Внешний код')
+    description = models.TextField(default='', blank=True,
+                                   verbose_name='Описание')
     photo = models.ImageField(upload_to=product_image_path, null=True,
                               blank=True, verbose_name='Изображение')
     parent = models.ForeignKey('self', on_delete=models.PROTECT, default=None,
