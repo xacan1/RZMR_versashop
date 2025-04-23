@@ -358,10 +358,17 @@ class MetalhosesCorrugationsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Гофрированные металлорукава РГМ'
+        subdomain = self.get_subdomain()
+        city_pre, city_location = self.get_client_city(subdomain)
+        title = f'Гофрированные металлорукава РГМ в {city_pre}'
+        description = f'Гофра для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
+        h1 = 'Гофрированные металлорукава РГМ'
         breadcrumb = [('metalhoses', _('Metal hoses')),
-                      ('', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+                      ('', h1),]
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      h1=h1,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -383,6 +390,8 @@ class MetalhosesCorrugationView(DataMixin, FormView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         slug = self.kwargs.get(self.slug_url_kwarg, '')
+        subdomain = self.get_subdomain()
+        city_pre, city_location = self.get_client_city(subdomain)
         suffix_title = {
             'standartnaya': 'средней гибкости',
             'povishennoy_gibkosti': 'повышенной гибкости',
@@ -390,11 +399,16 @@ class MetalhosesCorrugationView(DataMixin, FormView):
             'spiralnaya': 'cпиральные',
             'dvukhsloynaya': 'двухслойные',
         }
-        title = f'Гофрированные металлорукава РГМ {suffix_title.get(slug, "")}'
+        title = f'Гофрированные металлорукава РГМ {suffix_title.get(slug, "")} в {city_pre}'
+        description = f'Гофра двухслойная для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
+        h1 = f'Гофрированные металлорукава РГМ {suffix_title.get(slug, "")}'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('metalhoses-corrugations', 'Гофрированные металлорукава РГМ'),
-                      ('', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+                      ('', h1),]
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      h1=h1,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -441,10 +455,13 @@ class MetalhosesBraidView(DataMixin, FormView):
             'trekhsloynaya': 'Трёхслойная',
         }
         title = f'{suffix_title.get(slug, "")} оплётка для металлорукавов'
+        description = f'Оплётка {suffix_title.get(slug, "")} для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('metalhoses-braids', 'Оплётка'),
                       ('', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
