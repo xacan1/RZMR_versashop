@@ -400,7 +400,7 @@ class MetalhosesCorrugationView(DataMixin, FormView):
             'dvukhsloynaya': 'двухслойные',
         }
         title = f'Гофрированные металлорукава РГМ {suffix_title.get(slug, "")} в {city_pre}'
-        description = f'Гофра {suffix_title.get(slug, "")} для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
+        description = f'Гофры {suffix_title.get(slug, "")} для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         h1 = f'Гофрированные металлорукава РГМ {suffix_title.get(slug, "")}'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('metalhoses-corrugations', 'Гофрированные металлорукава РГМ'),
