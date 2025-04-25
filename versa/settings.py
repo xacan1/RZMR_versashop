@@ -32,6 +32,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config.SECRET_KEY
 ADMIN_PANEL_URL = config.ADMIN_PANEL_URL
 
+AUTHOR = config.AUTHOR
+PUBLISHER_EMAIL = config.PUBLISHER_EMAIL
+PUBLISHER_URL = config.PUBLISHER_URL
+
 # Для онлайн магазина признак того, что можно превышать остатки на складах при заказе
 EXCESS_STOCK_OF_GOODS = config.EXCESS_STOCK_OF_GOODS
 

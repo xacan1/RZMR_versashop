@@ -17,6 +17,10 @@ class DataMixin:
 
         subdomain = self.get_subdomain()
 
+        context['author'] = settings.AUTHOR
+        context['publisher_email'] = settings.PUBLISHER_EMAIL
+        context['publisher_url'] = settings.PUBLISHER_URL
+
         context['company_micromarkup'] = settings.COMPANY_MICROMARKUP
         context['company_name'] = settings.COMPANY_NAME
         context['company_name_short'] = settings.COMPANY_NAME_SHORT

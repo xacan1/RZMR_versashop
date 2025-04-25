@@ -13,7 +13,7 @@
             <img src="{{ post.photo.url }}" alt="image post">
         </div>
         <div class="col-8">
-            <h6 class="text-title-uzm py-3">{{ post.title }}</h6>
+            <h6 class="text-title-uzm py-3 fw-bold">{{ post.title }}</h6>
             <p class="fs-6">{{ post.text|truncatewords:'55' }}</p>
             <p><a href="{% url 'post' post.slug %}">Читать далее...</a></p>
         </div>

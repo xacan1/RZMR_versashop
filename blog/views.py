@@ -39,9 +39,12 @@ class PostDetailView(DataMixin, DetailView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         title = context['post'].title
+        description = context['post'].title
         breadcrumb = [('posts', 'Статьи'),
                       ('', title),]
-        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
