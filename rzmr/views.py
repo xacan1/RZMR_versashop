@@ -1341,7 +1341,7 @@ class QuickReleaseCouplingView(DataMixin, FormView):
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
         title = f'{suffix_title.get(slug, "")}, купить в {city_pre} по выгодной цене'
-        description = f'{{suffix_title.get(slug, "")}} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        description = f'{suffix_title.get(slug, "")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = suffix_title.get(slug, "")
         breadcrumb = [('quick-release-coupling',
                        'Быстроразъемные соединения'),]
