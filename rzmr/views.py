@@ -46,7 +46,7 @@ class RobotsView(FormView):
             'Disallow: /*price_range_max=',
             'Disallow: /*sorting=',
             '',
-            f'https://{request.get_host()}/sitemap.xml',
+            f'Sitemap: https://{request.get_host()}/sitemap.xml',
             '',
         ]
         response = HttpResponse('\n'.join(lines), content_type='text/plain')
