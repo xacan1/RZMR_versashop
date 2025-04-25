@@ -15,7 +15,7 @@
                                 {% if product_data.photo %}
                                 <img src="{{ product_data.photo.url }}" class="product-main-img p-1" id="current" alt="photo_product" itemprop="image">
                                 {% else %}
-                                <img src="{% static 'shop\img\no_image.png' %}" class="product-main-img p-1" id="current" alt="photo_product" itemprop="image">
+                                <img src="{% static 'shop\img\no_image.png' %}" class="product-main-img p-1" id="current" alt="photo_product" itemprop="noimage">
                                 {% endif %}
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="product-info">
-                        <h2 class="title" itemprop="name">{{ product_data.name }}</h2>
+                        <h1 class="h2 title" itemprop="name">{{ product_data.name }}</h1>
                         <p class="category" itemprop="category"> {{ product_data.category.name }}</p>
                         {% if product_prices %}
                             {% for product_price in product_prices %}
