@@ -1116,9 +1116,11 @@ class FittingsView(DataMixin, FormView):
         city_pre, _ = self.get_client_city(subdomain)
         title = f'Резьбовая арматура, купить в {city_pre} по выгодной цене'
         description = f'Резьбовая арматура — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        h1 = 'Резьбовая арматура'
         breadcrumb = [('privacy', 'Резьбовая арматура'),]
         c_def = self.get_user_context(title=title,
                                       description=description,
+                                      h1=h1,
                                       breadcrumb=breadcrumb)
         return {**context, **c_def}
 
@@ -1140,13 +1142,34 @@ class FittingView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+        suffix_title = {
+            'gayka-nakidnaya-pod-tortsevoe-uplotnenie': 'Гайка накидная под торцевое уплотнение',
+            'mufta-amerikanka-bp-bp': 'Муфта "американка" BP-BP',
+            'mufta-amerikanka-s-vnutrenney-rezboy-hp-bp': 'Муфта "американка" с внутренней резьбой HP-BP',
+            'mufta-amerikanka-s-naruzhnoy-rezboy-hp-hp': 'Муфта "американка" с наружной резьбой HP-HP',
+            'nakidnaya-gayka-s-nippelem-konus-s-uglom-74': 'Накидная гайка с ниппелем конус с углом 74°',
+            'nakidnaya-gayka-s-nippelem-konus-s-uglom-24': 'Накидная гайка с ниппелем конус с углом 24°',
+            'nakidnaya-gayka-s-nippelem-sfera-pod-konus-s-uglom-60': 'Накидная гайка с ниппелем сфера под конус с углом 60°',
+            'perekhodnik-gayka-gayka': 'Переходник гайка-гайка',
+            'perekhodnik-gayka-shtutser': 'Переходник гайка-штуцер',
+            'perekhodnik-shtutser-shtutser': 'Переходник штуцер-штуцер',
+            'fitting-dk0': 'Фитинг DK',
+            'fitting-dk-shtutser': 'Фитинг DK-штуцер',
+            'fitting-dki': 'Фитинг DKI',
+            'fitting-dkol': 'Фитинг DKOL',
+            'shtutser-s-vnutrenney-rezboy': 'Штуцер с внутренней резьбой',
+            'shtutser-s-naruzhnoy-rezboy': 'Штуцер с наружной резьбой',
+        }
         subdomain = self.get_subdomain()
         city_pre, _ = self.get_client_city(subdomain)
-        title = f'Резьбовая арматура , купить в {city_pre} по выгодной цене'
-        description = f'Резьбовая арматура — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        title = f'{suffix_title.get(slug, "")} , купить в {city_pre} по выгодной цене'
+        description = f'{suffix_title.get(slug, "")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        h1 = suffix_title.get(slug, "")
         breadcrumb = [('fittings', 'Резьбовая арматура'),]
         c_def = self.get_user_context(title=title,
                                       description=description,
+                                      h1=h1,
                                       breadcrumb=breadcrumb)
         return {**context, **c_def}
 
@@ -1211,9 +1234,11 @@ class FlangesView(DataMixin, FormView):
         city_pre, city_location = self.get_client_city(subdomain)
         title = f"{_('Flange connections')}, купить в {city_pre} по выгодной цене"
         description = f"{_('Flange connections')} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте."
+        h1 = _('Flange connections')
         breadcrumb = [('composite', _('Flange connections')),]
         c_def = self.get_user_context(title=title,
                                       description=description,
+                                      h1=h1,
                                       breadcrumb=breadcrumb)
         return {**context, **c_def}
 
@@ -1235,13 +1260,24 @@ class FlangeView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+        suffix_title = {
+            'flantsevoe-soedinenie-gost-12821-80': 'Фланцевое соединение ГОСТ 12821-80',
+            'flantsevoe-soedinenie-gost-12822-80': 'Фланцевое соединение ГОСТ 12822-80',
+            'flantsevoe-soedinenie-s-otkidnymi-boltami': 'Фланцевое соединение с откидными болтами',
+            'flantsevoe-soedinenie-svobodnoe-na-otbortovke': 'Фланцевое соединение свободное на отбортовке',
+            'flantsevoe-soedinenie-tip-01-po-gost-33259-2015': 'Фланцевое соединение тип 01 по ГОСТ 33259-2015',
+            'flantsy-iz-nalichiya': 'Фланцы из наличия',
+        }
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
-        title = f"{_('Flange connections')}, купить в {city_pre} по выгодной цене"
-        description = f"{_('Flange connections')} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте."
+        title = f'{suffix_title.get(slug, "")}, купить в {city_pre} по выгодной цене'
+        description = f'{suffix_title.get(slug, "")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        h1 = suffix_title.get(slug, "")
         breadcrumb = [('flanges', _('Flange connections')),]
         c_def = self.get_user_context(title=title,
                                       description=description,
+                                      h1=h1,
                                       breadcrumb=breadcrumb)
         return {**context, **c_def}
 
@@ -1256,10 +1292,12 @@ class QuickReleaseCouplingsView(DataMixin, FormView):
         city_pre, city_location = self.get_client_city(subdomain)
         title = f'Быстроразъемные соединения, купить в {city_pre} по выгодной цене'
         description = f'Быстроразъемные соединения — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        h1 = 'Быстроразъемные соединения'
         breadcrumb = [('quick-release-coupling',
                        'Быстроразъемные соединения'),]
         c_def = self.get_user_context(title=title,
                                       description=description,
+                                      h1=h1,
                                       breadcrumb=breadcrumb)
         return {**context, **c_def}
 
@@ -1281,13 +1319,34 @@ class QuickReleaseCouplingView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+        suffix_title = {
+            'adaptor-bystrorazyemnogo-soedineniya-tipa-kamlok-mufta': 'Адаптор быстроразъёмного соединения типа "Камлок" (муфта)',
+            'adaptor-bystrorazyemnogo-soedineniya-tipa-kamlok-shtutser': 'Адаптор быстроразъёмного соединения типа "Камлок" (штуцер)',
+            'armatura-pmt': 'Арматура "ПМТ"',
+            'gayka-rot-isp-1': 'Гайка РОТ исп. 1',
+            'gayka-rot-isp-2': 'Гайка РОТ исп. 2',
+            'gayka-rot-isp-3': 'Гайка РОТ исп. 3',
+            'kamlok-tipa-b': 'Камлок типа B',
+            'kamlok-tipa-d0': 'Камлок типа D',
+            'kamlok-tipa-dc': 'Камлок типа DC',
+            'kamlok-tipa-dp': 'Камлок типа DP',
+            'kamlok-tipa-e': 'Камлок типа E',
+            'kamlok-tipa-f': 'Камлок типа F',
+            'kamlok-tipa-a': 'Камлок типа А',
+            'kamlok-tipa-c': 'Камлок типа С',
+            'koltso-uplotnitelnoe-dlya-gayki-rot': 'Кольцо уплотнительное для гайки РОТ',
+            'strubtsina-s-prizhimnym-ustroystvom-sug': 'Струбцина с прижимным устройством (СУГ)',
+        }
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
-        title = f'Быстроразъемные соединения, купить в {city_pre} по выгодной цене'
-        description = f'Быстроразъемные соединения — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        title = f'{suffix_title.get(slug, "")}, купить в {city_pre} по выгодной цене'
+        description = f'{{suffix_title.get(slug, "")}} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        h1 = suffix_title.get(slug, "")
         breadcrumb = [('quick-release-coupling',
                        'Быстроразъемные соединения'),]
         c_def = self.get_user_context(title=title,
                                       description=description,
+                                      h1=h1,
                                       breadcrumb=breadcrumb)
         return {**context, **c_def}
