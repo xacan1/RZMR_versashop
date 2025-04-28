@@ -166,7 +166,7 @@ class CategoryProductListView(DataMixin, FormView):
         # description, title, h1 = services.get_info_about_category_for_seo(slug, city_pre, phone)
         current_category = parent_categories[-1]
         description = f'Заказать {current_category} в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить воздушные фильтры можно на сайте или по тел.: {phone}.'
-        title = f'{current_category}, купить в {city_pre} по выгодной цене'
+        title = f'{current_category}, купить в {city_pre} по выгодной цене - {settings.COMPANY_NAME_SHORT}'
         h1 = f'{current_category}'
 
         if slug == 'root':
