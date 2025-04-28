@@ -122,7 +122,7 @@ class CategoryProductListView(DataMixin, FormView):
     # проверяет если товары есть, то выбирает класс формы для списка товаров иначе класс пустой формы
     def get_form_class(self):
         form_class = super().get_form_class()
-        slug = self.kwargs.get('category_slug', '')
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
 
         if slug and slug != 'root':
             self.price_products, self.products_exist = services.filter_products_for_category(
@@ -136,7 +136,7 @@ class CategoryProductListView(DataMixin, FormView):
     # передадим данные в форму
     def get_initial(self):
         initial = super().get_initial()
-        slug = self.kwargs.get('category_slug', '')
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
         min_max_price = services.get_min_max_price_category(slug)
         initial = {**initial, **min_max_price}
         initial['get_params'] = self.request.GET
@@ -157,13 +157,17 @@ class CategoryProductListView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        slug = self.kwargs.get('category_slug', '')
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
         parent_categories = services.get_parents_category(slug, [])
 
         subdomain = self.get_subdomain()
         city_pre, _ = self.get_client_city(subdomain)
         phone = self.get_company_phone(subdomain)
-        description, title, h1 = services.get_info_about_category_for_seo(slug, city_pre, phone)
+        # description, title, h1 = services.get_info_about_category_for_seo(slug, city_pre, phone)
+        current_category = parent_categories[-1]
+        description = f'Заказать {current_category} в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить воздушные фильтры можно на сайте или по тел.: {phone}.'
+        title = f'{current_category}, купить в {city_pre} по выгодной цене'
+        h1 = f'{current_category}'
 
         if slug == 'root':
             root_categories = services.get_root_categories()
