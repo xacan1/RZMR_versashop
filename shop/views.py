@@ -22,8 +22,9 @@ class IndexShopView(DataMixin, FormView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         top_products = services.get_top_sales()
+        title = f'{_("Shop")} - {settings.COMPANY_NAME_SHORT}'
         context['top_products'] = top_products
-        c_def = self.get_user_context(title=_('Shop'))
+        c_def = self.get_user_context(title=title)
         return {**context, **c_def}
 
 
@@ -43,6 +44,7 @@ class CartView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        title=f'{_("Cart")} - {settings.COMPANY_NAME_SHORT}'
         c_def = self.get_user_context(title=_('Cart'))
         return {**context, **c_def}
 
@@ -265,7 +267,7 @@ class ProductDetailView(DataMixin, DetailView):
         stocks = kwargs['object'].get_stock_product.all()
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
-        title = f"{kwargs['object'].name}, купить в городе {city_pre}"
+        title = f'{kwargs["object"].name}, купить в {city_pre} - {settings.COMPANY_NAME_SHORT}'
         phone = self.get_company_phone(subdomain)
         description = f"""{kwargs['object'].name} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}.
           Гибкая ценовая политика. 100% гарантия качества. Вся продукция сертифицирована. 

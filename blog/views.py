@@ -21,7 +21,7 @@ class PostListView(DataMixin, ListView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Статьи'
+        title = f'Статьи - {settings.COMPANY_NAME_SHORT}'
         description = f'В данном разделе вы можете ознакомиться со статьями компании {settings.COMPANY_NAME}'
         breadcrumb = [('posts', title),]
         c_def = self.get_user_context(title=title,

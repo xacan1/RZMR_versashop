@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{% static 'rzmr/fonts/ProximaNova/stylesheet.css' %}">
     <link rel="stylesheet" href="{% static 'rzmr/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'rzmr/css/main.css' %}">
-    <title>{{ title }} - {{ company_name_short }}</title>
+    <title>{{ title }}</title>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -225,7 +225,7 @@
                                     </li>
                                     <!-- <li><hr class="dropdown-divider"></li> -->
                                     <li><a class="dropdown-item" href="{% url 'our-customer' %}">{% trans 'Our clients' %}</a></li>
-                                    <li><a class="dropdown-item" href="{% url 'vacancies' %}">{% trans 'Career' %}</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'vacancies' %}">{% trans 'Vacancies' %}</a></li>
                                     {% if LANGUAGE_CODE == 'ru' %}
                                     <li><a class="dropdown-item" href="{% url 'for-suppliers' %}">Поставщикам</a></li>
                                     {% if user.is_staff %}
@@ -378,7 +378,7 @@
                     <p class="footer-title">{% trans 'About us' %}</p>
                     <div><a href="{% url 'quality' %}">{% trans 'Quality and certification system' %}</a></div>
                     <div><a href="{% url 'our-customer' %}">{% trans 'Our clients' %}</a></div>
-                    <div><a href="{% url 'vacancies' %}">{% trans 'Career' %}</a></div>
+                    <div><a href="{% url 'vacancies' %}">{% trans 'Vacancies' %}</a></div>
                     <div><a href="{% url 'contacts' %}">{% trans 'Contacts' %}</a></div>
                     <div><a href="{% url 'spheres' %}">Сферы применения</a></div>
                 </div>

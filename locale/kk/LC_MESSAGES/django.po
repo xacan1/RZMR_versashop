@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-23 21:13+0000\n"
+"POT-Creation-Date: 2025-04-28 11:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgid "Password confirmation"
 msgstr ""
 
 #: main/forms.py:47
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1915
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1920
 msgid "Email address"
 msgstr "Email"
 
@@ -69,7 +69,7 @@ msgstr "Тіркелгіңізге кіріңіз"
 
 #: main/templates/main/login.html:18 main/templates/main/register.html:22
 #: main/templates/main/registration-success.html:10
-#: rzmr/templates/rzmr/base.html:147 templates/admin/login.html:66
+#: rzmr/templates/rzmr/base.html:132 templates/admin/login.html:66
 msgid "Log in"
 msgstr ""
 
@@ -78,7 +78,7 @@ msgid "Forgot password"
 msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
 
 #: main/templates/main/login.html:22 main/templates/main/register.html:20
-#: main/views.py:44 rzmr/templates/rzmr/base.html:150
+#: main/views.py:44 rzmr/templates/rzmr/base.html:135
 msgid "Register"
 msgstr "Тіркеу"
 
@@ -105,9 +105,9 @@ msgstr "Сіз сайтқа сәтті тіркелдіңіз"
 #: main/views.py:59 main/views.py:71 main/views.py:84 main/views.py:97
 #: main/views.py:108 main/views.py:122 personal_account/views.py:18
 #: personal_account/views.py:32 personal_account/views.py:47
-#: personal_account/views.py:72 rzmr/templates/rzmr/base.html:128
-#: rzmr/templates/rzmr/index.html:270 shop/views.py:326 shop/views.py:373
-#: shop/views.py:388
+#: personal_account/views.py:72 rzmr/templates/rzmr/base.html:113
+#: rzmr/templates/rzmr/index.html:275 shop/views.py:350 shop/views.py:397
+#: shop/views.py:412
 msgid "Personal account"
 msgstr "Жеке кабинет"
 
@@ -126,7 +126,7 @@ msgstr "Бөлімдер"
 #: personal_account/templates/personal_account/base.html:18
 #: personal_account/templates/personal_account/base.html:20
 #: personal_account/templates/personal_account/personal-account-orders.html:10
-#: personal_account/views.py:46 shop/views.py:327
+#: personal_account/views.py:46 shop/views.py:351
 msgid "Orders"
 msgstr "Тапсырыстар"
 
@@ -187,13 +187,13 @@ msgstr "белгілі емес"
 
 #: personal_account/templates/personal_account/personal-account-orders.html:42
 #: personal_account/templates/personal_account/personal-account-orders.html:49
-#: venv/lib/python3.11/site-packages/django/forms/widgets.py:801
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:867
 msgid "Yes"
 msgstr ""
 
 #: personal_account/templates/personal_account/personal-account-orders.html:44
 #: personal_account/templates/personal_account/personal-account-orders.html:51
-#: venv/lib/python3.11/site-packages/django/forms/widgets.py:802
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:868
 msgid "No"
 msgstr ""
 
@@ -212,226 +212,220 @@ msgstr "Баға түрі"
 msgid "Change password"
 msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
 
-#: rzmr/templates/rzmr/about.html:123 rzmr/templates/rzmr/index.html:291
+#: rzmr/templates/rzmr/about.html:123 rzmr/templates/rzmr/index.html:298
 msgid "Our partners"
 msgstr "Біздің серіктестер"
 
-#: rzmr/templates/rzmr/base.html:74
-#: rzmr/templates/rzmr/select_city_modal.html:6
+#: rzmr/templates/rzmr/base.html:58
+#: rzmr/templates/rzmr/select_city_modal.html:7
 msgid "Select a city"
 msgstr "Қаланы таңдаңыз"
 
-#: rzmr/templates/rzmr/base.html:84 rzmr/templates/rzmr/base.html:463
-#: rzmr/templates/rzmr/request_phone_call_modal.html:6
+#: rzmr/templates/rzmr/base.html:69 rzmr/templates/rzmr/base.html:448
+#: rzmr/templates/rzmr/request_phone_call_modal.html:7
 msgid "Request a call"
 msgstr "Қоңырауға тапсырыс беру"
 
-#: rzmr/templates/rzmr/base.html:107
-#: venv/lib/python3.11/site-packages/django/forms/widgets.py:463
+#: rzmr/templates/rzmr/base.html:92
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:529
 msgid "Change"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:135
+#: rzmr/templates/rzmr/base.html:120
 msgid "Log out"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:211
+#: rzmr/templates/rzmr/base.html:196
 msgid "View cart"
 msgstr "Себет"
 
-#: rzmr/templates/rzmr/base.html:236
+#: rzmr/templates/rzmr/base.html:221
 msgid "Company"
 msgstr "Компания"
 
-#: rzmr/templates/rzmr/base.html:238 rzmr/templates/rzmr/base.html:392
-#: rzmr/views.py:63
+#: rzmr/templates/rzmr/base.html:223 rzmr/templates/rzmr/base.html:378
 msgid "About us"
 msgstr "Зауыт туралы ақпарат"
 
-#: rzmr/templates/rzmr/base.html:239 rzmr/templates/rzmr/base.html:393
-#: rzmr/views.py:75
+#: rzmr/templates/rzmr/base.html:224 rzmr/templates/rzmr/base.html:379
 msgid "Quality and certification system"
 msgstr "Сапа және сертификаттау жүйесі"
 
-#: rzmr/templates/rzmr/base.html:242 rzmr/templates/rzmr/base.html:394
-#: rzmr/views.py:87
+#: rzmr/templates/rzmr/base.html:227 rzmr/templates/rzmr/base.html:380
 msgid "Our clients"
 msgstr "Біздің клиенттеріміз"
 
-#: rzmr/templates/rzmr/base.html:243 rzmr/templates/rzmr/base.html:395
-#: rzmr/views.py:111
-msgid "Career"
+#: rzmr/templates/rzmr/base.html:228 rzmr/templates/rzmr/base.html:381
+msgid "Vacancies"
 msgstr "Бос жұмыс орындары"
 
-#: rzmr/templates/rzmr/base.html:251 rzmr/templates/rzmr/base.html:396
-#: rzmr/templates/rzmr/base.html:462 rzmr/views.py:123
+#: rzmr/templates/rzmr/base.html:236 rzmr/templates/rzmr/base.html:382
+#: rzmr/templates/rzmr/base.html:447 rzmr/views.py:192
 msgid "Contacts"
 msgstr "Контактілер"
 
-#: rzmr/templates/rzmr/base.html:258 rzmr/templates/rzmr/base.html:260
-#: rzmr/templates/rzmr/base.html:400 rzmr/templates/rzmr/index.html:12
-#: rzmr/templates/rzmr/index.html:137 rzmr/templates/rzmr/metalhoses.html:455
-#: rzmr/templates/rzmr/metalhoses.html:461
-#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:354
-#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:357
-#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:363
-#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:371
-#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:374
-#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:380
-#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:376
-#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:379
-#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:385
-#: rzmr/templates/rzmr/metalhoses_rgm.html:365
-#: rzmr/templates/rzmr/metalhoses_rgm.html:371
-#: rzmr/templates/rzmr/metalhoses_v_opletke.html:172
-#: rzmr/templates/rzmr/metalhoses_v_opletke.html:178 rzmr/views.py:206
-#: rzmr/views.py:219 rzmr/views.py:232 rzmr/views.py:245 rzmr/views.py:258
-#: rzmr/views.py:271 rzmr/views.py:284 rzmr/views.py:316 rzmr/views.py:330
-#: rzmr/views.py:360 rzmr/views.py:374 rzmr/views.py:406 rzmr/views.py:420
-#: rzmr/views.py:452 rzmr/views.py:465 rzmr/views.py:479 rzmr/views.py:492
-#: rzmr/views.py:505 rzmr/views.py:518 rzmr/views.py:531
+#: rzmr/templates/rzmr/base.html:243 rzmr/templates/rzmr/base.html:245
+#: rzmr/templates/rzmr/base.html:386 rzmr/templates/rzmr/index.html:12
+#: rzmr/templates/rzmr/index.html:137 rzmr/templates/rzmr/metalhoses.html:1211
+#: rzmr/templates/rzmr/metalhoses.html:1217
+#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:819
+#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:822
+#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:828
+#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:858
+#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:861
+#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:867
+#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:902
+#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:905
+#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:911
+#: rzmr/templates/rzmr/metalhoses_rgm.html:793
+#: rzmr/templates/rzmr/metalhoses_rgm.html:799
+#: rzmr/templates/rzmr/metalhoses_v_opletke.html:624
+#: rzmr/templates/rzmr/metalhoses_v_opletke.html:630 rzmr/views.py:283
+#: rzmr/views.py:297 rzmr/views.py:310 rzmr/views.py:336 rzmr/views.py:353
+#: rzmr/views.py:373 rzmr/views.py:412 rzmr/views.py:433 rzmr/views.py:466
+#: rzmr/views.py:483 rzmr/views.py:518 rzmr/views.py:537 rzmr/views.py:575
+#: rzmr/views.py:591 rzmr/views.py:607 rzmr/views.py:625 rzmr/views.py:643
+#: rzmr/views.py:659 rzmr/views.py:672
 msgid "Metal hoses"
 msgstr "Металиілгіш түтіктер"
 
-#: rzmr/templates/rzmr/base.html:261 rzmr/templates/rzmr/base.html:275
-#: rzmr/templates/rzmr/base.html:401 rzmr/templates/rzmr/base.html:415
-#: rzmr/views.py:270
+#: rzmr/templates/rzmr/base.html:246 rzmr/templates/rzmr/base.html:260
+#: rzmr/templates/rzmr/base.html:387 rzmr/templates/rzmr/base.html:400
 msgid "Fittings"
 msgstr "Ұштық арматура"
 
-#: rzmr/templates/rzmr/base.html:262 rzmr/templates/rzmr/base.html:273
-#: rzmr/templates/rzmr/base.html:402 rzmr/templates/rzmr/base.html:416
+#: rzmr/templates/rzmr/base.html:247 rzmr/templates/rzmr/base.html:258
+#: rzmr/templates/rzmr/base.html:388 rzmr/templates/rzmr/base.html:401
 msgid "Guidance"
 msgstr "Таңдау бойынша ұсыныстар"
 
-#: rzmr/templates/rzmr/base.html:263 rzmr/templates/rzmr/base.html:274
-#: rzmr/templates/rzmr/base.html:403
+#: rzmr/templates/rzmr/base.html:248 rzmr/templates/rzmr/base.html:259
+#: rzmr/templates/rzmr/base.html:389
 msgid "Installations"
 msgstr "Монтаж және қауіпсіздік"
 
-#: rzmr/templates/rzmr/base.html:264 rzmr/templates/rzmr/base.html:276
-#: rzmr/templates/rzmr/base.html:404 rzmr/templates/rzmr/base.html:417
+#: rzmr/templates/rzmr/base.html:249 rzmr/templates/rzmr/base.html:261
+#: rzmr/templates/rzmr/base.html:390 rzmr/templates/rzmr/base.html:402
 msgid "Quality standards"
 msgstr "Сапа стандарттары"
 
-#: rzmr/templates/rzmr/base.html:269 rzmr/templates/rzmr/base.html:413
-#: rzmr/templates/rzmr/base.html:419 rzmr/templates/rzmr/base.html:420
+#: rzmr/templates/rzmr/base.html:254 rzmr/templates/rzmr/base.html:398
+#: rzmr/templates/rzmr/base.html:404 rzmr/templates/rzmr/base.html:405
 #: rzmr/templates/rzmr/index.html:32 rzmr/templates/rzmr/index.html:151
-#: rzmr/templates/rzmr/ptfe.html:365 rzmr/templates/rzmr/ptfe.html:368
-#: rzmr/templates/rzmr/ptfe_braid.html:167
-#: rzmr/templates/rzmr/ptfe_braid.html:170
-#: rzmr/templates/rzmr/ptfe_gofrirovanniy.html:275
-#: rzmr/templates/rzmr/ptfe_gofrirovanniy.html:278
+#: rzmr/templates/rzmr/ptfe.html:754 rzmr/templates/rzmr/ptfe.html:757
+#: rzmr/templates/rzmr/ptfe_braid.html:615
+#: rzmr/templates/rzmr/ptfe_braid.html:618
+#: rzmr/templates/rzmr/ptfe_gofrirovanniy.html:740
+#: rzmr/templates/rzmr/ptfe_gofrirovanniy.html:743
 #: rzmr/templates/rzmr/ptfe_hpress.html:233
-#: rzmr/templates/rzmr/ptfe_hpress.html:236 rzmr/views.py:543 rzmr/views.py:555
-#: rzmr/views.py:568 rzmr/views.py:581 rzmr/views.py:594 rzmr/views.py:607
-#: rzmr/views.py:620 rzmr/views.py:633 rzmr/views.py:664 rzmr/views.py:678
-#: rzmr/views.py:708 rzmr/views.py:722 rzmr/views.py:752 rzmr/views.py:766
-#: rzmr/views.py:795 rzmr/views.py:809 rzmr/views.py:841
+#: rzmr/templates/rzmr/ptfe_hpress.html:236 rzmr/views.py:689 rzmr/views.py:704
+#: rzmr/views.py:718 rzmr/views.py:734 rzmr/views.py:751 rzmr/views.py:768
+#: rzmr/views.py:783 rzmr/views.py:797 rzmr/views.py:831 rzmr/views.py:847
+#: rzmr/views.py:877 rzmr/views.py:892 rzmr/views.py:925 rzmr/views.py:942
+#: rzmr/views.py:974 rzmr/views.py:991 rzmr/views.py:1026
 msgid "PTFE Metal hoses"
 msgstr "Фторопластық иілгіш түтіктер"
 
-#: rzmr/templates/rzmr/base.html:271 rzmr/templates/rzmr/base.html:414
+#: rzmr/templates/rzmr/base.html:256 rzmr/templates/rzmr/base.html:399
 msgid "PH (fluoroplastic hose)  PTFE hoses"
 msgstr "РФ сериялы фторопласты иілгіш түтіктер"
 
-#: rzmr/templates/rzmr/base.html:284
+#: rzmr/templates/rzmr/base.html:269
 msgid "Composite hoses"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:286
+#: rzmr/templates/rzmr/base.html:271
 msgid "All composite hoses"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:287
+#: rzmr/templates/rzmr/base.html:272
 msgid "EGE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:288
+#: rzmr/templates/rzmr/base.html:273
 msgid "SSE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:289
+#: rzmr/templates/rzmr/base.html:274
 msgid "SST construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:290
+#: rzmr/templates/rzmr/base.html:275
 msgid "SGT construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:291
+#: rzmr/templates/rzmr/base.html:276
 msgid "SGE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:292
+#: rzmr/templates/rzmr/base.html:277
 msgid "GGE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:293
+#: rzmr/templates/rzmr/base.html:278
 msgid "AAE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:299 rzmr/templates/rzmr/index.html:22
-#: rzmr/templates/rzmr/index.html:187
+#: rzmr/templates/rzmr/base.html:284 rzmr/templates/rzmr/index.html:22
+#: rzmr/templates/rzmr/index.html:188
 msgid "Filters and units"
 msgstr "Сүзгілер мен агрегаттар"
 
-#: rzmr/templates/rzmr/base.html:320 rzmr/templates/rzmr/base.html:445
+#: rzmr/templates/rzmr/base.html:305 rzmr/templates/rzmr/base.html:430
 msgid "Engineering and non-standard equipment"
 msgstr "Cтандартты емес жабдықтар"
 
-#: rzmr/templates/rzmr/base.html:322 rzmr/templates/rzmr/base.html:447
+#: rzmr/templates/rzmr/base.html:307 rzmr/templates/rzmr/base.html:432
 msgid "Сustom-made products"
 msgstr "Тапсырыс берушінің сызбалары бойынша"
 
-#: rzmr/templates/rzmr/base.html:323 rzmr/templates/rzmr/base.html:446
+#: rzmr/templates/rzmr/base.html:308 rzmr/templates/rzmr/base.html:431
 msgid "Technological equipment"
 msgstr "Технологиялық жабдық"
 
-#: rzmr/templates/rzmr/base.html:324 rzmr/templates/rzmr/base.html:448
-#: rzmr/templates/rzmr/index.html:282
+#: rzmr/templates/rzmr/base.html:309 rzmr/templates/rzmr/base.html:433
+#: rzmr/templates/rzmr/index.html:289
 msgid "Leak and strength tests"
 msgstr "Қымтаулылықты және беріктікті сынау"
 
-#: rzmr/templates/rzmr/base.html:329 rzmr/templates/rzmr/index.html:213
-#: rzmr/templates/rzmr/index.html:224
+#: rzmr/templates/rzmr/base.html:314 rzmr/templates/rzmr/index.html:215
+#: rzmr/templates/rzmr/index.html:227
 msgid "Online constructor"
 msgstr "Онлайн конструктор"
 
-#: rzmr/templates/rzmr/base.html:338 rzmr/templates/rzmr/base.html:357
+#: rzmr/templates/rzmr/base.html:323 rzmr/templates/rzmr/base.html:342
 msgid "Home page"
 msgstr "Негізгі бет"
 
-#: rzmr/templates/rzmr/base.html:405 rzmr/templates/rzmr/metalhoses.html:449
-#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:360
-#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:368
-#: rzmr/templates/rzmr/metalhoses_rgm.html:359
-#: rzmr/templates/rzmr/metalhoses_v_opletke.html:166
+#: rzmr/templates/rzmr/base.html:391 rzmr/templates/rzmr/metalhoses.html:1205
+#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:825
+#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:855
+#: rzmr/templates/rzmr/metalhoses_rgm.html:787
+#: rzmr/templates/rzmr/metalhoses_v_opletke.html:618
 msgid "For welding"
 msgstr "Дәнекерлеу үшін"
 
-#: rzmr/templates/rzmr/base.html:406 rzmr/templates/rzmr/metalhoses.html:452
-#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:351
-#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:373
-#: rzmr/templates/rzmr/metalhoses_rgm.html:362
-#: rzmr/templates/rzmr/metalhoses_v_opletke.html:169 rzmr/views.py:517
+#: rzmr/templates/rzmr/base.html:392 rzmr/templates/rzmr/metalhoses.html:1208
+#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:816
+#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:899
+#: rzmr/templates/rzmr/metalhoses_rgm.html:790
+#: rzmr/templates/rzmr/metalhoses_v_opletke.html:621 rzmr/views.py:658
 msgid "High pressure metal hoses"
 msgstr "жоғары қысымды металл шлангілер"
 
-#: rzmr/templates/rzmr/base.html:418
-#: rzmr/templates/rzmr/ptfe_gofrirovanniy.html:11
+#: rzmr/templates/rzmr/base.html:403
 msgid "Corrugated"
 msgstr "Гофрленген"
 
-#: rzmr/templates/rzmr/base.html:470
+#: rzmr/templates/rzmr/base.html:455
 msgid "«Russian factory of metal hoses» Co.Ltd"
 msgstr "«Ресей металл шланг зауыты» ЖШС"
 
-#: rzmr/templates/rzmr/base.html:470
+#: rzmr/templates/rzmr/base.html:455
 msgid "All rights reserved"
 msgstr "Барлық құқықтар сақталған"
 
-#: rzmr/templates/rzmr/base.html:471 rzmr/views.py:892
+#: rzmr/templates/rzmr/base.html:456 rzmr/views.py:1088
 msgid "Privacy policy"
 msgstr "Құпиялылық саясаты"
 
@@ -455,7 +449,8 @@ msgstr "Кез келген күрделіліктегі фитингтер"
 msgid "Own production"
 msgstr "Меншікті өндіріс"
 
-#: rzmr/templates/rzmr/index.html:52 rzmr/views.py:988 rzmr/views.py:1011
+#: rzmr/templates/rzmr/index.html:52 rzmr/views.py:1237 rzmr/views.py:1238
+#: rzmr/views.py:1277
 msgid "Flange connections"
 msgstr "Фланецті қосылыстар"
 
@@ -515,31 +510,31 @@ msgstr "Өнімдер"
 msgid "Fabric"
 msgstr "Мата"
 
-#: rzmr/templates/rzmr/index.html:164 rzmr/templates/rzmr/index.html:176
+#: rzmr/templates/rzmr/index.html:164 rzmr/templates/rzmr/index.html:177
 msgid "compensators"
 msgstr "кеңейту буындары"
 
-#: rzmr/templates/rzmr/index.html:175
+#: rzmr/templates/rzmr/index.html:176
 msgid "Bellows"
 msgstr "Сильфонды"
 
-#: rzmr/templates/rzmr/index.html:201
+#: rzmr/templates/rzmr/index.html:203
 msgid "Non-standard"
 msgstr "Стандартты емес"
 
-#: rzmr/templates/rzmr/index.html:202
+#: rzmr/templates/rzmr/index.html:204
 msgid "equipment"
 msgstr "жабдық"
 
-#: rzmr/templates/rzmr/index.html:224
+#: rzmr/templates/rzmr/index.html:227
 msgid "go to"
 msgstr "Перейти в"
 
-#: rzmr/templates/rzmr/index.html:234
+#: rzmr/templates/rzmr/index.html:237
 msgid "Why us"
 msgstr "Неге біз"
 
-#: rzmr/templates/rzmr/index.html:244
+#: rzmr/templates/rzmr/index.html:247
 msgid ""
 "Order fulfillment in a short time due to own capacities and established "
 "relations with material suppliers"
@@ -547,24 +542,24 @@ msgstr ""
 "Өз қуаттарымыз және материалдарды жеткізушілермен ретке қойылған "
 "қатынастарымыздың есебінен қысқа мерзімдер"
 
-#: rzmr/templates/rzmr/index.html:249
+#: rzmr/templates/rzmr/index.html:252
 msgid "Profitable prices for our partners"
 msgstr ""
 "Тұрақты клиенттерге адалдықтың ойластырылған жүйесі есебінен ұтымды баға"
 
-#: rzmr/templates/rzmr/index.html:253
+#: rzmr/templates/rzmr/index.html:256
 msgid "Delivery throughout Russia and CIS countries"
 msgstr "Ресей және ТМД елдерінің барлық аумағына жеткізу"
 
-#: rzmr/templates/rzmr/index.html:257
+#: rzmr/templates/rzmr/index.html:260
 msgid "Individual approach"
 msgstr "Әр клиентке жеке көзқарас"
 
-#: rzmr/templates/rzmr/index.html:264
+#: rzmr/templates/rzmr/index.html:268
 msgid "End fittings map"
 msgstr "Ұштық арматура картасы"
 
-#: rzmr/templates/rzmr/index.html:276
+#: rzmr/templates/rzmr/index.html:282
 msgid "Production by customer drawings"
 msgstr "Бөлшектерді Тапсырыс берушінің сызбалары бойынша дайындау"
 
@@ -638,8 +633,8 @@ msgstr "Тапсырыстар тізіміне"
 
 #: shop/templates/shop/product-details.html:79
 #: shop/templates/shop/product-details.html:81
-#: shop/templates/shop/product-list.html:146
-#: shop/templates/shop/product-list.html:205
+#: shop/templates/shop/product-list.html:151
+#: shop/templates/shop/product-list.html:227
 msgid "Add to cart"
 msgstr "Себетке қосу"
 
@@ -647,27 +642,27 @@ msgstr "Себетке қосу"
 msgid "To favorites"
 msgstr "Таңдаулыларға"
 
-#: shop/templates/shop/product-list.html:17
+#: shop/templates/shop/product-list.html:22
 msgid "Maximum price"
 msgstr "Максималды баға"
 
-#: shop/templates/shop/product-list.html:26
+#: shop/templates/shop/product-list.html:31
 msgid "Selection of parameters"
 msgstr "Параметрлерді таңдау"
 
-#: shop/templates/shop/product-list.html:28
+#: shop/templates/shop/product-list.html:33
 msgid "Filter"
 msgstr "Сүзгі"
 
-#: shop/templates/shop/product-list.html:70
+#: shop/templates/shop/product-list.html:75
 msgid "Search"
 msgstr ""
 
-#: shop/templates/shop/product-list.html:138
+#: shop/templates/shop/product-list.html:143
 msgid "Price on request"
 msgstr "Бағасы сұраныс бойынша"
 
-#: shop/templates/shop/product-list.html:156
+#: shop/templates/shop/product-list.html:161
 msgid "nothing found"
 msgstr "ештеңе табылмады"
 
@@ -684,11 +679,11 @@ msgstr ""
 msgid "Do not choose anything yet? Time to check out our catalog!"
 msgstr "Әлі ештеңе таңдамайсыз ба? Біздің каталогты тексеретін уақыт!"
 
-#: shop/views.py:25
+#: shop/views.py:26
 msgid "Shop"
 msgstr "Дүкен"
 
-#: shop/views.py:45
+#: shop/views.py:46
 msgid "Cart"
 msgstr "Себет"
 
@@ -753,86 +748,86 @@ msgstr ""
 msgid "Enter a valid domain name."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:155
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:768
+#: venv/lib/python3.11/site-packages/django/core/validators.py:153
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:775
 msgid "Enter a valid URL."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:216
+#: venv/lib/python3.11/site-packages/django/core/validators.py:200
 msgid "Enter a valid integer."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:227
+#: venv/lib/python3.11/site-packages/django/core/validators.py:211
 #, fuzzy
 #| msgid "Email address"
 msgid "Enter a valid email address."
 msgstr "Email"
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
-#: venv/lib/python3.11/site-packages/django/core/validators.py:310
+#: venv/lib/python3.11/site-packages/django/core/validators.py:289
 msgid ""
 "Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:318
+#: venv/lib/python3.11/site-packages/django/core/validators.py:297
 msgid ""
 "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
 "hyphens."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:330
-#: venv/lib/python3.11/site-packages/django/core/validators.py:339
-#: venv/lib/python3.11/site-packages/django/core/validators.py:353
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2215
+#: venv/lib/python3.11/site-packages/django/core/validators.py:309
+#: venv/lib/python3.11/site-packages/django/core/validators.py:318
+#: venv/lib/python3.11/site-packages/django/core/validators.py:332
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2220
 #, python-format
 msgid "Enter a valid %(protocol)s address."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:332
+#: venv/lib/python3.11/site-packages/django/core/validators.py:311
 msgid "IPv4"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:341
+#: venv/lib/python3.11/site-packages/django/core/validators.py:320
 #: venv/lib/python3.11/site-packages/django/utils/ipv6.py:43
 msgid "IPv6"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:355
+#: venv/lib/python3.11/site-packages/django/core/validators.py:334
 msgid "IPv4 or IPv6"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:396
+#: venv/lib/python3.11/site-packages/django/core/validators.py:375
 msgid "Enter only digits separated by commas."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:402
+#: venv/lib/python3.11/site-packages/django/core/validators.py:381
 #, python-format
 msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:437
+#: venv/lib/python3.11/site-packages/django/core/validators.py:416
 #, python-format
 msgid "Ensure this value is less than or equal to %(limit_value)s."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:446
+#: venv/lib/python3.11/site-packages/django/core/validators.py:425
 #, python-format
 msgid "Ensure this value is greater than or equal to %(limit_value)s."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:455
+#: venv/lib/python3.11/site-packages/django/core/validators.py:434
 #, python-format
 msgid "Ensure this value is a multiple of step size %(limit_value)s."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:462
+#: venv/lib/python3.11/site-packages/django/core/validators.py:441
 #, python-format
 msgid ""
 "Ensure this value is a multiple of step size %(limit_value)s, starting from "
 "%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:494
+#: venv/lib/python3.11/site-packages/django/core/validators.py:473
 #, python-format
 msgid ""
 "Ensure this value has at least %(limit_value)d character (it has "
@@ -843,7 +838,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:512
+#: venv/lib/python3.11/site-packages/django/core/validators.py:491
 #, python-format
 msgid ""
 "Ensure this value has at most %(limit_value)d character (it has "
@@ -854,27 +849,27 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:535
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:359
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:398
+#: venv/lib/python3.11/site-packages/django/core/validators.py:514
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:366
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:405
 msgid "Enter a number."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:537
+#: venv/lib/python3.11/site-packages/django/core/validators.py:516
 #, python-format
 msgid "Ensure that there are no more than %(max)s digit in total."
 msgid_plural "Ensure that there are no more than %(max)s digits in total."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:542
+#: venv/lib/python3.11/site-packages/django/core/validators.py:521
 #, python-format
 msgid "Ensure that there are no more than %(max)s decimal place."
 msgid_plural "Ensure that there are no more than %(max)s decimal places."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:547
+#: venv/lib/python3.11/site-packages/django/core/validators.py:526
 #, python-format
 msgid ""
 "Ensure that there are no more than %(max)s digit before the decimal point."
@@ -883,23 +878,23 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:618
+#: venv/lib/python3.11/site-packages/django/core/validators.py:597
 #, python-format
 msgid ""
 "File extension “%(extension)s” is not allowed. Allowed extensions are: "
 "%(allowed_extensions)s."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/core/validators.py:680
+#: venv/lib/python3.11/site-packages/django/core/validators.py:659
 msgid "Null characters are not allowed."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/base.py:1572
+#: venv/lib/python3.11/site-packages/django/db/models/base.py:1600
 #: venv/lib/python3.11/site-packages/django/forms/models.py:908
 msgid "and"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/base.py:1574
+#: venv/lib/python3.11/site-packages/django/db/models/base.py:1602
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr ""
@@ -940,195 +935,195 @@ msgstr ""
 msgid "Field of type: %(field_type)s"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1156
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1162
 #, python-format
 msgid "“%(value)s” value must be either True or False."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1157
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1163
 #, python-format
 msgid "“%(value)s” value must be either True, False, or None."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1159
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1165
 msgid "Boolean (Either True or False)"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1209
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1215
 #, python-format
 msgid "String (up to %(max_length)s)"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1211
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1217
 msgid "String (unlimited)"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1320
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1326
 msgid "Comma-separated integers"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1421
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1427
 #, python-format
 msgid ""
 "“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
 "format."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1425
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1560
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1431
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1566
 #, python-format
 msgid ""
 "“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
 "date."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1429
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1435
 msgid "Date (without time)"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1556
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1562
 #, python-format
 msgid ""
 "“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
 "uuuuuu]][TZ] format."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1564
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1570
 #, python-format
 msgid ""
 "“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
 "[TZ]) but it is an invalid date/time."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1569
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1575
 msgid "Date (with time)"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1696
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1702
 #, python-format
 msgid "“%(value)s” value must be a decimal number."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1698
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1704
 msgid "Decimal number"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1859
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1864
 #, python-format
 msgid ""
 "“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
 "uuuuuu] format."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1863
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1868
 msgid "Duration"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1940
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1945
 msgid "File path"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2018
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2023
 #, python-format
 msgid "“%(value)s” value must be a float."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2020
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2025
 msgid "Floating point number"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2060
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2065
 #, python-format
 msgid "“%(value)s” value must be an integer."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2062
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2067
 msgid "Integer"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2158
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2163
 msgid "Big (8 byte) integer"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2175
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2180
 msgid "Small integer"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2183
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2188
 #, fuzzy
 #| msgid "Postal address"
 msgid "IPv4 address"
 msgstr "Пошталық мекенжай"
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2214
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2219
 #, fuzzy
 #| msgid "Postal address"
 msgid "IP address"
 msgstr "Пошталық мекенжай"
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2305
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2306
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2310
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2311
 #, python-format
 msgid "“%(value)s” value must be either None, True or False."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2308
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2313
 msgid "Boolean (Either True, False or None)"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2359
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2364
 msgid "Positive big integer"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2374
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2379
 msgid "Positive integer"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2389
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2394
 msgid "Positive small integer"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2405
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2410
 #, python-format
 msgid "Slug (up to %(max_length)s)"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2441
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2446
 msgid "Text"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2521
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2526
 #, python-format
 msgid ""
 "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
 "format."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2525
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2530
 #, python-format
 msgid ""
 "“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
 "invalid time."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2529
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2534
 msgid "Time"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2637
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2642
 msgid "URL"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2661
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2666
 msgid "Raw binary data"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2726
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2731
 #, python-format
 msgid "“%(value)s” is not a valid UUID."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2728
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2733
 msgid "Universally unique identifier"
 msgstr ""
 
@@ -1148,30 +1143,30 @@ msgstr ""
 msgid "Value must be valid JSON."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:932
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:978
 #, python-format
-msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:934
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:981
 msgid "Foreign Key (type determined by related field)"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1228
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1275
 msgid "One-to-one relationship"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1285
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1332
 #, python-format
 msgid "%(from)s-%(to)s relationship"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1287
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1334
 #, python-format
 msgid "%(from)s-%(to)s relationships"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1335
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1382
 msgid "Many-to-many relationship"
 msgstr ""
 
@@ -1185,46 +1180,46 @@ msgstr ""
 msgid "This field is required."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:308
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:315
 msgid "Enter a whole number."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:479
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1260
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:486
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1267
 msgid "Enter a valid date."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:502
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1261
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:509
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1268
 msgid "Enter a valid time."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:529
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:536
 msgid "Enter a valid date/time."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:563
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:570
 msgid "Enter a valid duration."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:564
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:571
 #, python-brace-format
 msgid "The number of days must be between {min_days} and {max_days}."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:633
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:640
 msgid "No file was submitted. Check the encoding type on the form."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:634
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:641
 msgid "No file was submitted."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:635
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:642
 msgid "The submitted file is empty."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:637
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:644
 #, python-format
 msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
@@ -1232,47 +1227,47 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:642
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:649
 msgid "Please either submit a file or check the clear checkbox, not both."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:710
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:717
 msgid ""
 "Upload a valid image. The file you uploaded was either not an image or a "
 "corrupted image."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:882
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:968
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:889
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:975
 #: venv/lib/python3.11/site-packages/django/forms/models.py:1592
 #, python-format
 msgid "Select a valid choice. %(value)s is not one of the available choices."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:970
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1089
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:977
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1096
 #: venv/lib/python3.11/site-packages/django/forms/models.py:1590
 msgid "Enter a list of values."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1090
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1097
 msgid "Enter a complete value."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1332
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1339
 msgid "Enter a valid UUID."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1362
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1369
 msgid "Enter a valid JSON."
 msgstr ""
 
 #. Translators: This is the default suffix added to form field labels
-#: venv/lib/python3.11/site-packages/django/forms/forms.py:94
+#: venv/lib/python3.11/site-packages/django/forms/forms.py:97
 msgid ":"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/forms.py:230
+#: venv/lib/python3.11/site-packages/django/forms/forms.py:239
 #, python-format
 msgid "(Hidden field %(name)s) %(error)s"
 msgstr ""
@@ -1339,24 +1334,24 @@ msgstr ""
 msgid "“%(pk)s” is not a valid value."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/utils.py:227
+#: venv/lib/python3.11/site-packages/django/forms/utils.py:229
 #, python-format
 msgid ""
 "%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
 "may be ambiguous or it may not exist."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/widgets.py:461
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:527
 msgid "Clear"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/widgets.py:462
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:528
 #, fuzzy
 #| msgid "Currency"
 msgid "Currently"
 msgstr "Валюта"
 
-#: venv/lib/python3.11/site-packages/django/forms/widgets.py:800
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:866
 msgid "Unknown"
 msgstr ""
 
@@ -1843,20 +1838,20 @@ msgstr "белгілі емес"
 msgid "No week specified"
 msgstr "белгілі емес"
 
-#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:349
-#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:380
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:353
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:384
 #, python-format
 msgid "No %(verbose_name_plural)s available"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:652
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:680
 #, python-format
 msgid ""
 "Future %(verbose_name_plural)s not available because %(class_name)s."
 "allow_future is False."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:692
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:720
 #, python-format
 msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
 msgstr ""
@@ -1875,7 +1870,7 @@ msgstr ""
 msgid "Invalid page (%(page_number)s): %(message)s"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/views/generic/list.py:169
+#: venv/lib/python3.11/site-packages/django/views/generic/list.py:173
 #, python-format
 msgid "Empty list and “%(class_name)s.allow_empty” is False."
 msgstr ""
@@ -1941,19 +1936,17 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django_recaptcha/fields.py:20
-#: venv/lib/python3.11/site-packages/django_recaptcha/fields.py:21
-msgid "Error verifying reCAPTCHA, please try again."
-msgstr ""
-
-#: versa/settings.py:160
+#: versa/settings.py:174
 msgid "Russian"
 msgstr ""
 
-#: versa/settings.py:161
+#: versa/settings.py:175
 msgid "Kazakh"
 msgstr ""
 
-#: versa/settings.py:162
+#: versa/settings.py:176
 msgid "English"
 msgstr ""
+
+#~ msgid "Career"
+#~ msgstr "Бос жұмыс орындары"

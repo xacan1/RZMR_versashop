@@ -114,7 +114,7 @@ class AboutView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = _('About us')
+        title = f'{_("About us")} - {settings.COMPANY_NAME_SHORT}'
         description = f'{settings.COMPANY_NAME} ({settings.COMPANY_NAME_SHORT}) является одним из крупнейших поставщиков промышленного оборудования на рынке России и стран ближнего зарубежья. Наш опыт, наличие производственных мощностей позволяет в короткие сроки разрабатывать и производить уникальные, высоконадежные и долговечные изделия.'
         breadcrumb = [('about', title),]
         c_def = self.get_user_context(title=title,
@@ -129,7 +129,7 @@ class QualityView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = _('Quality and certification system')
+        title = f'{_("Quality and certification system")} - {settings.COMPANY_NAME_SHORT}'
         description = f'Продукция {settings.COMPANY_NAME} отвечает самым высоким стандартам в отрасли. Ключевым элементом поддержания надежности и долговечности производимых изделий является принятая система менеджмента качества ISO 9001-2015.'
         breadcrumb = [('quality', title),]
         c_def = self.get_user_context(title=title,
@@ -144,7 +144,7 @@ class OurCustomerView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = _('Our clients')
+        title = f'{_("Our clients")} - {settings.COMPANY_NAME_SHORT}'
         description = f'В данном разделе вы можете ознакомиться с клиентами компании {settings.COMPANY_NAME}.'
         breadcrumb = [('our-customer', title),]
         c_def = self.get_user_context(title=title,
@@ -159,7 +159,7 @@ class ForSuppliersView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Поставщикам'
+        title = f'Поставщикам - {settings.COMPANY_NAME_SHORT}'
         description = f'В данном разделе вы можете ознакомиться с информацией для поставщиков компании {settings.COMPANY_NAME}.'
         breadcrumb = [('for-suppliers', title),]
         c_def = self.get_user_context(title=title,
@@ -174,7 +174,7 @@ class VacanciesView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = _('Career')
+        title = f'{_("Vacancies")} - {settings.COMPANY_NAME_SHORT}'
         description = f'В данном разделе вы можете ознакомиться с актуальными вакансиями компании {settings.COMPANY_NAME}.'
         breadcrumb = [('vacancies', title),]
         c_def = self.get_user_context(title=title,
@@ -189,7 +189,7 @@ class ContactsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = _('Contacts')
+        title = f'_("Contacts") - {settings.COMPANY_NAME_SHORT}'
         description = f'В данном разделе вы можете ознакомиться с контактной информацией компании {settings.COMPANY_NAME}.'
         breadcrumb = [('contacts', title),]
         c_def = self.get_user_context(title=title,
@@ -278,7 +278,7 @@ class MetalhosesView(DataMixin, FormView):
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
         phone = self.get_company_phone(subdomain)
-        title = f"{_('Metal hoses')} в {city_pre}, заказать металлические рукава"
+        title = f'{_("Metal hoses")} в {city_pre}, заказать металлические рукава в {settings.COMPANY_NAME_SHORT}'
         description = f'Заказать металлорукава в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить гибкие герметичные металлические рукава можно на сайте или по тел.: {phone}.'
         breadcrumb = [('metalhoses', _('Metal hoses')),]
         c_def = self.get_user_context(title=title,
@@ -293,7 +293,7 @@ class MetalhosesForWeldingView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = f"{_('Metal hoses')} {_('For welding')}"
+        title = f'{_("Metal hoses")} {_("For welding")} - {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('', title),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
@@ -306,7 +306,7 @@ class MetalhosesRGMView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = f"{_('Metal hoses')} РГМ"
+        title = f'{_("Metal hoses")} РГМ - {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('', title),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
@@ -332,7 +332,7 @@ class MetalhosesVOpletkeView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = f"{_('Metal hoses')} в оплётке"
+        title = f'{_("Metal hoses")} в оплётке - {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('', title),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
@@ -347,9 +347,9 @@ class MetalhosesFittingsView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
-        title = f"{_('Fittings')} для металлорукавов в {city_pre}"
-        description = f"{_('Fittings')} (фитинги) от {settings.COMPANY_NAME} - Наша продукция востребована на рынке России и стран ближнего зарубежья"
-        h1 = f"{_('Fittings')} металлорукавов серии РГМ производства {settings.COMPANY_NAME_SHORT}"
+        title = f'{_("Fittings")} для металлорукавов в {city_pre} - {settings.COMPANY_NAME_SHORT}'
+        description = f'{_("Fittings")} (фитинги) от {settings.COMPANY_NAME} - Наша продукция востребована на рынке России и стран ближнего зарубежья'
+        h1 = f'{_("Fittings")} для металлорукавов серии РГМ производства {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('', h1),]
         c_def = self.get_user_context(title=title,
@@ -367,7 +367,7 @@ class MetalhosesCorrugationsView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
-        title = f'Гофрированные металлорукава РГМ в {city_pre}'
+        title = f'Гофрированные металлорукава РГМ в {city_pre} - {settings.COMPANY_NAME_SHORT}'
         description = f'Гофра для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         h1 = 'Гофрированные металлорукава РГМ'
         breadcrumb = [('metalhoses', _('Metal hoses')),
@@ -406,7 +406,7 @@ class MetalhosesCorrugationView(DataMixin, FormView):
             'spiralnaya': 'cпиральные',
             'dvukhsloynaya': 'двухслойные',
         }
-        title = f'Гофрированные металлорукава РГМ {suffix_title.get(slug, "")} в {city_pre}'
+        title = f'Гофрированные металлорукава РГМ {suffix_title.get(slug, "")} в {city_pre} - {settings.COMPANY_NAME_SHORT}'
         description = f'Гофры {suffix_title.get(slug, "")} для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         h1 = f'Гофрированные металлорукава РГМ {suffix_title.get(slug, "")}'
         breadcrumb = [('metalhoses', _('Metal hoses')),
@@ -428,8 +428,8 @@ class MetalhosesBraidsView(DataMixin, FormView):
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
         phone = self.get_company_phone(subdomain)
-        title = f'Металлорукава в оплетке в {city_pre}, заказать металлические рукава'
-        description = f'Заказать металлические рукава в оплетке из нержавеющей стали в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить металлорукава в металлической оплетке можно на сайте или по тел.: {phone}.'
+        title = f'Металлорукава в оплётке в {city_pre}, заказать металлические рукава в {settings.COMPANY_NAME_SHORT}'
+        description = f'Заказать металлические рукава в оплётке из нержавеющей стали в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить металлорукава в металлической оплетке можно на сайте или по тел.: {phone}.'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('', 'Металлорукава в оплетке'),]
         c_def = self.get_user_context(title=title,
@@ -461,7 +461,7 @@ class MetalhosesBraidView(DataMixin, FormView):
             'dvukhsloynaya': 'Двухслойная',
             'trekhsloynaya': 'Трёхслойная',
         }
-        title = f'{suffix_title.get(slug, "")} оплётка для металлорукавов'
+        title = f'{suffix_title.get(slug, "")} оплётка для металлорукавов - {settings.COMPANY_NAME_SHORT}'
         description = f'Оплётка {suffix_title.get(slug, "")} для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('metalhoses-braids', 'Оплётка'),
@@ -478,7 +478,7 @@ class MetalhosesInnersView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Внутренний экран для металлорукавов'
+        title = f'Внутренний экран для металлорукавов - {settings.COMPANY_NAME_SHORT}'
         description = f'Внутренний экран для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('', title),]
@@ -506,15 +506,16 @@ class MetalhosesInnerView(DataMixin, FormView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         slug = self.kwargs.get(self.slug_url_kwarg, '')
-
+        subdomain = self.get_subdomain()
+        city_pre, city_location = self.get_client_city(subdomain)
         suffix_title = {
             'trubnyy': 'Трубный',
             'valtsovannyy': 'Вальцованный',
             'opletochnyy': 'Оплёточный',
             'ptfe': 'PTFE',
         }
-        title = f'{suffix_title.get(slug, "")} внутренний экран для металлорукавов РГМ'
-        description = f'Внутренний экран оплеточный для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
+        title = f'{suffix_title.get(slug, "")} внутренний экран для металлорукавов РГМ в {city_pre} - {settings.COMPANY_NAME_SHORT}'
+        description = f'{suffix_title.get(slug, "")} внутренний экран для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('metalhoses-inners', 'Внутренний экран'),
                       ('', title),]
@@ -532,7 +533,7 @@ class MetalhosesOutsidesView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
-        title = 'Оболочки для металлорукавов РГМ'
+        title = f'Оболочки для металлорукавов РГМ - {settings.COMPANY_NAME_SHORT}'
         description = f'Оболочки для металлорукавов РГМ — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('', title),]
@@ -569,7 +570,7 @@ class MetalhosesOutsideView(DataMixin, FormView):
             'pruzhina': 'Пружина',
             'pletenka_mednaya_luzhenaya_pml': 'Плетёнка медная лужёная (ПМЛ)',
         }
-        title = f'{suffix_title.get(slug, "")} для металлорукавов в {city_pre}'
+        title = f'{suffix_title.get(slug, "")} для металлорукавов в {city_pre} - {settings.COMPANY_NAME_SHORT}'
         description = f'{suffix_title.get(slug, "")} для металлорукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         h1 = f'{suffix_title.get(slug, "")} для металлорукавов'
         breadcrumb = [('metalhoses', _('Metal hoses')),
@@ -588,10 +589,10 @@ class MetalhosesSpecialView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
+        title = f'Специальные разработки - {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('metalhoses-special', 'Специальные разработки')]
-        c_def = self.get_user_context(
-            title='Специальные разработки', breadcrumb=breadcrumb)
+        c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
 
 
@@ -601,7 +602,7 @@ class MetalhosesRecommendationsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Рекомендации по выбору металлорукава серии РГМ'
+        title = f'Рекомендации по выбору металлорукава серии РГМ - {settings.COMPANY_NAME_SHORT}'
         description = f'Рекомендации по выбору металлорукава РГМ на сайте {settings.COMPANY_NAME} - Наша продукция востребована на рынке России и стран ближнего зарубежья'
         h1 = f'Рекомендации по выбору металлорукава серии РГМ производства {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('metalhoses', _('Metal hoses')),
@@ -655,7 +656,7 @@ class MetalhosesHpressRGMView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = _('High pressure metal hoses')
+        title = f'{_("High pressure metal hoses")} - {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('metalhoses', _('Metal hoses')),
                       ('', title),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
@@ -668,7 +669,7 @@ class FlexiblePipelinesView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Гибкие трубопроводы'
+        title = f'Гибкие трубопроводы - {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('metalhoses', _('Metal hoses')),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
         return {**context, **c_def}
@@ -683,9 +684,9 @@ class PTFEhosesView(DataMixin, FormView):
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
         phone = self.get_company_phone(subdomain)
-        title = f"{_('PTFE Metal hoses')} в {city_pre}, заказать PTFE рукава"
+        title = f'{_("PTFE Metal hoses")} в {city_pre}, заказать PTFE рукава в {settings.COMPANY_NAME_SHORT}'
         description = f'Заказать герметичные фторопластовые рукава высокого давления (до 500 атм) в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить фторопластовые рукава (PTFE) можно на сайте или по тел.: {phone}.'
-        h1 = f"{_('PTFE Metal hoses')} серии РФ в {city_pre} от производителя {settings.COMPANY_NAME_SHORT}"
+        h1 = f'{_("PTFE Metal hoses")} серии РФ в {city_pre} от производителя {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),]
         c_def = self.get_user_context(title=title,
                                       description=description,
@@ -700,7 +701,7 @@ class PTFEhosesGofrirovanniyView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = f"{_('Corrugated')} {_('PTFE Metal hoses')}"
+        title = f'{_("Corrugated")} {_("PTFE Metal hoses")} - {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-gofrirovanniy', title),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
@@ -713,7 +714,7 @@ class PTFERecommendationsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Рекомендации по измерениям и соответствиям стандартам'
+        title = f'Рекомендации по измерениям и соответствиям стандартам - {settings.COMPANY_NAME_SHORT}'
         description = f'Рекомендации по выбору фторопластовых рукавов серии РФ от {settings.COMPANY_NAME} - Наша продукция востребована на рынке России и стран ближнего зарубежья'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-recommendations', title),]
@@ -729,7 +730,7 @@ class PTFEInstallationSafetyView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Монтаж и безопасность фторопластовых рукавов серии РФ'
+        title = f'Монтаж и безопасность фторопластовых рукавов серии РФ - {settings.COMPANY_NAME_SHORT}'
         description = f'Монтаж и безопасность фторопластовых рукавов серии РФ от {settings.COMPANY_NAME} - Наша продукция востребована на рынке России и стран ближнего зарубежья'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-installation', title),]
@@ -745,8 +746,8 @@ class PTFEFittingsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = f'Концевая арматура для фторопластовых рукавов серии РФ'
-        description = f"{_('PTFE Metal hoses')} серии РФ - Концевая арматура от {settings.COMPANY_NAME} - Наша продукция востребована на рынке России и стран ближнего зарубежья"
+        title = f'Концевая арматура для фторопластовых рукавов серии РФ - {settings.COMPANY_NAME_SHORT}'
+        description = f'{_("PTFE Metal hoses")} серии РФ - Концевая арматура от {settings.COMPANY_NAME} - Наша продукция востребована на рынке России и стран ближнего зарубежья'
         h1 = 'Концевая арматура для фторопластовых рукавов серии РФ'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-fittings', title),]
@@ -763,7 +764,7 @@ class PTFEStandartsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Стандарты качества для фторопластовых рукавов серии РФП, РФГ'
+        title = f'Стандарты качества для фторопластовых рукавов серии РФП, РФГ - {settings.COMPANY_NAME_SHORT}'
         description = f'Стандарты качества для фторопластовых рукавов серии РФП, РФГ выпускаемых {settings.COMPANY_NAME} - Наша продукция востребована на рынке России и стран ближнего зарубежья'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-standarts', title),]
@@ -779,7 +780,7 @@ class HpressPTFEView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Фторопластовые рукава высокого давления'
+        title = f'Фторопластовые рукава высокого давления - {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-standarts', title),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
@@ -792,7 +793,7 @@ class PTFEPipesView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Трубка для фторопластовых рукавов'
+        title = f'Трубка для фторопластовых рукавов - {settings.COMPANY_NAME_SHORT}'
         description = f'Трубка для фторопластовых рукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-pipes', title),]
@@ -826,7 +827,7 @@ class PTFEPipeView(DataMixin, FormView):
             'gofrirovannaya_standartnoe_ispolnenie': 'Гофрированная в стандартном исполнении',
             'gofrirovannaya_tolstostennaya': 'Гофрированная толстостенная',
         }
-        title = f'{suffix_title.get(slug, "")} трубка для фторопластовых рукавов'
+        title = f'{suffix_title.get(slug, "")} трубка для фторопластовых рукавов - {settings.COMPANY_NAME_SHORT}'
         description = f'{suffix_title.get(slug, "")} трубка для фторопластовых рукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-pipes', 'Трубки'),
@@ -843,7 +844,7 @@ class PTFEBraidsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Фторопластовые рукава в металлической оплётке серии РФ'
+        title = f'Фторопластовые рукава в металлической оплётке серии РФ - {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-braids', title),]
         c_def = self.get_user_context(title=title, breadcrumb=breadcrumb)
@@ -873,7 +874,7 @@ class PTFEBraidView(DataMixin, FormView):
             'dvukhsloynaya': 'Двухслойная оплётка для фторопластовых рукавов',
             'trekhsloynaya': 'Трёхслойная оплётка для фторопластовых рукавов',
         }
-        title = f'{suffix_title.get(slug, "")}'
+        title = f'{suffix_title.get(slug, "")} - {settings.COMPANY_NAME_SHORT}'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-braids', 'Оплётки'),
                       ('', title),]
@@ -887,7 +888,7 @@ class PTFELinersView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Футеровки PTFE'
+        title = f'Футеровки PTFE - {settings.COMPANY_NAME_SHORT}'
         description = f'Футеровка PTFE для фторопластовых рукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована.'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-liners', title),]
@@ -920,7 +921,7 @@ class PTFELinerView(DataMixin, FormView):
             'ploskoy_trubki_na_flanets': 'плоской трубки на фланец',
             'ploskoy_trubki_na_nippel_gayki': 'плоской трубки на ниппель гайки',
         }
-        title = f'PTFE футеровка {suffix_title.get(slug, "")} для фторопластовых рукавов'
+        title = f'PTFE футеровка {suffix_title.get(slug, "")} для фторопластовых рукавов - {settings.COMPANY_NAME_SHORT}'
         description = f'PTFE футеровка {suffix_title.get(slug, "")} для фторопластовых рукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-liners', 'Футеровки PTFE'),
@@ -937,7 +938,7 @@ class PTFEInnersView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Внутренний экран для фторопластовых рукавов'
+        title = f'Внутренний экран для фторопластовых рукавов - {settings.COMPANY_NAME_SHORT}'
         description = f'Внутренний экран для фторопластовых рукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-inners', title),]
@@ -969,7 +970,7 @@ class PTFEInnerView(DataMixin, FormView):
             'antistaticheskaya_prisadka_ploskaya': 'антистатическая присадка плоская',
             'antistaticheskaya_prisadka_gofrirovannaya': 'антистатическая присадка гофрированная',
         }
-        title = f'Внутренний экран: {suffix_title.get(slug, "")} для фторопластовых рукавов'
+        title = f'Внутренний экран: {suffix_title.get(slug, "")} для фторопластовых рукавов - {settings.COMPANY_NAME_SHORT}'
         description = f'{suffix_title.get(slug, "")} для фторопластовых рукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-inners', 'Внутренние экраны'),
@@ -986,7 +987,7 @@ class PTFEOutsidesView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Наружная оболочка для фторопластовых рукавов'
+        title = f'Наружная оболочка для фторопластовых рукавов - {settings.COMPANY_NAME_SHORT}'
         description = f'Наружная оболочка для фторопластовых рукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована.'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-outsides', title),]
@@ -1021,7 +1022,7 @@ class PTFEOutsideView(DataMixin, FormView):
             'ploskaya_trubka_v_metallorukave_v_opletke': 'Плоская трубка в металлорукаве в оплётке',
             'gofrirovannaya_trubka_v_metallorukave_v_opletke': 'Гофрированная трубка в металлорукаве в оплётке',
         }
-        title = f'{suffix_title.get(slug, "")} для фторопластовых рукавов'
+        title = f'{suffix_title.get(slug, "")} для фторопластовых рукавов - {settings.COMPANY_NAME_SHORT}'
         description = f'{suffix_title.get(slug, "")} для фторопластовых рукавов производства {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('ptfe-hoses', _('PTFE Metal hoses')),
                       ('ptfe-outsides', 'Наружные оболочки'),
@@ -1038,7 +1039,7 @@ class EngineeringView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Производство изделий на заказ'
+        title = f'Производство изделий на заказ - {settings.COMPANY_NAME_SHORT}'
         description = f'Принимаем заказы на изготовление нестандартное оборудование по чертежам заказчика - {settings.COMPANY_NAME} - Наша продукция востребована на рынке России и стран ближнего зарубежья'
         breadcrumb = [('engineering', title),]
         c_def = self.get_user_context(title=title,
@@ -1053,7 +1054,7 @@ class EngineeringAccessoriesView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Технологическая оснастка'
+        title = f'Технологическая оснастка - {settings.COMPANY_NAME_SHORT}'
         description = f'В данном разделе вы можете ознакомиться с технологической оснасткой компании {settings.COMPANY_NAME}.'
         breadcrumb = [('engineering', 'Производство изделий на заказ'),
                       ('engineering-accessories', title),]
@@ -1069,7 +1070,7 @@ class EngineeringTestView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Испытания на герметичность и прочность'
+        title = f'Испытания на герметичность и прочность - {settings.COMPANY_NAME_SHORT}'
         description = f'{settings.COMPANY_NAME} на договорной основе проводит испытаний всех типов рукавов на герметичность и прочность - Наша продукция востребована на рынке России и стран ближнего зарубежья.'
         breadcrumb = [('engineering', 'Производство изделий на заказ'),
                       ('engineering-test', title),]
@@ -1097,7 +1098,7 @@ class WorkspaceFiltersView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = 'Рабочие среды фильтров и агрегатов'
+        title = f'Рабочие среды фильтров и агрегатов - {settings.COMPANY_NAME_SHORT}'
         description = f'Рабочие среды фильтров и агрегатов. {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика.✔️Индивидуальный подход.✔️Вся продукция сертифицирована'
         breadcrumb = [('workspace-filters', title),]
         c_def = self.get_user_context(title=title,
@@ -1114,7 +1115,7 @@ class FittingsView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         subdomain = self.get_subdomain()
         city_pre, _ = self.get_client_city(subdomain)
-        title = f'Резьбовая арматура, купить в {city_pre} по выгодной цене'
+        title = f'Резьбовая арматура, купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
         description = f'Резьбовая арматура — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = 'Резьбовая арматура'
         breadcrumb = [('privacy', 'Резьбовая арматура'),]
@@ -1163,7 +1164,7 @@ class FittingView(DataMixin, FormView):
         }
         subdomain = self.get_subdomain()
         city_pre, _ = self.get_client_city(subdomain)
-        title = f'{suffix_title.get(slug, "")} , купить в {city_pre} по выгодной цене'
+        title = f'{suffix_title.get(slug, "")} , купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
         description = f'{suffix_title.get(slug, "")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = suffix_title.get(slug, "")
         breadcrumb = [('fittings', 'Резьбовая арматура'),]
@@ -1183,7 +1184,7 @@ class CompositesView(DataMixin, FormView):
         subdomain = self.get_subdomain()
         city_pre, _ = self.get_client_city(subdomain)
         phone = self.get_company_phone(subdomain)
-        title = f'Композитные рукава в {city_pre}, заказать композитные шланги'
+        title = f'Композитные рукава в {city_pre}, заказать композитные шланги в {settings.COMPANY_NAME_SHORT}'
         description = f'Заказать композитные рукава в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить композитные рукава для нефтепродуктов и других жидкостей и газов можно на сайте или по тел.: {phone}.'
         breadcrumb = [('composite', title),]
         c_def = self.get_user_context(title=title,
@@ -1213,7 +1214,7 @@ class CompositeView(DataMixin, FormView):
         subdomain = self.get_subdomain()
         city_pre, _ = self.get_client_city(subdomain)
         phone = self.get_company_phone(subdomain)
-        title = f'Композитный рукав серии {slug} в {city_pre}, заказать композитные шланги'
+        title = f'Композитные рукава серии {slug} в {city_pre}, заказать композитные шланги в {settings.COMPANY_NAME_SHORT}'
         description = f'Заказать композитные рукава серии {slug} в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить композитные шланги {slug} можно на сайте или по тел.: {phone}.'
         breadcrumb = [('composite', 'Композитные рукава'),
                       (slug, f'Композитные рукава серии {slug}'),]
@@ -1232,8 +1233,8 @@ class FlangesView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
-        title = f"{_('Flange connections')}, купить в {city_pre} по выгодной цене"
-        description = f"{_('Flange connections')} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте."
+        title = f'{_("Flange connections")}, купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
+        description = f'{_("Flange connections")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = _('Flange connections')
         breadcrumb = [('composite', _('Flange connections')),]
         c_def = self.get_user_context(title=title,
@@ -1271,7 +1272,7 @@ class FlangeView(DataMixin, FormView):
         }
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
-        title = f'{suffix_title.get(slug, "")}, купить в {city_pre} по выгодной цене'
+        title = f'{suffix_title.get(slug, "")}, купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
         description = f'{suffix_title.get(slug, "")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = suffix_title.get(slug, "")
         breadcrumb = [('flanges', _('Flange connections')),]
@@ -1290,7 +1291,7 @@ class QuickReleaseCouplingsView(DataMixin, FormView):
         context = super().get_context_data(**kwargs)
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
-        title = f'Быстроразъемные соединения, купить в {city_pre} по выгодной цене'
+        title = f'Быстроразъемные соединения, купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
         description = f'Быстроразъемные соединения — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = 'Быстроразъемные соединения'
         breadcrumb = [('quick-release-coupling',
@@ -1340,7 +1341,7 @@ class QuickReleaseCouplingView(DataMixin, FormView):
         }
         subdomain = self.get_subdomain()
         city_pre, city_location = self.get_client_city(subdomain)
-        title = f'{suffix_title.get(slug, "")}, купить в {city_pre} по выгодной цене'
+        title = f'{suffix_title.get(slug, "")}, купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
         description = f'{suffix_title.get(slug, "")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = suffix_title.get(slug, "")
         breadcrumb = [('quick-release-coupling',
