@@ -25,6 +25,7 @@ def post_request_to_1C(url_request: str, data_request: bytes) -> str:
     response = '{}'
 
     if not url_request:
+        print('url_request')
         return response
 
     # return response
@@ -34,7 +35,6 @@ def post_request_to_1C(url_request: str, data_request: bytes) -> str:
 
     try:
         with request.urlopen(req) as resp:
-            print(url_request)
             response = resp.read().decode('utf-8')
 
     except error.URLError:
