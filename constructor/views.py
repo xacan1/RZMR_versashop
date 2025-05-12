@@ -56,6 +56,7 @@ class ProxyRequestView(FormView):
         url_request = request.headers.get('Request1C', '')
         data_request = request.body
         response_data = request1C.post_request_to_1C(url_request, data_request)
+        print(response_data)
 
         if 'createProduct' in url_request:
             response_data = services.load_new_product_from_1C(response_data)
