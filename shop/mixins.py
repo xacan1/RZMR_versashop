@@ -37,11 +37,23 @@ class DataMixin:
         if 'breadcrumb' not in context:
             context['breadcrumb'] = []
 
+        # дополню номером страницы названия, описания и заголовки страниц во всех приложениях
+        page_number = self.request.GET.get('page', None)
+
         if 'title' not in context:
             context['title'] = settings.COMPANY_NAME
+        elif page_number is not None:
+            context['title'] = f"{context['title']} - страница {page_number}"
 
         if 'description' not in context:
             context['description'] = 'Производство метталорукавов, фильтров, фторопластовых рукавов, онлайн конструктор и продажа изделий'
+        elif page_number is not None:
+            context['description'] = f"{context['description']} Страница {page_number}"
+
+        if 'h1' in context and page_number is not None:
+            context['h1'] = f"{context['h1']} - страница {page_number}"
+
+        # ************************************************************************************
 
         if self.request.user.is_anonymous:
             self.request.session['sessionid'] = self.request.session.session_key

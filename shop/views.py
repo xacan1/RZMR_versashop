@@ -176,11 +176,11 @@ class CategoryProductListView(DataMixin, FormView):
         elif self.products_exist:
             paginate_by = 12
             paginator = Paginator(self.price_products, paginate_by)
-            page_number = self.request.GET.get('page', 1)
+            page_number = int(self.request.GET.get('page', 1))
             page_obj = paginator.get_page(page_number)
             amount_product_total = paginator.count
             amount_product_from, amount_product_upto = services.count_product_from_to(paginate_by,
-                                                                                      int(page_number),
+                                                                                      page_number,
                                                                                       len(page_obj.object_list))
 
             # добавляю к адресам пагинации параметры запроса, что бы при переходе на другую страницу

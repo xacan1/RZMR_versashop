@@ -189,7 +189,7 @@ class ContactsView(DataMixin, FormView):
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
-        title = f'_("Contacts") - {settings.COMPANY_NAME_SHORT}'
+        title = f'{_("Contacts")} - {settings.COMPANY_NAME_SHORT}'
         description = f'В данном разделе вы можете ознакомиться с контактной информацией компании {settings.COMPANY_NAME}.'
         breadcrumb = [('contacts', title),]
         c_def = self.get_user_context(title=title,
