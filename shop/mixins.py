@@ -99,7 +99,6 @@ class DataMixin:
         company_cities_pre = settings.COMPANY_CITIES_PRE
         city_location = company_cities.get(subdomain, '')
         city_pre = company_cities_pre.get(subdomain, 'вашем городе')
-        print(subdomain)
 
         # if city_location:
         #     city_pre = utils.get_word_loct(city_location).title()
