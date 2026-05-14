@@ -1,74 +1,66 @@
-<!DOCTYPE html>
-<html class="no-js" lang="ru">
+{% extends 'rzmr/base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="author" content="Hasan Valerievich Smirnov">
-    <meta name="publisher-email" content="author@mail.ru">
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Страница не нейдена</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" /> -->
-
-    <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="{% static 'shop/css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'shop/css/LineIcons.3.0.css' %}" />
-    <link rel="stylesheet" href="{% static 'shop/css/main.css' %}" />
-
-</head>
-
-<body>
-    <!--[if lte IE 9]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-        your experience and security.
-      </p>
-    <![endif]-->
-
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-inner">
-            <div class="preloader-icon">
-                <span></span>
-                <span></span>
+{% block content %}
+<!-- Start Error Area -->
+<div class="container">
+    <div class="row text-center">
+        <div class="col-sm-6 col-12">
+            <h1 class="fw-bold">404 — {% trans 'Page not found' %}</h1>
+            <img class="img-fluid" src="{% static 'rzmr/img/constr.jpg' %}" alt="constr">
+            {% if LANGUAGE_CODE == 'ru' %}
+            <p>Характеристики и описания, представленные на сайте, несут справочный характер и могут не соответствовать
+                предлагаемой к поставке продукции. Не является публичной офертой.</p>
+            {% elif LANGUAGE_CODE == 'en' %}
+            <p>Characteristics and descriptions presented on the site are borne by reference character and may not
+                correspond to the proposed to the delivery of products. Not a public offer.</p>
+            {% elif LANGUAGE_CODE == 'kk' %}
+            <p>Осы веб-сайтта берілген сипаттамалар мен сипаттамалар тек анықтама үшін берілген және сатуға ұсынылған
+                нақты өнімдерге сәйкес келмеуі мүмкін. Бұл көпшілікке арналған ұсыныс болып табылмайды.</p>
+            {% endif %}
+            <div class="button">
+                <a href="{% url 'home' %}" class="btn btn-secondary">На главную</a>
             </div>
         </div>
-    </div>
-    <!-- /End Preloader -->
-
-    <!-- Start Error Area -->
-    <div class="error-area">
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-                    <div class="error-content">
-                        <h1>404</h1>
-                        <h2>Упс! Страница не найдена</h2>
-                        <p>Страница, которую вы ищете, не существует. Возможно, она была перемещена или удалена.</p>
-                        <div class="button">
-                            <a href="{% url 'home' %}" class="btn">На главную</a>
-                        </div>
+        <div class="col-sm-6 col-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-12 justify-content-center box-shadow-uzm">
+                        <a href="{% url 'metalhoses' %}">
+                            <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                                <img class="img-fluid" src="{% static 'rzmr/img/metallhoses.jpg' %}"
+                                    alt="Металлорукава">
+                                <div class="wrapper-img-uzm-up"></div>
+                                <div class="text-above-img-uzm text-blue-uzm">
+                                    <p>{% trans 'Metal hoses' %}</p>
+                                    <p>
+                                    <pre></pre>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-12 justify-content-center box-shadow-uzm">
+                        <a href="{% url 'ptfe-hoses' %}">
+                            <div class="wrapper-img-uzm-down wrapper-text-above-img-uzm">
+                                <img class="img-fluid" src="{% static 'rzmr/img/ftoroplast.jpg' %}"
+                                    alt="Фторопластовые PTFE">
+                                <div class="wrapper-img-uzm-up"></div>
+                                <div class="text-above-img-uzm text-blue-uzm">
+                                    <p>{% trans 'PTFE Metal hoses' %}</p>
+                                    <p>
+                                    <pre></pre>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Error Area -->
-
-    <!-- ========================= JS here ========================= -->
-    <script src="{% static 'shop/js/bootstrap.min.js' %}"></script>
-    <script>
-        window.onload = function () {
-            window.setTimeout(fadeout, 500);
-        }
-
-        function fadeout() {
-            document.querySelector('.preloader').style.opacity = '0';
-            document.querySelector('.preloader').style.display = 'none';
-        }
-    </script>
-</body>
-</html>
+</div>
+<!-- End Error Area -->
+{% endblock content %}
