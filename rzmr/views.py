@@ -1283,24 +1283,6 @@ class CompositesView(DataMixin, FormView):
         return {**context, **c_def}
 
 
-class U_FlexView(DataMixin, FormView):
-    form_class = SimpleForm
-    template_name = 'rzmr/gibkiye-seysmovstavki-u-flex.html'
-
-    def get_context_data(self, **kwargs) -> dict:
-        context = super().get_context_data(**kwargs)
-        subdomain = self.get_subdomain()
-        city_pre, _ = self.get_client_city(subdomain)
-        phone = self.get_company_phone(subdomain)
-        title = f'Гибкие сейсмовставки U-Flex в {city_pre}, заказать гибкие сейсмовставки U-Flex в {settings.COMPANY_NAME_SHORT}'
-        description = f'Гибкие сейсмовставки U-Flex в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить гибкие сейсмовставки U-Flex для нефтепродуктов и других жидкостей и газов можно на сайте или по тел.: {phone}.'
-        breadcrumb = [('composite', title),]
-        c_def = self.get_user_context(title=title,
-                                      description=description,
-                                      breadcrumb=breadcrumb)
-        return {**context, **c_def}
-
-
 class CompositeView(DataMixin, FormView):
     form_class = SimpleForm
     slug_url_kwarg = 'composite_slug'
@@ -1326,6 +1308,56 @@ class CompositeView(DataMixin, FormView):
         description = f'Заказать композитные рукава серии {slug} в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить композитные шланги {slug} можно на сайте или по тел.: {phone}.'
         breadcrumb = [('composite', 'Композитные рукава'),
                       (slug, f'Композитные рукава серии {slug}'),]
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      slug=slug,
+                                      breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class U_FlexesView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/gibkiye-seysmovstavki-u-flex.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        subdomain = self.get_subdomain()
+        city_pre, _ = self.get_client_city(subdomain)
+        phone = self.get_company_phone(subdomain)
+        title = f'Гибкие сейсмовставки U-Flex в {city_pre}, заказать гибкие сейсмовставки U-Flex в {settings.COMPANY_NAME_SHORT}'
+        description = f'Гибкие сейсмовставки U-Flex в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить гибкие сейсмовставки U-Flex для нефтепродуктов и других жидкостей и газов можно на сайте или по тел.: {phone}.'
+        breadcrumb = [('composite', title),]
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class U_FlexView(DataMixin, FormView):
+    form_class = SimpleForm
+    slug_url_kwarg = 'u_flex_slug'
+
+    def get_template_names(self) -> list[str]:
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+
+        if not slug:
+            return super().get_template_names()
+
+        template_names = []
+        template_names.append(f'rzmr/gibkiye-seysmovstavki-u-flex-{slug}.html')
+
+        return template_names
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+        subdomain = self.get_subdomain()
+        city_pre, _ = self.get_client_city(subdomain)
+        phone = self.get_company_phone(subdomain)
+        title = f'Гибкие сейсмовставки U-Flex {slug} в {city_pre}, заказать гибкие сейсмовставки U-Flex в {settings.COMPANY_NAME_SHORT}'
+        description = f'Заказать гибкие сейсмовставки U-Flex {slug} в {city_pre} можно в {settings.COMPANY_NAME}. Высокое качество и гибкая ценовая политика. Минимальная партия от 1 шт. Узнать подробности и купить гибкие сейсмовставки U-Flex {slug} можно на сайте или по тел.: {phone}.'
+        breadcrumb = [('gibkiye-seysmovstavki-u-flex', 'Гибкие сейсмовставки U-Flex'),
+                      (slug, f'Гибкие сейсмовставки U-Flex {slug}'),]
         c_def = self.get_user_context(title=title,
                                       description=description,
                                       slug=slug,
