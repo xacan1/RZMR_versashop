@@ -215,7 +215,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarContent">
-                        <ul class="navbar-nav mr-auto mb-2">
+                        <ul class="navbar-nav text-center mb-2">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdown1" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">{% trans 'Company' %}</a>
@@ -249,8 +249,8 @@
                                     <li><a class="dropdown-item" href="{% url 'metalhoses-standarts-rgm' %}">{% trans 'Quality standards' %}</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown3" role="button"
+                            <li class="nav-item dropdown text-wrap">
+                                <a class="nav-link dropdown-toggle text-wrap" id="navbarDropdown3" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">{% trans 'PTFE Metal hoses' %}</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
                                     <li><a class="dropdown-item" href="{% url 'ptfe-hoses' %}">{% trans 'PH (fluoroplastic hose)  PTFE hoses' %}</a>
@@ -265,9 +265,9 @@
                             </li>
                             {% if LANGUAGE_CODE != 'kk' %}
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown3" role="button"
+                                <a class="nav-link dropdown-toggle text-wrap" id="navbarDropdownComposite" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">{% trans 'Composite hoses' %}</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownComposite">
                                     <li><a class="dropdown-item" href="{% url 'composite' %}">{% trans 'All composite hoses' %}</a></li>
                                     <li><a class="dropdown-item" href="{% url 'composite' 'EGE' %}">{% trans 'EGE construction' %}</a></li>
                                     <li><a class="dropdown-item" href="{% url 'composite' 'SSE' %}">{% trans 'SSE construction' %}</a></li>
@@ -280,7 +280,16 @@
                             </li>
                             {% endif %}
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownShop" role="button"
+                                <a class="nav-link dropdown-toggle text-wrap" id="navbarDropdownU-Flex" role="button"
+                                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Гибкие сейсмовставки U-Flex</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownU-Flex">
+                                    <li><a class="dropdown-item" href="{% url 'gibkiye-seysmovstavki-u-flex' %}">Все гибкие сейсмовставки U-Flex</a></li>
+
+                                </ul>
+
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-wrap" id="navbarDropdownShop" role="button"
                                     data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">{% trans 'Filters and units' %}</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownShop">
                                     {% include 'shop/categories.html' %}
@@ -291,7 +300,7 @@
                             </li>
                             {% if LANGUAGE_CODE == 'ru' %}
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown5" role="button"
+                                <a class="nav-link dropdown-toggle text-wrap" id="navbarDropdown5" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Концевая арматура</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
                                     <li><a class="dropdown-item" href="{% url 'fittings' %}">Резьбовая арматура</a></li>
@@ -301,7 +310,7 @@
                             </li>
                             {% endif %}
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown6" role="button"
+                                <a class="nav-link dropdown-toggle text-wrap" id="navbarDropdown6" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">{% trans 'Engineering and non-standard equipment' %}</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
                                     <li><a class="dropdown-item" href="{% url 'engineering' %}">{% trans 'Сustom-made products' %}</a></li>
