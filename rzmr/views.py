@@ -379,6 +379,72 @@ class MetalhosesVOpletkeView(DataMixin, FormView):
         return {**context, **c_def}
 
 
+class MetalhosesProductionView(DataMixin, FormView):
+    form_class = SimpleForm
+    template_name = 'rzmr/metalhoses_productions.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        subdomain = self.get_subdomain()
+        city_pre, city = self.get_client_city(subdomain)
+        title = f'Металлорукава, купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
+        description = f'Металлорукава — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        h1 = 'Металлорукава серийного производства'
+        breadcrumb = [('metalhoses-production', _('Serial production')),]
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      h1=h1,
+                                      breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
+class MetalhoseProductionView(DataMixin, FormView):
+    form_class = SimpleForm
+    slug_url_kwarg = 'metalhose_slug'
+
+    def get_template_names(self) -> list[str]:
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+
+        if not slug:
+            return super().get_template_names()
+
+        template_names = []
+        template_names.append(f'rzmr/{slug}.html')
+
+        return template_names
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        slug = self.kwargs.get(self.slug_url_kwarg, '')
+        suffix_title = {
+            'metallorukav-vysokogo-davleniya-s-rezinovoj-zashchitnoj-obolochkoj-seriya-8d4-498-434': 'Металлорукав высокого давления с резиновой защитной оболочкой (серия 8Д4.498.434)',
+            'metallorukav-kriogennyj-s-armaturoj-gajka-rot-rgm-40-6-3-0-s-a': 'Металлорукав криогенный с арматурой гайка РОТ (РГМ 40-6-3,0 с\а)',
+            'metallorukav-kriogennyj-s-armaturoj-m30h1-5-gajka-rot-rgm-20-45-3-0-s-a': 'Металлорукав криогенный с арматурой М30х1,5 - гайка РОТ (РГМ 20-45-3,0 с\а)',
+            'metallorukav-s-armaturoj-sfera-pod-konus-s-uglom-60-seriya-4603a': 'Металлорукав с арматурой «сфера под конус с углом 60° (серия 4603А)»',
+            'metallorukav-s-armaturoj-sfera-pod-konus-s-uglom-60-seriya-n8d0-449-032': 'Металлорукав с арматурой «сфера под конус с углом 60° (серия Н8Д0.449.032)»',
+            'metallorukav-s-armaturoj-flancevoe-soedinenie-s-otkidnymi-boltami-seriya-4656a': 'Металлорукав с арматурой «фланцевое соединение с откидными болтами» (серия 4656А)',
+            'metallorukav-s-armaturoj-flancevoe-soedinenie-seriya-4657a': 'Металлорукав с арматурой «фланцевое соединение» (серия 4657А)',
+            'metallorukav-s-armaturoj-konus-konus-s-uglom-74-seriya-4600a': 'Металлорукав с арматурой конус-конус с углом 74 (серия 4600А)',
+            'metallorukav-s-armaturoj-konus-konus-s-uglom-74-seriya-n8d0-449-033': 'Металлорукав с арматурой конус-конус с углом 74 (серия Н8Д0.449.033)',
+            'metallorukav-s-armaturoj-nakidnye-gajki-g-3-4-rgm-6-280-1-0-s-a': 'Металлорукав с арматурой накидные гайки G 3/4" (РГМ 6-280-1,0 с\а)',
+            'metallorukav-s-armaturoj-pod-privarku-seriya-4655a': 'Металлорукав с арматурой под приварку (серия 4655А)',
+            'metallorukav-s-armaturoj-pod-privarku-seriya-8d4-498-469': 'Металлорукав с арматурой под приварку (серия 8Д4.498.469)',
+            'metallorukav-s-armaturoj-pod-privarku-seriya-n8d0-449-020': 'Металлорукав с арматурой под приварку (серия Н8Д0.449.020)',
+        }
+        subdomain = self.get_subdomain()
+        city_pre, city = self.get_client_city(subdomain)
+        title = f'{suffix_title.get(slug, "")} , купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
+        description = f'{suffix_title.get(slug, "")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
+        h1 = suffix_title.get(slug, "")
+        breadcrumb = [('metalhoses-production', _('Serial production')),
+                      (slug, suffix_title.get(slug, '')),]
+        c_def = self.get_user_context(title=title,
+                                      description=description,
+                                      h1=h1,
+                                      breadcrumb=breadcrumb)
+        return {**context, **c_def}
+
+
 class MetalhosesFittingsView(DataMixin, FormView):
     form_class = SimpleForm
     template_name = 'rzmr/metalhoses_fittings.html'
@@ -1208,7 +1274,7 @@ class FittingsView(DataMixin, FormView):
         title = f'Резьбовая арматура, купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
         description = f'Резьбовая арматура — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = 'Резьбовая арматура'
-        breadcrumb = [('privacy', 'Резьбовая арматура'),]
+        breadcrumb = [('fittings', 'Резьбовая арматура'),]
         c_def = self.get_user_context(title=title,
                                       description=description,
                                       h1=h1,
@@ -1257,7 +1323,8 @@ class FittingView(DataMixin, FormView):
         title = f'{suffix_title.get(slug, "")} , купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
         description = f'{suffix_title.get(slug, "")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = suffix_title.get(slug, "")
-        breadcrumb = [('fittings', 'Резьбовая арматура'),]
+        breadcrumb = [('fittings', 'Резьбовая арматура'),
+                      (slug, suffix_title.get(slug, '')),]
         c_def = self.get_user_context(title=title,
                                       description=description,
                                       h1=h1,
@@ -1415,7 +1482,8 @@ class FlangeView(DataMixin, FormView):
         title = f'{suffix_title.get(slug, "")}, купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
         description = f'{suffix_title.get(slug, "")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = suffix_title.get(slug, "")
-        breadcrumb = [('flanges', _('Flange connections')),]
+        breadcrumb = [('flanges', _('Flange connections')),
+                      (slug, suffix_title.get(slug, '')),]
         c_def = self.get_user_context(title=title,
                                       description=description,
                                       h1=h1,
@@ -1484,8 +1552,8 @@ class QuickReleaseCouplingView(DataMixin, FormView):
         title = f'{suffix_title.get(slug, "")}, купить в {city_pre} по выгодной цене в {settings.COMPANY_NAME_SHORT}'
         description = f'{suffix_title.get(slug, "")} — купить в {city_pre} по выгодной цене от производителя {settings.COMPANY_NAME_SHORT}. ✔️Гибкая ценовая политика. ✔️100% гарантия качества. ✔️Вся продукция сертифицирована. Узнайте подробности и оформите заказ на нашем сайте.'
         h1 = suffix_title.get(slug, "")
-        breadcrumb = [('quick-release-coupling',
-                       'Быстроразъемные соединения'),]
+        breadcrumb = [('quick-release-coupling', 'Быстроразъемные соединения'),
+                      (slug, suffix_title.get(slug, '')),]
         c_def = self.get_user_context(title=title,
                                       description=description,
                                       h1=h1,

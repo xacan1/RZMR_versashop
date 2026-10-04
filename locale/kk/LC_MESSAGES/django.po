@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-28 11:03+0000\n"
+"POT-Creation-Date: 2026-10-04 03:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,7 +69,7 @@ msgstr "Тіркелгіңізге кіріңіз"
 
 #: main/templates/main/login.html:18 main/templates/main/register.html:22
 #: main/templates/main/registration-success.html:10
-#: rzmr/templates/rzmr/base.html:132 templates/admin/login.html:66
+#: rzmr/templates/rzmr/base.html:137 templates/admin/login.html:66
 msgid "Log in"
 msgstr ""
 
@@ -78,9 +78,58 @@ msgid "Forgot password"
 msgstr "Құпия сөзіңізді ұмыттыңыз ба?"
 
 #: main/templates/main/login.html:22 main/templates/main/register.html:20
-#: main/views.py:44 rzmr/templates/rzmr/base.html:135
+#: main/views.py:44 rzmr/templates/rzmr/base.html:140
 msgid "Register"
 msgstr "Тіркеу"
+
+#: main/templates/main/page404.html:11
+#, fuzzy
+#| msgid "nothing found"
+msgid "Page not found"
+msgstr "ештеңе табылмады"
+
+#: main/templates/main/page404.html:37 rzmr/templates/rzmr/base.html:243
+#: rzmr/templates/rzmr/base.html:245 rzmr/templates/rzmr/base.html:399
+#: rzmr/templates/rzmr/index.html:12 rzmr/templates/rzmr/index.html:137
+#: rzmr/templates/rzmr/metalhoses.html:1211
+#: rzmr/templates/rzmr/metalhoses.html:1217
+#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:819
+#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:822
+#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:828
+#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:857
+#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:860
+#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:866
+#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:901
+#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:904
+#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:910
+#: rzmr/templates/rzmr/metalhoses_rgm.html:792
+#: rzmr/templates/rzmr/metalhoses_rgm.html:798
+#: rzmr/templates/rzmr/metalhoses_v_opletke.html:624
+#: rzmr/templates/rzmr/metalhoses_v_opletke.html:630 rzmr/views.py:307
+#: rzmr/views.py:326 rzmr/views.py:347 rzmr/views.py:376 rzmr/views.py:447
+#: rzmr/views.py:467 rzmr/views.py:506 rzmr/views.py:527 rzmr/views.py:560
+#: rzmr/views.py:577 rzmr/views.py:613 rzmr/views.py:632 rzmr/views.py:670
+#: rzmr/views.py:689 rzmr/views.py:707 rzmr/views.py:725 rzmr/views.py:743
+#: rzmr/views.py:764 rzmr/views.py:785
+msgid "Metal hoses"
+msgstr "Металиілгіш түтіктер"
+
+#: main/templates/main/page404.html:52 rzmr/templates/rzmr/base.html:255
+#: rzmr/templates/rzmr/base.html:411 rzmr/templates/rzmr/base.html:417
+#: rzmr/templates/rzmr/base.html:418 rzmr/templates/rzmr/index.html:32
+#: rzmr/templates/rzmr/index.html:151 rzmr/templates/rzmr/ptfe.html:754
+#: rzmr/templates/rzmr/ptfe.html:757 rzmr/templates/rzmr/ptfe_braid.html:614
+#: rzmr/templates/rzmr/ptfe_braid.html:617
+#: rzmr/templates/rzmr/ptfe_gofrirovanniy.html:739
+#: rzmr/templates/rzmr/ptfe_gofrirovanniy.html:742
+#: rzmr/templates/rzmr/ptfe_hpress.html:233
+#: rzmr/templates/rzmr/ptfe_hpress.html:236 rzmr/views.py:805 rzmr/views.py:825
+#: rzmr/views.py:842 rzmr/views.py:858 rzmr/views.py:875 rzmr/views.py:892
+#: rzmr/views.py:912 rzmr/views.py:929 rzmr/views.py:963 rzmr/views.py:984
+#: rzmr/views.py:1019 rzmr/views.py:1037 rzmr/views.py:1070 rzmr/views.py:1087
+#: rzmr/views.py:1119 rzmr/views.py:1136 rzmr/views.py:1171
+msgid "PTFE Metal hoses"
+msgstr "Фторопластық иілгіш түтіктер"
 
 #: main/templates/main/register.html:13
 msgid "Do not have an account? Register!"
@@ -105,9 +154,9 @@ msgstr "Сіз сайтқа сәтті тіркелдіңіз"
 #: main/views.py:59 main/views.py:71 main/views.py:84 main/views.py:97
 #: main/views.py:108 main/views.py:122 personal_account/views.py:18
 #: personal_account/views.py:32 personal_account/views.py:47
-#: personal_account/views.py:72 rzmr/templates/rzmr/base.html:113
-#: rzmr/templates/rzmr/index.html:275 shop/views.py:350 shop/views.py:397
-#: shop/views.py:412
+#: personal_account/views.py:72 rzmr/templates/rzmr/base.html:118
+#: rzmr/templates/rzmr/index.html:275 shop/views.py:356 shop/views.py:403
+#: shop/views.py:418
 msgid "Personal account"
 msgstr "Жеке кабинет"
 
@@ -126,7 +175,7 @@ msgstr "Бөлімдер"
 #: personal_account/templates/personal_account/base.html:18
 #: personal_account/templates/personal_account/base.html:20
 #: personal_account/templates/personal_account/personal-account-orders.html:10
-#: personal_account/views.py:46 shop/views.py:351
+#: personal_account/views.py:46 shop/views.py:357
 msgid "Orders"
 msgstr "Тапсырыстар"
 
@@ -221,17 +270,17 @@ msgstr "Біздің серіктестер"
 msgid "Select a city"
 msgstr "Қаланы таңдаңыз"
 
-#: rzmr/templates/rzmr/base.html:69 rzmr/templates/rzmr/base.html:448
+#: rzmr/templates/rzmr/base.html:69 rzmr/templates/rzmr/base.html:461
 #: rzmr/templates/rzmr/request_phone_call_modal.html:7
 msgid "Request a call"
 msgstr "Қоңырауға тапсырыс беру"
 
-#: rzmr/templates/rzmr/base.html:92
+#: rzmr/templates/rzmr/base.html:97
 #: venv/lib/python3.11/site-packages/django/forms/widgets.py:529
 msgid "Change"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:120
+#: rzmr/templates/rzmr/base.html:125
 msgid "Log out"
 msgstr ""
 
@@ -243,191 +292,183 @@ msgstr "Себет"
 msgid "Company"
 msgstr "Компания"
 
-#: rzmr/templates/rzmr/base.html:223 rzmr/templates/rzmr/base.html:378
+#: rzmr/templates/rzmr/base.html:223 rzmr/templates/rzmr/base.html:391
 msgid "About us"
 msgstr "Зауыт туралы ақпарат"
 
-#: rzmr/templates/rzmr/base.html:224 rzmr/templates/rzmr/base.html:379
+#: rzmr/templates/rzmr/base.html:224 rzmr/templates/rzmr/base.html:392
 msgid "Quality and certification system"
 msgstr "Сапа және сертификаттау жүйесі"
 
-#: rzmr/templates/rzmr/base.html:227 rzmr/templates/rzmr/base.html:380
+#: rzmr/templates/rzmr/base.html:227 rzmr/templates/rzmr/base.html:393
 msgid "Our clients"
 msgstr "Біздің клиенттеріміз"
 
-#: rzmr/templates/rzmr/base.html:228 rzmr/templates/rzmr/base.html:381
+#: rzmr/templates/rzmr/base.html:228 rzmr/templates/rzmr/base.html:394
 msgid "Vacancies"
 msgstr "Бос жұмыс орындары"
 
-#: rzmr/templates/rzmr/base.html:236 rzmr/templates/rzmr/base.html:382
-#: rzmr/templates/rzmr/base.html:447 rzmr/views.py:192
+#: rzmr/templates/rzmr/base.html:236 rzmr/templates/rzmr/base.html:395
+#: rzmr/templates/rzmr/base.html:460
 msgid "Contacts"
 msgstr "Контактілер"
 
-#: rzmr/templates/rzmr/base.html:243 rzmr/templates/rzmr/base.html:245
-#: rzmr/templates/rzmr/base.html:386 rzmr/templates/rzmr/index.html:12
-#: rzmr/templates/rzmr/index.html:137 rzmr/templates/rzmr/metalhoses.html:1211
-#: rzmr/templates/rzmr/metalhoses.html:1217
-#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:819
-#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:822
-#: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:828
-#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:858
-#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:861
-#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:867
-#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:902
-#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:905
-#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:911
-#: rzmr/templates/rzmr/metalhoses_rgm.html:793
-#: rzmr/templates/rzmr/metalhoses_rgm.html:799
-#: rzmr/templates/rzmr/metalhoses_v_opletke.html:624
-#: rzmr/templates/rzmr/metalhoses_v_opletke.html:630 rzmr/views.py:283
-#: rzmr/views.py:297 rzmr/views.py:310 rzmr/views.py:336 rzmr/views.py:353
-#: rzmr/views.py:373 rzmr/views.py:412 rzmr/views.py:433 rzmr/views.py:466
-#: rzmr/views.py:483 rzmr/views.py:518 rzmr/views.py:537 rzmr/views.py:575
-#: rzmr/views.py:591 rzmr/views.py:607 rzmr/views.py:625 rzmr/views.py:643
-#: rzmr/views.py:659 rzmr/views.py:672
-msgid "Metal hoses"
-msgstr "Металиілгіш түтіктер"
-
-#: rzmr/templates/rzmr/base.html:246 rzmr/templates/rzmr/base.html:260
-#: rzmr/templates/rzmr/base.html:387 rzmr/templates/rzmr/base.html:400
+#: rzmr/templates/rzmr/base.html:246 rzmr/templates/rzmr/base.html:261
+#: rzmr/templates/rzmr/base.html:400 rzmr/templates/rzmr/base.html:413
 msgid "Fittings"
 msgstr "Ұштық арматура"
 
-#: rzmr/templates/rzmr/base.html:247 rzmr/templates/rzmr/base.html:258
-#: rzmr/templates/rzmr/base.html:388 rzmr/templates/rzmr/base.html:401
+#: rzmr/templates/rzmr/base.html:247 rzmr/templates/rzmr/base.html:259
+#: rzmr/templates/rzmr/base.html:401 rzmr/templates/rzmr/base.html:414
 msgid "Guidance"
 msgstr "Таңдау бойынша ұсыныстар"
 
-#: rzmr/templates/rzmr/base.html:248 rzmr/templates/rzmr/base.html:259
-#: rzmr/templates/rzmr/base.html:389
+#: rzmr/templates/rzmr/base.html:248 rzmr/templates/rzmr/base.html:260
+#: rzmr/templates/rzmr/base.html:402
 msgid "Installations"
 msgstr "Монтаж және қауіпсіздік"
 
-#: rzmr/templates/rzmr/base.html:249 rzmr/templates/rzmr/base.html:261
-#: rzmr/templates/rzmr/base.html:390 rzmr/templates/rzmr/base.html:402
+#: rzmr/templates/rzmr/base.html:249 rzmr/templates/rzmr/base.html:262
+#: rzmr/templates/rzmr/base.html:403 rzmr/templates/rzmr/base.html:415
 msgid "Quality standards"
 msgstr "Сапа стандарттары"
 
-#: rzmr/templates/rzmr/base.html:254 rzmr/templates/rzmr/base.html:398
-#: rzmr/templates/rzmr/base.html:404 rzmr/templates/rzmr/base.html:405
-#: rzmr/templates/rzmr/index.html:32 rzmr/templates/rzmr/index.html:151
-#: rzmr/templates/rzmr/ptfe.html:754 rzmr/templates/rzmr/ptfe.html:757
-#: rzmr/templates/rzmr/ptfe_braid.html:615
-#: rzmr/templates/rzmr/ptfe_braid.html:618
-#: rzmr/templates/rzmr/ptfe_gofrirovanniy.html:740
-#: rzmr/templates/rzmr/ptfe_gofrirovanniy.html:743
-#: rzmr/templates/rzmr/ptfe_hpress.html:233
-#: rzmr/templates/rzmr/ptfe_hpress.html:236 rzmr/views.py:689 rzmr/views.py:704
-#: rzmr/views.py:718 rzmr/views.py:734 rzmr/views.py:751 rzmr/views.py:768
-#: rzmr/views.py:783 rzmr/views.py:797 rzmr/views.py:831 rzmr/views.py:847
-#: rzmr/views.py:877 rzmr/views.py:892 rzmr/views.py:925 rzmr/views.py:942
-#: rzmr/views.py:974 rzmr/views.py:991 rzmr/views.py:1026
-msgid "PTFE Metal hoses"
-msgstr "Фторопластық иілгіш түтіктер"
+#: rzmr/templates/rzmr/base.html:250
+msgid "Serial production"
+msgstr "Сериялық өндіріс"
 
-#: rzmr/templates/rzmr/base.html:256 rzmr/templates/rzmr/base.html:399
+#: rzmr/templates/rzmr/base.html:257 rzmr/templates/rzmr/base.html:412
 msgid "PH (fluoroplastic hose)  PTFE hoses"
 msgstr "РФ сериялы фторопласты иілгіш түтіктер"
 
-#: rzmr/templates/rzmr/base.html:269
+#: rzmr/templates/rzmr/base.html:270
 msgid "Composite hoses"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:271
+#: rzmr/templates/rzmr/base.html:272
 msgid "All composite hoses"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:272
+#: rzmr/templates/rzmr/base.html:273
 msgid "EGE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:273
+#: rzmr/templates/rzmr/base.html:274
 msgid "SSE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:274
+#: rzmr/templates/rzmr/base.html:275
 msgid "SST construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:275
+#: rzmr/templates/rzmr/base.html:276
 msgid "SGT construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:276
+#: rzmr/templates/rzmr/base.html:277
 msgid "SGE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:277
+#: rzmr/templates/rzmr/base.html:278
 msgid "GGE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:278
+#: rzmr/templates/rzmr/base.html:279
 msgid "AAE construction"
 msgstr ""
 
-#: rzmr/templates/rzmr/base.html:284 rzmr/templates/rzmr/index.html:22
+#: rzmr/templates/rzmr/base.html:297 rzmr/templates/rzmr/index.html:22
 #: rzmr/templates/rzmr/index.html:188
 msgid "Filters and units"
 msgstr "Сүзгілер мен агрегаттар"
 
-#: rzmr/templates/rzmr/base.html:305 rzmr/templates/rzmr/base.html:430
+#: rzmr/templates/rzmr/base.html:318 rzmr/templates/rzmr/base.html:443
 msgid "Engineering and non-standard equipment"
 msgstr "Cтандартты емес жабдықтар"
 
-#: rzmr/templates/rzmr/base.html:307 rzmr/templates/rzmr/base.html:432
+#: rzmr/templates/rzmr/base.html:320 rzmr/templates/rzmr/base.html:445
 msgid "Сustom-made products"
 msgstr "Тапсырыс берушінің сызбалары бойынша"
 
-#: rzmr/templates/rzmr/base.html:308 rzmr/templates/rzmr/base.html:431
+#: rzmr/templates/rzmr/base.html:321 rzmr/templates/rzmr/base.html:444
 msgid "Technological equipment"
 msgstr "Технологиялық жабдық"
 
-#: rzmr/templates/rzmr/base.html:309 rzmr/templates/rzmr/base.html:433
+#: rzmr/templates/rzmr/base.html:322 rzmr/templates/rzmr/base.html:446
 #: rzmr/templates/rzmr/index.html:289
 msgid "Leak and strength tests"
 msgstr "Қымтаулылықты және беріктікті сынау"
 
-#: rzmr/templates/rzmr/base.html:314 rzmr/templates/rzmr/index.html:215
+#: rzmr/templates/rzmr/base.html:327 rzmr/templates/rzmr/index.html:215
 #: rzmr/templates/rzmr/index.html:227
 msgid "Online constructor"
 msgstr "Онлайн конструктор"
 
-#: rzmr/templates/rzmr/base.html:323 rzmr/templates/rzmr/base.html:342
+#: rzmr/templates/rzmr/base.html:336 rzmr/templates/rzmr/base.html:355
 msgid "Home page"
 msgstr "Негізгі бет"
 
-#: rzmr/templates/rzmr/base.html:391 rzmr/templates/rzmr/metalhoses.html:1205
+#: rzmr/templates/rzmr/base.html:404 rzmr/templates/rzmr/metalhoses.html:1205
 #: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:825
-#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:855
-#: rzmr/templates/rzmr/metalhoses_rgm.html:787
+#: rzmr/templates/rzmr/metalhoses_hpress_rgm.html:854
+#: rzmr/templates/rzmr/metalhoses_rgm.html:786
 #: rzmr/templates/rzmr/metalhoses_v_opletke.html:618
 msgid "For welding"
 msgstr "Дәнекерлеу үшін"
 
-#: rzmr/templates/rzmr/base.html:392 rzmr/templates/rzmr/metalhoses.html:1208
+#: rzmr/templates/rzmr/base.html:405 rzmr/templates/rzmr/metalhoses.html:1208
 #: rzmr/templates/rzmr/metalhoses_gibkie_truboprovody.html:816
-#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:899
-#: rzmr/templates/rzmr/metalhoses_rgm.html:790
-#: rzmr/templates/rzmr/metalhoses_v_opletke.html:621 rzmr/views.py:658
+#: rzmr/templates/rzmr/metalhoses_pod_privarku.html:898
+#: rzmr/templates/rzmr/metalhoses_rgm.html:789
+#: rzmr/templates/rzmr/metalhoses_v_opletke.html:621
 msgid "High pressure metal hoses"
 msgstr "жоғары қысымды металл шлангілер"
 
-#: rzmr/templates/rzmr/base.html:403
+#: rzmr/templates/rzmr/base.html:416
 msgid "Corrugated"
 msgstr "Гофрленген"
 
-#: rzmr/templates/rzmr/base.html:455
+#: rzmr/templates/rzmr/base.html:468
 msgid "«Russian factory of metal hoses» Co.Ltd"
 msgstr "«Ресей металл шланг зауыты» ЖШС"
 
-#: rzmr/templates/rzmr/base.html:455
+#: rzmr/templates/rzmr/base.html:468
 msgid "All rights reserved"
 msgstr "Барлық құқықтар сақталған"
 
-#: rzmr/templates/rzmr/base.html:456 rzmr/views.py:1088
+#: rzmr/templates/rzmr/base.html:469 rzmr/views.py:1233
 msgid "Privacy policy"
 msgstr "Құпиялылық саясаты"
+
+#: rzmr/templates/rzmr/gibkiye-seysmovstavki-u-flex.html:219
+#: rzmr/templates/rzmr/index.html:237
+msgid "Why us"
+msgstr "Неге біз"
+
+#: rzmr/templates/rzmr/gibkiye-seysmovstavki-u-flex.html:229
+#: rzmr/templates/rzmr/index.html:247
+msgid ""
+"Order fulfillment in a short time due to own capacities and established "
+"relations with material suppliers"
+msgstr ""
+"Өз қуаттарымыз және материалдарды жеткізушілермен ретке қойылған "
+"қатынастарымыздың есебінен қысқа мерзімдер"
+
+#: rzmr/templates/rzmr/gibkiye-seysmovstavki-u-flex.html:234
+#: rzmr/templates/rzmr/index.html:252
+msgid "Profitable prices for our partners"
+msgstr ""
+"Тұрақты клиенттерге адалдықтың ойластырылған жүйесі есебінен ұтымды баға"
+
+#: rzmr/templates/rzmr/gibkiye-seysmovstavki-u-flex.html:238
+#: rzmr/templates/rzmr/index.html:256
+msgid "Delivery throughout Russia and CIS countries"
+msgstr "Ресей және ТМД елдерінің барлық аумағына жеткізу"
+
+#: rzmr/templates/rzmr/gibkiye-seysmovstavki-u-flex.html:242
+#: rzmr/templates/rzmr/index.html:260
+msgid "Individual approach"
+msgstr "Әр клиентке жеке көзқарас"
 
 #: rzmr/templates/rzmr/index.html:13
 msgid "On the market for more than 12 years"
@@ -449,8 +490,8 @@ msgstr "Кез келген күрделіліктегі фитингтер"
 msgid "Own production"
 msgstr "Меншікті өндіріс"
 
-#: rzmr/templates/rzmr/index.html:52 rzmr/views.py:1237 rzmr/views.py:1238
-#: rzmr/views.py:1277
+#: rzmr/templates/rzmr/index.html:52 rzmr/views.py:1432 rzmr/views.py:1433
+#: rzmr/views.py:1472
 msgid "Flange connections"
 msgstr "Фланецті қосылыстар"
 
@@ -529,31 +570,6 @@ msgstr "жабдық"
 #: rzmr/templates/rzmr/index.html:227
 msgid "go to"
 msgstr "Перейти в"
-
-#: rzmr/templates/rzmr/index.html:237
-msgid "Why us"
-msgstr "Неге біз"
-
-#: rzmr/templates/rzmr/index.html:247
-msgid ""
-"Order fulfillment in a short time due to own capacities and established "
-"relations with material suppliers"
-msgstr ""
-"Өз қуаттарымыз және материалдарды жеткізушілермен ретке қойылған "
-"қатынастарымыздың есебінен қысқа мерзімдер"
-
-#: rzmr/templates/rzmr/index.html:252
-msgid "Profitable prices for our partners"
-msgstr ""
-"Тұрақты клиенттерге адалдықтың ойластырылған жүйесі есебінен ұтымды баға"
-
-#: rzmr/templates/rzmr/index.html:256
-msgid "Delivery throughout Russia and CIS countries"
-msgstr "Ресей және ТМД елдерінің барлық аумағына жеткізу"
-
-#: rzmr/templates/rzmr/index.html:260
-msgid "Individual approach"
-msgstr "Әр клиентке жеке көзқарас"
 
 #: rzmr/templates/rzmr/index.html:268
 msgid "End fittings map"
@@ -679,11 +695,7 @@ msgstr ""
 msgid "Do not choose anything yet? Time to check out our catalog!"
 msgstr "Әлі ештеңе таңдамайсыз ба? Біздің каталогты тексеретін уақыт!"
 
-#: shop/views.py:26
-msgid "Shop"
-msgstr "Дүкен"
-
-#: shop/views.py:46
+#: shop/views.py:48
 msgid "Cart"
 msgstr "Себет"
 
@@ -749,7 +761,7 @@ msgid "Enter a valid domain name."
 msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/core/validators.py:153
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:775
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:774
 msgid "Enter a valid URL."
 msgstr ""
 
@@ -850,8 +862,8 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: venv/lib/python3.11/site-packages/django/core/validators.py:514
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:366
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:405
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:365
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:404
 msgid "Enter a number."
 msgstr ""
 
@@ -1143,30 +1155,30 @@ msgstr ""
 msgid "Value must be valid JSON."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:978
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:979
 #, python-format
 msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:981
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:982
 msgid "Foreign Key (type determined by related field)"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1275
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1276
 msgid "One-to-one relationship"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1332
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1333
 #, python-format
 msgid "%(from)s-%(to)s relationship"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1334
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1335
 #, python-format
 msgid "%(from)s-%(to)s relationships"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1382
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1383
 msgid "Many-to-many relationship"
 msgstr ""
 
@@ -1176,50 +1188,50 @@ msgstr ""
 msgid ":?.!"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:95
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:94
 msgid "This field is required."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:315
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:314
 msgid "Enter a whole number."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:486
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1267
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:485
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1257
 msgid "Enter a valid date."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:509
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1268
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:508
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1258
 msgid "Enter a valid time."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:536
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:535
 msgid "Enter a valid date/time."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:570
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:569
 msgid "Enter a valid duration."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:571
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:570
 #, python-brace-format
 msgid "The number of days must be between {min_days} and {max_days}."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:640
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:639
 msgid "No file was submitted. Check the encoding type on the form."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:641
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:640
 msgid "No file was submitted."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:642
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:641
 msgid "The submitted file is empty."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:644
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:643
 #, python-format
 msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
@@ -1227,38 +1239,38 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:649
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:648
 msgid "Please either submit a file or check the clear checkbox, not both."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:717
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:716
 msgid ""
 "Upload a valid image. The file you uploaded was either not an image or a "
 "corrupted image."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:889
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:975
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:879
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:965
 #: venv/lib/python3.11/site-packages/django/forms/models.py:1592
 #, python-format
 msgid "Select a valid choice. %(value)s is not one of the available choices."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:977
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1096
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:967
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1086
 #: venv/lib/python3.11/site-packages/django/forms/models.py:1590
 msgid "Enter a list of values."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1097
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1087
 msgid "Enter a complete value."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1339
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1329
 msgid "Enter a valid UUID."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/forms/fields.py:1369
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1359
 msgid "Enter a valid JSON."
 msgstr ""
 
@@ -1701,18 +1713,18 @@ msgstr ""
 msgid "This is not a valid IPv6 address."
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/utils/text.py:67
+#: venv/lib/python3.11/site-packages/django/utils/text.py:76
 #, python-format
 msgctxt "String to return when truncating text"
 msgid "%(truncated_text)s…"
 msgstr ""
 
-#: venv/lib/python3.11/site-packages/django/utils/text.py:278
+#: venv/lib/python3.11/site-packages/django/utils/text.py:282
 msgid "or"
 msgstr ""
 
 #. Translators: This string is used as a separator between list elements
-#: venv/lib/python3.11/site-packages/django/utils/text.py:297
+#: venv/lib/python3.11/site-packages/django/utils/text.py:301
 #: venv/lib/python3.11/site-packages/django/utils/timesince.py:135
 msgid ", "
 msgstr ""
@@ -1947,6 +1959,9 @@ msgstr ""
 #: versa/settings.py:176
 msgid "English"
 msgstr ""
+
+#~ msgid "Shop"
+#~ msgstr "Дүкен"
 
 #~ msgid "Career"
 #~ msgstr "Бос жұмыс орындары"

@@ -1,0 +1,70 @@
+{% extends 'rzmr/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="h3 fw-bold">{{ h1 }}</h1>
+        </div>
+    </div>
+    <div class="pb-3 border-top">
+
+    </div>
+    <div class="row">
+        <div class="col-4 border-end">
+            <p class="border-bottom {% if 'metallorukav-vysokogo-davleniya-s-rezinovoj-zashchitnoj-obolochkoj-seriya-8d4-498-434' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-vysokogo-davleniya-s-rezinovoj-zashchitnoj-obolochkoj-seriya-8d4-498-434' %}">Металлорукав высокого давления с резиновой защитной оболочкой (серия 8Д4.498.434)</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-kriogennyj-s-armaturoj-gajka-rot-rgm-40-6-3-0-s-a' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-kriogennyj-s-armaturoj-gajka-rot-rgm-40-6-3-0-s-a' %}">Металлорукав криогенный с арматурой гайка РОТ (РГМ 40-6-3,0 с\а)</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-kriogennyj-s-armaturoj-m30h1-5-gajka-rot-rgm-20-45-3-0-s-a' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-kriogennyj-s-armaturoj-m30h1-5-gajka-rot-rgm-20-45-3-0-s-a' %}">Металлорукав криогенный с арматурой М30х1,5 - гайка РОТ (РГМ 20-45-3,0 с\а)</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-s-armaturoj-sfera-pod-konus-s-uglom-60-seriya-4603a' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-s-armaturoj-sfera-pod-konus-s-uglom-60-seriya-4603a' %}">Металлорукав с арматурой «сфера под конус с углом 60° (серия 4603А)»</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-s-armaturoj-sfera-pod-konus-s-uglom-60-seriya-n8d0-449-032' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-s-armaturoj-sfera-pod-konus-s-uglom-60-seriya-n8d0-449-032' %}">Металлорукав с арматурой «сфера под конус с углом 60° (серия Н8Д0.449.032)»</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-s-armaturoj-flancevoe-soedinenie-s-otkidnymi-boltami-seriya-4656a' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-s-armaturoj-flancevoe-soedinenie-s-otkidnymi-boltami-seriya-4656a' %}">Металлорукав с арматурой «фланцевое соединение с откидными болтами» (серия 4656А)</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-s-armaturoj-flancevoe-soedinenie-seriya-4657a' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-s-armaturoj-flancevoe-soedinenie-seriya-4657a' %}">Металлорукав с арматурой «фланцевое соединение» (серия 4657А)</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-s-armaturoj-konus-konus-s-uglom-74-seriya-4600a' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-s-armaturoj-konus-konus-s-uglom-74-seriya-4600a' %}">Металлорукав с арматурой конус-конус с углом 74 (серия 4600А)</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-s-armaturoj-konus-konus-s-uglom-74-seriya-n8d0-449-033' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-s-armaturoj-konus-konus-s-uglom-74-seriya-n8d0-449-033' %}">Металлорукав с арматурой конус-конус с углом 74 (серия Н8Д0.449.033)</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-s-armaturoj-nakidnye-gajki-g-3-4-rgm-6-280-1-0-s-a' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-s-armaturoj-nakidnye-gajki-g-3-4-rgm-6-280-1-0-s-a' %}">Металлорукав с арматурой накидные гайки G 3/4" (РГМ 6-280-1,0 с\а)</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-s-armaturoj-pod-privarku-seriya-4655a' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-s-armaturoj-pod-privarku-seriya-4655a' %}">Металлорукав с арматурой под приварку (серия 4655А)</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-s-armaturoj-pod-privarku-seriya-8d4-498-469' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-s-armaturoj-pod-privarku-seriya-8d4-498-469' %}">Металлорукав с арматурой под приварку (серия 8Д4.498.469)</a>
+            </p>
+            <p class="border-bottom {% if 'metallorukav-s-armaturoj-pod-privarku-seriya-n8d0-449-020' in request.path %} fw-bold {% endif %}">
+                <a href="{% url 'metalhose-production' 'metallorukav-s-armaturoj-pod-privarku-seriya-n8d0-449-020' %}">Металлорукав с арматурой под приварку (серия Н8Д0.449.020)</a>
+            </p>
+        </div>
+        <div class="col-8 text-uzm">
+            {% block metalhoses-info %}
+            {% endblock metalhoses-info %}
+        </div>
+    </div>
+</div>
+
+{% if DEBUG %}
+<script src="{% static 'rzmr/js/image_change.js' %}"></script>
+{% else %}
+<script src="{% static 'rzmr/js/image_change_compile.js' %}"></script>
+{% endif %}
+
+{% endblock content %}
