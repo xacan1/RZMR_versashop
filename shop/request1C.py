@@ -1,6 +1,6 @@
+from django.conf import settings
 from urllib import request, error
 import json
-from versa.config import API_1C
 
 
 def get_request_to_1C(url_request: str) -> str | bytes:
@@ -44,7 +44,7 @@ def post_request_to_1C(url_request: str, data_request: bytes) -> str:
 # после создания Заказа или События в 1С вернем номер документа для записи в базу сайта как external_code
 def create_order_in_1C(data_request: dict) -> str:
     data = json.dumps(data_request).encode('utf-8')
-    url_request = f'{API_1C}/UT_RZM/hs/api?metod=createOrder'
+    url_request = f'{settings.API_1C}/UT_RZM/hs/api?metod=createOrder'
 
     response = post_request_to_1C(url_request, data)
 

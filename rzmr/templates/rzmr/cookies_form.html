@@ -1,0 +1,78 @@
+<style>
+    /* Баннер в правом нижнем углу */
+    #cookieBanner {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        max-width: 400px;
+        z-index: 1050;
+        /* Анимация выплывания */
+        transform: translateY(150%);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    #cookieBanner.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    @media (max-width: 576px) {
+        #cookieBanner {
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            max-width: none;
+        }
+    }
+</style>
+
+<!-- Баннер согласия на Cookies -->
+<div id="cookieBanner" class="card shadow-lg border-0">
+    <div class="card-body p-4">
+        <h5 class="card-title mb-3">
+            🍪 Мы используем Cookies
+        </h5>
+        <p class="card-text small mb-4">
+            Этот сайт использует файлы cookie для улучшения работы и анализа трафика.
+            Продолжая использовать сайт, вы соглашаетесь с нашей политикой использования cookie.
+        </p>
+        <div class="d-flex justify-content-end">
+            <button id="cookieAcceptBtn" class="btn btn-primary px-4">
+                ОК
+            </button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        const banner = document.getElementById('cookieBanner');
+        const acceptBtn = document.getElementById('cookieAcceptBtn');
+        const STORAGE_KEY = 'cookieConsent';
+
+        // Проверяем, дал ли пользователь согласие ранее
+        const consent = localStorage.getItem(STORAGE_KEY);
+
+        // Если согласия нет — показываем баннер с задержкой
+        if (!consent) {
+            setTimeout(() => {
+                banner.classList.add('show');
+            }, 500);
+        }
+
+        // Обработчик кнопки "ОК"
+        acceptBtn.addEventListener('click', function () {
+            // Записываем "истину" в localStorage
+            localStorage.setItem(STORAGE_KEY, 'true');
+
+            // Прячем баннер с анимацией
+            banner.classList.remove('show');
+
+            // Опционально: полностью удаляем из DOM после анимации
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 500);
+        });
+    });
+</script>

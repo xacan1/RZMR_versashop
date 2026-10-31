@@ -36,6 +36,8 @@ AUTHOR = config.AUTHOR
 PUBLISHER_EMAIL = config.PUBLISHER_EMAIL
 PUBLISHER_URL = config.PUBLISHER_URL
 
+API_1C = config.API_1C
+
 # Для онлайн магазина признак того, что можно превышать остатки на складах при заказе
 EXCESS_STOCK_OF_GOODS = config.EXCESS_STOCK_OF_GOODS
 
